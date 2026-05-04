@@ -1,0 +1,736 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Quienes Somos - Qartia Smart Technologies</title>
+    <meta
+      name="description"
+      content="Quienes Somos en Qartia Smart Technologies. Sensorizacion, IoT, analitica e inteligencia artificial aplicadas a entornos reales."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css?family=Rubik%3A300%2C400%2C500%2C700%2C800%7CWork+Sans%3A400%2C600%2C700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --bg: #f5f5f5;
+        --paper: #ffffff;
+        --paper-soft: #f7fbfc;
+        --ink: #333333;
+        --ink-strong: #1a1a1a;
+        --brand: #144e9c;
+        --accent: #36deb8;
+        --shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--ink);
+        font-family: "Work Sans", sans-serif;
+        line-height: 1.55;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      img {
+        max-width: 100%;
+        display: block;
+      }
+
+      .page {
+        min-height: 100vh;
+      }
+
+      .topbar {
+        background: #f5f5f5;
+        color: #333;
+        font-size: 0.84rem;
+      }
+
+      .topbar-inner,
+      .header-inner,
+      .section-inner,
+      .footer-inner {
+        width: min(1140px, calc(100% - 32px));
+        margin: 0 auto;
+      }
+
+      .topbar-inner {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        gap: 18px;
+        padding: 10px 0;
+        flex-wrap: wrap;
+      }
+
+      .header {
+        position: sticky;
+        top: 0;
+        z-index: 20;
+        background: rgba(255, 255, 255, 0.96);
+        box-shadow: 0 2px 18px rgba(0, 0, 0, 0.08);
+        backdrop-filter: blur(10px);
+      }
+
+      .header-inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 18px;
+        padding: 14px 0;
+      }
+
+      .logo img {
+        width: 180px;
+        height: auto;
+      }
+
+.nav {
+  display: flex;
+  justify-content: flex-end;
+  gap: 4px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.nav > a,
+.nav-toggle {
+  padding: 10px 12px;
+  color: var(--brand);
+  background: transparent;
+  border: 0;
+  font-family: "Rubik", sans-serif;
+  font-size: 0.82rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.nav > a:hover,
+.nav > a:focus-visible,
+.nav-toggle:hover,
+.nav-toggle:focus-visible {
+  background: rgba(20, 78, 156, 0.08);
+}
+
+.nav-group {
+  position: relative;
+}
+
+.nav-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.nav-toggle::after {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-right: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  transform: rotate(45deg) translateY(-1px);
+}
+
+.nav-dropdown {
+  position: absolute;
+  top: calc(100% + 10px);
+  right: 0;
+  min-width: 260px;
+  display: none;
+  flex-direction: column;
+  padding: 10px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.98);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(10px);
+  z-index: 30;
+}
+
+.nav-dropdown a {
+  padding: 10px 12px;
+  color: var(--brand);
+  font-family: "Rubik", sans-serif;
+  font-size: 0.8rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  border-radius: 10px;
+}
+
+.nav-subgroup {
+  display: flex;
+  flex-direction: column;
+}
+
+.nav-subtoggle {
+  padding: 10px 12px;
+  color: var(--brand);
+  font-family: "Rubik", sans-serif;
+  font-size: 0.8rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  border-radius: 10px;
+}
+
+.nav-dropdown a:hover,
+.nav-dropdown a:focus-visible,
+.nav-subtoggle:hover,
+.nav-subtoggle:focus-visible {
+  background: rgba(20, 78, 156, 0.08);
+}
+
+.nav-submenu {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin: 0 0 6px 18px;
+  padding-left: 12px;
+  border-left: 2px solid rgba(20, 78, 156, 0.14);
+}
+
+.nav-submenu a {
+  padding: 8px 10px;
+  font-size: 0.74rem;
+}
+
+.nav-group:hover .nav-dropdown,
+.nav-group.open .nav-dropdown {
+  display: flex;
+}
+
+      .hero {
+        position: relative;
+        min-height: 360px;
+        display: flex;
+        align-items: center;
+        overflow: hidden;
+        color: #fff;
+        background:
+          linear-gradient(rgba(0, 0, 0, 0.68), rgba(0, 0, 0, 0.25)),
+          url("https://qartia.com/wp-content/uploads/2022/12/slide-cuatrov2.jpg") center/cover no-repeat;
+      }
+
+      .hero-inner {
+        width: min(1140px, calc(100% - 32px));
+        margin: 0 auto;
+        padding: 82px 0 60px;
+      }
+
+      .hero h1 {
+        margin: 0;
+        max-width: 10ch;
+        font-family: "Rubik", sans-serif;
+        font-size: clamp(2.4rem, 4vw, 4rem);
+        font-weight: 300;
+        text-shadow: 2px 2px 9px #000;
+      }
+
+      .content-section,
+      .links-section,
+      .cta-section {
+        padding: 70px 0;
+      }
+
+      .content-section {
+        background:
+          url("https://qartia.com/wp-content/uploads/2022/11/fondo-home.jpg") top left / cover no-repeat,
+          var(--paper-soft);
+      }
+
+      .content-grid {
+        display: grid;
+        grid-template-columns: minmax(0, 1.15fr) minmax(280px, 0.85fr);
+        gap: 36px;
+        align-items: start;
+      }
+
+      .eyebrow {
+        display: inline-block;
+        margin-bottom: 10px;
+        color: var(--accent);
+        font-size: 1rem;
+        font-weight: 600;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+      }
+
+      .eyebrow::before {
+        content: "";
+        display: inline-block;
+        width: 49px;
+        height: 50px;
+        margin-right: 10px;
+        vertical-align: middle;
+        background: url("https://qartia.com/wp-content/uploads/2022/11/before-titulares.png") no-repeat center/contain;
+      }
+
+      .lead-title {
+        margin: 0 0 24px 58px;
+        color: var(--ink-strong);
+        font-family: "Rubik", sans-serif;
+        font-size: clamp(2rem, 3vw, 3rem);
+        font-weight: 300;
+        line-height: 1.12;
+      }
+
+      .copy p {
+        margin: 0 0 16px;
+      }
+
+      .visual-card {
+        background: var(--paper);
+        border-radius: 22px;
+        padding: 18px;
+        box-shadow: var(--shadow);
+      }
+
+      .visual-card img {
+        width: 100%;
+        aspect-ratio: 1 / 1;
+        object-fit: cover;
+        border-radius: 50%;
+      }
+
+      .visual-card p {
+        margin: 18px 4px 0;
+        color: #5a6670;
+        font-size: 0.95rem;
+      }
+
+      .links-section {
+        background: var(--paper);
+      }
+
+      .links-grid {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 22px;
+      }
+
+      .topic-card {
+        position: relative;
+        min-height: 220px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 22px;
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: var(--shadow);
+        background-size: cover;
+        background-position: center;
+      }
+
+      .topic-card::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(rgba(0, 0, 0, 0.16), rgba(0, 0, 0, 0.42));
+      }
+
+      .topic-card.current::after {
+        background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.58));
+      }
+
+      .topic-card.current::before {
+        content: "";
+        position: absolute;
+        left: 50%;
+        bottom: 0;
+        transform: translateX(-50%);
+        width: 0;
+        height: 0;
+        border-left: 18px solid transparent;
+        border-right: 18px solid transparent;
+        border-bottom: 18px solid #e8faf9;
+        z-index: 2;
+      }
+
+      .topic-card h3 {
+        position: relative;
+        z-index: 1;
+        margin: 0;
+        color: #fff;
+        text-align: center;
+        text-transform: uppercase;
+        font-family: "Rubik", sans-serif;
+        font-size: 1.32rem;
+        font-weight: 400;
+        text-shadow: 2px 2px 9px #000;
+      }
+
+      .topic-card.card-1 {
+        background-image: url("https://qartia.com/wp-content/uploads/2022/11/servicio3.jpg");
+      }
+
+      .topic-card.card-2 {
+        background-image: url("https://qartia.com/wp-content/uploads/2022/11/servicio-1.jpg");
+      }
+
+      .topic-card.card-3 {
+        background-image: url("https://qartia.com/wp-content/uploads/2022/11/servicio-2.jpg");
+      }
+
+      .topic-card.card-4 {
+        background-image: url("https://qartia.com/wp-content/uploads/2022/11/servcio-5.jpg");
+      }
+
+      .topic-card.card-5 {
+        background-image: url("https://qartia.com/wp-content/uploads/2022/11/servicio-4.jpg");
+      }
+
+      .topic-card.card-6 {
+        background-image: url("https://qartia.com/wp-content/uploads/2022/11/servicio-6.jpg");
+      }
+
+      .topic-card.card-7 {
+        background-image: url("https://qartia.com/wp-content/uploads/2022/12/slide-cuatrov2.jpg");
+      }
+
+      .topic-card.card-8 {
+        background-image: url("https://qartia.com/wp-content/uploads/2022/12/slide-tresv2.jpg");
+      }
+
+      .cta-section {
+        background: #e8faf9;
+      }
+
+      .cta-grid {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) 320px;
+        gap: 24px;
+        align-items: stretch;
+      }
+
+      .cta-copy {
+        background: var(--paper);
+        border-radius: 22px;
+        padding: 34px;
+        box-shadow: var(--shadow);
+      }
+
+      .cta-copy h2 {
+        margin: 0 0 14px;
+        color: var(--ink-strong);
+        font-family: "Rubik", sans-serif;
+        font-size: clamp(1.9rem, 2.5vw, 2.6rem);
+        font-weight: 300;
+      }
+
+      .cta-copy p {
+        margin: 0;
+      }
+
+      .cta-image {
+        border-radius: 22px;
+        background:
+          linear-gradient(rgba(20, 78, 156, 0.16), rgba(20, 78, 156, 0.16)),
+          url("https://qartia.com/wp-content/uploads/2022/12/contacto-servicios.jpg") center/cover no-repeat;
+        box-shadow: var(--shadow);
+      }
+
+      .footer {
+        background:
+          url("https://qartia.com/wp-content/uploads/2022/11/fondo-footer.jpg") left top / cover no-repeat,
+          #222;
+        color: #ccc;
+      }
+
+      .footer-inner {
+        display: grid;
+        grid-template-columns: 220px minmax(0, 1fr);
+        gap: 36px;
+        align-items: start;
+        padding: 56px 0 28px;
+      }
+
+      .footer-logo img {
+        width: 180px;
+      }
+
+      .footer h4 {
+        margin: 0 0 16px;
+        color: #ccc;
+        font-family: "Rubik", sans-serif;
+        font-size: 1.1rem;
+        font-weight: 700;
+        text-transform: uppercase;
+      }
+
+      .footer p {
+        margin: 0 0 10px;
+      }
+
+      .subfooter {
+        background: #333;
+        color: #f9f9f9;
+        font-size: 0.86rem;
+        text-transform: uppercase;
+      }
+
+      .subfooter-inner {
+        width: min(1140px, calc(100% - 32px));
+        margin: 0 auto;
+        padding: 14px 0;
+        display: flex;
+        justify-content: center;
+        gap: 28px;
+        flex-wrap: wrap;
+      }
+
+      @media (max-width: 1024px) {
+        .header-inner,
+        .content-grid,
+        .cta-grid,
+        .footer-inner {
+          grid-template-columns: 1fr;
+        }
+
+        .header-inner {
+          display: grid;
+          gap: 12px;
+        }
+
+        .logo {
+          justify-self: center;
+        }
+
+.nav {
+  justify-content: center;
+}
+
+.nav-dropdown {
+  right: auto;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+        .links-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+      }
+
+      @media (max-width: 640px) {
+.topbar-inner {
+  justify-content: center;
+}
+
+.nav {
+  gap: 8px;
+}
+
+.nav-group {
+  width: 100%;
+  display: grid;
+  justify-items: center;
+}
+
+.nav-dropdown {
+  position: static;
+  transform: none;
+  min-width: min(320px, 100%);
+  width: min(320px, 100%);
+  margin-top: 6px;
+}
+
+        .hero-inner {
+          padding-top: 72px;
+        }
+
+        .eyebrow::before {
+          display: none;
+        }
+
+        .lead-title {
+          margin-left: 0;
+        }
+
+        .links-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .footer-inner {
+          padding-top: 40px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page">
+      <div class="topbar">
+        <div class="topbar-inner">
+          <a href="tel:+34686918522">+34 686 91 85 22</a>
+          <a href="mailto:info@qartia.com">info@qartia.com</a>
+          <a href="https://www.linkedin.com/company/qartia-smart-technologies/" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
+      </div>
+
+      <header class="header">
+        <div class="header-inner">
+          <a class="logo" href="index.html">
+            <img src="https://qartia.com/wp-content/uploads/2022/11/logo-qartia.png" alt="Qartia Smart Technologies" />
+          </a>
+
+<nav class="nav" aria-label="Navegacion principal">
+  <a href="quienes-somos.html">Quienes Somos</a>
+  <a href="productos.html">Productos</a>
+  <div class="nav-group">
+    <button class="nav-toggle" type="button" aria-expanded="false">Servicios</button>
+    <div class="nav-dropdown">
+      <a href="agricultura.html">Agricultura</a>
+      <div class="nav-subgroup">
+                  <a class="nav-subtoggle" href="industria.html">Industria</a>
+                  <div class="nav-submenu">
+                    <a href="mantenimiento-predictivo-vibraciones.html">Mantenimiento Predictivo. Vibraciones</a>
+                    <a href="monitorizacion-activos-criticos.html">Monitorización de Activos Críticos</a>
+                  </div>
+                </div>
+      <a href="medioambiente.html">Medioambiente</a>
+      <a href="civil.html">Infraestructuras Civiles</a>
+      <a href="https://qartia.com/servicios/servicios-de-valor-anadido/">Servicios Adicionales</a>
+    </div>
+  </div>
+  <a href="comunicaciones.html">Redes Privadas 5G</a>
+  <a href="noticias.html">Noticias</a>
+  <a href="http://qartia.com/grafana">Acceso a Clientes</a>
+</nav>
+        </div>
+      </header>
+
+      <main>
+        <section class="hero">
+          <div class="hero-inner">
+            <h1>Quienes Somos</h1>
+          </div>
+        </section>
+
+        <section class="content-section">
+          <div class="section-inner">
+            <div class="content-grid">
+              <div>
+                <span class="eyebrow">Qartia Smart Technologies</span>
+                <h2 class="lead-title">Ingenieria aplicada para sensorizacion, IoT y despliegue completo.</h2>
+                <div class="copy">
+                  <p>Qartia Smart Technologies es una empresa de base tecnol&oacute;gica dedicada a investigar, dise&ntilde;ar, desarrollar y comercializar productos y servicios de sensorizaci&oacute;n e IoT con alto componente de innovaci&oacute;n.</p>
+                  <p>La presentaci&oacute;n corporativa muestra una evoluci&oacute;n desde plataforma IoT y servicios ambientales hacia nuevas l&iacute;neas en industria, agricultura, comunicaciones, digital twins e inteligencia artificial aplicada.</p>
+                  <p>La estructura directiva visible y el discurso p&uacute;blico sit&uacute;an a Antonio Javier Garc&iacute;a S&aacute;nchez al frente de una compa&ntilde;&iacute;a orientada a resolver proyectos reales con ingenier&iacute;a transversal.</p>
+                </div>
+              </div>
+
+              <aside class="visual-card">
+                <img src="https://qartia.com/wp-content/uploads/2022/11/slider-home-1.jpg" alt="Quienes Somos" />
+                <p>Equipo, producto y despliegue orientados a soluciones AIoT reales.</p>
+              </aside>
+            </div>
+          </div>
+        </section>
+
+        <section class="links-section">
+          <div class="section-inner">
+            <div class="links-grid">
+              <a class="topic-card card-1 current" href="quienes-somos.html"><h3>Quienes Somos</h3></a>
+              <a class="topic-card card-2 " href="agricultura.html"><h3>Agricultura</h3></a>
+              <a class="topic-card card-3 " href="industria.html"><h3>Industria: Vibraciones y Activos</h3></a>
+              <a class="topic-card card-4 " href="medioambiente.html"><h3>Medioambiente</h3></a>
+              <a class="topic-card card-5 " href="civil.html"><h3>Infraestructuras Civiles</h3></a>
+              <a class="topic-card card-6 " href="comunicaciones.html"><h3>Redes Privadas 5G</h3></a>
+              <a class="topic-card card-7 " href="noticias.html"><h3>Noticias</h3></a>
+            </div>
+          </div>
+        </section>
+
+        <section class="cta-section">
+          <div class="section-inner">
+            <div class="cta-grid">
+              <div class="cta-copy">
+                <h2>¿Te interesa esta línea?</h2>
+                <p>Desde esta base local podemos añadir productos, noticias, vídeos, casos de uso y llamadas a la acción específicas para cada sector.</p>
+              </div>
+              <div class="cta-image" aria-hidden="true"></div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <div class="footer-inner">
+          <div class="footer-logo">
+            <img src="https://qartia.com/wp-content/uploads/2022/11/logo-qartia.png" alt="Qartia" />
+          </div>
+          <div>
+            <h4>Contacto</h4>
+            <p><a href="tel:+34686918522">(+34) 686918522</a></p>
+            <p><a href="mailto:info@qartia.com">info@qartia.com</a></p>
+            <p>Calle Juan Muñoz Delgado, 8, 4ºA</p>
+            <p>30205 Cartagena (Murcia) España</p>
+          </div>
+        </div>
+      </footer>
+
+      <div class="subfooter">
+        <div class="subfooter-inner">
+          <a href="https://qartia.com/aviso-legal/">Aviso legal</a>
+          <a href="https://qartia.com/politica-de-cookies/">Política de cookies</a>
+          <a href="https://qartia.com/politica-de-privacidad/">Política de privacidad</a>
+        </div>
+      </div>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const groups = document.querySelectorAll(".nav-group");
+
+    groups.forEach((group) => {
+      const toggle = group.querySelector(".nav-toggle");
+      if (!toggle) return;
+
+      toggle.addEventListener("click", function (event) {
+        event.preventDefault();
+        const willOpen = !group.classList.contains("open");
+
+        groups.forEach((otherGroup) => {
+          otherGroup.classList.remove("open");
+          const otherToggle = otherGroup.querySelector(".nav-toggle");
+          if (otherToggle) {
+            otherToggle.setAttribute("aria-expanded", "false");
+          }
+        });
+
+        group.classList.toggle("open", willOpen);
+        toggle.setAttribute("aria-expanded", willOpen ? "true" : "false");
+      });
+    });
+
+    document.addEventListener("click", function (event) {
+      groups.forEach((group) => {
+        if (group.contains(event.target)) return;
+        group.classList.remove("open");
+        const toggle = group.querySelector(".nav-toggle");
+        if (toggle) {
+          toggle.setAttribute("aria-expanded", "false");
+        }
+      });
+    });
+  });
+</script>
+    </div>
+  </body>
+</html>
