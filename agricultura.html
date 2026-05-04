@@ -68,844 +68,618 @@
       .scrollbar-none::-webkit-scrollbar {
         display: none;
       }
+
+      .reveal {
+        opacity: 0;
+        transform: translateY(32px);
+        transition:
+          opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+          transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+
+      .reveal.is-visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .nav-pill-active {
+        border-color: rgba(34, 184, 255, 0.6);
+        background: rgba(34, 184, 255, 0.14);
+        color: #ffffff;
+      }
     </style>
   </head>
   <body class="bg-forest text-ink antialiased">
-    <div id="root"></div>
+    <div class="relative min-h-screen overflow-x-clip bg-forest">
+      <div class="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(34,184,255,0.18),transparent_24%),radial-gradient(circle_at_82%_8%,rgba(77,242,162,0.15),transparent_22%),radial-gradient(circle_at_bottom_right,rgba(255,255,255,0.05),transparent_18%)]"></div>
+      <div class="pointer-events-none absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.025)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.025)_1px,transparent_1px)] bg-[size:76px_76px] opacity-35"></div>
 
-    <script type="module">
-      import React, { useEffect, useState } from "https://esm.sh/react@18.3.1?bundle";
-      import { createRoot } from "https://esm.sh/react-dom@18.3.1/client?bundle";
-      import { motion } from "https://esm.sh/framer-motion@11.11.17?bundle&deps=react@18.3.1,react-dom@18.3.1";
-      import {
-        ArrowRight,
-        BarChart3,
-        Bot,
-        BrainCircuit,
-        ChevronRight,
-        Cpu,
-        Droplets,
-        Gauge,
-        Leaf,
-        Orbit,
-        Radar,
-        RadioTower,
-        ShieldCheck,
-        SunMedium,
-        TowerControl,
-        Waves,
-      } from "https://esm.sh/lucide-react@0.453.0?bundle&deps=react@18.3.1";
-      import htm from "https://esm.sh/htm@3.1.1?bundle";
-
-      const html = htm.bind(React.createElement);
-
-      const cn = (...parts) => parts.filter(Boolean).join(" ");
-
-      // Sustituir estas rutas por imagenes finales de Qartia cuando esten disponibles.
-      const IMAGE_ASSETS = {
-        hero: "assets/linkedin-news/greenhouse-1.jpg",
-        sensors: "",
-        agrivoltaics: "",
-      };
-
-      const navSections = [
-        { id: "impacto", label: "Impacto" },
-        { id: "problema", label: "Problema" },
-        { id: "solucion", label: "Soluci\u00f3n" },
-        { id: "capacidades", label: "Capacidades" },
-        { id: "arquitectura", label: "Arquitectura" },
-        { id: "agrivoltaica", label: "Agrivoltaica" },
-        { id: "piloto", label: "Piloto" },
-        { id: "diferencial", label: "Diferencial" },
-        { id: "contacto", label: "Contacto" },
-      ];
-
-      const heroBadges = ["IoT", "IA", "Gemelo Digital", "Agrivoltaica", "Red Privada"];
-
-      const kpis = [
-        {
-          value: "\u2193 30%",
-          label: "Consumo de agua",
-          tone: "from-mint/[0.18] via-mint/[0.08] to-transparent",
-        },
-        {
-          value: "\u2191 20%",
-          label: "Producci\u00f3n potencial",
-          tone: "from-electric/[0.18] via-electric/[0.08] to-transparent",
-        },
-        {
-          value: "\u2193 Coste operativo",
-          label: "Optimizaci\u00f3n de recursos",
-          tone: "from-white/[0.12] via-white/[0.05] to-transparent",
-        },
-        {
-          value: "ROI en meses",
-          label: "Piloto con impacto medible",
-          tone: "from-mint/[0.18] via-electric/[0.08] to-transparent",
-        },
-      ];
-
-      const problems = [
-        {
-          icon: Gauge,
-          title: "Decisiones reactivas",
-          copy: "La explotaci\u00f3n responde tarde porque el dato llega fragmentado o directamente no llega.",
-        },
-        {
-          icon: Droplets,
-          title: "Uso ineficiente de agua y fertilizantes",
-          copy: "El ajuste operativo se basa en intuici\u00f3n o reglas fijas, no en condiciones reales de campo.",
-        },
-        {
-          icon: TowerControl,
-          title: "Dependencia de conectividad limitada",
-          copy: "Cobertura irregular, dependencia de operador y falta de fiabilidad en zonas remotas.",
-        },
-        {
-          icon: Leaf,
-          title: "Dificultad para anticipar estr\u00e9s del cultivo",
-          copy: "La detecci\u00f3n de desv\u00edos llega cuando el impacto productivo ya es visible.",
-        },
-        {
-          icon: SunMedium,
-          title: "Falta de integraci\u00f3n entre energ\u00eda, riego y producci\u00f3n",
-          copy: "Los sistemas operan en silos y no maximizan ni rendimiento agr\u00edcola ni eficiencia energ\u00e9tica.",
-        },
-      ];
-
-      const solutionSteps = [
-        {
-          number: "01",
-          title: "Captura inteligente",
-          copy:
-            "Sensores IoT de suelo, ambiente, radiaci\u00f3n, CO\u2082, humedad y temperatura para construir una visi\u00f3n real del cultivo.",
-          icon: Radar,
-        },
-        {
-          number: "02",
-          title: "Conectividad privada",
-          copy:
-            "Redes privadas inal\u00e1mbricas robustas para entornos rurales, sin dependencia de operador y con despliegue controlado.",
-          icon: RadioTower,
-        },
-        {
-          number: "03",
-          title: "Inteligencia predictiva",
-          copy:
-            "Modelos de IA para anticipar riego, fertilizaci\u00f3n, estr\u00e9s h\u00eddrico y condiciones cr\u00edticas antes de que afecten al cultivo.",
-          icon: BrainCircuit,
-        },
-        {
-          number: "04",
-          title: "Acci\u00f3n y optimizaci\u00f3n",
-          copy:
-            "Recomendaciones operativas, automatizaci\u00f3n y mejora continua para transformar datos en decisiones rentables.",
-          icon: Bot,
-        },
-      ];
-
-      const capabilities = [
-        {
-          icon: Radar,
-          title: "Monitorizaci\u00f3n 24/7",
-          copy: "Seguimiento continuo del cultivo, microclima e infraestructura.",
-        },
-        {
-          icon: BrainCircuit,
-          title: "IA predictiva",
-          copy: "Predicci\u00f3n de necesidades h\u00eddricas, nutricionales y energ\u00e9ticas.",
-        },
-        {
-          icon: Orbit,
-          title: "Gemelo digital",
-          copy: "Simulaci\u00f3n de escenarios para optimizar decisiones sin riesgo operativo.",
-        },
-        {
-          icon: SunMedium,
-          title: "Agrivoltaica",
-          copy: "Balance entre generaci\u00f3n solar, sombra, luz disponible y rendimiento agr\u00edcola.",
-        },
-        {
-          icon: RadioTower,
-          title: "Red privada Qartia",
-          copy: "Conectividad fiable en explotaciones agr\u00edcolas, invernaderos y zonas remotas.",
-        },
-        {
-          icon: Droplets,
-          title: "Optimizaci\u00f3n de recursos",
-          copy: "Reducci\u00f3n de agua, fertilizantes, energ\u00eda y costes operativos.",
-        },
-      ];
-
-      const architectureNodes = [
-        { title: "Sensores IoT", icon: Waves },
-        { title: "Red privada", icon: RadioTower },
-        { title: "Edge / Cloud", icon: Cpu },
-        { title: "IA + Gemelo Digital", icon: BrainCircuit },
-        { title: "Dashboard / Actuadores", icon: BarChart3 },
-      ];
-
-      const pilotPhases = [
-        {
-          number: "1",
-          title: "Diagn\u00f3stico inicial",
-          copy: "Selecci\u00f3n de cultivo, explotaci\u00f3n, infraestructura y KPIs.",
-        },
-        {
-          number: "2",
-          title: "Despliegue sens\u00f3rica y red",
-          copy: "Instalaci\u00f3n de sensores, validaci\u00f3n de cobertura y calidad del dato.",
-        },
-        {
-          number: "3",
-          title: "IA + diagn\u00f3stico operativo",
-          copy: "Modelos predictivos, alertas accionables y recomendaciones t\u00e9cnicas.",
-        },
-        {
-          number: "4",
-          title: "Escalado y ROI",
-          copy: "Informe de impacto, propuesta econ\u00f3mica y plan de implantaci\u00f3n.",
-        },
-      ];
-
-      const differentiators = [
-        "Conectividad privada",
-        "IA aplicada",
-        "Gemelo digital",
-        "Agrivoltaica",
-        "Optimizaci\u00f3n operativa",
-        "Enfoque ROI",
-      ];
-
-      const revealTransition = {
-        duration: 0.7,
-        ease: [0.16, 1, 0.3, 1],
-      };
-
-      function Button({ href, children, variant = "primary", className = "" }) {
-        const base =
-          "inline-flex items-center justify-center gap-2 rounded-full px-5 py-3 text-sm font-semibold transition duration-300";
-        const styles =
-          variant === "secondary"
-            ? "border border-white/[0.12] bg-white/[0.06] text-ink hover:border-white/20 hover:bg-white/10"
-            : "bg-gradient-to-r from-mint to-electric text-slate-950 hover:translate-y-[-1px] hover:shadow-[0_10px_30px_rgba(34,184,255,0.22)]";
-        return html`
-          <a
-            href=${href}
-            className=${cn(base, styles, className)}
-          >
-            <span>${children}</span>
-            <${ArrowRight} className="h-4 w-4" />
-          </a>
-        `;
-      }
-
-      function Reveal({ children, className = "", delay = 0 }) {
-        return html`
-          <${motion.div}
-            className=${className}
-            initial=${{ opacity: 0, y: 30 }}
-            whileInView=${{ opacity: 1, y: 0 }}
-            viewport=${{ once: true, amount: 0.18 }}
-            transition=${{ ...revealTransition, delay }}
-          >
-            ${children}
-          </${motion.div}>
-        `;
-      }
-
-      function SectionTitle({ eyebrow, title, copy, centered = false }) {
-        return html`
-          <div className=${cn("max-w-3xl", centered && "mx-auto text-center")}>
-            <span className="mb-4 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.06] px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.28em] text-mintSoft">
-              <span className="h-2 w-2 rounded-full bg-mint"></span>
-              ${eyebrow}
-            </span>
-            <h2 className="font-display text-3xl font-semibold leading-tight text-white sm:text-4xl lg:text-[2.7rem]">
-              ${title}
-            </h2>
-            ${copy
-              ? html`<p className="mt-4 text-base leading-7 text-muted sm:text-lg">${copy}</p>`
-              : null}
-          </div>
-        `;
-      }
-
-      function AssetPanel({ src, alt, label, title, note, tall = false }) {
-        if (src) {
-          return html`
-            <div className=${cn(
-              "group relative overflow-hidden rounded-[28px] border border-white/10 bg-panel shadow-panel",
-              tall ? "min-h-[380px]" : "min-h-[320px]"
-            )}>
+      <header class="sticky top-0 z-50 border-b border-white/[0.08] bg-forest/[0.82] backdrop-blur-xl">
+        <div class="mx-auto flex max-w-7xl flex-col gap-4 px-4 py-4 sm:px-6 lg:px-8">
+          <div class="flex items-center justify-between gap-4">
+            <a href="index.html" class="flex items-center gap-3">
               <img
-                src=${src}
-                alt=${alt}
-                className="absolute inset-0 h-full w-full object-cover transition duration-700 group-hover:scale-[1.03]"
+                src="https://qartia.com/wp-content/uploads/2022/11/logo-qartia.png"
+                alt="Qartia Smart Technologies"
+                class="h-9 w-auto"
               />
-              <div className="absolute inset-0 bg-gradient-to-br from-forest/[0.2] via-forest/[0.35] to-forest/[0.9]"></div>
-              <div className="relative flex h-full flex-col justify-end p-6">
-                <span className="mb-3 inline-flex w-fit rounded-full border border-white/[0.12] bg-white/[0.08] px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.24em] text-electricSoft">
-                  ${label}
-                </span>
-                <h3 className="font-display text-2xl font-semibold text-white">${title}</h3>
-                <p className="mt-3 max-w-lg text-sm leading-6 text-white/[0.72]">${note}</p>
+              <div class="hidden sm:block">
+                <p class="font-display text-xs uppercase tracking-[0.28em] text-mintSoft">Agricultura inteligente</p>
+                <p class="text-sm text-muted">Landing comercial premium</p>
+              </div>
+            </a>
+            <div class="flex items-center gap-3">
+              <a
+                href="mailto:antoniojavier.garcia@qartia.com?subject=Solicitar%20piloto%20Qartia%20Agricultura"
+                class="hidden rounded-full border border-white/10 px-4 py-2 text-sm font-semibold text-white transition hover:border-white/20 hover:bg-white/[0.08] sm:inline-flex"
+              >
+                Solicitar piloto
+              </a>
+              <a
+                href="#capacidades"
+                class="inline-flex rounded-full bg-white/[0.08] px-4 py-2 text-sm font-semibold text-white transition hover:bg-white/[0.12]"
+              >
+                Ver capacidades
+              </a>
+            </div>
+          </div>
+          <nav class="scrollbar-none flex gap-2 overflow-x-auto pb-1 text-sm" aria-label="Secciones">
+            <a href="#impacto" data-nav="impacto" class="nav-pill whitespace-nowrap rounded-full border border-white/[0.08] bg-white/[0.04] px-3 py-2 text-muted transition hover:border-white/[0.14] hover:text-white">Impacto</a>
+            <a href="#problema" data-nav="problema" class="nav-pill whitespace-nowrap rounded-full border border-white/[0.08] bg-white/[0.04] px-3 py-2 text-muted transition hover:border-white/[0.14] hover:text-white">Problema</a>
+            <a href="#solucion" data-nav="solucion" class="nav-pill whitespace-nowrap rounded-full border border-white/[0.08] bg-white/[0.04] px-3 py-2 text-muted transition hover:border-white/[0.14] hover:text-white">Solución</a>
+            <a href="#capacidades" data-nav="capacidades" class="nav-pill whitespace-nowrap rounded-full border border-white/[0.08] bg-white/[0.04] px-3 py-2 text-muted transition hover:border-white/[0.14] hover:text-white">Capacidades</a>
+            <a href="#arquitectura" data-nav="arquitectura" class="nav-pill whitespace-nowrap rounded-full border border-white/[0.08] bg-white/[0.04] px-3 py-2 text-muted transition hover:border-white/[0.14] hover:text-white">Arquitectura</a>
+            <a href="#agrivoltaica" data-nav="agrivoltaica" class="nav-pill whitespace-nowrap rounded-full border border-white/[0.08] bg-white/[0.04] px-3 py-2 text-muted transition hover:border-white/[0.14] hover:text-white">Agrivoltaica</a>
+            <a href="#piloto" data-nav="piloto" class="nav-pill whitespace-nowrap rounded-full border border-white/[0.08] bg-white/[0.04] px-3 py-2 text-muted transition hover:border-white/[0.14] hover:text-white">Piloto</a>
+            <a href="#diferencial" data-nav="diferencial" class="nav-pill whitespace-nowrap rounded-full border border-white/[0.08] bg-white/[0.04] px-3 py-2 text-muted transition hover:border-white/[0.14] hover:text-white">Diferencial</a>
+            <a href="#contacto" data-nav="contacto" class="nav-pill whitespace-nowrap rounded-full border border-white/[0.08] bg-white/[0.04] px-3 py-2 text-muted transition hover:border-white/[0.14] hover:text-white">Contacto</a>
+          </nav>
+        </div>
+      </header>
+
+      <main>
+        <section id="hero" class="relative">
+          <div class="mx-auto grid max-w-7xl gap-12 px-4 py-16 sm:px-6 sm:py-20 lg:grid-cols-[1.05fr,0.95fr] lg:px-8 lg:py-24">
+            <div class="reveal flex flex-col justify-center">
+              <span class="mb-5 inline-flex w-fit items-center gap-2 rounded-full border border-white/10 bg-white/[0.05] px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.3em] text-mintSoft">
+                <span class="h-2 w-2 rounded-full bg-mint"></span>
+                Agricultura inteligente Qartia
+              </span>
+              <h1 class="max-w-4xl font-display text-4xl font-semibold leading-[1.02] text-white sm:text-5xl lg:text-7xl">
+                De explotación agrícola a sistema inteligente
+              </h1>
+              <p class="mt-6 max-w-2xl text-lg leading-8 text-muted sm:text-xl">
+                Qartia transforma el cultivo en un sistema conectado, predictivo y energéticamente eficiente mediante IoT, inteligencia artificial, gemelo digital y redes privadas.
+              </p>
+              <div class="mt-8 flex flex-col gap-3 sm:flex-row">
+                <a
+                  href="mailto:antoniojavier.garcia@qartia.com?subject=Solicitar%20piloto%20Qartia%20Agricultura"
+                  class="inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-mint to-electric px-5 py-3 text-sm font-semibold text-slate-950 transition duration-300 hover:-translate-y-[1px] hover:shadow-[0_10px_30px_rgba(34,184,255,0.22)]"
+                >
+                  <span>Solicitar piloto</span>
+                  <span aria-hidden="true">→</span>
+                </a>
+                <a
+                  href="#capacidades"
+                  class="inline-flex items-center justify-center gap-2 rounded-full border border-white/[0.12] bg-white/[0.06] px-5 py-3 text-sm font-semibold text-ink transition duration-300 hover:border-white/20 hover:bg-white/10"
+                >
+                  <span>Ver capacidades</span>
+                  <span aria-hidden="true">→</span>
+                </a>
+              </div>
+              <div class="mt-8 flex flex-wrap gap-3">
+                <span class="rounded-full border border-white/10 bg-white/[0.04] px-4 py-2 text-sm font-medium text-white/[0.84]">IoT</span>
+                <span class="rounded-full border border-white/10 bg-white/[0.04] px-4 py-2 text-sm font-medium text-white/[0.84]">IA</span>
+                <span class="rounded-full border border-white/10 bg-white/[0.04] px-4 py-2 text-sm font-medium text-white/[0.84]">Gemelo Digital</span>
+                <span class="rounded-full border border-white/10 bg-white/[0.04] px-4 py-2 text-sm font-medium text-white/[0.84]">Agrivoltaica</span>
+                <span class="rounded-full border border-white/10 bg-white/[0.04] px-4 py-2 text-sm font-medium text-white/[0.84]">Red Privada</span>
+              </div>
+              <div class="mt-10 grid gap-4 sm:grid-cols-3">
+                <div class="rounded-3xl border border-white/10 bg-white/[0.04] p-4">
+                  <p class="text-xs uppercase tracking-[0.24em] text-mintSoft">Cultivo</p>
+                  <p class="mt-3 text-sm text-white/[0.76]">Señales agronómicas y energéticas en una misma capa operativa.</p>
+                </div>
+                <div class="rounded-3xl border border-white/10 bg-white/[0.04] p-4">
+                  <p class="text-xs uppercase tracking-[0.24em] text-electricSoft">Operación</p>
+                  <p class="mt-3 text-sm text-white/[0.76]">Alertas, recomendaciones y automatización orientadas a impacto medible.</p>
+                </div>
+                <div class="rounded-3xl border border-white/10 bg-white/[0.04] p-4">
+                  <p class="text-xs uppercase tracking-[0.24em] text-mintSoft">Infraestructura</p>
+                  <p class="mt-3 text-sm text-white/[0.76]">Red privada, edge y cloud para despliegues rurales robustos.</p>
+                </div>
               </div>
             </div>
-          `;
-        }
 
-        return html`
-          <div className=${cn(
-            "relative overflow-hidden rounded-[28px] border border-dashed border-white/[0.14] bg-gradient-to-br from-white/[0.07] to-white/[0.02] shadow-glow",
-            tall ? "min-h-[380px]" : "min-h-[320px]"
-          )}>
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(34,184,255,0.2),transparent_25%),radial-gradient(circle_at_bottom_left,rgba(77,242,162,0.16),transparent_28%)]"></div>
-            <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:32px_32px] opacity-50"></div>
-            <div className="relative flex h-full flex-col justify-between p-6">
-              <div>
-                <span className="inline-flex rounded-full border border-white/[0.12] bg-white/[0.08] px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.24em] text-mintSoft">
-                  Placeholder
-                </span>
-                <h3 className="mt-4 font-display text-2xl font-semibold text-white">${title}</h3>
-                <p className="mt-3 max-w-lg text-sm leading-6 text-muted">${note}</p>
-              </div>
-              <div className="flex items-center gap-3 text-sm text-white/70">
-                <span className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/[0.08]">
-                  <${ChevronRight} className="h-5 w-5 text-electric" />
-                </span>
-                <span>${label}</span>
+            <div class="reveal relative" style="transition-delay: 80ms">
+              <div class="absolute -inset-6 bg-[radial-gradient(circle_at_center,rgba(34,184,255,0.26),transparent_42%)] blur-3xl"></div>
+              <div class="relative overflow-hidden rounded-[32px] border border-white/10 bg-panel shadow-glow">
+                <!-- Sustituir por imagen final hero de invernadero o agricultura tecnológica -->
+                <img
+                  src="assets/linkedin-news/greenhouse-1.jpg"
+                  alt="Invernadero o agricultura tecnológica de Qartia"
+                  class="h-full min-h-[420px] w-full object-cover"
+                />
+                <div class="absolute inset-0 bg-gradient-to-br from-forest/[0.25] via-transparent to-forest/[0.8]"></div>
+                <div class="absolute left-5 right-5 top-5 flex items-start justify-between gap-4">
+                  <div class="rounded-2xl border border-white/10 bg-forest/[0.7] px-4 py-3 backdrop-blur">
+                    <p class="text-[11px] uppercase tracking-[0.28em] text-mintSoft">Cultivo conectado</p>
+                    <p class="mt-2 text-sm text-white/[0.8]">Sensores, infraestructura, energía y dato agronómico integrados.</p>
+                  </div>
+                  <div class="rounded-2xl border border-white/10 bg-forest/[0.72] px-4 py-3 text-right backdrop-blur">
+                    <p class="text-[11px] uppercase tracking-[0.28em] text-electricSoft">Operación</p>
+                    <p class="mt-2 text-2xl font-semibold text-white">24/7</p>
+                  </div>
+                </div>
+                <div class="absolute bottom-5 left-5 right-5">
+                  <div class="grid gap-3 sm:grid-cols-2">
+                    <div class="rounded-2xl border border-white/10 bg-white/[0.07] px-4 py-4 backdrop-blur">
+                      <p class="text-[11px] uppercase tracking-[0.28em] text-white/[0.58]">Capa edge</p>
+                      <p class="mt-2 text-sm leading-6 text-white/[0.8]">Procesamiento local para continuidad operativa, baja latencia y resiliencia en campo.</p>
+                    </div>
+                    <div class="rounded-2xl border border-white/10 bg-white/[0.07] px-4 py-4 backdrop-blur">
+                      <p class="text-[11px] uppercase tracking-[0.28em] text-white/[0.58]">Pilot-first</p>
+                      <p class="mt-2 text-sm leading-6 text-white/[0.8]">Diseñado para validar riego, producción, energía y retorno económico desde el piloto.</p>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
-        `;
-      }
+        </section>
 
-      function AgricultureLanding() {
-        const [activeSection, setActiveSection] = useState("impacto");
-
-        useEffect(() => {
-          const sections = Array.from(document.querySelectorAll("[data-section]"));
-          const observer = new IntersectionObserver(
-            (entries) => {
-              const visibleEntry = entries
-                .filter((entry) => entry.isIntersecting)
-                .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
-              if (visibleEntry) {
-                setActiveSection(visibleEntry.target.id);
-              }
-            },
-            {
-              rootMargin: "-40% 0px -45% 0px",
-              threshold: [0.2, 0.45, 0.7],
-            }
-          );
-
-          sections.forEach((section) => observer.observe(section));
-          return () => observer.disconnect();
-        }, []);
-
-        return html`
-          <div className="relative min-h-screen overflow-x-clip bg-forest">
-            <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(34,184,255,0.18),transparent_24%),radial-gradient(circle_at_82%_8%,rgba(77,242,162,0.15),transparent_22%),radial-gradient(circle_at_bottom_right,rgba(255,255,255,0.05),transparent_18%)]"></div>
-            <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.025)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.025)_1px,transparent_1px)] bg-[size:76px_76px] opacity-35"></div>
-
-            <header className="sticky top-0 z-50 border-b border-white/[0.08] bg-forest/[0.82] backdrop-blur-xl">
-              <div className="mx-auto flex max-w-7xl flex-col gap-4 px-4 py-4 sm:px-6 lg:px-8">
-                <div className="flex items-center justify-between gap-4">
-                  <a href="index.html" className="flex items-center gap-3">
-                    <img
-                      src="https://qartia.com/wp-content/uploads/2022/11/logo-qartia.png"
-                      alt="Qartia Smart Technologies"
-                      className="h-9 w-auto"
-                    />
-                    <div className="hidden sm:block">
-                      <p className="font-display text-xs uppercase tracking-[0.28em] text-mintSoft">Agricultura inteligente</p>
-                      <p className="text-sm text-muted">Landing comercial premium</p>
-                    </div>
-                  </a>
-                  <div className="flex items-center gap-3">
-                    <a
-                      href="mailto:antoniojavier.garcia@qartia.com?subject=Solicitar%20piloto%20Qartia%20Agricultura"
-                      className="hidden rounded-full border border-white/10 px-4 py-2 text-sm font-semibold text-white transition hover:border-white/20 hover:bg-white/[0.08] sm:inline-flex"
-                    >
-                      Solicitar piloto
-                    </a>
-                    <a
-                      href="#capacidades"
-                      className="inline-flex rounded-full bg-white/[0.08] px-4 py-2 text-sm font-semibold text-white transition hover:bg-white/[0.12]"
-                    >
-                      Ver capacidades
-                    </a>
-                  </div>
+        <section id="impacto" data-section class="relative border-t border-white/[0.06]">
+          <div class="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
+            <div class="reveal max-w-3xl">
+              <span class="mb-4 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.06] px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.28em] text-mintSoft">
+                <span class="h-2 w-2 rounded-full bg-mint"></span>
+                Impacto operativo
+              </span>
+              <h2 class="font-display text-3xl font-semibold leading-tight text-white sm:text-4xl lg:text-[2.7rem]">
+                Impacto operativo medible
+              </h2>
+              <p class="mt-4 text-base leading-7 text-muted sm:text-lg">
+                Qartia diseña pilotos para convertir señales de cultivo, infraestructura y energía en mejoras operativas verificables.
+              </p>
+            </div>
+            <div class="mt-10 grid gap-5 sm:grid-cols-2 xl:grid-cols-4">
+              <div class="reveal relative overflow-hidden rounded-[28px] border border-white/10 bg-panelSoft p-6 shadow-glow">
+                <div class="absolute inset-0 bg-gradient-to-br from-mint/[0.18] via-mint/[0.08] to-transparent"></div>
+                <div class="relative">
+                  <p class="font-display text-4xl font-semibold text-white">↓ 30%</p>
+                  <p class="mt-3 text-lg font-semibold text-white/[0.92]">Consumo de agua</p>
                 </div>
-                <nav className="flex gap-2 overflow-x-auto pb-1 text-sm scrollbar-none" aria-label="Secciones">
-                  ${navSections.map(
-                    (section) => html`
-                      <a
-                        key=${section.id}
-                        href=${"#" + section.id}
-                        className=${cn(
-                          "whitespace-nowrap rounded-full border px-3 py-2 transition",
-                          activeSection === section.id
-                            ? "border-electric/60 bg-electric/[0.14] text-white"
-                            : "border-white/[0.08] bg-white/[0.04] text-muted hover:border-white/[0.14] hover:text-white"
-                        )}
-                      >
-                        ${section.label}
-                      </a>
-                    `
-                  )}
-                </nav>
               </div>
-            </header>
-
-            <main>
-              <section id="hero" className="relative">
-                <div className="mx-auto grid max-w-7xl gap-12 px-4 py-16 sm:px-6 sm:py-20 lg:grid-cols-[1.05fr,0.95fr] lg:px-8 lg:py-24">
-                  <${Reveal} className="flex flex-col justify-center">
-                    <span className="mb-5 inline-flex w-fit items-center gap-2 rounded-full border border-white/10 bg-white/[0.05] px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.3em] text-mintSoft">
-                      <span className="h-2 w-2 rounded-full bg-mint"></span>
-                      Agricultura inteligente Qartia
-                    </span>
-                    <h1 className="max-w-4xl font-display text-4xl font-semibold leading-[1.02] text-white sm:text-5xl lg:text-7xl">
-                      De explotaci\u00f3n agr\u00edcola a sistema inteligente
-                    </h1>
-                    <p className="mt-6 max-w-2xl text-lg leading-8 text-muted sm:text-xl">
-                      Qartia transforma el cultivo en un sistema conectado, predictivo y energ\u00e9ticamente eficiente mediante IoT, inteligencia artificial, gemelo digital y redes privadas.
-                    </p>
-                    <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-                      <${Button} href="mailto:antoniojavier.garcia@qartia.com?subject=Solicitar%20piloto%20Qartia%20Agricultura">
-                        Solicitar piloto
-                      </${Button}>
-                      <${Button} href="#capacidades" variant="secondary">
-                        Ver capacidades
-                      </${Button}>
-                    </div>
-                    <div className="mt-8 flex flex-wrap gap-3">
-                      ${heroBadges.map(
-                        (badge) => html`
-                          <span key=${badge} className="rounded-full border border-white/10 bg-white/[0.04] px-4 py-2 text-sm font-medium text-white/[0.84]">
-                            ${badge}
-                          </span>
-                        `
-                      )}
-                    </div>
-                    <div className="mt-10 grid gap-4 sm:grid-cols-3">
-                      <div className="rounded-3xl border border-white/10 bg-white/[0.04] p-4">
-                        <p className="text-xs uppercase tracking-[0.24em] text-mintSoft">Cultivo</p>
-                        <p className="mt-3 text-sm text-white/[0.76]">Se\u00f1ales agron\u00f3micas y energ\u00e9ticas en una misma capa operativa.</p>
-                      </div>
-                      <div className="rounded-3xl border border-white/10 bg-white/[0.04] p-4">
-                        <p className="text-xs uppercase tracking-[0.24em] text-electricSoft">Operaci\u00f3n</p>
-                        <p className="mt-3 text-sm text-white/[0.76]">Alertas, recomendaciones y automatizaci\u00f3n orientadas a impacto medible.</p>
-                      </div>
-                      <div className="rounded-3xl border border-white/10 bg-white/[0.04] p-4">
-                        <p className="text-xs uppercase tracking-[0.24em] text-mintSoft">Infraestructura</p>
-                        <p className="mt-3 text-sm text-white/[0.76]">Red privada, edge y cloud para despliegues rurales robustos.</p>
-                      </div>
-                    </div>
-                  </${Reveal}>
-
-                  <${Reveal} delay=${0.1} className="relative">
-                    <div className="absolute -inset-6 bg-[radial-gradient(circle_at_center,rgba(34,184,255,0.26),transparent_42%)] blur-3xl"></div>
-                    <div className="relative overflow-hidden rounded-[32px] border border-white/10 bg-panel shadow-glow">
-                      <img
-                        src=${IMAGE_ASSETS.hero}
-                        alt="Invernadero o agricultura tecnol\u00f3gica de Qartia"
-                        className="h-full min-h-[420px] w-full object-cover"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-br from-forest/[0.25] via-transparent to-forest/[0.8]"></div>
-                      <div className="absolute left-5 right-5 top-5 flex items-start justify-between gap-4">
-                        <div className="rounded-2xl border border-white/10 bg-forest/[0.7] px-4 py-3 backdrop-blur">
-                          <p className="text-[11px] uppercase tracking-[0.28em] text-mintSoft">Cultivo conectado</p>
-                          <p className="mt-2 text-sm text-white/[0.8]">Sensores, infraestructura, energ\u00eda y dato agron\u00f3mico integrados.</p>
-                        </div>
-                        <div className="rounded-2xl border border-white/10 bg-forest/[0.72] px-4 py-3 text-right backdrop-blur">
-                          <p className="text-[11px] uppercase tracking-[0.28em] text-electricSoft">Operaci\u00f3n</p>
-                          <p className="mt-2 text-2xl font-semibold text-white">24/7</p>
-                        </div>
-                      </div>
-                      <div className="absolute bottom-5 left-5 right-5">
-                        <div className="grid gap-3 sm:grid-cols-2">
-                          <div className="rounded-2xl border border-white/10 bg-white/[0.07] px-4 py-4 backdrop-blur">
-                            <p className="text-[11px] uppercase tracking-[0.28em] text-white/[0.58]">Capa edge</p>
-                            <p className="mt-2 text-sm leading-6 text-white/[0.8]">Procesamiento local para continuidad operativa, baja latencia y resiliencia en campo.</p>
-                          </div>
-                          <div className="rounded-2xl border border-white/10 bg-white/[0.07] px-4 py-4 backdrop-blur">
-                            <p className="text-[11px] uppercase tracking-[0.28em] text-white/[0.58]">Pilot-first</p>
-                            <p className="mt-2 text-sm leading-6 text-white/[0.8]">Dise\u00f1ado para validar riego, producci\u00f3n, energ\u00eda y retorno econ\u00f3mico desde el piloto.</p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </${Reveal}>
+              <div class="reveal relative overflow-hidden rounded-[28px] border border-white/10 bg-panelSoft p-6 shadow-glow" style="transition-delay: 60ms">
+                <div class="absolute inset-0 bg-gradient-to-br from-electric/[0.18] via-electric/[0.08] to-transparent"></div>
+                <div class="relative">
+                  <p class="font-display text-4xl font-semibold text-white">↑ 20%</p>
+                  <p class="mt-3 text-lg font-semibold text-white/[0.92]">Producción potencial</p>
                 </div>
-              </section>
+              </div>
+              <div class="reveal relative overflow-hidden rounded-[28px] border border-white/10 bg-panelSoft p-6 shadow-glow" style="transition-delay: 120ms">
+                <div class="absolute inset-0 bg-gradient-to-br from-white/[0.12] via-white/[0.05] to-transparent"></div>
+                <div class="relative">
+                  <p class="font-display text-4xl font-semibold text-white">↓ Coste operativo</p>
+                  <p class="mt-3 text-lg font-semibold text-white/[0.92]">Optimización de recursos</p>
+                </div>
+              </div>
+              <div class="reveal relative overflow-hidden rounded-[28px] border border-white/10 bg-panelSoft p-6 shadow-glow" style="transition-delay: 180ms">
+                <div class="absolute inset-0 bg-gradient-to-br from-mint/[0.18] via-electric/[0.08] to-transparent"></div>
+                <div class="relative">
+                  <p class="font-display text-4xl font-semibold text-white">ROI en meses</p>
+                  <p class="mt-3 text-lg font-semibold text-white/[0.92]">Piloto con impacto medible</p>
+                </div>
+              </div>
+            </div>
+            <p class="mt-6 max-w-3xl text-sm leading-6 text-muted">
+              Los valores son estimaciones orientativas y deben validarse en piloto según cultivo, ubicación e infraestructura.
+            </p>
+          </div>
+        </section>
 
-              <section id="impacto" data-section className="relative border-t border-white/[0.06]">
-                <div className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
-                  <${Reveal}>
-                    <${SectionTitle}
-                      eyebrow="Impacto operativo"
-                      title="Impacto operativo medible"
-                      copy="Qartia diseña pilotos para convertir señales de cultivo, infraestructura y energía en mejoras operativas verificables."
-                    />
-                  </${Reveal}>
-                  <div className="mt-10 grid gap-5 sm:grid-cols-2 xl:grid-cols-4">
-                    ${kpis.map(
-                      (item, index) => html`
-                        <${Reveal} key=${item.label} delay=${index * 0.05}>
-                          <${motion.div}
-                            whileHover=${{ y: -6 }}
-                            transition=${{ duration: 0.24 }}
-                            className="relative overflow-hidden rounded-[28px] border border-white/10 bg-panelSoft p-6 shadow-glow"
-                          >
-                            <div className=${cn("absolute inset-0 bg-gradient-to-br", item.tone)}></div>
-                            <div className="relative">
-                              <p className="font-display text-4xl font-semibold text-white">${item.value}</p>
-                              <p className="mt-3 text-lg font-semibold text-white/[0.92]">${item.label}</p>
-                            </div>
-                          </${motion.div}>
-                        </${Reveal}>
-                      `
-                    )}
-                  </div>
-                  <p className="mt-6 max-w-3xl text-sm leading-6 text-muted">
-                    Los valores son estimaciones orientativas y deben validarse en piloto seg\u00fan cultivo, ubicaci\u00f3n e infraestructura.
+        <section id="problema" data-section class="relative border-t border-white/[0.06]">
+          <div class="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
+            <div class="reveal max-w-3xl">
+              <span class="mb-4 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.06] px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.28em] text-mintSoft">
+                <span class="h-2 w-2 rounded-full bg-mint"></span>
+                Problema
+              </span>
+              <h2 class="font-display text-3xl font-semibold leading-tight text-white sm:text-4xl lg:text-[2.7rem]">
+                El campo opera con poca visibilidad en tiempo real
+              </h2>
+            </div>
+            <div class="mt-10 grid gap-5 md:grid-cols-2 xl:grid-cols-5">
+              <div class="reveal rounded-[26px] border border-white/10 bg-white/[0.03] p-6 transition hover:-translate-y-1.5">
+                <h3 class="font-display text-xl font-semibold text-white">Decisiones reactivas</h3>
+                <p class="mt-3 text-sm leading-6 text-muted">La explotación responde tarde porque el dato llega fragmentado o directamente no llega.</p>
+              </div>
+              <div class="reveal rounded-[26px] border border-white/10 bg-white/[0.03] p-6 transition hover:-translate-y-1.5" style="transition-delay: 60ms">
+                <h3 class="font-display text-xl font-semibold text-white">Uso ineficiente de agua y fertilizantes</h3>
+                <p class="mt-3 text-sm leading-6 text-muted">El ajuste operativo se basa en intuición o reglas fijas, no en condiciones reales de campo.</p>
+              </div>
+              <div class="reveal rounded-[26px] border border-white/10 bg-white/[0.03] p-6 transition hover:-translate-y-1.5" style="transition-delay: 120ms">
+                <h3 class="font-display text-xl font-semibold text-white">Dependencia de conectividad limitada</h3>
+                <p class="mt-3 text-sm leading-6 text-muted">Cobertura irregular, dependencia de operador y falta de fiabilidad en zonas remotas.</p>
+              </div>
+              <div class="reveal rounded-[26px] border border-white/10 bg-white/[0.03] p-6 transition hover:-translate-y-1.5" style="transition-delay: 180ms">
+                <h3 class="font-display text-xl font-semibold text-white">Dificultad para anticipar estrés del cultivo</h3>
+                <p class="mt-3 text-sm leading-6 text-muted">La detección de desvíos llega cuando el impacto productivo ya es visible.</p>
+              </div>
+              <div class="reveal rounded-[26px] border border-white/10 bg-white/[0.03] p-6 transition hover:-translate-y-1.5" style="transition-delay: 240ms">
+                <h3 class="font-display text-xl font-semibold text-white">Falta de integración entre energía, riego y producción</h3>
+                <p class="mt-3 text-sm leading-6 text-muted">Los sistemas operan en silos y no maximizan ni rendimiento agrícola ni eficiencia energética.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="solucion" data-section class="relative border-t border-white/[0.06]">
+          <div class="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
+            <div class="grid gap-10 lg:grid-cols-[0.9fr,1.1fr]">
+              <div class="reveal max-w-3xl">
+                <span class="mb-4 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.06] px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.28em] text-mintSoft">
+                  <span class="h-2 w-2 rounded-full bg-mint"></span>
+                  Solución Qartia
+                </span>
+                <h2 class="font-display text-3xl font-semibold leading-tight text-white sm:text-4xl lg:text-[2.7rem]">
+                  Del dato agrícola a la acción operativa
+                </h2>
+                <p class="mt-4 text-base leading-7 text-muted sm:text-lg">
+                  Qartia conecta captura, conectividad, IA y automatización para que la explotación opere con más control, menos incertidumbre y mejor rentabilidad.
+                </p>
+              </div>
+              <div class="grid gap-5 sm:grid-cols-2">
+                <div class="reveal rounded-[28px] border border-white/10 bg-panel p-6 shadow-panel transition hover:-translate-y-1.5">
+                  <span class="font-display text-sm font-semibold tracking-[0.28em] text-mintSoft">01</span>
+                  <h3 class="mt-6 font-display text-2xl font-semibold text-white">Captura inteligente</h3>
+                  <p class="mt-4 text-sm leading-6 text-muted">Sensores IoT de suelo, ambiente, radiación, CO₂, humedad y temperatura.</p>
+                </div>
+                <div class="reveal rounded-[28px] border border-white/10 bg-panel p-6 shadow-panel transition hover:-translate-y-1.5" style="transition-delay: 60ms">
+                  <span class="font-display text-sm font-semibold tracking-[0.28em] text-mintSoft">02</span>
+                  <h3 class="mt-6 font-display text-2xl font-semibold text-white">Conectividad privada</h3>
+                  <p class="mt-4 text-sm leading-6 text-muted">Redes privadas inalámbricas robustas para entornos rurales, sin dependencia de operador.</p>
+                </div>
+                <div class="reveal rounded-[28px] border border-white/10 bg-panel p-6 shadow-panel transition hover:-translate-y-1.5" style="transition-delay: 120ms">
+                  <span class="font-display text-sm font-semibold tracking-[0.28em] text-mintSoft">03</span>
+                  <h3 class="mt-6 font-display text-2xl font-semibold text-white">Inteligencia predictiva</h3>
+                  <p class="mt-4 text-sm leading-6 text-muted">Modelos de IA para anticipar riego, fertilización, estrés hídrico y condiciones críticas.</p>
+                </div>
+                <div class="reveal rounded-[28px] border border-white/10 bg-panel p-6 shadow-panel transition hover:-translate-y-1.5" style="transition-delay: 180ms">
+                  <span class="font-display text-sm font-semibold tracking-[0.28em] text-mintSoft">04</span>
+                  <h3 class="mt-6 font-display text-2xl font-semibold text-white">Acción y optimización</h3>
+                  <p class="mt-4 text-sm leading-6 text-muted">Recomendaciones operativas, automatización y mejora continua del cultivo.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="capacidades" data-section class="relative border-t border-white/[0.06]">
+          <div class="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
+            <div class="reveal max-w-3xl">
+              <span class="mb-4 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.06] px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.28em] text-mintSoft">
+                <span class="h-2 w-2 rounded-full bg-mint"></span>
+                Capacidades clave
+              </span>
+              <h2 class="font-display text-3xl font-semibold leading-tight text-white sm:text-4xl lg:text-[2.7rem]">
+                Capacidades clave
+              </h2>
+            </div>
+            <div class="mt-10 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+              <div class="reveal rounded-[28px] border border-white/10 bg-white/[0.03] p-6 transition hover:-translate-y-1.5">
+                <h3 class="font-display text-xl font-semibold text-white">Monitorización 24/7</h3>
+                <p class="mt-3 text-sm leading-6 text-muted">Seguimiento continuo del cultivo, microclima e infraestructura.</p>
+              </div>
+              <div class="reveal rounded-[28px] border border-white/10 bg-white/[0.03] p-6 transition hover:-translate-y-1.5" style="transition-delay: 60ms">
+                <h3 class="font-display text-xl font-semibold text-white">IA predictiva</h3>
+                <p class="mt-3 text-sm leading-6 text-muted">Predicción de necesidades hídricas, nutricionales y energéticas.</p>
+              </div>
+              <div class="reveal rounded-[28px] border border-white/10 bg-white/[0.03] p-6 transition hover:-translate-y-1.5" style="transition-delay: 120ms">
+                <h3 class="font-display text-xl font-semibold text-white">Gemelo digital</h3>
+                <p class="mt-3 text-sm leading-6 text-muted">Simulación de escenarios para optimizar decisiones sin riesgo operativo.</p>
+              </div>
+              <div class="reveal rounded-[28px] border border-white/10 bg-white/[0.03] p-6 transition hover:-translate-y-1.5" style="transition-delay: 180ms">
+                <h3 class="font-display text-xl font-semibold text-white">Agrivoltaica</h3>
+                <p class="mt-3 text-sm leading-6 text-muted">Balance entre generación solar, sombra, luz disponible y rendimiento agrícola.</p>
+              </div>
+              <div class="reveal rounded-[28px] border border-white/10 bg-white/[0.03] p-6 transition hover:-translate-y-1.5" style="transition-delay: 240ms">
+                <h3 class="font-display text-xl font-semibold text-white">Red privada Qartia</h3>
+                <p class="mt-3 text-sm leading-6 text-muted">Conectividad fiable en explotaciones agrícolas, invernaderos y zonas remotas.</p>
+              </div>
+              <div class="reveal rounded-[28px] border border-white/10 bg-white/[0.03] p-6 transition hover:-translate-y-1.5" style="transition-delay: 300ms">
+                <h3 class="font-display text-xl font-semibold text-white">Optimización de recursos</h3>
+                <p class="mt-3 text-sm leading-6 text-muted">Reducción de agua, fertilizantes, energía y costes operativos.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="arquitectura" data-section class="relative border-t border-white/[0.06]">
+          <div class="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
+            <div class="grid gap-12 lg:grid-cols-[1.1fr,0.9fr] lg:items-center">
+              <div>
+                <div class="reveal max-w-3xl">
+                  <span class="mb-4 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.06] px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.28em] text-mintSoft">
+                    <span class="h-2 w-2 rounded-full bg-mint"></span>
+                    Arquitectura técnica
+                  </span>
+                  <h2 class="font-display text-3xl font-semibold leading-tight text-white sm:text-4xl lg:text-[2.7rem]">
+                    Edge + red privada + IA
+                  </h2>
+                  <p class="mt-4 text-base leading-7 text-muted sm:text-lg">
+                    La plataforma puede desplegarse en cloud, on-premise o arquitectura híbrida, integrándose con sensórica existente o con despliegue propio Qartia.
                   </p>
                 </div>
-              </section>
-
-              <section id="problema" data-section className="relative border-t border-white/[0.06]">
-                <div className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
-                  <${Reveal}>
-                    <${SectionTitle}
-                      eyebrow="Problema"
-                      title="El campo opera con poca visibilidad en tiempo real"
-                      copy="La falta de dato operativo unificado retrasa decisiones, eleva consumos y limita el rendimiento económico de la explotación."
-                    />
-                  </${Reveal}>
-                  <div className="mt-10 grid gap-5 md:grid-cols-2 xl:grid-cols-5">
-                    ${problems.map(
-                      (item, index) => html`
-                        <${Reveal} key=${item.title} delay=${index * 0.05}>
-                          <${motion.div}
-                            whileHover=${{ y: -6 }}
-                            transition=${{ duration: 0.24 }}
-                            className="flex h-full flex-col rounded-[26px] border border-white/10 bg-white/[0.03] p-6"
-                          >
-                            <div className="inline-flex h-12 w-12 items-center justify-center rounded-2xl border border-white/10 bg-white/[0.06]">
-                              <${item.icon} className="h-5 w-5 text-electricSoft" />
-                            </div>
-                            <h3 className="mt-5 font-display text-xl font-semibold text-white">${item.title}</h3>
-                            <p className="mt-3 text-sm leading-6 text-muted">${item.copy}</p>
-                          </${motion.div}>
-                        </${Reveal}>
-                      `
-                    )}
+                <div class="reveal mt-10 rounded-[32px] border border-white/10 bg-panel p-6 shadow-panel" style="transition-delay: 80ms">
+                  <div class="grid gap-4 lg:grid-cols-[repeat(5,minmax(0,1fr))] lg:items-center">
+                    <div class="rounded-[24px] border border-white/10 bg-white/[0.04] p-5 text-center">
+                      <p class="text-sm font-semibold text-white">Sensores IoT</p>
+                    </div>
+                    <div class="text-center text-white/30">→</div>
+                    <div class="rounded-[24px] border border-white/10 bg-white/[0.04] p-5 text-center">
+                      <p class="text-sm font-semibold text-white">Red privada</p>
+                    </div>
+                    <div class="text-center text-white/30">→</div>
+                    <div class="rounded-[24px] border border-white/10 bg-white/[0.04] p-5 text-center">
+                      <p class="text-sm font-semibold text-white">Edge / Cloud</p>
+                    </div>
                   </div>
-                </div>
-              </section>
-
-              <section id="solucion" data-section className="relative border-t border-white/[0.06]">
-                <div className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
-                  <div className="grid gap-10 lg:grid-cols-[0.9fr,1.1fr] lg:items-start">
-                    <${Reveal}>
-                      <${SectionTitle}
-                        eyebrow="Solución Qartia"
-                        title="Del dato agrícola a la acción operativa"
-                        copy="Qartia conecta captura, conectividad, IA y automatización para que la explotación opere con más control, menos incertidumbre y mejor rentabilidad."
-                      />
-                    </${Reveal}>
-                    <div className="grid gap-5 sm:grid-cols-2">
-                    ${solutionSteps.map(
-                      (step, index) => html`
-                          <${Reveal} key=${step.number} delay=${index * 0.06}>
-                            <${motion.div}
-                              whileHover=${{ y: -6 }}
-                              transition=${{ duration: 0.24 }}
-                              className="h-full rounded-[28px] border border-white/10 bg-panel p-6 shadow-panel"
-                            >
-                              <div className="flex items-center justify-between gap-4">
-                                <span className="font-display text-sm font-semibold tracking-[0.28em] text-mintSoft">${step.number}</span>
-                                <span className="inline-flex h-11 w-11 items-center justify-center rounded-2xl border border-white/10 bg-white/[0.06]">
-                                  <${step.icon} className="h-5 w-5 text-electricSoft" />
-                                </span>
-                              </div>
-                              <h3 className="mt-6 font-display text-2xl font-semibold text-white">${step.title}</h3>
-                              <p className="mt-4 text-sm leading-6 text-muted">${step.copy}</p>
-                            </${motion.div}>
-                          </${Reveal}>
-                        `
-                      )}
+                  <div class="mt-4 grid gap-4 lg:grid-cols-[2fr,1fr,2fr] lg:items-center">
+                    <div class="rounded-[24px] border border-white/10 bg-white/[0.04] p-5 text-center">
+                      <p class="text-sm font-semibold text-white">IA + Gemelo Digital</p>
+                    </div>
+                    <div class="text-center text-white/30">→</div>
+                    <div class="rounded-[24px] border border-white/10 bg-white/[0.04] p-5 text-center">
+                      <p class="text-sm font-semibold text-white">Dashboard / Actuadores</p>
                     </div>
                   </div>
                 </div>
-              </section>
+              </div>
 
-              <section id="capacidades" data-section className="relative border-t border-white/[0.06]">
-                <div className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
-                  <${Reveal}>
-                    <${SectionTitle}
-                      eyebrow="Capacidades clave"
-                      title="Capacidades clave"
-                      copy="Una plataforma agrícola pensada para capturar señal, conectarla, interpretarla y convertirla en decisiones rentables."
-                    />
-                  </${Reveal}>
-                  <div className="mt-10 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
-                    ${capabilities.map(
-                      (item, index) => html`
-                        <${Reveal} key=${item.title} delay=${index * 0.05}>
-                          <${motion.div}
-                            whileHover=${{ y: -6 }}
-                            transition=${{ duration: 0.24 }}
-                            className="h-full rounded-[28px] border border-white/10 bg-white/[0.03] p-6"
-                          >
-                            <div className="inline-flex h-12 w-12 items-center justify-center rounded-2xl border border-white/10 bg-white/[0.06]">
-                              <${item.icon} className="h-5 w-5 text-mint" />
-                            </div>
-                            <h3 className="mt-5 font-display text-xl font-semibold text-white">${item.title}</h3>
-                            <p className="mt-3 text-sm leading-6 text-muted">${item.copy}</p>
-                          </${motion.div}>
-                        </${Reveal}>
-                      `
-                    )}
+              <div class="reveal relative overflow-hidden rounded-[28px] border border-dashed border-white/[0.14] bg-gradient-to-br from-white/[0.07] to-white/[0.02] shadow-glow" style="transition-delay: 120ms">
+                <!-- Sustituir por imagen final de sensórica agrícola o electrónica Qartia en campo -->
+                <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(34,184,255,0.2),transparent_25%),radial-gradient(circle_at_bottom_left,rgba(77,242,162,0.16),transparent_28%)]"></div>
+                <div class="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:32px_32px] opacity-50"></div>
+                <div class="relative flex min-h-[380px] flex-col justify-between p-6">
+                  <div>
+                    <span class="inline-flex rounded-full border border-white/[0.12] bg-white/[0.08] px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.24em] text-mintSoft">
+                      Placeholder
+                    </span>
+                    <h3 class="mt-4 font-display text-2xl font-semibold text-white">Sensores, edge y conectividad listos para campo</h3>
+                    <p class="mt-3 max-w-lg text-sm leading-6 text-muted">
+                      Placeholder preparado para incorporar fotografía real de sensórica, nodos edge o electrónica desplegada por Qartia en explotación agrícola.
+                    </p>
+                  </div>
+                  <div class="flex items-center gap-3 text-sm text-white/70">
+                    <span class="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/[0.08]">→</span>
+                    <span>Sustituir por sensórica IoT</span>
                   </div>
                 </div>
-              </section>
-
-              <section id="arquitectura" data-section className="relative border-t border-white/[0.06]">
-                <div className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
-                  <div className="grid gap-12 lg:grid-cols-[1.1fr,0.9fr] lg:items-center">
-                    <div>
-                      <${Reveal}>
-                        <${SectionTitle}
-                          eyebrow="Arquitectura técnica"
-                          title="Edge + red privada + IA"
-                          copy="La plataforma puede desplegarse en cloud, on-premise o arquitectura híbrida, integrándose con sensórica existente o con despliegue propio Qartia."
-                        />
-                      </${Reveal}>
-                      <${Reveal} delay=${0.08} className="mt-10">
-                        <div className="rounded-[32px] border border-white/10 bg-panel p-6 shadow-panel">
-                          <div className="grid gap-4 lg:grid-cols-[repeat(5,minmax(0,1fr))] lg:items-center">
-                            ${architectureNodes.map(
-                              (node, index) => html`
-                                <div key=${node.title} className="contents">
-                                  <div className="rounded-[24px] border border-white/10 bg-white/[0.04] p-5 text-center">
-                                    <span className="mx-auto inline-flex h-12 w-12 items-center justify-center rounded-2xl border border-white/10 bg-white/[0.06]">
-                                      <${node.icon} className="h-5 w-5 text-electricSoft" />
-                                    </span>
-                                    <p className="mt-4 text-sm font-semibold text-white">${node.title}</p>
-                                  </div>
-                                  ${index < architectureNodes.length - 1
-                                    ? html`
-                                        <div className="flex justify-center lg:block">
-                                          <${ArrowRight} className="h-5 w-5 rotate-90 text-white/30 lg:mx-auto lg:rotate-0" />
-                                        </div>
-                                      `
-                                    : null}
-                                </div>
-                              `
-                            )}
-                          </div>
-                        </div>
-                      </${Reveal}>
-                    </div>
-
-                    <${Reveal} delay=${0.12}>
-                      <${AssetPanel}
-                        src=${IMAGE_ASSETS.sensors}
-                        alt="Placeholder para sensórica agrícola"
-                        label="Sustituir por sensórica IoT"
-                        title="Sensores, edge y conectividad listos para campo"
-                        note="Placeholder preparado para incorporar fotografía real de sensórica, nodos edge o electrónica desplegada por Qartia en explotación agrícola."
-                        tall=${true}
-                      />
-                    </${Reveal}>
-                  </div>
-                </div>
-              </section>
-
-              <section id="agrivoltaica" data-section className="relative border-t border-white/[0.06]">
-                <div className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
-                  <div className="grid gap-12 lg:grid-cols-[0.95fr,1.05fr] lg:items-center">
-                    <div>
-                      <${Reveal}>
-                        <${SectionTitle}
-                          eyebrow="Agrivoltaica"
-                          title="Agricultura y energía trabajando juntas"
-                          copy="Qartia permite diseñar y operar sistemas agrivoltaicos que equilibran producción agrícola y generación solar. Mediante simulación, IA y sensorización, la explotación puede avanzar hacia modelos de autoconsumo e independencia energética."
-                        />
-                      </${Reveal}>
-                      <${Reveal} delay=${0.08} className="mt-8">
-                        <div className="grid gap-4 sm:grid-cols-2">
-                          ${[
-                            "Simulación de configuraciones fotovoltaicas",
-                            "Balance luz–energía–cultivo",
-                            "Optimización de microclima",
-                            "Explotaciones energéticamente autónomas",
-                          ].map(
-                            (item) => html`
-                              <div key=${item} className="flex items-start gap-3 rounded-2xl border border-white/10 bg-white/[0.03] p-4">
-                                <span className="mt-0.5 inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-mint/20 bg-mint/10 text-mint">
-                                  <${ShieldCheck} className="h-4 w-4" />
-                                </span>
-                                <span className="text-sm leading-6 text-white/[0.84]">${item}</span>
-                              </div>
-                            `
-                          )}
-                        </div>
-                      </${Reveal}>
-                    </div>
-
-                    <${Reveal} delay=${0.12}>
-                      <${AssetPanel}
-                        src=${IMAGE_ASSETS.agrivoltaics}
-                        alt="Placeholder para agrivoltaica"
-                        label="Sustituir por paneles solares"
-                        title="Preparado para integrar visuales de agrivoltaica"
-                        note="Placeholder para incorporar imagen final de paneles solares, sombra dinámica o integración cultivo–energía en entornos agrícolas reales."
-                        tall=${true}
-                      />
-                    </${Reveal}>
-                  </div>
-                </div>
-              </section>
-
-              <section id="piloto" data-section className="relative border-t border-white/[0.06]">
-                <div className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
-                  <${Reveal}>
-                    <${SectionTitle}
-                      eyebrow="Caso de uso / piloto"
-                      title="Piloto ejecutivo en 4 fases"
-                      copy="El piloto se diseña para reducir incertidumbre técnica y validar impacto económico antes de escalar."
-                    />
-                  </${Reveal}>
-                  <div className="mt-10 grid gap-5 lg:grid-cols-4">
-                    ${pilotPhases.map(
-                      (phase, index) => html`
-                        <${Reveal} key=${phase.number} delay=${index * 0.05}>
-                          <${motion.div}
-                            whileHover=${{ y: -6 }}
-                            transition=${{ duration: 0.24 }}
-                            className="relative h-full rounded-[28px] border border-white/10 bg-panel p-6"
-                          >
-                            <span className="inline-flex h-12 w-12 items-center justify-center rounded-2xl border border-white/10 bg-white/[0.05] font-display text-lg font-semibold text-electricSoft">
-                              ${phase.number}
-                            </span>
-                            <h3 className="mt-5 font-display text-xl font-semibold text-white">${phase.title}</h3>
-                            <p className="mt-3 text-sm leading-6 text-muted">${phase.copy}</p>
-                          </${motion.div}>
-                        </${Reveal}>
-                      `
-                    )}
-                  </div>
-                </div>
-              </section>
-
-              <section id="diferencial" data-section className="relative border-t border-white/[0.06]">
-                <div className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
-                  <div className="grid gap-10 lg:grid-cols-[0.95fr,1.05fr] lg:items-start">
-                    <${Reveal}>
-                      <${SectionTitle}
-                        eyebrow="Diferencial Qartia"
-                        title="Por qué Qartia"
-                        copy="Qartia no es solo sensórica. Qartia integra tecnología, operación y enfoque de negocio para acelerar decisiones con impacto real."
-                      />
-                      <div className="mt-8 rounded-[30px] border border-red-500/20 bg-red-500/[0.06] p-6">
-                        <p className="font-display text-2xl font-semibold text-white">Qartia no es solo sensórica.</p>
-                        <p className="mt-3 text-sm leading-6 text-white/[0.72]">
-                          Diseñamos una capa integral que combina dato, conectividad, inteligencia, simulación y criterio operativo.
-                        </p>
-                      </div>
-                    </${Reveal}>
-
-                    <${Reveal} delay=${0.08}>
-                      <div className="rounded-[32px] border border-white/10 bg-panel p-8 shadow-panel">
-                        <p className="text-sm font-semibold uppercase tracking-[0.28em] text-mintSoft">Qartia integra</p>
-                        <div className="mt-6 grid gap-4 sm:grid-cols-2">
-                          ${differentiators.map(
-                            (item) => html`
-                              <div key=${item} className="flex items-center gap-3 rounded-2xl border border-white/10 bg-white/[0.03] px-4 py-4">
-                                <span className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-white/10 bg-white/[0.05]">
-                                  <${ChevronRight} className="h-4 w-4 text-electricSoft" />
-                                </span>
-                                <span className="text-sm font-semibold text-white/[0.88]">${item}</span>
-                              </div>
-                            `
-                          )}
-                        </div>
-                        <div className="mt-8 rounded-[24px] border border-mint/20 bg-gradient-to-r from-mint/10 via-electric/10 to-transparent p-5">
-                          <p className="font-display text-2xl font-semibold text-white">
-                            Una plataforma integral para convertir datos agrícolas en decisiones rentables.
-                          </p>
-                        </div>
-                      </div>
-                    </${Reveal}>
-                  </div>
-                </div>
-              </section>
-
-              <section id="contacto" data-section className="relative border-y border-white/[0.06]">
-                <div className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
-                  <${Reveal}>
-                    <div className="relative overflow-hidden rounded-[36px] border border-white/10 bg-panel shadow-glow">
-                      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(77,242,162,0.18),transparent_30%),radial-gradient(circle_at_bottom_right,rgba(34,184,255,0.22),transparent_34%)]"></div>
-                      <div className="relative grid gap-10 p-8 lg:grid-cols-[1fr,0.72fr] lg:p-12">
-                        <div>
-                          <span className="inline-flex rounded-full border border-white/10 bg-white/[0.05] px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.28em] text-mintSoft">
-                            CTA final
-                          </span>
-                          <h2 className="mt-5 font-display text-4xl font-semibold leading-tight text-white sm:text-5xl">
-                            Convierte tu explotaci\u00f3n en un sistema inteligente
-                          </h2>
-                          <p className="mt-5 max-w-2xl text-lg leading-8 text-muted">
-                            Solicita un piloto Qartia y valida el impacto técnico y económico en tu explotación.
-                          </p>
-                          <div className="mt-8">
-                            <${Button} href="mailto:antoniojavier.garcia@qartia.com?subject=Solicitar%20piloto%20Qartia%20Agricultura" className="w-full sm:w-auto">
-                              Solicitar piloto
-                            </${Button}>
-                          </div>
-                        </div>
-                        <div className="rounded-[28px] border border-white/10 bg-white/[0.04] p-6">
-                          <p className="text-sm font-semibold uppercase tracking-[0.28em] text-electricSoft">Contacto</p>
-                          <div className="mt-6 space-y-4 text-sm leading-7 text-white/[0.84]">
-                            <p>
-                              <span className="block text-white/[0.54]">Web</span>
-                              <a href="https://www.qartia.com" target="_blank" rel="noreferrer" className="text-white hover:text-mint">
-                                www.qartia.com
-                              </a>
-                            </p>
-                            <p>
-                              <span className="block text-white/[0.54]">Email</span>
-                              <a href="mailto:antoniojavier.garcia@qartia.com" className="text-white hover:text-mint">
-                                antoniojavier.garcia@qartia.com
-                              </a>
-                            </p>
-                            <p>
-                              <span className="block text-white/[0.54]">Teléfono</span>
-                              <a href="tel:+34686918522" className="text-white hover:text-mint">
-                                +34 686 918 522
-                              </a>
-                            </p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </${Reveal}>
-                </div>
-              </section>
-            </main>
+              </div>
+            </div>
           </div>
-        `;
-      }
+        </section>
 
-      export default AgricultureLanding;
+        <section id="agrivoltaica" data-section class="relative border-t border-white/[0.06]">
+          <div class="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
+            <div class="grid gap-12 lg:grid-cols-[0.95fr,1.05fr] lg:items-center">
+              <div>
+                <div class="reveal max-w-3xl">
+                  <span class="mb-4 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.06] px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.28em] text-mintSoft">
+                    <span class="h-2 w-2 rounded-full bg-mint"></span>
+                    Agrivoltaica
+                  </span>
+                  <h2 class="font-display text-3xl font-semibold leading-tight text-white sm:text-4xl lg:text-[2.7rem]">
+                    Agricultura y energía trabajando juntas
+                  </h2>
+                  <p class="mt-4 text-base leading-7 text-muted sm:text-lg">
+                    Qartia permite diseñar y operar sistemas agrivoltaicos que equilibran producción agrícola y generación solar. Mediante simulación, IA y sensorización, la explotación puede avanzar hacia modelos de autoconsumo e independencia energética.
+                  </p>
+                </div>
+                <div class="reveal mt-8 grid gap-4 sm:grid-cols-2" style="transition-delay: 80ms">
+                  <div class="rounded-2xl border border-white/10 bg-white/[0.03] p-4 text-sm leading-6 text-white/[0.84]">Simulación de configuraciones fotovoltaicas</div>
+                  <div class="rounded-2xl border border-white/10 bg-white/[0.03] p-4 text-sm leading-6 text-white/[0.84]">Balance luz–energía–cultivo</div>
+                  <div class="rounded-2xl border border-white/10 bg-white/[0.03] p-4 text-sm leading-6 text-white/[0.84]">Optimización de microclima</div>
+                  <div class="rounded-2xl border border-white/10 bg-white/[0.03] p-4 text-sm leading-6 text-white/[0.84]">Explotaciones energéticamente autónomas</div>
+                </div>
+              </div>
 
-      const root = createRoot(document.getElementById("root"));
-      root.render(html`<${AgricultureLanding} />`);
+              <div class="reveal relative overflow-hidden rounded-[28px] border border-dashed border-white/[0.14] bg-gradient-to-br from-white/[0.07] to-white/[0.02] shadow-glow" style="transition-delay: 120ms">
+                <!-- Sustituir por imagen final de paneles solares o sistema agrivoltaico -->
+                <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(34,184,255,0.2),transparent_25%),radial-gradient(circle_at_bottom_left,rgba(77,242,162,0.16),transparent_28%)]"></div>
+                <div class="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:32px_32px] opacity-50"></div>
+                <div class="relative flex min-h-[380px] flex-col justify-between p-6">
+                  <div>
+                    <span class="inline-flex rounded-full border border-white/[0.12] bg-white/[0.08] px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.24em] text-mintSoft">
+                      Placeholder
+                    </span>
+                    <h3 class="mt-4 font-display text-2xl font-semibold text-white">Preparado para integrar visuales de agrivoltaica</h3>
+                    <p class="mt-3 max-w-lg text-sm leading-6 text-muted">
+                      Placeholder para incorporar imagen final de paneles solares, sombra dinámica o integración cultivo–energía en entornos agrícolas reales.
+                    </p>
+                  </div>
+                  <div class="flex items-center gap-3 text-sm text-white/70">
+                    <span class="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/[0.08]">→</span>
+                    <span>Sustituir por paneles solares</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="piloto" data-section class="relative border-t border-white/[0.06]">
+          <div class="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
+            <div class="reveal max-w-3xl">
+              <span class="mb-4 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.06] px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.28em] text-mintSoft">
+                <span class="h-2 w-2 rounded-full bg-mint"></span>
+                Caso de uso / piloto
+              </span>
+              <h2 class="font-display text-3xl font-semibold leading-tight text-white sm:text-4xl lg:text-[2.7rem]">
+                Piloto ejecutivo en 4 fases
+              </h2>
+            </div>
+            <div class="mt-10 grid gap-5 lg:grid-cols-4">
+              <div class="reveal rounded-[28px] border border-white/10 bg-panel p-6 transition hover:-translate-y-1.5">
+                <span class="inline-flex h-12 w-12 items-center justify-center rounded-2xl border border-white/10 bg-white/[0.05] font-display text-lg font-semibold text-electricSoft">1</span>
+                <h3 class="mt-5 font-display text-xl font-semibold text-white">Diagnóstico inicial</h3>
+                <p class="mt-3 text-sm leading-6 text-muted">Selección de cultivo, explotación, infraestructura y KPIs.</p>
+              </div>
+              <div class="reveal rounded-[28px] border border-white/10 bg-panel p-6 transition hover:-translate-y-1.5" style="transition-delay: 60ms">
+                <span class="inline-flex h-12 w-12 items-center justify-center rounded-2xl border border-white/10 bg-white/[0.05] font-display text-lg font-semibold text-electricSoft">2</span>
+                <h3 class="mt-5 font-display text-xl font-semibold text-white">Despliegue sensórica y red</h3>
+                <p class="mt-3 text-sm leading-6 text-muted">Instalación de sensores, validación de cobertura y calidad del dato.</p>
+              </div>
+              <div class="reveal rounded-[28px] border border-white/10 bg-panel p-6 transition hover:-translate-y-1.5" style="transition-delay: 120ms">
+                <span class="inline-flex h-12 w-12 items-center justify-center rounded-2xl border border-white/10 bg-white/[0.05] font-display text-lg font-semibold text-electricSoft">3</span>
+                <h3 class="mt-5 font-display text-xl font-semibold text-white">IA + diagnóstico operativo</h3>
+                <p class="mt-3 text-sm leading-6 text-muted">Modelos predictivos, alertas accionables y recomendaciones técnicas.</p>
+              </div>
+              <div class="reveal rounded-[28px] border border-white/10 bg-panel p-6 transition hover:-translate-y-1.5" style="transition-delay: 180ms">
+                <span class="inline-flex h-12 w-12 items-center justify-center rounded-2xl border border-white/10 bg-white/[0.05] font-display text-lg font-semibold text-electricSoft">4</span>
+                <h3 class="mt-5 font-display text-xl font-semibold text-white">Escalado y ROI</h3>
+                <p class="mt-3 text-sm leading-6 text-muted">Informe de impacto, propuesta económica y plan de implantación.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="diferencial" data-section class="relative border-t border-white/[0.06]">
+          <div class="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
+            <div class="grid gap-10 lg:grid-cols-[0.95fr,1.05fr]">
+              <div class="reveal max-w-3xl">
+                <span class="mb-4 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.06] px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.28em] text-mintSoft">
+                  <span class="h-2 w-2 rounded-full bg-mint"></span>
+                  Diferencial Qartia
+                </span>
+                <h2 class="font-display text-3xl font-semibold leading-tight text-white sm:text-4xl lg:text-[2.7rem]">
+                  Por qué Qartia
+                </h2>
+                <p class="mt-4 text-base leading-7 text-muted sm:text-lg">
+                  Qartia no es solo sensórica. Qartia integra tecnología, operación y enfoque de negocio para acelerar decisiones con impacto real.
+                </p>
+                <div class="mt-8 rounded-[30px] border border-red-500/20 bg-red-500/[0.06] p-6">
+                  <p class="font-display text-2xl font-semibold text-white">Qartia no es solo sensórica.</p>
+                  <p class="mt-3 text-sm leading-6 text-white/[0.72]">
+                    Diseñamos una capa integral que combina dato, conectividad, inteligencia, simulación y criterio operativo.
+                  </p>
+                </div>
+              </div>
+              <div class="reveal rounded-[32px] border border-white/10 bg-panel p-8 shadow-panel" style="transition-delay: 80ms">
+                <p class="text-sm font-semibold uppercase tracking-[0.28em] text-mintSoft">Qartia integra</p>
+                <div class="mt-6 grid gap-4 sm:grid-cols-2">
+                  <div class="rounded-2xl border border-white/10 bg-white/[0.03] px-4 py-4 text-sm font-semibold text-white/[0.88]">Conectividad privada</div>
+                  <div class="rounded-2xl border border-white/10 bg-white/[0.03] px-4 py-4 text-sm font-semibold text-white/[0.88]">IA aplicada</div>
+                  <div class="rounded-2xl border border-white/10 bg-white/[0.03] px-4 py-4 text-sm font-semibold text-white/[0.88]">Gemelo digital</div>
+                  <div class="rounded-2xl border border-white/10 bg-white/[0.03] px-4 py-4 text-sm font-semibold text-white/[0.88]">Agrivoltaica</div>
+                  <div class="rounded-2xl border border-white/10 bg-white/[0.03] px-4 py-4 text-sm font-semibold text-white/[0.88]">Optimización operativa</div>
+                  <div class="rounded-2xl border border-white/10 bg-white/[0.03] px-4 py-4 text-sm font-semibold text-white/[0.88]">Enfoque ROI</div>
+                </div>
+                <div class="mt-8 rounded-[24px] border border-mint/20 bg-gradient-to-r from-mint/10 via-electric/10 to-transparent p-5">
+                  <p class="font-display text-2xl font-semibold text-white">
+                    Una plataforma integral para convertir datos agrícolas en decisiones rentables.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="contacto" data-section class="relative border-y border-white/[0.06]">
+          <div class="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
+            <div class="reveal relative overflow-hidden rounded-[36px] border border-white/10 bg-panel shadow-glow">
+              <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(77,242,162,0.18),transparent_30%),radial-gradient(circle_at_bottom_right,rgba(34,184,255,0.22),transparent_34%)]"></div>
+              <div class="relative grid gap-10 p-8 lg:grid-cols-[1fr,0.72fr] lg:p-12">
+                <div>
+                  <span class="inline-flex rounded-full border border-white/10 bg-white/[0.05] px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.28em] text-mintSoft">
+                    CTA final
+                  </span>
+                  <h2 class="mt-5 font-display text-4xl font-semibold leading-tight text-white sm:text-5xl">
+                    Convierte tu explotación en un sistema inteligente
+                  </h2>
+                  <p class="mt-5 max-w-2xl text-lg leading-8 text-muted">
+                    Solicita un piloto Qartia y valida el impacto técnico y económico en tu explotación.
+                  </p>
+                  <div class="mt-8">
+                    <a
+                      href="mailto:antoniojavier.garcia@qartia.com?subject=Solicitar%20piloto%20Qartia%20Agricultura"
+                      class="inline-flex w-full items-center justify-center gap-2 rounded-full bg-gradient-to-r from-mint to-electric px-5 py-3 text-sm font-semibold text-slate-950 transition duration-300 hover:-translate-y-[1px] hover:shadow-[0_10px_30px_rgba(34,184,255,0.22)] sm:w-auto"
+                    >
+                      <span>Solicitar piloto</span>
+                      <span aria-hidden="true">→</span>
+                    </a>
+                  </div>
+                </div>
+                <div class="rounded-[28px] border border-white/10 bg-white/[0.04] p-6">
+                  <p class="text-sm font-semibold uppercase tracking-[0.28em] text-electricSoft">Contacto</p>
+                  <div class="mt-6 space-y-4 text-sm leading-7 text-white/[0.84]">
+                    <p>
+                      <span class="block text-white/[0.54]">Web</span>
+                      <a href="https://www.qartia.com" target="_blank" rel="noreferrer" class="text-white hover:text-mint">
+                        www.qartia.com
+                      </a>
+                    </p>
+                    <p>
+                      <span class="block text-white/[0.54]">Email</span>
+                      <a href="mailto:antoniojavier.garcia@qartia.com" class="text-white hover:text-mint">
+                        antoniojavier.garcia@qartia.com
+                      </a>
+                    </p>
+                    <p>
+                      <span class="block text-white/[0.54]">Teléfono</span>
+                      <a href="tel:+34686918522" class="text-white hover:text-mint">
+                        +34 686 918 522
+                      </a>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script>
+      const revealItems = document.querySelectorAll(".reveal");
+      const sectionItems = document.querySelectorAll("[data-section]");
+      const navItems = document.querySelectorAll("[data-nav]");
+
+      const revealObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("is-visible");
+            }
+          });
+        },
+        {
+          threshold: 0.16,
+          rootMargin: "0px 0px -12% 0px",
+        }
+      );
+
+      revealItems.forEach((item) => revealObserver.observe(item));
+
+      const sectionObserver = new IntersectionObserver(
+        (entries) => {
+          const visible = entries
+            .filter((entry) => entry.isIntersecting)
+            .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+
+          if (!visible) return;
+
+          navItems.forEach((item) => {
+            item.classList.toggle("nav-pill-active", item.dataset.nav === visible.target.id);
+          });
+        },
+        {
+          threshold: [0.2, 0.45, 0.7],
+          rootMargin: "-40% 0px -45% 0px",
+        }
+      );
+
+      sectionItems.forEach((section) => sectionObserver.observe(section));
     </script>
   </body>
 </html>
