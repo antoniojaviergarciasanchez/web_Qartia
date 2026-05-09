@@ -3,10 +3,11 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
     <title>Infraestructuras Civiles - Qartia Smart Technologies</title>
     <meta
       name="description"
-      content="Infraestructuras Civiles en Qartia Smart Technologies. Sensorizacion, IoT, analitica e inteligencia artificial aplicadas a entornos reales."
+      content="Monitorización inteligente de infraestructuras civiles con sensorización, adquisición de datos, LoRa, 5G, gemelo digital, IA, alertas y mantenimiento predictivo."
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -101,122 +102,122 @@
         height: auto;
       }
 
-.nav {
-  display: flex;
-  justify-content: flex-end;
-  gap: 4px;
-  flex-wrap: wrap;
-  align-items: center;
-}
+      .nav {
+        display: flex;
+        justify-content: flex-end;
+        gap: 4px;
+        flex-wrap: wrap;
+        align-items: center;
+      }
 
-.nav > a,
-.nav-toggle {
-  padding: 10px 12px;
-  color: var(--brand);
-  background: transparent;
-  border: 0;
-  font-family: "Rubik", sans-serif;
-  font-size: 0.82rem;
-  font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: 0.02em;
-  border-radius: 8px;
-  cursor: pointer;
-}
+      .nav > a,
+      .nav-toggle {
+        padding: 10px 12px;
+        color: var(--brand);
+        background: transparent;
+        border: 0;
+        font-family: "Rubik", sans-serif;
+        font-size: 0.82rem;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 0.02em;
+        border-radius: 8px;
+        cursor: pointer;
+      }
 
-.nav > a:hover,
-.nav > a:focus-visible,
-.nav-toggle:hover,
-.nav-toggle:focus-visible {
-  background: rgba(20, 78, 156, 0.08);
-}
+      .nav > a:hover,
+      .nav > a:focus-visible,
+      .nav-toggle:hover,
+      .nav-toggle:focus-visible {
+        background: rgba(20, 78, 156, 0.08);
+      }
 
-.nav-group {
-  position: relative;
-}
+      .nav-group {
+        position: relative;
+      }
 
-.nav-toggle {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-}
+      .nav-toggle {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+      }
 
-.nav-toggle::after {
-  content: "";
-  width: 8px;
-  height: 8px;
-  border-right: 2px solid currentColor;
-  border-bottom: 2px solid currentColor;
-  transform: rotate(45deg) translateY(-1px);
-}
+      .nav-toggle::after {
+        content: "";
+        width: 8px;
+        height: 8px;
+        border-right: 2px solid currentColor;
+        border-bottom: 2px solid currentColor;
+        transform: rotate(45deg) translateY(-1px);
+      }
 
-.nav-dropdown {
-  position: absolute;
-  top: calc(100% + 10px);
-  right: 0;
-  min-width: 260px;
-  display: none;
-  flex-direction: column;
-  padding: 10px;
-  border-radius: 16px;
-  background: rgba(255, 255, 255, 0.98);
-  box-shadow: var(--shadow);
-  backdrop-filter: blur(10px);
-  z-index: 30;
-}
+      .nav-dropdown {
+        position: absolute;
+        top: calc(100% + 10px);
+        right: 0;
+        min-width: 260px;
+        display: none;
+        flex-direction: column;
+        padding: 10px;
+        border-radius: 16px;
+        background: rgba(255, 255, 255, 0.98);
+        box-shadow: var(--shadow);
+        backdrop-filter: blur(10px);
+        z-index: 30;
+      }
 
-.nav-dropdown a {
-  padding: 10px 12px;
-  color: var(--brand);
-  font-family: "Rubik", sans-serif;
-  font-size: 0.8rem;
-  font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: 0.02em;
-  border-radius: 10px;
-}
+      .nav-dropdown a {
+        padding: 10px 12px;
+        color: var(--brand);
+        font-family: "Rubik", sans-serif;
+        font-size: 0.8rem;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 0.02em;
+        border-radius: 10px;
+      }
 
-.nav-subgroup {
-  display: flex;
-  flex-direction: column;
-}
+      .nav-subgroup {
+        display: flex;
+        flex-direction: column;
+      }
 
-.nav-subtoggle {
-  padding: 10px 12px;
-  color: var(--brand);
-  font-family: "Rubik", sans-serif;
-  font-size: 0.8rem;
-  font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: 0.02em;
-  border-radius: 10px;
-}
+      .nav-subtoggle {
+        padding: 10px 12px;
+        color: var(--brand);
+        font-family: "Rubik", sans-serif;
+        font-size: 0.8rem;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 0.02em;
+        border-radius: 10px;
+      }
 
-.nav-dropdown a:hover,
-.nav-dropdown a:focus-visible,
-.nav-subtoggle:hover,
-.nav-subtoggle:focus-visible {
-  background: rgba(20, 78, 156, 0.08);
-}
+      .nav-dropdown a:hover,
+      .nav-dropdown a:focus-visible,
+      .nav-subtoggle:hover,
+      .nav-subtoggle:focus-visible {
+        background: rgba(20, 78, 156, 0.08);
+      }
 
-.nav-submenu {
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-  margin: 0 0 6px 18px;
-  padding-left: 12px;
-  border-left: 2px solid rgba(20, 78, 156, 0.14);
-}
+      .nav-submenu {
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+        margin: 0 0 6px 18px;
+        padding-left: 12px;
+        border-left: 2px solid rgba(20, 78, 156, 0.14);
+      }
 
-.nav-submenu a {
-  padding: 8px 10px;
-  font-size: 0.74rem;
-}
+      .nav-submenu a {
+        padding: 8px 10px;
+        font-size: 0.74rem;
+      }
 
-.nav-group:hover .nav-dropdown,
-.nav-group.open .nav-dropdown {
-  display: flex;
-}
+      .nav-group:hover .nav-dropdown,
+      .nav-group.open .nav-dropdown {
+        display: flex;
+      }
 
       .hero {
         position: relative;
@@ -227,7 +228,7 @@
         color: #fff;
         background:
           linear-gradient(rgba(0, 0, 0, 0.68), rgba(0, 0, 0, 0.25)),
-          url("https://qartia.com/wp-content/uploads/2022/12/slide-cuatrov2.jpg") center/cover no-repeat;
+          url("assets/images/tunnel-entrance.jpg") center/cover no-repeat;
       }
 
       .hero-inner {
@@ -238,7 +239,7 @@
 
       .hero h1 {
         margin: 0;
-        max-width: 10ch;
+        max-width: 12ch;
         font-family: "Rubik", sans-serif;
         font-size: clamp(2.4rem, 4vw, 4rem);
         font-weight: 300;
@@ -246,7 +247,6 @@
       }
 
       .content-section,
-      .links-section,
       .cta-section {
         padding: 70px 0;
       }
@@ -261,7 +261,7 @@
         display: grid;
         grid-template-columns: minmax(0, 1.15fr) minmax(280px, 0.85fr);
         gap: 36px;
-        align-items: start;
+        align-items: center;
       }
 
       .eyebrow {
@@ -297,18 +297,39 @@
         margin: 0 0 16px;
       }
 
+      .content-copy-card,
       .visual-card {
+        display: flex;
+        flex-direction: column;
         background: var(--paper);
         border-radius: 22px;
-        padding: 18px;
         box-shadow: var(--shadow);
+      }
+
+      .content-copy-card {
+        justify-content: center;
+        padding: 30px 32px;
+      }
+
+      .content-copy-card .eyebrow {
+        margin-top: 0;
+      }
+
+      .content-copy-card .lead-title {
+        margin-bottom: 20px;
+      }
+
+      .visual-card {
+        align-self: center;
+        justify-content: center;
+        padding: 18px;
       }
 
       .visual-card img {
         width: 100%;
-        aspect-ratio: 1 / 1;
+        aspect-ratio: 4 / 5;
         object-fit: cover;
-        border-radius: 50%;
+        border-radius: 18px;
       }
 
       .visual-card p {
@@ -317,98 +338,142 @@
         font-size: 0.95rem;
       }
 
-      .links-section {
+      .brochure-section {
+        padding: 70px 0;
         background: var(--paper);
       }
 
-      .links-grid {
+      .brochure-section.alt {
+        background: #e8faf9;
+      }
+
+      .brochure-grid,
+      .benefits-grid,
+      .brochure-split,
+      .civil-stack,
+      .photo-stack,
+      .phase-grid {
         display: grid;
+        gap: 24px;
+      }
+
+      .brochure-grid {
         grid-template-columns: repeat(4, minmax(0, 1fr));
-        gap: 22px;
       }
 
-      .topic-card {
-        position: relative;
-        min-height: 220px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 22px;
-        border-radius: 20px;
-        overflow: hidden;
+      .benefits-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .brochure-split {
+        grid-template-columns: minmax(0, 1.08fr) minmax(320px, 0.92fr);
+        align-items: start;
+      }
+
+      .civil-stack {
+        grid-template-columns: 1fr;
+        align-self: start;
+      }
+
+      .civil-stack.offset-down {
+        margin-top: 20px;
+      }
+
+      .photo-stack {
+        grid-template-columns: 1fr;
+      }
+
+      .photo-stack.compact {
+        gap: 18px;
+      }
+
+      .phase-grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        margin-top: 28px;
+      }
+
+      .brochure-card,
+      .phase-card,
+      .photo-card {
+        height: 100%;
+        background: var(--paper);
+        border-radius: 22px;
         box-shadow: var(--shadow);
-        background-size: cover;
-        background-position: center;
       }
 
-      .topic-card::after {
-        content: "";
-        position: absolute;
-        inset: 0;
-        background: linear-gradient(rgba(0, 0, 0, 0.16), rgba(0, 0, 0, 0.42));
+      .brochure-card,
+      .phase-card {
+        padding: 24px;
       }
 
-      .topic-card.current::after {
-        background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.58));
-      }
-
-      .topic-card.current::before {
-        content: "";
-        position: absolute;
-        left: 50%;
-        bottom: 0;
-        transform: translateX(-50%);
-        width: 0;
-        height: 0;
-        border-left: 18px solid transparent;
-        border-right: 18px solid transparent;
-        border-bottom: 18px solid #e8faf9;
-        z-index: 2;
-      }
-
-      .topic-card h3 {
-        position: relative;
-        z-index: 1;
-        margin: 0;
-        color: #fff;
-        text-align: center;
-        text-transform: uppercase;
+      .brochure-card h3,
+      .phase-card h3 {
+        margin: 0 0 12px;
+        color: var(--ink-strong);
         font-family: "Rubik", sans-serif;
-        font-size: 1.32rem;
-        font-weight: 400;
-        text-shadow: 2px 2px 9px #000;
+        font-size: 1.34rem;
+        font-weight: 500;
+        line-height: 1.15;
       }
 
-      .topic-card.card-1 {
-        background-image: url("https://qartia.com/wp-content/uploads/2022/11/servicio3.jpg");
+      .brochure-card p,
+      .phase-card p {
+        margin: 0;
       }
 
-      .topic-card.card-2 {
-        background-image: url("https://qartia.com/wp-content/uploads/2022/11/servicio-1.jpg");
+      .brochure-card strong,
+      .phase-card strong {
+        display: block;
+        margin-bottom: 10px;
+        color: var(--brand);
+        font-family: "Rubik", sans-serif;
+        font-size: 0.88rem;
+        font-weight: 700;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
       }
 
-      .topic-card.card-3 {
-        background-image: url("https://qartia.com/wp-content/uploads/2022/11/servicio-2.jpg");
+      .feature-list {
+        display: grid;
+        gap: 10px;
+        margin: 18px 0 0;
+        padding: 0;
+        list-style: none;
       }
 
-      .topic-card.card-4 {
-        background-image: url("https://qartia.com/wp-content/uploads/2022/11/servcio-5.jpg");
+      .feature-list li {
+        position: relative;
+        padding-left: 18px;
       }
 
-      .topic-card.card-5 {
-        background-image: url("https://qartia.com/wp-content/uploads/2022/11/servicio-4.jpg");
+      .feature-list li::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0.68em;
+        width: 8px;
+        height: 8px;
+        border-radius: 999px;
+        background: var(--accent);
       }
 
-      .topic-card.card-6 {
-        background-image: url("https://qartia.com/wp-content/uploads/2022/11/servicio-6.jpg");
+      .photo-card {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        overflow: hidden;
       }
 
-      .topic-card.card-7 {
-        background-image: url("https://qartia.com/wp-content/uploads/2022/12/slide-cuatrov2.jpg");
+      .photo-card img {
+        width: 100%;
+        aspect-ratio: 16 / 10;
+        object-fit: cover;
       }
 
-      .topic-card.card-8 {
-        background-image: url("https://qartia.com/wp-content/uploads/2022/12/slide-tresv2.jpg");
+      .photo-card figcaption {
+        padding: 16px 18px 18px;
+        color: #5a6670;
+        font-size: 0.94rem;
       }
 
       .cta-section {
@@ -423,6 +488,10 @@
       }
 
       .cta-copy {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
         background: var(--paper);
         border-radius: 22px;
         padding: 34px;
@@ -442,10 +511,11 @@
       }
 
       .cta-image {
+        min-height: 100%;
         border-radius: 22px;
         background:
           linear-gradient(rgba(20, 78, 156, 0.16), rgba(20, 78, 156, 0.16)),
-          url("https://qartia.com/wp-content/uploads/2022/12/contacto-servicios.jpg") center/cover no-repeat;
+          url("assets/images/tunnel-field-team.jpg") center/cover no-repeat;
         box-shadow: var(--shadow);
       }
 
@@ -501,6 +571,7 @@
       @media (max-width: 1024px) {
         .header-inner,
         .content-grid,
+        .brochure-split,
         .cta-grid,
         .footer-inner {
           grid-template-columns: 1fr;
@@ -515,43 +586,45 @@
           justify-self: center;
         }
 
-.nav {
-  justify-content: center;
-}
+        .nav {
+          justify-content: center;
+        }
 
-.nav-dropdown {
-  right: auto;
-  left: 50%;
-  transform: translateX(-50%);
-}
+        .nav-dropdown {
+          right: auto;
+          left: 50%;
+          transform: translateX(-50%);
+        }
 
-        .links-grid {
+        .brochure-grid,
+        .benefits-grid,
+        .phase-grid {
           grid-template-columns: repeat(2, minmax(0, 1fr));
         }
       }
 
       @media (max-width: 640px) {
-.topbar-inner {
-  justify-content: center;
-}
+        .topbar-inner {
+          justify-content: center;
+        }
 
-.nav {
-  gap: 8px;
-}
+        .nav {
+          gap: 8px;
+        }
 
-.nav-group {
-  width: 100%;
-  display: grid;
-  justify-items: center;
-}
+        .nav-group {
+          width: 100%;
+          display: grid;
+          justify-items: center;
+        }
 
-.nav-dropdown {
-  position: static;
-  transform: none;
-  min-width: min(320px, 100%);
-  width: min(320px, 100%);
-  margin-top: 6px;
-}
+        .nav-dropdown {
+          position: static;
+          transform: none;
+          min-width: min(320px, 100%);
+          width: min(320px, 100%);
+          margin-top: 6px;
+        }
 
         .hero-inner {
           padding-top: 72px;
@@ -565,7 +638,9 @@
           margin-left: 0;
         }
 
-        .links-grid {
+        .brochure-grid,
+        .benefits-grid,
+        .phase-grid {
           grid-template-columns: 1fr;
         }
 
@@ -591,29 +666,29 @@
             <img src="https://qartia.com/wp-content/uploads/2022/11/logo-qartia.png" alt="Qartia Smart Technologies" />
           </a>
 
-<nav class="nav" aria-label="Navegacion principal">
-  <a href="quienes-somos.html">Quienes Somos</a>
-  <a href="productos.html">Productos</a>
-  <div class="nav-group">
-    <button class="nav-toggle" type="button" aria-expanded="false">Servicios</button>
-    <div class="nav-dropdown">
-      <a href="agricultura.html">Agricultura</a>
-      <div class="nav-subgroup">
+          <nav class="nav" aria-label="Navegacion principal">
+            <a href="quienes-somos.html">Quienes Somos</a>
+            <a href="productos.html">Productos</a>
+            <div class="nav-group">
+              <button class="nav-toggle" type="button" aria-expanded="false">Servicios</button>
+              <div class="nav-dropdown">
+                <a href="agricultura.html">Agricultura</a>
+                <div class="nav-subgroup">
                   <a class="nav-subtoggle" href="industria.html">Industria</a>
                   <div class="nav-submenu">
                     <a href="mantenimiento-predictivo-vibraciones.html">Mantenimiento Predictivo. Vibraciones</a>
                     <a href="monitorizacion-activos-criticos.html">Monitorización de Activos Críticos</a>
                   </div>
                 </div>
-      <a href="medioambiente.html">Medioambiente</a>
-      <a href="civil.html">Infraestructuras Civiles</a>
-      <a href="https://qartia.com/servicios/servicios-de-valor-anadido/">Servicios Adicionales</a>
-    </div>
-  </div>
-  <a href="comunicaciones.html">Redes Privadas 5G</a>
-  <a href="noticias.html">Noticias</a>
-  <a href="http://qartia.com/grafana">Acceso a Clientes</a>
-</nav>
+                <a href="medioambiente.html">Medioambiente</a>
+                <a href="civil.html">Infraestructuras Civiles</a>
+                <a href="https://qartia.com/servicios/servicios-de-valor-anadido/">Servicios Adicionales</a>
+              </div>
+            </div>
+            <a href="comunicaciones.html">Redes Privadas 5G</a>
+            <a href="noticias.html">Noticias</a>
+            <a href="http://qartia.com/grafana">Acceso a Clientes</a>
+          </nav>
         </div>
       </header>
 
@@ -627,34 +702,223 @@
         <section class="content-section">
           <div class="section-inner">
             <div class="content-grid">
-              <div>
-                <span class="eyebrow">Qartia Smart Technologies</span>
-                <h2 class="lead-title">Monitorizacion estructural para infraestructuras criticas y operacion publica.</h2>
+              <div class="content-copy-card">
+                <span class="eyebrow">Infraestructura conectada</span>
+                <h2 class="lead-title">Monitorización inteligente para túneles, puentes, viaductos, presas e infraestructuras críticas.</h2>
                 <div class="copy">
-                  <p>La propia portada de Qartia menciona el proyecto MIC para monitorizar infraestructuras viarias e hidr&aacute;ulicas con integraci&oacute;n de sens&oacute;rica estructural, captura intensiva de datos y tratamiento autom&aacute;tico.</p>
-                  <p>Esta l&iacute;nea es especialmente relevante para t&uacute;neles, carreteras, nodos urbanos, obra hidr&aacute;ulica, puertos y elementos cuyo estado f&iacute;sico afecta a la seguridad y continuidad de la operaci&oacute;n.</p>
-                  <p>La propuesta de valor est&aacute; en convertir la se&ntilde;al en evento operativo, cuadro de mando y alerta cualificada para centros de control o protocolos de emergencia.</p>
+                  <p>Qartia diseña, desarrolla e integra sistemas IoT, comunicaciones inalámbricas, analítica avanzada y modelos de Inteligencia Artificial para conocer en tiempo real el estado de infraestructuras civiles críticas.</p>
+                  <p>La solución permite capturar variables estructurales, ambientales y operativas, enviarlas de forma segura a plataforma y convertirlas en cuadros de mando, umbrales de riesgo y alertas accionables para operadores y responsables técnicos.</p>
+                  <p>Esta línea es especialmente relevante para túneles, puentes, viaductos, carreteras, presas, hospitales, edificios singulares e infraestructuras hidráulicas donde la continuidad del servicio y la seguridad dependen de una supervisión continua.</p>
+                  <p>Con Qartia, la infraestructura deja de gestionarse sólo por inspección puntual y pasa a funcionar como un activo monitorizado, trazable y preparado para mantenimiento predictivo.</p>
                 </div>
               </div>
 
               <aside class="visual-card">
-                <img src="https://qartia.com/wp-content/uploads/2022/12/idi-bg-1.jpg" alt="Infraestructuras Civiles" />
-                <p>Infraestructura sensorizada, tratamiento del dato y operacion conectada.</p>
+                <img src="assets/images/mic.jpg" alt="Monitorización estructural del proyecto MIC en infraestructura civil" />
+                <p>Proyecto MIC orientado a vigilancia sísmica, sensorización estructural y seguimiento continuo sobre infraestructura viaria.</p>
               </aside>
             </div>
           </div>
         </section>
 
-        <section class="links-section">
+        <section class="brochure-section">
           <div class="section-inner">
-            <div class="links-grid">
-              <a class="topic-card card-1 " href="quienes-somos.html"><h3>Quienes Somos</h3></a>
-              <a class="topic-card card-2 " href="agricultura.html"><h3>Agricultura</h3></a>
-              <a class="topic-card card-3 " href="industria.html"><h3>Industria: Vibraciones y Activos</h3></a>
-              <a class="topic-card card-4 " href="medioambiente.html"><h3>Medioambiente</h3></a>
-              <a class="topic-card card-5 current" href="civil.html"><h3>Infraestructuras Civiles</h3></a>
-              <a class="topic-card card-6 " href="comunicaciones.html"><h3>Redes Privadas 5G</h3></a>
-              <a class="topic-card card-7 " href="noticias.html"><h3>Noticias</h3></a>
+            <span class="eyebrow">Caso de uso real</span>
+            <h2 class="lead-title">Despliegue de campo sobre infraestructura viaria crítica.</h2>
+            <div class="brochure-split">
+              <div class="civil-stack offset-down">
+                <div class="brochure-card">
+                  <h3>Qué hace Qartia en este tipo de despliegues</h3>
+                  <p>Qartia integra sensórica, adquisición de datos, comunicaciones, alimentación, visualización e inteligencia para convertir el activo físico en un sistema operativo monitorizado.</p>
+                  <ul class="feature-list">
+                    <li>Diseño técnico a medida según activo, criticidad y necesidades del explotador.</li>
+                    <li>Digitalización de señales físicas y ambientales con electrónica propia de adquisición y transmisión.</li>
+                    <li>Integración de red inalámbrica, backhaul, servidor Cloud Qartia y visualización web centralizada.</li>
+                    <li>Arquitectura escalable a túneles, puentes, viaductos, presas e infraestructuras hidráulicas.</li>
+                  </ul>
+                </div>
+                <div class="brochure-card">
+                  <h3>Resultado operativo</h3>
+                  <p>El cliente obtiene como resultado una infraestructura monitorizada en continuo, con capacidad de contextualizar eventos y escalar el despliegue sin rehacer la arquitectura.</p>
+                  <ul class="feature-list">
+                    <li>Visibilidad del estado del activo en tiempo real.</li>
+                    <li>Trazabilidad de incidencias y eventos de campo.</li>
+                    <li>Base técnica para mantenimiento predictivo y ampliación futura.</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="photo-stack compact">
+                <figure class="photo-card">
+                  <img src="assets/images/tunel.png" alt="Entrada del túnel con armario de monitorización de Qartia instalado" />
+                  <figcaption>Entrada de túnel monitorizada.</figcaption>
+                </figure>
+                <figure class="photo-card">
+                  <img src="assets/images/tunnel-field-team.jpg" alt="Equipo técnico de Qartia trabajando en el despliegue de monitorización civil" />
+                  <figcaption>Instalación y validación en campo.</figcaption>
+                </figure>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="brochure-section alt">
+          <div class="section-inner">
+            <span class="eyebrow">Arquitectura de la solución</span>
+            <h2 class="lead-title">Del sensor físico al aviso accionable.</h2>
+            <div class="brochure-split">
+              <div class="civil-stack">
+                <div class="brochure-card">
+                  <h3>Sensores → Equipo de adquisición → LoRa → Router LoRa/5G → Cloud Qartia → Dashboard / Gemelo Digital / IA → Alertas</h3>
+                  <p>La plataforma se apoya en adquisición de campo, red IoT, backhaul seguro, nube Qartia y modelos inteligentes para transformar medición técnica en operación preventiva.</p>
+                  <ul class="feature-list">
+                    <li>Conversión de señales analógicas y digitales desde sensores estructurales y ambientales.</li>
+                    <li>LoRa, 5G, MQTT y VPN segura según escenario de cobertura y criticidad.</li>
+                    <li>Visualización web, gemelo digital, umbrales de riesgo y reglas de negocio.</li>
+                    <li>Alertas y notificaciones para operación, mantenimiento y servicios de emergencia.</li>
+                  </ul>
+                </div>
+                <div class="brochure-card">
+                  <h3>Capas operativas que se integran</h3>
+                  <p>La arquitectura es escalable: Está concebida para integrarse con infraestructura ya existente y crecer por módulos según cobertura, criticidad y objetivos del cliente.</p>
+                  <ul class="feature-list">
+                    <li>Adquisición y transmisión de datos desde campo.</li>
+                    <li>Backhaul seguro hacia plataforma y cuadros de mando.</li>
+                    <li>IA, gemelo digital y alertas como capa de decisión.</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="photo-stack compact">
+                <figure class="photo-card">
+                  <img src="assets/images/qartia-cabinet-open.jpg" alt="Armario de comunicaciones y adquisición de Qartia" />
+                  <figcaption>Nodo de comunicaciones y adquisición.</figcaption>
+                </figure>
+                <figure class="photo-card">
+                  <img src="assets/images/qartia-power-cabinet.jpg" alt="Cuadro eléctrico y protecciones del sistema de monitorización civil" />
+                  <figcaption>Alimentación y electrónica de campo.</figcaption>
+                </figure>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="brochure-section">
+          <div class="section-inner">
+            <span class="eyebrow">Capacidades técnicas</span>
+            <h2 class="lead-title">Ingeniería completa para monitorizar, interpretar y actuar.</h2>
+            <div class="brochure-grid">
+              <article class="brochure-card">
+                <h3>Sensorización estructural y ambiental</h3>
+                <p>Captura vibración, desplazamiento, inclinación, temperatura, humedad, gases, partículas, presión y cualquier variable crítica del activo.</p>
+              </article>
+              <article class="brochure-card">
+                <h3>Comunicaciones IoT LoRa/5G</h3>
+                <p>Arquitecturas híbridas con LoRa, 5G, MQTT y VPN segura para desplegar en túneles, entornos remotos y redes complejas.</p>
+              </article>
+              <article class="brochure-card">
+                <h3>Dashboards web en tiempo real</h3>
+                <p>Cuadros de mando para operadores y clientes con visión operativa, alarmas, históricos y trazabilidad de eventos.</p>
+              </article>
+              <article class="brochure-card">
+                <h3>Gemelo digital 2D/3D</h3>
+                <p>Representación visual del activo para contextualizar sensores, zonas críticas, estados y mantenimientos.</p>
+              </article>
+              <article class="brochure-card">
+                <h3>Inteligencia artificial predictiva</h3>
+                <p>Modelos para detectar anomalías, anticipar degradación y estimar desgaste antes de que aparezca el fallo.</p>
+              </article>
+              <article class="brochure-card">
+                <h3>Alertas y notificaciones</h3>
+                <p>Generación de avisos automáticos para operadores, explotadores, clientes y servicios de emergencia.</p>
+              </article>
+              <article class="brochure-card">
+                <h3>Integración con plataformas del cliente</h3>
+                <p>Capacidad abierta para conectar con SCADA, BMS, GIS, sistemas corporativos o centros de control existentes.</p>
+              </article>
+              <article class="brochure-card">
+                <h3>Mantenimiento predictivo de sensores y equipos</h3>
+                <p>Seguimiento del estado de la electrónica de campo y planificación de mantenimiento basada en condición real.</p>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="brochure-section alt">
+          <div class="section-inner">
+            <span class="eyebrow">Beneficios</span>
+            <h2 class="lead-title">Menos incertidumbre, más seguridad y mejor mantenimiento.</h2>
+            <div class="benefits-grid">
+              <article class="brochure-card">
+                <h3>Detección temprana de anomalías</h3>
+                <p>Identifica desviaciones antes de que evolucionen a incidencias de seguridad o servicio.</p>
+              </article>
+              <article class="brochure-card">
+                <h3>Reducción de riesgos operativos</h3>
+                <p>Permite actuar con datos y priorizar inspecciones o cierres de forma mejor fundamentada.</p>
+              </article>
+              <article class="brochure-card">
+                <h3>Mayor resiliencia ante catástrofes</h3>
+                <p>Aporta visibilidad adicional frente a episodios climáticos, sísmicos o de degradación acelerada.</p>
+              </article>
+              <article class="brochure-card">
+                <h3>Mejor planificación del mantenimiento</h3>
+                <p>Organiza intervenciones por condición real del activo y no solo por calendario fijo.</p>
+              </article>
+              <article class="brochure-card">
+                <h3>Visualización clara para decisión</h3>
+                <p>Ofrece una vista unificada para operadores, responsables técnicos y explotadores.</p>
+              </article>
+              <article class="brochure-card">
+                <h3>Integración con emergencias</h3>
+                <p>Facilita disparar protocolos y compartir información relevante con rapidez.</p>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="brochure-section">
+          <div class="section-inner">
+            <span class="eyebrow">Aplicaciones</span>
+            <h2 class="lead-title">Una misma base tecnológica para múltiples activos críticos.</h2>
+            <div class="brochure-grid">
+              <article class="brochure-card"><h3>Túneles</h3><p>Monitorización configurable para captar variables críticas, enviar datos en tiempo real y generar alertas accionables.</p></article>
+              <article class="brochure-card"><h3>Puentes</h3><p>Seguimiento continuo del comportamiento estructural y de la evolución del activo en servicio.</p></article>
+              <article class="brochure-card"><h3>Viaductos</h3><p>Control de zonas críticas con arquitectura abierta y visualización operativa centralizada.</p></article>
+              <article class="brochure-card"><h3>Presas</h3><p>Supervisión de variables estructurales, ambientales y de explotación con trazabilidad continua.</p></article>
+              <article class="brochure-card"><h3>Carreteras</h3><p>Seguimiento de puntos sensibles, nodos viarios y entornos donde la seguridad exige respuesta temprana.</p></article>
+              <article class="brochure-card"><h3>Edificios singulares</h3><p>Monitorización adaptada a infraestructuras con alta criticidad, ocupación o valor patrimonial.</p></article>
+              <article class="brochure-card"><h3>Hospitales</h3><p>Control de activos e infraestructuras donde la continuidad del servicio es crítica.</p></article>
+              <article class="brochure-card"><h3>Infraestructuras hidráulicas</h3><p>Despliegues configurables para conducciones, drenajes y elementos civiles vinculados al agua.</p></article>
+            </div>
+          </div>
+        </section>
+
+        <section class="brochure-section alt">
+          <div class="section-inner">
+            <span class="eyebrow">Piloto ejecutivo</span>
+            <h2 class="lead-title">De estudio técnico a operación continua en 4 fases.</h2>
+            <div class="phase-grid">
+              <article class="phase-card">
+                <strong>01</strong>
+                <h3>Diagnóstico inicial</h3>
+                <p>Selección del activo, criticidad, variables a medir, necesidades de cobertura y KPIs operativos.</p>
+              </article>
+              <article class="phase-card">
+                <strong>02</strong>
+                <h3>Despliegue de campo</h3>
+                <p>Instalación de sensores, electrónica, alimentación y comunicaciones sobre la infraestructura real.</p>
+              </article>
+              <article class="phase-card">
+                <strong>03</strong>
+                <h3>Plataforma y alertas</h3>
+                <p>Configuración de visualización, eventos, umbrales, analítica y protocolos de notificación.</p>
+              </article>
+              <article class="phase-card">
+                <strong>04</strong>
+                <h3>Escalado y mantenimiento</h3>
+                <p>Informe de impacto, ampliación del sistema y operación basada en condición real del activo.</p>
+              </article>
             </div>
           </div>
         </section>
@@ -663,8 +927,8 @@
           <div class="section-inner">
             <div class="cta-grid">
               <div class="cta-copy">
-                <h2>¿Te interesa esta línea?</h2>
-                <p>Desde esta base local podemos añadir productos, noticias, vídeos, casos de uso y llamadas a la acción específicas para cada sector.</p>
+                <h2>Convierte tu infraestructura en un activo monitorizado, inteligente y seguro.</h2>
+                <p>Qartia puede preparar estudios técnicos, pilotos y despliegues de campo para validar sensorización, conectividad, analítica y alertas sobre infraestructuras civiles críticas.</p>
               </div>
               <div class="cta-image" aria-hidden="true"></div>
             </div>
@@ -694,43 +958,43 @@
           <a href="https://qartia.com/politica-de-privacidad/">Política de privacidad</a>
         </div>
       </div>
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const groups = document.querySelectorAll(".nav-group");
+      <script>
+        document.addEventListener("DOMContentLoaded", function () {
+          const groups = document.querySelectorAll(".nav-group");
 
-    groups.forEach((group) => {
-      const toggle = group.querySelector(".nav-toggle");
-      if (!toggle) return;
+          groups.forEach((group) => {
+            const toggle = group.querySelector(".nav-toggle");
+            if (!toggle) return;
 
-      toggle.addEventListener("click", function (event) {
-        event.preventDefault();
-        const willOpen = !group.classList.contains("open");
+            toggle.addEventListener("click", function (event) {
+              event.preventDefault();
+              const willOpen = !group.classList.contains("open");
 
-        groups.forEach((otherGroup) => {
-          otherGroup.classList.remove("open");
-          const otherToggle = otherGroup.querySelector(".nav-toggle");
-          if (otherToggle) {
-            otherToggle.setAttribute("aria-expanded", "false");
-          }
+              groups.forEach((otherGroup) => {
+                otherGroup.classList.remove("open");
+                const otherToggle = otherGroup.querySelector(".nav-toggle");
+                if (otherToggle) {
+                  otherToggle.setAttribute("aria-expanded", "false");
+                }
+              });
+
+              group.classList.toggle("open", willOpen);
+              toggle.setAttribute("aria-expanded", willOpen ? "true" : "false");
+            });
+          });
+
+          document.addEventListener("click", function (event) {
+            groups.forEach((group) => {
+              if (group.contains(event.target)) return;
+              group.classList.remove("open");
+              const toggle = group.querySelector(".nav-toggle");
+              if (toggle) {
+                toggle.setAttribute("aria-expanded", "false");
+              }
+            });
+          });
         });
-
-        group.classList.toggle("open", willOpen);
-        toggle.setAttribute("aria-expanded", willOpen ? "true" : "false");
-      });
-    });
-
-    document.addEventListener("click", function (event) {
-      groups.forEach((group) => {
-        if (group.contains(event.target)) return;
-        group.classList.remove("open");
-        const toggle = group.querySelector(".nav-toggle");
-        if (toggle) {
-          toggle.setAttribute("aria-expanded", "false");
-        }
-      });
-    });
-  });
-</script>
+      </script>
     </div>
   </body>
 </html>
