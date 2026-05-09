@@ -155,8 +155,9 @@ html { scroll-behavior: smooth; }
 #page-content .local-video-kicker::before, #page-content .local-video-kicker::after { content: ""; width: 42px; height: 2px; background: #36deb8; }
 #page-content .local-video-frame { position: relative; width: 100%; max-width: 960px; aspect-ratio: 16 / 9; border-radius: 24px; overflow: hidden; background: #081726; box-shadow: 0 18px 42px rgba(17,35,53,0.14); }
 #page-content .local-video-media { display: block; width: 100%; height: 100%; border: 0; background: #081726; }
-#page-content .local-video-link { position: relative; display: block; width: 100%; height: 100%; color: inherit; }
-#page-content .local-video-link img { display: block; width: 100%; height: 100%; object-fit: cover; }
+#page-content .local-video-link, #page-content .local-video-trigger { position: relative; display: block; width: 100%; height: 100%; color: inherit; }
+#page-content .local-video-trigger { padding: 0; border: 0; background: none; cursor: pointer; }
+#page-content .local-video-link img, #page-content .local-video-trigger img { display: block; width: 100%; height: 100%; object-fit: cover; }
 #page-content .local-video-play { position: absolute; top: 50%; left: 50%; width: 96px; height: 96px; border-radius: 50%; transform: translate(-50%,-50%); background: rgba(7,18,29,0.68); box-shadow: 0 12px 32px rgba(7,18,29,0.32); }
 #page-content .local-video-play::before { content: ""; position: absolute; top: 50%; left: 50%; margin-left: 6px; transform: translate(-50%,-50%); border-style: solid; border-width: 18px 0 18px 30px; border-color: transparent transparent transparent #fff; }
 .cta-form .g-cols.via_flex.valign_top { align-items: stretch; }
@@ -328,7 +329,7 @@ y ambiental</h3>
 <div class="local-video-copy">
 <p class="local-video-kicker">&iquest;Qu&eacute; es Qartia?</p>
 </div>
-<div class="local-video-frame"><iframe class="local-video-media" src="https://www.youtube.com/embed/IJyQG3NY9hk?rel=0&amp;modestbranding=1" title="Video promocional de Qartia" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
+<div class="local-video-frame" id="index-video-embed" data-youtube-src="https://www.youtube.com/embed/IJyQG3NY9hk?rel=0&amp;modestbranding=1" data-youtube-watch="https://youtu.be/IJyQG3NY9hk"><button class="local-video-trigger" type="button" aria-label="Reproducir video promocional de Qartia"><img src="https://i.ytimg.com/vi/IJyQG3NY9hk/hqdefault.jpg" alt="Miniatura del video promocional de Qartia"><span class="local-video-play" aria-hidden="true"></span></button></div>
 </div>
 </div>
 </section><section class="l-section wpb_row ancho-corto height_large with_img"><div class="l-section-img" style="background-image: url(https://qartia.com/wp-content/uploads/2022/11/fondo-home.jpg);background-position: top left;background-repeat: no-repeat;" data-img-width="1920" data-img-height="817"></div>
@@ -546,6 +547,28 @@ const a=JSON.parse(document.getElementById("wp-emoji-settings").textContent),o=(
 </script>
 <script>
   document.addEventListener('DOMContentLoaded', function() {
+    const indexVideoEmbed = document.getElementById('index-video-embed');
+
+    if (indexVideoEmbed) {
+      const youtubeSrc = indexVideoEmbed.dataset.youtubeSrc;
+      const youtubeWatch = indexVideoEmbed.dataset.youtubeWatch;
+      const trigger = indexVideoEmbed.querySelector('.local-video-trigger');
+
+      if (trigger) {
+        trigger.addEventListener('click', function() {
+          if (window.location.protocol === 'file:') {
+            window.location.href = youtubeWatch;
+            return;
+          }
+
+          indexVideoEmbed.innerHTML =
+            '<iframe class="local-video-media" src="' +
+            youtubeSrc +
+            '&autoplay=1" title="Video promocional de Qartia" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>';
+        }, { once: true });
+      }
+    }
+
     // Seleccionamos todos los <li> y todos los .wpb_text_column
     const listItems = document.querySelectorAll('#servicios li');
     const serviceColumns = document.querySelectorAll('#services-items-wrapper .wpb_text_column');

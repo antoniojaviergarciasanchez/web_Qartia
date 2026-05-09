@@ -3,10 +3,11 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
     <title>Medioambiente - Qartia Smart Technologies</title>
     <meta
       name="description"
-      content="Medioambiente en Qartia Smart Technologies. Sensorizacion, IoT, analitica e inteligencia artificial aplicadas a entornos reales."
+      content="Medioambiente en Qartia Smart Technologies. Calidad del aire, ruido, IoT, analitica y despliegues reales en industria y ciudad."
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -227,7 +228,7 @@
         color: #fff;
         background:
           linear-gradient(rgba(0, 0, 0, 0.68), rgba(0, 0, 0, 0.25)),
-          url("https://qartia.com/wp-content/uploads/2022/12/slider-dosv2.jpg") center/cover no-repeat;
+          url("assets/medioambiente/cartagena-pantalla-aqi.jpeg") center/cover no-repeat;
       }
 
       .hero-inner {
@@ -238,7 +239,7 @@
 
       .hero h1 {
         margin: 0;
-        max-width: 10ch;
+        max-width: 12ch;
         font-family: "Rubik", sans-serif;
         font-size: clamp(2.4rem, 4vw, 4rem);
         font-weight: 300;
@@ -246,7 +247,7 @@
       }
 
       .content-section,
-      .links-section,
+      .brochure-section,
       .cta-section {
         padding: 70px 0;
       }
@@ -257,11 +258,49 @@
           var(--paper-soft);
       }
 
+      .brochure-section {
+        background: var(--paper);
+      }
+
+      .brochure-section.alt {
+        background: #e8faf9;
+      }
+
       .content-grid {
         display: grid;
         grid-template-columns: minmax(0, 1.15fr) minmax(280px, 0.85fr);
         gap: 36px;
-        align-items: start;
+        align-items: center;
+      }
+
+      .brochure-grid,
+      .brochure-split,
+      .phase-grid,
+      .kpi-grid {
+        display: grid;
+        gap: 24px;
+      }
+
+      .brochure-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .brochure-grid.two-cols {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .brochure-grid.four-cols,
+      .kpi-grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+      }
+
+      .brochure-split {
+        grid-template-columns: minmax(0, 1.08fr) minmax(320px, 0.92fr);
+        align-items: center;
+      }
+
+      .phase-grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
       }
 
       .eyebrow {
@@ -297,18 +336,43 @@
         margin: 0 0 16px;
       }
 
-      .visual-card {
+      .content-copy-card,
+      .visual-card,
+      .brochure-card,
+      .phase-card,
+      .kpi-card,
+      .photo-card {
         background: var(--paper);
         border-radius: 22px;
-        padding: 18px;
         box-shadow: var(--shadow);
+      }
+
+      .content-copy-card,
+      .visual-card {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .content-copy-card {
+        justify-content: center;
+        padding: 30px 32px;
+      }
+
+      .content-copy-card .lead-title {
+        margin-bottom: 20px;
+      }
+
+      .visual-card {
+        align-self: center;
+        justify-content: center;
+        padding: 18px;
       }
 
       .visual-card img {
         width: 100%;
-        aspect-ratio: 1 / 1;
+        aspect-ratio: 4 / 5;
         object-fit: cover;
-        border-radius: 50%;
+        border-radius: 18px;
       }
 
       .visual-card p {
@@ -317,98 +381,93 @@
         font-size: 0.95rem;
       }
 
-      .links-section {
-        background: var(--paper);
+      .brochure-card,
+      .phase-card,
+      .kpi-card {
+        padding: 24px;
       }
 
-      .links-grid {
-        display: grid;
-        grid-template-columns: repeat(4, minmax(0, 1fr));
-        gap: 22px;
-      }
-
-      .topic-card {
-        position: relative;
-        min-height: 220px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 22px;
-        border-radius: 20px;
-        overflow: hidden;
-        box-shadow: var(--shadow);
-        background-size: cover;
-        background-position: center;
-      }
-
-      .topic-card::after {
-        content: "";
-        position: absolute;
-        inset: 0;
-        background: linear-gradient(rgba(0, 0, 0, 0.16), rgba(0, 0, 0, 0.42));
-      }
-
-      .topic-card.current::after {
-        background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.58));
-      }
-
-      .topic-card.current::before {
-        content: "";
-        position: absolute;
-        left: 50%;
-        bottom: 0;
-        transform: translateX(-50%);
-        width: 0;
-        height: 0;
-        border-left: 18px solid transparent;
-        border-right: 18px solid transparent;
-        border-bottom: 18px solid #e8faf9;
-        z-index: 2;
-      }
-
-      .topic-card h3 {
-        position: relative;
-        z-index: 1;
-        margin: 0;
-        color: #fff;
-        text-align: center;
-        text-transform: uppercase;
+      .brochure-card h3,
+      .phase-card h3,
+      .kpi-card h3 {
+        margin: 0 0 12px;
+        color: var(--ink-strong);
         font-family: "Rubik", sans-serif;
-        font-size: 1.32rem;
-        font-weight: 400;
-        text-shadow: 2px 2px 9px #000;
+        font-size: 1.34rem;
+        font-weight: 500;
+        line-height: 1.15;
       }
 
-      .topic-card.card-1 {
-        background-image: url("https://qartia.com/wp-content/uploads/2022/11/servicio3.jpg");
+      .brochure-card p,
+      .phase-card p,
+      .kpi-card p {
+        margin: 0;
       }
 
-      .topic-card.card-2 {
-        background-image: url("https://qartia.com/wp-content/uploads/2022/11/servicio-1.jpg");
+      .brochure-card strong,
+      .kpi-card strong {
+        display: block;
+        margin-bottom: 10px;
+        color: var(--brand);
+        font-family: "Rubik", sans-serif;
+        font-size: 0.88rem;
+        font-weight: 700;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
       }
 
-      .topic-card.card-3 {
-        background-image: url("https://qartia.com/wp-content/uploads/2022/11/servicio-2.jpg");
+      .brochure-link {
+        display: block;
+        color: inherit;
+        transition: transform 0.2s ease;
       }
 
-      .topic-card.card-4 {
-        background-image: url("https://qartia.com/wp-content/uploads/2022/11/servcio-5.jpg");
+      .brochure-link:hover,
+      .brochure-link:focus-visible {
+        transform: translateY(-4px);
       }
 
-      .topic-card.card-5 {
-        background-image: url("https://qartia.com/wp-content/uploads/2022/11/servicio-4.jpg");
+      .feature-list {
+        display: grid;
+        gap: 10px;
+        margin: 18px 0 0;
+        padding: 0;
+        list-style: none;
       }
 
-      .topic-card.card-6 {
-        background-image: url("https://qartia.com/wp-content/uploads/2022/11/servicio-6.jpg");
+      .feature-list li {
+        position: relative;
+        padding-left: 18px;
       }
 
-      .topic-card.card-7 {
-        background-image: url("https://qartia.com/wp-content/uploads/2022/12/slide-cuatrov2.jpg");
+      .feature-list li::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0.68em;
+        width: 8px;
+        height: 8px;
+        border-radius: 999px;
+        background: var(--accent);
       }
 
-      .topic-card.card-8 {
-        background-image: url("https://qartia.com/wp-content/uploads/2022/12/slide-tresv2.jpg");
+      .photo-card {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        overflow: hidden;
+      }
+
+      .photo-card img {
+        width: 100%;
+        aspect-ratio: 16 / 10;
+        object-fit: cover;
+      }
+
+      .photo-card figcaption {
+        padding: 16px 18px 18px;
+        color: #5a6670;
+        font-size: 0.94rem;
       }
 
       .cta-section {
@@ -423,6 +482,10 @@
       }
 
       .cta-copy {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
         background: var(--paper);
         border-radius: 22px;
         padding: 34px;
@@ -441,11 +504,51 @@
         margin: 0;
       }
 
+      .cta-actions {
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+        margin-top: 24px;
+      }
+
+      .cta-button,
+      .ghost-button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 48px;
+        padding: 0 22px;
+        border-radius: 999px;
+        font-family: "Rubik", sans-serif;
+        font-size: 0.94rem;
+        font-weight: 500;
+        transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+      }
+
+      .cta-button {
+        color: #fff;
+        background: var(--brand);
+        box-shadow: 0 12px 28px rgba(20, 78, 156, 0.18);
+      }
+
+      .ghost-button {
+        color: var(--brand);
+        background: rgba(20, 78, 156, 0.08);
+      }
+
+      .cta-button:hover,
+      .cta-button:focus-visible,
+      .ghost-button:hover,
+      .ghost-button:focus-visible {
+        transform: translateY(-2px);
+      }
+
       .cta-image {
+        min-height: 100%;
         border-radius: 22px;
         background:
           linear-gradient(rgba(20, 78, 156, 0.16), rgba(20, 78, 156, 0.16)),
-          url("https://qartia.com/wp-content/uploads/2022/12/contacto-servicios.jpg") center/cover no-repeat;
+          url("assets/medioambiente/contaminate-final.png") center/cover no-repeat;
         box-shadow: var(--shadow);
       }
 
@@ -501,6 +604,7 @@
       @media (max-width: 1024px) {
         .header-inner,
         .content-grid,
+        .brochure-split,
         .cta-grid,
         .footer-inner {
           grid-template-columns: 1fr;
@@ -525,11 +629,21 @@
   transform: translateX(-50%);
 }
 
-        .links-grid {
+        .brochure-grid,
+        .brochure-grid.two-cols,
+        .brochure-grid.four-cols,
+        .phase-grid,
+        .kpi-grid {
           grid-template-columns: repeat(2, minmax(0, 1fr));
         }
       }
-
+.video-section { padding: 70px 0; background: var(--paper); }
+.video-wrapper { margin-top: 32px; border-radius: 22px; overflow: hidden; box-shadow: var(--shadow); position: relative; width: 100%; aspect-ratio: 16 / 9; background: #081726; }
+.video-wrapper iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+.video-trigger { position: relative; display: block; width: 100%; height: 100%; cursor: pointer; color: inherit; }
+.video-trigger img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.video-play { position: absolute; top: 50%; left: 50%; width: 96px; height: 96px; border-radius: 50%; transform: translate(-50%, -50%); background: rgba(7, 18, 29, 0.68); box-shadow: 0 12px 32px rgba(7, 18, 29, 0.32); }
+.video-play::before { content: ""; position: absolute; top: 50%; left: 50%; margin-left: 6px; transform: translate(-50%, -50%); border-style: solid; border-width: 18px 0 18px 30px; border-color: transparent transparent transparent #fff; }
       @media (max-width: 640px) {
 .topbar-inner {
   justify-content: center;
@@ -565,7 +679,11 @@
           margin-left: 0;
         }
 
-        .links-grid {
+        .brochure-grid,
+        .brochure-grid.two-cols,
+        .brochure-grid.four-cols,
+        .phase-grid,
+        .kpi-grid {
           grid-template-columns: 1fr;
         }
 
@@ -627,34 +745,210 @@
         <section class="content-section">
           <div class="section-inner">
             <div class="content-grid">
-              <div>
-                <span class="eyebrow">Qartia Smart Technologies</span>
-                <h2 class="lead-title">Calidad ambiental trazable en aire, ruido y agua.</h2>
+              <div class="content-copy-card">
+                <span class="eyebrow">Medioambiente conectado</span>
+                <h2 class="lead-title">Monitorizaci&oacute;n ambiental continua para aire y ruido.</h2>
                 <div class="copy">
-                  <p>La web actual de Qartia ya visibiliza esta l&iacute;nea con productos para medir part&iacute;culas en suspensi&oacute;n, gases contaminantes y ruido ambiental en distintos entornos.</p>
-                  <p>A esa base se suma la capacidad de integrar calidad del agua, despliegues distribuidos, comunicaciones IoT y plataformas de explotaci&oacute;n del dato en continuo.</p>
-                  <p>El enfoque es operativo: disponer de evidencia hist&oacute;rica, alarmas, comparativas y servicios de valor a&ntilde;adido para industria, ciudad y territorio.</p>
+                  <p>Qartia ayuda a convertir la monitorizaci&oacute;n ambiental en una herramienta de trabajo diaria. Lo hacemos uniendo sens&oacute;rica IoT, conectividad, cuadros de mando y anal&iacute;tica para que el dato llegue bien y sirva para decidir.</p>
+                  <p>Monitorizamos gases criterio OMS, part&iacute;culas, ruido, temperatura, humedad y otras variables en continuo, relacionando toda esa informaci&oacute;n para detectar cambios, lanzar avisos y entender mejor lo que est&aacute; ocurriendo en cada entorno.</p>
+                  <p>Proyectos como Cabezo Beaza (Cartagena), Atlantic Copper (Huelva) y el Ayuntamiento de Cartagena muestran este enfoque: desplegar en campo, recoger el dato con estabilidad y llevarlo a una visualizaci&oacute;n clara para operaci&oacute;n y seguimiento.</p>
+                  <p>En campo, las comunicaciones se apoyan en una red privada (LoRa/DECT NR+) y la salida a Internet puede hacerse por redes 5G, WiFi o Ethernet. As&iacute; la soluci&oacute;n se adapta mejor a cada emplazamiento y puede crecer por fases.</p>
+                  <p>Finalmente, hemos desarrollado herramientas de IA para predecir, a partir de los datos de nuestra sens&oacute;rica junto con otra ya instalada, por ejemplo estaciones de medici&oacute;n locales, auton&oacute;micas o estatales, valores futuros de contaminantes y, si procede, lanzar alertas.</p>
                 </div>
               </div>
 
               <aside class="visual-card">
-                <img src="https://qartia.com/wp-content/uploads/2022/12/slide-cuatrov2.jpg" alt="Medioambiente" />
-                <p>Aire, agua y ruido unidos a una lectura digital del entorno.</p>
+                <img src="assets/medioambiente/dispositivos-cabecera.png" alt="Nodo de monitorizacion ambiental de Qartia desplegado en cubierta con sensorizacion y comunicaciones integradas" />
+                <p>Estaci&oacute;n de monitorizaci&oacute;n ambiental de Qartia desplegada en campo, lista para capturar dato, transmitirlo y ponerlo en contexto operativo.</p>
               </aside>
             </div>
           </div>
         </section>
 
-        <section class="links-section">
+        <section class="brochure-section alt">
           <div class="section-inner">
-            <div class="links-grid">
-              <a class="topic-card card-1 " href="quienes-somos.html"><h3>Quienes Somos</h3></a>
-              <a class="topic-card card-2 " href="agricultura.html"><h3>Agricultura</h3></a>
-              <a class="topic-card card-3 " href="industria.html"><h3>Industria: Vibraciones y Activos</h3></a>
-              <a class="topic-card card-4 current" href="medioambiente.html"><h3>Medioambiente</h3></a>
-              <a class="topic-card card-5 " href="civil.html"><h3>Infraestructuras Civiles</h3></a>
-              <a class="topic-card card-6 " href="comunicaciones.html"><h3>Redes Privadas 5G</h3></a>
-              <a class="topic-card card-7 " href="noticias.html"><h3>Noticias</h3></a>
+            <span class="eyebrow">Noticias y referencias</span>
+            <h2 class="lead-title">Tres referencias p&uacute;blicas que explican bien esta l&iacute;nea de trabajo.</h2>
+            <div class="brochure-grid">
+              <article class="brochure-card">
+                <strong>Cabezo Beaza</strong>
+                <h3>Monitorizaci&oacute;n ambiental en pol&iacute;gono industrial</h3>
+                <p>Un ejemplo claro de c&oacute;mo Qartia lleva la monitorizaci&oacute;n ambiental al terreno, con despliegue real, captura continua y lectura operativa del dato.</p>
+              </article>
+              <article class="brochure-card">
+                <strong>Atlantic Copper</strong>
+                <h3>Referencia industrial en entorno de alta exigencia</h3>
+                <p>Refuerza la capacidad de Qartia para trabajar en entornos industriales exigentes, donde la fiabilidad del dato ambiental y la trazabilidad son especialmente importantes.</p>
+              </article>
+              <article class="brochure-card">
+                <strong>Ayuntamiento de Cartagena</strong>
+                <h3>Validaci&oacute;n institucional y despliegue territorial</h3>
+                <p>Muestra el encaje de Qartia en proyectos de ciudad y territorio, donde la monitorizaci&oacute;n ambiental debe ser comprensible, estable y accionable para servicio p&uacute;blico. Ayuda a la toma de decisiones en aspectos como, por ejemplo, el lugar de instalaci&oacute;n de un parque o un colegio, el sentido del tr&aacute;fico o, simplemente, si el camino al trabajo transcurre por un ambiente contaminado o no.</p>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="brochure-section">
+          <div class="section-inner">
+            <span class="eyebrow">Capacidades clave</span>
+            <h2 class="lead-title">Del sensor ambiental a la decisi&oacute;n, la predicci&oacute;n y la consulta.</h2>
+            <div class="brochure-grid four-cols">
+              <article class="brochure-card">
+                <h3>Calidad del aire 24/7</h3>
+                <p>Seguimiento continuo de concentraciones, tendencias y episodios en entornos urbanos e industriales.</p>
+              </article>
+              <article class="brochure-card">
+                <h3>Part&iacute;culas y gases</h3>
+                <p>Medici&oacute;n de variables ambientales cr&iacute;ticas con sens&oacute;rica preparada para despliegues reales en campo.</p>
+              </article>
+              <article class="brochure-card">
+                <h3>Ruido ambiental</h3>
+                <p>Captura y trazabilidad del comportamiento ac&uacute;stico para operaciones, ciudad y cumplimiento.</p>
+              </article>
+              <article class="brochure-card">
+                <h3>Dashboards y alertas</h3>
+                <p>Visualizaci&oacute;n operativa con hist&oacute;rico, alarmas y lectura r&aacute;pida para explotaci&oacute;n t&eacute;cnica y gesti&oacute;n.</p>
+              </article>
+              <article class="brochure-card">
+                <h3>Conectividad propia</h3>
+                <p>Red privada en campo (LoRa/DECT NR+) y salida a Internet por 5G, WiFi o Ethernet seg&uacute;n el emplazamiento.</p>
+              </article>
+              <article class="brochure-card">
+                <h3>Piloto y escalado</h3>
+                <p>Despliegues por fases para validar impacto t&eacute;cnico, cobertura, calidad del dato y propuesta de extensi&oacute;n.</p>
+              </article>
+              <article class="brochure-card">
+                <h3>IA predictiva</h3>
+                <p>Modelos para anticipar valores futuros de contaminantes a partir de nuestra sens&oacute;rica y de otras estaciones ya instaladas, con capacidad de lanzar alertas.</p>
+              </article>
+              <article class="brochure-card">
+                <h3>M&oacute;dulo RAG</h3>
+                <p>Consulta conversacional sobre los datos capturados para obtener patrones, estad&iacute;sticas, predicciones o extraer informaci&oacute;n de forma r&aacute;pida.</p>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="brochure-section alt">
+          <div class="section-inner">
+            <span class="eyebrow">Caso destacado</span>
+            <h2 class="lead-title">Despliegue urbano con captura de dato y visualizaci&oacute;n en tiempo real.</h2>
+            <div class="brochure-split">
+              <div class="brochure-card">
+                <h3>Monitorizaci&oacute;n ambiental desplegada y conectada a cuadro de mando</h3>
+                <p>Este tipo de instalaci&oacute;n resume bien el planteamiento de Qartia: el sensor se despliega en campo, recoge el dato de forma continua y lo env&iacute;a a una plataforma donde puede verse y utilizarse casi en tiempo real.</p>
+                <ul class="feature-list">
+                  <li>Captura continua de variables ambientales en ubicaci&oacute;n real.</li>
+                  <li>Instalaci&oacute;n preparada para operaci&oacute;n, mantenimiento y crecimiento.</li>
+                  <li>Dato disponible para pantallas, cuadros de mando y alertas.</li>
+                  <li>Modelo replicable en industria, ciudad y otras infraestructuras.</li>
+                </ul>
+              </div>
+
+              <figure class="photo-card">
+                <img src="assets/medioambiente/cartagena-sensor-poste.jpeg" alt="Sensor medioambiental desplegado por Qartia en entorno urbano" />
+                <figcaption>Nodo ambiental instalado en campo y preparado para enviar medidas en continuo a la plataforma de monitorizaci&oacute;n.</figcaption>
+              </figure>
+            </div>
+          </div>
+        </section>
+
+        <section class="video-section">
+          <div class="section-inner">
+            <span class="eyebrow">Caso real</span>
+            <h2 class="lead-title">Despliegue real de Qartia en Cabezo Beaza.</h2>
+            <div
+              class="video-wrapper"
+              id="medioambiente-video-embed"
+              data-youtube-src="https://www.youtube.com/embed/B6rd5sHDSZ8?rel=0"
+              data-poster="https://i.ytimg.com/vi/B6rd5sHDSZ8/hqdefault.jpg"
+              aria-label="Video de caso real de Qartia en Medioambiente"
+            >
+              <button class="video-trigger" type="button" aria-label="Reproducir video de caso real de Qartia en Medioambiente">
+                <img src="https://i.ytimg.com/vi/B6rd5sHDSZ8/hqdefault.jpg" alt="Miniatura del caso real de Qartia en Medioambiente" />
+                <span class="video-play" aria-hidden="true"></span>
+              </button>
+            </div>
+          </div>
+        </section>
+
+        <section class="brochure-section">
+          <div class="section-inner">
+            <span class="eyebrow">Arquitectura de la soluci&oacute;n</span>
+            <h2 class="lead-title">Sensores ambientales + red + edge + IA + RAG.</h2>
+            <div class="brochure-split">
+              <div class="brochure-card">
+                <h3>Sensores ambientales &rarr; Red privada (LoRa/DECT NR+) &rarr; Edge &rarr; Dashboard, IA, RAG y alertas</h3>
+                <p>En campo, las comunicaciones se hacen por una red privada y la salida a Internet puede resolverse por redes 5G, WiFi o Ethernet. Esto nos permite adaptarnos a la infraestructura disponible sin cambiar la l&oacute;gica de la soluci&oacute;n.</p>
+                <ul class="feature-list">
+                  <li>Adquisici&oacute;n continua de variables ambientales clave.</li>
+                  <li>Red privada para recoger el dato con estabilidad en campo.</li>
+                  <li>Salida a Internet seg&uacute;n emplazamiento: 5G, WiFi o Ethernet.</li>
+                  <li>IA para predicci&oacute;n de contaminantes y generaci&oacute;n de alertas.</li>
+                  <li>RAG para consultar el hist&oacute;rico y extraer respuestas &uacute;tiles en lenguaje natural.</li>
+                  <li>Escalado sencillo desde un piloto hasta una red m&aacute;s amplia.</li>
+                </ul>
+              </div>
+
+              <figure class="photo-card">
+                <img src="assets/medioambiente/nodo-comunicaciones-interior.jpeg" alt="Nodo interior de comunicaciones y electr&oacute;nica de campo de la soluci&oacute;n medioambiental de Qartia" />
+                <figcaption>Electr&oacute;nica y comunicaciones integradas para recoger el dato en campo y llevarlo a la plataforma de forma segura y estable.</figcaption>
+              </figure>
+            </div>
+          </div>
+        </section>
+
+        <section class="brochure-section alt">
+          <div class="section-inner">
+            <span class="eyebrow">&Aacute;mbitos de aplicaci&oacute;n</span>
+            <h2 class="lead-title">Industria, ciudad y territorio en una misma l&oacute;gica de dato.</h2>
+            <div class="brochure-grid four-cols">
+              <article class="brochure-card">
+                <h3>Pol&iacute;gonos industriales</h3>
+                <p>Seguimiento ambiental para actividad industrial, servicios comunes y toma de decisiones sobre episodios o desviaciones.</p>
+              </article>
+              <article class="brochure-card">
+                <h3>Entornos industriales complejos</h3>
+                <p>Despliegue en instalaciones donde la robustez, la trazabilidad y la convivencia con infraestructura existente son prioritarias.</p>
+              </article>
+              <article class="brochure-card">
+                <h3>Ciudad y administraci&oacute;n</h3>
+                <p>Proyectos con lectura territorial para servicios municipales, innovaci&oacute;n urbana y validaci&oacute;n institucional.</p>
+              </article>
+              <article class="brochure-card">
+                <h3>Campus e infraestructuras</h3>
+                <p>Monitorizaci&oacute;n distribuida con cuadros de mando, alarmas y lectura integrada de entorno.</p>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="brochure-section">
+          <div class="section-inner">
+            <span class="eyebrow">Piloto ejecutivo</span>
+            <h2 class="lead-title">Piloto medioambiental en 4 fases.</h2>
+            <div class="phase-grid">
+              <article class="phase-card">
+                <strong>1</strong>
+                <h3>Diagn&oacute;stico inicial</h3>
+                <p>Selecci&oacute;n de ubicaci&oacute;n, variables ambientales, cobertura y objetivos operativos.</p>
+              </article>
+              <article class="phase-card">
+                <strong>2</strong>
+                <h3>Despliegue y validaci&oacute;n</h3>
+                <p>Instalaci&oacute;n de nodos, verificaci&oacute;n de conectividad y control de calidad del dato.</p>
+              </article>
+              <article class="phase-card">
+                <strong>3</strong>
+                <h3>Cuadro de mando y alertas</h3>
+                <p>Activaci&oacute;n de visualizaci&oacute;n operativa, umbrales y lectura t&eacute;cnica del comportamiento ambiental.</p>
+              </article>
+              <article class="phase-card">
+                <strong>4</strong>
+                <h3>Escalado</h3>
+                <p>Informe de resultados, propuesta de ampliaci&oacute;n y arquitectura de crecimiento por zonas o variables.</p>
+              </article>
             </div>
           </div>
         </section>
@@ -663,8 +957,13 @@
           <div class="section-inner">
             <div class="cta-grid">
               <div class="cta-copy">
-                <h2>¿Te interesa esta línea?</h2>
-                <p>Desde esta base local podemos añadir productos, noticias, vídeos, casos de uso y llamadas a la acción específicas para cada sector.</p>
+                <h2>Convierte la monitorizaci&oacute;n ambiental en una capacidad operativa.</h2>
+                <p>Solicita un piloto Qartia y valida la captura, la conectividad y la explotaci&oacute;n del dato ambiental en tu entorno industrial, urbano o territorial.</p>
+                <div class="cta-actions">
+                  <a class="cta-button" href="mailto:info@qartia.com?subject=Solicitar%20piloto%20Qartia%20Medioambiente">Solicitar piloto</a>
+                  <a class="ghost-button" href="brochure-medioambiente.html">Abrir brochure</a>
+                  <a class="ghost-button" href="productos.html">Ver productos</a>
+                </div>
               </div>
               <div class="cta-image" aria-hidden="true"></div>
             </div>
@@ -680,7 +979,7 @@
           <div>
             <h4>Contacto</h4>
             <p><a href="tel:+34686918522">(+34) 686918522</a></p>
-            <p><a href="mailto:info@qartia.com">info@qartia.com</a></p>
+            <p><a href="mailto:antoniojavier.garcia@qartia.com">antoniojavier.garcia@qartia.com</a></p>
             <p>Calle Juan Muñoz Delgado, 8, 4ºA</p>
             <p>30205 Cartagena (Murcia) España</p>
           </div>
@@ -697,6 +996,27 @@
 <script>
   document.addEventListener("DOMContentLoaded", function () {
     const groups = document.querySelectorAll(".nav-group");
+    const medioambienteVideoEmbed = document.getElementById("medioambiente-video-embed");
+
+    if (medioambienteVideoEmbed) {
+      const youtubeSrc = medioambienteVideoEmbed.dataset.youtubeSrc;
+      const youtubeWatch = "https://youtu.be/B6rd5sHDSZ8";
+      const trigger = medioambienteVideoEmbed.querySelector(".video-trigger");
+
+      if (trigger) {
+        trigger.addEventListener("click", function () {
+          if (window.location.protocol === "file:") {
+            window.location.href = youtubeWatch;
+            return;
+          }
+
+          medioambienteVideoEmbed.innerHTML =
+            '<iframe src="' +
+            youtubeSrc +
+            '&autoplay=1" title="Qartia Smart Technologies - Caso real de Medioambiente" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>';
+        }, { once: true });
+      }
+    }
 
     groups.forEach((group) => {
       const toggle = group.querySelector(".nav-toggle");

@@ -7,7 +7,7 @@
     <title>Agricultura - Qartia Smart Technologies</title>
     <meta
       name="description"
-      content="Agricultura inteligente en Qartia Smart Technologies. IoT, IA, agrivoltaica, gemelo digital y conectividad privada para explotaciones e invernaderos."
+      content="Agricultura inteligente en Qartia Smart Technologies. IoT, IA, agrivoltaica, gemelo digital y conectividad inal&aacute;mbrica para explotaciones e invernaderos."
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -637,7 +637,13 @@
           grid-template-columns: repeat(2, minmax(0, 1fr));
         }
       }
-
+.video-section { padding: 70px 0; background: var(--paper); }
+.video-wrapper { margin-top: 32px; border-radius: 22px; overflow: hidden; box-shadow: var(--shadow); position: relative; width: 100%; aspect-ratio: 16 / 9; background: #081726; }
+.video-wrapper iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+.video-trigger { position: relative; display: block; width: 100%; height: 100%; cursor: pointer; color: inherit; }
+.video-trigger img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.video-play { position: absolute; top: 50%; left: 50%; width: 96px; height: 96px; border-radius: 50%; transform: translate(-50%, -50%); background: rgba(7, 18, 29, 0.68); box-shadow: 0 12px 32px rgba(7, 18, 29, 0.32); }
+.video-play::before { content: ""; position: absolute; top: 50%; left: 50%; margin-left: 6px; transform: translate(-50%, -50%); border-style: solid; border-width: 18px 0 18px 30px; border-color: transparent transparent transparent #fff; }
       @media (max-width: 640px) {
 .topbar-inner {
   justify-content: center;
@@ -743,10 +749,10 @@
                 <span class="eyebrow">Agricultura inteligente</span>
                 <h2 class="lead-title">De explotaci&oacute;n agr&iacute;cola a sistema conectado, predictivo y energ&eacute;ticamente eficiente.</h2>
                 <div class="copy">
-                  <p>Qartia impulsa la transformaci&oacute;n digital del campo mediante sensorizaci&oacute;n IoT, Inteligencia Artificial, gemelo digital, agrivoltaica y conectividad privada adaptada a explotaciones agr&iacute;colas, invernaderos y entornos rurales.</p>
+                  <p>Qartia impulsa la transformaci&oacute;n digital del campo mediante sensorizaci&oacute;n IoT, Inteligencia Artificial, gemelo digital, agrivoltaica y conectividad inal&aacute;mbrica adaptada a explotaciones agr&iacute;colas, invernaderos y entornos rurales.</p>
                   <p>Nuestra tecnolog&iacute;a permite monitorizar en tiempo real el cultivo, el microclima, el suelo, el agua, la energ&iacute;a y la infraestructura, generando una capa operativa unificada para decidir con mayor precisi&oacute;n y menor incertidumbre.</p>
                   <p>Con Qartia, la explotaci&oacute;n puede anticipar riego, fertilizaci&oacute;n, estr&eacute;s del cultivo y consumos energ&eacute;ticos, incorporando recomendaciones operativas y pilotos orientados a retorno econ&oacute;mico medible.</p>
-                  <p>Como valor diferencial, Qartia integra la operaci&oacute;n agr&iacute;cola con redes privadas, despliegue edge, an&aacute;lisis avanzado y modelos de autoconsumo, permitiendo evolucionar hacia explotaciones m&aacute;s eficientes, resilientes y energ&eacute;ticamente aut&oacute;nomas.</p>
+                  <p>Como valor diferencial, Qartia integra la operaci&oacute;n agr&iacute;cola con redes inal&aacute;mbricas, despliegue edge, an&aacute;lisis avanzado y modelos de autoconsumo, permitiendo evolucionar hacia explotaciones m&aacute;s eficientes, resilientes y energ&eacute;ticamente aut&oacute;nomas.</p>
                 </div>
               </div>
 
@@ -835,8 +841,8 @@
               </article>
               <article class="phase-card">
                 <strong>02</strong>
-                <h3>Conectividad privada</h3>
-                <p>Redes inal&aacute;mbricas robustas para entornos rurales: 1) privadas sin dependencia de operador (como DECT NR+ o LoRa), o 2) con operadora (NB-IoT).</p>
+                <h3>Conectividad inal&aacute;mbrica</h3>
+                <p>Redes inal&aacute;mbricas robustas para entornos rurales: 1) privada sin dependencia de operador (LoRa/DECT NR+), o 2) tradicional con operador (NB-IoT).</p>
               </article>
               <article class="phase-card">
                 <strong>03</strong>
@@ -874,8 +880,8 @@
                 <p>Balance entre generaci&oacute;n solar, sombra, luz disponible y rendimiento agr&iacute;cola.</p>
               </article>
               <article class="brochure-card">
-                <h3>Red privada Qartia</h3>
-                <p>Conectividad fiable en explotaciones agr&iacute;colas, invernaderos y zonas remotas.</p>
+                <h3>Red inal&aacute;mbrica Qartia</h3>
+                <p>Conectividad privada fiable en explotaciones agr&iacute;colas, invernaderos y zonas remotas.</p>
               </article>
               <article class="brochure-card">
                 <h3>Optimizaci&oacute;n de recursos</h3>
@@ -888,14 +894,14 @@
         <section class="brochure-section alt">
           <div class="section-inner">
             <span class="eyebrow">Arquitectura t&eacute;cnica</span>
-            <h2 class="lead-title">Edge + red privada + IA.</h2>
+            <h2 class="lead-title">Edge + red inal&aacute;mbrica + IA.</h2>
             <div class="brochure-split">
               <div class="brochure-card">
-                <h3>Sensores IoT &rarr; Red privada &rarr; Edge / Cloud &rarr; IA + Gemelo Digital &rarr; Dashboard / Actuadores</h3>
+                <h3>Sensores IoT &rarr; Red inal&aacute;mbrica &rarr; Edge / Cloud &rarr; IA + Gemelo Digital &rarr; Dashboard / Actuadores</h3>
                 <p>La plataforma puede desplegarse en cloud, on-premise o arquitectura h&iacute;brida, integr&aacute;ndose con sens&oacute;rica existente o con despliegue propio Qartia.</p>
                 <ul class="feature-list">
                   <li>Captura continua de variables de suelo, ambiente, radiaci&oacute;n y energ&iacute;a.</li>
-                  <li>Conectividad fiable en explotaciones agr&iacute;colas, invernaderos y zonas remotas.</li>
+                  <li>Conectividad privada fiable en explotaciones agr&iacute;colas, invernaderos y zonas remotas.</li>
                   <li>Procesamiento edge para continuidad operativa y baja latencia.</li>
                   <li>Cuadros de mando y automatizaci&oacute;n sobre riego, energ&iacute;a y producci&oacute;n.</li>
                 </ul>
@@ -903,7 +909,7 @@
 
               <figure class="photo-card">
                 <img src="assets/linkedin-news/greenhouse-1.jpg" alt="Arquitectura agr&iacute;cola conectada de Qartia en invernadero" />
-                <figcaption>Infraestructura preparada para integrar sens&oacute;rica, comunicaciones privadas, edge computing y anal&iacute;tica aplicada al cultivo.</figcaption>
+                <figcaption>Infraestructura preparada para integrar sens&oacute;rica, comunicaciones inal&aacute;mbricas, edge computing y anal&iacute;tica aplicada al cultivo.</figcaption>
               </figure>
             </div>
           </div>
@@ -968,9 +974,9 @@
             <div class="brochure-split">
               <div class="brochure-card">
                 <h3>Qartia no es solo sens&oacute;rica.</h3>
-                <p>Qartia integra conectividad privada, IA aplicada, gemelo digital, agrivoltaica, optimizaci&oacute;n operativa y enfoque ROI en una sola plataforma.</p>
+                <p>Qartia integra conectividad inal&aacute;mbrica (privada sin operador - LoRa/DECT NR+ o tradicional con operador - NB-IoT), IA aplicada, gemelo digital, agrivoltaica, optimizaci&oacute;n operativa y enfoque ROI en una sola plataforma.</p>
                 <ul class="feature-list">
-                  <li>Conectividad privada y despliegue controlado.</li>
+                  <li>Conectividad inal&aacute;mbrica y despliegue controlado.</li>
                   <li>IA aplicada a riego, energ&iacute;a y cultivo.</li>
                   <li>Gemelo digital y simulaci&oacute;n operativa.</li>
                   <li>Enfoque de piloto con impacto econ&oacute;mico medible.</li>
@@ -985,7 +991,24 @@
             </div>
           </div>
         </section>
-
+<section class="video-section">
+  <div class="section-inner">
+    <span class="eyebrow">Vídeo</span>
+    <h2 class="lead-title">Qartia en acción.</h2>
+    <div
+      class="video-wrapper"
+      id="agriculture-video-embed"
+      data-youtube-src="https://www.youtube.com/embed/mBLwA3rF2xk?rel=0"
+      data-poster="https://i.ytimg.com/vi/mBLwA3rF2xk/hqdefault.jpg"
+      aria-label="Video de Agricultura de Qartia"
+    >
+      <button class="video-trigger" type="button" aria-label="Reproducir vídeo de Agricultura de Qartia">
+        <img src="https://i.ytimg.com/vi/mBLwA3rF2xk/hqdefault.jpg" alt="Miniatura del vídeo de Agricultura de Qartia" />
+        <span class="video-play" aria-hidden="true"></span>
+      </button>
+    </div>
+  </div>
+</section>
         <section class="cta-section">
           <div class="section-inner">
             <div class="cta-grid">
@@ -1028,6 +1051,27 @@
 <script>
   document.addEventListener("DOMContentLoaded", function () {
     const groups = document.querySelectorAll(".nav-group");
+    const agricultureVideoEmbed = document.getElementById("agriculture-video-embed");
+
+    if (agricultureVideoEmbed) {
+      const youtubeSrc = agricultureVideoEmbed.dataset.youtubeSrc;
+      const youtubeWatch = "https://youtu.be/mBLwA3rF2xk";
+      const trigger = agricultureVideoEmbed.querySelector(".video-trigger");
+
+      if (trigger) {
+        trigger.addEventListener("click", function () {
+          if (window.location.protocol === "file:") {
+            window.location.href = youtubeWatch;
+            return;
+          }
+
+          agricultureVideoEmbed.innerHTML =
+            '<iframe src="' +
+            youtubeSrc +
+            '&autoplay=1" title="Qartia Smart Technologies - Agricultura inteligente" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>';
+        }, { once: true });
+      }
+    }
 
     groups.forEach((group) => {
       const toggle = group.querySelector(".nav-toggle");

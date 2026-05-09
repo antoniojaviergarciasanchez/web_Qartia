@@ -4,10 +4,10 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="referrer" content="strict-origin-when-cross-origin" />
-    <title>Mantenimiento Predictivo. Vibraciones - Qartia Smart Technologies</title>
+    <title>Agricultura - Qartia Smart Technologies</title>
     <meta
       name="description"
-      content="Mantenimiento predictivo por vibraciones en Qartia Smart Technologies. Diagnostico continuo, sensorizacion industrial, analitica e inteligencia artificial aplicadas a planta."
+      content="Agricultura inteligente en Qartia Smart Technologies. IoT, IA, agrivoltaica, gemelo digital y conectividad inal&aacute;mbrica para explotaciones e invernaderos."
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -228,7 +228,7 @@
         color: #fff;
         background:
           linear-gradient(rgba(0, 0, 0, 0.68), rgba(0, 0, 0, 0.25)),
-          url("assets/industria-principal.jpg") center/cover no-repeat;
+          url("assets/linkedin-news/greenhouse-1.jpg") center/cover no-repeat;
       }
 
       .hero-inner {
@@ -239,7 +239,7 @@
 
       .hero h1 {
         margin: 0;
-        max-width: 16ch;
+        max-width: 12ch;
         font-family: "Rubik", sans-serif;
         font-size: clamp(2.4rem, 4vw, 4rem);
         font-weight: 300;
@@ -247,6 +247,7 @@
       }
 
       .content-section,
+      .brochure-section,
       .cta-section {
         padding: 70px 0;
       }
@@ -257,11 +258,49 @@
           var(--paper-soft);
       }
 
+      .brochure-section {
+        background: var(--paper);
+      }
+
+      .brochure-section.alt {
+        background: #e8faf9;
+      }
+
       .content-grid {
         display: grid;
         grid-template-columns: minmax(0, 1.15fr) minmax(280px, 0.85fr);
         gap: 36px;
         align-items: center;
+      }
+
+      .brochure-grid,
+      .brochure-split,
+      .phase-grid,
+      .kpi-grid {
+        display: grid;
+        gap: 24px;
+      }
+
+      .brochure-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .brochure-grid.two-cols {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .brochure-grid.four-cols,
+      .kpi-grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+      }
+
+      .brochure-split {
+        grid-template-columns: minmax(0, 1.08fr) minmax(320px, 0.92fr);
+        align-items: center;
+      }
+
+      .phase-grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
       }
 
       .eyebrow {
@@ -298,21 +337,25 @@
       }
 
       .content-copy-card,
-      .visual-card {
-        display: flex;
-        flex-direction: column;
+      .visual-card,
+      .brochure-card,
+      .phase-card,
+      .kpi-card,
+      .photo-card {
         background: var(--paper);
         border-radius: 22px;
         box-shadow: var(--shadow);
       }
 
+      .content-copy-card,
+      .visual-card {
+        display: flex;
+        flex-direction: column;
+      }
+
       .content-copy-card {
         justify-content: center;
         padding: 30px 32px;
-      }
-
-      .content-copy-card .eyebrow {
-        margin-top: 0;
       }
 
       .content-copy-card .lead-title {
@@ -323,7 +366,6 @@
         align-self: center;
         justify-content: center;
         padding: 18px;
-        box-shadow: var(--shadow);
       }
 
       .visual-card img {
@@ -337,148 +379,6 @@
         margin: 18px 4px 0;
         color: #5a6670;
         font-size: 0.95rem;
-      }
-
-      .video-section {
-        padding: 70px 0;
-        background: linear-gradient(180deg, #f7fbfc 0%, #e8faf9 100%);
-      }
-
-      .video-shell {
-        width: min(1140px, calc(100% - 32px));
-        margin: 0 auto;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 28px;
-      }
-
-      .video-copy {
-        max-width: 760px;
-        text-align: center;
-      }
-
-      .video-kicker {
-        display: inline-flex;
-        align-items: center;
-        gap: 12px;
-        margin: 0 0 12px;
-        color: #6d7b88;
-        font-size: 0.92rem;
-        font-weight: 700;
-        letter-spacing: 0.12em;
-        text-transform: uppercase;
-      }
-
-      .video-kicker::before,
-      .video-kicker::after {
-        content: "";
-        width: 42px;
-        height: 2px;
-        background: var(--accent);
-      }
-
-      .video-copy .lead-title {
-        margin-left: 0;
-        margin-right: 0;
-      }
-
-      .video-frame {
-        width: min(960px, 100%);
-        aspect-ratio: 16 / 9;
-        border-radius: 24px;
-        overflow: hidden;
-        box-shadow: 0 18px 42px rgba(17, 35, 53, 0.14);
-        background: #081726;
-      }
-
-      .video-media {
-        display: block;
-        width: 100%;
-        height: 100%;
-        border: 0;
-      }
-
-      .video-link,
-      .video-trigger {
-        position: relative;
-        display: block;
-        width: 100%;
-        height: 100%;
-        color: inherit;
-      }
-
-      .video-trigger {
-        padding: 0;
-        border: 0;
-        background: none;
-        cursor: pointer;
-      }
-
-      .video-link img,
-      .video-trigger img {
-        display: block;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-      }
-
-      .video-play {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        width: 96px;
-        height: 96px;
-        border-radius: 50%;
-        transform: translate(-50%, -50%);
-        background: rgba(7, 18, 29, 0.68);
-        box-shadow: 0 12px 32px rgba(7, 18, 29, 0.32);
-      }
-
-      .video-play::before {
-        content: "";
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        margin-left: 6px;
-        transform: translate(-50%, -50%);
-        border-style: solid;
-        border-width: 18px 0 18px 30px;
-        border-color: transparent transparent transparent #fff;
-      }
-
-      .brochure-section {
-        padding: 70px 0;
-        background: var(--paper);
-      }
-
-      .brochure-section.alt {
-        background: #e8faf9;
-      }
-
-      .brochure-grid,
-      .brochure-split {
-        display: grid;
-        gap: 24px;
-      }
-
-      .brochure-grid {
-        grid-template-columns: repeat(4, minmax(0, 1fr));
-      }
-
-      .brochure-split {
-        grid-template-columns: minmax(0, 1.08fr) minmax(320px, 0.92fr);
-        align-items: center;
-      }
-
-      .brochure-card,
-      .phase-card,
-      .kpi-card,
-      .photo-card {
-        height: 100%;
-        background: var(--paper);
-        border-radius: 22px;
-        box-shadow: var(--shadow);
       }
 
       .brochure-card,
@@ -504,11 +404,6 @@
         margin: 0;
       }
 
-      .brochure-card .lead-title {
-        margin: 0 0 18px;
-        font-size: clamp(1.7rem, 2.4vw, 2.5rem);
-      }
-
       .brochure-card strong,
       .kpi-card strong {
         display: block;
@@ -521,18 +416,15 @@
         text-transform: uppercase;
       }
 
-      .photo-stack,
-      .phase-grid,
-      .kpi-grid {
-        display: grid;
-        gap: 18px;
+      .brochure-link {
+        display: block;
+        color: inherit;
+        transition: transform 0.2s ease;
       }
 
-      .brochure-split > .brochure-card,
-      .brochure-split > .photo-card,
-      .brochure-split > .photo-stack {
-        height: auto;
-        align-self: center;
+      .brochure-link:hover,
+      .brochure-link:focus-visible {
+        transform: translateY(-4px);
       }
 
       .feature-list {
@@ -557,37 +449,6 @@
         height: 8px;
         border-radius: 999px;
         background: var(--accent);
-      }
-
-      .download-button {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        margin-top: 20px;
-        padding: 13px 18px;
-        border-radius: 999px;
-        background: var(--brand);
-        color: #fff;
-        font-family: "Rubik", sans-serif;
-        font-size: 0.92rem;
-        font-weight: 500;
-        letter-spacing: 0.02em;
-        text-transform: uppercase;
-      }
-
-      .download-button:hover,
-      .download-button:focus-visible {
-        background: #0f3f7f;
-      }
-
-      .phase-grid {
-        grid-template-columns: repeat(4, minmax(0, 1fr));
-        margin-top: 28px;
-      }
-
-      .kpi-grid {
-        grid-template-columns: repeat(4, minmax(0, 1fr));
-        margin-top: 22px;
       }
 
       .photo-card {
@@ -643,12 +504,51 @@
         margin: 0;
       }
 
+      .cta-actions {
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+        margin-top: 24px;
+      }
+
+      .cta-button,
+      .ghost-button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 48px;
+        padding: 0 22px;
+        border-radius: 999px;
+        font-family: "Rubik", sans-serif;
+        font-size: 0.94rem;
+        font-weight: 500;
+        transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+      }
+
+      .cta-button {
+        color: #fff;
+        background: var(--brand);
+        box-shadow: 0 12px 28px rgba(20, 78, 156, 0.18);
+      }
+
+      .ghost-button {
+        color: var(--brand);
+        background: rgba(20, 78, 156, 0.08);
+      }
+
+      .cta-button:hover,
+      .cta-button:focus-visible,
+      .ghost-button:hover,
+      .ghost-button:focus-visible {
+        transform: translateY(-2px);
+      }
+
       .cta-image {
         min-height: 100%;
         border-radius: 22px;
         background:
           linear-gradient(rgba(20, 78, 156, 0.16), rgba(20, 78, 156, 0.16)),
-          url("assets/linkedin-news/ilboc.jpg") center/cover no-repeat;
+          url("assets/linkedin-news/greenhouse-2.jpg") center/cover no-repeat;
         box-shadow: var(--shadow);
       }
 
@@ -704,7 +604,6 @@
       @media (max-width: 1024px) {
         .header-inner,
         .content-grid,
-        .video-shell,
         .brochure-split,
         .cta-grid,
         .footer-inner {
@@ -731,6 +630,8 @@
 }
 
         .brochure-grid,
+        .brochure-grid.two-cols,
+        .brochure-grid.four-cols,
         .phase-grid,
         .kpi-grid {
           grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -764,10 +665,6 @@
           padding-top: 72px;
         }
 
-        .video-section {
-          padding: 56px 0;
-        }
-
         .eyebrow::before {
           display: none;
         }
@@ -777,13 +674,11 @@
         }
 
         .brochure-grid,
+        .brochure-grid.two-cols,
+        .brochure-grid.four-cols,
         .phase-grid,
         .kpi-grid {
           grid-template-columns: 1fr;
-        }
-
-        .video-shell {
-          width: min(100%, calc(100% - 24px));
         }
 
         .footer-inner {
@@ -837,7 +732,7 @@
       <main>
         <section class="hero">
           <div class="hero-inner">
-            <h1>Mantenimiento Predictivo. Vibraciones</h1>
+            <h1>Agricultura</h1>
           </div>
         </section>
 
@@ -845,49 +740,84 @@
           <div class="section-inner">
             <div class="content-grid">
               <div class="content-copy-card">
-                <span class="eyebrow">Vibraciones industriales</span>
-                <h2 class="lead-title">Diagn&oacute;stico continuo para mantenimiento predictivo.</h2>
+                <span class="eyebrow">Agricultura inteligente</span>
+                <h2 class="lead-title">De explotaci&oacute;n agr&iacute;cola a sistema conectado, predictivo y energ&eacute;ticamente eficiente.</h2>
                 <div class="copy">
-                  <p>Qartia Smart Technologies SL desarrolla soluciones de mantenimiento predictivo basadas en an&aacute;lisis avanzado de vibraciones para anticipar fallos en maquinaria rotativa y activos industriales.</p>
-                  <p>Nuestra tecnolog&iacute;a captura se&ntilde;al de alta resoluci&oacute;n directamente en planta, analiza la condici&oacute;n en continuo y transforma los datos de vibraci&oacute;n en alertas accionables para operaciones, mantenimiento e ingenier&iacute;a.</p>
-                  <p>El sistema detecta de forma temprana desalineaciones, desbalanceos, desgaste de rodamientos, falta de lubricaci&oacute;n y otros patrones de degradaci&oacute;n antes de que provoquen paradas no planificadas.</p>
-                  <p>Qartia integra sens&oacute;rica, electr&oacute;nica propia, redes privadas DECT NR+ y modelos de Inteligencia Artificial para desplegar una soluci&oacute;n end-to-end, incluso en entornos industriales complejos o sin infraestructura previa de comunicaciones.</p>
-                  <p>El resultado es un modelo de mantenimiento m&aacute;s aut&oacute;nomo, con menor riesgo operativo, mejor OEE y mayor trazabilidad sobre el estado de cada activo.</p>
+                  <p>Qartia impulsa la transformaci&oacute;n digital del campo mediante sensorizaci&oacute;n IoT, Inteligencia Artificial, gemelo digital, agrivoltaica y conectividad inal&aacute;mbrica adaptada a explotaciones agr&iacute;colas, invernaderos y entornos rurales.</p>
+                  <p>Nuestra tecnolog&iacute;a permite monitorizar en tiempo real el cultivo, el microclima, el suelo, el agua, la energ&iacute;a y la infraestructura, generando una capa operativa unificada para decidir con mayor precisi&oacute;n y menor incertidumbre.</p>
+                  <p>Con Qartia, la explotaci&oacute;n puede anticipar riego, fertilizaci&oacute;n, estr&eacute;s del cultivo y consumos energ&eacute;ticos, incorporando recomendaciones operativas y pilotos orientados a retorno econ&oacute;mico medible.</p>
+                  <p>Como valor diferencial, Qartia integra la operaci&oacute;n agr&iacute;cola con redes inal&aacute;mbricas, despliegue edge, an&aacute;lisis avanzado y modelos de autoconsumo, permitiendo evolucionar hacia explotaciones m&aacute;s eficientes, resilientes y energ&eacute;ticamente aut&oacute;nomas.</p>
                 </div>
               </div>
 
               <aside class="visual-card">
-                <img src="assets/industria-principal.jpg" alt="Operarios trabajando sobre un cuadro de monitorizacion industrial para mantenimiento predictivo" />
-                <p>Despliegue real en planta para mantenimiento predictivo por vibraciones, conectividad industrial y diagn&oacute;stico continuo sobre activos.</p>
+                <img src="assets/agricultura/9D.jpeg" alt="Interior de invernadero preparado para monitorizaci&oacute;n agr&iacute;cola inteligente con soluciones de Qartia" />
+                <p>Entorno de cultivo preparado para sensorizaci&oacute;n, conectividad y operaci&oacute;n basada en dato en agricultura inteligente.</p>
               </aside>
             </div>
           </div>
         </section>
 
-        <section class="brochure-section">
+        <section class="brochure-section alt">
           <div class="section-inner">
             <span class="eyebrow">Impacto operativo</span>
-            <h2 class="lead-title">Del dato crudo a la acci&oacute;n de mantenimiento.</h2>
+            <h2 class="lead-title">Impacto operativo medible.</h2>
+            <div class="kpi-grid">
+              <article class="kpi-card">
+                <strong>&darr; 30%</strong>
+                <h3>Consumo de agua</h3>
+                <p>Optimizaci&oacute;n de riego basada en dato agron&oacute;mico y condiciones reales de campo.</p>
+              </article>
+              <article class="kpi-card">
+                <strong>&uarr; 20%</strong>
+                <h3>Producci&oacute;n potencial</h3>
+                <p>Mejor ajuste de cultivo, microclima y decisiones operativas sobre la explotaci&oacute;n.</p>
+              </article>
+              <article class="kpi-card">
+                <strong>&darr; Coste operativo</strong>
+                <h3>Optimizaci&oacute;n de recursos</h3>
+                <p>Reducci&oacute;n de agua, fertilizantes, energ&iacute;a y horas de operaci&oacute;n ineficiente.</p>
+              </article>
+              <article class="kpi-card">
+                <strong>ROI en meses</strong>
+                <h3>Piloto medible</h3>
+                <p>Dise&ntilde;o de piloto ejecutivo con impacto t&eacute;cnico y econ&oacute;mico verificable.</p>
+              </article>
+            </div>
+            <p style="margin: 22px 0 0; color: #5a6670; font-size: 0.95rem;">
+              Los valores son estimaciones orientativas y deben validarse en piloto seg&uacute;n cultivo, ubicaci&oacute;n e infraestructura.
+            </p>
+          </div>
+        </section>
+
+        <section class="brochure-section">
+          <div class="section-inner">
+            <span class="eyebrow">Problema</span>
+            <h2 class="lead-title">El campo opera con poca visibilidad en tiempo real.</h2>
             <div class="brochure-grid">
               <article class="brochure-card">
-                <strong>12 kHz</strong>
-                <h3>Sens&oacute;rica de alta resoluci&oacute;n</h3>
-                <p>Captura de vibraci&oacute;n en el dominio de tiempo y frecuencia para detectar cambios reales del estado de la m&aacute;quina.</p>
+                <h3>Decisiones reactivas</h3>
+                <p>La explotaci&oacute;n responde tarde porque el dato llega fragmentado o no llega con la continuidad necesaria.</p>
               </article>
               <article class="brochure-card">
-                <strong>24/7</strong>
-                <h3>Diagn&oacute;stico continuo</h3>
-                <p>Severidad y tipo de defecto rotativo disponibles en continuo para actuar antes de la aver&iacute;a.</p>
+                <h3>Uso ineficiente de agua y fertilizantes</h3>
+                <p>Los ajustes operativos se hacen con reglas fijas, sin una lectura continua del estado real del cultivo.</p>
               </article>
               <article class="brochure-card">
-                <strong>ISO 10816 / 20816</strong>
-                <h3>Severidad estandarizada</h3>
-                <p>Clasificaci&oacute;n de riesgo bajo criterio industrial reconocido para operaciones, mantenimiento e ingenier&iacute;a.</p>
+                <h3>Conectividad limitada</h3>
+                <p>La cobertura rural o de invernadero condiciona la fiabilidad del dato y retrasa decisiones.</p>
               </article>
               <article class="brochure-card">
-                <strong>ROI visible</strong>
-                <h3>Menos paradas y m&aacute;s OEE</h3>
-                <p>Priorizaci&oacute;n de intervenciones por criticidad real del activo y por coste evitado de parada.</p>
+                <h3>Estr&eacute;s del cultivo dif&iacute;cil de anticipar</h3>
+                <p>La detecci&oacute;n de desv&iacute;os llega cuando el impacto productivo ya es visible.</p>
+              </article>
+              <article class="brochure-card">
+                <h3>Sistemas no integrados</h3>
+                <p>Riego, energ&iacute;a, clima y producci&oacute;n operan en silos y no maximizan el rendimiento global.</p>
+              </article>
+              <article class="brochure-card">
+                <h3>Escalado incierto</h3>
+                <p>Sin piloto estructurado y KPIs claros, resulta dif&iacute;cil justificar la implantaci&oacute;n a gran escala.</p>
               </article>
             </div>
           </div>
@@ -895,88 +825,163 @@
 
         <section class="brochure-section alt">
           <div class="section-inner">
-            <div class="brochure-split">
-              <div class="brochure-card">
-                <span class="eyebrow">Propuesta Qartia</span>
-                <h2 class="lead-title">Diagn&oacute;stico experto y predicci&oacute;n con IA.</h2>
-                <p>La l&iacute;nea de vibraciones de Qartia trabaja con captura inteligente de condici&oacute;n, diagn&oacute;stico de severidad y modelos predictivos dise&ntilde;ados para anticipar degradaci&oacute;n.</p>
-                <ul class="feature-list">
-                  <li>Detecci&oacute;n de desalineaci&oacute;n, desequilibrio, desgaste de rodamientos, falta de lubricaci&oacute;n o cavitaci&oacute;n.</li>
-                  <li>Soluci&oacute;n agn&oacute;stica a plataforma de sensorizaci&oacute;n y fabricante: hardware propio o integraci&oacute;n con sens&oacute;rica del cliente.</li>
-                  <li>Planificaci&oacute;n de mantenimiento preventivo antes de la parada no deseada.</li>
-                  <li>Lectura com&uacute;n del riesgo para operaciones, mantenimiento e ingenier&iacute;a.</li>
-                </ul>
-              </div>
-
-              <div class="photo-stack">
-                <figure class="photo-card">
-                  <img src="assets/industria-vibraciones-board.png" alt="Electr&oacute;nica del sistema de vibraciones" />
-                  <figcaption>Electr&oacute;nica del sistema de vibraciones orientada a adquisici&oacute;n, procesamiento y digitalizaci&oacute;n continua en planta.</figcaption>
-                </figure>
-              </div>
+            <span class="eyebrow">Soluci&oacute;n Qartia</span>
+            <h2 class="lead-title">Del dato agr&iacute;cola a la acci&oacute;n operativa.</h2>
+            <div class="phase-grid">
+              <article class="phase-card">
+                <strong>01</strong>
+                <h3>Captura inteligente</h3>
+                <p>Sensores IoT de suelo, ambiente, radiaci&oacute;n, CO₂, humedad y temperatura, entre otros.</p>
+              </article>
+              <article class="phase-card">
+                <strong>02</strong>
+                <h3>Conectividad inal&aacute;mbrica</h3>
+                <p>Redes inal&aacute;mbricas robustas para entornos rurales: 1) privada sin dependencia de operador (LoRa/DECT NR+), o 2) tradicional con operador (NB-IoT).</p>
+              </article>
+              <article class="phase-card">
+                <strong>03</strong>
+                <h3>Inteligencia predictiva</h3>
+                <p>Modelos de IA para anticipar riego, fertilizaci&oacute;n, estr&eacute;s h&iacute;drico y condiciones cr&iacute;ticas.</p>
+              </article>
+              <article class="phase-card">
+                <strong>04</strong>
+                <h3>Acci&oacute;n y optimizaci&oacute;n</h3>
+                <p>Recomendaciones operativas, automatizaci&oacute;n y mejora continua del cultivo.</p>
+              </article>
             </div>
           </div>
         </section>
 
         <section class="brochure-section">
           <div class="section-inner">
+            <span class="eyebrow">Capacidades clave</span>
+            <h2 class="lead-title">Una plataforma integral para la operaci&oacute;n agr&iacute;cola.</h2>
+            <div class="brochure-grid">
+              <article class="brochure-card">
+                <h3>Monitorizaci&oacute;n 24/7</h3>
+                <p>Seguimiento continuo del cultivo, microclima e infraestructura.</p>
+              </article>
+              <article class="brochure-card">
+                <h3>IA predictiva</h3>
+                <p>Predicci&oacute;n de necesidades h&iacute;dricas, nutricionales y energ&eacute;ticas.</p>
+              </article>
+              <article class="brochure-card">
+                <h3>Gemelo digital</h3>
+                <p>Simulaci&oacute;n de escenarios para optimizar decisiones sin riesgo operativo.</p>
+              </article>
+              <article class="brochure-card">
+                <h3>Agrivoltaica</h3>
+                <p>Balance entre generaci&oacute;n solar, sombra, luz disponible y rendimiento agr&iacute;cola.</p>
+              </article>
+              <article class="brochure-card">
+                <h3>Red inal&aacute;mbrica Qartia</h3>
+                <p>Conectividad privada fiable en explotaciones agr&iacute;colas, invernaderos y zonas remotas.</p>
+              </article>
+              <article class="brochure-card">
+                <h3>Optimizaci&oacute;n de recursos</h3>
+                <p>Reducci&oacute;n de agua, fertilizantes, energ&iacute;a y costes operativos.</p>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="brochure-section alt">
+          <div class="section-inner">
+            <span class="eyebrow">Arquitectura t&eacute;cnica</span>
+            <h2 class="lead-title">Edge + red inal&aacute;mbrica + IA.</h2>
             <div class="brochure-split">
               <div class="brochure-card">
-                <span class="eyebrow">Arquitectura t&eacute;cnica</span>
-                <h2 class="lead-title">Edge + red privada + anal&iacute;tica.</h2>
-                <p>La arquitectura t&eacute;cnica de Qartia se apoya en hardware propietario, comunicaciones DECT NR+ y un motor de diagn&oacute;stico experto con despliegue flexible.</p>
+                <h3>Sensores IoT &rarr; Red inal&aacute;mbrica &rarr; Edge / Cloud &rarr; IA + Gemelo Digital &rarr; Dashboard / Actuadores</h3>
+                <p>La plataforma puede desplegarse en cloud, on-premise o arquitectura h&iacute;brida, integr&aacute;ndose con sens&oacute;rica existente o con despliegue propio Qartia.</p>
                 <ul class="feature-list">
-                  <li>Aceler&oacute;metros de hasta 12 kHz, plataforma de adquisici&oacute;n y FFT para medici&oacute;n continua.</li>
-                  <li>Comunicaciones DECT NR+ 5G, sin operadora, no celular, descentralizada y en espectro libre.</li>
-                  <li>Topolog&iacute;as malladas para cobertura en f&aacute;brica donde otras tecnolog&iacute;as rinden peor.</li>
-                  <li>Asistente LLM de diagn&oacute;stico en cliente u on-premise/cloud, con criterio equivalente a experto categor&iacute;a II.</li>
+                  <li>Captura continua de variables de suelo, ambiente, radiaci&oacute;n y energ&iacute;a.</li>
+                  <li>Conectividad privada fiable en explotaciones agr&iacute;colas, invernaderos y zonas remotas.</li>
+                  <li>Procesamiento edge para continuidad operativa y baja latencia.</li>
+                  <li>Cuadros de mando y automatizaci&oacute;n sobre riego, energ&iacute;a y producci&oacute;n.</li>
                 </ul>
               </div>
 
               <figure class="photo-card">
-                <img src="assets/industria-vibraciones-modulos.png" alt="M&oacute;dulos de vibraci&oacute;n para industria" />
-                <figcaption>M&oacute;dulos de vibraci&oacute;n preparados para transmisi&oacute;n DECT, despliegue sobre activos industriales y conectividad fiable en planta.</figcaption>
+                <img src="assets/linkedin-news/greenhouse-1.jpg" alt="Arquitectura agr&iacute;cola conectada de Qartia en invernadero" />
+                <figcaption>Infraestructura preparada para integrar sens&oacute;rica, comunicaciones inal&aacute;mbricas, edge computing y anal&iacute;tica aplicada al cultivo.</figcaption>
               </figure>
             </div>
+          </div>
+        </section>
 
-            <span class="eyebrow">Activaci&oacute;n r&aacute;pida</span>
+        <section class="brochure-section">
+          <div class="section-inner">
+            <span class="eyebrow">Agrivoltaica</span>
+            <h2 class="lead-title">Agricultura y energ&iacute;a trabajando juntas.</h2>
+            <div class="brochure-split">
+              <div class="brochure-card">
+                <p>Qartia permite dise&ntilde;ar y operar sistemas agrivoltaicos que equilibran producci&oacute;n agr&iacute;cola y generaci&oacute;n solar. Mediante simulaci&oacute;n, IA y sensorizaci&oacute;n, la explotaci&oacute;n puede avanzar hacia modelos de autoconsumo e independencia energ&eacute;tica.</p>
+                <ul class="feature-list">
+                  <li>Simulaci&oacute;n de configuraciones fotovoltaicas.</li>
+                  <li>Balance luz&ndash;energ&iacute;a&ndash;cultivo.</li>
+                  <li>Optimizaci&oacute;n de microclima.</li>
+                  <li>Explotaciones energ&eacute;ticamente aut&oacute;nomas.</li>
+                </ul>
+              </div>
+
+              <figure class="photo-card">
+                <img src="assets/agricultura/9C.jpeg" alt="Invernadero con integraci&oacute;n agrivoltaica y paneles solares en explotaci&oacute;n agr&iacute;cola" />
+                <figcaption>Configuraci&oacute;n agrivoltaica para equilibrar generaci&oacute;n solar, producci&oacute;n agr&iacute;cola y autonom&iacute;a energ&eacute;tica de la explotaci&oacute;n.</figcaption>
+              </figure>
+            </div>
+          </div>
+        </section>
+
+        <section class="brochure-section alt">
+          <div class="section-inner">
+            <span class="eyebrow">Piloto ejecutivo</span>
             <h2 class="lead-title">Piloto ejecutivo en 4 fases.</h2>
             <div class="phase-grid">
               <article class="phase-card">
-                <h3>Fase 1</h3>
-                <p>Selecci&oacute;n de activos por criticidad operativa, hist&oacute;rico de fallos y ventana de mantenimiento.</p>
+                <strong>1</strong>
+                <h3>Diagn&oacute;stico inicial</h3>
+                <p>Selecci&oacute;n de cultivo, explotaci&oacute;n, infraestructura y KPIs.</p>
               </article>
               <article class="phase-card">
-                <h3>Fase 2</h3>
-                <p>Despliegue de sens&oacute;rica y red en campo con validaci&oacute;n de cobertura y calidad del dato.</p>
+                <strong>2</strong>
+                <h3>Despliegue sens&oacute;rica y red</h3>
+                <p>Instalaci&oacute;n de sensores, validaci&oacute;n de cobertura y calidad del dato.</p>
               </article>
               <article class="phase-card">
-                <h3>Fase 3</h3>
-                <p>Diagn&oacute;stico, predicci&oacute;n e informe de impacto con alertas accionables y recomendaciones priorizadas.</p>
+                <strong>3</strong>
+                <h3>IA + diagn&oacute;stico operativo</h3>
+                <p>Modelos predictivos, alertas accionables y recomendaciones t&eacute;cnicas.</p>
               </article>
               <article class="phase-card">
-                <h3>Fase 4</h3>
-                <p>Cierre comercial con propuesta econ&oacute;mica final, plan de implantaci&oacute;n y acuerdo de servicio.</p>
+                <strong>4</strong>
+                <h3>Escalado y ROI</h3>
+                <p>Informe de impacto, propuesta econ&oacute;mica y plan de implantaci&oacute;n.</p>
               </article>
             </div>
+          </div>
+        </section>
 
-            <div class="kpi-grid">
-              <article class="kpi-card">
-                <strong>MTBF</strong>
-                <p>Fallos menos frecuentes y m&aacute;s estabilidad en maquinaria rotativa cr&iacute;tica.</p>
-              </article>
-              <article class="kpi-card">
-                <strong>OEE</strong>
-                <p>M&aacute;s disponibilidad de planta y mayor tiempo de producci&oacute;n &uacute;til.</p>
-              </article>
-              <article class="kpi-card">
-                <strong>Riesgo por activo</strong>
-                <p>Severidad y frecuencia para priorizar donde una parada cuesta m&aacute;s dinero.</p>
-              </article>
-              <article class="kpi-card">
-                <strong>Trazabilidad</strong>
-                <p>Informe t&eacute;cnico para mantenimiento, operaciones y direcci&oacute;n con base t&eacute;cnica y econ&oacute;mica.</p>
-              </article>
+        <section class="brochure-section">
+          <div class="section-inner">
+            <span class="eyebrow">Diferencial Qartia</span>
+            <h2 class="lead-title">Por qu&eacute; Qartia.</h2>
+            <div class="brochure-split">
+              <div class="brochure-card">
+                <h3>Qartia no es solo sens&oacute;rica.</h3>
+                <p>Qartia integra conectividad inal&aacute;mbrica (privada sin operador - LoRa/DECT NR+ o tradicional con operador - NB-IoT), IA aplicada, gemelo digital, agrivoltaica, optimizaci&oacute;n operativa y enfoque ROI en una sola plataforma.</p>
+                <ul class="feature-list">
+                  <li>Conectividad inal&aacute;mbrica y despliegue controlado.</li>
+                  <li>IA aplicada a riego, energ&iacute;a y cultivo.</li>
+                  <li>Gemelo digital y simulaci&oacute;n operativa.</li>
+                  <li>Enfoque de piloto con impacto econ&oacute;mico medible.</li>
+                </ul>
+              </div>
+
+              <a class="brochure-card brochure-link" href="brochure-agricultura.html">
+                <strong>Brochure comercial</strong>
+                <h3>Ver brochure de Agricultura</h3>
+                <p>Resumen ejecutivo, capacidades, arquitectura, agrivoltaica y propuesta de piloto en un formato preparado para presentaci&oacute;n e impresi&oacute;n.</p>
+              </a>
             </div>
           </div>
         </section>
@@ -985,26 +990,14 @@
           <div class="section-inner">
             <div class="cta-grid">
               <div class="cta-copy">
-                <h2>Solicita un piloto premium en planta.</h2>
-                <p>La propuesta de vibraciones de Qartia plantea una activaci&oacute;n r&aacute;pida, valor t&eacute;cnico medible y evaluaci&oacute;n econ&oacute;mica en semanas. Esta l&iacute;nea queda preparada para seguir ampli&aacute;ndola con casos, v&iacute;deos o pilotos reales.</p>
-                <a class="download-button" href="assets/downloads/triptico_qartia_vibraciones.pdf" download>Descargar folleto de vibraciones</a>
+                <h2>Convierte tu explotaci&oacute;n en un sistema inteligente.</h2>
+                <p>Solicita un piloto Qartia y valida el impacto t&eacute;cnico y econ&oacute;mico sobre tu cultivo, infraestructura y modelo energ&eacute;tico.</p>
+                <div class="cta-actions">
+                  <a class="cta-button" href="mailto:antoniojavier.garcia@qartia.com?subject=Solicitar%20piloto%20Qartia%20Agricultura">Solicitar piloto</a>
+                  <a class="ghost-button" href="brochure-agricultura.html">Abrir brochure</a>
+                </div>
               </div>
               <div class="cta-image" aria-hidden="true"></div>
-            </div>
-          </div>
-        </section>
-
-        <section class="video-section">
-          <div class="video-shell">
-            <div class="video-copy">
-              <p class="video-kicker">Vibraciones en acci&oacute;n</p>
-              <h2 class="lead-title">Diagn&oacute;stico vibracional y despliegue real en planta.</h2>
-            </div>
-            <div class="video-frame" id="vibrations-video-embed" data-youtube-src="https://www.youtube.com/embed/tKtnFuy05EQ?rel=0&amp;modestbranding=1" data-youtube-watch="https://youtu.be/tKtnFuy05EQ">
-              <button class="video-trigger" type="button" aria-label="Reproducir video de mantenimiento predictivo de Qartia">
-                <img src="https://i.ytimg.com/vi/tKtnFuy05EQ/hqdefault.jpg" alt="Miniatura del video de mantenimiento predictivo de Qartia" />
-                <span class="video-play" aria-hidden="true"></span>
-              </button>
             </div>
           </div>
         </section>
@@ -1018,7 +1011,7 @@
           <div>
             <h4>Contacto</h4>
             <p><a href="tel:+34686918522">(+34) 686918522</a></p>
-            <p><a href="mailto:info@qartia.com">info@qartia.com</a></p>
+            <p><a href="mailto:antoniojavier.garcia@qartia.com">antoniojavier.garcia@qartia.com</a></p>
             <p>Calle Juan Muñoz Delgado, 8, 4ºA</p>
             <p>30205 Cartagena (Murcia) España</p>
           </div>
@@ -1035,27 +1028,6 @@
 <script>
   document.addEventListener("DOMContentLoaded", function () {
     const groups = document.querySelectorAll(".nav-group");
-    const vibrationsVideoEmbed = document.getElementById("vibrations-video-embed");
-
-    if (vibrationsVideoEmbed) {
-      const youtubeSrc = vibrationsVideoEmbed.dataset.youtubeSrc;
-      const youtubeWatch = vibrationsVideoEmbed.dataset.youtubeWatch;
-      const trigger = vibrationsVideoEmbed.querySelector(".video-trigger");
-
-      if (trigger) {
-        trigger.addEventListener("click", function () {
-          if (window.location.protocol === "file:") {
-            window.location.href = youtubeWatch;
-            return;
-          }
-
-          vibrationsVideoEmbed.innerHTML =
-            '<iframe class="video-media" src="' +
-            youtubeSrc +
-            '&autoplay=1" title="Video de mantenimiento predictivo de Qartia" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>';
-        }, { once: true });
-      }
-    }
 
     groups.forEach((group) => {
       const toggle = group.querySelector(".nav-toggle");
