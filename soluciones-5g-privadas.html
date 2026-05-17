@@ -3,10 +3,10 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Clientes - Qartia Smart Technologies</title>
+    <title>Soluciones 5G Privadas - Qartia Smart Technologies</title>
     <meta
       name="description"
-      content="Clientes en Qartia Smart Technologies. Sensorizacion, IoT, analitica e inteligencia artificial aplicadas a entornos reales."
+      content="Soluciones 5G Privadas en Qartia Smart Technologies. Dise&ntilde;o, despliegue e integraci&oacute;n de comunicaciones privadas para proyectos industriales e IoT."
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -227,7 +227,7 @@
         color: #fff;
         background:
           linear-gradient(rgba(0, 0, 0, 0.68), rgba(0, 0, 0, 0.25)),
-          url("https://qartia.com/wp-content/uploads/2022/11/slider-home-1.jpg") center/cover no-repeat;
+          url("https://qartia.com/wp-content/uploads/2022/12/idi-bg-1.jpg") center/cover no-repeat;
       }
 
       .hero-inner {
@@ -284,6 +284,10 @@
         background: url("https://qartia.com/wp-content/uploads/2022/11/before-titulares.png") no-repeat center/contain;
       }
 
+      .eyebrow.section-spaced {
+        margin-top: 74px;
+      }
+
       .lead-title {
         margin: 0 0 24px 58px;
         color: var(--ink-strong);
@@ -315,6 +319,85 @@
         margin: 18px 4px 0;
         color: #5a6670;
         font-size: 0.95rem;
+      }
+
+      .subtopic-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 24px;
+        margin-top: 34px;
+      }
+
+      .subtopic-grid.single {
+        grid-template-columns: 1fr;
+      }
+
+      .subtopic-card {
+        background: var(--paper);
+        border-radius: 22px;
+        padding: 30px;
+        box-shadow: var(--shadow);
+        scroll-margin-top: 110px;
+      }
+
+      .subtopic-card h3 {
+        margin: 0 0 14px;
+        color: var(--ink-strong);
+        font-family: "Rubik", sans-serif;
+        font-size: clamp(1.4rem, 2vw, 1.9rem);
+        font-weight: 400;
+      }
+
+      .subtopic-card h4 {
+        margin: 24px 0 14px;
+        color: var(--ink-strong);
+        font-family: "Rubik", sans-serif;
+        font-size: 1.18rem;
+        font-weight: 500;
+      }
+
+      .subtopic-card p {
+        margin: 0 0 14px;
+      }
+
+      .subtopic-figure {
+        margin: 18px 0 22px;
+      }
+
+      .subtopic-figure img {
+        width: 100%;
+        border-radius: 18px;
+        box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
+      }
+
+      .subtopic-figure figcaption {
+        margin-top: 10px;
+        color: #5a6670;
+        font-size: 0.92rem;
+      }
+
+      .feature-list {
+        margin: 0 0 18px;
+        padding-left: 20px;
+      }
+
+      .feature-list li {
+        margin-bottom: 12px;
+      }
+
+      .subtopic-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        color: var(--brand);
+        font-family: "Rubik", sans-serif;
+        font-size: 0.92rem;
+        font-weight: 500;
+      }
+
+      .subtopic-link::after {
+        content: "↗";
+        font-size: 0.92rem;
       }
 
       .links-section {
@@ -415,38 +498,134 @@
         background: #e8faf9;
       }
 
-      .cta-grid {
+      .contact-panel {
         display: grid;
-        grid-template-columns: minmax(0, 1fr) 320px;
-        gap: 24px;
+        grid-template-columns: minmax(0, 1.2fr) minmax(320px, 0.8fr);
         align-items: stretch;
+        overflow: hidden;
       }
 
-      .cta-copy {
-        background: var(--paper);
-        border-radius: 22px;
-        padding: 34px;
-        box-shadow: var(--shadow);
+      .contact-copy {
+        padding: 58px 52px 56px;
+        background: #e8faf9;
       }
 
-      .cta-copy h2 {
-        margin: 0 0 14px;
+      .contact-copy h3 {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        margin: 0 0 18px;
+        color: #7adfd1;
+        font-family: "Rubik", sans-serif;
+        font-size: 1rem;
+        font-weight: 600;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .contact-copy h3::before {
+        content: "";
+        width: 49px;
+        height: 50px;
+        flex: 0 0 49px;
+        background: url("https://qartia.com/wp-content/uploads/2022/11/before-titulares.png") no-repeat center/contain;
+      }
+
+      .contact-copy h2 {
+        margin: 0;
         color: var(--ink-strong);
         font-family: "Rubik", sans-serif;
-        font-size: clamp(1.9rem, 2.5vw, 2.6rem);
+        font-size: clamp(2.6rem, 4vw, 4rem);
         font-weight: 300;
+        line-height: 1.08;
       }
 
-      .cta-copy p {
-        margin: 0;
+      .contact-form {
+        margin-top: 48px;
       }
 
-      .cta-image {
-        border-radius: 22px;
-        background:
-          linear-gradient(rgba(20, 78, 156, 0.16), rgba(20, 78, 156, 0.16)),
-          url("https://qartia.com/wp-content/uploads/2022/12/contacto-servicios.jpg") center/cover no-repeat;
-        box-shadow: var(--shadow);
+      .contact-row {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 16px;
+      }
+
+      .contact-field {
+        margin-bottom: 22px;
+      }
+
+      .contact-field input,
+      .contact-field textarea {
+        width: 100%;
+        border: 0;
+        border-bottom: 1px solid #c7d4d6;
+        padding: 0 0 14px;
+        background: transparent;
+        color: var(--ink);
+        font-family: "Work Sans", sans-serif;
+        font-size: 1rem;
+        line-height: 1.5;
+        outline: none;
+      }
+
+      .contact-field input::placeholder,
+      .contact-field textarea::placeholder {
+        color: #8a989c;
+      }
+
+      .contact-field textarea {
+        min-height: 108px;
+        resize: vertical;
+      }
+
+      .contact-consent {
+        display: flex;
+        align-items: flex-start;
+        gap: 12px;
+        margin-top: 8px;
+        color: #2f3a3c;
+        font-size: 0.95rem;
+      }
+
+      .contact-consent input {
+        margin-top: 3px;
+        width: 18px;
+        height: 18px;
+        accent-color: var(--brand);
+      }
+
+      .contact-privacy {
+        margin: 14px 0 0;
+        color: #4d5a5d;
+        font-size: 0.95rem;
+        line-height: 1.45;
+      }
+
+      .contact-submit {
+        margin-top: 26px;
+        padding: 16px 38px;
+        border: 0;
+        border-radius: 14px;
+        background: #2b56a6;
+        color: #fff;
+        font-family: "Rubik", sans-serif;
+        font-size: 0.95rem;
+        font-weight: 600;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        cursor: pointer;
+      }
+
+      .contact-submit:hover,
+      .contact-submit:focus-visible {
+        background: #1f468a;
+      }
+
+      .contact-visual img {
+        width: 100%;
+        height: 100%;
+        min-height: 760px;
+        object-fit: cover;
       }
 
       .footer {
@@ -501,7 +680,8 @@
       @media (max-width: 1024px) {
         .header-inner,
         .content-grid,
-        .cta-grid,
+        .subtopic-grid,
+        .contact-panel,
         .footer-inner {
           grid-template-columns: 1fr;
         }
@@ -527,6 +707,14 @@
 
         .links-grid {
           grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .contact-copy {
+          padding: 42px 34px 40px;
+        }
+
+        .contact-visual img {
+          min-height: 420px;
         }
       }
 
@@ -567,6 +755,23 @@
 
         .links-grid {
           grid-template-columns: 1fr;
+        }
+
+        .contact-row {
+          grid-template-columns: 1fr;
+          gap: 0;
+        }
+
+        .contact-copy {
+          padding: 34px 24px 32px;
+        }
+
+        .contact-copy h2 {
+          font-size: clamp(2.2rem, 9vw, 3rem);
+        }
+
+        .contact-visual img {
+          min-height: 300px;
         }
 
         .footer-inner {
@@ -626,7 +831,7 @@
       <main>
         <section class="hero">
           <div class="hero-inner">
-            <h1>Clientes</h1>
+            <h1>Soluciones privadas 5G</h1>
           </div>
         </section>
 
@@ -635,44 +840,122 @@
             <div class="content-grid">
               <div>
                 <span class="eyebrow">Qartia Smart Technologies</span>
-                <h2 class="lead-title">Sectores objetivo, referencias y acceso a operacion.</h2>
+                <h2 class="lead-title">Diseño, integración y puesta en servicio de soluciones privadas de comunicaciones 5G.</h2>
                 <div class="copy">
-                  <p>Qartia trabaja con una propuesta transversal que encaja en industria, agro, medioambiente, sector p&uacute;blico, infraestructuras y entornos con fuerte componente de monitorizaci&oacute;n.</p>
-                  <p>Esta p&aacute;gina queda preparada para evolucionar hacia logos, casos de &eacute;xito, testimonios, integradores, socios tecnol&oacute;gicos y clientes autorizados para publicaci&oacute;n.</p>
-                  <p>Tambien es el lugar natural para centralizar acceso a cliente, documentaci&oacute;n de despliegue y materiales comerciales filtrados por perfil o sector.</p>
+                  <p>Qartia desarrolla Soluciones 5G Privadas para escenarios donde la conectividad debe acompa&ntilde;ar operaciones cr&iacute;ticas, intercambio intensivo de datos o integraci&oacute;n avanzada con plataformas IoT, edge y cloud. El objetivo no es solo dar cobertura, sino dise&ntilde;ar una soluci&oacute;n de comunicaciones alineada con la operativa real del cliente.</p>
+                  <p>Para ello, Qartia utiliza el est&aacute;ndar y la tecnolog&iacute;a DECT NR+ como base para construir redes privadas flexibles, con capacidad para transportar datos, voz, v&iacute;deo y servicios IP en arquitecturas m&aacute;s ligeras que una red celular convencional.</p>
+                  <p>Esto incluye estudio de cobertura, definici&oacute;n de arquitectura, integraci&oacute;n con gateways y dispositivos, puesta en servicio y evoluci&oacute;n del despliegue por fases. As&iacute;, la red privada se convierte en una base t&eacute;cnica para industria, medioambiente, agricultura o infraestructuras civiles, con una visi&oacute;n profesional y preparada para crecer.</p>
                 </div>
               </div>
 
               <aside class="visual-card">
-                <img src="https://qartia.com/wp-content/uploads/2022/12/mantenimiento-placas-solares-1024x683.jpg" alt="Clientes" />
-                <p>Referencias, verticales y relaciones comerciales agrupadas con una lectura clara.</p>
+                <img src="assets/images/services-about-vibrations.jpg" alt="Despliegue industrial de comunicaciones privadas y sensorización de vibraciones en planta" />
+                <p>La conectividad privada se traduce en nodos reales desplegados en campo, integrados con sens&oacute;rica, edge y salidas de red adaptadas a cada proyecto.</p>
               </aside>
             </div>
-          </div>
-        </section>
 
-        <section class="links-section">
-          <div class="section-inner">
-            <div class="links-grid">
-              <a class="topic-card card-1 " href="quienes-somos.html"><h3>Quienes Somos</h3></a>
-              <a class="topic-card card-2 " href="agricultura.html"><h3>Agricultura</h3></a>
-              <a class="topic-card card-3 " href="industria.html"><h3>Industria: Vibraciones y Activos</h3></a>
-              <a class="topic-card card-4 " href="medioambiente.html"><h3>Medioambiente</h3></a>
-              <a class="topic-card card-5 " href="civil.html"><h3>Infraestructuras Civiles</h3></a>
-              <a class="topic-card card-6 " href="comunicaciones.html"><h3>Redes Privadas 5G</h3></a>
-              <a class="topic-card card-7 " href="noticias.html"><h3>Noticias</h3></a>
+            <span class="eyebrow">Soluciones Qartia</span>
+            <h2 class="lead-title">Casos de uso DECT NR+</h2>
+            <div class="subtopic-grid">
+              <article class="subtopic-card">
+                <h3>Industria</h3>
+                <p>Telemetría, mantenimiento predictivo, monitorización de activos y comunicaciones privadas de planta.</p>
+              </article>
+              <article class="subtopic-card">
+                <h3>Medioambiente</h3>
+                <p>Redes privadas para sensórica distribuida en calidad del aire, ruido y monitorización territorial.</p>
+              </article>
+              <article class="subtopic-card">
+                <h3>Agricultura</h3>
+                <p>Conectividad inalámbrica en invernaderos, explotaciones rurales y despliegues edge de campo.</p>
+              </article>
+              <article class="subtopic-card">
+                <h3>Infraestructura civil</h3>
+                <p>Comunicaciones privadas para túneles, activos remotos y entornos donde la cobertura debe diseñarse a medida.</p>
+              </article>
+              <article class="subtopic-card">
+                <h3>Aplicaciones de voz y vídeo</h3>
+                <p>Redes privadas preparadas para servicios de voz, audio en streaming, vídeo y operación remota con baja latencia.</p>
+              </article>
+              <article class="subtopic-card">
+                <h3>Integración con 5G y satélite</h3>
+                <p>Arquitecturas que combinan la red privada con la 5G tradicional y con comunicaciones satelitales cuando el proyecto lo requiere.</p>
+              </article>
+            </div>
+
+            <span class="eyebrow section-spaced">Implementaciones DECT NR+</span>
+            <h2 class="lead-title">Mantenimiento predictivo en Industria: desde el hardware hasta el despliegue en planta.</h2>
+            <div class="subtopic-grid">
+              <article class="subtopic-card">
+                <h3>Hardware de vibraciones DECT NR+</h3>
+                <figure class="subtopic-figure">
+                  <img src="assets/images/dect-nr-module-zoomed.jpeg" alt="M&oacute;dulo DECT NR+ mostrado con una vista m&aacute;s abierta" />
+                  <figcaption>M&oacute;dulo de comunicaciones DECT NR+ desarrollado por Qartia.</figcaption>
+                </figure>
+                <p>Qartia puede trabajar desde la propia capa de hardware, desarrollando equipos completos para mantenimiento predictivo donde la captaci&oacute;n de se&ntilde;al, la electr&oacute;nica de campo y la conectividad privada forman una sola soluci&oacute;n.</p>
+              </article>
+              <article class="subtopic-card">
+                <h3>Integraci&oacute;n del modulo de comunicaciones con la placa de vibraciones</h3>
+                <figure class="subtopic-figure">
+                  <img src="assets/images/dect-nr-board.jpeg" alt="Placa de desarrollo con m&oacute;dulo DECT NR+ integrado" />
+                  <figcaption>Integraci&oacute;n del m&oacute;dulo de comunicaciones DECT NR+ con la placa de vibraciones orientada a m&aacute;quinas rotativas.</figcaption>
+                </figure>
+                <p>La electr&oacute;nica de soporte puede adaptarse al caso de uso, integrando entradas de vibraci&oacute;n, alimentaci&oacute;n, adquisici&oacute;n y comunicaciones privadas en una misma arquitectura pensada para activos rotativos.</p>
+              </article>
+              <article class="subtopic-card">
+                <h3>Dispositivo comercial de vibraciones</h3>
+                <figure class="subtopic-figure">
+                  <img src="assets/images/vibration-commercial-device.jpeg" alt="Dispositivo comercial de vibraciones de Qartia" />
+                  <figcaption>Equipo comercial preparado para medida de vibraciones y despliegue operativo en entornos industriales.</figcaption>
+                </figure>
+                <p>Qartia puede convertir el desarrollo t&eacute;cnico en un equipo listo para instalaci&oacute;n, mantenimiento y explotaci&oacute;n, facilitando el paso de prototipo a producto desplegable en planta.</p>
+              </article>
+              <article class="subtopic-card">
+                <h3>Despliegue en planta</h3>
+                <figure class="subtopic-figure">
+                  <img src="assets/images/vibration-box-3-sensors.jpg" alt="Caja de vibraciones con tres sensores desplegada en planta industrial" />
+                  <figcaption>Caja de vibraciones con tres sensores instalada en planta.</figcaption>
+                </figure>
+                <p>El despliegue final puede resolverse con cajas industriales completas, instrumentadas y conectadas, preparadas para capturar datos de varios puntos del activo y enviarlos de forma continua a la plataforma de mantenimiento predictivo.</p>
+              </article>
             </div>
           </div>
         </section>
 
         <section class="cta-section">
           <div class="section-inner">
-            <div class="cta-grid">
-              <div class="cta-copy">
-                <h2>¿Te interesa esta línea?</h2>
-                <p>Desde esta base local podemos añadir productos, noticias, vídeos, casos de uso y llamadas a la acción específicas para cada sector.</p>
+            <div class="contact-panel">
+              <div class="contact-copy">
+                <h3>Acerca de nuestros servicios</h3>
+                <h2>¿Quieres saber más?</h2>
+                <form class="contact-form" action="#" method="post">
+                  <div class="contact-field">
+                    <input type="text" name="nombre" placeholder="Nombre" />
+                  </div>
+                  <div class="contact-row">
+                    <div class="contact-field">
+                      <input type="email" name="email" placeholder="Email" />
+                    </div>
+                    <div class="contact-field">
+                      <input type="tel" name="telefono" placeholder="Teléfono" />
+                    </div>
+                  </div>
+                  <div class="contact-field">
+                    <textarea name="mensaje" placeholder="Dinos cómo te podemos ayudar"></textarea>
+                  </div>
+                  <label class="contact-consent">
+                    <input type="checkbox" name="privacidad" />
+                    <span>Estoy de acuerdo con la política de privacidad.</span>
+                  </label>
+                  <p class="contact-privacy">
+                    El/la interesado/a declara que presta su consentimiento para el tratamiento de sus datos de carácter personal de acuerdo con la información facilitada y las condiciones expuestas en la Política de Protección de Datos. Así mismo, declara ser exactos y veraces los datos facilitados, y se obliga a comunicar por escrito a Qartia Smart Technologies cualquier variación o modificación que se produzca en los datos antes referidos.
+                  </p>
+                  <button class="contact-submit" type="button">Enviar consulta</button>
+                </form>
               </div>
-              <div class="cta-image" aria-hidden="true"></div>
+              <div class="contact-visual">
+                <img src="assets/images/services-about-vibrations.jpg" alt="Despliegue industrial de comunicaciones privadas y sensorización de vibraciones en planta" />
+              </div>
             </div>
           </div>
         </section>

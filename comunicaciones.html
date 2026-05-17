@@ -317,6 +317,85 @@
         font-size: 0.95rem;
       }
 
+      .subtopic-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 24px;
+        margin-top: 34px;
+      }
+
+      .subtopic-grid.single {
+        grid-template-columns: 1fr;
+      }
+
+      .subtopic-card {
+        background: var(--paper);
+        border-radius: 22px;
+        padding: 30px;
+        box-shadow: var(--shadow);
+        scroll-margin-top: 110px;
+      }
+
+      .subtopic-card h3 {
+        margin: 0 0 14px;
+        color: var(--ink-strong);
+        font-family: "Rubik", sans-serif;
+        font-size: clamp(1.4rem, 2vw, 1.9rem);
+        font-weight: 400;
+      }
+
+      .subtopic-card h4 {
+        margin: 24px 0 14px;
+        color: var(--ink-strong);
+        font-family: "Rubik", sans-serif;
+        font-size: 1.18rem;
+        font-weight: 500;
+      }
+
+      .subtopic-card p {
+        margin: 0 0 14px;
+      }
+
+      .subtopic-figure {
+        margin: 18px 0 22px;
+      }
+
+      .subtopic-figure img {
+        width: 100%;
+        border-radius: 18px;
+        box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
+      }
+
+      .subtopic-figure figcaption {
+        margin-top: 10px;
+        color: #5a6670;
+        font-size: 0.92rem;
+      }
+
+      .feature-list {
+        margin: 0 0 18px;
+        padding-left: 20px;
+      }
+
+      .feature-list li {
+        margin-bottom: 12px;
+      }
+
+      .subtopic-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        color: var(--brand);
+        font-family: "Rubik", sans-serif;
+        font-size: 0.92rem;
+        font-weight: 500;
+      }
+
+      .subtopic-link::after {
+        content: "↗";
+        font-size: 0.92rem;
+      }
+
       .links-section {
         background: var(--paper);
       }
@@ -501,6 +580,7 @@
       @media (max-width: 1024px) {
         .header-inner,
         .content-grid,
+        .subtopic-grid,
         .cta-grid,
         .footer-inner {
           grid-template-columns: 1fr;
@@ -607,10 +687,16 @@
                 </div>
       <a href="medioambiente.html">Medioambiente</a>
       <a href="civil.html">Infraestructuras Civiles</a>
-      <a href="https://qartia.com/servicios/servicios-de-valor-anadido/">Servicios Adicionales</a>
+      <a href="sources/ai.html">Servicios Adicionales</a>
     </div>
   </div>
-  <a href="comunicaciones.html">Redes Privadas 5G</a>
+  <div class="nav-group">
+  <button class="nav-toggle" type="button" aria-expanded="false">Redes Privadas 5G</button>
+  <div class="nav-dropdown">
+    <a href="dect-nr-plus.html">Qué es DECT NR+</a>
+    <a href="soluciones-5g-privadas.html">Soluciones 5G Privadas</a>
+  </div>
+</div>
   <a href="noticias.html">Noticias</a>
   <a href="http://qartia.com/grafana">Acceso a Clientes</a>
 </nav>
@@ -634,6 +720,7 @@
                   <p>La presentaci&oacute;n corporativa identifica retos concretos en ancho de banda, cobertura e interferencias, y por eso Qartia plantea la comunicaci&oacute;n como una capa dise&ntilde;ada, no improvisada.</p>
                   <p>Gateways, infraestructura IoT, recepci&oacute;n de alertas, base de datos, m&eacute;tricas y sistemas de inteligencia artificial se integran dentro de una misma arquitectura operativa.</p>
                   <p>Esta l&iacute;nea es clave para industria, medioambiente, agro e infraestructura civil, donde la calidad de la comunicaci&oacute;n determina la calidad de la decisi&oacute;n.</p>
+                  <p>Dentro de esta capacidad, Qartia estructura la l&iacute;nea de <strong>Redes Privadas 5G</strong> en dos p&aacute;ginas espec&iacute;ficas: <strong>Qu&eacute; es DECT NR+</strong> y <strong>Soluciones 5G Privadas</strong>, para que cada enfoque tenga su propio detalle t&eacute;cnico y operativo.</p>
                 </div>
               </div>
 
@@ -642,19 +729,50 @@
                 <p>La conectividad privada 5G y la integracion extremo a extremo forman parte del valor entregado.</p>
               </aside>
             </div>
-          </div>
-        </section>
 
-        <section class="links-section">
-          <div class="section-inner">
-            <div class="links-grid">
-              <a class="topic-card card-1 " href="quienes-somos.html"><h3>Quienes Somos</h3></a>
-              <a class="topic-card card-2 " href="agricultura.html"><h3>Agricultura</h3></a>
-              <a class="topic-card card-3 " href="industria.html"><h3>Industria: Vibraciones y Activos</h3></a>
-              <a class="topic-card card-4 " href="medioambiente.html"><h3>Medioambiente</h3></a>
-              <a class="topic-card card-5 " href="civil.html"><h3>Infraestructuras Civiles</h3></a>
-              <a class="topic-card card-6 current" href="comunicaciones.html"><h3>Redes Privadas 5G</h3></a>
-              <a class="topic-card card-7 " href="noticias.html"><h3>Noticias</h3></a>
+            <div class="subtopic-grid">
+              <article class="subtopic-card" id="dect-nr-plus">
+                <h3>Qu&eacute; es DECT NR+</h3>
+                <p>DECT NR+ es una tecnolog&iacute;a 5G no celular orientada a redes privadas. Seg&uacute;n la secci&oacute;n <em>DECT NR+ Technology</em> del paper del proyecto MERCI, est&aacute; pensada para desplegar redes nom&aacute;das all&iacute; donde se necesitan, con una l&oacute;gica de implantaci&oacute;n mucho m&aacute;s flexible y menos dependiente de la infraestructura tradicional de operador.</p>
+                <figure class="subtopic-figure">
+                  <img src="assets/images/dect-nr-ecosystem.png" alt="Ecosistema DECT NR+" />
+                  <figcaption>El ecosistema DECT NR+ une estandarizaci&oacute;n, certificaci&oacute;n, academia, proyectos europeos e implantaci&oacute;n industrial.</figcaption>
+                </figure>
+                <ul class="feature-list">
+                  <li><strong>Red privada f&aacute;cil de desplegar.</strong> No requiere core network ni tarjetas SIM, lo que simplifica la puesta en servicio y reduce la dependencia de un operador m&oacute;vil.</li>
+                  <li><strong>Dise&ntilde;o radio orientado a IoT e industria.</strong> Su motor PHY/MAC flexible est&aacute; pensado para cubrir tanto escenarios de <em>URLLC</em> como de <em>mMTC</em>, combinando baja latencia y conectividad masiva de dispositivos.</li>
+                  <li><strong>Capa f&iacute;sica robusta.</strong> Utiliza una base OFDM con correcci&oacute;n avanzada de errores mediante turbo coding y retransmisiones HARQ para reforzar la fiabilidad de la comunicaci&oacute;n.</li>
+                  <li><strong>Operaci&oacute;n en bandas por debajo de 6 GHz.</strong> Puede trabajar en la banda DECT de 1,9 GHz, as&iacute; como en bandas licenciadas o compartidas como 3,7-3,8 GHz y 3,8-4,2 GHz, seg&uacute;n regulaci&oacute;n y pa&iacute;s.</li>
+                  <li><strong>Acceso radio flexible y buena convivencia espectral.</strong> Mantiene una estructura FDMA/TDMA en modo TDD, con acceso programado y aleatorio, incorporando Listen Before Talk para convivir mejor con otros sistemas.</li>
+                  <li><strong>Menos planificaci&oacute;n manual.</strong> Incluye gesti&oacute;n autom&aacute;tica de frecuencia e interferencias, reduciendo la necesidad de una planificaci&oacute;n radio extensa en despliegues reales.</li>
+                  <li><strong>Topolog&iacute;as vers&aacute;tiles.</strong> Adem&aacute;s de punto a punto y estrella, puede formar redes malladas para ampliar cobertura y mejorar la robustez del servicio.</li>
+                  <li><strong>Funcionamiento aut&oacute;nomo y autoorganizado.</strong> Los dispositivos pueden asumir roles FT/PT de forma din&aacute;mica y decidir asociaciones y rutas sin control externo, habilitando redes descentralizadas y autocurativas.</li>
+                </ul>
+                <h4>Pila de protocolos de DECT NR+</h4>
+                <p>DECT NR+ utiliza una arquitectura de protocolos ligera, distribuida y orientada a redes privadas industriales e IoT. A diferencia de las redes celulares tradicionales, no necesita una estaci&oacute;n base central ni un <em>core network</em> para funcionar. Su dise&ntilde;o permite comunicaciones directas entre nodos y soporte nativo de redes malladas (<em>mesh</em>).</p>
+                <p>La pila se organiza en varias capas:</p>
+                <ul class="feature-list">
+                  <li><strong>PHY (Physical Layer):</strong> realiza la transmisi&oacute;n radio mediante OFDM y proporciona conectividad inal&aacute;mbrica fiable y de baja latencia.</li>
+                  <li><strong>MAC (Medium Access Control):</strong> gestiona el acceso al medio radio, el <em>scheduling</em> distribuido y la asignaci&oacute;n de recursos.</li>
+                  <li><strong>DLC (Data Link Control):</strong> controla la transferencia de datos, incluyendo segmentaci&oacute;n, reensamblado y control de errores.</li>
+                  <li><strong>NWK (Network Layer):</strong> proporciona direccionamiento, descubrimiento de nodos y <em>routing</em> multi-hop para redes <em>mesh</em>.</li>
+                  <li><strong>Convergence Layer (CL):</strong> adapta protocolos IP, principalmente IPv6, y encapsula los datos para transportarlos sobre DECT NR+.</li>
+                  <li><strong>Aplicaci&oacute;n:</strong> incluye protocolos y servicios IoT o industriales como MQTT, CoAP o aplicaciones propietarias.</li>
+                </ul>
+                <figure class="subtopic-figure">
+                  <img src="assets/images/dect-nr-stack-ai.png" alt="Figura de la pila de protocolos de DECT NR+" />
+                  <figcaption>Esquema visual de la pila de protocolos DECT NR+, con sus capas radio, control, red y aplicaci&oacute;n para despliegues privados industriales e IoT.</figcaption>
+                </figure>
+                <p>Para Qartia, esto convierte a DECT NR+ en una base muy s&oacute;lida para sens&oacute;rica, telemetr&iacute;a, actuadores y servicios de campo, especialmente cuando el proyecto exige cobertura propia, robustez radio y capacidad de crecer por fases.</p>
+                <p><a class="subtopic-link" href="dect-nr-plus.html">Abrir p&aacute;gina DECT NR+</a></p>
+              </article>
+
+              <article class="subtopic-card" id="soluciones-5g-privadas">
+                <h3>Soluciones 5G Privadas</h3>
+                <p>Qartia desarrolla soluciones 5G privadas para escenarios donde la conectividad debe acompa&ntilde;ar operaciones cr&iacute;ticas, intercambio intensivo de datos o integraci&oacute;n avanzada con plataformas IoT, edge y cloud. El objetivo no es solo dar cobertura, sino dise&ntilde;ar una soluci&oacute;n de comunicaciones alineada con la operativa real del cliente.</p>
+                <p>Esto incluye estudio de cobertura, definici&oacute;n de arquitectura, integraci&oacute;n con gateways y dispositivos, puesta en servicio y evoluci&oacute;n del despliegue por fases. As&iacute;, la red privada se convierte en una base t&eacute;cnica para industria, medioambiente, agricultura o infraestructuras civiles, con una visi&oacute;n profesional y preparada para crecer.</p>
+                <p><a class="subtopic-link" href="soluciones-5g-privadas.html">Abrir p&aacute;gina Soluciones 5G Privadas</a></p>
+              </article>
             </div>
           </div>
         </section>

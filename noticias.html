@@ -359,6 +359,29 @@
         margin: 0;
       }
 
+      .news-link {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        align-self: flex-start;
+        margin-top: 6px;
+        padding: 10px 14px;
+        border-radius: 999px;
+        background: rgba(20, 78, 156, 0.1);
+        color: var(--brand);
+        font-size: 0.85rem;
+        font-weight: 700;
+        letter-spacing: 0.03em;
+        text-transform: uppercase;
+        transition: background 0.2s ease, transform 0.2s ease;
+      }
+
+      .news-link:hover,
+      .news-link:focus-visible {
+        background: rgba(20, 78, 156, 0.18);
+        transform: translateY(-1px);
+      }
+
       .source-note {
         margin-top: 18px;
         color: #5a6670;
@@ -501,10 +524,16 @@
                 </div>
               <a href="medioambiente.html">Medioambiente</a>
               <a href="civil.html">Infraestructuras Civiles</a>
-              <a href="https://qartia.com/servicios/servicios-de-valor-anadido/">Servicios Adicionales</a>
+              <a href="sources/ai.html">Servicios Adicionales</a>
             </div>
           </div>
-          <a href="comunicaciones.html">Redes Privadas 5G</a>
+          <div class="nav-group">
+  <button class="nav-toggle" type="button" aria-expanded="false">Redes Privadas 5G</button>
+  <div class="nav-dropdown">
+    <a href="dect-nr-plus.html">Qué es DECT NR+</a>
+    <a href="soluciones-5g-privadas.html">Soluciones 5G Privadas</a>
+  </div>
+</div>
           <a class="current" href="noticias.html">Noticias</a>
           <a href="http://qartia.com/grafana">Acceso a Clientes</a>
         </nav>
@@ -515,15 +544,13 @@
       <section class="hero">
         <div class="hero-inner">
           <h1>Noticias</h1>
-          <p>Resumen visual de publicaciones públicas de Qartia en LinkedIn, integrado directamente en la web sin enlaces de salida.</p>
+          <p>Actualidad de Qartia a partir de sus publicaciones públicas, ordenada de la más reciente a la más antigua.</p>
         </div>
       </section>
 
       <section class="news-section">
         <div class="section-inner">
           <span class="eyebrow">Actualidad</span>
-          <h2 class="lead-title">Carrusel de noticias resumidas.</h2>
-          <p class="lead-copy">He rehecho el carrusel para usar publicaciones públicas reales de Qartia en LinkedIn, ordenadas de la más reciente a la más antigua y sin ofertas de trabajo. Todas las tarjetas muestran imagen pública del propio post o, en el caso de Cabezo Beaza, la miniatura del vídeo enlazado en la publicación.</p>
 
           <div class="news-toolbar">
             <div></div>
@@ -554,6 +581,7 @@
                   </div>
                   <h3>Despliegue en Cabezo Beaza</h3>
                   <p>Qartia publicó su despliegue en el Polígono Industrial de Cabezo Beaza, combinando conectividad avanzada, sensorización y datos ambientales para entorno industrial.</p>
+                  <a class="news-link" href="https://www.linkedin.com/posts/qartia-smart-technologies_5g-dectnrplus-poligonocabezobeaza-activity-7454910019956981760-0GzT" target="_blank" rel="noopener noreferrer">Ver en LinkedIn</a>
                 </div>
               </article>
 
@@ -568,6 +596,7 @@
                   </div>
                   <h3>Opener Initiative y DECT NR+</h3>
                   <p>Qartia participó en la iniciativa abierta ligada a OpenDECT-X para impulsar stack compartido, intercambio técnico y desarrollo comunitario sobre DECT NR+.</p>
+                  <a class="news-link" href="https://www.linkedin.com/posts/qartia-smart-technologies_dectnr-opensource-wireless-activity-7452368594811654145-7v1T" target="_blank" rel="noopener noreferrer">Ver en LinkedIn</a>
                 </div>
               </article>
 
@@ -582,6 +611,7 @@
                   </div>
                   <h3>Monitorización remota y mantenimiento predictivo</h3>
                   <p>Qartia mostró un caso industrial centrado en activos críticos donde la sensorización continua y la telemetría ayudan a anticipar incidencias y optimizar mantenimiento.</p>
+                  <a class="news-link" href="https://www.linkedin.com/posts/qartia-smart-technologies_industrialiot-remotemonitoring-criticalassets-activity-7417177782960640000-A-Iy" target="_blank" rel="noopener noreferrer">Ver en LinkedIn</a>
                 </div>
               </article>
 
@@ -596,6 +626,7 @@
                   </div>
                   <h3>Proyecto MIC en Cala Cortina</h3>
                   <p>La publicación resume la vigilancia sísmica y la monitorización estructural desplegada en el segundo túnel N-343 del Puerto de Cartagena, reforzando la línea civil de Qartia.</p>
+                  <a class="news-link" href="https://www.linkedin.com/posts/qartia-smart-technologies_iot-infraestructurascr%C3%ADticas-infraestructurasciviles-activity-7413250045887619072-WF5F" target="_blank" rel="noopener noreferrer">Ver en LinkedIn</a>
                 </div>
               </article>
 
@@ -610,6 +641,7 @@
                   </div>
                   <h3>Invernadero fotovoltaico inteligente</h3>
                   <p>Qartia conectó sensorización, energía y analítica sobre variables agronómicas en un entorno de invernadero inteligente, combinando datos de campo y gemelo digital.</p>
+                  <a class="news-link" href="https://www.linkedin.com/posts/qartia-smart-technologies_5g-ai-dectnrplus-activity-7402649307914444801-kWmJ" target="_blank" rel="noopener noreferrer">Ver en LinkedIn</a>
                 </div>
               </article>
 
@@ -624,6 +656,7 @@
                   </div>
                   <h3>Qartia en Waykup Forum 2025</h3>
                   <p>Qartia resumió su participación en la mesa sobre innovación dual en Murcia, destacando el papel de la región para atraer deep tech, inversión privada y proyectos con IoT, 5G no celular e IA aplicada.</p>
+                  <a class="news-link" href="https://www.linkedin.com/posts/qartia-smart-technologies_waykup2025-qartia-innovation-activity-7396398833531809792-egZ1" target="_blank" rel="noopener noreferrer">Ver en LinkedIn</a>
                 </div>
               </article>
 
@@ -638,13 +671,12 @@
                   </div>
                   <h3>Cali y monitorización urbana</h3>
                   <p>Qartia mostró una demostración ligada a calidad del aire, sensorización urbana y despliegues tecnológicos aplicados a ciudad.</p>
+                  <a class="news-link" href="https://es.linkedin.com/posts/qartia-smart-technologies_qartia-calidaddelaire-smartcities-activity-7301916215441080320-XCdt" target="_blank" rel="noopener noreferrer">Ver en LinkedIn</a>
                 </div>
               </article>
 
             </div>
           </div>
-
-          <p class="source-note">Resúmenes preparados a partir de publicaciones públicas de Qartia visibles en LinkedIn. Se han excluido las publicaciones de contratación y las fechas mostradas se han corregido con fecha absoluta a partir de los identificadores públicos de actividad y la página pública de empresa, consultadas el 3 de mayo de 2026.</p>
         </div>
       </section>
     </main>
