@@ -152,9 +152,41 @@
         border-radius: 10px;
       }
 
+      .nav-subgroup {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .nav-subtoggle {
+        padding: 10px 12px;
+        color: var(--brand);
+        font-family: "Rubik", sans-serif;
+        font-size: 0.8rem;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 0.02em;
+        border-radius: 10px;
+      }
+
       .nav-dropdown a:hover,
-      .nav-dropdown a:focus-visible {
+      .nav-dropdown a:focus-visible,
+      .nav-subtoggle:hover,
+      .nav-subtoggle:focus-visible {
         background: rgba(20, 78, 156, 0.08);
+      }
+
+      .nav-submenu {
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+        margin: 0 0 6px 18px;
+        padding-left: 12px;
+        border-left: 2px solid rgba(20, 78, 156, 0.14);
+      }
+
+      .nav-submenu a {
+        padding: 8px 10px;
+        font-size: 0.74rem;
       }
 
       .nav-group:hover .nav-dropdown,
@@ -493,7 +525,14 @@
         }
       }
     </style>
-  </head>
+  <style id="qartia-dropdown-offset">
+.nav-dropdown{transform:translateX(1cm);}
+@media (max-width:880px){.nav-dropdown{transform:translateX(calc(-50% + 1cm));}}
+@media (max-width:640px){.nav-dropdown{transform:none;}}
+@media (min-width:1025px){.ush_menu_1.type_desktop .w-nav-list.level_2{margin-left:1cm;}}
+@media (min-width:1025px){.l-subheader-cell.at_left,.header-inner .logo{transform:translateX(-0.35cm);}}
+</style>
+</head>
   <body>
     <div class="topbar">
       <div class="topbar-inner">
@@ -509,34 +548,45 @@
         </a>
 
         <nav class="nav" aria-label="Navegacion principal">
-          <a href="quienes-somos.html">Quienes Somos</a>
-          <a href="productos.html">Productos</a>
-          <div class="nav-group">
-            <button class="nav-toggle" type="button" aria-expanded="false">Servicios</button>
-            <div class="nav-dropdown">
-              <a href="agricultura.html">Agricultura</a>
-              <div class="nav-subgroup">
-                  <a class="nav-subtoggle" href="industria.html">Industria</a>
-                  <div class="nav-submenu">
-                    <a href="mantenimiento-predictivo-vibraciones.html">Mantenimiento Predictivo. Vibraciones</a>
-                    <a href="monitorizacion-activos-criticos.html">Monitorización de Activos Críticos</a>
-                  </div>
-                </div>
-              <a href="medioambiente.html">Medioambiente</a>
-              <a href="civil.html">Infraestructuras Civiles</a>
-              <a href="sources/ai.html">Servicios Adicionales</a>
-            </div>
-          </div>
-          <div class="nav-group">
-  <button class="nav-toggle" type="button" aria-expanded="false">Redes Privadas 5G</button>
-  <div class="nav-dropdown">
-    <a href="dect-nr-plus.html">Qué es DECT NR+</a>
-    <a href="soluciones-5g-privadas.html">Soluciones 5G Privadas</a>
+  <a href="quienes-somos.html">Quienes Somos</a>
+  <div class="nav-group">
+    <button class="nav-toggle" type="button" aria-expanded="false">Productos</button>
+    <div class="nav-dropdown">
+      <a href="vibrasense.html">VibraSense</a>
+      <a href="airsense-pro.html">AIRSENSE PRO</a>
+      <a href="megamia.html">MEGAMIA</a>
+      <a href="dipason-exterior.html">DIPASON</a>
+      <a href="Biosentia.html">Biosentia</a>
+      <a href="noisement.html">NoiseMent</a>
+    </div>
   </div>
-</div>
-          <a class="current" href="noticias.html">Noticias</a>
-          <a href="http://qartia.com/grafana">Acceso a Clientes</a>
-        </nav>
+  <div class="nav-group">
+    <button class="nav-toggle" type="button" aria-expanded="false">Servicios</button>
+    <div class="nav-dropdown">
+      <a href="agricultura.html">Agricultura</a>
+      <div class="nav-subgroup">
+        <a class="nav-subtoggle" href="industria.html">Industria</a>
+        <div class="nav-submenu">
+          <a href="mantenimiento-predictivo-vibraciones.html">Mantenimiento Predictivo. Vibraciones</a>
+          <a href="monitorizacion-activos-criticos.html">Monitorización de Activos Críticos</a>
+        </div>
+      </div>
+      <a href="medioambiente.html">Medioambiente</a>
+      <a href="civil.html">Infraestructuras Civiles</a>
+      <a href="sources/ai.html">Servicios Adicionales</a>
+    </div>
+  </div>
+  <div class="nav-group">
+    <button class="nav-toggle" type="button" aria-expanded="false">Redes Privadas 5G</button>
+    <div class="nav-dropdown">
+      <a href="dect-nr-plus.html">Qué es DECT NR+</a>
+      <a href="soluciones-5g-privadas.html">Soluciones 5G Privadas</a>
+    </div>
+  </div>
+  <a href="noticias.html">Noticias</a>
+  <a href="https://qartia.com/contacto/">Contacto</a>
+  <a href="http://qartia.com/grafana">Acceso a Clientes</a>
+</nav>
       </div>
     </header>
 
@@ -544,7 +594,6 @@
       <section class="hero">
         <div class="hero-inner">
           <h1>Noticias</h1>
-          <p>Actualidad de Qartia a partir de sus publicaciones públicas, ordenada de la más reciente a la más antigua.</p>
         </div>
       </section>
 
@@ -581,7 +630,7 @@
                   </div>
                   <h3>Despliegue en Cabezo Beaza</h3>
                   <p>Qartia publicó su despliegue en el Polígono Industrial de Cabezo Beaza, combinando conectividad avanzada, sensorización y datos ambientales para entorno industrial.</p>
-                  <a class="news-link" href="https://www.linkedin.com/posts/qartia-smart-technologies_5g-dectnrplus-poligonocabezobeaza-activity-7454910019956981760-0GzT" target="_blank" rel="noopener noreferrer">Ver en LinkedIn</a>
+                  <a class="news-link" href="https://www.linkedin.com/posts/qartia-smart-technologies_5g-dectnrplus-poligonocabezobeaza-activity-7454910019956981760-0GzT" target="_blank" rel="noopener noreferrer">Ver más</a>
                 </div>
               </article>
 
@@ -596,7 +645,7 @@
                   </div>
                   <h3>Opener Initiative y DECT NR+</h3>
                   <p>Qartia participó en la iniciativa abierta ligada a OpenDECT-X para impulsar stack compartido, intercambio técnico y desarrollo comunitario sobre DECT NR+.</p>
-                  <a class="news-link" href="https://www.linkedin.com/posts/qartia-smart-technologies_dectnr-opensource-wireless-activity-7452368594811654145-7v1T" target="_blank" rel="noopener noreferrer">Ver en LinkedIn</a>
+                  <a class="news-link" href="https://www.linkedin.com/posts/qartia-smart-technologies_dectnr-opensource-wireless-activity-7452368594811654145-7v1T" target="_blank" rel="noopener noreferrer">Ver más</a>
                 </div>
               </article>
 
@@ -611,7 +660,7 @@
                   </div>
                   <h3>Monitorización remota y mantenimiento predictivo</h3>
                   <p>Qartia mostró un caso industrial centrado en activos críticos donde la sensorización continua y la telemetría ayudan a anticipar incidencias y optimizar mantenimiento.</p>
-                  <a class="news-link" href="https://www.linkedin.com/posts/qartia-smart-technologies_industrialiot-remotemonitoring-criticalassets-activity-7417177782960640000-A-Iy" target="_blank" rel="noopener noreferrer">Ver en LinkedIn</a>
+                  <a class="news-link" href="https://www.linkedin.com/posts/qartia-smart-technologies_industrialiot-remotemonitoring-criticalassets-activity-7417177782960640000-A-Iy" target="_blank" rel="noopener noreferrer">Ver más</a>
                 </div>
               </article>
 
@@ -626,7 +675,7 @@
                   </div>
                   <h3>Proyecto MIC en Cala Cortina</h3>
                   <p>La publicación resume la vigilancia sísmica y la monitorización estructural desplegada en el segundo túnel N-343 del Puerto de Cartagena, reforzando la línea civil de Qartia.</p>
-                  <a class="news-link" href="https://www.linkedin.com/posts/qartia-smart-technologies_iot-infraestructurascr%C3%ADticas-infraestructurasciviles-activity-7413250045887619072-WF5F" target="_blank" rel="noopener noreferrer">Ver en LinkedIn</a>
+                  <a class="news-link" href="https://www.linkedin.com/posts/qartia-smart-technologies_iot-infraestructurascr%C3%ADticas-infraestructurasciviles-activity-7413250045887619072-WF5F" target="_blank" rel="noopener noreferrer">Ver más</a>
                 </div>
               </article>
 
@@ -641,7 +690,7 @@
                   </div>
                   <h3>Invernadero fotovoltaico inteligente</h3>
                   <p>Qartia conectó sensorización, energía y analítica sobre variables agronómicas en un entorno de invernadero inteligente, combinando datos de campo y gemelo digital.</p>
-                  <a class="news-link" href="https://www.linkedin.com/posts/qartia-smart-technologies_5g-ai-dectnrplus-activity-7402649307914444801-kWmJ" target="_blank" rel="noopener noreferrer">Ver en LinkedIn</a>
+                  <a class="news-link" href="https://www.linkedin.com/posts/qartia-smart-technologies_5g-ai-dectnrplus-activity-7402649307914444801-kWmJ" target="_blank" rel="noopener noreferrer">Ver más</a>
                 </div>
               </article>
 
@@ -656,7 +705,7 @@
                   </div>
                   <h3>Qartia en Waykup Forum 2025</h3>
                   <p>Qartia resumió su participación en la mesa sobre innovación dual en Murcia, destacando el papel de la región para atraer deep tech, inversión privada y proyectos con IoT, 5G no celular e IA aplicada.</p>
-                  <a class="news-link" href="https://www.linkedin.com/posts/qartia-smart-technologies_waykup2025-qartia-innovation-activity-7396398833531809792-egZ1" target="_blank" rel="noopener noreferrer">Ver en LinkedIn</a>
+                  <a class="news-link" href="https://www.linkedin.com/posts/qartia-smart-technologies_waykup2025-qartia-innovation-activity-7396398833531809792-egZ1" target="_blank" rel="noopener noreferrer">Ver más</a>
                 </div>
               </article>
 
@@ -671,7 +720,7 @@
                   </div>
                   <h3>Cali y monitorización urbana</h3>
                   <p>Qartia mostró una demostración ligada a calidad del aire, sensorización urbana y despliegues tecnológicos aplicados a ciudad.</p>
-                  <a class="news-link" href="https://es.linkedin.com/posts/qartia-smart-technologies_qartia-calidaddelaire-smartcities-activity-7301916215441080320-XCdt" target="_blank" rel="noopener noreferrer">Ver en LinkedIn</a>
+                  <a class="news-link" href="https://es.linkedin.com/posts/qartia-smart-technologies_qartia-calidaddelaire-smartcities-activity-7301916215441080320-XCdt" target="_blank" rel="noopener noreferrer">Ver más</a>
                 </div>
               </article>
 

@@ -566,7 +566,14 @@
         .footer-inner { padding-top: 40px; }
       }
     </style>
-  </head>
+  <style id="qartia-dropdown-offset">
+.nav-dropdown{transform:translateX(1cm);}
+@media (max-width:880px){.nav-dropdown{transform:translateX(calc(-50% + 1cm));}}
+@media (max-width:640px){.nav-dropdown{transform:none;}}
+@media (min-width:1025px){.ush_menu_1.type_desktop .w-nav-list.level_2{margin-left:1cm;}}
+@media (min-width:1025px){.l-subheader-cell.at_left,.header-inner .logo{transform:translateX(-0.35cm);}}
+</style>
+</head>
   <body>
     <div class="page">
       <div class="topbar">
@@ -585,7 +592,17 @@
 
 <nav class="nav" aria-label="Navegacion principal">
   <a href="quienes-somos.html">Quienes Somos</a>
-  <a href="productos.html">Productos</a>
+  <div class="nav-group">
+    <button class="nav-toggle" type="button" aria-expanded="false">Productos</button>
+    <div class="nav-dropdown">
+      <a href="vibrasense.html">VibraSense</a>
+      <a href="airsense-pro.html">AIRSENSE PRO</a>
+      <a href="megamia.html">MEGAMIA</a>
+      <a href="dipason-exterior.html">DIPASON</a>
+      <a href="Biosentia.html">Biosentia</a>
+      <a href="noisement.html">NoiseMent</a>
+    </div>
+  </div>
   <div class="nav-group">
     <button class="nav-toggle" type="button" aria-expanded="false">Servicios</button>
     <div class="nav-dropdown">
@@ -610,6 +627,7 @@
     </div>
   </div>
   <a href="noticias.html">Noticias</a>
+  <a href="https://qartia.com/contacto/">Contacto</a>
   <a href="http://qartia.com/grafana">Acceso a Clientes</a>
 </nav>
         </div>

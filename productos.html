@@ -6,7 +6,7 @@
     <title>Productos - Qartia Smart Technologies</title>
     <meta
       name="description"
-      content="Catalogo de productos de Qartia Smart Technologies con acceso a las fichas originales y al nuevo AIRSENSE PRO."
+      content="Catalogo de productos de Qartia Smart Technologies con fichas locales para aire, ruido, particulas y mantenimiento predictivo con VibraSense."
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -169,9 +169,41 @@
         border-radius: 10px;
       }
 
+      .nav-subgroup {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .nav-subtoggle {
+        padding: 10px 12px;
+        color: var(--brand);
+        font-family: "Rubik", sans-serif;
+        font-size: 0.8rem;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 0.02em;
+        border-radius: 10px;
+      }
+
       .nav-dropdown a:hover,
-      .nav-dropdown a:focus-visible {
+      .nav-dropdown a:focus-visible,
+      .nav-subtoggle:hover,
+      .nav-subtoggle:focus-visible {
         background: rgba(20, 78, 156, 0.08);
+      }
+
+      .nav-submenu {
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+        margin: 0 0 6px 18px;
+        padding-left: 12px;
+        border-left: 2px solid rgba(20, 78, 156, 0.14);
+      }
+
+      .nav-submenu a {
+        padding: 8px 10px;
+        font-size: 0.74rem;
       }
 
       .nav-group:hover .nav-dropdown,
@@ -186,7 +218,7 @@
         color: #fff;
         background:
           linear-gradient(rgba(0, 0, 0, 0.68), rgba(0, 0, 0, 0.25)),
-          url("https://qartia.com/wp-content/uploads/2022/11/fondo-home.jpg") center/cover no-repeat;
+          url("assets/images/productos-principal.jpeg") center/cover no-repeat;
       }
 
       .hero-inner {
@@ -207,7 +239,6 @@
       .intro-section,
       .featured-section,
       .catalog-section,
-      .links-section,
       .cta-section {
         padding: 70px 0;
       }
@@ -276,13 +307,11 @@
         border-radius: 18px;
       }
 
-      .catalog-section,
-      .links-section {
+      .catalog-section {
         background: var(--paper);
       }
 
-      .products-grid,
-      .links-grid {
+      .products-grid {
         display: grid;
         grid-template-columns: repeat(3, minmax(0, 1fr));
         gap: 24px;
@@ -549,8 +578,7 @@
           transform: translateX(-50%);
         }
 
-        .products-grid,
-        .links-grid {
+        .products-grid {
           grid-template-columns: repeat(2, minmax(0, 1fr));
         }
       }
@@ -586,13 +614,19 @@
           margin-left: 0;
         }
 
-        .products-grid,
-        .links-grid {
+        .products-grid {
           grid-template-columns: 1fr;
         }
       }
     </style>
-  </head>
+  <style id="qartia-dropdown-offset">
+.nav-dropdown{transform:translateX(1cm);}
+@media (max-width:880px){.nav-dropdown{transform:translateX(calc(-50% + 1cm));}}
+@media (max-width:640px){.nav-dropdown{transform:none;}}
+@media (min-width:1025px){.ush_menu_1.type_desktop .w-nav-list.level_2{margin-left:1cm;}}
+@media (min-width:1025px){.l-subheader-cell.at_left,.header-inner .logo{transform:translateX(-0.35cm);}}
+</style>
+</head>
   <body>
     <div class="topbar">
       <div class="topbar-inner">
@@ -609,34 +643,45 @@
         </a>
 
         <nav class="nav" aria-label="Navegacion principal">
-          <a href="quienes-somos.html">Quienes Somos</a>
-          <a class="current" href="productos.html">Productos</a>
-          <div class="nav-group">
-            <button class="nav-toggle" type="button" aria-expanded="false">Servicios</button>
-            <div class="nav-dropdown">
-              <a href="agricultura.html">Agricultura</a>
-              <div class="nav-subgroup">
-                  <a class="nav-subtoggle" href="industria.html">Industria</a>
-                  <div class="nav-submenu">
-                    <a href="mantenimiento-predictivo-vibraciones.html">Mantenimiento Predictivo. Vibraciones</a>
-                    <a href="monitorizacion-activos-criticos.html">Monitorización de Activos Críticos</a>
-                  </div>
-                </div>
-              <a href="medioambiente.html">Medioambiente</a>
-              <a href="civil.html">Infraestructuras Civiles</a>
-              <a href="sources/ai.html">Servicios Adicionales</a>
-            </div>
-          </div>
-          <div class="nav-group">
-  <button class="nav-toggle" type="button" aria-expanded="false">Redes Privadas 5G</button>
-  <div class="nav-dropdown">
-    <a href="dect-nr-plus.html">Qué es DECT NR+</a>
-    <a href="soluciones-5g-privadas.html">Soluciones 5G Privadas</a>
+  <a href="quienes-somos.html">Quienes Somos</a>
+  <div class="nav-group">
+    <button class="nav-toggle" type="button" aria-expanded="false">Productos</button>
+    <div class="nav-dropdown">
+      <a href="vibrasense.html">VibraSense</a>
+      <a href="airsense-pro.html">AIRSENSE PRO</a>
+      <a href="megamia.html">MEGAMIA</a>
+      <a href="dipason-exterior.html">DIPASON</a>
+      <a href="Biosentia.html">Biosentia</a>
+      <a href="noisement.html">NoiseMent</a>
+    </div>
   </div>
-</div>
-          <a href="noticias.html">Noticias</a>
-          <a href="http://qartia.com/grafana">Acceso a Clientes</a>
-        </nav>
+  <div class="nav-group">
+    <button class="nav-toggle" type="button" aria-expanded="false">Servicios</button>
+    <div class="nav-dropdown">
+      <a href="agricultura.html">Agricultura</a>
+      <div class="nav-subgroup">
+        <a class="nav-subtoggle" href="industria.html">Industria</a>
+        <div class="nav-submenu">
+          <a href="mantenimiento-predictivo-vibraciones.html">Mantenimiento Predictivo. Vibraciones</a>
+          <a href="monitorizacion-activos-criticos.html">Monitorización de Activos Críticos</a>
+        </div>
+      </div>
+      <a href="medioambiente.html">Medioambiente</a>
+      <a href="civil.html">Infraestructuras Civiles</a>
+      <a href="sources/ai.html">Servicios Adicionales</a>
+    </div>
+  </div>
+  <div class="nav-group">
+    <button class="nav-toggle" type="button" aria-expanded="false">Redes Privadas 5G</button>
+    <div class="nav-dropdown">
+      <a href="dect-nr-plus.html">Qué es DECT NR+</a>
+      <a href="soluciones-5g-privadas.html">Soluciones 5G Privadas</a>
+    </div>
+  </div>
+  <a href="noticias.html">Noticias</a>
+  <a href="https://qartia.com/contacto/">Contacto</a>
+  <a href="http://qartia.com/grafana">Acceso a Clientes</a>
+</nav>
       </div>
     </header>
 
@@ -652,31 +697,13 @@
           <div class="intro-grid">
             <div class="intro-copy">
               <span class="eyebrow">Qartia Smart Technologies</span>
-              <h2 class="lead-title">Catálogo de productos con fichas independientes.</h2>
-              <p>La pestaña de productos queda ahora unificada con fichas locales equivalentes para toda la gama: AIRSENSE PRO, MEGAMIA, DIPASON en sus variantes de partículas y NoiseMent para ruido ambiental.</p>
-              <p>Cada producto conserva su propio contexto técnico, su narrativa comercial y su llamada a la acción, dejando la navegación más ordenada y preparada para seguir ampliando la web con más material documental.</p>
+              <h2 class="lead-title">Productos preparados para desplegar, medir y escalar.</h2>
+              <p>El cat&aacute;logo de Qartia combina productos pensados para mantenimiento predictivo, calidad del aire, medici&oacute;n de gases, part&iacute;culas y ruido, siempre con una l&oacute;gica de despliegue real en industria, ciudad, agricultura e infraestructura. Cada equipo nace para integrarse con conectividad, visualizaci&oacute;n y anal&iacute;tica, de forma que el dato no se quede en la medida, sino que sirva para operar mejor.</p>
+              <p>Desde VibraSense y AIRSENSE PRO hasta las familias MEGAMIA, DIPASON y NoiseMent, la propuesta une sens&oacute;rica, electr&oacute;nica, comunicaciones y servicios sobre plataforma. El objetivo es ofrecer soluciones listas para crecer por fases, adaptarse al entorno del cliente y convertir necesidades t&eacute;cnicas en despliegues funcionales.</p>
             </div>
 
             <aside class="intro-visual">
-              <img src="assets/airsense-pro-docx/image8.png" alt="Nuevo producto AIRSENSE PRO" />
-            </aside>
-          </div>
-        </div>
-      </section>
-
-      <section class="featured-section">
-        <div class="section-inner">
-          <div class="featured-grid">
-            <div class="featured-copy">
-              <span class="product-tag">Destacado</span>
-              <h2>AIRSENSE PRO</h2>
-              <p>Nuevo equipo de Qartia para medición continua de gases contaminantes criterio y material particulado, con GPS integrado y conectividad LoRa, WiFi, Bluetooth y Sigfox.</p>
-              <p>He dejado su ficha en una página propia para que quede al mismo nivel que el resto de productos y se pueda ampliar después con más material comercial, imágenes o descargas.</p>
-              <a class="featured-button" href="airsense-pro.html">Abrir ficha AIRSENSE PRO</a>
-            </div>
-
-            <aside class="featured-visual">
-              <img src="assets/airsense-pro-docx/image8.png" alt="Dispositivo AIRSENSE PRO" />
+              <img src="assets/images/productos-principal.jpeg" alt="Pantalla de calidad del aire desplegada por Qartia" />
             </aside>
           </div>
         </div>
@@ -684,16 +711,25 @@
 
       <section class="catalog-section">
         <div class="section-inner">
-          <span class="eyebrow">Catálogo</span>
-          <h2 class="lead-title">Equipos listos para aire, acústica y sensorización conectada.</h2>
-
           <div class="products-grid">
+            <article class="product-card">
+              <figure class="contain-image">
+                <img src="assets/images/vibrasense.png" alt="VibraSense" />
+              </figure>
+              <div class="product-card-body">
+                <span class="product-tag">Nuevo · VibraSense</span>
+                <h3>Mantenimiento predictivo de vibraciones</h3>
+                <p>Soluci&oacute;n orientada a maquinaria rotativa cr&iacute;tica con diagn&oacute;stico 24/7, severidad estandarizada y predicci&oacute;n de fallo.</p>
+                <a class="product-link" href="vibrasense.html">Abrir ficha</a>
+              </div>
+            </article>
+
             <article class="product-card">
               <figure class="contain-image">
                 <img src="assets/airsense-pro-docx/image8.png" alt="AIRSENSE PRO" />
               </figure>
               <div class="product-card-body">
-                <span class="product-tag">AIRSENSE PRO</span>
+                <span class="product-tag">Nuevo · AIRSENSE PRO</span>
                 <h3>Gases y partículas integrados</h3>
                 <p>Monitorización conjunta de gases criterio y material particulado en un único dispositivo compacto.</p>
                 <a class="product-link" href="airsense-pro.html">Abrir ficha</a>
@@ -702,7 +738,7 @@
 
             <article class="product-card">
               <figure class="contain-image">
-                <img src="assets/MEDIDOR_GASES/word/media/image8.png" alt="MEGAMIA" />
+                <img src="assets/images/megamia-device.png" alt="MEGAMIA" />
               </figure>
               <div class="product-card-body">
                 <span class="product-tag">MEGAMIA</span>
@@ -713,8 +749,8 @@
             </article>
 
             <article class="product-card">
-              <figure>
-                <img src="https://qartia.com/wp-content/uploads/2022/11/producto-2.jpg" alt="DIPASON exterior" />
+              <figure class="contain-image">
+                <img src="assets/images/dipason-device.png" alt="DIPASON exterior" />
               </figure>
               <div class="product-card-body">
                 <span class="product-tag">DIPASON</span>
@@ -725,20 +761,20 @@
             </article>
 
             <article class="product-card">
-              <figure>
-                <img src="https://qartia.com/wp-content/uploads/2022/12/producto_4-2.jpg" alt="DIPASON interior" />
+              <figure class="contain-image">
+                <img src="assets/images/biosentia-product-render.png" alt="Biosentia" />
               </figure>
               <div class="product-card-body">
-                <span class="product-tag">DIPASON</span>
-                <h3>Partículas en suspensión interior</h3>
-                <p>Control de calidad del aire interior en espacios productivos, técnicos y edificatorios.</p>
-                <a class="product-link" href="dipason-interior.html">Abrir ficha</a>
+                <span class="product-tag">BIOSENTIA</span>
+                <h3>Biosentia</h3>
+                <p>Plataforma inteligente de sensado electroquímico para salud, deporte, alimentación y diagnóstico portátil.</p>
+                <a class="product-link" href="Biosentia.html">Abrir ficha</a>
               </div>
             </article>
 
             <article class="product-card">
               <figure class="contain-image">
-                <img src="assets/MEDIDOR_RUIDO/word/media/image4.png" alt="NoiseMent" />
+                <img src="assets/images/noisement-device.png" alt="NoiseMent" />
               </figure>
               <div class="product-card-body">
                 <span class="product-tag">NoiseMent</span>
@@ -747,21 +783,6 @@
                 <a class="product-link" href="noisement.html">Abrir ficha</a>
               </div>
             </article>
-          </div>
-        </div>
-      </section>
-
-      <section class="links-section">
-        <div class="section-inner">
-          <div class="links-grid">
-            <a class="topic-card card-1" href="quienes-somos.html"><h3>Quienes Somos</h3></a>
-            <a class="topic-card card-2 current" href="productos.html"><h3>Productos</h3></a>
-            <a class="topic-card card-3" href="agricultura.html"><h3>Agricultura</h3></a>
-            <a class="topic-card card-4" href="industria.html"><h3>Industria: Vibraciones y Activos</h3></a>
-            <a class="topic-card card-5" href="medioambiente.html"><h3>Medioambiente</h3></a>
-            <a class="topic-card card-6" href="civil.html"><h3>Infraestructuras Civiles</h3></a>
-            <a class="topic-card card-7" href="comunicaciones.html"><h3>Redes Privadas 5G</h3></a>
-            <a class="topic-card card-8" href="noticias.html"><h3>Noticias</h3></a>
           </div>
         </div>
       </section>

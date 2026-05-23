@@ -279,6 +279,60 @@
         border-radius: 24px;
       }
 
+      .visual-stack {
+        display: grid;
+        gap: 18px;
+      }
+
+      .ai-rag-layout {
+        display: grid;
+        gap: 18px;
+      }
+
+      .ai-rag-card {
+        padding: 26px;
+      }
+
+      .ai-rag-card .visual-stack {
+        margin-top: 20px;
+      }
+
+      .ai-rag-layout .visual-stack {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-rows: none;
+      }
+
+      .visual-card {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 18px;
+        border-radius: 24px;
+        background: #ffffff;
+        box-shadow: 0 12px 32px rgba(15, 31, 24, 0.08);
+      }
+
+      .visual-card .visual {
+        flex: 1;
+        min-height: 0;
+        object-fit: cover;
+      }
+
+      .card .visual {
+        margin-top: 16px;
+      }
+
+      .visual-caption {
+        margin: 10px 0 0;
+        color: #4f6358;
+        font-size: 0.92rem;
+        line-height: 1.55;
+      }
+
+      .dark .visual-caption {
+        color: rgba(232, 247, 239, 0.74);
+      }
+
       .footer-band {
         display: grid;
         grid-template-columns: 1.2fr 0.8fr;
@@ -351,6 +405,10 @@
         .grid-2,
         .process,
         .footer-band {
+          grid-template-columns: 1fr;
+        }
+
+        .ai-rag-layout .visual-stack {
           grid-template-columns: 1fr;
         }
       }
@@ -477,8 +535,8 @@
       </section>
 
       <section class="section soft">
-        <div class="grid-2">
-          <div>
+        <div class="ai-rag-layout">
+          <article class="card ai-rag-card">
             <h2 class="section-title">Edge + red privada + IA + RAG</h2>
             <p class="section-copy">
               Sensores ambientales &rarr; Red privada (LoRa/DECT NR+) &rarr; Edge &rarr; Dashboard / IA / RAG / Alertas
@@ -486,8 +544,17 @@
             <p class="section-copy" style="margin-top: 16px;">
               La salida a Internet puede resolverse por 5G, WiFi o Ethernet, seg&uacute;n el emplazamiento. La plataforma puede convivir con sens&oacute;rica ya instalada o desplegarse como soluci&oacute;n completa Qartia.
             </p>
-          </div>
-          <img class="visual" src="assets/medioambiente/nodo-comunicaciones-interior.jpeg" alt="Nodo de comunicaciones y electr&oacute;nica de campo para monitorizaci&oacute;n medioambiental" />
+            <div class="visual-stack">
+              <div class="visual-card">
+                <img class="visual" src="assets/medioambiente/nodo-comunicaciones-interior.jpeg" alt="Nodo de comunicaciones y electr&oacute;nica de campo para monitorizaci&oacute;n medioambiental" />
+                <p class="visual-caption">Nodo de comunicaciones y electr&oacute;nica de campo para captaci&oacute;n, agregaci&oacute;n y env&iacute;o estable del dato ambiental.</p>
+              </div>
+              <div class="visual-card">
+                <img class="visual" src="assets/medioambiente/prediccion-cartagena-ia.png" alt="Mapa de predicci&oacute;n mediante IA de contaminantes en la ciudad de Cartagena" />
+                <p class="visual-caption">Ejemplo de predicci&oacute;n mediante IA sobre Cartagena a partir de datos ambientales integrados y modelos de anticipaci&oacute;n de contaminantes.</p>
+              </div>
+            </div>
+          </article>
         </div>
       </section>
 
@@ -497,7 +564,7 @@
             <span class="eyebrow">Caso real</span>
             <h3>De campo a cuadro de mando</h3>
             <p>
-              Cabezo Beaza, Atlantic Copper y Cartagena muestran el mismo enfoque: desplegar en campo, recoger el dato con estabilidad y llevarlo a una visualizaci&oacute;n clara para operaci&oacute;n y seguimiento.
+              Proyectos como Cabezo Beaza, Atlantic Copper y Ayuntamiento de Cartagena muestran el mismo enfoque: desplegar en campo, capturar el dato con estabilidad y transmitirlo a una visualizaci&oacute;n clara para operaci&oacute;n y seguimiento.
             </p>
             <ul>
               <li>Captura continua y trazable.</li>
