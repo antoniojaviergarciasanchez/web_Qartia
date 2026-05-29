@@ -1,0 +1,390 @@
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes afl {
+  0% {
+    opacity: 0;
+    transform: translate3d(-120px, 0, 0) rotate(-14deg) scale(0.96);
+  }
+
+  62% {
+    opacity: 1;
+    transform: translate3d(16px, 0, 0) rotate(5deg) scale(1.015);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) rotate(0deg) scale(1);
+  }
+}
+
+.topbar {
+  background: #144e9c !important;
+  color: #fff !important;
+}
+
+.topbar a {
+  color: #fff !important;
+  text-decoration: none;
+}
+
+.topbar a:hover {
+  color: #72d8c8 !important;
+}
+
+.topbar .qartia-linkedin-icon {
+  width: 24px;
+  height: 24px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 3px;
+  border: 1px solid currentColor !important;
+  background: transparent !important;
+  color: #fff !important;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.78rem;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.04em;
+}
+
+.topbar .qartia-linkedin-icon::before {
+  content: "in";
+}
+
+.topbar .qartia-linkedin-icon span {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.topbar .qartia-linkedin-icon:hover {
+  background: transparent !important;
+  border-color: #72d8c8 !important;
+  color: #72d8c8 !important;
+}
+
+.servicios-home {
+  display: block !important;
+  width: 100% !important;
+  max-width: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow: hidden;
+}
+
+.servicios-home .l-section-h {
+  width: 100% !important;
+  max-width: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.servicios-home .g-cols {
+  display: flex !important;
+  align-items: stretch !important;
+  gap: 0 !important;
+  width: 100% !important;
+  max-width: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.servicios-home .vc_col-sm-4 {
+  position: relative;
+  flex: 0 0 33.333333% !important;
+  width: 33.333333% !important;
+  max-width: 33.333333% !important;
+  min-height: 360px !important;
+  overflow: hidden;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.servicios-home .vc_column-inner {
+  position: relative;
+  width: 100% !important;
+  min-height: 360px !important;
+  height: 100%;
+  margin: 0 !important;
+  padding: 0 !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation-duration: 0.9s !important;
+  animation-fill-mode: both !important;
+  animation-name: fade !important;
+  animation-timing-function: ease !important;
+  transition: transform 0.35s ease, filter 0.35s ease;
+}
+
+.servicios-home .vc_column-inner > .wpb_wrapper,
+.servicios-home .w-hwrapper {
+  width: 100% !important;
+  height: 100% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.servicios-home .wpb_text_column {
+  width: 100% !important;
+}
+
+.servicios-home .wpb_text_column > .wpb_wrapper {
+  width: 100% !important;
+  display: block !important;
+}
+
+.servicios-home .vc_column-inner::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.28);
+  z-index: 0;
+}
+
+.servicios-home .wpb_wrapper,
+.servicios-home .w-hwrapper,
+.servicios-home .wpb_text_column {
+  position: relative;
+  z-index: 1;
+}
+
+.servicios-home h3 {
+  margin: 0 !important;
+  color: #fff !important;
+  font-family: "Rubik", var(--fuente-titulares, sans-serif) !important;
+  font-size: 2rem !important;
+  font-weight: 300 !important;
+  line-height: 1.2 !important;
+  letter-spacing: 0 !important;
+  text-transform: uppercase !important;
+  text-align: center !important;
+  text-shadow: 2px 2px 9px rgba(0, 0, 0, 0.72);
+}
+
+.servicios-home .vc_column-link {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+}
+
+.servicios-home .has-link:hover .vc_column-inner,
+.servicios-home .has-link:focus-within .vc_column-inner,
+.servicios-home .vc_column_container:hover .vc_column-inner,
+.servicios-home .vc_column_container:focus-within .vc_column-inner,
+.servicios-home .wpb_column:hover .vc_column-inner,
+.servicios-home .wpb_column:focus-within .vc_column-inner {
+  transform: scale(1.035);
+  filter: brightness(1.06);
+}
+
+.servicios-home .us_custom_7ca10f15 {
+  animation-delay: 0s !important;
+  background: url("../remote-qartia/wp-content/uploads/2022/11/servicio-1.jpg") no-repeat center / cover !important;
+}
+
+.servicios-home .us_custom_8c4c7f6b {
+  animation-delay: 0.2s !important;
+  background: url("../remote-qartia/wp-content/uploads/2022/11/servicio-2.jpg") no-repeat center / cover !important;
+}
+
+.servicios-home .us_custom_824f00fd {
+  animation-delay: 0.4s !important;
+  background: url("../remote-qartia/wp-content/uploads/2022/11/servicio3.jpg") no-repeat center / cover !important;
+}
+
+.servicios-home .us_custom_dea79c57,
+.servicios-home .us_custom_b29458e3 {
+  animation-delay: 1s !important;
+  background: url("../remote-qartia/wp-content/uploads/2022/11/servicio-4.jpg") no-repeat center / cover !important;
+}
+
+.servicios-home .us_custom_05c78499 {
+  animation-delay: 0.8s !important;
+  background: url("../remote-qartia/wp-content/uploads/2022/11/servcio-5.jpg") no-repeat center / cover !important;
+}
+
+.servicios-home .us_custom_fcc027ee {
+  animation-delay: 0.6s !important;
+  background: url("../remote-qartia/wp-content/uploads/2022/11/servicio-6.jpg") no-repeat center / cover !important;
+}
+
+@media (max-width: 820px) {
+  .servicios-home .g-cols {
+    flex-direction: column !important;
+  }
+
+  .servicios-home .vc_col-sm-4 {
+    flex: 0 0 100% !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-height: 220px !important;
+  }
+
+  .servicios-home .vc_column-inner {
+    min-height: 220px !important;
+  }
+
+  .servicios-home h3 {
+    font-size: 1.45rem !important;
+  }
+}
+
+/* Tarjetas "Cómo desplegamos": mismo lenguaje visual que los cuadros de index.html. */
+.phase-grid {
+  display: grid !important;
+  grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+  gap: 0 !important;
+  width: 100% !important;
+  max-width: none !important;
+  margin-top: 2.2rem !important;
+  padding: 0 !important;
+}
+
+.phase-card {
+  position: relative !important;
+  min-height: 360px !important;
+  height: 100% !important;
+  margin: 0 !important;
+  padding: 2.4rem 2rem !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  overflow: hidden !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-align: center !important;
+  color: #fff !important;
+  background: linear-gradient(rgba(7, 17, 13, 0.70), rgba(7, 17, 13, 0.46)),
+    url("../remote-qartia/wp-content/uploads/2022/11/servicio-1.jpg") no-repeat center / cover !important;
+  box-shadow: none !important;
+  animation-duration: 0.9s !important;
+  animation-fill-mode: both !important;
+  animation-name: afl !important;
+  animation-timing-function: ease !important;
+  transition: transform 0.35s ease, filter 0.35s ease !important;
+  will-change: transform, opacity !important;
+}
+
+.phase-card::before {
+  content: "" !important;
+  position: absolute !important;
+  inset: 0 !important;
+  background: rgba(0, 0, 0, 0.28) !important;
+  z-index: 0 !important;
+}
+
+.phase-card > * {
+  position: relative !important;
+  z-index: 1 !important;
+}
+
+.phase-card:nth-child(1) {
+  animation-delay: 0s !important;
+  background-image: linear-gradient(rgba(7, 17, 13, 0.70), rgba(7, 17, 13, 0.46)),
+    url("../remote-qartia/wp-content/uploads/2022/11/servicio-1.jpg") !important;
+}
+
+.phase-card:nth-child(2) {
+  animation-delay: 0.2s !important;
+  background-image: linear-gradient(rgba(7, 17, 13, 0.70), rgba(7, 17, 13, 0.46)),
+    url("../remote-qartia/wp-content/uploads/2022/11/servicio-2.jpg") !important;
+}
+
+.phase-card:nth-child(3) {
+  animation-delay: 0.4s !important;
+  background-image: linear-gradient(rgba(7, 17, 13, 0.70), rgba(7, 17, 13, 0.46)),
+    url("../remote-qartia/wp-content/uploads/2022/11/servicio3.jpg") !important;
+}
+
+.phase-card:nth-child(4) {
+  animation-delay: 0.6s !important;
+  background-image: linear-gradient(rgba(7, 17, 13, 0.70), rgba(7, 17, 13, 0.46)),
+    url("../remote-qartia/wp-content/uploads/2022/11/servicio-4.jpg") !important;
+}
+
+.phase-card:hover,
+.phase-card:focus-within {
+  transform: scale(1.035) !important;
+  filter: brightness(1.06) !important;
+  z-index: 2 !important;
+}
+
+.phase-card strong {
+  display: block !important;
+  margin: 0 0 1.05rem !important;
+  color: #72d8c8 !important;
+  font-family: "Rubik", var(--fuente-titulares, sans-serif) !important;
+  font-size: 2rem !important;
+  font-weight: 300 !important;
+  line-height: 1.2 !important;
+  letter-spacing: 0 !important;
+  text-transform: uppercase !important;
+  text-shadow: 2px 2px 7px rgba(0, 0, 0, 0.72) !important;
+}
+
+.phase-card h3 {
+  margin: 0 !important;
+  color: #fff !important;
+  font-family: "Rubik", var(--fuente-titulares, sans-serif) !important;
+  font-size: 2rem !important;
+  font-weight: 300 !important;
+  line-height: 1.2 !important;
+  letter-spacing: 0 !important;
+  text-transform: uppercase !important;
+  text-align: center !important;
+  text-shadow: 2px 2px 9px rgba(0, 0, 0, 0.72) !important;
+}
+
+.phase-card p {
+  max-width: 88% !important;
+  margin: 1rem auto 0 !important;
+  color: rgba(255, 255, 255, 0.90) !important;
+  font-family: "Work Sans", var(--fuente-cuerpos, sans-serif) !important;
+  font-size: 1rem !important;
+  font-weight: 400 !important;
+  line-height: 1.55 !important;
+  text-align: center !important;
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.65) !important;
+}
+
+@media (max-width: 1024px) {
+  .phase-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+}
+
+@media (max-width: 820px) {
+  .phase-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .phase-card {
+    min-height: 220px !important;
+  }
+
+  .phase-card strong {
+    font-size: 1.45rem !important;
+  }
+
+  .phase-card h3 {
+    font-size: 1.45rem !important;
+  }
+}

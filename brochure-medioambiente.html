@@ -4,17 +4,16 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Brochure Medioambiente - Qartia Smart Technologies</title>
-    <meta
+    <link rel="icon" href="assets/remote-qartia/wp-content/uploads/2022/10/favicon-150x150.png" sizes="32x32">
+    <link rel="icon" href="assets/remote-qartia/wp-content/uploads/2022/10/favicon.png" sizes="192x192">
+    <link rel="apple-touch-icon" href="assets/remote-qartia/wp-content/uploads/2022/10/favicon.png">
+    <meta name="msapplication-TileImage" content="assets/remote-qartia/wp-content/uploads/2022/10/favicon.png">
+    
+<link rel="stylesheet" id="qartia-local-fonts" href="assets/css/local-fonts.css"><meta
       name="description"
       content="Brochure comercial de Qartia para monitorizacion medioambiental, calidad del aire, ruido, IA predictiva, RAG y conectividad privada."
     />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Sora:wght@400;500;600;700;800&display=swap"
-      rel="stylesheet"
-    />
-    <style>
+<style>
       :root {
         --forest: #07110d;
         --panel: #0d1713;
@@ -426,12 +425,63 @@
         }
       }
     </style>
-  </head>
+  <link rel="stylesheet" href="assets/css/qartia-topbar.css" />
+  <style id="eibt-footer-layout-fix">
+    .footer .footer-inner {
+      display: grid !important;
+      grid-template-columns: minmax(180px, 0.75fr) minmax(260px, 1fr) minmax(360px, 1.15fr) !important;
+      align-items: start !important;
+      gap: 28px !important;
+    }
+
+    .footer .footer-eibt-badge,
+    .l-footer .footer-eibt-badge {
+      display: flex !important;
+      justify-content: flex-end !important;
+      align-items: flex-start !important;
+      margin-top: 0 !important;
+      width: 100% !important;
+      min-width: 360px;
+    }
+
+    .footer .footer-eibt-badge img,
+    .l-footer .footer-eibt-badge img {
+      width: min(430px, 100%) !important;
+      height: auto !important;
+      display: block !important;
+      margin-left: auto !important;
+      margin-right: 0 !important;
+    }
+
+    .l-footer .footer-eibt-badge .w-image-h {
+      width: 100% !important;
+    }
+
+    @media (max-width: 900px) {
+      .footer .footer-inner {
+        grid-template-columns: 1fr !important;
+      }
+
+      .footer .footer-eibt-badge,
+      .l-footer .footer-eibt-badge {
+        justify-content: flex-start !important;
+        min-width: 0 !important;
+      }
+
+      .footer .footer-eibt-badge img,
+      .l-footer .footer-eibt-badge img {
+        margin-left: 0 !important;
+        margin-right: auto !important;
+      }
+    }
+  </style>
+    <link rel="stylesheet" href="assets/css/cookie-consent.css">
+</head>
   <body>
     <div class="sheet">
       <section class="hero">
         <div class="hero-inner">
-          <img class="logo" src="https://qartia.com/wp-content/uploads/2022/11/logo-qartia.png" alt="Qartia Smart Technologies" />
+          <img class="logo" src="assets/remote-qartia/wp-content/uploads/2022/11/logo-qartia.png" alt="Qartia Smart Technologies" />
           <span class="kicker">Brochure Medioambiente</span>
           <h1>De la medida ambiental a la decisi&oacute;n operativa.</h1>
           <p>
@@ -622,10 +672,15 @@
           </p>
         </div>
         <div class="contact-card">
-          <strong>Contacto</strong>
-          <p>Web: <a href="https://www.qartia.com" target="_blank" rel="noreferrer">www.qartia.com</a></p>
-          <p>Email: <a href="mailto:antoniojavier.garcia@qartia.com">antoniojavier.garcia@qartia.com</a></p>
-          <p>Tel: <a href="tel:+34686918522">+34 686 918 522</a></p>
+          <strong>CONTACTO</strong>
+          <p><a href="tel:+34686918522">(+34) 686918522</a></p>
+          <p><a href="mailto:info@qartia.com">info@qartia.com</a></p>
+          <p>Calle Tolosa Latour, 4, 7&ordm;A,</p>
+          <p>30201, Cartagena, Espa&ntilde;a</p>
+          <p>CIF: B67916676</p>
+          <div class="footer-eibt-badge" style="display:flex;align-items:center;justify-content:flex-end;margin-top:18px;">
+            <img src="assets/images/eibt-logo.png" alt="Sello EIBT" style="width:min(430px,100%);height:auto;display:block;">
+          </div>
         </div>
       </section>
 
@@ -633,5 +688,6 @@
         Brochure preparado en HTML para presentaci&oacute;n digital o impresi&oacute;n a PDF.
       </p>
     </div>
-  </body>
+      <script src="assets/js/cookie-consent.js" defer></script>
+</body>
 </html>

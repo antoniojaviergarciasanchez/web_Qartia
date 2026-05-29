@@ -1,0 +1,358 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    <title>Sensorización industrial, ambiental y agro - Qartia Smart Technologies</title>
+    <link rel="icon" href="../assets/remote-qartia/wp-content/uploads/2022/10/favicon-150x150.png" sizes="32x32">
+    <link rel="icon" href="../assets/remote-qartia/wp-content/uploads/2022/10/favicon.png" sizes="192x192">
+    <link rel="apple-touch-icon" href="../assets/remote-qartia/wp-content/uploads/2022/10/favicon.png">
+    <meta name="msapplication-TileImage" content="../assets/remote-qartia/wp-content/uploads/2022/10/favicon.png">
+    
+<link rel="stylesheet" id="qartia-local-fonts" href="../assets/css/local-fonts.css"><meta
+      name="description"
+      content="Soluciones de sensorización industrial, ambiental y agro para capturar datos fiables en campo, integrarlos con comunicaciones, energía y visualización, y llevarlos a operación real."
+    />
+<link rel="stylesheet" href="../assets/css/qartia-service.css" />
+<link rel="stylesheet" href="../assets/css/quick-access-index.css" />
+<link rel="stylesheet" href="../assets/css/qartia-topbar.css" />
+    <style id="eibt-footer-layout-fix">
+    .footer .footer-inner {
+      display: grid !important;
+      grid-template-columns: minmax(180px, 0.75fr) minmax(260px, 1fr) minmax(360px, 1.15fr) !important;
+      align-items: start !important;
+      gap: 28px !important;
+    }
+
+    .footer .footer-eibt-badge,
+    .l-footer .footer-eibt-badge {
+      display: flex !important;
+      justify-content: flex-end !important;
+      align-items: flex-start !important;
+      margin-top: 0 !important;
+      width: 100% !important;
+      min-width: 360px;
+    }
+
+    .footer .footer-eibt-badge img,
+    .l-footer .footer-eibt-badge img {
+      width: min(430px, 100%) !important;
+      height: auto !important;
+      display: block !important;
+      margin-left: auto !important;
+      margin-right: 0 !important;
+    }
+
+    .l-footer .footer-eibt-badge .w-image-h {
+      width: 100% !important;
+    }
+
+    @media (max-width: 900px) {
+      .footer .footer-inner {
+        grid-template-columns: 1fr !important;
+      }
+
+      .footer .footer-eibt-badge,
+      .l-footer .footer-eibt-badge {
+        justify-content: flex-start !important;
+        min-width: 0 !important;
+      }
+
+      .footer .footer-eibt-badge img,
+      .l-footer .footer-eibt-badge img {
+        margin-left: 0 !important;
+        margin-right: auto !important;
+      }
+    }
+  </style>
+    <link rel="stylesheet" href="../assets/css/cookie-consent.css">
+</head>
+  <body>
+    <div class="page">
+      <div class="topbar">
+        <div class="topbar-inner">
+          <a href="tel:+34686918522">+34 686 91 85 22</a>
+          <a href="mailto:info@qartia.com">info@qartia.com</a>
+          <a class="qartia-linkedin-icon" href="https://www.linkedin.com/company/qartia-smart-technologies/" target="_blank" rel="noopener" aria-label="LinkedIn Qartia"></a>
+        </div>
+      </div>
+
+      <header class="header">
+        <div class="header-inner">
+          <a class="logo" href="../index.html">
+            <img src="../assets/remote-qartia/wp-content/uploads/2022/11/logo-qartia.png" alt="Qartia Smart Technologies" />
+          </a>
+
+          <nav class="nav" aria-label="Navegacion principal">
+            <a href="../quienes-somos.html">Quienes Somos</a>
+            <div class="nav-group">
+              <button class="nav-toggle" type="button" aria-expanded="false">Productos</button>
+              <div class="nav-dropdown">
+                <a href="../productos.html">Productos</a>
+                <a href="../vibrasense.html">VibraSense</a>
+                <a href="../airsense-pro.html">AIRSENSE PRO</a>
+                <a href="../megamia.html">MEGAMIA</a>
+                <a href="../dipason-exterior.html">DIPASON</a>
+                <a href="../Biosentia.html">Biosentia</a>
+                <a href="../noisement.html">NoiseMent</a>
+              </div>
+            </div>
+            <div class="nav-group">
+              <button class="nav-toggle" type="button" aria-expanded="false">Servicios</button>
+              <div class="nav-dropdown">
+                <a href="../agricultura.html">Agricultura</a>
+                <div class="nav-subgroup">
+                  <a class="nav-subtoggle" href="../industria.html">Industria</a>
+                  <div class="nav-submenu">
+                    <a href="../mantenimiento-predictivo-vibraciones.html">Mantenimiento Predictivo. Vibraciones</a>
+                    <a href="../monitorizacion-activos-criticos.html">Monitorización de Activos Críticos</a>
+                  </div>
+                </div>
+                <a href="../medioambiente.html">Medioambiente</a>
+                <a href="../civil.html">Infraestructuras Civiles</a>
+                <a href="../sources/serviciosañadido.html">Servicios Adicionales</a>
+              </div>
+            </div>
+            <div class="nav-group">
+              <button class="nav-toggle" type="button" aria-expanded="false">Redes Privadas 5G</button>
+              <div class="nav-dropdown">
+                <a href="../dect-nr-plus.html">Qué es DECT NR+</a>
+                <a href="../soluciones-5g-privadas.html">Soluciones 5G Privadas</a>
+              </div>
+            </div>
+            <a href="../noticias.html">Noticias</a>
+            <a href="../contacto.html">Contacto</a>
+            <a href="https://qartia.com/Flutter/panel_industrias_prueba/">Acceso a Clientes</a>
+          </nav>
+        </div>
+      </header>
+
+      <main>
+        <section class="hero" style="background-image: linear-gradient(rgba(0, 0, 0, 0.50), rgba(0, 0, 0, 0.18)), url('../assets/images/sensorizacion-hero-3dprinter.jpeg');">
+          <div class="hero-inner">
+            <h1>Sensorización industrial, ambiental y agro</h1>
+          </div>
+        </section>
+
+        <section class="section surface">
+          <div class="section-inner">
+            <div class="split-layout">
+              <div class="copy-card">
+                <span class="eyebrow">Captura de dato</span>
+                <h2 class="lead-title">Diseñamos sistemas de medida para que el dato nazca bien y llegue listo para operar.</h2>
+                <div class="copy">
+                  <p>Qartia diseña y despliega soluciones de sensorización para entornos industriales, ambientales, agrícolas y civiles, adaptando el sistema de medida a la realidad operativa de cada proyecto.</p>
+                  <p>Esta línea integra selección de sensores, electrónica, alimentación, conectividad, protección mecánica y visualización del dato. El objetivo es captar información fiable en campo y convertirla en una base sólida para monitorización, alertas, mantenimiento predictivo o apoyo a la toma de decisiones.</p>
+                  <p>No trabajamos solo con el sensor. Diseñamos el conjunto completo: soporte, caja, energía, comunicaciones, lógica de captura y plataforma para que el sistema pueda mantenerse, escalarse y convivir con la operación real del cliente.</p>
+                </div>
+              </div>
+
+              <aside class="visual-card landscape">
+                <img src="../assets/images/sensorizacion-agro-node.jpeg" alt="Nodo de sensorización agro desplegado por Qartia en campo" />
+                <p>Sensorización robusta para operación continua en entornos agro, ambientales e industriales.</p>
+              </aside>
+            </div>
+          </div>
+        </section>
+
+        <section class="section">
+          <div class="section-inner">
+            <span class="eyebrow">Qué resolvemos</span>
+            <h2 class="lead-title">La sensorización útil no es una lista de variables: es una arquitectura completa de medida.</h2>
+            <div class="feature-grid cols-4">
+              <article class="info-card">
+                <h3>Industria</h3>
+                <p>Monitorización de máquinas, procesos, utilidades y activos donde el dato debe convivir con la operación de planta.</p>
+              </article>
+              <article class="info-card">
+                <h3>Medioambiente</h3>
+                <p>Redes de gases, partículas, ruido y variables meteorológicas para seguimiento continuo y visualización pública u operativa.</p>
+              </article>
+              <article class="info-card">
+                <h3>Agricultura y agro</h3>
+                <p>Sensórica de cultivo, microclima, riego, radiación y explotación agrícola para control productivo y eficiencia de recursos.</p>
+              </article>
+              <article class="info-card">
+                <h3>Entornos exigentes</h3>
+                <p>Diseño de cajas, alimentación, soportes y comunicaciones para intemperie, ruido eléctrico, vandalismo o acceso complejo.</p>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="section alt">
+          <div class="section-inner">
+            <span class="eyebrow">Del sensor al dashboard</span>
+            <h2 class="lead-title">Cada despliegue combina medida, protección, conectividad y explotación del dato.</h2>
+            <div class="stack-split">
+              <div class="stack-grid">
+                <article class="info-card">
+                  <strong>Selección e integración</strong>
+                  <h3>Sensores, electrónica y adquisición adaptados a cada variable.</h3>
+                  <p>Qartia trabaja con sensores industriales, ambientales y agrícolas, integrando la variable, el rango, la frecuencia de muestreo y la lógica de operación en una electrónica y firmware acordes con el uso final.</p>
+                  <ul class="feature-list">
+                    <li>Captura analógica y digital, sensores específicos y electrónica de medida.</li>
+                    <li>Frecuencia de muestreo y calidad del dato definidas según caso de uso.</li>
+                    <li>Preparación para alertas, IA, mantenimiento predictivo o reporting.</li>
+                  </ul>
+                </article>
+                <article class="info-card">
+                  <strong>Despliegue de campo</strong>
+                  <h3>Protección mecánica, autonomía y comunicaciones en una misma base técnica.</h3>
+                  <p>La sensorización de Qartia no se queda en laboratorio. Se despliega en planta, ciudad o territorio con energía, soporte, caja, red privada y backhaul listos para un servicio estable en el tiempo.</p>
+                  <ul class="feature-list">
+                    <li>Cajas de campo, armarios, alimentación y solarización cuando hace falta.</li>
+                    <li>LoRa, DECT NR+, 5G, Ethernet o arquitecturas híbridas según el escenario.</li>
+                    <li>Integración con dashboards, alarmas, bases de datos y sistemas existentes.</li>
+                  </ul>
+                </article>
+              </div>
+
+              <div class="photo-stack">
+                <figure class="photo-card">
+                  <img src="../assets/images/sensorizacion-vibration-box.jpeg" alt="Caja de vibraciones integrada por Qartia para captación industrial" />
+                  <figcaption>Instrumentación industrial lista para captar variables de máquina y transmitirlas con estabilidad.</figcaption>
+                </figure>
+                <figure class="photo-card">
+                  <img src="../assets/images/sensorizacion-agrivoltaic.jpeg" alt="Despliegue agrivoltaico instrumentado con sensorización de Qartia" />
+                  <figcaption>La sensorización también conecta cultivo, energía, microclima y operación en campo.</figcaption>
+                </figure>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="section">
+          <div class="section-inner">
+            <span class="eyebrow">Capacidades clave</span>
+            <h2 class="lead-title">Una base de sensorización pensada para operar, integrarse y crecer.</h2>
+            <div class="feature-grid cols-4">
+              <article class="info-card"><h3>Selección de sensores</h3><p>Variables, rango, precisión, materialidad y condiciones de uso alineadas con el caso real.</p></article>
+              <article class="info-card"><h3>Electrónica de adquisición</h3><p>Diseño e integración de hardware para capturar señal útil y mantener estabilidad en el tiempo.</p></article>
+              <article class="info-card"><h3>Firmware y lógica local</h3><p>Configuración de ciclos de muestreo, alarmas, empaquetado de dato y gestión energética.</p></article>
+              <article class="info-card"><h3>Protección y mecánica</h3><p>Cajas, soportes, antivandalismo, integración en cuadro y despliegues preparados para intemperie o planta.</p></article>
+              <article class="info-card"><h3>Red privada y backhaul</h3><p>LoRa, DECT NR+, 5G, Ethernet y salida a Internet acorde a cobertura, latencia y operación.</p></article>
+              <article class="info-card"><h3>Plataforma y visualización</h3><p>Dashboards, mapas, indicadores y explotación del dato para operación, seguimiento y decisión.</p></article>
+              <article class="info-card"><h3>Alertas y automatización</h3><p>Reglas, umbrales y lógica de evento para transformar la medida en acción operativa.</p></article>
+              <article class="info-card"><h3>Escalado por fases</h3><p>Arquitectura preparada para empezar con piloto y crecer sin rehacer el sistema completo.</p></article>
+            </div>
+          </div>
+        </section>
+
+        <section class="section alt">
+          <div class="section-inner">
+            <span class="eyebrow">Cómo desplegamos</span>
+            <h2 class="lead-title">De la variable a un sistema funcionando en campo.</h2>
+            <div class="phase-grid">
+              <article class="phase-card">
+                <strong>01</strong>
+                <h3>Definición técnica</h3>
+                <p>Identificamos variables, condiciones de captura, restricciones de instalación y objetivos de explotación del dato.</p>
+              </article>
+              <article class="phase-card">
+                <strong>02</strong>
+                <h3>Diseño de solución</h3>
+                <p>Seleccionamos sensor, electrónica, energía, caja, red privada y topología de salida a plataforma.</p>
+              </article>
+              <article class="phase-card">
+                <strong>03</strong>
+                <h3>Instalación y validación</h3>
+                <p>Desplegamos el nodo, verificamos cobertura, calidad del dato, estabilidad y comportamiento en entorno real.</p>
+              </article>
+              <article class="phase-card">
+                <strong>04</strong>
+                <h3>Explotación y escalado</h3>
+                <p>Integramos dashboards, alertas y analítica para evolucionar de piloto a red operativa.</p>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="l-section wpb_row servicios-home height_auto width_full"><div class="l-section-h i-cf"><div class="g-cols vc_row via_flex valign_middle type_default stacking_default">
+          <div class="vc_col-sm-4 wpb_column vc_column_container has_bg_color has-link">
+            <div class="vc_column-inner us_custom_7ca10f15 us_animate_this"><div class="wpb_wrapper"><div class="w-hwrapper align_center valign_middle wrap" style="--hwrapper-gap:1.20rem"><div class="wpb_text_column us_custom_8b3d6790 has_text_color"><div class="wpb_wrapper">
+              <h3 style="text-align: center;">Sensorizaci&oacute;n<br>industrial, ambiental<br>y agro</h3>
+            </div></div></div></div></div>
+            <a title="Sensorizaci&oacute;n industrial, ambiental y agro" href="sensorizacion.html" class="vc_column-link smooth-scroll"></a>
+          </div>
+          <div class="vc_col-sm-4 wpb_column vc_column_container has_text_color has_bg_color has-link">
+            <div class="vc_column-inner us_custom_8c4c7f6b us_animate_this"><div class="wpb_wrapper"><div class="w-hwrapper align_center valign_middle wrap" style="--hwrapper-gap:1.20rem"><div class="wpb_text_column"><div class="wpb_wrapper">
+              <h3 style="text-align: center;">IoT avanzado</h3>
+            </div></div></div></div></div>
+            <a title="IOT" href="iot.html" class="vc_column-link smooth-scroll"></a>
+          </div>
+          <div class="vc_col-sm-4 wpb_column vc_column_container has_text_color has_bg_color has-link">
+            <div class="vc_column-inner us_custom_824f00fd us_animate_this"><div class="wpb_wrapper"><div class="w-hwrapper align_center valign_middle wrap" style="--hwrapper-gap:1.20rem"><div class="wpb_text_column"><div class="wpb_wrapper">
+              <h3 style="text-align: center;">Desde la Consultor&iacute;a al Proyecto llave en Mano</h3>
+            </div></div></div></div></div>
+            <a title="Desde la Consultor&iacute;a al Proyecto llave en Mano" href="consultoria.html" class="vc_column-link smooth-scroll"></a>
+          </div>
+        </div></div></section>
+        <section class="l-section wpb_row servicios-home height_auto width_full"><div class="l-section-h i-cf"><div class="g-cols vc_row via_flex valign_middle type_default stacking_default">
+          <div class="vc_col-sm-4 wpb_column vc_column_container has_bg_color has-link">
+            <div class="vc_column-inner us_custom_dea79c57 us_animate_this"><div class="wpb_wrapper"><div class="w-hwrapper align_center valign_middle wrap" style="--hwrapper-gap:1.20rem"><div class="wpb_text_column us_custom_8b3d6790 has_text_color"><div class="wpb_wrapper">
+              <h3 style="text-align: center;">INGENIERIA</h3>
+            </div></div></div></div></div>
+            <a title="Ingeniería" href="../Ingenieria.html" class="vc_column-link smooth-scroll"></a>
+          </div>
+          <div class="vc_col-sm-4 wpb_column vc_column_container has_text_color has_bg_color has-link">
+            <div class="vc_column-inner us_custom_05c78499 us_animate_this"><div class="wpb_wrapper"><div class="w-hwrapper align_center valign_middle wrap" style="--hwrapper-gap:1.20rem"><div class="wpb_text_column"><div class="wpb_wrapper">
+              <h3 style="text-align: center;">IA</h3>
+            </div></div></div></div></div>
+            <a title="IA aplicada" href="IA%20aplicada.html" class="vc_column-link smooth-scroll"></a>
+          </div>
+          <div class="vc_col-sm-4 wpb_column vc_column_container has_text_color has_bg_color has-link">
+            <div class="vc_column-inner us_custom_fcc027ee us_animate_this"><div class="wpb_wrapper"><div class="w-hwrapper align_center valign_middle wrap" style="--hwrapper-gap:1.20rem"><div class="wpb_text_column"><div class="wpb_wrapper">
+              <h3 style="text-align: center;">I+D+i</h3>
+            </div></div></div></div></div>
+            <a title="I+D+I" href="idi.html" class="vc_column-link smooth-scroll"></a>
+          </div>
+        </div></div></section>
+
+        <section class="section">
+          <div class="section-inner">
+            <div class="cta-grid">
+              <div class="cta-copy">
+                <h2>¿Quieres diseñar una solución de sensorización alineada con tu operación real?</h2>
+                <p>Podemos ayudarte a definir la variable, elegir tecnología, integrar comunicaciones y dejar la captura de dato lista para explotar.</p>
+              </div>
+              <figure class="cta-image">
+                <img src="../assets/images/sensorizacion-sensorica.png" alt="Módulos de sensórica Qartia preparados para integración" loading="lazy">
+              </figure>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <div class="footer-inner">
+          <div class="footer-logo">
+            <img src="../assets/remote-qartia/wp-content/uploads/2022/11/logo-qartia.png" alt="Qartia" />
+          </div>
+          <div>
+            <h4>CONTACTO</h4>
+            <p><a href="tel:+34686918522">(+34) 686918522</a></p>
+            <p><a href="mailto:info@qartia.com">info@qartia.com</a></p>
+            <p>Calle Tolosa Latour, 4, 7ºA,</p>
+            <p>30201, Cartagena, España</p>
+            <p>CIF: B67916676</p>
+          </div>
+                <div class="footer-eibt-badge" style="display:flex;align-items:center;justify-content:flex-end;min-width:360px;margin-top:8px;">
+          <img src="../assets/images/eibt-logo.png" alt="Sello EIBT" style="width:min(430px,100%);height:auto;display:block;">
+        </div>
+</div>
+      </footer>
+
+      <div class="subfooter">
+        <div class="subfooter-inner">
+          <a href="../aviso-legal.html">Aviso legal</a>
+          <a href="../politica-cookies.html">Política de cookies</a>
+          <a href="../politica-privacidad.html">Política de privacidad</a>
+        </div>
+      </div>
+    </div>
+    <script src="../assets/js/qartia-nav.js"></script>
+      <script src="../assets/js/cookie-consent.js" defer></script>
+</body>
+</html>

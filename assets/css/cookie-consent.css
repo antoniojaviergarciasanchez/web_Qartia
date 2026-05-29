@@ -1,0 +1,166 @@
+:root {
+  --qartia-cookie-dark: #08213d;
+  --qartia-cookie-dark-2: #06182e;
+  --qartia-cookie-blue: #2f5da8;
+  --qartia-cookie-accent: #72d8c8;
+}
+
+.qartia-cookie-banner,
+.qartia-cookie-blocker,
+.qartia-cookie-banner *,
+.qartia-cookie-blocker * {
+  box-sizing: border-box;
+}
+
+body.qartia-cookie-locked {
+  overflow: hidden;
+}
+
+.qartia-cookie-banner {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  left: 24px;
+  z-index: 99999;
+  display: flex;
+  gap: 22px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 22px;
+  color: #fff;
+  background: linear-gradient(135deg, rgba(8, 33, 61, .98), rgba(6, 24, 46, .96));
+  border: 1px solid rgba(114, 216, 200, .38);
+  border-radius: 22px;
+  box-shadow: 0 24px 70px rgba(0, 0, 0, .34);
+  backdrop-filter: blur(14px);
+  font-family: inherit;
+}
+
+.qartia-cookie-kicker {
+  margin: 0 0 6px;
+  color: var(--qartia-cookie-accent);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+}
+
+.qartia-cookie-title {
+  margin: 0 0 6px;
+  font-size: clamp(20px, 2vw, 28px);
+  font-weight: 800;
+  line-height: 1.15;
+}
+
+.qartia-cookie-text {
+  max-width: 820px;
+  margin: 0;
+  color: rgba(255, 255, 255, .82);
+  font-size: 15px;
+  line-height: 1.55;
+}
+
+.qartia-cookie-link {
+  color: #fff;
+  font-weight: 800;
+  text-decoration: underline;
+  text-decoration-color: rgba(114, 216, 200, .7);
+  text-underline-offset: 3px;
+}
+
+.qartia-cookie-link:hover {
+  color: var(--qartia-cookie-accent);
+}
+
+.qartia-cookie-actions {
+  display: flex;
+  flex: 0 0 auto;
+  gap: 12px;
+  align-items: center;
+}
+
+.qartia-cookie-btn {
+  appearance: none;
+  padding: 12px 18px;
+  font: inherit;
+  font-weight: 800;
+  cursor: pointer;
+  border: 0;
+  border-radius: 999px;
+  transition: transform .2s ease, background-color .2s ease, color .2s ease, border-color .2s ease;
+}
+
+.qartia-cookie-btn:hover {
+  transform: translateY(-2px);
+}
+
+.qartia-cookie-btn-primary {
+  color: var(--qartia-cookie-dark);
+  background: var(--qartia-cookie-accent);
+}
+
+.qartia-cookie-btn-primary:hover {
+  background: #fff;
+}
+
+.qartia-cookie-btn-secondary {
+  color: #fff;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, .5);
+}
+
+.qartia-cookie-btn-secondary:hover {
+  color: var(--qartia-cookie-accent);
+  border-color: var(--qartia-cookie-accent);
+}
+
+.qartia-cookie-blocker {
+  position: fixed;
+  inset: 0;
+  z-index: 100000;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  color: #fff;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(114, 216, 200, .2), transparent 30%),
+    linear-gradient(135deg, rgba(6, 24, 46, .98), rgba(8, 33, 61, .98));
+  font-family: inherit;
+}
+
+.qartia-cookie-blocker-card {
+  width: min(680px, 100%);
+  padding: clamp(28px, 5vw, 52px);
+  text-align: center;
+  background: rgba(255, 255, 255, .08);
+  border: 1px solid rgba(114, 216, 200, .42);
+  border-radius: 28px;
+  box-shadow: 0 34px 90px rgba(0, 0, 0, .38);
+}
+
+.qartia-cookie-blocker-card p {
+  margin: 0 0 22px;
+  color: rgba(255, 255, 255, .82);
+  font-size: 17px;
+  line-height: 1.6;
+}
+
+@media (max-width: 760px) {
+  .qartia-cookie-banner {
+    right: 14px;
+    bottom: 14px;
+    left: 14px;
+    flex-direction: column;
+    align-items: stretch;
+    padding: 18px;
+  }
+
+  .qartia-cookie-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .qartia-cookie-btn {
+    width: 100%;
+  }
+}

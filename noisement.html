@@ -4,17 +4,16 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>NoiseMent - Qartia Smart Technologies</title>
-    <meta
+    <link rel="icon" href="assets/remote-qartia/wp-content/uploads/2022/10/favicon-150x150.png" sizes="32x32">
+    <link rel="icon" href="assets/remote-qartia/wp-content/uploads/2022/10/favicon.png" sizes="192x192">
+    <link rel="apple-touch-icon" href="assets/remote-qartia/wp-content/uploads/2022/10/favicon.png">
+    <meta name="msapplication-TileImage" content="assets/remote-qartia/wp-content/uploads/2022/10/favicon.png">
+    
+<link rel="stylesheet" id="qartia-local-fonts" href="assets/css/local-fonts.css"><meta
       name="description"
       content="Ficha de NoiseMent, el dispositivo de Qartia Smart Technologies para medicion continua de ruido ambiental."
     />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css?family=Rubik%3A300%2C400%2C500%2C700%2C800%7CWork+Sans%3A400%2C600%2C700&amp;display=swap"
-      rel="stylesheet"
-    />
-    <style>
+<style>
       :root {
         --bg: #f5f5f5;
         --paper: #ffffff;
@@ -202,8 +201,8 @@
         align-items: center;
         color: #fff;
         background:
-          linear-gradient(rgba(0, 0, 0, 0.68), rgba(0, 0, 0, 0.25)),
-          url("https://qartia.com/wp-content/uploads/2022/12/slide-cuatrov2.jpg") center/cover no-repeat;
+          linear-gradient(rgba(0, 0, 0, 0.50), rgba(0, 0, 0, 0.16)),
+          url("assets/remote-qartia/wp-content/uploads/2022/12/slide-cuatrov2.jpg") center/cover no-repeat;
       }
 
       .hero-inner {
@@ -236,7 +235,7 @@
 
       .intro-section {
         background:
-          url("https://qartia.com/wp-content/uploads/2022/11/fondo-home.jpg") top left / cover no-repeat,
+          url("assets/remote-qartia/wp-content/uploads/2022/11/fondo-home.jpg") top left / cover no-repeat,
           var(--paper-soft);
       }
 
@@ -266,7 +265,7 @@
         height: 50px;
         margin-right: 10px;
         vertical-align: middle;
-        background: url("https://qartia.com/wp-content/uploads/2022/11/before-titulares.png") no-repeat center/contain;
+        background: url("assets/remote-qartia/wp-content/uploads/2022/11/before-titulares.png") no-repeat center/contain;
       }
 
       .lead-title {
@@ -394,7 +393,7 @@
 
       .footer {
         background:
-          url("https://qartia.com/wp-content/uploads/2022/11/fondo-footer.jpg") left top / cover no-repeat,
+          url("assets/remote-qartia/wp-content/uploads/2022/11/fondo-footer.jpg") left top / cover no-repeat,
           #222;
         color: #ccc;
       }
@@ -491,20 +490,72 @@
 @media (min-width:1025px){.ush_menu_1.type_desktop .w-nav-list.level_2{margin-left:1cm;}}
 @media (min-width:1025px){.l-subheader-cell.at_left,.header-inner .logo{transform:translateX(-0.35cm);}}
 </style>
+<link rel="stylesheet" href="assets/css/qartia-topbar.css" />
+    <style id="eibt-footer-layout-fix">
+    .footer .footer-inner {
+      display: grid !important;
+      grid-template-columns: minmax(180px, 0.75fr) minmax(260px, 1fr) minmax(360px, 1.15fr) !important;
+      align-items: start !important;
+      gap: 28px !important;
+    }
+
+    .footer .footer-eibt-badge,
+    .l-footer .footer-eibt-badge {
+      display: flex !important;
+      justify-content: flex-end !important;
+      align-items: flex-start !important;
+      margin-top: 0 !important;
+      width: 100% !important;
+      min-width: 360px;
+    }
+
+    .footer .footer-eibt-badge img,
+    .l-footer .footer-eibt-badge img {
+      width: min(430px, 100%) !important;
+      height: auto !important;
+      display: block !important;
+      margin-left: auto !important;
+      margin-right: 0 !important;
+    }
+
+    .l-footer .footer-eibt-badge .w-image-h {
+      width: 100% !important;
+    }
+
+    @media (max-width: 900px) {
+      .footer .footer-inner {
+        grid-template-columns: 1fr !important;
+      }
+
+      .footer .footer-eibt-badge,
+      .l-footer .footer-eibt-badge {
+        justify-content: flex-start !important;
+        min-width: 0 !important;
+      }
+
+      .footer .footer-eibt-badge img,
+      .l-footer .footer-eibt-badge img {
+        margin-left: 0 !important;
+        margin-right: auto !important;
+      }
+    }
+  </style>
+    <link rel="stylesheet" href="assets/css/cookie-consent.css">
 </head>
   <body>
     <div class="topbar">
       <div class="topbar-inner">
         <a href="tel:+34686918522">+34 686 91 85 22</a>
         <a href="mailto:info@qartia.com">info@qartia.com</a>
-        <a href="https://www.linkedin.com/company/qartia-smart-technologies/" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="qartia-linkedin-icon" href="https://www.linkedin.com/company/qartia-smart-technologies/" target="_blank" rel="noopener" aria-label="LinkedIn Qartia"></a>
+
       </div>
     </div>
 
     <header class="header">
       <div class="header-inner">
         <a class="logo" href="index.html">
-          <img src="https://qartia.com/wp-content/uploads/2022/11/logo-qartia.png" alt="Qartia Smart Technologies" />
+          <img src="assets/remote-qartia/wp-content/uploads/2022/11/logo-qartia.png" alt="Qartia Smart Technologies" />
         </a>
 
         <nav class="nav" aria-label="Navegacion principal">
@@ -512,6 +563,7 @@
   <div class="nav-group">
     <button class="nav-toggle" type="button" aria-expanded="false">Productos</button>
     <div class="nav-dropdown">
+      <a href="productos.html">Productos</a>
       <a href="vibrasense.html">VibraSense</a>
       <a href="airsense-pro.html">AIRSENSE PRO</a>
       <a href="megamia.html">MEGAMIA</a>
@@ -533,7 +585,7 @@
       </div>
       <a href="medioambiente.html">Medioambiente</a>
       <a href="civil.html">Infraestructuras Civiles</a>
-      <a href="sources/ai.html">Servicios Adicionales</a>
+      <a href="sources/serviciosañadido.html">Servicios Adicionales</a>
     </div>
   </div>
   <div class="nav-group">
@@ -544,8 +596,8 @@
     </div>
   </div>
   <a href="noticias.html">Noticias</a>
-  <a href="https://qartia.com/contacto/">Contacto</a>
-  <a href="http://qartia.com/grafana">Acceso a Clientes</a>
+  <a href="contacto.html">Contacto</a>
+  <a href="https://qartia.com/Flutter/panel_industrias_prueba/">Acceso a Clientes</a>
 </nav>
       </div>
     </header>
@@ -669,23 +721,27 @@
     <footer class="footer">
       <div class="footer-inner">
         <div class="footer-logo">
-          <img src="https://qartia.com/wp-content/uploads/2022/11/logo-qartia.png" alt="Qartia" />
+          <img src="assets/remote-qartia/wp-content/uploads/2022/11/logo-qartia.png" alt="Qartia" />
         </div>
         <div>
-          <h4>Contacto</h4>
+          <h4>CONTACTO</h4>
           <p><a href="tel:+34686918522">(+34) 686918522</a></p>
           <p><a href="mailto:info@qartia.com">info@qartia.com</a></p>
-          <p>Calle Juan Muñoz Delgado, 8, 4ºA</p>
-          <p>30205 Cartagena (Murcia) España</p>
+          <p>Calle Tolosa Latour, 4, 7ºA,</p>
+          <p>30201, Cartagena, España</p>
+            <p>CIF: B67916676</p>
         </div>
-      </div>
+              <div class="footer-eibt-badge" style="display:flex;align-items:center;justify-content:flex-end;min-width:360px;margin-top:8px;">
+          <img src="assets/images/eibt-logo.png" alt="Sello EIBT" style="width:min(430px,100%);height:auto;display:block;">
+        </div>
+</div>
     </footer>
 
     <div class="subfooter">
       <div class="subfooter-inner">
-        <a href="https://qartia.com/aviso-legal/">Aviso legal</a>
-        <a href="https://qartia.com/politica-de-cookies/">Política de cookies</a>
-        <a href="https://qartia.com/politica-de-privacidad/">Política de privacidad</a>
+        <a href="aviso-legal.html">Aviso legal</a>
+        <a href="politica-cookies.html">Política de cookies</a>
+        <a href="politica-privacidad.html">Política de privacidad</a>
       </div>
     </div>
 
@@ -726,5 +782,6 @@
         });
       });
     </script>
-  </body>
+      <script src="assets/js/cookie-consent.js" defer></script>
+</body>
 </html>

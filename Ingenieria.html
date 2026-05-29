@@ -1,0 +1,1180 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    <title>Ingeniería - Qartia Smart Technologies</title>
+    <link rel="icon" href="assets/remote-qartia/wp-content/uploads/2022/10/favicon-150x150.png" sizes="32x32">
+    <link rel="icon" href="assets/remote-qartia/wp-content/uploads/2022/10/favicon.png" sizes="192x192">
+    <link rel="apple-touch-icon" href="assets/remote-qartia/wp-content/uploads/2022/10/favicon.png">
+    <meta name="msapplication-TileImage" content="assets/remote-qartia/wp-content/uploads/2022/10/favicon.png">
+    
+<link rel="stylesheet" id="qartia-local-fonts" href="assets/css/local-fonts.css">
+<link rel="stylesheet" href="assets/css/quick-access-index.css"><meta
+      name="description"
+      content="Ingeniería aplicada para diseñar, integrar y desplegar soluciones de sensórica, electrónica, comunicaciones, edge, cloud e inteligencia artificial en entornos reales."
+    />
+<style>
+      :root {
+        --bg: #f5f5f5;
+        --paper: #ffffff;
+        --paper-soft: #f7fbfc;
+        --ink: #333333;
+        --ink-strong: #1a1a1a;
+        --brand: #144e9c;
+        --accent: #36deb8;
+        --shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--ink);
+        font-family: "Work Sans", sans-serif;
+        line-height: 1.55;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      img {
+        max-width: 100%;
+        display: block;
+      }
+
+      .page {
+        min-height: 100vh;
+      }
+
+      .topbar {
+        background: #f5f5f5;
+        color: #333;
+        font-size: 0.84rem;
+      }
+
+      .topbar-inner,
+      .header-inner,
+      .section-inner,
+      .footer-inner {
+        width: min(1140px, calc(100% - 32px));
+        margin: 0 auto;
+      }
+
+      .topbar-inner {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        gap: 18px;
+        padding: 10px 0;
+        flex-wrap: wrap;
+      }
+
+      .header {
+        position: sticky;
+        top: 0;
+        z-index: 20;
+        background: rgba(255, 255, 255, 0.96);
+        box-shadow: 0 2px 18px rgba(0, 0, 0, 0.08);
+        backdrop-filter: blur(10px);
+      }
+
+      .header-inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 18px;
+        padding: 14px 0;
+      }
+
+      .logo img {
+        width: 180px;
+        height: auto;
+      }
+
+      .nav {
+        display: flex;
+        justify-content: flex-end;
+        gap: 4px;
+        flex-wrap: wrap;
+        align-items: center;
+      }
+
+      .nav > a,
+      .nav-toggle {
+        padding: 10px 12px;
+        color: var(--brand);
+        background: transparent;
+        border: 0;
+        font-family: "Rubik", sans-serif;
+        font-size: 0.82rem;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 0.02em;
+        border-radius: 8px;
+        cursor: pointer;
+      }
+
+      .nav > a:hover,
+      .nav > a:focus-visible,
+      .nav-toggle:hover,
+      .nav-toggle:focus-visible {
+        background: rgba(20, 78, 156, 0.08);
+      }
+
+      .nav-group {
+        position: relative;
+      }
+
+      .nav-toggle {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .nav-toggle::after {
+        content: "";
+        width: 8px;
+        height: 8px;
+        border-right: 2px solid currentColor;
+        border-bottom: 2px solid currentColor;
+        transform: rotate(45deg) translateY(-1px);
+      }
+
+      .nav-dropdown {
+        position: absolute;
+        top: calc(100% + 10px);
+        right: 0;
+        min-width: 260px;
+        display: none;
+        flex-direction: column;
+        padding: 10px;
+        border-radius: 16px;
+        background: rgba(255, 255, 255, 0.98);
+        box-shadow: var(--shadow);
+        backdrop-filter: blur(10px);
+        z-index: 30;
+      }
+
+      .nav-dropdown a {
+        padding: 10px 12px;
+        color: var(--brand);
+        font-family: "Rubik", sans-serif;
+        font-size: 0.8rem;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 0.02em;
+        border-radius: 10px;
+      }
+
+      .nav-subgroup {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .nav-subtoggle {
+        padding: 10px 12px;
+        color: var(--brand);
+        font-family: "Rubik", sans-serif;
+        font-size: 0.8rem;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 0.02em;
+        border-radius: 10px;
+      }
+
+      .nav-dropdown a:hover,
+      .nav-dropdown a:focus-visible,
+      .nav-subtoggle:hover,
+      .nav-subtoggle:focus-visible {
+        background: rgba(20, 78, 156, 0.08);
+      }
+
+      .nav-submenu {
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+        margin: 0 0 6px 18px;
+        padding-left: 12px;
+        border-left: 2px solid rgba(20, 78, 156, 0.14);
+      }
+
+      .nav-submenu a {
+        padding: 8px 10px;
+        font-size: 0.74rem;
+      }
+
+      .nav-group:hover .nav-dropdown,
+      .nav-group.open .nav-dropdown {
+        display: flex;
+      }
+
+      .hero {
+        position: relative;
+        min-height: 360px;
+        display: flex;
+        align-items: center;
+        overflow: hidden;
+        color: #fff;
+        background:
+          linear-gradient(rgba(0, 0, 0, 0.50), rgba(0, 0, 0, 0.16)),
+          url("assets/images/ingenieria-cabecera-instalacion.png") center/cover no-repeat;
+      }
+
+      .hero-inner {
+        width: min(1140px, calc(100% - 32px));
+        margin: 0 auto;
+        padding: 82px 0 60px;
+      }
+
+      .hero h1 {
+        margin: 0;
+        max-width: 12ch;
+        font-family: "Rubik", sans-serif;
+        font-size: clamp(2.4rem, 4vw, 4rem);
+        font-weight: 300;
+        text-shadow: 2px 2px 9px #000;
+      }
+
+      .content-section,
+      .cta-section {
+        padding: 70px 0;
+      }
+
+      .content-section {
+        background:
+          url("assets/remote-qartia/wp-content/uploads/2022/11/fondo-home.jpg") top left / cover no-repeat,
+          var(--paper-soft);
+      }
+
+      .content-grid {
+        display: grid;
+        grid-template-columns: minmax(0, 1.15fr) minmax(280px, 0.85fr);
+        gap: 36px;
+        align-items: center;
+      }
+
+      .eyebrow {
+        display: inline-block;
+        margin-bottom: 10px;
+        color: var(--accent);
+        font-size: 1rem;
+        font-weight: 600;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+      }
+
+      .eyebrow::before {
+        content: "";
+        display: inline-block;
+        width: 49px;
+        height: 50px;
+        margin-right: 10px;
+        vertical-align: middle;
+        background: url("assets/remote-qartia/wp-content/uploads/2022/11/before-titulares.png") no-repeat center/contain;
+      }
+
+      .lead-title {
+        margin: 0 0 24px 58px;
+        color: var(--ink-strong);
+        font-family: "Rubik", sans-serif;
+        font-size: clamp(2rem, 3vw, 3rem);
+        font-weight: 300;
+        line-height: 1.12;
+      }
+
+      .copy p {
+        margin: 0 0 16px;
+      }
+
+      .content-copy-card,
+      .visual-card {
+        display: flex;
+        flex-direction: column;
+        background: var(--paper);
+        border-radius: 22px;
+        box-shadow: var(--shadow);
+      }
+
+      .content-copy-card {
+        justify-content: center;
+        padding: 30px 32px;
+      }
+
+      .content-copy-card .eyebrow {
+        margin-top: 0;
+      }
+
+      .content-copy-card .lead-title {
+        margin-bottom: 20px;
+      }
+
+      .visual-card {
+        align-self: center;
+        justify-content: center;
+        padding: 18px;
+      }
+
+      .visual-card img {
+        width: 100%;
+        aspect-ratio: 4 / 5;
+        object-fit: cover;
+        border-radius: 18px;
+      }
+
+      .visual-card p {
+        margin: 18px 4px 0;
+        color: #5a6670;
+        font-size: 0.95rem;
+      }
+
+      .brochure-section {
+        padding: 70px 0;
+        background: var(--paper);
+      }
+
+      .brochure-section.alt {
+        background: #e8faf9;
+      }
+
+      .brochure-grid,
+      .benefits-grid,
+      .brochure-split,
+      .civil-stack,
+      .photo-stack,
+      .phase-grid {
+        display: grid;
+        gap: 24px;
+      }
+
+      .brochure-grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+      }
+
+      .brochure-grid.value-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .benefits-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .brochure-split {
+        grid-template-columns: minmax(0, 1.08fr) minmax(320px, 0.92fr);
+        align-items: start;
+      }
+
+      .civil-stack {
+        grid-template-columns: 1fr;
+        align-self: start;
+      }
+
+      .civil-stack.offset-down {
+        margin-top: 20px;
+      }
+
+      .photo-stack {
+        grid-template-columns: 1fr;
+      }
+
+      .photo-stack.compact {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 18px;
+      }
+
+      .brochure-split.include-split {
+        align-items: stretch;
+      }
+
+      .include-split .photo-stack,
+      .include-split .photo-card {
+        height: 100%;
+      }
+
+      .showcase-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 24px;
+      }
+
+      .phase-grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        margin-top: 28px;
+      }
+
+      .brochure-card,
+      .phase-card,
+      .photo-card {
+        height: 100%;
+        background: var(--paper);
+        border-radius: 22px;
+        box-shadow: var(--shadow);
+      }
+
+      .brochure-card,
+      .phase-card {
+        padding: 24px;
+      }
+
+      .brochure-card h3,
+      .phase-card h3 {
+        margin: 0 0 12px;
+        color: var(--ink-strong);
+        font-family: "Rubik", sans-serif;
+        font-size: 1.34rem;
+        font-weight: 500;
+        line-height: 1.15;
+      }
+
+      .brochure-card p,
+      .phase-card p {
+        margin: 0;
+      }
+
+      .brochure-card strong,
+      .phase-card strong {
+        display: block;
+        margin-bottom: 10px;
+        color: var(--brand);
+        font-family: "Rubik", sans-serif;
+        font-size: 0.88rem;
+        font-weight: 700;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+      }
+
+      .feature-list {
+        display: grid;
+        gap: 10px;
+        margin: 18px 0 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .feature-list li {
+        position: relative;
+        padding-left: 18px;
+      }
+
+      .feature-list li::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0.68em;
+        width: 8px;
+        height: 8px;
+        border-radius: 999px;
+        background: var(--accent);
+      }
+
+      .photo-card {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        overflow: hidden;
+      }
+
+      .photo-card img {
+        width: 100%;
+        aspect-ratio: 16 / 10;
+        object-fit: cover;
+      }
+
+      .include-split .photo-card img {
+        height: 100%;
+        min-height: 560px;
+        aspect-ratio: auto;
+      }
+
+      .photo-card.portrait img {
+        aspect-ratio: 4 / 5;
+      }
+
+      .photo-card figcaption {
+        padding: 16px 18px 18px;
+        color: #5a6670;
+        font-size: 0.94rem;
+      }
+
+      .qartia-shortcuts-section {
+        background: #eef8f7;
+      }
+
+      .qartia-shortcuts-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 24px;
+        margin-top: 28px;
+      }
+
+      .qartia-shortcut-card {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 160px;
+        padding: 24px 22px;
+        border-radius: 22px;
+        background: linear-gradient(135deg, #144e9c, #2a6aba);
+        color: #fff;
+        text-align: center;
+        font-family: "Rubik", sans-serif;
+        font-size: 1.15rem;
+        font-weight: 600;
+        line-height: 1.3;
+        text-transform: uppercase;
+        letter-spacing: 0.02em;
+        box-shadow: var(--shadow);
+        transition: transform 0.18s ease, box-shadow 0.18s ease, filter 0.18s ease;
+      }
+
+      .qartia-shortcut-card:hover,
+      .qartia-shortcut-card:focus-visible {
+        transform: translateY(-4px);
+        box-shadow: 0 16px 34px rgba(0, 0, 0, 0.16);
+        filter: brightness(1.04);
+      }
+
+      .cta-section {
+        background: #e8faf9;
+      }
+
+      .cta-grid {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) 320px;
+        gap: 24px;
+        align-items: stretch;
+      }
+
+      .cta-copy {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        background: var(--paper);
+        border-radius: 22px;
+        padding: 34px;
+        box-shadow: var(--shadow);
+      }
+
+      .cta-copy h2 {
+        margin: 0 0 14px;
+        color: var(--ink-strong);
+        font-family: "Rubik", sans-serif;
+        font-size: clamp(1.9rem, 2.5vw, 2.6rem);
+        font-weight: 300;
+      }
+
+      .cta-copy p {
+        margin: 0;
+      }
+
+      .cta-image {
+        min-height: 100%;
+        border-radius: 22px;
+        background:
+          linear-gradient(rgba(20, 78, 156, 0.16), rgba(20, 78, 156, 0.16)),
+          url("assets/images/ingenieria-vibration-box.jpg") center/cover no-repeat;
+        box-shadow: var(--shadow);
+      }
+
+      .footer {
+        background:
+          url("assets/remote-qartia/wp-content/uploads/2022/11/fondo-footer.jpg") left top / cover no-repeat,
+          #222;
+        color: #ccc;
+      }
+
+      .footer-inner {
+        display: grid;
+        grid-template-columns: 220px minmax(0, 1fr);
+        gap: 36px;
+        align-items: start;
+        padding: 56px 0 28px;
+      }
+
+      .footer-logo img {
+        width: 180px;
+      }
+
+      .footer h4 {
+        margin: 0 0 16px;
+        color: #ccc;
+        font-family: "Rubik", sans-serif;
+        font-size: 1.1rem;
+        font-weight: 700;
+        text-transform: uppercase;
+      }
+
+      .footer p {
+        margin: 0 0 10px;
+      }
+
+      .subfooter {
+        background: #333;
+        color: #f9f9f9;
+        font-size: 0.86rem;
+        text-transform: uppercase;
+      }
+
+      .subfooter-inner {
+        width: min(1140px, calc(100% - 32px));
+        margin: 0 auto;
+        padding: 14px 0;
+        display: flex;
+        justify-content: center;
+        gap: 28px;
+        flex-wrap: wrap;
+      }
+
+      @media (max-width: 1024px) {
+        .header-inner,
+        .content-grid,
+        .brochure-split,
+        .cta-grid,
+        .footer-inner {
+          grid-template-columns: 1fr;
+        }
+
+        .header-inner {
+          display: grid;
+          gap: 12px;
+        }
+
+        .logo {
+          justify-self: center;
+        }
+
+        .nav {
+          justify-content: center;
+        }
+
+        .nav-dropdown {
+          right: auto;
+          left: 50%;
+          transform: translateX(-50%);
+        }
+
+        .brochure-grid,
+        .brochure-grid.value-grid,
+        .benefits-grid,
+        .phase-grid,
+        .showcase-grid,
+        .photo-stack.compact {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .include-split .photo-card img {
+          height: auto;
+          min-height: 360px;
+          aspect-ratio: 16 / 10;
+        }
+
+        .qartia-shortcuts-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+      }
+
+      @media (max-width: 640px) {
+        .topbar-inner {
+          justify-content: center;
+        }
+
+        .nav {
+          gap: 8px;
+        }
+
+        .nav-group {
+          width: 100%;
+          display: grid;
+          justify-items: center;
+        }
+
+        .nav-dropdown {
+          position: static;
+          transform: none;
+          min-width: min(320px, 100%);
+          width: min(320px, 100%);
+          margin-top: 6px;
+        }
+
+        .hero-inner {
+          padding-top: 72px;
+        }
+
+        .eyebrow::before {
+          display: none;
+        }
+
+        .lead-title {
+          margin-left: 0;
+        }
+
+        .brochure-grid,
+        .brochure-grid.value-grid,
+        .benefits-grid,
+        .phase-grid,
+        .showcase-grid,
+        .photo-stack.compact {
+          grid-template-columns: 1fr;
+        }
+
+        .qartia-shortcuts-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .qartia-shortcut-card {
+          min-height: 120px;
+          font-size: 1.02rem;
+        }
+
+        .footer-inner {
+          padding-top: 40px;
+        }
+      }
+    </style>
+<link rel="stylesheet" href="assets/css/qartia-topbar.css" />
+    <style id="eibt-footer-layout-fix">
+    .footer .footer-inner {
+      display: grid !important;
+      grid-template-columns: minmax(180px, 0.75fr) minmax(260px, 1fr) minmax(360px, 1.15fr) !important;
+      align-items: start !important;
+      gap: 28px !important;
+    }
+
+    .footer .footer-eibt-badge,
+    .l-footer .footer-eibt-badge {
+      display: flex !important;
+      justify-content: flex-end !important;
+      align-items: flex-start !important;
+      margin-top: 0 !important;
+      width: 100% !important;
+      min-width: 360px;
+    }
+
+    .footer .footer-eibt-badge img,
+    .l-footer .footer-eibt-badge img {
+      width: min(430px, 100%) !important;
+      height: auto !important;
+      display: block !important;
+      margin-left: auto !important;
+      margin-right: 0 !important;
+    }
+
+    .l-footer .footer-eibt-badge .w-image-h {
+      width: 100% !important;
+    }
+
+    @media (max-width: 900px) {
+      .footer .footer-inner {
+        grid-template-columns: 1fr !important;
+      }
+
+      .footer .footer-eibt-badge,
+      .l-footer .footer-eibt-badge {
+        justify-content: flex-start !important;
+        min-width: 0 !important;
+      }
+
+      .footer .footer-eibt-badge img,
+      .l-footer .footer-eibt-badge img {
+        margin-left: 0 !important;
+        margin-right: auto !important;
+      }
+    }
+  </style>
+    <link rel="stylesheet" href="assets/css/cookie-consent.css">
+</head>
+  <body>
+    <div class="page">
+      <div class="topbar">
+        <div class="topbar-inner">
+          <a href="tel:+34686918522">+34 686 91 85 22</a>
+          <a href="mailto:info@qartia.com">info@qartia.com</a>
+          <a class="qartia-linkedin-icon" href="https://www.linkedin.com/company/qartia-smart-technologies/" target="_blank" rel="noopener" aria-label="LinkedIn Qartia"></a>
+        </div>
+      </div>
+
+      <header class="header">
+        <div class="header-inner">
+          <a class="logo" href="index.html">
+            <img src="assets/remote-qartia/wp-content/uploads/2022/11/logo-qartia.png" alt="Qartia Smart Technologies" />
+          </a>
+
+          <nav class="nav" aria-label="Navegacion principal">
+  <a href="quienes-somos.html">Quienes Somos</a>
+  <div class="nav-group">
+    <button class="nav-toggle" type="button" aria-expanded="false">Productos</button>
+    <div class="nav-dropdown">
+      <a href="productos.html">Productos</a>
+      <a href="vibrasense.html">VibraSense</a>
+      <a href="airsense-pro.html">AIRSENSE PRO</a>
+      <a href="megamia.html">MEGAMIA</a>
+      <a href="dipason-exterior.html">DIPASON</a>
+      <a href="Biosentia.html">Biosentia</a>
+      <a href="noisement.html">NoiseMent</a>
+    </div>
+  </div>
+  <div class="nav-group">
+    <button class="nav-toggle" type="button" aria-expanded="false">Servicios</button>
+    <div class="nav-dropdown">
+      <a href="agricultura.html">Agricultura</a>
+      <div class="nav-subgroup">
+        <a class="nav-subtoggle" href="industria.html">Industria</a>
+        <div class="nav-submenu">
+          <a href="mantenimiento-predictivo-vibraciones.html">Mantenimiento Predictivo. Vibraciones</a>
+          <a href="monitorizacion-activos-criticos.html">Monitorización de Activos Críticos</a>
+        </div>
+      </div>
+      <a href="medioambiente.html">Medioambiente</a>
+      <a href="civil.html">Infraestructuras Civiles</a>
+      <a href="sources/serviciosañadido.html">Servicios Adicionales</a>
+    </div>
+  </div>
+  <div class="nav-group">
+    <button class="nav-toggle" type="button" aria-expanded="false">Redes Privadas 5G</button>
+    <div class="nav-dropdown">
+      <a href="dect-nr-plus.html">Qué es DECT NR+</a>
+      <a href="soluciones-5g-privadas.html">Soluciones 5G Privadas</a>
+    </div>
+  </div>
+  <a href="noticias.html">Noticias</a>
+  <a href="contacto.html">Contacto</a>
+  <a href="https://qartia.com/Flutter/panel_industrias_prueba/">Acceso a Clientes</a>
+</nav>
+        </div>
+      </header>
+
+      <main>
+        <section class="hero" style="background-image: linear-gradient(rgba(0, 0, 0, 0.50), rgba(0, 0, 0, 0.18)), url('assets/images/ingenieria-cabecera-instalacion.png');">
+          <div class="hero-inner">
+            <h1>Ingeniería</h1>
+          </div>
+        </section>
+
+        <section class="content-section">
+          <div class="section-inner">
+            <div class="content-grid">
+              <div class="content-copy-card">
+                <span class="eyebrow">Ingeniería aplicada</span>
+                <h2 class="lead-title">Diseño, integración y puesta en servicio de soluciones tecnológicas con criterio de campo.</h2>
+                <div class="copy">
+                  <p>Qartia convierte necesidades operativas reales en soluciones de ingeniería desplegables. Diseñamos arquitectura técnica, sensórica, electrónica, firmware, comunicaciones, visualización y analítica para que el sistema nazca preparado para funcionar en planta, en territorio o en escenarios remotos.</p>
+                  <p>Nuestro trabajo no se queda en el concepto. Integramos hardware, software, conectividad privada, edge, cloud e inteligencia artificial dentro de una misma solución, con visión industrial, trazabilidad técnica y capacidad de crecimiento por fases.</p>
+                  <p>Esta forma de trabajar nos permite abordar desde pilotos y prototipos funcionales hasta despliegues completos en industria, medioambiente, agricultura, salud, diagnóstico portátil, infraestructuras civiles o redes privadas 5G.</p>
+                  <p>La ingeniería de Qartia une diseño, integración y operación para que la tecnología tenga continuidad real y no se quede en una prueba aislada.</p>
+                </div>
+              </div>
+
+              <aside class="visual-card">
+                <img src="assets/images/ingenieria-cabecera-instalacion.png" alt="Instalación de infraestructura de comunicaciones Qartia en campo" />
+                <p>Ingeniería aplicada en campo: cobertura, integración y puesta en servicio desde la infraestructura hasta el nodo final.</p>
+              </aside>
+            </div>
+          </div>
+        </section>
+
+        <section class="brochure-section">
+          <div class="section-inner">
+            <span class="eyebrow">Qué incluye</span>
+            <h2 class="lead-title">De la arquitectura técnica al sistema funcionando.</h2>
+            <div class="brochure-split include-split">
+              <div class="civil-stack">
+                <div class="brochure-card">
+                  <h3>Ingeniería de producto, sensórica y electrónica</h3>
+                  <p>Qartia diseña e integra sistemas de adquisición, sensórica específica, electrónica de medida y firmware embebido para entornos industriales donde la solución debe convivir con equipos existentes, condiciones de planta y requisitos de operación reales.</p>
+                  <ul class="feature-list">
+                    <li>Sensores industriales, ambientales, electroquímicos y dispositivos específicos de campo.</li>
+                    <li>Diseño de hardware y adaptación de electrónica de adquisición y control.</li>
+                    <li>Firmware configurable según variable, frecuencia de captura y lógica de operación.</li>
+                    <li>Diseño orientado a piloto, validación y evolución a producto preindustrial.</li>
+                  </ul>
+                </div>
+                <div class="brochure-card">
+                  <h3>Ingeniería de integración y comunicaciones</h3>
+                  <p>La solución se completa con red privada, gateways, backhaul, plataforma de datos e integración con la operativa del cliente para desplegar sistemas robustos en planta, desde el armario de campo hasta el cuadro de mando.</p>
+                  <ul class="feature-list">
+                    <li>LoRa, DECT NR+, 5G, Ethernet, MQTT, Modbus y protocolos de integración.</li>
+                    <li>Integración con cuadros eléctricos, armarios, PLCs, SCADA y plataformas existentes.</li>
+                    <li>Diseño de topología, cobertura, alimentación y ciberseguridad de la solución.</li>
+                    <li>Puesta en servicio, validación de datos y acompañamiento en escalado.</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="photo-stack">
+                <figure class="photo-card">
+                  <img src="assets/images/ingenieria-planta-industrial.jpeg" alt="Vista de planta industrial para proyectos de ingeniería e integración de Qartia" />
+                  <figcaption>Ingeniería aplicada a planta real: integración de sensórica, comunicaciones, electrónica, datos y operación sobre infraestructura industrial existente.</figcaption>
+                </figure>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="brochure-section alt">
+          <div class="section-inner">
+            <span class="eyebrow">Capacidades clave</span>
+            <h2 class="lead-title">Ingeniería transversal para proyectos que combinan producto, red y dato.</h2>
+            <div class="brochure-grid">
+              <article class="brochure-card">
+                <h3>Sensórica y adquisición</h3>
+                <p>Selección, adaptación e integración de sensores, captación de señal y adquisición en campo.</p>
+              </article>
+              <article class="brochure-card">
+                <h3>Electrónica y hardware</h3>
+                <p>Diseño de placas, módulos, armarios y dispositivos listos para laboratorio, piloto o despliegue.</p>
+              </article>
+              <article class="brochure-card">
+                <h3>Firmware embebido</h3>
+                <p>Lógica de control, adquisición, comunicaciones y gestión energética adaptada a cada solución.</p>
+              </article>
+              <article class="brochure-card">
+                <h3>Redes privadas y backhaul</h3>
+                <p>LoRa, DECT NR+, 5G, Ethernet y arquitecturas híbridas según cobertura, latencia y operación.</p>
+              </article>
+              <article class="brochure-card">
+                <h3>Edge, cloud y datos</h3>
+                <p>Canalización del dato desde campo hasta plataforma con almacenamiento, visualización e integración.</p>
+              </article>
+              <article class="brochure-card">
+                <h3>IA y automatización</h3>
+                <p>Modelos predictivos, reglas de negocio, RAG y alertas para extraer valor operativo del sistema.</p>
+              </article>
+              <article class="brochure-card">
+                <h3>Visualización y gemelo digital</h3>
+                <p>Dashboards, mapas, modelos 2D/3D y herramientas para contextualizar eventos y decisiones.</p>
+              </article>
+              <article class="brochure-card">
+                <h3>Puesta en servicio y escalado</h3>
+                <p>Validación técnica, acompañamiento en despliegue y crecimiento por fases sin rehacer la base.</p>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="brochure-section">
+          <div class="section-inner">
+            <span class="eyebrow">Cómo trabajamos</span>
+            <h2 class="lead-title">Una forma de ingeniería pensada para llegar a sistema real.</h2>
+            <div class="phase-grid">
+              <article class="phase-card">
+                <strong>01</strong>
+                <h3>Diagnóstico y especificación</h3>
+                <p>Traducimos la necesidad operativa en arquitectura, variables, restricciones, cobertura, hardware y entregables.</p>
+              </article>
+              <article class="phase-card">
+                <strong>02</strong>
+                <h3>Diseño e integración</h3>
+                <p>Desarrollamos el subsistema técnico: sensórica, electrónica, firmware, comunicaciones y plataforma.</p>
+              </article>
+              <article class="phase-card">
+                <strong>03</strong>
+                <h3>Piloto funcional</h3>
+                <p>Probamos la solución en condiciones reales y ajustamos rendimiento, datos, integración y operación.</p>
+              </article>
+              <article class="phase-card">
+                <strong>04</strong>
+                <h3>Despliegue y evolución</h3>
+                <p>Escalamos el sistema, documentamos la solución y preparamos su crecimiento técnico y operativo.</p>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="brochure-section alt">
+          <div class="section-inner">
+            <span class="eyebrow">Dónde aporta valor</span>
+            <h2 class="lead-title">La misma base de ingeniería aplicada a sectores distintos.</h2>
+            <div class="brochure-grid value-grid">
+              <article class="brochure-card">
+                <h3>Industria</h3>
+                <p>Mantenimiento predictivo, integración de sensórica, cuadros de campo, redes privadas y analítica operativa.</p>
+              </article>
+              <article class="brochure-card">
+                <h3>Medioambiente</h3>
+                <p>Captura estable de datos, nodos de campo, IA predictiva, edge y dashboards para operación ambiental.</p>
+              </article>
+              <article class="brochure-card">
+                <h3>Agricultura y agrivoltaica</h3>
+                <p>IoT, conectividad, control de recursos, plataformas de datos y soluciones de optimización productiva.</p>
+              </article>
+              <article class="brochure-card">
+                <h3>Infraestructuras civiles</h3>
+                <p>Monitorización estructural, electrónica de adquisición, backhaul y sistemas de alerta sobre activos críticos.</p>
+              </article>
+              <article class="brochure-card">
+                <h3>Salud y diagnóstico portátil</h3>
+                <p>Electrónica electroquímica, conectividad, sensado portátil y plataformas para biosensado y análisis remoto.</p>
+              </article>
+              <article class="brochure-card">
+                <h3>Redes privadas y servicios IP</h3>
+                <p>Diseño de soluciones basadas en DECT NR+, integración con 5G, satélite y transporte de servicios avanzados.</p>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="brochure-section">
+          <div class="section-inner">
+            <span class="eyebrow">Ejemplos reales</span>
+            <h2 class="lead-title">Ingeniería que conecta producto, infraestructura y despliegue.</h2>
+            <div class="showcase-grid">
+              <figure class="photo-card">
+                <img src="assets/images/ingenieria-city-panorama.jpeg" alt="Vista territorial de una ciudad donde Qartia despliega soluciones de ingeniería y monitorización" />
+                <figcaption>Visión territorial para proyectos donde la ingeniería debe unir infraestructura, cobertura y operación.</figcaption>
+              </figure>
+              <figure class="photo-card">
+                <img src="assets/images/ingenieria-aqi-campus.jpeg" alt="Pantalla urbana con visualización de calidad del aire integrada por Qartia" />
+                <figcaption>Integración completa entre captación de datos ambientales, visualización pública y seguimiento operativo.</figcaption>
+              </figure>
+              <figure class="photo-card portrait">
+                <img src="assets/images/ingenieria-rooftop-mast.jpeg" alt="Mástil de comunicaciones desplegado en cubierta por Qartia" />
+                <figcaption>Infraestructura de comunicaciones preparada para backhaul, cobertura privada y crecimiento modular.</figcaption>
+              </figure>
+              <figure class="photo-card">
+                <img src="assets/images/ingenieria-agrivoltaic-sunset.jpeg" alt="Instalación agrivoltaica instrumentada mediante ingeniería de Qartia" />
+                <figcaption>Ingeniería de integración entre sensorización, energía y operación en entornos agrivoltaicos.</figcaption>
+              </figure>
+              <figure class="photo-card">
+                <img src="assets/images/ingenieria-greenhouse-sensors.jpeg" alt="Sensores desplegados en invernadero para proyectos agro" />
+                <figcaption>Despliegue de sensórica en invernadero para control experimental, adquisición de datos y validación agronómica.</figcaption>
+              </figure>
+              <figure class="photo-card portrait">
+                <img src="assets/images/ingenieria-agro-node-solar.jpeg" alt="Nodo agro con energía solar y comunicaciones integrado por Qartia" />
+                <figcaption>Nodo agro autónomo con energía solar, comunicaciones y electrónica de campo integrada.</figcaption>
+              </figure>
+            </div>
+          </div>
+        </section>
+
+        <section class="l-section wpb_row servicios-home height_auto width_full"><div class="l-section-h i-cf"><div class="g-cols vc_row via_flex valign_middle type_default stacking_default">
+          <div class="vc_col-sm-4 wpb_column vc_column_container has_bg_color has-link">
+            <div class="vc_column-inner us_custom_7ca10f15 us_animate_this"><div class="wpb_wrapper"><div class="w-hwrapper align_center valign_middle wrap" style="--hwrapper-gap:1.20rem"><div class="wpb_text_column us_custom_8b3d6790 has_text_color"><div class="wpb_wrapper">
+              <h3 style="text-align: center;">Sensorizaci&oacute;n<br>industrial, ambiental<br>y agro</h3>
+            </div></div></div></div></div>
+            <a title="Sensorizaci&oacute;n industrial, ambiental y agro" href="sources/sensorizacion.html" class="vc_column-link smooth-scroll"></a>
+          </div>
+          <div class="vc_col-sm-4 wpb_column vc_column_container has_text_color has_bg_color has-link">
+            <div class="vc_column-inner us_custom_8c4c7f6b us_animate_this"><div class="wpb_wrapper"><div class="w-hwrapper align_center valign_middle wrap" style="--hwrapper-gap:1.20rem"><div class="wpb_text_column"><div class="wpb_wrapper">
+              <h3 style="text-align: center;">IoT avanzado</h3>
+            </div></div></div></div></div>
+            <a title="IOT" href="sources/iot.html" class="vc_column-link smooth-scroll"></a>
+          </div>
+          <div class="vc_col-sm-4 wpb_column vc_column_container has_text_color has_bg_color has-link">
+            <div class="vc_column-inner us_custom_824f00fd us_animate_this"><div class="wpb_wrapper"><div class="w-hwrapper align_center valign_middle wrap" style="--hwrapper-gap:1.20rem"><div class="wpb_text_column"><div class="wpb_wrapper">
+              <h3 style="text-align: center;">Desde la Consultor&iacute;a al Proyecto llave en Mano</h3>
+            </div></div></div></div></div>
+            <a title="Desde la Consultor&iacute;a al Proyecto llave en Mano" href="sources/consultoria.html" class="vc_column-link smooth-scroll"></a>
+          </div>
+        </div></div></section>
+        <section class="l-section wpb_row servicios-home height_auto width_full"><div class="l-section-h i-cf"><div class="g-cols vc_row via_flex valign_middle type_default stacking_default">
+          <div class="vc_col-sm-4 wpb_column vc_column_container has_bg_color has-link">
+            <div class="vc_column-inner us_custom_dea79c57 us_animate_this"><div class="wpb_wrapper"><div class="w-hwrapper align_center valign_middle wrap" style="--hwrapper-gap:1.20rem"><div class="wpb_text_column us_custom_8b3d6790 has_text_color"><div class="wpb_wrapper">
+              <h3 style="text-align: center;">INGENIERIA</h3>
+            </div></div></div></div></div>
+            <a title="Ingenier&iacute;a" href="Ingenieria.html" class="vc_column-link smooth-scroll"></a>
+          </div>
+          <div class="vc_col-sm-4 wpb_column vc_column_container has_text_color has_bg_color has-link">
+            <div class="vc_column-inner us_custom_05c78499 us_animate_this"><div class="wpb_wrapper"><div class="w-hwrapper align_center valign_middle wrap" style="--hwrapper-gap:1.20rem"><div class="wpb_text_column"><div class="wpb_wrapper">
+              <h3 style="text-align: center;">IA</h3>
+            </div></div></div></div></div>
+            <a title="IA aplicada" href="sources/IA%20aplicada.html" class="vc_column-link smooth-scroll"></a>
+          </div>
+          <div class="vc_col-sm-4 wpb_column vc_column_container has_text_color has_bg_color has-link">
+            <div class="vc_column-inner us_custom_fcc027ee us_animate_this"><div class="wpb_wrapper"><div class="w-hwrapper align_center valign_middle wrap" style="--hwrapper-gap:1.20rem"><div class="wpb_text_column"><div class="wpb_wrapper">
+              <h3 style="text-align: center;">I+D+i</h3>
+            </div></div></div></div></div>
+            <a title="I+D+I" href="sources/idi.html" class="vc_column-link smooth-scroll"></a>
+          </div>
+        </div></div></section>
+
+        <section class="cta-section">
+          <div class="section-inner">
+            <div class="cta-grid">
+              <div class="cta-copy">
+                <h2>¿Tienes un reto técnico y quieres convertirlo en una solución de ingeniería real?</h2>
+                <p>Qartia puede ayudarte a definir arquitectura, integrar tecnologías, construir un piloto y llevar la solución a campo con criterio industrial y capacidad de evolución.</p>
+              </div>
+              <div class="cta-image" aria-hidden="true"></div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <div class="footer-inner">
+          <div class="footer-logo">
+            <img src="assets/remote-qartia/wp-content/uploads/2022/11/logo-qartia.png" alt="Qartia" />
+          </div>
+          <div>
+            <h4>CONTACTO</h4>
+            <p><a href="tel:+34686918522">(+34) 686918522</a></p>
+            <p><a href="mailto:info@qartia.com">info@qartia.com</a></p>
+            <p>Calle Tolosa Latour, 4, 7ºA,</p>
+            <p>30201, Cartagena, España</p>
+            <p>CIF: B67916676</p>
+          </div>
+                <div class="footer-eibt-badge" style="display:flex;align-items:center;justify-content:flex-end;min-width:360px;margin-top:8px;">
+          <img src="assets/images/eibt-logo.png" alt="Sello EIBT" style="width:min(430px,100%);height:auto;display:block;">
+        </div>
+</div>
+      </footer>
+
+      <div class="subfooter">
+        <div class="subfooter-inner">
+          <a href="aviso-legal.html">Aviso legal</a>
+          <a href="politica-cookies.html">Política de cookies</a>
+          <a href="politica-privacidad.html">Política de privacidad</a>
+        </div>
+      </div>
+      <script>
+        document.addEventListener("DOMContentLoaded", function () {
+          const groups = document.querySelectorAll(".nav-group");
+
+          groups.forEach((group) => {
+            const toggle = group.querySelector(".nav-toggle");
+            if (!toggle) return;
+
+            toggle.addEventListener("click", function (event) {
+              event.preventDefault();
+              const willOpen = !group.classList.contains("open");
+
+              groups.forEach((otherGroup) => {
+                otherGroup.classList.remove("open");
+                const otherToggle = otherGroup.querySelector(".nav-toggle");
+                if (otherToggle) {
+                  otherToggle.setAttribute("aria-expanded", "false");
+                }
+              });
+
+              group.classList.toggle("open", willOpen);
+              toggle.setAttribute("aria-expanded", willOpen ? "true" : "false");
+            });
+          });
+
+          document.addEventListener("click", function (event) {
+            groups.forEach((group) => {
+              if (group.contains(event.target)) return;
+              group.classList.remove("open");
+              const toggle = group.querySelector(".nav-toggle");
+              if (toggle) {
+                toggle.setAttribute("aria-expanded", "false");
+              }
+            });
+          });
+        });
+      </script>
+    </div>
+      <script src="assets/js/cookie-consent.js" defer></script>
+</body>
+</html>

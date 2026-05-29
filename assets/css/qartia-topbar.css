@@ -1,0 +1,264 @@
+:root {
+  --qartia-topbar-dark: #144e9c;
+  --qartia-topbar-hover: #72d8c8;
+  --qartia-header-dim: rgba(7, 17, 13, 0.2);
+  --color-header-middle-text-hover: #72d8c8;
+  --color-header-top-text-hover: #72d8c8;
+}
+
+.topbar,
+.l-subheader.at_top,
+.l-header .l-subheader.at_top {
+  background: var(--qartia-topbar-dark) !important;
+  color: #fff !important;
+}
+
+.topbar a,
+.topbar .topbar-inner a,
+.l-subheader.at_top a,
+.l-subheader.at_top .w-text-value,
+.l-subheader.at_top .w-socials-item-link,
+.l-subheader.at_top i,
+.l-subheader.at_top svg {
+  color: #fff !important;
+  fill: currentColor !important;
+  text-decoration: none !important;
+  transition: color 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.topbar a:hover,
+.topbar a:focus,
+.l-subheader.at_top a:hover,
+.l-subheader.at_top a:focus,
+.l-subheader.at_top a:hover .w-text-value,
+.l-subheader.at_top a:focus .w-text-value,
+.l-subheader.at_top .w-socials-item-link:hover,
+.l-subheader.at_top .w-socials-item-link:focus {
+  color: var(--qartia-topbar-hover) !important;
+}
+
+.topbar .qartia-linkedin-icon {
+  width: 24px;
+  height: 24px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid currentColor !important;
+  border-radius: 3px;
+  background: transparent !important;
+  color: #fff !important;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.78rem;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.04em;
+}
+
+.topbar .qartia-linkedin-icon::before {
+  content: "in";
+}
+
+.topbar .qartia-linkedin-icon span {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.topbar .qartia-linkedin-icon:hover,
+.topbar .qartia-linkedin-icon:focus {
+  background: transparent !important;
+  border-color: var(--qartia-topbar-hover) !important;
+  color: var(--qartia-topbar-hover) !important;
+}
+
+.nav-dropdown a,
+.nav-dropdown a *,
+.nav a,
+.nav a *,
+.nav-dropdown button,
+.nav-dropdown button *,
+.nav-dropdown .nav-link,
+.nav-submenu a,
+.nav-submenu a *,
+.nav-submenu button,
+.nav-submenu button *,
+.nav-submenu .nav-link,
+.nav-subtoggle,
+.nav-toggle,
+.nav-toggle *,
+.nav-group > a,
+.nav-group > button,
+.nav-group > .nav-link,
+.dropdown-menu a,
+.dropdown-menu a *,
+.dropdown-menu button,
+.dropdown-menu button *,
+.dropdown-item,
+.dropdown-item *,
+.dropdown-toggle,
+.dropdown-toggle *,
+.menu-item > a,
+.menu-item > a *,
+.menu-item > .w-nav-anchor,
+.menu-item > .w-nav-anchor *,
+.w-nav-list .w-nav-anchor,
+.w-nav-list .w-nav-anchor *,
+.w-nav-list .w-nav-title,
+.w-nav-list .w-nav-arrow,
+.w-nav-list:not(.level_1) .w-nav-anchor,
+.w-nav-list:not(.level_1) .w-nav-anchor *,
+.w-nav-list:not(.level_1) .w-nav-title,
+.w-nav-list:not(.level_1) .w-nav-arrow {
+  transition: color 0.2s ease, fill 0.2s ease, stroke 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.nav-dropdown a:hover,
+.nav-dropdown a:hover *,
+.nav a:hover,
+.nav a:hover *,
+.nav a:focus,
+.nav a:focus *,
+.nav a:focus-visible,
+.nav a:focus-visible *,
+.nav-dropdown a:focus,
+.nav-dropdown a:focus *,
+.nav-dropdown a:focus-visible,
+.nav-dropdown a:focus-visible *,
+.nav-dropdown button:hover,
+.nav-dropdown button:hover *,
+.nav-dropdown button:focus,
+.nav-dropdown button:focus *,
+.nav-submenu a:hover,
+.nav-submenu a:hover *,
+.nav-submenu a:focus,
+.nav-submenu a:focus *,
+.nav-submenu a:focus-visible,
+.nav-submenu a:focus-visible *,
+.nav-submenu button:hover,
+.nav-submenu button:hover *,
+.nav-submenu button:focus,
+.nav-submenu button:focus *,
+.nav-subtoggle:hover,
+.nav-subtoggle:focus,
+.nav-subtoggle:focus-visible,
+.nav-toggle:hover,
+.nav-toggle:hover *,
+.nav-toggle:focus,
+.nav-toggle:focus *,
+.nav-toggle:focus-visible,
+.nav-toggle:focus-visible *,
+.nav-group:hover > a,
+.nav-group:hover > button,
+.nav-group:hover > .nav-link,
+.nav-group.open > a,
+.nav-group.open > button,
+.nav-group.open > .nav-link,
+.dropdown-menu a:hover,
+.dropdown-menu a:hover *,
+.dropdown-menu a:focus,
+.dropdown-menu a:focus *,
+.dropdown-menu button:hover,
+.dropdown-menu button:hover *,
+.dropdown-menu button:focus,
+.dropdown-menu button:focus *,
+.dropdown-item:hover,
+.dropdown-item:hover *,
+.dropdown-item:focus,
+.dropdown-item:focus *,
+.dropdown-toggle:hover,
+.dropdown-toggle:hover *,
+.dropdown-toggle:focus,
+.dropdown-toggle:focus *,
+.menu-item:hover > a,
+.menu-item:hover > a *,
+.menu-item:hover > .w-nav-anchor,
+.menu-item:hover > .w-nav-anchor *,
+.w-nav-list .w-nav-anchor:hover,
+.w-nav-list .w-nav-anchor:hover *,
+.w-nav-list .w-nav-anchor:focus,
+.w-nav-list .w-nav-anchor:focus *,
+.w-nav-list .w-nav-anchor:focus-visible,
+.w-nav-list .w-nav-anchor:focus-visible *,
+.w-nav-list .menu-item:hover > .w-nav-anchor,
+.w-nav-list .menu-item:hover > .w-nav-anchor *,
+.no-touch .w-nav-list .menu-item:hover > .w-nav-anchor,
+.no-touch .w-nav-list .menu-item:hover > .w-nav-anchor *,
+.no-touch .w-nav-list:not(.level_1) .menu-item:hover > .w-nav-anchor,
+.no-touch .w-nav-list:not(.level_1) .menu-item:hover > .w-nav-anchor *,
+.w-nav-list:not(.level_1) .w-nav-anchor:hover,
+.w-nav-list:not(.level_1) .w-nav-anchor:hover *,
+.w-nav-list:not(.level_1) .w-nav-anchor:focus,
+.w-nav-list:not(.level_1) .w-nav-anchor:focus * {
+  color: var(--qartia-topbar-hover) !important;
+  border-color: var(--qartia-topbar-hover) !important;
+  fill: currentColor !important;
+  stroke: currentColor !important;
+}
+
+.hero {
+  position: relative;
+  isolation: isolate;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: var(--qartia-header-dim);
+  pointer-events: none;
+}
+
+.hero > * {
+  position: relative;
+  z-index: 1;
+}
+
+.l-section.header-bg.with_img .l-section-img,
+.header-bg.with_img .l-section-img {
+  filter: brightness(0.94) contrast(1.02) saturate(1.02);
+}
+
+/* Final shared override for the top contact band across local pages. */
+html body .topbar,
+html body .topbar .topbar-inner,
+html body .l-subheader.at_top,
+html body .l-header .l-subheader.at_top,
+html body .l-subheader.at_top .l-subheader-h {
+  background: #144e9c !important;
+  background-color: #144e9c !important;
+  color: #fff !important;
+}
+
+html body .topbar a,
+html body .topbar .topbar-inner a,
+html body .topbar .qartia-linkedin-icon,
+html body .topbar .qartia-linkedin-icon::before,
+html body .l-subheader.at_top a,
+html body .l-subheader.at_top .w-text-value,
+html body .l-subheader.at_top .w-socials-item-link,
+html body .l-subheader.at_top i,
+html body .l-subheader.at_top svg {
+  color: #fff !important;
+  fill: currentColor !important;
+}
+
+html body .topbar a:hover,
+html body .topbar a:focus,
+html body .topbar .qartia-linkedin-icon:hover,
+html body .topbar .qartia-linkedin-icon:focus,
+html body .topbar .qartia-linkedin-icon:hover::before,
+html body .topbar .qartia-linkedin-icon:focus::before,
+html body .l-subheader.at_top a:hover,
+html body .l-subheader.at_top a:focus,
+html body .l-subheader.at_top .w-socials-item-link:hover,
+html body .l-subheader.at_top .w-socials-item-link:focus {
+  color: #72d8c8 !important;
+  border-color: #72d8c8 !important;
+}
