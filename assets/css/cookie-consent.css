@@ -12,6 +12,13 @@
   box-sizing: border-box;
 }
 
+.qartia-cookie-banner,
+.qartia-cookie-banner *,
+.qartia-cookie-blocker,
+.qartia-cookie-blocker * {
+  color: #fff !important;
+}
+
 body.qartia-cookie-locked {
   overflow: hidden;
 }
