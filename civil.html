@@ -364,6 +364,99 @@
         grid-template-columns: repeat(3, minmax(0, 1fr));
       }
 
+      .civil-benefits-visual-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 18px;
+        margin-top: 34px;
+      }
+
+      .civil-applications-visual-grid {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 18px;
+        margin-top: 34px;
+      }
+
+      .civil-applications-visual-grid .civil-benefit-card {
+        min-height: 320px;
+      }
+
+      .civil-benefit-card {
+        position: relative;
+        min-height: 360px;
+        display: flex;
+        overflow: hidden;
+        border-radius: 8px;
+        background: #07121d;
+        color: #fff;
+        box-shadow: var(--shadow);
+        isolation: isolate;
+      }
+
+      .civil-benefit-card img {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transform: scale(1.01);
+        transition: transform .24s ease;
+        z-index: -2;
+      }
+
+      .civil-benefit-card::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(180deg, rgba(7, 18, 29, .12), rgba(7, 18, 29, .86));
+        z-index: -1;
+      }
+
+      .civil-benefit-card:hover img {
+        transform: scale(1.06);
+      }
+
+      .civil-benefit-copy {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        width: 100%;
+        min-height: 100%;
+        padding: 22px;
+      }
+
+      .civil-benefit-tag {
+        align-self: flex-start;
+        margin-bottom: auto;
+        padding: 7px 10px;
+        border-radius: 8px;
+        background: rgba(54, 222, 184, .9);
+        color: #07121d;
+        font-size: .76rem;
+        font-weight: 800;
+        letter-spacing: .06em;
+        line-height: 1;
+        text-transform: uppercase;
+      }
+
+      .civil-benefit-card h3 {
+        margin: 34px 0 8px;
+        color: #fff;
+        font-family: "Rubik", sans-serif;
+        font-size: clamp(1.22rem, 1.7vw, 1.62rem);
+        font-weight: 700;
+        line-height: 1.12;
+        text-shadow: 0 2px 14px rgba(0, 0, 0, .42);
+      }
+
+      .civil-benefit-card p {
+        margin: 0;
+        color: rgba(255, 255, 255, .88);
+        font-size: .96rem;
+        line-height: 1.5;
+      }
+
       .brochure-split {
         grid-template-columns: minmax(0, 1.08fr) minmax(320px, 0.92fr);
         align-items: start;
@@ -597,6 +690,8 @@
 
         .brochure-grid,
         .benefits-grid,
+        .civil-benefits-visual-grid,
+        .civil-applications-visual-grid,
         .phase-grid {
           grid-template-columns: repeat(2, minmax(0, 1fr));
         }
@@ -639,8 +734,14 @@
 
         .brochure-grid,
         .benefits-grid,
+        .civil-benefits-visual-grid,
+        .civil-applications-visual-grid,
         .phase-grid {
           grid-template-columns: 1fr;
+        }
+
+        .civil-benefit-card {
+          min-height: 300px;
         }
 
         .footer-inner {
@@ -920,34 +1021,58 @@
           </div>
         </section>
 
-        <section class="brochure-section alt">
+        <section class="brochure-section alt" id="beneficios">
           <div class="section-inner">
             <span class="eyebrow">Beneficios</span>
             <h2 class="lead-title">Menos incertidumbre, más seguridad y mejor mantenimiento.</h2>
-            <div class="benefits-grid">
-              <article class="brochure-card">
-                <h3>Detección temprana de anomalías</h3>
-                <p>Identifica desviaciones antes de que evolucionen a incidencias de seguridad o servicio.</p>
+            <div class="civil-benefits-visual-grid">
+              <article class="civil-benefit-card">
+                <img src="assets/images/tunnel-entrance.jpg" alt="Infraestructura civil monitorizada para detectar anomalías" />
+                <div class="civil-benefit-copy">
+                  <span class="civil-benefit-tag">Anomalías</span>
+                  <h3>Detección temprana de anomalías</h3>
+                  <p>Identifica desviaciones antes de que evolucionen a incidencias de seguridad o servicio.</p>
+                </div>
               </article>
-              <article class="brochure-card">
-                <h3>Reducción de riesgos operativos</h3>
-                <p>Permite actuar con datos y priorizar inspecciones o cierres de forma mejor fundamentada.</p>
+              <article class="civil-benefit-card">
+                <img src="assets/images/qartia-cabinet-open.jpg" alt="Armario de comunicaciones y adquisición para reducir riesgos operativos" />
+                <div class="civil-benefit-copy">
+                  <span class="civil-benefit-tag">Riesgo</span>
+                  <h3>Reducción de riesgos operativos</h3>
+                  <p>Permite actuar con datos y priorizar inspecciones o cierres de forma mejor fundamentada.</p>
+                </div>
               </article>
-              <article class="brochure-card">
-                <h3>Mayor resiliencia ante catástrofes</h3>
-                <p>Aporta visibilidad adicional frente a episodios climáticos, sísmicos o de degradación acelerada.</p>
+              <article class="civil-benefit-card">
+                <img src="assets/images/infraestructura-iot-torre.jpg" alt="Infraestructura IoT para reforzar resiliencia en activos críticos" />
+                <div class="civil-benefit-copy">
+                  <span class="civil-benefit-tag">Resiliencia</span>
+                  <h3>Mayor resiliencia ante catástrofes</h3>
+                  <p>Aporta visibilidad adicional frente a episodios climáticos, sísmicos o de degradación acelerada.</p>
+                </div>
               </article>
-              <article class="brochure-card">
-                <h3>Mejor planificación del mantenimiento</h3>
-                <p>Organiza intervenciones por condición real del activo y no solo por calendario fijo.</p>
+              <article class="civil-benefit-card">
+                <img src="assets/images/tunnel-field-team.jpg" alt="Equipo técnico en campo para planificación de mantenimiento" />
+                <div class="civil-benefit-copy">
+                  <span class="civil-benefit-tag">Mantenimiento</span>
+                  <h3>Mejor planificación del mantenimiento</h3>
+                  <p>Organiza intervenciones por condición real del activo y no solo por calendario fijo.</p>
+                </div>
               </article>
-              <article class="brochure-card">
-                <h3>Visualización clara para decisión</h3>
-                <p>Ofrece una vista unificada para operadores, responsables técnicos y explotadores.</p>
+              <article class="civil-benefit-card">
+                <img src="assets/images/ia-aplicada-cta-dashboard.jpeg" alt="Dashboard para visualización y decisión en infraestructuras civiles" />
+                <div class="civil-benefit-copy">
+                  <span class="civil-benefit-tag">Decisión</span>
+                  <h3>Visualización clara para decisión</h3>
+                  <p>Ofrece una vista unificada para operadores, responsables técnicos y explotadores.</p>
+                </div>
               </article>
-              <article class="brochure-card">
-                <h3>Integración con emergencias</h3>
-                <p>Facilita disparar protocolos y compartir información relevante con rapidez.</p>
+              <article class="civil-benefit-card">
+                <img src="assets/images/qartia-power-cabinet.jpg" alt="Cuadro de campo integrado con protocolos de emergencia" />
+                <div class="civil-benefit-copy">
+                  <span class="civil-benefit-tag">Emergencias</span>
+                  <h3>Integración con emergencias</h3>
+                  <p>Facilita disparar protocolos y compartir información relevante con rapidez.</p>
+                </div>
               </article>
             </div>
           </div>
@@ -957,15 +1082,71 @@
           <div class="section-inner">
             <span class="eyebrow">Aplicaciones</span>
             <h2 class="lead-title">Una misma base tecnológica para múltiples activos críticos.</h2>
-            <div class="brochure-grid">
-              <article class="brochure-card"><h3>Túneles</h3><p>Monitorización configurable para captar variables críticas, enviar datos en tiempo real y generar alertas accionables.</p></article>
-              <article class="brochure-card"><h3>Puentes</h3><p>Seguimiento continuo del comportamiento estructural y de la evolución del activo en servicio.</p></article>
-              <article class="brochure-card"><h3>Viaductos</h3><p>Control de zonas críticas con arquitectura abierta y visualización operativa centralizada.</p></article>
-              <article class="brochure-card"><h3>Presas</h3><p>Supervisión de variables estructurales, ambientales y de explotación con trazabilidad continua.</p></article>
-              <article class="brochure-card"><h3>Carreteras</h3><p>Seguimiento de puntos sensibles, nodos viarios y entornos donde la seguridad exige respuesta temprana.</p></article>
-              <article class="brochure-card"><h3>Edificios singulares</h3><p>Monitorización adaptada a infraestructuras con alta criticidad, ocupación o valor patrimonial.</p></article>
-              <article class="brochure-card"><h3>Hospitales</h3><p>Control de activos e infraestructuras donde la continuidad del servicio es crítica.</p></article>
-              <article class="brochure-card"><h3>Infraestructuras hidráulicas</h3><p>Despliegues configurables para conducciones, drenajes y elementos civiles vinculados al agua.</p></article>
+            <div class="civil-applications-visual-grid">
+              <article class="civil-benefit-card">
+                <img src="assets/images/tunel.png" alt="Túnel monitorizado con solución de infraestructura civil conectada" />
+                <div class="civil-benefit-copy">
+                  <span class="civil-benefit-tag">Túneles</span>
+                  <h3>Túneles</h3>
+                  <p>Monitorización configurable para captar variables críticas, enviar datos en tiempo real y generar alertas accionables.</p>
+                </div>
+              </article>
+              <article class="civil-benefit-card">
+                <img src="assets/images/tunnel-entrance.jpg" alt="Infraestructura civil preparada para supervisión continua de puentes" />
+                <div class="civil-benefit-copy">
+                  <span class="civil-benefit-tag">Puentes</span>
+                  <h3>Puentes</h3>
+                  <p>Seguimiento continuo del comportamiento estructural y de la evolución del activo en servicio.</p>
+                </div>
+              </article>
+              <article class="civil-benefit-card">
+                <img src="assets/images/mic.jpg" alt="Infraestructura viaria crítica conectada para control de viaductos" />
+                <div class="civil-benefit-copy">
+                  <span class="civil-benefit-tag">Viaductos</span>
+                  <h3>Viaductos</h3>
+                  <p>Control de zonas críticas con arquitectura abierta y visualización operativa centralizada.</p>
+                </div>
+              </article>
+              <article class="civil-benefit-card">
+                <img src="assets/images/infraestructura-iot-cobertura.png" alt="Cobertura IoT para supervisión de presas e infraestructuras hidráulicas" />
+                <div class="civil-benefit-copy">
+                  <span class="civil-benefit-tag">Presas</span>
+                  <h3>Presas</h3>
+                  <p>Supervisión de variables estructurales, ambientales y de explotación con trazabilidad continua.</p>
+                </div>
+              </article>
+              <article class="civil-benefit-card">
+                <img src="assets/images/infraestructura-iot-torre.jpg" alt="Red de campo para seguimiento de carreteras y nodos viarios" />
+                <div class="civil-benefit-copy">
+                  <span class="civil-benefit-tag">Carreteras</span>
+                  <h3>Carreteras</h3>
+                  <p>Seguimiento de puntos sensibles, nodos viarios y entornos donde la seguridad exige respuesta temprana.</p>
+                </div>
+              </article>
+              <article class="civil-benefit-card">
+                <img src="assets/images/ia-aplicada-cta-dashboard.jpeg" alt="Dashboard de control para edificios singulares e infraestructuras críticas" />
+                <div class="civil-benefit-copy">
+                  <span class="civil-benefit-tag">Edificios</span>
+                  <h3>Edificios singulares</h3>
+                  <p>Monitorización adaptada a infraestructuras con alta criticidad, ocupación o valor patrimonial.</p>
+                </div>
+              </article>
+              <article class="civil-benefit-card">
+                <img src="assets/images/qartia-cabinet-open.jpg" alt="Nodo de adquisición para continuidad de servicio en hospitales" />
+                <div class="civil-benefit-copy">
+                  <span class="civil-benefit-tag">Hospitales</span>
+                  <h3>Hospitales</h3>
+                  <p>Control de activos e infraestructuras donde la continuidad del servicio es crítica.</p>
+                </div>
+              </article>
+              <article class="civil-benefit-card">
+                <img src="assets/images/tunnel-field-team.jpg" alt="Equipo técnico en despliegue de infraestructura hidráulica conectada" />
+                <div class="civil-benefit-copy">
+                  <span class="civil-benefit-tag">Hidráulica</span>
+                  <h3>Infraestructuras hidráulicas</h3>
+                  <p>Despliegues configurables para conducciones, drenajes y elementos civiles vinculados al agua.</p>
+                </div>
+              </article>
             </div>
           </div>
         </section>

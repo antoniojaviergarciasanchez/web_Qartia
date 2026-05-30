@@ -375,6 +375,88 @@
         font-size: 0.92rem;
       }
 
+      .implementation-grid {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 18px;
+        margin-top: 34px;
+      }
+
+      .implementation-card {
+        position: relative;
+        min-height: 380px;
+        display: flex;
+        overflow: hidden;
+        border-radius: 8px;
+        background: #07121d;
+        color: #fff;
+        box-shadow: var(--shadow);
+        isolation: isolate;
+      }
+
+      .implementation-card img {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transform: scale(1.01);
+        transition: transform .24s ease;
+        z-index: -2;
+      }
+
+      .implementation-card::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(180deg, rgba(7, 18, 29, .12), rgba(7, 18, 29, .86));
+        z-index: -1;
+      }
+
+      .implementation-card:hover img {
+        transform: scale(1.06);
+      }
+
+      .implementation-copy {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        width: 100%;
+        min-height: 100%;
+        padding: 22px;
+      }
+
+      .implementation-tag {
+        align-self: flex-start;
+        margin-bottom: auto;
+        padding: 7px 10px;
+        border-radius: 8px;
+        background: rgba(54, 222, 184, .9);
+        color: #07121d;
+        font-size: .76rem;
+        font-weight: 800;
+        letter-spacing: .06em;
+        line-height: 1;
+        text-transform: uppercase;
+      }
+
+      .implementation-card h3 {
+        margin: 34px 0 8px;
+        color: #fff;
+        font-family: "Rubik", sans-serif;
+        font-size: clamp(1.22rem, 1.7vw, 1.62rem);
+        font-weight: 700;
+        line-height: 1.12;
+        text-shadow: 0 2px 14px rgba(0, 0, 0, .42);
+      }
+
+      .implementation-card p {
+        margin: 0;
+        color: rgba(255, 255, 255, .88);
+        font-size: .96rem;
+        line-height: 1.5;
+      }
+
       .feature-list {
         margin: 0 0 18px;
         padding-left: 20px;
@@ -685,6 +767,10 @@
           grid-template-columns: 1fr;
         }
 
+        .implementation-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
         .header-inner {
           display: grid;
           gap: 12px;
@@ -754,6 +840,14 @@
 
         .links-grid {
           grid-template-columns: 1fr;
+        }
+
+        .implementation-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .implementation-card {
+          min-height: 300px;
         }
 
         .contact-row {
@@ -953,40 +1047,40 @@
               </article>
             </div>
 
-            <span class="eyebrow section-spaced">Implementaciones DECT NR+</span>
+            <span class="eyebrow section-spaced">Implementaci&oacute;n DECT NR+</span>
             <h2 class="lead-title">Mantenimiento predictivo en Industria: desde el hardware hasta el despliegue en planta.</h2>
-            <div class="subtopic-grid">
-              <article class="subtopic-card">
-                <h3>Hardware de vibraciones DECT NR+</h3>
-                <figure class="subtopic-figure">
-                  <img src="assets/images/dect-nr-module-zoomed.jpeg" alt="M&oacute;dulo DECT NR+ mostrado con una vista m&aacute;s abierta" />
-                  <figcaption>M&oacute;dulo de comunicaciones DECT NR+ desarrollado por Qartia.</figcaption>
-                </figure>
-                <p>Qartia puede trabajar desde la propia capa de hardware, desarrollando equipos completos para mantenimiento predictivo donde la captaci&oacute;n de se&ntilde;al, la electr&oacute;nica de campo y la conectividad privada forman una sola soluci&oacute;n.</p>
+            <div class="implementation-grid">
+              <article class="implementation-card">
+                <img src="assets/images/dect-nr-module-zoomed.jpeg" alt="M&oacute;dulo DECT NR+ desarrollado por Qartia" />
+                <div class="implementation-copy">
+                  <span class="implementation-tag">Hardware</span>
+                  <h3>Hardware de vibraciones DECT NR+</h3>
+                  <p>Captaci&oacute;n de se&ntilde;al, electr&oacute;nica de campo y conectividad privada integradas en una sola soluci&oacute;n.</p>
+                </div>
               </article>
-              <article class="subtopic-card">
-                <h3>Integraci&oacute;n del modulo de comunicaciones con la placa de vibraciones</h3>
-                <figure class="subtopic-figure">
-                  <img src="assets/images/dect-nr-board.jpeg" alt="Placa de desarrollo con m&oacute;dulo DECT NR+ integrado" />
-                  <figcaption>Integraci&oacute;n del m&oacute;dulo de comunicaciones DECT NR+ con la placa de vibraciones orientada a m&aacute;quinas rotativas.</figcaption>
-                </figure>
-                <p>La electr&oacute;nica de soporte puede adaptarse al caso de uso, integrando entradas de vibraci&oacute;n, alimentaci&oacute;n, adquisici&oacute;n y comunicaciones privadas en una misma arquitectura pensada para activos rotativos.</p>
+              <article class="implementation-card">
+                <img src="assets/images/dect-nr-board.jpeg" alt="Placa de vibraciones con m&oacute;dulo DECT NR+ integrado" />
+                <div class="implementation-copy">
+                  <span class="implementation-tag">Integraci&oacute;n</span>
+                  <h3>M&oacute;dulo y placa de vibraciones</h3>
+                  <p>Entradas de vibraci&oacute;n, alimentaci&oacute;n, adquisici&oacute;n y comunicaciones privadas en una arquitectura industrial.</p>
+                </div>
               </article>
-              <article class="subtopic-card">
-                <h3>Dispositivo comercial de vibraciones</h3>
-                <figure class="subtopic-figure">
-                  <img src="assets/images/vibration-commercial-device.jpeg" alt="Dispositivo comercial de vibraciones de Qartia" />
-                  <figcaption>Equipo comercial preparado para medida de vibraciones y despliegue operativo en entornos industriales.</figcaption>
-                </figure>
-                <p>Qartia puede convertir el desarrollo t&eacute;cnico en un equipo listo para instalaci&oacute;n, mantenimiento y explotaci&oacute;n, facilitando el paso de prototipo a producto desplegable en planta.</p>
+              <article class="implementation-card">
+                <img src="assets/images/vibration-commercial-device.jpeg" alt="Dispositivo comercial de vibraciones de Qartia" />
+                <div class="implementation-copy">
+                  <span class="implementation-tag">Producto</span>
+                  <h3>Dispositivo comercial de vibraciones</h3>
+                  <p>Del prototipo al equipo listo para instalaci&oacute;n, mantenimiento y explotaci&oacute;n en planta.</p>
+                </div>
               </article>
-              <article class="subtopic-card">
-                <h3>Despliegue en planta</h3>
-                <figure class="subtopic-figure">
-                  <img src="assets/images/vibration-box-3-sensors.jpg" alt="Caja de vibraciones con tres sensores desplegada en planta industrial" />
-                  <figcaption>Caja de vibraciones con tres sensores instalada en planta.</figcaption>
-                </figure>
-                <p>El despliegue final puede resolverse con cajas industriales completas, instrumentadas y conectadas, preparadas para capturar datos de varios puntos del activo y enviarlos de forma continua a la plataforma de mantenimiento predictivo.</p>
+              <article class="implementation-card">
+                <img src="assets/images/vibration-box-3-sensors.jpg" alt="Caja de vibraciones con tres sensores desplegada en planta industrial" />
+                <div class="implementation-copy">
+                  <span class="implementation-tag">Despliegue</span>
+                  <h3>Despliegue en planta</h3>
+                  <p>Cajas industriales instrumentadas y conectadas para capturar datos de varios puntos del activo.</p>
+                </div>
               </article>
             </div>
           </div>
@@ -1096,5 +1190,6 @@
 </script>
     </div>
       <script src="assets/js/cookie-consent.js" defer></script>
+<script src="assets/js/qartia-form-mailto.js"></script>
 </body>
 </html>

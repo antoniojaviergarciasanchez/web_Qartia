@@ -380,6 +380,88 @@
         font-size: 0.95rem;
       }
 
+      .capability-visual-grid {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 18px;
+        margin-top: 34px;
+      }
+
+      .capability-visual-card {
+        position: relative;
+        min-height: 380px;
+        display: flex;
+        overflow: hidden;
+        border-radius: 8px;
+        background: #07121d;
+        color: #fff;
+        box-shadow: var(--shadow);
+        isolation: isolate;
+      }
+
+      .capability-visual-card img {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transform: scale(1.01);
+        transition: transform .24s ease;
+        z-index: -2;
+      }
+
+      .capability-visual-card::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(180deg, rgba(7, 18, 29, .12), rgba(7, 18, 29, .86));
+        z-index: -1;
+      }
+
+      .capability-visual-card:hover img {
+        transform: scale(1.06);
+      }
+
+      .capability-visual-copy {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        width: 100%;
+        min-height: 100%;
+        padding: 22px;
+      }
+
+      .capability-visual-tag {
+        align-self: flex-start;
+        margin-bottom: auto;
+        padding: 7px 10px;
+        border-radius: 8px;
+        background: rgba(54, 222, 184, .9);
+        color: #07121d;
+        font-size: .76rem;
+        font-weight: 800;
+        letter-spacing: .06em;
+        line-height: 1;
+        text-transform: uppercase;
+      }
+
+      .capability-visual-card h3 {
+        margin: 34px 0 8px;
+        color: #fff;
+        font-family: "Rubik", sans-serif;
+        font-size: clamp(1.22rem, 1.7vw, 1.62rem);
+        font-weight: 700;
+        line-height: 1.12;
+        text-shadow: 0 2px 14px rgba(0, 0, 0, .42);
+      }
+
+      .capability-visual-card p {
+        margin: 0;
+        color: rgba(255, 255, 255, .88);
+        font-size: .96rem;
+        line-height: 1.5;
+      }
+
       .brochure-card,
       .phase-card,
       .kpi-card {
@@ -631,6 +713,7 @@
         .brochure-grid,
         .brochure-grid.two-cols,
         .brochure-grid.four-cols,
+        .capability-visual-grid,
         .phase-grid,
         .kpi-grid {
           grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -681,9 +764,14 @@
         .brochure-grid,
         .brochure-grid.two-cols,
         .brochure-grid.four-cols,
+        .capability-visual-grid,
         .phase-grid,
         .kpi-grid {
           grid-template-columns: 1fr;
+        }
+
+        .capability-visual-card {
+          min-height: 300px;
         }
 
         .footer-inner {
@@ -869,38 +957,70 @@
           <div class="section-inner">
             <span class="eyebrow">Capacidades clave</span>
             <h2 class="lead-title">Del sensor ambiental a la decisi&oacute;n, la predicci&oacute;n y la consulta.</h2>
-            <div class="brochure-grid four-cols">
-              <article class="brochure-card">
-                <h3>Calidad del aire 24/7</h3>
-                <p>Seguimiento continuo de concentraciones, tendencias y episodios en entornos urbanos e industriales.</p>
+            <div class="capability-visual-grid">
+              <article class="capability-visual-card">
+                <img src="assets/medioambiente/cartagena-pantalla-aqi.jpeg" alt="Pantalla de calidad del aire con indicadores AQI en tiempo real" />
+                <div class="capability-visual-copy">
+                  <span class="capability-visual-tag">Aire 24/7</span>
+                  <h3>Calidad del aire 24/7</h3>
+                  <p>Seguimiento continuo de concentraciones, tendencias y episodios en entornos urbanos e industriales.</p>
+                </div>
               </article>
-              <article class="brochure-card">
-                <h3>Part&iacute;culas y gases</h3>
-                <p>Medici&oacute;n de variables ambientales cr&iacute;ticas con sens&oacute;rica preparada para despliegues reales en campo.</p>
+              <article class="capability-visual-card">
+                <img src="assets/medioambiente/dispositivos-cabecera.png" alt="Equipos de monitorizaci&oacute;n ambiental para part&iacute;culas y gases" />
+                <div class="capability-visual-copy">
+                  <span class="capability-visual-tag">Sens&oacute;rica</span>
+                  <h3>Part&iacute;culas y gases</h3>
+                  <p>Medici&oacute;n de variables ambientales cr&iacute;ticas con sens&oacute;rica preparada para despliegues reales en campo.</p>
+                </div>
               </article>
-              <article class="brochure-card">
-                <h3>Ruido ambiental</h3>
-                <p>Captura y trazabilidad del comportamiento ac&uacute;stico para operaciones, ciudad y cumplimiento.</p>
+              <article class="capability-visual-card">
+                <img src="assets/images/noisement-device-photo-card.jpg" alt="Dispositivo NoiseMent para captura de ruido ambiental" />
+                <div class="capability-visual-copy">
+                  <span class="capability-visual-tag">Ruido</span>
+                  <h3>Ruido ambiental</h3>
+                  <p>Captura y trazabilidad del comportamiento ac&uacute;stico para operaciones, ciudad y cumplimiento.</p>
+                </div>
               </article>
-              <article class="brochure-card">
-                <h3>Dashboards y alertas</h3>
-                <p>Visualizaci&oacute;n operativa con hist&oacute;rico, alarmas y lectura r&aacute;pida para explotaci&oacute;n t&eacute;cnica y gesti&oacute;n.</p>
+              <article class="capability-visual-card">
+                <img src="assets/images/consultoria-aqi-screen.jpeg" alt="Dashboard ambiental con datos y alertas de calidad del aire" />
+                <div class="capability-visual-copy">
+                  <span class="capability-visual-tag">Dashboards</span>
+                  <h3>Dashboards y alertas</h3>
+                  <p>Visualizaci&oacute;n operativa con hist&oacute;rico, alarmas y lectura r&aacute;pida para explotaci&oacute;n t&eacute;cnica y gesti&oacute;n.</p>
+                </div>
               </article>
-              <article class="brochure-card">
-                <h3>Conectividad propia</h3>
-                <p>Red privada en campo (LoRa/DECT NR+) y salida a Internet por 5G, WiFi o Ethernet seg&uacute;n el emplazamiento.</p>
+              <article class="capability-visual-card">
+                <img src="assets/medioambiente/nodo-comunicaciones-interior.jpeg" alt="Nodo de comunicaciones de campo para redes privadas ambientales" />
+                <div class="capability-visual-copy">
+                  <span class="capability-visual-tag">Red privada</span>
+                  <h3>Conectividad propia</h3>
+                  <p>Red privada en campo (LoRa/DECT NR+) y salida a Internet por 5G, WiFi o Ethernet seg&uacute;n el emplazamiento.</p>
+                </div>
               </article>
-              <article class="brochure-card">
-                <h3>Piloto y escalado</h3>
-                <p>Despliegues por fases para validar impacto t&eacute;cnico, cobertura, calidad del dato y propuesta de extensi&oacute;n.</p>
+              <article class="capability-visual-card">
+                <img src="assets/medioambiente/cartagena-sensor-poste.jpeg" alt="Sensor ambiental instalado en campo para piloto y escalado" />
+                <div class="capability-visual-copy">
+                  <span class="capability-visual-tag">Escalado</span>
+                  <h3>Piloto y escalado</h3>
+                  <p>Despliegues por fases para validar impacto t&eacute;cnico, cobertura, calidad del dato y propuesta de extensi&oacute;n.</p>
+                </div>
               </article>
-              <article class="brochure-card">
-                <h3>IA predictiva</h3>
-                <p>Modelos para anticipar valores futuros de contaminantes a partir de nuestra sens&oacute;rica y de otras estaciones ya instaladas, con capacidad de lanzar alertas.</p>
+              <article class="capability-visual-card">
+                <img src="assets/medioambiente/prediccion-cartagena-ia.png" alt="Predicci&oacute;n con IA de contaminantes ambientales en Cartagena" />
+                <div class="capability-visual-copy">
+                  <span class="capability-visual-tag">IA predictiva</span>
+                  <h3>IA predictiva</h3>
+                  <p>Modelos para anticipar valores futuros de contaminantes a partir de nuestra sens&oacute;rica y de otras estaciones ya instaladas, con capacidad de lanzar alertas.</p>
+                </div>
               </article>
-              <article class="brochure-card">
-                <h3>M&oacute;dulo RAG</h3>
-                <p>Consulta conversacional sobre los datos capturados para obtener patrones, estad&iacute;sticas, predicciones o extraer informaci&oacute;n de forma r&aacute;pida.</p>
+              <article class="capability-visual-card">
+                <img src="assets/images/ia-heatmap-rag.png" alt="Mapa de calor predictivo y consulta RAG sobre datos ambientales" />
+                <div class="capability-visual-copy">
+                  <span class="capability-visual-tag">RAG</span>
+                  <h3>M&oacute;dulo RAG</h3>
+                  <p>Consulta conversacional sobre los datos capturados para obtener patrones, estad&iacute;sticas, predicciones o extraer informaci&oacute;n de forma r&aacute;pida.</p>
+                </div>
               </article>
             </div>
           </div>
@@ -933,7 +1053,7 @@
         <section class="video-section">
           <div class="section-inner">
             <span class="eyebrow">Caso real</span>
-            <h2 class="lead-title">Despliegue real de Qartia en Cabezo Beaza.</h2>
+            <h2 class="lead-title">Despliegue real de Qartia en Cabezo Beaza, Cartagena, España.</h2>
             <div
               class="video-wrapper"
               id="medioambiente-video-embed"

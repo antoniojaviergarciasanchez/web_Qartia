@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>DIPASON Exterior - Qartia Smart Technologies</title>
+    <title>DIPASON - Qartia Smart Technologies</title>
     <link rel="icon" href="assets/remote-qartia/wp-content/uploads/2022/10/favicon-150x150.png" sizes="32x32">
     <link rel="icon" href="assets/remote-qartia/wp-content/uploads/2022/10/favicon.png" sizes="192x192">
     <link rel="apple-touch-icon" href="assets/remote-qartia/wp-content/uploads/2022/10/favicon.png">
@@ -298,30 +298,174 @@
         margin: 14px 0 0;
       }
 
+      .commercial-copy,
+      .product-showcase {
+        border: 1px solid rgba(20, 78, 156, 0.1);
+        border-radius: 8px;
+        box-shadow: 0 18px 46px rgba(15, 56, 92, 0.12);
+      }
+
+      .commercial-copy .lead-title {
+        margin-left: 0;
+        font-weight: 400;
+      }
+
+      .commercial-copy p {
+        color: #43515d;
+        font-size: 1.03rem;
+      }
+
+      .measure-strip {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 10px;
+        margin: 24px 0 0;
+      }
+
+      .measure-pill {
+        padding: 14px 12px;
+        border-radius: 8px;
+        background: #eef9f8;
+        border-left: 3px solid var(--accent);
+      }
+
+      .measure-pill strong {
+        display: block;
+        color: var(--brand);
+        font-family: "Rubik", sans-serif;
+        font-size: 1.2rem;
+        line-height: 1;
+      }
+
+      .measure-pill span {
+        display: block;
+        margin-top: 7px;
+        color: #56616b;
+        font-size: 0.88rem;
+      }
+
+      .value-strip {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 16px;
+        margin-top: 24px;
+      }
+
+      .value-item {
+        min-height: 150px;
+        padding: 22px;
+        border: 1px solid rgba(20, 78, 156, 0.1);
+        border-radius: 8px;
+        background: rgba(255, 255, 255, 0.92);
+        box-shadow: 0 14px 34px rgba(15, 56, 92, 0.1);
+      }
+
+      .value-item strong {
+        display: block;
+        margin-bottom: 10px;
+        color: var(--brand);
+        font-family: "Rubik", sans-serif;
+        font-size: 1.05rem;
+      }
+
+      .value-item p {
+        margin: 0;
+        color: #4f5b66;
+      }
+
+      .product-showcase {
+        position: sticky;
+        top: 116px;
+        overflow: hidden;
+        background:
+          linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(232, 250, 249, 0.94));
+      }
+
+      .product-showcase img {
+        aspect-ratio: 4 / 3;
+        object-fit: contain;
+        border-radius: 8px;
+        border: 1px solid rgba(20, 78, 156, 0.08);
+        background: #fff;
+      }
+
+      .showcase-caption {
+        padding: 16px;
+        border-radius: 8px;
+        background: rgba(20, 78, 156, 0.08);
+      }
+
+      .showcase-caption strong {
+        display: block;
+        margin-bottom: 6px;
+        color: var(--brand);
+        font-family: "Rubik", sans-serif;
+      }
+
       .specs-section { background: var(--paper); }
+
+      .section-heading {
+        max-width: 820px;
+        margin-bottom: 30px;
+      }
 
       .spec-grid {
         display: grid;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 18px;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 16px;
       }
 
       .spec-card {
+        min-height: 164px;
         padding: 20px;
-        border-radius: 20px;
-        background: var(--paper-soft);
-        box-shadow: var(--shadow);
+        border: 1px solid rgba(20, 78, 156, 0.1);
+        border-radius: 8px;
+        background:
+          linear-gradient(180deg, #ffffff 0%, #f6fbfc 100%);
+        box-shadow: 0 16px 38px rgba(15, 56, 92, 0.1);
       }
 
       .spec-card strong {
         display: block;
-        margin-bottom: 8px;
         color: var(--brand);
         font-family: "Rubik", sans-serif;
-        font-size: 0.9rem;
+        font-size: 0.76rem;
         font-weight: 700;
         text-transform: uppercase;
-        letter-spacing: 0.04em;
+        letter-spacing: 0.06em;
+      }
+
+      .spec-value {
+        display: block;
+        margin: 16px 0 10px;
+        color: var(--ink-strong);
+        font-family: "Rubik", sans-serif;
+        font-size: clamp(1.28rem, 2.2vw, 1.95rem);
+        font-weight: 500;
+        line-height: 1.05;
+      }
+
+      .spec-note {
+        margin: 0;
+        color: #56616b;
+        font-size: 0.92rem;
+      }
+
+      .spec-card.highlight {
+        grid-column: span 2;
+        background:
+          linear-gradient(135deg, rgba(20, 78, 156, 0.96), rgba(34, 139, 158, 0.92));
+        color: #fff;
+      }
+
+      .spec-card.highlight strong,
+      .spec-card.highlight .spec-value,
+      .spec-card.highlight .spec-note {
+        color: #fff;
+      }
+
+      .spec-card.highlight .spec-note {
+        opacity: 0.88;
       }
 
       .feature-list {
@@ -350,29 +494,120 @@
 
       .systems-section { background: #e8faf9; }
 
-      .cta-section { background: var(--paper); }
+      .systems-grid {
+        align-items: stretch;
+      }
+
+      .system-panel {
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
+        padding: 28px;
+        border: 1px solid rgba(20, 78, 156, 0.1);
+        border-radius: 8px;
+        background: rgba(255, 255, 255, 0.94);
+        box-shadow: 0 16px 38px rgba(15, 56, 92, 0.1);
+      }
+
+      .system-panel .lead-title {
+        margin-bottom: 4px;
+        font-size: clamp(1.7rem, 2.4vw, 2.35rem);
+      }
+
+      .detail-grid {
+        display: grid;
+        gap: 12px;
+      }
+
+      .detail-item {
+        display: grid;
+        grid-template-columns: 108px minmax(0, 1fr);
+        gap: 14px;
+        align-items: start;
+        padding: 14px 0;
+        border-top: 1px solid rgba(20, 78, 156, 0.12);
+      }
+
+      .detail-item strong {
+        color: var(--brand);
+        font-family: "Rubik", sans-serif;
+        font-size: 0.82rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+      }
+
+      .detail-item p {
+        margin: 0;
+      }
+
+      .system-footnote {
+        margin: auto 0 0;
+        padding: 14px 16px;
+        border-radius: 8px;
+        background: rgba(54, 222, 184, 0.14);
+        color: #13435c;
+        font-size: 0.95rem;
+      }
+
+      .system-panel {
+        position: relative;
+        overflow: hidden;
+      }
+
+      .system-panel::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 120px;
+        height: 4px;
+        background: var(--accent);
+      }
+
+      .cta-section {
+        background:
+          linear-gradient(135deg, rgba(20, 78, 156, 0.98) 0%, rgba(20, 78, 156, 0.9) 45%, rgba(54, 222, 184, 0.78) 100%);
+        color: var(--ink);
+      }
 
       .cta-grid {
-        grid-template-columns: minmax(0, 1fr) 320px;
+        grid-template-columns: minmax(0, 820px);
+        justify-content: center;
         gap: 24px;
+      }
+
+      .cta-copy {
+        text-align: center;
+        border-radius: 8px;
+        border: 1px solid rgba(54, 222, 184, 0.34);
+        border-left: 6px solid var(--accent);
+        background: rgba(255, 255, 255, 0.94);
+        box-shadow: 0 18px 46px rgba(10, 45, 80, 0.22);
       }
 
       .cta-copy h2 {
         margin: 0 0 14px;
-        color: var(--ink-strong);
+        color: var(--brand);
         font-family: "Rubik", sans-serif;
         font-size: clamp(1.9rem, 2.5vw, 2.6rem);
-        font-weight: 300;
+        font-weight: 400;
       }
 
       .cta-copy p { margin: 0 0 18px; }
+
+      .cta-copy p {
+        max-width: 620px;
+        margin-left: auto;
+        margin-right: auto;
+      }
 
       .button {
         display: inline-flex;
         align-items: center;
         justify-content: center;
         padding: 14px 20px;
-        border-radius: 999px;
+        border-radius: 8px;
         background: var(--brand);
         color: #fff;
         font-family: "Rubik", sans-serif;
@@ -442,9 +677,13 @@
         .systems-grid,
         .cta-grid,
         .footer-inner,
-        .spec-grid {
+        .spec-grid,
+        .value-strip {
           grid-template-columns: 1fr;
         }
+
+        .product-showcase { position: static; }
+        .spec-card.highlight { grid-column: auto; }
 
         .header-inner {
           display: grid;
@@ -481,6 +720,8 @@
 
         .eyebrow::before { display: none; }
         .lead-title { margin-left: 0; }
+        .measure-strip { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+        .detail-item { grid-template-columns: 1fr; }
       }
     </style>
   <style id="qartia-dropdown-offset">
@@ -605,7 +846,7 @@
     <main>
       <section class="hero">
         <div class="hero-inner">
-          <h1>DIPASON Exterior</h1>
+          <h1>DIPASON</h1>
           <p>Medición continua de material particulado en suspensión para entornos exteriores, con geolocalización y conectividad preparada para despliegues ambientales exigentes.</p>
         </div>
       </section>
@@ -613,11 +854,29 @@
       <section class="intro-section">
         <div class="section-inner">
           <div class="intro-grid">
-            <div class="card">
+            <div class="card commercial-copy">
               <span class="eyebrow">Producto Qartia</span>
-              <h2 class="lead-title">Monitorización exterior de partículas con conectividad integrada.</h2>
-              <p>DIPASON está diseñado para detectar partículas en el rango de 0,35 μm a 40 μm, capturando y analizando de manera continua la muestra de aire en el entorno de despliegue.</p>
-              <p>La solución envía datos vía radio mediante antena interna y puede integrarse con la infraestructura de comunicaciones diseñada por Qartia según los requisitos del cliente, facilitando despliegues en obra civil, industria, tráfico o vigilancia ambiental.</p>
+              <h2 class="lead-title">Control de partículas medible, trazable y listo para operar.</h2>
+              <p>DIPASON convierte la monitorización de material particulado en un servicio operativo: mide partículas de 0,35 μm a 40 μm, geolocaliza el punto de captura y envía el dato para visualizarlo y explotarlo desde una plataforma privada.</p>
+              <p>Su formato está pensado para despliegues en obra civil, industria, tráfico o vigilancia ambiental, conectando el sensor, la red y la analítica en un único flujo de trabajo.</p>
+              <div class="measure-strip" aria-label="Datos destacados de medición de DIPASON">
+                <div class="measure-pill">
+                  <strong>PM</strong>
+                  <span>Material particulado</span>
+                </div>
+                <div class="measure-pill">
+                  <strong>0,35-40 μm</strong>
+                  <span>Rango de medición</span>
+                </div>
+                <div class="measure-pill">
+                  <strong>10.000</strong>
+                  <span>Partículas por segundo</span>
+                </div>
+                <div class="measure-pill">
+                  <strong>GPS</strong>
+                  <span>Geolocalización integrada</span>
+                </div>
+              </div>
               <ul class="feature-list">
                 <li>GPS integrado para geolocalización del equipo.</li>
                 <li>Baterías internas con autonomía aproximada de 2 días.</li>
@@ -626,50 +885,77 @@
               </ul>
             </div>
 
-            <aside class="visual-card">
+            <aside class="visual-card product-showcase">
               <img src="assets/images/dipason-device.png" alt="DIPASON para exteriores" />
-              <p>Solución orientada a control ambiental exterior con captura continua de PM y visualización remota.</p>
+              <div class="showcase-caption">
+                <strong>Equipo compacto, despliegue flexible</strong>
+                <p>Preparado para campañas temporales o redes permanentes de control ambiental de partículas.</p>
+              </div>
             </aside>
+          </div>
+          <div class="value-strip" aria-label="Valor operativo de DIPASON">
+            <div class="value-item">
+              <strong>Control ambiental continuo</strong>
+              <p>Seguimiento estable de partículas en suspensión para detectar cambios, tendencias e incidencias.</p>
+            </div>
+            <div class="value-item">
+              <strong>Dato listo para explotar</strong>
+              <p>Medición conectada con visualización remota y exportación desde área privada.</p>
+            </div>
+            <div class="value-item">
+              <strong>Escalable por proyecto</strong>
+              <p>Integrable con la infraestructura de comunicaciones diseñada por Qartia según cada despliegue.</p>
+            </div>
           </div>
         </div>
       </section>
 
       <section class="specs-section">
         <div class="section-inner">
-          <span class="eyebrow">Especificaciones</span>
-          <h2 class="lead-title">Datos clave del equipo.</h2>
+          <div class="section-heading">
+            <span class="eyebrow">Especificaciones</span>
+            <h2 class="lead-title">Datos clave del equipo.</h2>
+          </div>
           <div class="spec-grid">
             <div class="spec-card">
               <strong>Dimensiones</strong>
-              83 mm de alto, 225 mm de ancho y 114 mm de fondo.
+              <span class="spec-value">83 x 225 x 114 mm</span>
+              <p class="spec-note">Alto, ancho y fondo del equipo para despliegue exterior.</p>
             </div>
             <div class="spec-card">
               <strong>Peso y tensión</strong>
-              1,30 kg aproximado y alimentación interna de 4,8 V.
+              <span class="spec-value">1,30 kg / 4,8 V</span>
+              <p class="spec-note">Peso aproximado y alimentación interna.</p>
             </div>
             <div class="spec-card">
               <strong>Almacenamiento</strong>
-              Entre -25 °C y +60 °C, con 20 a 85 % H.r.
+              <span class="spec-value">-25 a +60 °C</span>
+              <p class="spec-note">Condiciones de almacenamiento con 20 a 85 % H.r.</p>
             </div>
-            <div class="spec-card">
+            <div class="spec-card highlight">
               <strong>Material particulado</strong>
-              Rango de medición de 0,35 a 40 μm.
+              <span class="spec-value">0,35 a 40 μm</span>
+              <p class="spec-note">Rango de medición de partículas en suspensión.</p>
             </div>
             <div class="spec-card">
               <strong>Tasa de recuento</strong>
-              Hasta 10.000 partículas por segundo.
+              <span class="spec-value">10.000 part/s</span>
+              <p class="spec-note">Capacidad máxima de recuento indicada en ficha.</p>
             </div>
             <div class="spec-card">
               <strong>Ambiente operativo</strong>
-              Entre -10 °C y +50 °C, con humedad de 0 a 95 % H.r.
+              <span class="spec-value">-10 a +50 °C</span>
+              <p class="spec-note">Funcionamiento con humedad de 0 a 95 % H.r.</p>
             </div>
             <div class="spec-card">
               <strong>Trabajo exterior</strong>
-              Temperatura de trabajo de -10 °C a +50 °C y 20 a 80 % H.r. según ficha técnica.
+              <span class="spec-value">20 a 80 % H.r.</span>
+              <p class="spec-note">Rango de humedad de trabajo exterior según ficha técnica.</p>
             </div>
             <div class="spec-card">
               <strong>Autonomía y GPS</strong>
-              Baterías internas con autonomía aproximada de 2 días y geolocalización integrada.
+              <span class="spec-value">2 días + GPS</span>
+              <p class="spec-note">Baterías internas con geolocalización integrada.</p>
             </div>
           </div>
         </div>
@@ -677,28 +963,57 @@
 
       <section class="systems-section">
         <div class="section-inner">
+          <div class="section-heading">
+            <span class="eyebrow">Conectividad y operación</span>
+            <h2 class="lead-title">Del sensor al panel de control, sin perder trazabilidad.</h2>
+          </div>
           <div class="systems-grid">
-            <div class="card">
+            <div class="system-panel">
               <span class="eyebrow">Comunicaciones</span>
-              <h2 class="lead-title">Integración radio y explotación de datos.</h2>
-              <ul class="feature-list">
-                <li>LoRa con rango de frecuencia de 137 a 1020 MHz.</li>
-                <li>WiFi 802.11 b/g/n/e/i en banda 2,4 GHz.</li>
-                <li>Bluetooth 4.2 para integración de proximidad.</li>
-                <li>Sigfox según disponibilidad regional.</li>
-                <li>Exportación de datos y visualización desde área privada.</li>
-              </ul>
+              <h2 class="lead-title">Conectividad adaptable al despliegue.</h2>
+              <div class="detail-grid">
+                <div class="detail-item">
+                  <strong>LoRa</strong>
+                  <p>Rango de frecuencia de 137 a 1020 MHz para despliegues de baja potencia y largo alcance.</p>
+                </div>
+                <div class="detail-item">
+                  <strong>WiFi</strong>
+                  <p>802.11 b/g/n/e/i en banda 2,4 GHz para integración con infraestructura local.</p>
+                </div>
+                <div class="detail-item">
+                  <strong>Bluetooth</strong>
+                  <p>Bluetooth 4.2 para integración de proximidad y tareas de soporte local.</p>
+                </div>
+                <div class="detail-item">
+                  <strong>Sigfox</strong>
+                  <p>Conectividad Sigfox según disponibilidad regional y necesidades del despliegue.</p>
+                </div>
+              </div>
+              <p class="system-footnote">El objetivo es que la medida llegue con continuidad al entorno de visualización y explotación de Qartia.</p>
             </div>
 
-            <div class="card">
+            <div class="system-panel">
               <span class="eyebrow">Servicios asociados</span>
-              <h2 class="lead-title">Visualización remota y mantenimiento predictivo.</h2>
-              <ul class="feature-list">
-                <li>Detección de desviaciones de calibración de sensores.</li>
-                <li>Identificación preventiva de fallos hardware y problemas climáticos.</li>
-                <li>Supervisión de incidencias de comunicación.</li>
-                <li>Integración con analítica basada en inteligencia artificial en servidores de Qartia.</li>
-              </ul>
+              <h2 class="lead-title">Operación remota y mantenimiento preventivo.</h2>
+              <div class="detail-grid">
+                <div class="detail-item">
+                  <strong>Calibración</strong>
+                  <p>Detección de desviaciones de calibración de sensores para mantener la calidad del dato.</p>
+                </div>
+                <div class="detail-item">
+                  <strong>Prevención</strong>
+                  <p>Identificación preventiva de fallos hardware y problemas climáticos.</p>
+                </div>
+                <div class="detail-item">
+                  <strong>Red</strong>
+                  <p>Supervisión de incidencias de comunicación durante la operación.</p>
+                </div>
+                <div class="detail-item">
+                  <strong>IA</strong>
+                  <p>Integración con analítica basada en inteligencia artificial en servidores de Qartia.</p>
+                </div>
+              </div>
+              <p class="system-footnote">Servicios pensados para que DIPASON no solo mida partículas, sino que ayude a anticipar incidencias y operar mejor.</p>
             </div>
           </div>
         </div>
@@ -708,11 +1023,10 @@
         <div class="section-inner">
           <div class="cta-grid">
             <div class="cta-copy">
-              <h2>¿Volver al catálogo o pedir más información?</h2>
-              <p>La ficha de DIPASON Exterior queda preparada para ampliarse después con campañas, normativa ambiental, comparativas de PM o casos de uso en entornos abiertos.</p>
+              <h2>DIPASON, una base compacta para desplegar control ambiental de partículas.</h2>
+              <p>Una solución pensada para campañas donde medir no basta: el dato debe llegar, verse, compararse y servir para tomar decisiones.</p>
               <a class="button" href="productos.html">Volver a Productos</a>
             </div>
-            <div class="cta-image" aria-hidden="true"></div>
           </div>
         </div>
       </section>

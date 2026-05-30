@@ -363,6 +363,88 @@
         font-size: 0.95rem;
       }
 
+      .impact-visual-grid {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 18px;
+        margin-top: 34px;
+      }
+
+      .impact-visual-card {
+        position: relative;
+        min-height: 380px;
+        display: flex;
+        overflow: hidden;
+        border-radius: 8px;
+        background: #07121d;
+        color: #fff;
+        box-shadow: var(--shadow);
+        isolation: isolate;
+      }
+
+      .impact-visual-card img {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transform: scale(1.01);
+        transition: transform .24s ease;
+        z-index: -2;
+      }
+
+      .impact-visual-card::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(180deg, rgba(7, 18, 29, .12), rgba(7, 18, 29, .86));
+        z-index: -1;
+      }
+
+      .impact-visual-card:hover img {
+        transform: scale(1.06);
+      }
+
+      .impact-visual-copy {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        width: 100%;
+        min-height: 100%;
+        padding: 22px;
+      }
+
+      .impact-visual-tag {
+        align-self: flex-start;
+        margin-bottom: auto;
+        padding: 7px 10px;
+        border-radius: 8px;
+        background: rgba(54, 222, 184, .9);
+        color: #07121d;
+        font-size: .76rem;
+        font-weight: 800;
+        letter-spacing: .06em;
+        line-height: 1;
+        text-transform: uppercase;
+      }
+
+      .impact-visual-card h3 {
+        margin: 34px 0 8px;
+        color: #fff;
+        font-family: "Rubik", sans-serif;
+        font-size: clamp(1.22rem, 1.7vw, 1.62rem);
+        font-weight: 700;
+        line-height: 1.12;
+        text-shadow: 0 2px 14px rgba(0, 0, 0, .42);
+      }
+
+      .impact-visual-card p {
+        margin: 0;
+        color: rgba(255, 255, 255, .88);
+        font-size: .96rem;
+        line-height: 1.5;
+      }
+
       .video-section {
         padding: 70px 0;
         background: linear-gradient(180deg, #f7fbfc 0%, #e8faf9 100%);
@@ -728,6 +810,7 @@
       @media (max-width: 1024px) {
         .header-inner,
         .content-grid,
+        .integration-section .content-grid,
         .video-shell,
         .brochure-split,
         .cta-grid,
@@ -755,6 +838,7 @@
 }
 
         .brochure-grid,
+        .impact-visual-grid,
         .phase-grid,
         .kpi-grid {
           grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -801,9 +885,14 @@
         }
 
         .brochure-grid,
+        .impact-visual-grid,
         .phase-grid,
         .kpi-grid {
           grid-template-columns: 1fr;
+        }
+
+        .impact-visual-card {
+          min-height: 300px;
         }
 
         .video-shell {
@@ -969,26 +1058,38 @@
           <div class="section-inner">
             <span class="eyebrow">Impacto operativo</span>
             <h2 class="lead-title">Del dato crudo a la acci&oacute;n de mantenimiento.</h2>
-            <div class="brochure-grid">
-              <article class="brochure-card">
-                <strong>12 kHz</strong>
-                <h3>Sens&oacute;rica de alta resoluci&oacute;n</h3>
-                <p>Captura de vibraci&oacute;n en el dominio de tiempo y frecuencia para detectar cambios reales del estado de la m&aacute;quina.</p>
+            <div class="impact-visual-grid">
+              <article class="impact-visual-card">
+                <img src="assets/images/sensorizacion-vibration-box.jpeg" alt="Sensor de vibraciones instalado en activo industrial para mantenimiento predictivo" />
+                <div class="impact-visual-copy">
+                  <span class="impact-visual-tag">12 kHz</span>
+                  <h3>Sens&oacute;rica de alta resoluci&oacute;n</h3>
+                  <p>Captura de vibraci&oacute;n en el dominio de tiempo y frecuencia para detectar cambios reales del estado de la m&aacute;quina.</p>
+                </div>
               </article>
-              <article class="brochure-card">
-                <strong>24/7</strong>
-                <h3>Diagn&oacute;stico continuo</h3>
-                <p>Severidad y tipo de defecto rotativo disponibles en continuo para actuar antes de la aver&iacute;a.</p>
+              <article class="impact-visual-card">
+                <img src="assets/industria-vibraciones-dashboard.png" alt="Dashboard de diagn&oacute;stico continuo de vibraciones industriales" />
+                <div class="impact-visual-copy">
+                  <span class="impact-visual-tag">24/7</span>
+                  <h3>Diagn&oacute;stico continuo</h3>
+                  <p>Severidad y tipo de defecto rotativo disponibles en continuo para actuar antes de la aver&iacute;a.</p>
+                </div>
               </article>
-              <article class="brochure-card">
-                <strong>ISO 10816 / 20816</strong>
-                <h3>Severidad estandarizada</h3>
-                <p>Clasificaci&oacute;n de riesgo bajo criterio industrial reconocido para operaciones, mantenimiento e ingenier&iacute;a.</p>
+              <article class="impact-visual-card">
+                <img src="assets/images/vibraciones-yokohawa.png" alt="Interfaz industrial para lectura de vibraciones y severidad estandarizada" />
+                <div class="impact-visual-copy">
+                  <span class="impact-visual-tag">ISO 10816 / 20816</span>
+                  <h3>Severidad estandarizada</h3>
+                  <p>Clasificaci&oacute;n de riesgo bajo criterio industrial reconocido para operaciones, mantenimiento e ingenier&iacute;a.</p>
+                </div>
               </article>
-              <article class="brochure-card">
-                <strong>ROI visible</strong>
-                <h3>Menos paradas y m&aacute;s OEE</h3>
-                <p>Priorizaci&oacute;n de intervenciones por criticidad real del activo y por coste evitado de parada.</p>
+              <article class="impact-visual-card">
+                <img src="assets/images/ingenieria-vibration-installation.jpg" alt="Instalaci&oacute;n de sens&oacute;rica de vibraciones en planta industrial para mejorar OEE" />
+                <div class="impact-visual-copy">
+                  <span class="impact-visual-tag">ROI visible</span>
+                  <h3>Menos paradas y m&aacute;s OEE</h3>
+                  <p>Priorizaci&oacute;n de intervenciones por criticidad real del activo y por coste evitado de parada.</p>
+                </div>
               </article>
             </div>
           </div>

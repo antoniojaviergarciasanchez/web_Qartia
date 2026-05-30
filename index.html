@@ -161,23 +161,53 @@ html { scroll-behavior: smooth; }
 #page-content .local-video-link img, #page-content .local-video-trigger img { display: block; width: 100%; height: 100%; object-fit: cover; }
 #page-content .local-video-play { position: absolute; top: 50%; left: 50%; width: 96px; height: 96px; border-radius: 50%; transform: translate(-50%,-50%); background: rgba(7,18,29,0.68); box-shadow: 0 12px 32px rgba(7,18,29,0.32); }
 #page-content .local-video-play::before { content: ""; position: absolute; top: 50%; left: 50%; margin-left: 6px; transform: translate(-50%,-50%); border-style: solid; border-width: 18px 0 18px 30px; border-color: transparent transparent transparent #fff; }
+#page-content .services-showcase { position: relative; background: #eef6f7; overflow: hidden; }
+#page-content .services-showcase::before { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg,rgba(255,255,255,.92),rgba(255,255,255,.72)); pointer-events: none; }
+#page-content .services-showcase .local-shell { position: relative; z-index: 1; }
+#page-content .services-visual-header { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 24px; align-items: end; margin-bottom: 30px; }
+#page-content .services-visual-header h2 { max-width: 780px; margin-bottom: 0; }
+#page-content .services-all-link { display: inline-flex; align-items: center; justify-content: center; min-height: 46px; padding: 12px 18px; border-radius: 8px; background: #144e9c; color: #fff; font-weight: 700; line-height: 1.2; text-decoration: none; }
+#page-content .services-all-link:hover, #page-content .services-all-link:focus-visible { background: #0f3f7c; color: #fff; }
+#page-content .services-mosaic { display: grid; grid-template-columns: minmax(320px, 1.18fr) minmax(0, 1.82fr); gap: 18px; align-items: stretch; }
+#page-content .services-tile-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 18px; }
+#page-content .services-tile-grid .service-visual-card:nth-last-child(1):nth-child(odd) { grid-column: 1 / -1; }
+#page-content .service-visual-card { position: relative; display: flex; min-height: 254px; overflow: hidden; border-radius: 8px; background: #07121d; color: #fff; text-decoration: none; box-shadow: 0 16px 38px rgba(17,35,53,.12); isolation: isolate; }
+#page-content .service-visual-card.large { min-height: 526px; }
+#page-content .service-visual-card img { position: absolute; inset: 0; box-sizing: border-box; width: 100%; height: 100%; object-fit: cover; transform: scale(1.01); transition: transform .24s ease; z-index: -2; }
+#page-content .service-visual-card::before { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg,rgba(7,18,29,.16),rgba(7,18,29,.83)); z-index: -1; }
+#page-content .service-visual-card:hover img, #page-content .service-visual-card:focus-visible img { transform: scale(1.06); }
+#page-content .service-visual-card:hover, #page-content .service-visual-card:focus-visible { color: #fff; }
+#page-content .service-visual-copy { display: flex; flex-direction: column; justify-content: flex-end; width: 100%; min-height: 100%; padding: 22px 68px 22px 22px; }
+#page-content .service-visual-card.large .service-visual-copy { padding: 30px 76px 30px 30px; }
+#page-content .service-visual-tag { align-self: flex-start; margin-bottom: auto; padding: 7px 10px; border-radius: 8px; background: rgba(54,222,184,.9); color: #07121d; font-size: .76rem; font-weight: 800; letter-spacing: .06em; line-height: 1; text-transform: uppercase; }
+#page-content .service-visual-card h3 { margin: 34px 0 8px; color: #fff; font-size: clamp(1.22rem,1.7vw,1.62rem); font-weight: 700; line-height: 1.12; text-shadow: 0 2px 14px rgba(0,0,0,.42); }
+#page-content .service-visual-card.large h3 { font-size: clamp(1.8rem,3vw,3rem); }
+#page-content .service-visual-card p { max-width: 540px; margin: 0; color: rgba(255,255,255,.88); font-size: .96rem; line-height: 1.5; }
+#page-content .service-visual-arrow { position: absolute; right: 18px; bottom: 18px; display: grid; place-items: center; width: 38px; height: 38px; border-radius: 50%; background: rgba(255,255,255,.92); color: #144e9c; font-size: 1.25rem; font-weight: 800; line-height: 1; }
+#page-content .products-showcase { background: #f7fbfc; }
+#page-content .products-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 18px; align-items: stretch; }
+#page-content .products-showcase .service-visual-card { background: #e8faf9; }
+#page-content .products-grid .service-visual-card { min-height: 330px; }
+#page-content .products-showcase .service-visual-card img { object-fit: contain; padding: 22px; background: linear-gradient(145deg,#fff,#e8faf9); }
+#page-content .products-showcase .service-visual-card::before { background: linear-gradient(180deg,rgba(7,18,29,0) 24%,rgba(7,18,29,.86)); }
+#page-content .products-showcase .service-visual-card:hover img, #page-content .products-showcase .service-visual-card:focus-visible img { transform: scale(1.04); }
 .cta-form .g-cols.via_flex.valign_top { align-items: stretch; }
 .cta-form .vc_col-sm-6.stretched,
 .cta-form .vc_col-sm-4.has_bg_color { display: flex; }
 .cta-form .vc_col-sm-6.stretched > .vc_column-inner,
 .cta-form .vc_col-sm-4.has_bg_color > .vc_column-inner { flex: 1; height: 100%; }
-.us_custom_63ae8536 { position: relative; min-height: 100% !important; height: 100%; padding-left: 0 !important; background: #e2eaee !important; overflow: hidden; display: flex; align-items: stretch; }
+.us_custom_63ae8536 { position: relative; min-height: 100% !important; height: 100%; padding-left: 0 !important; background: #e8faf9 !important; overflow: hidden; display: flex; align-items: stretch; }
 .us_custom_63ae8536 .wpb_wrapper { position: relative; inset: auto; width: 100%; min-height: 100%; flex: 1; display: flex; }
-.te-ayudamos-photo { width: 100%; min-height: 100%; display: flex; flex: 1; align-items: stretch; justify-content: stretch; padding: 0; }
+.te-ayudamos-photo { width: 100%; min-height: 100%; display: flex; flex: 1; align-items: stretch; justify-content: stretch; padding: 0; background: #e8faf9; }
 .te-ayudamos-photo img { width: 100%; height: 100%; min-height: 520px; object-fit: cover; object-position: center center; display: block; }
 .l-header .ush_menu_1 { font-size: 0.82rem !important; }
 .l-header .ush_menu_1.type_desktop .w-nav-list.level_1 { flex-wrap: wrap; justify-content: flex-end; }
 .l-header .ush_menu_1.type_desktop .menu-item.level_1 > a { padding-left: 0.7rem; padding-right: 0.7rem; }
 .l-header .ush_menu_1.type_desktop .w-nav-list.level_3 { margin: 0.35rem 0 0.45rem 1rem; padding-left: 0.85rem; border-left: 2px solid rgba(20,78,156,0.14); }
 .l-header .ush_menu_1.type_desktop .w-nav-list.level_3 .w-nav-anchor.level_3 { font-size: 0.74rem; padding-top: 0.45rem; padding-bottom: 0.45rem; }
-@media (max-width: 1024px) { #page-content .local-card, #page-content .local-card.local-wide { grid-column: span 6; } #page-content .local-news-grid, #page-content .local-client-grid { grid-template-columns: 1fr; } }
+@media (max-width: 1024px) { #page-content .local-card, #page-content .local-card.local-wide { grid-column: span 6; } #page-content .local-news-grid, #page-content .local-client-grid { grid-template-columns: 1fr; } #page-content .services-visual-header { grid-template-columns: 1fr; align-items: start; } #page-content .services-all-link { justify-self: start; } #page-content .services-mosaic { grid-template-columns: 1fr; } #page-content .products-grid { grid-template-columns: repeat(2,minmax(0,1fr)); } #page-content .service-visual-card.large { min-height: 390px; } }
 @media (max-width: 900px) { .te-ayudamos-photo { min-height: 560px; } }
-@media (max-width: 767px) { #page-content .local-shell { padding: 0 20px; } #page-content .local-card, #page-content .local-card.local-wide { grid-column: 1 / -1; } #page-content .local-clone-section { padding-top: 56px; padding-bottom: 56px; } #page-content .local-video-shell { padding: 56px 20px; } #page-content .local-video-kicker::before, #page-content .local-video-kicker::after { width: 24px; } #page-content .local-video-play { width: 74px; height: 74px; } #page-content .local-video-play::before { border-width: 14px 0 14px 24px; } .te-ayudamos-photo { min-height: 520px; } }
+@media (max-width: 767px) { #page-content .local-shell { padding: 0 20px; } #page-content .local-card, #page-content .local-card.local-wide { grid-column: 1 / -1; } #page-content .local-clone-section { padding-top: 56px; padding-bottom: 56px; } #page-content .local-video-shell { padding: 56px 20px; } #page-content .local-video-kicker::before, #page-content .local-video-kicker::after { width: 24px; } #page-content .local-video-play { width: 74px; height: 74px; } #page-content .local-video-play::before { border-width: 14px 0 14px 24px; } #page-content .services-all-link { width: 100%; } #page-content .services-tile-grid, #page-content .products-grid { grid-template-columns: 1fr; } #page-content .service-visual-card, #page-content .service-visual-card.large { min-height: 280px; } #page-content .service-visual-copy, #page-content .service-visual-card.large .service-visual-copy { padding: 20px 64px 20px 20px; } .te-ayudamos-photo { min-height: 520px; } }
 </style>
 
 <style id="products-nav-clone">
@@ -477,17 +507,24 @@ html { scroll-behavior: smooth; }
         </nav>
       </div>
     </header><main id="page-content" class="l-main" itemprop="mainContentOfPage">
-	<section id="top" class="l-section wpb_row height_huge full_height valign_center with_slider" style="background-image: url('assets/remote-qartia/wp-content/uploads/2022/11/slider-home-1.jpg');"><div class="l-section-slider"><div class="w-slider style_none fit_cover">
+	<section id="top" class="l-section wpb_row height_huge full_height valign_center with_slider" style="background-image: url('assets/remote-qartia/wp-content/uploads/2022/12/cali2.mp4');"><div class="l-section-slider"><div class="w-slider style_none fit_cover">
 <div class="w-slider-h">
 <div class="royalSlider">
-<div class="rsContent is-active"><a class="rsImg" style="background-image: url(assets/remote-qartia/wp-content/uploads/2022/11/slider-home-1.jpg);" data-rsw="1920" data-rsh="880" href="assets/remote-qartia/wp-content/uploads/2022/11/slider-home-1.jpg"><span data-alt=""></span></a></div>
-<div class="rsContent"><a class="rsImg" style="background-image: url(assets/remote-qartia/wp-content/uploads/2022/12/slide-cuatrov2.jpg);" data-rsw="1920" data-rsh="880" href="assets/remote-qartia/wp-content/uploads/2022/12/slide-cuatrov2.jpg"><span data-alt=""></span></a></div>
-<div class="rsContent"><a class="rsImg" style="background-image: url(assets/remote-qartia/wp-content/uploads/2022/12/pp.jpeg);" data-rsw="1920" data-rsh="880" href="assets/remote-qartia/wp-content/uploads/2022/12/pp.jpeg"><span data-alt=""></span></a></div>
-<div class="rsContent"><a class="rsImg" style="background-image: url(assets/remote-qartia/wp-content/uploads/2022/12/industria.jpeg);" data-rsw="1920" data-rsh="880" href="assets/remote-qartia/wp-content/uploads/2022/12/industria.jpeg"><span data-alt=""></span></a></div>
-<div class="rsContent"><a class="rsImg" style="background-image: url(assets/remote-qartia/wp-content/uploads/2022/12/slide-tresv2.jpg);" data-rsw="1920" data-rsh="880" href="assets/remote-qartia/wp-content/uploads/2022/12/slide-tresv2.jpg"><span data-alt=""></span></a></div>
-<div class="rsContent"><a class="rsImg" style="background-image: url(assets/remote-qartia/wp-content/uploads/2022/12/slider-dosv2.jpg);" data-rsw="1920" data-rsh="880" href="assets/remote-qartia/wp-content/uploads/2022/12/slider-dosv2.jpg"><span data-alt=""></span></a></div>
+ <!--<div class="rsContent"><a class="rsImg" style="background-image: url(assets/remote-qartia/wp-content/uploads/2022/12/pp.png);" data-rsw="1920" data-rsh="880" href="assets/remote-qartia/wp-content/uploads/2022/12/pp.png"><span data-alt=""></span></a></div> -->
+<!-- <div<div class="rsContent"><a class="rsImg" style="background-image: url(assets/remote-qartia/wp-content/uploads/2022/12/cali2.mp4);" data-rsw="1920" data-rsh="880" href="assets/remote-qartia/wp-content/uploads/2022/12/cali2.mp4"><span data-alt=""></span></a></div>  -->
+<!-- <div class="rsContent is-active"><a class="rsImg" style="background-image: url(assets/remote-qartia/wp-content/uploads/2022/11/slider-home-1.jpg);" data-rsw="1920" data-rsh="880" href="assets/remote-qartia/wp-content/uploads/2022/11/slider-home-1.jpg"><span data-alt=""></span></a></div> -->
+<div class="rsContent"><a class="rsImg" style="background-image: url(assets/remote-qartia/wp-content/uploads/2022/12/solar.png);" data-rsw="1920" data-rsh="880" href="assets/remote-qartia/wp-content/uploads/2022/12/solar.png"><span data-alt=""></span></a></div>
+<div class="rsContent"><a class="rsImg" style="background-image: url(assets/remote-qartia/wp-content/uploads/2022/12/poligono.mp4);" data-rsw="1920" data-rsh="880" href="assets/remote-qartia/wp-content/uploads/2022/12/poligono.mp4"><span data-alt=""></span></a></div>
+<div class="rsContent"><a class="rsImg" style="background-image: url(assets/remote-qartia/wp-content/uploads/2022/12/trabajadores.png);" data-rsw="1920" data-rsh="880" href="assets/remote-qartia/wp-content/uploads/2022/12/trabajadores.png"><span data-alt=""></span></a></div>
+<div class="rsContent"><a class="rsImg" style="background-image: url(assets/remote-qartia/wp-content/uploads/2022/12/CAETRA.mp4);" data-rsw="1920" data-rsh="880" href="assets/remote-qartia/wp-content/uploads/2022/12/CAETRA.mp4"><span data-alt=""></span></a></div>
+<!--<div class="rsContent"><a class="rsImg" style="background-image: url(assets/remote-qartia/wp-content/uploads/2022/12/slide-cuatrov2.jpg);" data-rsw="1920" data-rsh="880" href="assets/remote-qartia/wp-content/uploads/2022/12/slide-cuatrov2.jpg"><span data-alt=""></span></a></div> -->
+<!-- <div class="rsContent"><a class="rsImg" style="background-image: url(assets/remote-qartia/wp-content/uploads/2022/12/pp.png);" data-rsw="1920" data-rsh="880" href="assets/remote-qartia/wp-content/uploads/2022/12/pp.png"><span data-alt=""></span></a></div>  -->
+<div class="rsContent"><a class="rsImg" style="background-image: url(assets/remote-qartia/wp-content/uploads/2022/12/cali2.mp4);" data-rsw="1920" data-rsh="880" href="assets/remote-qartia/wp-content/uploads/2022/12/cali2.mp4"><span data-alt=""></span></a></div>
+<div class="rsContent"><a class="rsImg" style="background-image: url(assets/remote-qartia/wp-content/uploads/2022/12/industria.jpeg);" data-rsw="1920" data-rsh="880" href="assets/remote-qartia/wp-content/uploads/2022/1２/industria.jpeg"><span data-alt=""></span></a></div>
+<!--<div class="rsContent"><a class="rsImg" style="background-image: url(assets/remote-qartia/wp-content/uploads/2022/1２/slide-tresv2.jpg);" data-rsw="19２０" data-rsh="8８０" href="assets/remote-qartia/wp-content/uploads/２０２２/１２/slide-tresv２.jpg"><span data-alt=""></span></a></div> -->
+<!--<div class="rsContent"><a class="rsImg" style="background-image: url(assets/remote-qartia/wp-content/uploads/２０２２/１２/slider-dosv２.jpg);" data-rsw="１９２０" data-rsh="８８０" href("assets/remote-qartia/wp-content/uploads/２０２２/１２/slider-dosv２.jpg")><span data-alt=""></span></a></div> -->
 </div>
-<img decoding="async" src="assets/remote-qartia/wp-content/uploads/2022/11/slider-home-1.jpg" width="1920" height="880" alt loading="lazy">
+<img decoding="async" src="assets/remote-qartia/wp-content/uploads/2022/12/CAETRA.mp4" width="1920" height="880" alt loading="lazy">
 </div>
 <div class="w-slider-json" onclick='return {"loop":true,"fadeInLoadedSlide":false,"slidesSpacing":0,"imageScalePadding":0,"numImagesToPreload":2,"arrowsNav":false,"arrowsNavAutoHide":false,"transitionType":"fade","transitionSpeed":2000,"block":{"moveEffect":"none","speed":300},"controlNavigation":"none","autoplay":{"enabled":true,"pauseOnHover":false,"delay":2000},"imageScaleMode":"fill","autoScaleSlider":true,"autoScaleSliderWidth":1920,"autoScaleSliderHeight":880,"fitInViewport":false}'></div>
 </div></div>
@@ -586,93 +623,75 @@ y agro</h3>
 <div class="local-video-frame" id="index-video-embed" data-youtube-src="https://www.youtube.com/embed/IJyQG3NY9hk?rel=0&amp;modestbranding=1" data-youtube-watch="https://youtu.be/IJyQG3NY9hk"><button class="local-video-trigger" type="button" aria-label="Reproducir video promocional de Qartia"><img src="https://i.ytimg.com/vi/IJyQG3NY9hk/hqdefault.jpg" alt="Miniatura del video promocional de Qartia"><span class="local-video-play" aria-hidden="true"></span></button></div>
 </div>
 </div>
-</section><section class="l-section wpb_row ancho-corto height_large with_img"><div class="l-section-img" style="background-image: url(assets/remote-qartia/wp-content/uploads/2022/11/fondo-home.jpg);background-position: top left;background-repeat: no-repeat;" data-img-width="1920" data-img-height="817"></div>
-<div class="l-section-h i-cf"><div class="g-cols vc_row via_flex valign_top type_default stacking_default"><div class="vc_col-sm-12 wpb_column vc_column_container"><div class="vc_column-inner"><div class="wpb_wrapper">
-<div class="wpb_text_column us_custom_7e20fa79 titulares us_animate_this"><div class="wpb_wrapper">
-<h3>Nuestros productos</h3>
-<h2>Soluciones listas para medir, conectar y escalar</h2>
-</div></div>
-<div class="w-separator size_huge"></div>
-<div class="w-grid type_grid layout_138 cols_3 with_css_animation" id="us_grid_1" data-filterable="true">
-<style>#us_grid_1 .w-grid-item{padding:1.5rem}#us_grid_1 .w-grid-list{margin:-1.5rem}.w-grid + #us_grid_1 .w-grid-list,.w-grid-none + #us_grid_1 .w-grid-list{margin-top:1.5rem}@media (max-width:899px){#us_grid_1 .w-grid-item{width:50%}}@media (max-width:599px){#us_grid_1 .w-grid-list{margin:0}#us_grid_1 .w-grid-item{width:100%;padding:0;margin-bottom:1.5rem}}.layout_138 .w-grid-item-h{}.layout_138 .usg_post_image_1{transition-duration:0.3s;transform-origin:50% 50%;transform:scale(1) translate(0%,0%)}.layout_138 .w-grid-item-h:hover .usg_post_image_1{transform:scale(1.15) translate(0%,-4%);opacity:1}.layout_138 .usg_post_image_1{margin-bottom:1rem!important}.layout_138 .usg_post_title_1{text-align:center!important;font-size:1.2rem!important;font-family:var(--font-h1)!important;font-weight:700!important;margin-bottom:0.5rem!important}.layout_138 .usg_post_content_1{text-align:center!important;margin-top:0.5rem!important}.layout_138 .usg_btn_1{text-align:center!important;font-size:0.9rem!important;margin-top:1.5rem!important}</style>
-<div class="w-grid-list">	<article class="w-grid-item us_animate_fade size_1x1 post-998 producto type-producto status-publish has-post-thumbnail hentry tipo_tax-producto" data-id="998" style="animation-delay:0s">
-		<div class="w-grid-item-h">
-						<div class="w-post-elm post_image usg_post_image_1 product-image-thumb has_ratio">
-<div style="padding-bottom:75%"></div>
-<a href="vibrasense.html" aria-label="VibraSense"><img loading="lazy" decoding="async" width="800" height="600" src="assets/images/vibrasense.png" class="attachment-large size-large wp-post-image" alt="VibraSense"></a>
+</section><section id="nuestros-servicios" class="l-section wpb_row local-clone-section services-showcase height_auto">
+<div class="local-shell">
+<div class="services-visual-header">
+<div>
+<span class="local-kicker">Nuestros Servicios</span>
+<h2>Soluciones sectoriales para medir, conectar y decidir con datos reales</h2>
 </div>
-<h2 class="w-post-elm post_title usg_post_title_1 entry-title color_link_inherit"><a href="vibrasense.html">VibraSense</a></h2>
-<div class="w-post-elm post_content usg_post_content_1">
-<p>Mantenimiento predictivo por vibraciones para activos rotativos y despliegues industriales conectados.</p>
 </div>
-<div class="w-hwrapper usg_hwrapper_1 align_center valign_middle" style="--hwrapper-gap:1.20rem"><a class="w-btn us-btn-style_1 usg_btn_1" href="vibrasense.html"><span class="w-btn-label">Ver m&aacute;s</span></a></div>		</div>
-	</article>
-	<article class="w-grid-item us_animate_fade size_1x1 post-998 producto type-producto status-publish has-post-thumbnail hentry tipo_tax-producto" data-id="998" style="animation-delay:0.1s">
-		<div class="w-grid-item-h">
-						<div class="w-post-elm post_image usg_post_image_1 product-image-thumb has_ratio">
-<div style="padding-bottom:75%"></div>
-<a href="airsense-pro.html" aria-label="AIRSENSE PRO"><img loading="lazy" decoding="async" width="1152" height="747" src="assets/airsense-pro-docx/image8.png" class="attachment-large size-large wp-post-image" alt="AIRSENSE PRO"></a>
+<div class="services-mosaic">
+<a class="service-visual-card large" href="soluciones-5g-privadas.html">
+<img src="assets/images/comunicaciones-privadas-edge-heatmap.jpeg" alt="Presentaci&oacute;n sobre latencia IoT, edge y DECT NR para comunicaciones privadas">
+<span class="service-visual-copy"><span class="service-visual-tag">5G privado</span><h3>Comunicaciones privadas</h3><p>Redes privadas, DECT NR+ y conectividad cr&iacute;tica para despliegues IoT avanzados.</p><span class="service-visual-arrow" aria-hidden="true">&rsaquo;</span></span>
+</a>
+<div class="services-tile-grid">
+<a class="service-visual-card" href="industria.html">
+<img src="assets/industria-principal.jpg" alt="Servicio industrial de Qartia">
+<span class="service-visual-copy"><span class="service-visual-tag">Industria</span><h3>Industria</h3><p>Monitorizaci&oacute;n de activos cr&iacute;ticos, mantenimiento predictivo y sens&oacute;rica industrial.</p><span class="service-visual-arrow" aria-hidden="true">&rsaquo;</span></span>
+</a>
+<a class="service-visual-card" href="civil.html">
+<img src="assets/images/infraestructura-iot-torre.jpg" alt="Servicio para infraestructuras civiles de Qartia">
+<span class="service-visual-copy"><span class="service-visual-tag">Civil</span><h3>Infraestructuras civiles</h3><p>IoT, cobertura, comunicaciones y sensorizaci&oacute;n para obra civil, territorio e infraestructuras.</p><span class="service-visual-arrow" aria-hidden="true">&rsaquo;</span></span>
+</a>
+<a class="service-visual-card" href="medioambiente.html">
+<img src="assets/medioambiente/dispositivos-cabecera.png" alt="Servicio medioambiental de Qartia con equipos instalados sobre pared lisa">
+<span class="service-visual-copy"><span class="service-visual-tag">Medioambiente</span><h3>Medioambiente</h3><p>Calidad del aire, ruido, alertas y anal&iacute;tica para industria, ciudad y territorio.</p><span class="service-visual-arrow" aria-hidden="true">&rsaquo;</span></span>
+</a>
+<a class="service-visual-card" href="agricultura.html">
+<img src="assets/images/ingenieria-agro-node-solar.jpeg" alt="Servicio de agricultura inteligente de Qartia">
+<span class="service-visual-copy"><span class="service-visual-tag">Agro</span><h3>Agricultura inteligente</h3><p>Sensorizaci&oacute;n, conectividad e inteligencia artificial para explotaciones, invernaderos y proyectos agrivoltaicos.</p><span class="service-visual-arrow" aria-hidden="true">&rsaquo;</span></span>
+</a>
 </div>
-<h2 class="w-post-elm post_title usg_post_title_1 entry-title color_link_inherit"><a href="airsense-pro.html">AIRSENSE PRO</a></h2>
-<div class="w-post-elm post_content usg_post_content_1">
-<p>Gases criterio y material particulado en un &uacute;nico equipo conectado</p>
 </div>
-<div class="w-hwrapper usg_hwrapper_1 align_center valign_middle" style="--hwrapper-gap:1.20rem"><a class="w-btn us-btn-style_1 usg_btn_1" href="airsense-pro.html"><span class="w-btn-label">Ver m&aacute;s</span></a></div>		</div>
-	</article>
-	<article class="w-grid-item us_animate_fade size_1x1 post-137 producto type-producto status-publish has-post-thumbnail hentry tipo_tax-producto" data-id="137" style="animation-delay:0.2s">
-		<div class="w-grid-item-h">
-						<div class="w-post-elm post_image usg_post_image_1 product-image-thumb has_ratio">
-<div style="padding-bottom:75%"></div>
-<a href="megamia.html" aria-label="MEGAMIA"><img loading="lazy" decoding="async" width="800" height="600" src="assets/images/megamia-device.png" class="attachment-large size-large wp-post-image" alt="MEGAMIA"></a>
 </div>
-<h2 class="w-post-elm post_title usg_post_title_1 entry-title color_link_inherit"><a href="megamia.html">MEGAMIA</a></h2>
-<div class="w-post-elm post_content usg_post_content_1">
-<p>Monitorizaci&oacute;n continua de gases criterio para calidad del aire, industria y entorno urbano.</p>
+</section><section id="nuestros-productos" class="l-section wpb_row local-clone-section services-showcase products-showcase height_auto">
+<div class="local-shell">
+<div class="services-visual-header">
+<div>
+<span class="local-kicker">Nuestros productos</span>
+<h2>Equipos y plataformas listas para medir, conectar y escalar</h2>
 </div>
-<div class="w-hwrapper usg_hwrapper_1 align_center valign_middle" style="--hwrapper-gap:1.20rem"><a class="w-btn us-btn-style_1 usg_btn_1" href="megamia.html"><span class="w-btn-label">Ver m&aacute;s</span></a></div>		</div>
-	</article>
-	<article class="w-grid-item us_animate_fade size_1x1 post-136 producto type-producto status-publish has-post-thumbnail hentry tipo_tax-producto" data-id="136" style="animation-delay:0.3s">
-		<div class="w-grid-item-h">
-						<div class="w-post-elm post_image usg_post_image_1 product-image-thumb has_ratio">
-<div style="padding-bottom:75%"></div>
-<a href="dipason-exterior.html" aria-label="DIPASON"><img loading="lazy" decoding="async" width="800" height="600" src="assets/images/dipason-device.png" class="attachment-large size-large wp-post-image" alt="DIPASON"></a>
 </div>
-<h2 class="w-post-elm post_title usg_post_title_1 entry-title color_link_inherit"><a href="dipason-exterior.html">DIPASON</a></h2>
-<div class="w-post-elm post_content usg_post_content_1">
-<p>Medici&oacute;n de part&iacute;culas y despliegues ambientales e industriales con electr&oacute;nica propia.</p>
+<div class="products-grid">
+<a class="service-visual-card" href="vibrasense.html">
+<img src="assets/images/vibrasense.png" alt="Producto VibraSense de Qartia">
+<span class="service-visual-copy"><span class="service-visual-tag">Industria</span><h3>VibraSense</h3><p>Mantenimiento predictivo por vibraciones para activos rotativos y despliegues industriales conectados.</p><span class="service-visual-arrow" aria-hidden="true">&rsaquo;</span></span>
+</a>
+<a class="service-visual-card" href="airsense-pro.html">
+<img src="assets/airsense-pro-docx/image8.png" alt="Producto AIRSENSE PRO de Qartia">
+<span class="service-visual-copy"><span class="service-visual-tag">Aire</span><h3>AIRSENSE PRO</h3><p>Gases criterio y material particulado en un &uacute;nico equipo conectado.</p><span class="service-visual-arrow" aria-hidden="true">&rsaquo;</span></span>
+</a>
+<a class="service-visual-card" href="megamia.html">
+<img src="assets/images/megamia-device.png" alt="Producto MEGAMIA de Qartia">
+<span class="service-visual-copy"><span class="service-visual-tag">Ambiente</span><h3>MEGAMIA</h3><p>Monitorizaci&oacute;n continua de gases criterio para calidad del aire, industria y entorno urbano.</p><span class="service-visual-arrow" aria-hidden="true">&rsaquo;</span></span>
+</a>
+<a class="service-visual-card" href="dipason-exterior.html">
+<img src="assets/images/dipason-device.png" alt="Producto DIPASON de Qartia">
+<span class="service-visual-copy"><span class="service-visual-tag">Part&iacute;culas</span><h3>DIPASON</h3><p>Medici&oacute;n de part&iacute;culas y despliegues ambientales e industriales con electr&oacute;nica propia.</p><span class="service-visual-arrow" aria-hidden="true">&rsaquo;</span></span>
+</a>
+<a class="service-visual-card" href="Biosentia.html">
+<img src="assets/images/biosentia-product-render.png" alt="Producto Biosentia de Qartia">
+<span class="service-visual-copy"><span class="service-visual-tag">Bio</span><h3>Biosentia</h3><p>Plataforma de sensado electroqu&iacute;mico para diagn&oacute;stico port&aacute;til y anal&iacute;tica aplicada.</p><span class="service-visual-arrow" aria-hidden="true">&rsaquo;</span></span>
+</a>
+<a class="service-visual-card" href="noisement.html">
+<img src="assets/images/noisement-device-photo-card.jpg" alt="Dispositivo de ruido NoiseMent de Qartia">
+<span class="service-visual-copy"><span class="service-visual-tag">Ruido</span><h3>NoiseMent</h3><p>Vigilancia ac&uacute;stica continua para industria, ciudad e infraestructuras.</p><span class="service-visual-arrow" aria-hidden="true">&rsaquo;</span></span>
+</a>
 </div>
-<div class="w-hwrapper usg_hwrapper_1 align_center valign_middle" style="--hwrapper-gap:1.20rem"><a class="w-btn us-btn-style_1 usg_btn_1" href="dipason-exterior.html"><span class="w-btn-label">Ver m&aacute;s</span></a></div>		</div>
-	</article>
-	<article class="w-grid-item us_animate_fade size_1x1 post-397 producto type-producto status-publish has-post-thumbnail hentry tipo_tax-producto" data-id="397" style="animation-delay:0.4s">
-		<div class="w-grid-item-h">
-						<div class="w-post-elm post_image usg_post_image_1 product-image-thumb has_ratio">
-<div style="padding-bottom:75%"></div>
-<a href="Biosentia.html" aria-label="Biosentia"><img loading="lazy" decoding="async" width="500" height="360" src="assets/images/biosentia-product-render.png" class="attachment-large size-large wp-post-image" alt="Biosentia" sizes="auto, (max-width: 500px) 100vw, 500px"></a>
 </div>
-<h2 class="w-post-elm post_title usg_post_title_1 entry-title color_link_inherit"><a href="Biosentia.html">Biosentia</a></h2>
-<div class="w-post-elm post_content usg_post_content_1">
-<p>Plataforma de sensado electroqu&iacute;mico para salud, deporte, alimentaci&oacute;n y diagn&oacute;stico port&aacute;til</p>
-</div>
-<div class="w-hwrapper usg_hwrapper_1 align_center valign_middle" style="--hwrapper-gap:1.20rem"><a class="w-btn us-btn-style_1 usg_btn_1" href="Biosentia.html"><span class="w-btn-label">Ver m&aacute;s</span></a></div>		</div>
-	</article>
-	<article class="w-grid-item us_animate_fade size_1x1 post-502 producto type-producto status-publish has-post-thumbnail hentry tipo_tax-producto" data-id="502" style="animation-delay:0.5s">
-		<div class="w-grid-item-h">
-						<div class="w-post-elm post_image usg_post_image_1 product-image-thumb has_ratio">
-<div style="padding-bottom:75%"></div>
-<a href="noisement.html" aria-label="NoiseMent"><img loading="lazy" decoding="async" width="800" height="600" src="assets/images/noisement-device.png" class="attachment-large size-large wp-post-image" alt="NoiseMent"></a>
-</div>
-<h2 class="w-post-elm post_title usg_post_title_1 entry-title color_link_inherit"><a href="noisement.html">NoiseMent</a></h2>
-<div class="w-post-elm post_content usg_post_content_1">Vigilancia ac&uacute;stica continua para industria, ciudad e infraestructuras.</div>
-<div class="w-hwrapper usg_hwrapper_1 align_center valign_middle" style="--hwrapper-gap:1.20rem"><a class="w-btn us-btn-style_1 usg_btn_1" href="noisement.html"><span class="w-btn-label">Ver m&aacute;s</span></a></div>		</div>
-	</article>
-</div>
-<div class="w-grid-preloader">
-<div class="g-preloader type_1">
-	<div></div>
-</div>
-</div>	<div class="w-grid-json hidden" onclick='return {"action":"us_ajax_grid","ajax_url":"https:\/\/qartia.com\/wp-admin\/admin-ajax.php","infinite_scroll":0,"max_num_pages":1,"pagination":"none","permalink_url":"https:\/\/qartia.com","template_vars":{"columns":"3","exclude_items":"none","img_size":"default","ignore_items_size":0,"items_layout":"138","items_offset":"1","load_animation":"fade","overriding_link":"none","post_id":8,"query_args":{"post_type":["producto"],"tax_query":[{"taxonomy":"tipo_tax","field":"slug","terms":["producto"]}],"post_status":["publish","acf-disabled"],"post__not_in":[8],"posts_per_page":"6"},"orderby_query_args":{"orderby":{"date":"DESC"}},"type":"grid","us_grid_ajax_index":1,"us_grid_filter_params":null,"us_grid_index":1,"_us_grid_post_type":"producto"}}'></div>
-	</div>
-</div></div></div></div></div></section>
+</section>
 <section class="l-section wpb_row us_custom_42030adc height_large color_primary"><div class="l-section-h i-cf"><div class="g-cols vc_row via_flex valign_top type_default stacking_default">
 <div class="vc_col-sm-8 wpb_column vc_column_container"><div class="vc_column-inner"><div class="wpb_wrapper"><div class="wpb_text_column cta-home"><div class="wpb_wrapper">
 <h3><strong>&iquest;Quieres recibir m&aacute;s informaci&oacute;n?</strong></h3>
@@ -928,7 +947,7 @@ gform.initializeOnLoaded( function() { jQuery(document).trigger('gform_post_rend
   // Change these two values if you want another rhythm:
   // SLIDE_DELAY = time each image stays visible.
   // FADE_SPEED = duration of the fade transition.
-  var SLIDE_DELAY = 4000; // 9 seconds
+  var SLIDE_DELAY = 5000; // 9 seconds
   var FADE_SPEED = 2000; // 2 seconds
   var timer = null;
 
@@ -1054,5 +1073,6 @@ gform.initializeOnLoaded( function() { jQuery(document).trigger('gform_post_rend
 })();
 </script>
 
+<script src="assets/js/qartia-form-mailto.js"></script>
 </body>
 </html>
