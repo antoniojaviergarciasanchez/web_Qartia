@@ -457,6 +457,139 @@
         line-height: 1.5;
       }
 
+      .architecture-flow-panel {
+        margin: 34px 0 28px;
+        padding: clamp(20px, 2.6vw, 30px);
+        border: 1px solid rgba(54, 222, 184, .28);
+        border-radius: 8px;
+        background:
+          linear-gradient(135deg, rgba(7, 52, 61, .98), rgba(20, 78, 156, .94));
+        box-shadow: var(--shadow);
+        color: #fff;
+      }
+
+      .architecture-flow-header {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) auto;
+        gap: 22px;
+        align-items: end;
+        margin-bottom: 22px;
+      }
+
+      .architecture-flow-kicker {
+        display: inline-flex;
+        width: fit-content;
+        margin-bottom: 10px;
+        padding: 7px 10px;
+        border: 1px solid rgba(54, 222, 184, .34);
+        border-radius: 999px;
+        background: rgba(54, 222, 184, .12);
+        color: #36deb8;
+        font-family: "Rubik", sans-serif;
+        font-size: .72rem;
+        font-weight: 800;
+        letter-spacing: .08em;
+        line-height: 1;
+        text-transform: uppercase;
+      }
+
+      .architecture-flow-header h3 {
+        margin: 0;
+        max-width: 760px;
+        color: #fff;
+        font-family: "Rubik", sans-serif;
+        font-size: clamp(1.38rem, 2vw, 2.08rem);
+        font-weight: 500;
+        line-height: 1.12;
+      }
+
+      .architecture-flow-header p {
+        margin: 10px 0 0;
+        max-width: 700px;
+        color: rgba(255, 255, 255, .78);
+        font-size: .98rem;
+      }
+
+      .architecture-value-badge {
+        display: inline-flex;
+        max-width: 220px;
+        align-items: center;
+        justify-content: center;
+        padding: 12px 14px;
+        border-radius: 8px;
+        background: #36deb8;
+        color: #07343d;
+        font-family: "Rubik", sans-serif;
+        font-size: .82rem;
+        font-weight: 800;
+        line-height: 1.25;
+        text-align: center;
+        text-transform: uppercase;
+      }
+
+      .architecture-flow {
+        display: grid;
+        grid-template-columns: repeat(7, minmax(0, 1fr));
+        gap: 12px;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .architecture-flow li {
+        position: relative;
+        min-height: 116px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 12px;
+        padding: 14px 11px;
+        border: 1px solid rgba(54, 222, 184, .22);
+        border-radius: 8px;
+        background: rgba(255, 255, 255, .96);
+        box-shadow: 0 14px 24px rgba(0, 0, 0, .14);
+      }
+
+      .architecture-flow li:not(:last-child)::after {
+        content: "→";
+        position: absolute;
+        top: 50%;
+        right: -15px;
+        z-index: 2;
+        transform: translateY(-50%);
+        color: #36deb8;
+        font-weight: 800;
+        line-height: 1;
+      }
+
+      .architecture-step-number {
+        display: inline-flex;
+        width: 30px;
+        height: 30px;
+        align-items: center;
+        justify-content: center;
+        border-radius: 999px;
+        background: #36deb8;
+        color: #07343d;
+        font-size: .72rem;
+        font-weight: 800;
+      }
+
+      .architecture-flow strong {
+        display: block;
+        color: #07343d;
+        font-family: "Rubik", sans-serif;
+        font-size: .94rem;
+        line-height: 1.18;
+      }
+
+      .architecture-flow small {
+        display: block;
+        color: #5a6670;
+        font-size: .78rem;
+        line-height: 1.35;
+      }
+
       .brochure-split {
         grid-template-columns: minmax(0, 1.08fr) minmax(320px, 0.92fr);
         align-items: start;
@@ -692,8 +825,26 @@
         .benefits-grid,
         .civil-benefits-visual-grid,
         .civil-applications-visual-grid,
+        .architecture-flow,
         .phase-grid {
           grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .architecture-flow {
+          gap: 16px;
+        }
+
+        .architecture-flow-header {
+          grid-template-columns: 1fr;
+          align-items: start;
+        }
+
+        .architecture-value-badge {
+          justify-self: start;
+        }
+
+        .architecture-flow li:not(:last-child)::after {
+          display: none;
         }
       }
 
@@ -736,8 +887,13 @@
         .benefits-grid,
         .civil-benefits-visual-grid,
         .civil-applications-visual-grid,
+        .architecture-flow,
         .phase-grid {
           grid-template-columns: 1fr;
+        }
+
+        .architecture-flow-panel {
+          padding: 18px;
         }
 
         .civil-benefit-card {
@@ -943,10 +1099,57 @@
           <div class="section-inner">
             <span class="eyebrow">Arquitectura de la solución</span>
             <h2 class="lead-title">Del sensor físico al aviso accionable.</h2>
+            <div class="architecture-flow-panel" aria-label="Flujo de arquitectura de la solución">
+              <div class="architecture-flow-header">
+                <div>
+                  <span class="architecture-flow-kicker">Arquitectura modular Qartia</span>
+                  <h3>De la señal al plan de acción, con trazabilidad completa.</h3>
+                  <p>Un flujo extremo a extremo para convertir mediciones de campo en decisiones rápidas de operación, mantenimiento y seguridad.</p>
+                </div>
+                <span class="architecture-value-badge">Dato fiable → decisión rápida</span>
+              </div>
+              <ol class="architecture-flow">
+                <li>
+                  <span class="architecture-step-number">01</span>
+                  <strong>Sensores</strong>
+                  <small>Captura fiable del activo</small>
+                </li>
+                <li>
+                  <span class="architecture-step-number">02</span>
+                  <strong>Equipo de adquisición</strong>
+                  <small>Dato limpio y preparado</small>
+                </li>
+                <li>
+                  <span class="architecture-step-number">03</span>
+                  <strong>LoRa</strong>
+                  <small>Cobertura IoT eficiente</small>
+                </li>
+                <li>
+                  <span class="architecture-step-number">04</span>
+                  <strong>Router LoRa/5G</strong>
+                  <small>Salida segura a plataforma</small>
+                </li>
+                <li>
+                  <span class="architecture-step-number">05</span>
+                  <strong>Cloud Qartia</strong>
+                  <small>Histórico, reglas y gobierno</small>
+                </li>
+                <li>
+                  <span class="architecture-step-number">06</span>
+                  <strong>Dashboard / Gemelo Digital / IA</strong>
+                  <small>Visión operativa e inteligencia</small>
+                </li>
+                <li>
+                  <span class="architecture-step-number">07</span>
+                  <strong>Alertas</strong>
+                  <small>Respuesta temprana</small>
+                </li>
+              </ol>
+            </div>
             <div class="brochure-split">
               <div class="civil-stack">
                 <div class="brochure-card">
-                  <h3>Sensores → Equipo de adquisición → LoRa → Router LoRa/5G → Cloud Qartia → Dashboard / Gemelo Digital / IA → Alertas</h3>
+                  <h3>Datos conectados desde campo hasta operación.</h3>
                   <p>La plataforma se apoya en adquisición de campo, red IoT, backhaul seguro, nube Qartia y modelos inteligentes para transformar medición técnica en operación preventiva.</p>
                   <ul class="feature-list">
                     <li>Conversión de señales analógicas y digitales desde sensores estructurales y ambientales.</li>
