@@ -1,0 +1,445 @@
+html {
+  overflow-x: hidden;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+img,
+video,
+iframe,
+svg {
+  max-width: 100%;
+}
+
+.mobile-nav-toggle {
+  display: none;
+  position: relative;
+  width: 44px;
+  height: 44px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(20, 78, 156, 0.16);
+  border-radius: 10px;
+  background: #fff;
+  color: #144e9c;
+  cursor: pointer;
+}
+
+.mobile-nav-toggle-lines,
+.mobile-nav-toggle-lines::before,
+.mobile-nav-toggle-lines::after {
+  display: block;
+  width: 20px;
+  height: 2px;
+  border-radius: 999px;
+  background: currentColor;
+  transition: transform .18s ease, opacity .18s ease;
+}
+
+.mobile-nav-toggle-lines {
+  position: relative;
+}
+
+.mobile-nav-toggle-lines::before,
+.mobile-nav-toggle-lines::after {
+  content: "";
+  position: absolute;
+  left: 0;
+}
+
+.mobile-nav-toggle-lines::before {
+  top: -7px;
+}
+
+.mobile-nav-toggle-lines::after {
+  top: 7px;
+}
+
+.mobile-nav-label {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+@media (max-width: 1024px) {
+  .section-inner,
+  .hero-inner,
+  .footer-inner,
+  .subfooter-inner {
+    width: min(100% - 32px, 1140px);
+  }
+
+  .intro-grid,
+  .content-grid,
+  .systems-grid,
+  .cta-grid,
+  .spec-grid,
+  .detail-grid,
+  .phase-grid,
+  .kpi-grid,
+  .feature-grid,
+  .brochure-grid,
+  .brochure-grid.two-cols,
+  .brochure-grid.four-cols,
+  .brochure-split,
+  .solution-visual-grid,
+  .applications-grid,
+  .benefits-grid,
+  .products-grid,
+  .cards-grid,
+  .value-strip,
+  .footer-inner {
+    grid-template-columns: 1fr !important;
+  }
+
+  .header-inner {
+    gap: 14px;
+  }
+
+  .nav {
+    justify-content: center;
+  }
+
+  .product-showcase,
+  .content-copy-card,
+  .visual-card,
+  .spec-card.highlight,
+  .photo-card,
+  .system-panel {
+    grid-column: auto !important;
+  }
+}
+
+@media (max-width: 767px) {
+  .topbar-inner {
+    justify-content: center !important;
+    gap: 8px 12px !important;
+    padding: 8px 0 !important;
+    text-align: center;
+  }
+
+  .topbar-inner a {
+    font-size: .78rem;
+    line-height: 1.2;
+  }
+
+  .topbar .qartia-linkedin-icon {
+    width: 24px;
+    height: 24px;
+  }
+
+  .header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+
+  .header-inner {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) auto !important;
+    width: min(100% - 24px, 1140px) !important;
+    align-items: center !important;
+    gap: 10px 12px !important;
+    padding: 10px 0 !important;
+  }
+
+  .header-inner .logo,
+  .logo {
+    justify-self: start !important;
+    transform: none !important;
+  }
+
+  .logo img {
+    width: 142px !important;
+    height: auto !important;
+  }
+
+  .mobile-nav-toggle {
+    display: inline-flex !important;
+    justify-self: end;
+  }
+
+  .header.nav-open .mobile-nav-toggle {
+    background: rgba(20, 78, 156, 0.08);
+  }
+
+  .header.nav-open .mobile-nav-toggle-lines {
+    transform: rotate(45deg);
+  }
+
+  .header.nav-open .mobile-nav-toggle-lines::before {
+    transform: translateY(7px) rotate(90deg);
+  }
+
+  .header.nav-open .mobile-nav-toggle-lines::after {
+    opacity: 0;
+  }
+
+  .nav {
+    display: none !important;
+    grid-column: 1 / -1 !important;
+    width: 100% !important;
+    max-height: calc(100vh - 118px);
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    justify-content: flex-start !important;
+    gap: 8px !important;
+    padding: 8px 0 2px !important;
+  }
+
+  .header.nav-open .nav {
+    display: flex !important;
+  }
+
+  .nav > a,
+  .nav-toggle {
+    display: flex !important;
+    width: 100% !important;
+    min-height: 42px;
+    align-items: center !important;
+    justify-content: space-between !important;
+    box-sizing: border-box;
+    padding: 10px 12px !important;
+    border: 1px solid rgba(20, 78, 156, 0.12) !important;
+    border-radius: 8px !important;
+    background: #fff !important;
+    color: #144e9c !important;
+    font-size: .78rem !important;
+    line-height: 1.2 !important;
+    text-align: left !important;
+  }
+
+  .nav-group {
+    width: 100% !important;
+    display: block !important;
+  }
+
+  .nav-group:hover .nav-dropdown {
+    display: none !important;
+  }
+
+  .nav-group.open .nav-dropdown {
+    display: flex !important;
+  }
+
+  .nav-dropdown {
+    position: static !important;
+    inset: auto !important;
+    min-width: 0 !important;
+    width: 100% !important;
+    transform: none !important;
+    margin-top: 6px !important;
+    padding: 8px !important;
+    border: 1px solid rgba(20, 78, 156, 0.12) !important;
+    border-radius: 12px !important;
+    box-shadow: none !important;
+  }
+
+  .nav-dropdown a,
+  .nav-subtoggle {
+    min-height: 38px;
+    box-sizing: border-box;
+    font-size: .76rem !important;
+    line-height: 1.22 !important;
+  }
+
+  .nav-submenu {
+    margin-left: 0 !important;
+    padding-left: 10px !important;
+  }
+
+  .nav-submenu a {
+    font-size: .72rem !important;
+  }
+
+  .hero {
+    min-height: auto;
+  }
+
+  .hero-inner {
+    width: min(100% - 32px, 1140px) !important;
+    padding-top: clamp(58px, 16vw, 92px) !important;
+    padding-bottom: clamp(58px, 16vw, 92px) !important;
+  }
+
+  .hero h1,
+  .hero-inner h1 {
+    font-size: clamp(2rem, 12vw, 3.1rem) !important;
+    line-height: 1.02 !important;
+    overflow-wrap: anywhere;
+  }
+
+  .hero p,
+  .hero-inner p,
+  .lead-title {
+    font-size: clamp(1.55rem, 8vw, 2.25rem) !important;
+    line-height: 1.08 !important;
+  }
+
+  .eyebrow::before {
+    display: none !important;
+  }
+
+  .lead-title {
+    margin-left: 0 !important;
+  }
+
+  .section,
+  .content-section,
+  .intro-section,
+  .brochure-section,
+  .systems-section,
+  .specs-section,
+  .cta-section,
+  .catalog-section {
+    padding-top: 52px !important;
+    padding-bottom: 52px !important;
+  }
+
+  .section-inner,
+  .footer-inner,
+  .subfooter-inner {
+    width: min(100% - 32px, 1140px) !important;
+  }
+
+  .l-section-h > .g-cols.via_flex,
+  .l-section-h > .g-cols.via_grid,
+  .g-cols.via_flex,
+  .g-cols.via_grid {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  .g-cols.via_flex > .wpb_column,
+  .g-cols.via_grid > .wpb_column,
+  .g-cols.via_flex > div,
+  .g-cols.via_grid > div {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  .card,
+  .info-card,
+  .spec-card,
+  .brochure-card,
+  .phase-card,
+  .kpi-card,
+  .topic-card,
+  .subtopic-card,
+  .product-card,
+  .civil-benefit-card,
+  .capability-visual-card,
+  .service-visual-card,
+  .content-copy-card,
+  .visual-card,
+  .photo-card,
+  .system-panel {
+    border-radius: 10px !important;
+  }
+
+  .card,
+  .info-card,
+  .spec-card,
+  .brochure-card,
+  .phase-card,
+  .kpi-card,
+  .topic-card,
+  .subtopic-card,
+  .content-copy-card,
+  .system-panel {
+    padding: 20px !important;
+  }
+
+  .phase-card,
+  .info-card,
+  .brochure-card,
+  .product-card,
+  .service-visual-card,
+  .capability-visual-card,
+  .civil-benefit-card {
+    transform: none !important;
+  }
+
+  .visual-card,
+  .photo-card,
+  .intro-visual,
+  .product-showcase,
+  .cta-image,
+  .contain-image {
+    min-height: auto !important;
+  }
+
+  .visual-card img,
+  .photo-card img,
+  .intro-visual img,
+  .product-showcase img,
+  .cta-image img,
+  .contain-image img {
+    width: 100% !important;
+    height: auto !important;
+    max-height: 420px;
+    object-fit: contain !important;
+  }
+
+  .feature-list,
+  .copy,
+  .section-copy,
+  .product-card-body,
+  .card p,
+  .info-card p,
+  .spec-card p,
+  .brochure-card p {
+    font-size: .96rem !important;
+    line-height: 1.55 !important;
+  }
+
+  .footer-inner,
+  .subfooter-inner {
+    text-align: left;
+    gap: 22px !important;
+  }
+
+  .footer-eibt-badge {
+    min-width: 0 !important;
+    justify-content: flex-start !important;
+  }
+
+  .footer-eibt-badge img {
+    width: min(300px, 100%) !important;
+    margin-left: 0 !important;
+    margin-right: auto !important;
+  }
+}
+
+@media (max-width: 380px) {
+  .logo img {
+    width: 132px !important;
+  }
+
+  .topbar-inner {
+    width: min(100% - 16px, 1140px) !important;
+  }
+
+  .nav > a,
+  .nav-toggle {
+    font-size: .74rem !important;
+  }
+
+  .section-inner,
+  .hero-inner,
+  .footer-inner,
+  .subfooter-inner {
+    width: min(100% - 28px, 1140px) !important;
+  }
+}
