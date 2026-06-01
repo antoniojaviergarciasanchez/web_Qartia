@@ -76,7 +76,7 @@
         <p class="qartia-cookie-kicker">Cookies</p>
         <h2 class="qartia-cookie-title">Tu privacidad es importante</h2>
         <p class="qartia-cookie-text">
-          Utilizamos cookies necesarias para que la web funcione correctamente. Al aceptar confirmas que has leído y aceptas nuestra
+          Usamos cookies necesarias para que la web funcione. Al aceptar confirmas que has leído y aceptas nuestra
           <a class="qartia-cookie-link" href="${getPolicyHref()}">Política de cookies</a>.
         </p>
       </div>

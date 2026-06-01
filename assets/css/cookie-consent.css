@@ -154,20 +154,64 @@ body.qartia-cookie-locked {
 
 @media (max-width: 760px) {
   .qartia-cookie-banner {
-    right: 14px;
-    bottom: 14px;
-    left: 14px;
+    right: 12px;
+    bottom: 12px;
+    left: 12px;
     flex-direction: column;
     align-items: stretch;
-    padding: 18px;
+    gap: 12px;
+    max-height: min(72vh, 430px);
+    overflow-y: auto;
+    padding: 14px;
+    border-radius: 18px;
+  }
+
+  .qartia-cookie-kicker {
+    margin-bottom: 4px;
+    font-size: 10px;
+    letter-spacing: .13em;
+  }
+
+  .qartia-cookie-title {
+    margin-bottom: 5px;
+    font-size: 18px;
+    line-height: 1.12;
+  }
+
+  .qartia-cookie-text {
+    font-size: 13px;
+    line-height: 1.4;
   }
 
   .qartia-cookie-actions {
     flex-direction: column;
     align-items: stretch;
+    gap: 8px;
   }
 
   .qartia-cookie-btn {
     width: 100%;
+    padding: 10px 14px;
+  }
+}
+
+@media (max-width: 380px) {
+  .qartia-cookie-banner {
+    right: 10px;
+    bottom: 10px;
+    left: 10px;
+    padding: 13px;
+  }
+
+  .qartia-cookie-title {
+    font-size: 16px;
+  }
+
+  .qartia-cookie-text {
+    font-size: 12px;
+  }
+
+  .qartia-cookie-btn {
+    padding: 9px 12px;
   }
 }

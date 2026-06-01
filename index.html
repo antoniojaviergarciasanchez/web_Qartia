@@ -200,14 +200,73 @@ html { scroll-behavior: smooth; }
 .us_custom_63ae8536 .wpb_wrapper { position: relative; inset: auto; width: 100%; min-height: 100%; flex: 1; display: flex; }
 .te-ayudamos-photo { width: 100%; min-height: 100%; display: flex; flex: 1; align-items: stretch; justify-content: stretch; padding: 0; background: #e8faf9; }
 .te-ayudamos-photo img { width: 100%; height: 100%; min-height: 520px; object-fit: cover; object-position: center center; display: block; }
+.servicios-home { overflow: hidden; }
+.servicios-home > .l-section-h { width: 100%; max-width: none; padding-left: 0 !important; padding-right: 0 !important; }
+.servicios-home .g-cols.via_flex { width: 100%; margin-left: 0 !important; margin-right: 0 !important; }
+.cta-form { overflow: hidden; }
+.cta-form > .l-section-h { width: 100%; max-width: none; padding-left: 0 !important; padding-right: 0 !important; }
+.cta-form .g-cols.via_flex.valign_top { width: 100%; margin-left: 0 !important; margin-right: 0 !important; }
 .l-header .ush_menu_1 { font-size: 0.82rem !important; }
 .l-header .ush_menu_1.type_desktop .w-nav-list.level_1 { flex-wrap: wrap; justify-content: flex-end; }
 .l-header .ush_menu_1.type_desktop .menu-item.level_1 > a { padding-left: 0.7rem; padding-right: 0.7rem; }
 .l-header .ush_menu_1.type_desktop .w-nav-list.level_3 { margin: 0.35rem 0 0.45rem 1rem; padding-left: 0.85rem; border-left: 2px solid rgba(20,78,156,0.14); }
 .l-header .ush_menu_1.type_desktop .w-nav-list.level_3 .w-nav-anchor.level_3 { font-size: 0.74rem; padding-top: 0.45rem; padding-bottom: 0.45rem; }
-@media (max-width: 1024px) { #page-content .local-card, #page-content .local-card.local-wide { grid-column: span 6; } #page-content .local-news-grid, #page-content .local-client-grid { grid-template-columns: 1fr; } #page-content .services-visual-header { grid-template-columns: 1fr; align-items: start; } #page-content .services-all-link { justify-self: start; } #page-content .services-mosaic { grid-template-columns: 1fr; } #page-content .products-grid { grid-template-columns: repeat(2,minmax(0,1fr)); } #page-content .service-visual-card.large { min-height: 390px; } }
+@media (max-width: 1024px) {
+  #page-content .local-card,
+  #page-content .local-card.local-wide { grid-column: span 6; }
+  #page-content .local-news-grid,
+  #page-content .local-client-grid { grid-template-columns: 1fr; }
+  #page-content .services-visual-header { grid-template-columns: 1fr; align-items: start; }
+  #page-content .services-all-link { justify-self: start; }
+  #page-content .services-mosaic { grid-template-columns: 1fr; }
+  #page-content .products-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
+  #page-content .service-visual-card.large { min-height: 390px; }
+}
 @media (max-width: 900px) { .te-ayudamos-photo { min-height: 560px; } }
-@media (max-width: 767px) { #page-content .local-shell { padding: 0 20px; } #page-content .local-card, #page-content .local-card.local-wide { grid-column: 1 / -1; } #page-content .local-clone-section { padding-top: 56px; padding-bottom: 56px; } #page-content .local-video-shell { padding: 56px 20px; } #page-content .local-video-kicker::before, #page-content .local-video-kicker::after { width: 24px; } #page-content .local-video-play { width: 74px; height: 74px; } #page-content .local-video-play::before { border-width: 14px 0 14px 24px; } #page-content .services-all-link { width: 100%; } #page-content .services-tile-grid, #page-content .products-grid { grid-template-columns: 1fr; } #page-content .service-visual-card, #page-content .service-visual-card.large { min-height: 280px; } #page-content .service-visual-copy, #page-content .service-visual-card.large .service-visual-copy { padding: 20px 64px 20px 20px; } .te-ayudamos-photo { min-height: 520px; } }
+@media (max-width: 767px) {
+  body { overflow-x: hidden; }
+  #top.l-section.with_slider { min-height: 520px; }
+  #top.l-section.with_slider .l-section-h { min-height: 520px; padding-top: 84px; padding-bottom: 42px; }
+  #top .textos-slider-home { max-width: 100%; padding: 0 18px; }
+  #top .textos-slider-home h1 { font-size: clamp(2rem,10vw,2.55rem) !important; line-height: 1.06; }
+  #top .textos-slider-home h2 { font-size: clamp(1.05rem,5.5vw,1.45rem) !important; line-height: 1.2; }
+  #page-content .local-shell { padding: 0 16px; }
+  #page-content .local-card,
+  #page-content .local-card.local-wide { grid-column: 1 / -1; }
+  #page-content .local-clone-section { padding: 54px 0; }
+  #page-content .local-clone-section h2 { font-size: clamp(1.75rem,8vw,2.35rem); line-height: 1.08; }
+  #page-content .local-intro { font-size: 1rem; line-height: 1.62; }
+  #page-content .local-video-shell { padding: 52px 16px; }
+  #page-content .local-video-kicker { gap: 8px; font-size: .78rem; letter-spacing: .08em; }
+  #page-content .local-video-kicker::before,
+  #page-content .local-video-kicker::after { width: 22px; }
+  #page-content .local-video-frame { border-radius: 14px; }
+  #page-content .local-video-play { width: 70px; height: 70px; }
+  #page-content .local-video-play::before { border-width: 13px 0 13px 22px; }
+  #page-content .services-all-link { width: 100%; }
+  #page-content .services-visual-header { margin-bottom: 20px; }
+  #page-content .services-mosaic,
+  #page-content .services-tile-grid,
+  #page-content .products-grid { grid-template-columns: 1fr; gap: 14px; }
+  #page-content .service-visual-card,
+  #page-content .service-visual-card.large { min-height: 292px; }
+  #page-content .service-visual-card.large h3 { font-size: clamp(1.58rem,8vw,2.05rem); }
+  #page-content .service-visual-card h3 { font-size: clamp(1.28rem,6.5vw,1.58rem); }
+  #page-content .service-visual-card p { font-size: .92rem; line-height: 1.42; }
+  #page-content .service-visual-copy,
+  #page-content .service-visual-card.large .service-visual-copy { padding: 20px 58px 20px 18px; }
+  #page-content .service-visual-arrow { right: 14px; bottom: 14px; width: 34px; height: 34px; }
+  #page-content .products-showcase .service-visual-card img { padding: 18px; }
+  .servicios-home .l-section-h,
+  .cta-form .l-section-h { padding-left: 0 !important; padding-right: 0 !important; }
+  .servicios-home .g-cols.via_flex,
+  .cta-form .g-cols.via_flex.valign_top { width: 100% !important; margin-left: 0 !important; margin-right: 0 !important; }
+  .servicios-home .wpb_column,
+  .cta-form .wpb_column { width: 100% !important; margin-left: 0 !important; margin-right: 0 !important; }
+  .cta-form .columna-escribenos > .vc_column-inner { padding: 34px 20px !important; }
+  .te-ayudamos-photo,
+  .te-ayudamos-photo img { min-height: 340px; }
+}
 </style>
 
 <style id="products-nav-clone">
@@ -252,6 +311,59 @@ html { scroll-behavior: smooth; }
       .logo img {
         width: 180px;
         height: auto;
+      }
+
+      .mobile-nav-toggle {
+        display: none;
+        position: relative;
+        width: 44px;
+        height: 44px;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid rgba(20, 78, 156, 0.16);
+        border-radius: 10px;
+        background: #fff;
+        color: #144e9c;
+        cursor: pointer;
+      }
+
+      .mobile-nav-toggle-lines,
+      .mobile-nav-toggle-lines::before,
+      .mobile-nav-toggle-lines::after {
+        display: block;
+        width: 20px;
+        height: 2px;
+        border-radius: 999px;
+        background: currentColor;
+        transition: transform .18s ease, opacity .18s ease;
+      }
+
+      .mobile-nav-toggle-lines {
+        position: relative;
+      }
+
+      .mobile-nav-toggle-lines::before,
+      .mobile-nav-toggle-lines::after {
+        content: "";
+        position: absolute;
+        left: 0;
+      }
+
+      .mobile-nav-toggle-lines::before {
+        top: -7px;
+      }
+
+      .mobile-nav-toggle-lines::after {
+        top: 7px;
+      }
+
+      .mobile-nav-label {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+        clip: rect(0 0 0 0);
+        white-space: nowrap;
       }
 
       .nav {
@@ -367,32 +479,119 @@ html { scroll-behavior: smooth; }
         font-size: 0.74rem;
       }
 
-      .nav-group:hover .nav-dropdown,
-      .nav-group.open .nav-dropdown {
-        display: flex;
+      @media (min-width: 768px) {
+        .nav-group:hover .nav-dropdown,
+        .nav-group.open .nav-dropdown {
+          display: flex;
+        }
       }
 
-      @media (max-width: 640px) {
+      @media (max-width: 767px) {
         .topbar-inner {
           justify-content: center;
+          gap: 10px 14px;
+          padding: 8px 0;
+          text-align: center;
+        }
+
+        .header-inner {
+          display: grid;
+          grid-template-columns: 1fr auto;
+          align-items: center;
+          gap: 10px 12px;
+          width: min(100% - 24px, 1140px);
+          padding: 10px 0;
+        }
+
+        .logo img {
+          width: 142px;
+        }
+
+        .mobile-nav-toggle {
+          display: inline-flex;
+        }
+
+        .header.nav-open .mobile-nav-toggle {
+          background: rgba(20, 78, 156, 0.08);
+        }
+
+        .header.nav-open .mobile-nav-toggle-lines {
+          transform: rotate(45deg);
+        }
+
+        .header.nav-open .mobile-nav-toggle-lines::before {
+          transform: translateY(7px) rotate(90deg);
+        }
+
+        .header.nav-open .mobile-nav-toggle-lines::after {
+          opacity: 0;
         }
 
         .nav {
+          display: none;
+          grid-column: 1 / -1;
+          width: 100%;
+          max-height: calc(100vh - 118px);
+          overflow-y: auto;
+          overscroll-behavior: contain;
+          padding: 8px 0 2px;
           gap: 8px;
+          align-items: stretch;
+          justify-content: flex-start;
+          flex-direction: column;
+        }
+
+        .header.nav-open .nav {
+          display: flex;
+        }
+
+        .nav > a,
+        .nav-toggle {
+          display: flex;
+          width: 100%;
+          min-height: 42px;
+          align-items: center;
+          justify-content: space-between;
+          padding: 10px 12px;
+          border: 1px solid rgba(20, 78, 156, 0.12);
+          background: #fff;
+          font-size: .78rem;
+          text-align: left;
         }
 
         .nav-group {
           width: 100%;
-          display: grid;
-          justify-items: center;
         }
 
         .nav-dropdown {
           position: static;
           transform: none;
-          min-width: min(320px, 100%);
-          width: min(320px, 100%);
+          min-width: 0;
+          width: 100%;
           margin-top: 6px;
+          padding: 8px;
+          border: 1px solid rgba(20, 78, 156, 0.12);
+          border-radius: 12px;
+          box-shadow: none;
+        }
+
+        .nav-group.open .nav-dropdown {
+          display: flex;
+        }
+
+        .nav-dropdown a,
+        .nav-subtoggle {
+          font-size: .76rem;
+          line-height: 1.22;
+        }
+
+        .nav-submenu {
+          margin-left: 0;
+          padding-left: 10px;
+        }
+
+        .nav-submenu a {
+          font-size: .72rem;
         }
       }
 </style>
@@ -446,7 +645,7 @@ html { scroll-behavior: smooth; }
       }
     }
   </style>
-    <link rel="stylesheet" href="assets/css/cookie-consent.css">
+    <link rel="stylesheet" href="assets/css/cookie-consent.css?v=mobile-20260601">
 </head>
 <body class="home wp-singular page-template-default page page-id-8 wp-theme-Impreza l-body Impreza_8.11.2 us-core_8.11.3 header_hor headerinpos_top state_default wpb-js-composer js-comp-ver-6.9.0 vc_responsive" itemscope itemtype="https://schema.org/WebPage">
 
@@ -464,7 +663,12 @@ html { scroll-behavior: smooth; }
           <img src="assets/remote-qartia/wp-content/uploads/2022/11/logo-qartia.png" alt="Qartia Smart Technologies" />
         </a>
 
-        <nav class="nav" aria-label="Navegacion principal">
+        <button class="mobile-nav-toggle" type="button" aria-label="Abrir menu principal" aria-expanded="false" aria-controls="main-nav">
+          <span class="mobile-nav-toggle-lines" aria-hidden="true"></span>
+          <span class="mobile-nav-label">Menu</span>
+        </button>
+
+        <nav class="nav" id="main-nav" aria-label="Navegacion principal">
           <a href="quienes-somos.html">Quienes Somos</a>
           <div class="nav-group">
             <button class="nav-toggle" type="button" aria-expanded="false">Productos</button>
@@ -891,7 +1095,18 @@ gform.initializeOnLoaded( function() { jQuery(document).trigger('gform_post_rend
 </script>
 <script id="products-nav-clone-js">
       document.addEventListener("DOMContentLoaded", function () {
+        const header = document.querySelector(".header");
+        const menuToggle = document.querySelector(".mobile-nav-toggle");
         const groups = document.querySelectorAll(".nav-group");
+
+        if (header && menuToggle) {
+          menuToggle.addEventListener("click", function () {
+            const willOpen = !header.classList.contains("nav-open");
+            header.classList.toggle("nav-open", willOpen);
+            menuToggle.setAttribute("aria-expanded", willOpen ? "true" : "false");
+            menuToggle.setAttribute("aria-label", willOpen ? "Cerrar menu principal" : "Abrir menu principal");
+          });
+        }
 
         groups.forEach((group) => {
           const toggle = group.querySelector(".nav-toggle");
@@ -915,6 +1130,12 @@ gform.initializeOnLoaded( function() { jQuery(document).trigger('gform_post_rend
         });
 
         document.addEventListener("click", function (event) {
+          if (header && menuToggle && !header.contains(event.target)) {
+            header.classList.remove("nav-open");
+            menuToggle.setAttribute("aria-expanded", "false");
+            menuToggle.setAttribute("aria-label", "Abrir menu principal");
+          }
+
           groups.forEach((group) => {
             if (group.contains(event.target)) return;
             group.classList.remove("open");
@@ -924,9 +1145,25 @@ gform.initializeOnLoaded( function() { jQuery(document).trigger('gform_post_rend
             }
           });
         });
+
+        document.querySelectorAll(".nav a").forEach((link) => {
+          link.addEventListener("click", function () {
+            if (!header || !menuToggle) return;
+            header.classList.remove("nav-open");
+            menuToggle.setAttribute("aria-expanded", "false");
+            menuToggle.setAttribute("aria-label", "Abrir menu principal");
+          });
+        });
+
+        window.addEventListener("resize", function () {
+          if (window.innerWidth <= 767 || !header || !menuToggle) return;
+          header.classList.remove("nav-open");
+          menuToggle.setAttribute("aria-expanded", "false");
+          menuToggle.setAttribute("aria-label", "Abrir menu principal");
+        });
       });
 </script>
-    <script src="assets/js/cookie-consent.js" defer></script>
+    <script src="assets/js/cookie-consent.js?v=mobile-20260601" defer></script>
 
 <!-- QARTIA: slower and self-contained home slider control -->
 <style id="qartia-slow-home-slider-css">
