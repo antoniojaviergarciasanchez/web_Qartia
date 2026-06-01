@@ -732,6 +732,19 @@ html { scroll-behavior: smooth; }
 <img decoding="async" src="assets/images/home-mobile/cali2-mobile.webp" width="900" height="1120" alt loading="lazy">
 </div>
 <div class="w-slider-json" onclick='return {"loop":true,"fadeInLoadedSlide":false,"slidesSpacing":0,"imageScalePadding":0,"numImagesToPreload":2,"arrowsNav":false,"arrowsNavAutoHide":false,"transitionType":"fade","transitionSpeed":2000,"block":{"moveEffect":"none","speed":300},"controlNavigation":"none","autoplay":{"enabled":true,"pauseOnHover":false,"delay":2000},"imageScaleMode":"fill","autoScaleSlider":true,"autoScaleSliderWidth":1920,"autoScaleSliderHeight":880,"fitInViewport":false}'></div>
+<style id="qartia-mobile-slider-contain-css">
+@media (max-width: 767px) {
+  .qartia-mobile-home-slider #top.l-section.with_slider,
+  .qartia-mobile-home-slider #top.l-section.with_slider .rsImg {
+    background-color: #07121d;
+  }
+
+  .qartia-mobile-home-slider #top.l-section.with_slider .rsImg {
+    background-position: center center !important;
+    background-size: contain !important;
+  }
+}
+</style>
 <script id="qartia-home-slider-source-js">
 (function () {
   'use strict';
