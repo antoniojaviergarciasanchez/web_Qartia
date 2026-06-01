@@ -718,14 +718,14 @@ html { scroll-behavior: smooth; }
  <!--<div class="rsContent"><a class="rsImg" style="background-image: url(assets/remote-qartia/wp-content/uploads/2022/12/pp.png);" data-rsw="1920" data-rsh="880" href="assets/remote-qartia/wp-content/uploads/2022/12/pp.png"><span data-alt=""></span></a></div> -->
 <!-- <div<div class="rsContent"><a class="rsImg" style="background-image: url(assets/remote-qartia/wp-content/uploads/2022/12/cali2.mp4);" data-rsw="1920" data-rsh="880" href="assets/remote-qartia/wp-content/uploads/2022/12/cali2.mp4"><span data-alt=""></span></a></div>  -->
 <!-- <div class="rsContent is-active"><a class="rsImg" style="background-image: url(assets/remote-qartia/wp-content/uploads/2022/11/slider-home-1.jpg);" data-rsw="1920" data-rsh="880" href="assets/remote-qartia/wp-content/uploads/2022/11/slider-home-1.jpg"><span data-alt=""></span></a></div> -->
-<div class="rsContent is-active"><a class="rsImg" data-desktop-src="assets/remote-qartia/wp-content/uploads/2022/12/solar.png" data-mobile-src="assets/images/home-mobile/solar-mobile.webp" data-rsw="1920" data-rsh="880" href="assets/images/home-mobile/solar-mobile.webp"><span data-alt=""></span></a></div>
-<div class="rsContent"><a class="rsImg" data-desktop-src="assets/remote-qartia/wp-content/uploads/2022/12/POLIGONO.mp4" data-mobile-src="assets/images/home-mobile/poligono-mobile.webp" data-rsw="1920" data-rsh="880" href="assets/images/home-mobile/poligono-mobile.webp"><span data-alt=""></span></a></div>
-<div class="rsContent"><a class="rsImg" data-desktop-src="assets/remote-qartia/wp-content/uploads/2022/12/trabajadores.png" data-mobile-src="assets/images/home-mobile/trabajadores-mobile.webp" data-rsw="1920" data-rsh="880" href="assets/images/home-mobile/trabajadores-mobile.webp"><span data-alt=""></span></a></div>
+<div class="rsContent is-active"><a class="rsImg" data-desktop-src="assets/remote-qartia/wp-content/uploads/2022/12/cali2.mp4" data-rsw="1920" data-rsh="880" href=""><span data-alt=""></span></a></div>
+<div class="rsContent"><a class="rsImg" data-desktop-src="assets/remote-qartia/wp-content/uploads/2022/12/trabajadores.png" data-mobile-src="assets/images/home-mobile/trabajadores-mobile.webp" data-mobile-order="3" data-rsw="1920" data-rsh="880" href="assets/images/home-mobile/trabajadores-mobile.webp"><span data-alt=""></span></a></div>
+<div class="rsContent"><a class="rsImg" data-desktop-src="assets/remote-qartia/wp-content/uploads/2022/12/POLIGONO.mp4" data-mobile-src="assets/images/home-mobile/poligono-mobile.webp" data-mobile-order="2" data-rsw="1920" data-rsh="880" href="assets/images/home-mobile/poligono-mobile.webp"><span data-alt=""></span></a></div>
+<div class="rsContent"><a class="rsImg" data-desktop-src="assets/remote-qartia/wp-content/uploads/2022/12/industria.jpeg" data-mobile-src="assets/images/home-mobile/industria-mobile.webp" data-mobile-order="4" data-rsw="1920" data-rsh="880" href="assets/images/home-mobile/industria-mobile.webp"><span data-alt=""></span></a></div>
 <div class="rsContent"><a class="rsImg" data-desktop-src="assets/remote-qartia/wp-content/uploads/2022/12/CAETRA.mp4" data-rsw="1920" data-rsh="880" href=""><span data-alt=""></span></a></div>
 <!--<div class="rsContent"><a class="rsImg" style="background-image: url(assets/remote-qartia/wp-content/uploads/2022/12/slide-cuatrov2.jpg);" data-rsw="1920" data-rsh="880" href="assets/remote-qartia/wp-content/uploads/2022/12/slide-cuatrov2.jpg"><span data-alt=""></span></a></div> -->
 <!-- <div class="rsContent"><a class="rsImg" style="background-image: url(assets/remote-qartia/wp-content/uploads/2022/12/pp.png);" data-rsw="1920" data-rsh="880" href="assets/remote-qartia/wp-content/uploads/2022/12/pp.png"><span data-alt=""></span></a></div>  -->
-<div class="rsContent"><a class="rsImg" data-desktop-src="assets/remote-qartia/wp-content/uploads/2022/12/cali2.mp4" data-rsw="1920" data-rsh="880" href=""><span data-alt=""></span></a></div>
-<div class="rsContent"><a class="rsImg" data-desktop-src="assets/remote-qartia/wp-content/uploads/2022/12/industria.jpeg" data-mobile-src="assets/images/home-mobile/industria-mobile.webp" data-rsw="1920" data-rsh="880" href="assets/images/home-mobile/industria-mobile.webp"><span data-alt=""></span></a></div>
+<div class="rsContent"><a class="rsImg" data-desktop-src="assets/remote-qartia/wp-content/uploads/2022/12/solar.png" data-mobile-src="assets/images/home-mobile/solar-mobile.webp" data-mobile-order="1" data-rsw="1920" data-rsh="880" href="assets/images/home-mobile/solar-mobile.webp"><span data-alt=""></span></a></div>
 <!--<div class="rsContent"><a class="rsImg" style="background-image: url(assets/remote-qartia/wp-content/uploads/2022/1２/slide-tresv2.jpg);" data-rsw="19２０" data-rsh="8８０" href="assets/remote-qartia/wp-content/uploads/２０２２/１２/slide-tresv２.jpg"><span data-alt=""></span></a></div> -->
 <!--<div class="rsContent"><a class="rsImg" style="background-image: url(assets/remote-qartia/wp-content/uploads/２０２２/１２/slider-dosv２.jpg);" data-rsw="１９２０" data-rsh="８８０" href("assets/remote-qartia/wp-content/uploads/２０２２/１２/slider-dosv２.jpg")><span data-alt=""></span></a></div> -->
 </div>
@@ -795,6 +795,18 @@ html { scroll-behavior: smooth; }
       }
 
       mobileSlides.push(slide);
+    });
+
+    mobileSlides.sort(function (firstSlide, secondSlide) {
+      var firstLink = firstSlide.querySelector('.rsImg');
+      var secondLink = secondSlide.querySelector('.rsImg');
+      var firstOrder = Number(firstLink ? firstLink.dataset.mobileOrder || '99' : '99');
+      var secondOrder = Number(secondLink ? secondLink.dataset.mobileOrder || '99' : '99');
+      return firstOrder - secondOrder;
+    });
+
+    mobileSlides.forEach(function (slide) {
+      slider.appendChild(slide);
     });
 
     mobileSlides.forEach(function (slide, index) {
