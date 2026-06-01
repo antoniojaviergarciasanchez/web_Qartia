@@ -468,6 +468,139 @@
         line-height: 1.5;
       }
 
+      .architecture-flow-panel {
+        margin: 34px 0 28px;
+        padding: clamp(20px, 2.6vw, 30px);
+        border: 1px solid rgba(54, 222, 184, .28);
+        border-radius: 8px;
+        background:
+          linear-gradient(135deg, rgba(7, 52, 61, .98), rgba(20, 78, 156, .94));
+        box-shadow: var(--shadow);
+        color: #fff;
+      }
+
+      .architecture-flow-header {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) auto;
+        gap: 22px;
+        align-items: end;
+        margin-bottom: 22px;
+      }
+
+      .architecture-flow-kicker {
+        display: inline-flex;
+        width: fit-content;
+        margin-bottom: 10px;
+        padding: 7px 10px;
+        border: 1px solid rgba(54, 222, 184, .34);
+        border-radius: 999px;
+        background: rgba(54, 222, 184, .12);
+        color: #36deb8;
+        font-family: "Rubik", sans-serif;
+        font-size: .72rem;
+        font-weight: 800;
+        letter-spacing: .08em;
+        line-height: 1;
+        text-transform: uppercase;
+      }
+
+      .architecture-flow-header h3 {
+        margin: 0;
+        max-width: 760px;
+        color: #fff;
+        font-family: "Rubik", sans-serif;
+        font-size: clamp(1.38rem, 2vw, 2.08rem);
+        font-weight: 500;
+        line-height: 1.12;
+      }
+
+      .architecture-flow-header p {
+        margin: 10px 0 0;
+        max-width: 700px;
+        color: rgba(255, 255, 255, .78);
+        font-size: .98rem;
+      }
+
+      .architecture-value-badge {
+        display: inline-flex;
+        max-width: 220px;
+        align-items: center;
+        justify-content: center;
+        padding: 12px 14px;
+        border-radius: 8px;
+        background: #36deb8;
+        color: #07343d;
+        font-family: "Rubik", sans-serif;
+        font-size: .82rem;
+        font-weight: 800;
+        line-height: 1.25;
+        text-align: center;
+        text-transform: uppercase;
+      }
+
+      .architecture-flow {
+        display: grid;
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+        gap: 12px;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .architecture-flow li {
+        position: relative;
+        min-height: 116px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 12px;
+        padding: 14px 11px;
+        border: 1px solid rgba(54, 222, 184, .22);
+        border-radius: 8px;
+        background: rgba(255, 255, 255, .96);
+        box-shadow: 0 14px 24px rgba(0, 0, 0, .14);
+      }
+
+      .architecture-flow li:not(:last-child)::after {
+        content: "→";
+        position: absolute;
+        top: 50%;
+        right: -15px;
+        z-index: 2;
+        transform: translateY(-50%);
+        color: #36deb8;
+        font-weight: 800;
+        line-height: 1;
+      }
+
+      .architecture-step-number {
+        display: inline-flex;
+        width: 30px;
+        height: 30px;
+        align-items: center;
+        justify-content: center;
+        border-radius: 999px;
+        background: #36deb8;
+        color: #07343d;
+        font-size: .72rem;
+        font-weight: 800;
+      }
+
+      .architecture-flow strong {
+        display: block;
+        color: #07343d;
+        font-family: "Rubik", sans-serif;
+        font-size: .94rem;
+        line-height: 1.18;
+      }
+
+      .architecture-flow small {
+        display: block;
+        color: #5a6670;
+        font-size: .78rem;
+        line-height: 1.35;
+      }
+
       .brochure-card,
       .phase-card,
       .kpi-card {
@@ -720,9 +853,27 @@
         .brochure-grid.two-cols,
         .brochure-grid.four-cols,
         .solution-visual-grid,
+        .architecture-flow,
         .phase-grid,
         .kpi-grid {
           grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .architecture-flow {
+          gap: 16px;
+        }
+
+        .architecture-flow-header {
+          grid-template-columns: 1fr;
+          align-items: start;
+        }
+
+        .architecture-value-badge {
+          justify-self: start;
+        }
+
+        .architecture-flow li:not(:last-child)::after {
+          display: none;
         }
       }
 .video-section { padding: 70px 0; background: var(--paper); }
@@ -771,9 +922,14 @@
         .brochure-grid.two-cols,
         .brochure-grid.four-cols,
         .solution-visual-grid,
+        .architecture-flow,
         .phase-grid,
         .kpi-grid {
           grid-template-columns: 1fr;
+        }
+
+        .architecture-flow-panel {
+          padding: 18px;
         }
 
         .solution-visual-card {
@@ -1078,9 +1234,46 @@
           <div class="section-inner">
             <span class="eyebrow">Arquitectura t&eacute;cnica</span>
             <h2 class="lead-title">Edge + red inal&aacute;mbrica + IA.</h2>
+            <div class="architecture-flow-panel" aria-label="Flujo de arquitectura agr&iacute;cola de la soluci&oacute;n">
+              <div class="architecture-flow-header">
+                <div>
+                  <span class="architecture-flow-kicker">Arquitectura agr&iacute;cola Qartia</span>
+                  <h3>Del cultivo conectado a la decisi&oacute;n autom&aacute;tica.</h3>
+                  <p>Un flujo completo para capturar variables del campo, procesarlas y convertirlas en decisiones visuales o acciones sobre la explotaci&oacute;n.</p>
+                </div>
+                <span class="architecture-value-badge">Dato agr&iacute;cola → acci&oacute;n</span>
+              </div>
+              <ol class="architecture-flow">
+                <li>
+                  <span class="architecture-step-number">01</span>
+                  <strong>Sensores IoT</strong>
+                  <small>Suelo, clima, radiaci&oacute;n y cultivo</small>
+                </li>
+                <li>
+                  <span class="architecture-step-number">02</span>
+                  <strong>Red inal&aacute;mbrica</strong>
+                  <small>Cobertura fiable en campo</small>
+                </li>
+                <li>
+                  <span class="architecture-step-number">03</span>
+                  <strong>Edge / Cloud</strong>
+                  <small>Procesamiento local e hist&oacute;rico</small>
+                </li>
+                <li>
+                  <span class="architecture-step-number">04</span>
+                  <strong>IA + Gemelo Digital</strong>
+                  <small>Predicci&oacute;n y simulaci&oacute;n operativa</small>
+                </li>
+                <li>
+                  <span class="architecture-step-number">05</span>
+                  <strong>Dashboard / Actuadores</strong>
+                  <small>Decisi&oacute;n visual y automatizaci&oacute;n</small>
+                </li>
+              </ol>
+            </div>
             <div class="brochure-split">
               <div class="brochure-card">
-                <h3>Sensores IoT &rarr; Red inal&aacute;mbrica &rarr; Edge / Cloud &rarr; IA + Gemelo Digital &rarr; Dashboard / Actuadores</h3>
+                <h3>Una arquitectura preparada para operar sobre el cultivo.</h3>
                 <p>La plataforma puede desplegarse en cloud, on-premise o arquitectura h&iacute;brida, integr&aacute;ndose con sens&oacute;rica existente o con despliegue propio Qartia.</p>
                 <ul class="feature-list">
                   <li>Captura continua de variables de suelo, ambiente, radiaci&oacute;n y energ&iacute;a.</li>
