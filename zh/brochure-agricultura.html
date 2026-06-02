@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>农业手册 - Qartia Smart Technologies</title>
+    <link rel="icon" href="../assets/remote-qartia/wp-content/uploads/2022/10/favicon-150x150.png" sizes="32x32">
+    <link rel="icon" href="../assets/remote-qartia/wp-content/uploads/2022/10/favicon.png" sizes="192x192">
+    <link rel="apple-touch-icon" href="../assets/remote-qartia/wp-content/uploads/2022/10/favicon.png">
+    <meta name="msapplication-TileImage" content="assets/remote-qartia/wp-content/uploads/2022/10/favicon.png">
+    
+<link rel="stylesheet" id="qartia-local-fonts" href="../assets/css/local-fonts.css"><meta name="description" content="Qartia 智能农业、农业光伏、IoT、人工智能、数字孪生和私人连接的商业手册。">
+<style>
+      :root {
+        --forest: #07110d;
+        --panel: #0d1713;
+        --panel-soft: #12201b;
+        --mint: #4df2a2;
+        --electric: #22b8ff;
+        --ink: #e8f7ef;
+        --muted: #a6c2b6;
+        --paper: #ffffff;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        background: linear-gradient(180deg, #f3f8f6 0%, #e7f2ed 100%);
+        color: #142018;
+        font-family: "Manrope", sans-serif;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      .sheet {
+        width: min(1180px, calc(100% - 32px));
+        margin: 28px auto;
+        overflow: hidden;
+        border-radius: 32px;
+        background: var(--paper);
+        box-shadow: 0 24px 80px rgba(20, 32, 24, 0.14);
+      }
+
+      .hero {
+        position: relative;
+        padding: 48px 48px 42px;
+        color: var(--ink);
+        background:
+          linear-gradient(120deg, rgba(7, 17, 13, 0.96), rgba(13, 23, 19, 0.84)),
+          url("../assets/linkedin-news/greenhouse-1.jpg") center/cover no-repeat;
+      }
+
+      .hero::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background:
+          radial-gradient(circle at top right, rgba(34, 184, 255, 0.18), transparent 28%),
+          radial-gradient(circle at bottom left, rgba(77, 242, 162, 0.18), transparent 24%);
+      }
+
+      .hero-inner {
+        position: relative;
+        z-index: 1;
+      }
+
+      .logo {
+        width: 186px;
+      }
+
+      .kicker {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        margin-top: 26px;
+        padding: 8px 14px;
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.04);
+        font-size: 0.72rem;
+        font-weight: 700;
+        letter-spacing: 0.28em;
+        text-transform: uppercase;
+      }
+
+      .hero h1 {
+        margin: 18px 0 0;
+        max-width: 12ch;
+        font-family: "Sora", sans-serif;
+        font-size: clamp(2.4rem, 4vw, 4.5rem);
+        line-height: 1.02;
+      }
+
+      .hero p {
+        max-width: 760px;
+        margin: 20px 0 0;
+        color: rgba(232, 247, 239, 0.82);
+        font-size: 1.08rem;
+        line-height: 1.75;
+      }
+
+      .badge-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 26px;
+      }
+
+      .badge {
+        padding: 10px 14px;
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.06);
+        color: var(--ink);
+        font-size: 0.88rem;
+        font-weight: 600;
+      }
+
+      .section {
+        padding: 34px 40px;
+      }
+
+      .section.dark {
+        color: var(--ink);
+        background: var(--forest);
+      }
+
+      .section.soft {
+        background: #eef7f2;
+      }
+
+      .section-title {
+        margin: 0 0 18px;
+        font-family: "Sora", sans-serif;
+        font-size: 2rem;
+        line-height: 1.15;
+      }
+
+      .section-copy {
+        margin: 0;
+        color: #4f6358;
+        line-height: 1.7;
+      }
+
+      .dark .section-copy {
+        color: rgba(232, 247, 239, 0.76);
+      }
+
+      .grid-4,
+      .grid-3,
+      .grid-2 {
+        display: grid;
+        gap: 18px;
+      }
+
+      .grid-4 {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+      }
+
+      .grid-3 {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .grid-2 {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .card {
+        padding: 22px;
+        border-radius: 24px;
+        background: #ffffff;
+        box-shadow: 0 12px 32px rgba(15, 31, 24, 0.08);
+      }
+
+      .dark .card {
+        background: var(--panel);
+        box-shadow: none;
+      }
+
+      .eyebrow {
+        display: block;
+        margin-bottom: 10px;
+        color: #2d68b3;
+        font-size: 0.8rem;
+        font-weight: 700;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+      }
+
+      .dark .eyebrow {
+        color: var(--mint);
+      }
+
+      .card h3 {
+        margin: 0 0 12px;
+        font-family: "Sora", sans-serif;
+        font-size: 1.18rem;
+        line-height: 1.2;
+      }
+
+      .card p,
+      .card li {
+        margin: 0;
+        color: #4f6358;
+        line-height: 1.65;
+      }
+
+      .dark .card p,
+      .dark .card li {
+        color: rgba(232, 247, 239, 0.78);
+      }
+
+      .card ul {
+        display: grid;
+        gap: 10px;
+        margin: 14px 0 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .card li {
+        position: relative;
+        padding-left: 18px;
+      }
+
+      .card li::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0.72em;
+        width: 8px;
+        height: 8px;
+        border-radius: 999px;
+        background: var(--mint);
+      }
+
+      .metric {
+        font-family: "Sora", sans-serif;
+        font-size: 2.2rem;
+        line-height: 1;
+      }
+
+      .process {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 16px;
+      }
+
+      .process .card {
+        position: relative;
+      }
+
+      .step {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 42px;
+        height: 42px;
+        margin-bottom: 14px;
+        border-radius: 14px;
+        background: rgba(20, 78, 156, 0.1);
+        color: #144e9c;
+        font-family: "Sora", sans-serif;
+        font-weight: 700;
+      }
+
+      .visual {
+        width: 100%;
+        border-radius: 24px;
+      }
+
+      .footer-band {
+        display: grid;
+        grid-template-columns: 1.2fr 0.8fr;
+        gap: 18px;
+        padding: 34px 40px 42px;
+        color: var(--ink);
+        background: linear-gradient(135deg, var(--forest), #10251f);
+      }
+
+      .footer-band h2 {
+        margin: 0 0 12px;
+        font-family: "Sora", sans-serif;
+        font-size: 2.15rem;
+      }
+
+      .footer-band p {
+        margin: 0;
+        color: rgba(232, 247, 239, 0.76);
+        line-height: 1.7;
+      }
+
+      .contact-card {
+        padding: 24px;
+        border-radius: 24px;
+        background: rgba(255, 255, 255, 0.06);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+      }
+
+      .contact-card strong {
+        display: block;
+        margin-bottom: 12px;
+        color: var(--mint);
+        font-size: 0.8rem;
+        font-weight: 700;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+      }
+
+      .contact-card p {
+        margin: 0 0 10px;
+      }
+
+      .print-note {
+        padding: 0 40px 24px;
+        color: #5f7367;
+        font-size: 0.9rem;
+      }
+
+      @media (max-width: 980px) {
+        .grid-4,
+        .grid-3,
+        .grid-2,
+        .process,
+        .footer-band {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+
+      @media (max-width: 720px) {
+        .hero,
+        .section,
+        .footer-band,
+        .print-note {
+          padding-left: 24px;
+          padding-right: 24px;
+        }
+
+        .grid-4,
+        .grid-3,
+        .grid-2,
+        .process,
+        .footer-band {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      @media print {
+        body {
+          background: #ffffff;
+        }
+
+        .sheet {
+          width: 100%;
+          margin: 0;
+          border-radius: 0;
+          box-shadow: none;
+        }
+      }
+    </style>
+  <link rel="stylesheet" href="../assets/css/qartia-topbar.css?v=lang-20260602">
+<link rel="stylesheet" href="../assets/css/qartia-responsive.css?v=20260601">
+  <style id="eibt-footer-layout-fix">
+    .footer .footer-inner {
+      display: grid !important;
+      grid-template-columns: minmax(180px, 0.75fr) minmax(260px, 1fr) minmax(360px, 1.15fr) !important;
+      align-items: start !important;
+      gap: 28px !important;
+    }
+
+    .footer .footer-eibt-badge,
+    .l-footer .footer-eibt-badge {
+      display: flex !important;
+      justify-content: flex-end !important;
+      align-items: flex-start !important;
+      margin-top: 0 !important;
+      width: 100% !important;
+      min-width: 360px;
+    }
+
+    .footer .footer-eibt-badge img,
+    .l-footer .footer-eibt-badge img {
+      width: min(430px, 100%) !important;
+      height: auto !important;
+      display: block !important;
+      margin-left: auto !important;
+      margin-right: 0 !important;
+    }
+
+    .l-footer .footer-eibt-badge .w-image-h {
+      width: 100% !important;
+    }
+
+    @media (max-width: 900px) {
+      .footer .footer-inner {
+        grid-template-columns: 1fr !important;
+      }
+
+      .footer .footer-eibt-badge,
+      .l-footer .footer-eibt-badge {
+        justify-content: flex-start !important;
+        min-width: 0 !important;
+      }
+
+      .footer .footer-eibt-badge img,
+      .l-footer .footer-eibt-badge img {
+        margin-left: 0 !important;
+        margin-right: auto !important;
+      }
+    }
+  </style>
+    <link rel="stylesheet" href="../assets/css/cookie-consent.css?v=mobile-20260601">
+</head>
+  <body>
+    <div class="sheet">
+      <section class="hero">
+        <div class="hero-inner">
+          <img class="logo" src="../assets/remote-qartia/wp-content/uploads/2022/11/logo-qartia.png" alt="Qartia Smart Technologies">
+          <span class="kicker">农业手册</span>
+          <h1>从农业开发到智能系统。</h1>
+          <p>
+            Qartia 通过 IoT、人工智能、数字孪生、农业光伏和专用网络将种植转变为一个互联、预测和节能的系统。
+          </p>
+          <div class="badge-row">
+            <span class="badge">IoT</span>
+            <span class="badge">人工智能</span>
+            <span class="badge">数字孪生</span>
+            <span class="badge">农业光伏</span>
+            <span class="badge">专用网络</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="section soft">
+        <h2 class="section-title">可衡量的运营影响</h2>
+        <div class="grid-4">
+          <article class="card">
+            <span class="eyebrow">关键绩效指标</span>
+            <div class="metric">↓ 30%</div>
+            <h3>用水量</h3>
+            <p>基于真实土壤、气候和作物条件的灌溉优化。</p>
+          </article>
+          <article class="card">
+            <span class="eyebrow">关键绩效指标</span>
+            <div class="metric">↑ 20%</div>
+            <h3>潜在产量</h3>
+            <p>更好的农艺调整和更大的操作预测能力。</p>
+          </article>
+          <article class="card">
+            <span class="eyebrow">关键绩效指标</span>
+            <div class="metric">↓ 费用</div>
+            <h3>资源优化</h3>
+            <p>减少水、肥料、能源和运营成本。</p>
+          </article>
+          <article class="card">
+            <span class="eyebrow">关键绩效指标</span>
+            <div class="metric">投资回报率</div>
+            <h3>可测量的试点</h3>
+            <p>技术和经济验证需要几个月的时间，而不是长期的不确定性。</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="grid-2">
+          <article class="card">
+            <span class="eyebrow">问题</span>
+            <h3>实时操作可见性很低</h3>
+            <ul>
+              <li>反应性决策。</li>
+              <li>水和肥料的利用效率低下。</li>
+              <li>连接依赖性有限。</li>
+              <li>难以预测作物胁迫。</li>
+              <li>能源、灌溉和生产之间缺乏整合。</li>
+            </ul>
+          </article>
+          <article class="card">
+            <span class="eyebrow">解决方案 Qartia</span>
+            <h3>从农业数据到运营行动</h3>
+            <ul>
+              <li>IoT 用于土壤、环境、辐射、二氧化碳、湿度和温度等的传感器。</li>
+              <li>适用于农村环境的强大无线网络：1) 私有，不依赖运营商（例如 DECT NR+ 或 LoRa），或 2）有运营商 (NB-IoT)。</li>
+              <li>灌溉、施肥和能源的预测人工智能。</li>
+              <li>建议、自动化和持续改进。</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section class="section dark">
+        <h2 class="section-title">关键能力</h2>
+        <div class="grid-3">
+          <article class="card">
+            <h3>24/7 监控</h3>
+            <p>持续监测作物、小气候和基础设施。</p>
+          </article>
+          <article class="card">
+            <h3>预测人工智能</h3>
+            <p>预测水、营养和能量需求。</p>
+          </article>
+          <article class="card">
+            <h3>数字孪生</h3>
+            <p>模拟场景以优化决策，而无需承担操作风险。</p>
+          </article>
+          <article class="card">
+            <h3>农业光伏</h3>
+            <p>太阳能发电、遮阳、光照和农业绩效之间的平衡。</p>
+          </article>
+          <article class="card">
+            <h3>专用网络 Qartia</h3>
+            <p>农场、温室和偏远地区的可靠连接。</p>
+          </article>
+          <article class="card">
+            <h3>资源优化</h3>
+            <p>降低水、肥料、能源消耗和运营成本。</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section soft">
+        <div class="grid-2">
+          <div>
+            <h2 class="section-title">边缘+专网+AI</h2>
+            <p class="section-copy">
+              传感器 IoT → 专用网络 → 边缘/云 → AI + 数字孪生 → 仪表板/执行器
+            </p>
+            <p class="section-copy" style="margin-top: 16px;">
+              该平台可以部署在云、本地或混合架构中，与现有传感器集成或与其自己的部署 Qartia 集成。
+            </p>
+          </div>
+          <img class="visual" src="../assets/linkedin-news/greenhouse-2.jpg" alt="农业基础设施为高级监测做好准备">
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="grid-2">
+          <article class="card">
+            <span class="eyebrow">农业光伏</span>
+            <h3>农业和能源合作</h3>
+            <p>
+              Qartia 允许您设计和操作平衡农业生产和太阳能发电的农业光伏系统。
+            </p>
+            <ul>
+              <li>光伏配置模拟。</li>
+              <li>光能作物平衡。</li>
+              <li>小气候优化。</li>
+              <li>能源自主开发。</li>
+            </ul>
+          </article>
+          <article class="card">
+            <span class="eyebrow">差速器</span>
+            <h3>一个全面的以投资回报率为导向的平台</h3>
+            <ul>
+              <li>私人连接。</li>
+              <li>应用人工智能。</li>
+              <li>数字孪生。</li>
+              <li>农业光伏。</li>
+              <li>运营优化。</li>
+              <li>ROI 焦点。</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section class="section dark">
+        <h2 class="section-title">分 4 个阶段执行试点</h2>
+        <div class="process">
+          <article class="card">
+            <span class="step">1</span>
+            <h3>初步诊断</h3>
+            <p>作物选择、开发、基础设施和 KPI。</p>
+          </article>
+          <article class="card">
+            <span class="step">2</span>
+            <h3>感知和网络部署</h3>
+            <p>安装传感器、验证覆盖范围和数据质量。</p>
+          </article>
+          <article class="card">
+            <span class="step">3</span>
+            <h3>人工智能+运营诊断</h3>
+            <p>预测模型、可操作的警报和技术建议。</p>
+          </article>
+          <article class="card">
+            <span class="step">4</span>
+            <h3>规模和投资回报率</h3>
+            <p>影响报告、经济建议和实施计划。</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="footer-band">
+        <div>
+          <h2>将您的农场变成一个智能系统</h2>
+          <p>
+            请求 Qartia 试点并验证对您农场的技术和经济影响，将种植、基础设施和能源整合到同一运营层中。
+          </p>
+        </div>
+        <div class="contact-card">
+          <strong>联系方式</strong>
+          <p><a href="tel:+34686918522">(+34) 686918522</a></p>
+          <p><a href="mailto:info@qartia.com">info@qartia.com</a></p>
+          <p>Calle Tolosa Latour, 4, 7°A,</p>
+          <p>30201, 卡塔赫纳, 西班牙</p>
+          <p>到岸价: B67916676</p>
+          <div class="footer-eibt-badge" style="display:flex;align-items:center;justify-content:flex-end;margin-top:18px;">
+            <img src="../assets/images/eibt-logo.png" alt="EIBT 印章" style="width:min(430px,100%);height:auto;display:block;">
+          </div>
+        </div>
+      </section>
+
+      <p class="print-note">
+        以 HTML 格式编写的小册子，用于数字演示或打印为 PDF。
+      </p>
+    </div>
+      <script src="../assets/js/cookie-consent.js?v=mobile-20260601" defer></script>
+<script src="../assets/js/qartia-language-switcher.js"></script>
+</body>
+</html>

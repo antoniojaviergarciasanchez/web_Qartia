@@ -1,0 +1,920 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>新闻 - Qartia Smart Technologies</title>
+    <link rel="icon" href="../assets/remote-qartia/wp-content/uploads/2022/10/favicon-150x150.png" sizes="32x32">
+    <link rel="icon" href="../assets/remote-qartia/wp-content/uploads/2022/10/favicon.png" sizes="192x192">
+    <link rel="apple-touch-icon" href="../assets/remote-qartia/wp-content/uploads/2022/10/favicon.png">
+    <meta name="msapplication-TileImage" content="assets/remote-qartia/wp-content/uploads/2022/10/favicon.png">
+    
+<link rel="stylesheet" id="qartia-local-fonts" href="../assets/css/local-fonts.css"><meta name="description" content="来自 Qartia Smart Technologies 的新闻轮播从 LinkedIn 上可见的出版物中总结出来，其图像在本地集成。">
+<style>
+      :root {
+        --bg: #f5f5f5;
+        --paper: #ffffff;
+        --paper-soft: #f7fbfc;
+        --ink: #333333;
+        --ink-strong: #1a1a1a;
+        --brand: #144e9c;
+        --accent: #36deb8;
+        --shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+      }
+
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--ink);
+        font-family: "Work Sans", sans-serif;
+        line-height: 1.55;
+      }
+      a { color: inherit; text-decoration: none; }
+      img { max-width: 100%; display: block; }
+
+      .topbar {
+        background: #f5f5f5;
+        color: #333;
+        font-size: 0.84rem;
+      }
+
+      .topbar-inner,
+      .header-inner,
+      .section-inner,
+      .footer-inner {
+        width: min(1140px, calc(100% - 32px));
+        margin: 0 auto;
+      }
+
+      .topbar-inner {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        gap: 18px;
+        padding: 10px 0;
+        flex-wrap: wrap;
+      }
+
+      .header {
+        position: sticky;
+        top: 0;
+        z-index: 20;
+        background: rgba(255, 255, 255, 0.96);
+        box-shadow: 0 2px 18px rgba(0, 0, 0, 0.08);
+        backdrop-filter: blur(10px);
+      }
+
+      .header-inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 18px;
+        padding: 14px 0;
+      }
+
+      .logo img { width: 180px; height: auto; }
+
+      .nav {
+        display: flex;
+        justify-content: flex-end;
+        gap: 4px;
+        flex-wrap: wrap;
+        align-items: center;
+      }
+
+      .nav > a,
+      .nav-toggle {
+        padding: 10px 12px;
+        color: var(--brand);
+        background: transparent;
+        border: 0;
+        font-family: "Rubik", sans-serif;
+        font-size: 0.82rem;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 0.02em;
+        border-radius: 8px;
+        cursor: pointer;
+      }
+
+      .nav > a:hover,
+      .nav > a:focus-visible,
+      .nav > a.current,
+      .nav-toggle:hover,
+      .nav-toggle:focus-visible {
+        background: rgba(20, 78, 156, 0.08);
+      }
+
+      .nav-group { position: relative; }
+      .nav-toggle {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .nav-toggle::after {
+        content: "";
+        width: 8px;
+        height: 8px;
+        border-right: 2px solid currentColor;
+        border-bottom: 2px solid currentColor;
+        transform: rotate(45deg) translateY(-1px);
+      }
+
+      .nav-dropdown {
+        position: absolute;
+        top: calc(100% + 10px);
+        right: 0;
+        min-width: 260px;
+        display: none;
+        flex-direction: column;
+        padding: 10px;
+        border-radius: 16px;
+        background: rgba(255, 255, 255, 0.98);
+        box-shadow: var(--shadow);
+        backdrop-filter: blur(10px);
+        z-index: 30;
+      }
+
+      .nav-dropdown a {
+        padding: 10px 12px;
+        color: var(--brand);
+        font-family: "Rubik", sans-serif;
+        font-size: 0.8rem;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 0.02em;
+        border-radius: 10px;
+      }
+
+      .nav-subgroup {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .nav-subtoggle {
+        padding: 10px 12px;
+        color: var(--brand);
+        font-family: "Rubik", sans-serif;
+        font-size: 0.8rem;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 0.02em;
+        border-radius: 10px;
+      }
+
+      .nav-dropdown a:hover,
+      .nav-dropdown a:focus-visible,
+      .nav-subtoggle:hover,
+      .nav-subtoggle:focus-visible {
+        background: rgba(20, 78, 156, 0.08);
+      }
+
+      .nav-submenu {
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+        margin: 0 0 6px 18px;
+        padding-left: 12px;
+        border-left: 2px solid rgba(20, 78, 156, 0.14);
+      }
+
+      .nav-submenu a {
+        padding: 8px 10px;
+        font-size: 0.74rem;
+      }
+
+      .nav-group:hover .nav-dropdown,
+      .nav-group.open .nav-dropdown { display: flex; }
+
+      .hero {
+        min-height: 340px;
+        display: flex;
+        align-items: center;
+        color: #fff;
+        background:
+          linear-gradient(rgba(0, 0, 0, 0.50), rgba(0, 0, 0, 0.16)),
+          url("../assets/remote-qartia/wp-content/uploads/2022/12/slide-tresv2.jpg") center/cover no-repeat;
+      }
+
+      .hero-inner {
+        width: min(1140px, calc(100% - 32px));
+        margin: 0 auto;
+        padding: 82px 0 60px;
+      }
+
+      .hero h1 {
+        margin: 0 0 12px;
+        font-family: "Rubik", sans-serif;
+        font-size: clamp(2.4rem, 4vw, 4rem);
+        font-weight: 300;
+        text-shadow: 2px 2px 9px #000;
+      }
+
+      .hero p {
+        max-width: 760px;
+        margin: 0;
+        font-size: 1.08rem;
+        text-shadow: 2px 2px 9px #000;
+      }
+
+      .news-section {
+        padding: 70px 0;
+        background:
+          url("../assets/remote-qartia/wp-content/uploads/2022/11/fondo-home.jpg") top left / cover no-repeat,
+          var(--paper-soft);
+      }
+
+      .eyebrow {
+        display: inline-block;
+        margin-bottom: 10px;
+        color: var(--accent);
+        font-size: 1rem;
+        font-weight: 600;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+      }
+
+      .eyebrow::before {
+        content: "";
+        display: inline-block;
+        width: 49px;
+        height: 50px;
+        margin-right: 10px;
+        vertical-align: middle;
+        background: url("../assets/remote-qartia/wp-content/uploads/2022/11/before-titulares.png") no-repeat center/contain;
+      }
+
+      .lead-title {
+        margin: 0 0 18px 58px;
+        color: var(--ink-strong);
+        font-family: "Rubik", sans-serif;
+        font-size: clamp(2rem, 3vw, 3rem);
+        font-weight: 300;
+        line-height: 1.12;
+      }
+
+      .lead-copy {
+        margin: 0 0 26px;
+        max-width: 860px;
+      }
+
+      .news-toolbar {
+        display: flex;
+        align-items: end;
+        justify-content: space-between;
+        gap: 20px;
+      }
+
+      .news-controls {
+        display: flex;
+        gap: 12px;
+      }
+
+      .news-button {
+        width: 48px;
+        height: 48px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border: 0;
+        border-radius: 999px;
+        background: rgba(20, 78, 156, 0.1);
+        color: var(--brand);
+        cursor: pointer;
+      }
+
+      .news-button svg {
+        width: 18px;
+        height: 18px;
+      }
+
+      .news-viewport {
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        scroll-behavior: smooth;
+        padding: 10px 0 8px;
+      }
+
+      .news-track {
+        display: grid;
+        grid-auto-flow: column;
+        grid-auto-columns: calc((100% - 48px) / 3);
+        gap: 24px;
+      }
+
+      .news-card {
+        display: flex;
+        flex-direction: column;
+        min-height: 100%;
+        border-radius: 24px;
+        overflow: hidden;
+        background: var(--paper);
+        box-shadow: var(--shadow);
+        scroll-snap-align: start;
+      }
+
+      .news-card figure {
+        margin: 0;
+        aspect-ratio: 16 / 10;
+        background: #eef5f8;
+      }
+
+      .news-card img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .news-card.logo-card figure,
+      .news-card.cover-card figure {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 18px;
+      }
+
+      .news-card.logo-card img,
+      .news-card.cover-card img {
+        object-fit: contain;
+      }
+
+      .news-card-body {
+        display: flex;
+        flex: 1;
+        flex-direction: column;
+        gap: 14px;
+        padding: 24px;
+      }
+
+      .news-topline {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 14px;
+      }
+
+      .news-label {
+        display: inline-flex;
+        align-items: center;
+        padding: 6px 10px;
+        border-radius: 999px;
+        background: rgba(54, 222, 184, 0.14);
+        color: #116a59;
+        font-size: 0.8rem;
+        font-weight: 700;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+      }
+
+      .news-date {
+        color: #61707a;
+        font-size: 0.9rem;
+        font-weight: 600;
+      }
+
+      .news-card h3 {
+        margin: 0;
+        color: var(--ink-strong);
+        font-family: "Rubik", sans-serif;
+        font-size: 1.34rem;
+        font-weight: 500;
+        line-height: 1.2;
+      }
+
+      .news-card p {
+        margin: 0;
+      }
+
+      .news-link {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        align-self: flex-start;
+        margin-top: 6px;
+        padding: 10px 14px;
+        border-radius: 999px;
+        background: rgba(20, 78, 156, 0.1);
+        color: var(--brand);
+        font-size: 0.85rem;
+        font-weight: 700;
+        letter-spacing: 0.03em;
+        text-transform: uppercase;
+        transition: background 0.2s ease, transform 0.2s ease;
+      }
+
+      .news-link:hover,
+      .news-link:focus-visible {
+        background: rgba(20, 78, 156, 0.18);
+        transform: translateY(-1px);
+      }
+
+      .source-note {
+        margin-top: 18px;
+        color: #5a6670;
+        font-size: 0.95rem;
+      }
+
+      .footer {
+        background:
+          url("../assets/remote-qartia/wp-content/uploads/2022/11/fondo-footer.jpg") left top / cover no-repeat,
+          #222;
+        color: #ccc;
+      }
+
+      .footer-inner {
+        display: grid;
+        grid-template-columns: 220px minmax(0, 1fr);
+        gap: 36px;
+        align-items: start;
+        padding: 56px 0 28px;
+      }
+
+      .footer-logo img { width: 180px; }
+
+      .footer h4 {
+        margin: 0 0 16px;
+        color: #ccc;
+        font-family: "Rubik", sans-serif;
+        font-size: 1.1rem;
+        font-weight: 700;
+        text-transform: uppercase;
+      }
+
+      .footer p { margin: 0 0 10px; }
+
+      .subfooter {
+        background: #333;
+        color: #f9f9f9;
+        font-size: 0.86rem;
+        text-transform: uppercase;
+      }
+
+      .subfooter-inner {
+        width: min(1140px, calc(100% - 32px));
+        margin: 0 auto;
+        padding: 14px 0;
+        display: flex;
+        justify-content: center;
+        gap: 28px;
+        flex-wrap: wrap;
+      }
+
+      @media (max-width: 1024px) {
+        .header-inner,
+        .footer-inner {
+          grid-template-columns: 1fr;
+        }
+
+        .header-inner {
+          display: grid;
+          gap: 12px;
+        }
+
+        .logo { justify-self: center; }
+        .nav { justify-content: center; }
+
+        .nav-dropdown {
+          right: auto;
+          left: 50%;
+          transform: translateX(-50%);
+        }
+
+        .news-track {
+          grid-auto-columns: calc((100% - 24px) / 2);
+        }
+      }
+
+      @media (max-width: 640px) {
+        .topbar-inner { justify-content: center; }
+        .nav { gap: 8px; }
+
+        .nav-group {
+          width: 100%;
+          display: grid;
+          justify-items: center;
+        }
+
+        .nav-dropdown {
+          position: static;
+          transform: none;
+          min-width: min(320px, 100%);
+          width: min(320px, 100%);
+          margin-top: 6px;
+        }
+
+        .eyebrow::before { display: none; }
+        .lead-title { margin-left: 0; }
+
+        .news-toolbar {
+          flex-direction: column;
+          align-items: stretch;
+        }
+
+        .news-controls {
+          justify-content: flex-end;
+        }
+
+        .news-track {
+          grid-auto-columns: 100%;
+        }
+      }
+    </style>
+  <style id="qartia-dropdown-offset">
+.nav-dropdown{transform:translateX(1cm);}
+@media (max-width:880px){.nav-dropdown{transform:translateX(calc(-50% + 1cm));}}
+@media (max-width:640px){.nav-dropdown{transform:none;}}
+@media (min-width:1025px){.ush_menu_1.type_desktop .w-nav-list.level_2{margin-left:1cm;}}
+@media (min-width:1025px){.l-subheader-cell.at_left,.header-inner .logo{transform:translateX(-0.35cm);}}
+</style>
+<link rel="stylesheet" href="../assets/css/qartia-topbar.css?v=lang-20260602">
+<link rel="stylesheet" href="../assets/css/qartia-responsive.css?v=20260601">
+    <style id="eibt-footer-layout-fix">
+    .footer .footer-inner {
+      display: grid !important;
+      grid-template-columns: minmax(180px, 0.75fr) minmax(260px, 1fr) minmax(360px, 1.15fr) !important;
+      align-items: start !important;
+      gap: 28px !important;
+    }
+
+    .footer .footer-eibt-badge,
+    .l-footer .footer-eibt-badge {
+      display: flex !important;
+      justify-content: flex-end !important;
+      align-items: flex-start !important;
+      margin-top: 0 !important;
+      width: 100% !important;
+      min-width: 360px;
+    }
+
+    .footer .footer-eibt-badge img,
+    .l-footer .footer-eibt-badge img {
+      width: min(430px, 100%) !important;
+      height: auto !important;
+      display: block !important;
+      margin-left: auto !important;
+      margin-right: 0 !important;
+    }
+
+    .l-footer .footer-eibt-badge .w-image-h {
+      width: 100% !important;
+    }
+
+    @media (max-width: 900px) {
+      .footer .footer-inner {
+        grid-template-columns: 1fr !important;
+      }
+
+      .footer .footer-eibt-badge,
+      .l-footer .footer-eibt-badge {
+        justify-content: flex-start !important;
+        min-width: 0 !important;
+      }
+
+      .footer .footer-eibt-badge img,
+      .l-footer .footer-eibt-badge img {
+        margin-left: 0 !important;
+        margin-right: auto !important;
+      }
+    }
+  </style>
+    <link rel="stylesheet" href="../assets/css/cookie-consent.css?v=mobile-20260601">
+</head>
+  <body>
+    <div class="topbar">
+      <div class="topbar-inner">
+        <a href="tel:+34686918522">+34 686 91 85 22</a>
+        <a href="mailto:info@qartia.com">info@qartia.com</a>
+        <a class="qartia-linkedin-icon" href="https://www.linkedin.com/company/qartia-smart-technologies/" target="_blank" rel="noopener" aria-label="领英 Qartia"></a>
+
+      </div>
+    </div>
+
+    <header class="header">
+      <div class="header-inner">
+        <a class="logo" href="index.html">
+          <img src="../assets/remote-qartia/wp-content/uploads/2022/11/logo-qartia.png" alt="Qartia Smart Technologies">
+        </a>
+
+        <nav class="nav" aria-label="主导航">
+  <a href="quienes-somos.html">我们是谁</a>
+  <div class="nav-group">
+    <button class="nav-toggle" type="button" aria-expanded="false">产品</button>
+    <div class="nav-dropdown">
+      <a href="productos.html">产品</a>
+      <a href="vibrasense.html">VibraSense</a>
+      <a href="airsense-pro.html">AIRSENSE PRO</a>
+      <a href="megamia.html">MEGAMIA</a>
+      <a href="dipason-exterior.html">DIPASON</a>
+      <a href="Biosentia.html">Biosentia</a>
+      <a href="noisement.html">噪音</a>
+    </div>
+  </div>
+  <div class="nav-group">
+    <button class="nav-toggle" type="button" aria-expanded="false">服务</button>
+    <div class="nav-dropdown">
+      <a href="agricultura.html">农业</a>
+      <div class="nav-subgroup">
+        <a class="nav-subtoggle" href="industria.html">工业</a>
+        <div class="nav-submenu">
+          <a href="mantenimiento-predictivo-vibraciones.html">预测性维护。振动</a>
+          <a href="monitorizacion-activos-criticos.html">关键资产监控</a>
+        </div>
+      </div>
+      <a href="medioambiente.html">环境</a>
+      <a href="civil.html">民用基础设施</a>
+      <a href="sources/serviciosan%CC%83adido.html">附加服务</a>
+    </div>
+  </div>
+  <div class="nav-group">
+    <button class="nav-toggle" type="button" aria-expanded="false">专用网络 5G</button>
+    <div class="nav-dropdown">
+      <a href="dect-nr-plus.html">什么是 DECT NR+</a>
+      <a href="soluciones-5g-privadas.html">5G 私人解决方案</a>
+    </div>
+  </div>
+  <a href="noticias.html">新闻</a>
+  <a href="contacto.html">联系方式</a>
+  <a href="https://qartia.com/Flutter/panel_industrias_prueba/">客户端访问</a>
+</nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-inner">
+          <h1>新闻</h1>
+        </div>
+      </section>
+
+      <section class="news-section">
+        <div class="section-inner">
+          <span class="eyebrow">新闻</span>
+
+          <div class="news-toolbar">
+            <div></div>
+            <div class="news-controls" aria-label="轮播控件">
+              <button class="news-button" type="button" data-news-prev aria-label="以前的新闻">
+                <svg viewbox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M14.5 6.5L9 12l5.5 5.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+              </button>
+              <button class="news-button" type="button" data-news-next aria-label="下一条新闻">
+                <svg viewbox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M9.5 6.5L15 12l-5.5 5.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          <div class="news-viewport" data-news-viewport>
+            <div class="news-track">
+              <article class="news-card">
+                <figure>
+                  <img src="../assets/linkedin-news/cali-instalacion-linkedin.jpg" alt="LinkedIn 上发布了卡利 Qartia 的新环境安装">
+                </figure>
+                <div class="news-card-body">
+                  <div class="news-topline">
+                    <span class="news-label">最新消息</span>
+                    <span class="news-date">2026 年 5 月 27 日</span>
+                  </div>
+                  <h3>卡利的新环境装置</h3>
+                  <p>Qartia 在卡利继续推进，安装了新的环境质量设备，加强了其对城市监测和清晰数据可视化的承诺。</p>
+                  <a class="news-link" href="https://es.linkedin.com/company/qartia-smart-technologies" target="_blank" rel="noopener noreferrer">查看更多</a>
+                </div>
+              </article>
+
+              <article class="news-card cover-card">
+                <figure>
+                  <img src="../assets/linkedin-news/cabezo-beaza-video.jpg" alt="LinkedIn 上发布的有关 Cabezo Beaza 部署的视频缩略图">
+                </figure>
+                <div class="news-card-body">
+                  <div class="news-topline">
+                    <span class="news-label">部署</span>
+                    <span class="news-date">2026 年 4 月 28 日</span>
+                  </div>
+                  <h3>在卡贝索贝萨部署</h3>
+                  <p>Qartia 发布了其在 Cabezo Beaza 工业园的部署，结合了工业环境的先进连接、传感和环境数据。</p>
+                  <a class="news-link" href="https://www.linkedin.com/posts/qartia-smart-technologies_5g-dectnrplus-poligonocabezobeaza-activity-7454910019956981760-0GzT" target="_blank" rel="noopener noreferrer">查看更多</a>
+                </div>
+              </article>
+
+              <article class="news-card">
+                <figure>
+                  <img src="../assets/linkedin-news/opener.jpg" alt="LinkedIn 关于 Opener Initiative 和 DECT NR+ 的帖子">
+                </figure>
+                <div class="news-card-body">
+                  <div class="news-topline">
+                    <span class="news-label">5G 私人</span>
+                    <span class="news-date">2026 年 4 月 21 日</span>
+                  </div>
+                  <h3>开场白倡议和 DECT NR+</h3>
+                  <p>Qartia 参与了与 OpenDECT-X 相关的开放倡议，以促进 DECT NR+ 的共享堆栈、技术交流和社区发展。</p>
+                  <a class="news-link" href="https://www.linkedin.com/posts/qartia-smart-technologies_dectnr-opensource-wireless-activity-7452368594811654145-7v1T" target="_blank" rel="noopener noreferrer">查看更多</a>
+                </div>
+              </article>
+
+              <article class="news-card">
+                <figure>
+                  <img src="../assets/linkedin-news/ilboc.jpg" alt="LinkedIn 上关于 ILBOC 远程监控的帖子">
+                </figure>
+                <div class="news-card-body">
+                  <div class="news-topline">
+                    <span class="news-label">工业</span>
+                    <span class="news-date">2026 年 1 月 14 日</span>
+                  </div>
+                  <h3>远程监控和预测性维护</h3>
+                  <p>Qartia 展示了一个专注于关键资产的工业案例，其中连续传感和遥测有助于预测事件并优化维护。</p>
+                  <a class="news-link" href="https://www.linkedin.com/posts/qartia-smart-technologies_industrialiot-remotemonitoring-criticalassets-activity-7417177782960640000-A-Iy" target="_blank" rel="noopener noreferrer">查看更多</a>
+                </div>
+              </article>
+
+              <article class="news-card">
+                <figure>
+                  <img src="../assets/linkedin-news/mic.jpg" alt="LinkedIn 上关于 Cala Cortina 结构监测的帖子">
+                </figure>
+                <div class="news-card-body">
+                  <div class="news-topline">
+                    <span class="news-label">基础设施</span>
+                    <span class="news-date">2026 年 1 月 3 日</span>
+                  </div>
+                  <h3>Cala Cortina 的 MIC 项目</h3>
+                  <p>该出版物总结了卡塔赫纳港第二条隧道 N-343 中部署的地震监测和结构监测，以加强 Qartia 的民用线路。</p>
+                  <a class="news-link" href="https://www.linkedin.com/posts/qartia-smart-technologies_iot-infraestructurascr%C3%ADticas-infraestructurasciviles-activity-7413250045887619072-WF5F" target="_blank" rel="noopener noreferrer">查看更多</a>
+                </div>
+              </article>
+
+              <article class="news-card">
+                <figure>
+                  <img src="../assets/linkedin-news/greenhouse-1.jpg" alt="LinkedIn 关于智能光伏温室的帖子">
+                </figure>
+                <div class="news-card-body">
+                  <div class="news-topline">
+                    <span class="news-label">农业</span>
+                    <span class="news-date">2025 年 12 月 21 日</span>
+                  </div>
+                  <h3>智能光伏温室</h3>
+                  <p>Qartia 将智能温室环境中农艺变量的传感、能源和分析连接起来，结合现场数据和数字孪生。</p>
+                  <a class="news-link" href="https://www.linkedin.com/posts/qartia-smart-technologies_5g-ai-dectnrplus-activity-7402649307914444801-kWmJ" target="_blank" rel="noopener noreferrer">查看更多</a>
+                </div>
+              </article>
+
+              <article class="news-card">
+                <figure>
+                  <img src="../assets/linkedin-news/waykup-2025.jpg" alt="LinkedIn 在 Waykup 论坛 2025 上发布关于 Qartia 的帖子">
+                </figure>
+                <div class="news-card-body">
+                  <div class="news-topline">
+                    <span class="news-label">生态系统</span>
+                    <span class="news-date">2025 年 11 月 18 日</span>
+                  </div>
+                  <h3>Qartia 在 Waykup 论坛 2025</h3>
+                  <p>Qartia 总结了他参加穆尔西亚双重创新小组的情况，强调了该地区在吸引深度技术、私人投资和 IoT、5G 非细胞和应用人工智能项目方面的作用。</p>
+                  <a class="news-link" href="https://www.linkedin.com/posts/qartia-smart-technologies_waykup2025-qartia-innovation-activity-7396398833531809792-egZ1" target="_blank" rel="noopener noreferrer">查看更多</a>
+                </div>
+              </article>
+
+              <article class="news-card">
+                <figure>
+              <img src="../assets/linkedin-news/dect-forum-2025-linkedin.jpg" alt="Qartia 在 2025 年 DECT 论坛上发表的 LinkedIn 帖子">
+                </figure>
+                <div class="news-card-body">
+                  <div class="news-topline">
+                    <span class="news-label">DECT NR+</span>
+                    <span class="news-date">2025 年 11 月 12 日</span>
+                  </div>
+                  <h3>Qartia 在 2025 年 DECT 论坛上</h3>
+                  <p>Qartia 参加了在慕尼黑举行的 2025 年 DECT 论坛，加强了其用于工业连接的专用网络 DECT NR+、IoT、IP、语音和视频服务。</p>
+                  <a class="news-link" href="https://www.linkedin.com/posts/antonio-javier-garcia-sanchez-09235863_dectforum2025-dectnrplus-qartia-activity-7396366298911322112-SjU9" target="_blank" rel="noopener noreferrer">查看更多</a>
+                </div>
+              </article>
+
+              <article class="news-card">
+                <figure>
+                  <img src="../assets/linkedin-news/costa-rica-testbed-linkedin.jpg" alt="哥斯达黎加的测试平台 5G/6G 由 Qartia 在 LinkedIn 上发布">
+                </figure>
+                <div class="news-card-body">
+                  <div class="news-topline">
+                    <span class="news-label">国际</span>
+                    <span class="news-date">2025 年 7 月 1 日</span>
+                  </div>
+                  <h3>哥斯达黎加的测试平台 5G/6G</h3>
+                  <p>CATIE 参与了 Qartia 在哥斯达黎加启动 5G/6G 测试台，连接专用网络、可持续农工业和技术验证。</p>
+                  <a class="news-link" href="https://www.catie.ac.cr/2025/07/01/catie-participa-en-el-lanzamiento-del-testbed-5g-6g-para-impulsar-soluciones-tecnologicas-en-agroindustria-sostenible/" target="_blank" rel="noopener noreferrer">查看更多</a>
+                </div>
+              </article>
+
+              <article class="news-card">
+                <figure>
+                  <img src="../assets/linkedin-news/feindef-linkedin.jpg" alt="FEINDEF 中的 Qartia">
+                </figure>
+                <div class="news-card-body">
+                  <div class="news-topline">
+                    <span class="news-label">国防与安全</span>
+                    <span class="news-date">2025 年 5 月</span>
+                  </div>
+                  <h3>FEINDEF 中的 Qartia</h3>
+                  <p>Qartia 融合了其传感功能、先进的 IoT、专用连接和应用于工业、国防和安全场景的智能。</p>
+                  <a class="news-link" href="https://www.linkedin.com/search/results/content/?keywords=Qartia%20FEINDEF" target="_blank" rel="noopener noreferrer">查看更多</a>
+                </div>
+              </article>
+
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        <div class="footer-logo">
+          <img src="../assets/remote-qartia/wp-content/uploads/2022/11/logo-qartia.png" alt="Qartia">
+        </div>
+        <div>
+          <h4>联系方式</h4>
+          <p><a href="tel:+34686918522">(+34) 686918522</a></p>
+          <p><a href="mailto:info@qartia.com">info@qartia.com</a></p>
+          <p>Calle Tolosa Latour, 4, 7°A,</p>
+          <p>30201, 卡塔赫纳, 西班牙</p>
+            <p>到岸价: B67916676</p>
+        </div>
+              <div class="footer-eibt-badge" style="display:flex;align-items:center;justify-content:flex-end;min-width:360px;margin-top:8px;">
+          <img src="../assets/images/eibt-logo.png" alt="EIBT 印章" style="width:min(430px,100%);height:auto;display:block;">
+        </div>
+</div>
+    </footer>
+
+    <div class="subfooter">
+      <div class="subfooter-inner">
+        <a href="aviso-legal.html">法律声明</a>
+        <a href="politica-cookies.html">Cookie 政策</a>
+        <a href="politica-privacidad.html">隐私政策</a>
+      </div>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const groups = document.querySelectorAll(".nav-group");
+
+        groups.forEach((group) => {
+          const toggle = group.querySelector(".nav-toggle");
+          if (!toggle) return;
+
+          toggle.addEventListener("click", function (event) {
+            event.preventDefault();
+            const willOpen = !group.classList.contains("open");
+
+            groups.forEach((otherGroup) => {
+              otherGroup.classList.remove("open");
+              const otherToggle = otherGroup.querySelector(".nav-toggle");
+              if (otherToggle) {
+                otherToggle.setAttribute("aria-expanded", "false");
+              }
+            });
+
+            group.classList.toggle("open", willOpen);
+            toggle.setAttribute("aria-expanded", willOpen ? "true" : "false");
+          });
+        });
+
+        document.addEventListener("click", function (event) {
+          groups.forEach((group) => {
+            if (group.contains(event.target)) return;
+            group.classList.remove("open");
+            const toggle = group.querySelector(".nav-toggle");
+            if (toggle) {
+              toggle.setAttribute("aria-expanded", "false");
+            }
+          });
+        });
+
+        const viewport = document.querySelector("[data-news-viewport]");
+        const prev = document.querySelector("[data-news-prev]");
+        const next = document.querySelector("[data-news-next]");
+
+        if (viewport && prev && next) {
+          const scrollCards = function (direction) {
+            const firstCard = viewport.querySelector(".news-card");
+            const cardWidth = firstCard ? firstCard.getBoundingClientRect().width : viewport.clientWidth;
+            viewport.scrollBy({
+              left: direction * (cardWidth + 24),
+              behavior: "smooth",
+            });
+          };
+
+          prev.addEventListener("click", function () {
+            scrollCards(-1);
+          });
+
+          next.addEventListener("click", function () {
+            scrollCards(1);
+          });
+        }
+      });
+    </script>
+      <script src="../assets/js/qartia-mobile-nav.js?v=20260601" defer></script>
+      <script src="../assets/js/cookie-consent.js?v=mobile-20260601" defer></script>
+<script src="../assets/js/qartia-language-switcher.js"></script>
+</body>
+</html>

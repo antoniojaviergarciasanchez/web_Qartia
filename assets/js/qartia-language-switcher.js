@@ -18,7 +18,7 @@
     var cleanPath = relativePath.replace(/^\/+/, '');
     var parts = cleanPath.split('/');
 
-    if (parts[0] === 'en' || parts[0] === 'de') {
+    if (parts[0] === 'en' || parts[0] === 'de' || parts[0] === 'fr' || parts[0] === 'zh') {
       parts.shift();
     }
 
@@ -34,6 +34,8 @@
   function currentLanguage(relativePath) {
     if (relativePath.indexOf('en/') === 0) return 'en';
     if (relativePath.indexOf('de/') === 0) return 'de';
+    if (relativePath.indexOf('fr/') === 0) return 'fr';
+    if (relativePath.indexOf('zh/') === 0) return 'zh';
     return 'es';
   }
 
@@ -61,7 +63,9 @@
     var labels = [
       ['es', 'ES'],
       ['en', 'EN'],
-      ['de', 'DE']
+      ['de', 'DE'],
+      ['fr', 'FR'],
+      ['zh', 'ZH']
     ];
     var nav = document.createElement('nav');
     nav.className = 'qartia-language-switcher';

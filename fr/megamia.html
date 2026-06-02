@@ -1,0 +1,1126 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>MEGAMIA - Qartia Smart Technologies</title>
+    <link rel="icon" href="../assets/remote-qartia/wp-content/uploads/2022/10/favicon-150x150.png" sizes="32x32">
+    <link rel="icon" href="../assets/remote-qartia/wp-content/uploads/2022/10/favicon.png" sizes="192x192">
+    <link rel="apple-touch-icon" href="../assets/remote-qartia/wp-content/uploads/2022/10/favicon.png">
+    <meta name="msapplication-TileImage" content="assets/remote-qartia/wp-content/uploads/2022/10/favicon.png">
+    
+<link rel="stylesheet" id="qartia-local-fonts" href="../assets/css/local-fonts.css"><meta name="description" content="Fichier MEGAMIA, l'appareil Qartia Smart Technologies pour la mesure continue du CO2, de l'ozone, des NOx et du SO2.">
+<style>
+      :root {
+        --bg: #f5f5f5;
+        --paper: #ffffff;
+        --paper-soft: #f7fbfc;
+        --ink: #333333;
+        --ink-strong: #1a1a1a;
+        --brand: #144e9c;
+        --accent: #36deb8;
+        --shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+      }
+
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--ink);
+        font-family: "Work Sans", sans-serif;
+        line-height: 1.55;
+      }
+      a { color: inherit; text-decoration: none; }
+      img { max-width: 100%; display: block; }
+
+      .topbar,
+      .header,
+      .footer,
+      .subfooter { width: 100%; }
+
+      .topbar {
+        background: #f5f5f5;
+        color: #333;
+        font-size: 0.84rem;
+      }
+
+      .topbar-inner,
+      .header-inner,
+      .section-inner,
+      .footer-inner {
+        width: min(1140px, calc(100% - 32px));
+        margin: 0 auto;
+      }
+
+      .topbar-inner {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        gap: 18px;
+        padding: 10px 0;
+        flex-wrap: wrap;
+      }
+
+      .header {
+        position: sticky;
+        top: 0;
+        z-index: 20;
+        background: rgba(255, 255, 255, 0.96);
+        box-shadow: 0 2px 18px rgba(0, 0, 0, 0.08);
+        backdrop-filter: blur(10px);
+      }
+
+      .header-inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 18px;
+        padding: 14px 0;
+      }
+
+      .logo img { width: 180px; height: auto; }
+
+      .nav {
+        display: flex;
+        justify-content: flex-end;
+        gap: 4px;
+        flex-wrap: wrap;
+        align-items: center;
+      }
+
+      .nav > a,
+      .nav-toggle {
+        padding: 10px 12px;
+        color: var(--brand);
+        background: transparent;
+        border: 0;
+        font-family: "Rubik", sans-serif;
+        font-size: 0.82rem;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 0.02em;
+        border-radius: 8px;
+        cursor: pointer;
+      }
+
+      .nav > a:hover,
+      .nav > a:focus-visible,
+      .nav-toggle:hover,
+      .nav-toggle:focus-visible {
+        background: rgba(20, 78, 156, 0.08);
+      }
+
+      .nav-group { position: relative; }
+      .nav-toggle {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .nav-toggle::after {
+        content: "";
+        width: 8px;
+        height: 8px;
+        border-right: 2px solid currentColor;
+        border-bottom: 2px solid currentColor;
+        transform: rotate(45deg) translateY(-1px);
+      }
+
+      .nav-dropdown {
+        position: absolute;
+        top: calc(100% + 10px);
+        right: 0;
+        min-width: 260px;
+        display: none;
+        flex-direction: column;
+        padding: 10px;
+        border-radius: 16px;
+        background: rgba(255, 255, 255, 0.98);
+        box-shadow: var(--shadow);
+        backdrop-filter: blur(10px);
+        z-index: 30;
+      }
+
+      .nav-dropdown a {
+        padding: 10px 12px;
+        color: var(--brand);
+        font-family: "Rubik", sans-serif;
+        font-size: 0.8rem;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 0.02em;
+        border-radius: 10px;
+      }
+
+      .nav-dropdown a:hover,
+      .nav-dropdown a:focus-visible,
+      .nav-subtoggle:hover,
+      .nav-subtoggle:focus-visible {
+        background: rgba(20, 78, 156, 0.08);
+      }
+
+      .nav-subgroup {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .nav-subtoggle {
+        padding: 10px 12px;
+        color: var(--brand);
+        font-family: "Rubik", sans-serif;
+        font-size: 0.8rem;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 0.02em;
+        border-radius: 10px;
+      }
+
+      .nav-submenu {
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+        margin: 0 0 6px 18px;
+        padding-left: 12px;
+        border-left: 2px solid rgba(20, 78, 156, 0.14);
+      }
+
+      .nav-submenu a {
+        padding: 8px 10px;
+        font-size: 0.74rem;
+      }
+
+      .nav-group:hover .nav-dropdown,
+      .nav-group.open .nav-dropdown { display: flex; }
+
+      .hero {
+        min-height: 380px;
+        display: flex;
+        align-items: center;
+        color: #fff;
+        background:
+          linear-gradient(rgba(0, 0, 0, 0.50), rgba(0, 0, 0, 0.16)),
+          url("../assets/remote-qartia/wp-content/uploads/2022/12/slide-cuatrov2.jpg") center/cover no-repeat;
+      }
+
+      .hero-inner {
+        width: min(1140px, calc(100% - 32px));
+        margin: 0 auto;
+        padding: 82px 0 60px;
+      }
+
+      .hero h1 {
+        margin: 0 0 12px;
+        font-family: "Rubik", sans-serif;
+        font-size: clamp(2.4rem, 4vw, 4rem);
+        font-weight: 300;
+        text-shadow: 2px 2px 9px #000;
+      }
+
+      .hero p {
+        max-width: 720px;
+        margin: 0;
+        font-size: 1.1rem;
+        text-shadow: 2px 2px 9px #000;
+      }
+
+      .intro-section,
+      .specs-section,
+      .systems-section,
+      .cta-section {
+        padding: 70px 0;
+      }
+
+      .intro-section {
+        background:
+          linear-gradient(180deg, rgba(247, 251, 252, 0.98) 0%, #ffffff 68%),
+          url("../assets/remote-qartia/wp-content/uploads/2022/11/fondo-home.jpg") top left / cover no-repeat;
+      }
+
+      .intro-grid,
+      .systems-grid,
+      .cta-grid {
+        display: grid;
+        grid-template-columns: minmax(0, 1.08fr) minmax(300px, 0.92fr);
+        gap: 36px;
+        align-items: start;
+      }
+
+      .eyebrow {
+        display: inline-block;
+        margin-bottom: 10px;
+        color: var(--accent);
+        font-size: 1rem;
+        font-weight: 600;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+      }
+
+      .eyebrow::before {
+        content: "";
+        display: inline-block;
+        width: 49px;
+        height: 50px;
+        margin-right: 10px;
+        vertical-align: middle;
+        background: url("../assets/remote-qartia/wp-content/uploads/2022/11/before-titulares.png") no-repeat center/contain;
+      }
+
+      .lead-title {
+        margin: 0 0 24px 58px;
+        color: var(--ink-strong);
+        font-family: "Rubik", sans-serif;
+        font-size: clamp(2rem, 3vw, 3rem);
+        font-weight: 300;
+        line-height: 1.12;
+      }
+
+      .card,
+      .visual-card,
+      .cta-copy {
+        background: var(--paper);
+        border-radius: 24px;
+        padding: 28px;
+        box-shadow: var(--shadow);
+      }
+
+      .visual-card img {
+        width: 100%;
+        border-radius: 18px;
+        background: #f4f9fb;
+        padding: 18px;
+      }
+
+      .visual-card p,
+      .card p {
+        margin: 14px 0 0;
+      }
+
+      .commercial-copy,
+      .product-showcase {
+        border: 1px solid rgba(20, 78, 156, 0.1);
+        border-radius: 8px;
+        box-shadow: 0 18px 46px rgba(15, 56, 92, 0.12);
+      }
+
+      .commercial-copy .lead-title {
+        margin-left: 0;
+        font-weight: 400;
+      }
+
+      .commercial-copy p {
+        color: #43515d;
+        font-size: 1.03rem;
+      }
+
+      .gas-strip {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 10px;
+        margin: 24px 0 0;
+      }
+
+      .gas-pill {
+        padding: 14px 12px;
+        border-radius: 8px;
+        background: #eef9f8;
+        border-left: 3px solid var(--accent);
+      }
+
+      .gas-pill strong {
+        display: block;
+        color: var(--brand);
+        font-family: "Rubik", sans-serif;
+        font-size: 1.2rem;
+        line-height: 1;
+      }
+
+      .gas-pill span {
+        display: block;
+        margin-top: 7px;
+        color: #56616b;
+        font-size: 0.88rem;
+      }
+
+      .value-strip {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 16px;
+        margin-top: 24px;
+      }
+
+      .value-item {
+        min-height: 150px;
+        padding: 22px;
+        border: 1px solid rgba(20, 78, 156, 0.1);
+        border-radius: 8px;
+        background: rgba(255, 255, 255, 0.92);
+        box-shadow: 0 14px 34px rgba(15, 56, 92, 0.1);
+      }
+
+      .value-item strong {
+        display: block;
+        margin-bottom: 10px;
+        color: var(--brand);
+        font-family: "Rubik", sans-serif;
+        font-size: 1.05rem;
+      }
+
+      .value-item p {
+        margin: 0;
+        color: #4f5b66;
+      }
+
+      .product-showcase {
+        position: sticky;
+        top: 116px;
+        overflow: hidden;
+        background:
+          linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(232, 250, 249, 0.94));
+      }
+
+      .product-showcase img {
+        aspect-ratio: 4 / 3;
+        object-fit: contain;
+        border-radius: 8px;
+        border: 1px solid rgba(20, 78, 156, 0.08);
+        background: #fff;
+      }
+
+      .showcase-caption {
+        padding: 16px;
+        border-radius: 8px;
+        background: rgba(20, 78, 156, 0.08);
+      }
+
+      .showcase-caption strong {
+        display: block;
+        margin-bottom: 6px;
+        color: var(--brand);
+        font-family: "Rubik", sans-serif;
+      }
+
+      .specs-section { background: var(--paper); }
+
+      .section-heading {
+        max-width: 820px;
+        margin-bottom: 30px;
+      }
+
+      .spec-grid {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 16px;
+      }
+
+      .spec-card {
+        min-height: 164px;
+        padding: 20px;
+        border: 1px solid rgba(20, 78, 156, 0.1);
+        border-radius: 8px;
+        background:
+          linear-gradient(180deg, #ffffff 0%, #f6fbfc 100%);
+        box-shadow: 0 16px 38px rgba(15, 56, 92, 0.1);
+      }
+
+      .spec-card strong {
+        display: block;
+        color: var(--brand);
+        font-family: "Rubik", sans-serif;
+        font-size: 0.76rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+      }
+
+      .spec-value {
+        display: block;
+        margin: 16px 0 10px;
+        color: var(--ink-strong);
+        font-family: "Rubik", sans-serif;
+        font-size: clamp(1.28rem, 2.2vw, 1.95rem);
+        font-weight: 500;
+        line-height: 1.05;
+      }
+
+      .spec-note {
+        margin: 0;
+        color: #56616b;
+        font-size: 0.92rem;
+      }
+
+      .spec-card.highlight {
+        grid-column: span 2;
+        background:
+          linear-gradient(135deg, rgba(20, 78, 156, 0.96), rgba(34, 139, 158, 0.92));
+        color: #fff;
+      }
+
+      .spec-card.highlight strong,
+      .spec-card.highlight .spec-value,
+      .spec-card.highlight .spec-note {
+        color: #fff;
+      }
+
+      .spec-card.highlight .spec-note {
+        opacity: 0.88;
+      }
+
+      .feature-list {
+        display: grid;
+        gap: 10px;
+        margin: 18px 0 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .feature-list li {
+        position: relative;
+        padding-left: 18px;
+      }
+
+      .feature-list li::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0.68em;
+        width: 8px;
+        height: 8px;
+        border-radius: 999px;
+        background: var(--accent);
+      }
+
+      .systems-section { background: #e8faf9; }
+
+      .systems-grid {
+        align-items: stretch;
+      }
+
+      .system-panel {
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
+        padding: 28px;
+        border: 1px solid rgba(20, 78, 156, 0.1);
+        border-radius: 8px;
+        background: rgba(255, 255, 255, 0.94);
+        box-shadow: 0 16px 38px rgba(15, 56, 92, 0.1);
+      }
+
+      .system-panel .lead-title {
+        margin-bottom: 4px;
+        font-size: clamp(1.7rem, 2.4vw, 2.35rem);
+      }
+
+      .detail-grid {
+        display: grid;
+        gap: 12px;
+      }
+
+      .detail-item {
+        display: grid;
+        grid-template-columns: 108px minmax(0, 1fr);
+        gap: 14px;
+        align-items: start;
+        padding: 14px 0;
+        border-top: 1px solid rgba(20, 78, 156, 0.12);
+      }
+
+      .detail-item strong {
+        color: var(--brand);
+        font-family: "Rubik", sans-serif;
+        font-size: 0.82rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+      }
+
+      .detail-item p {
+        margin: 0;
+      }
+
+      .system-footnote {
+        margin: auto 0 0;
+        padding: 14px 16px;
+        border-radius: 8px;
+        background: rgba(54, 222, 184, 0.14);
+        color: #13435c;
+        font-size: 0.95rem;
+      }
+
+      .system-panel {
+        position: relative;
+        overflow: hidden;
+      }
+
+      .system-panel::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 120px;
+        height: 4px;
+        background: var(--accent);
+      }
+
+      .cta-section {
+        background:
+          linear-gradient(135deg, rgba(20, 78, 156, 0.98) 0%, rgba(20, 78, 156, 0.9) 45%, rgba(54, 222, 184, 0.78) 100%);
+        color: var(--ink);
+      }
+
+      .cta-copy {
+        border-radius: 8px;
+        border: 1px solid rgba(54, 222, 184, 0.34);
+        border-left: 6px solid var(--accent);
+        background: rgba(255, 255, 255, 0.94);
+        box-shadow: 0 18px 46px rgba(10, 45, 80, 0.22);
+      }
+
+      .cta-copy h2 {
+        color: #fff;
+        font-weight: 400;
+      }
+
+      .button {
+        border-radius: 8px;
+        background: var(--accent);
+        color: #073042;
+      }
+
+      .cta-section { background-color: var(--brand); }
+
+      .cta-grid {
+        grid-template-columns: minmax(0, 820px);
+        justify-content: center;
+        gap: 24px;
+      }
+
+      .cta-copy {
+        text-align: center;
+      }
+
+      .cta-copy h2 {
+        margin: 0 0 14px;
+        color: var(--ink-strong);
+        font-family: "Rubik", sans-serif;
+        font-size: clamp(1.9rem, 2.5vw, 2.6rem);
+        font-weight: 300;
+      }
+
+      .cta-copy p { margin: 0 0 18px; }
+
+      .cta-copy p {
+        max-width: 620px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 14px 20px;
+        border-radius: 999px;
+        background: var(--brand);
+        color: #fff;
+        font-family: "Rubik", sans-serif;
+        font-size: 0.92rem;
+        font-weight: 700;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+      }
+
+      .cta-section .cta-copy h2 {
+        color: var(--brand);
+        font-weight: 400;
+      }
+
+      .cta-section .button {
+        border-radius: 8px;
+        background: var(--brand);
+        color: #fff;
+        box-shadow: 0 10px 24px rgba(20, 78, 156, 0.24);
+      }
+
+      .cta-image {
+        min-height: 260px;
+        border-radius: 8px;
+        background:
+          linear-gradient(135deg, rgba(255, 255, 255, 0.92), rgba(232, 250, 249, 0.98)),
+          url("../assets/MEDIDOR_GASES/word/media/image8.png") center/74% no-repeat,
+          #f3f8fb;
+        border: 1px solid rgba(255, 255, 255, 0.58);
+        box-shadow: 0 18px 46px rgba(10, 45, 80, 0.22);
+      }
+
+      .footer {
+        background:
+          url("../assets/remote-qartia/wp-content/uploads/2022/11/fondo-footer.jpg") left top / cover no-repeat,
+          #222;
+        color: #ccc;
+      }
+
+      .footer-inner {
+        display: grid;
+        grid-template-columns: 220px minmax(0, 1fr);
+        gap: 36px;
+        align-items: start;
+        padding: 56px 0 28px;
+      }
+
+      .footer-logo img { width: 180px; }
+
+      .footer h4 {
+        margin: 0 0 16px;
+        color: #ccc;
+        font-family: "Rubik", sans-serif;
+        font-size: 1.1rem;
+        font-weight: 700;
+        text-transform: uppercase;
+      }
+
+      .footer p { margin: 0 0 10px; }
+
+      .subfooter {
+        background: #333;
+        color: #f9f9f9;
+        font-size: 0.86rem;
+        text-transform: uppercase;
+      }
+
+      .subfooter-inner {
+        width: min(1140px, calc(100% - 32px));
+        margin: 0 auto;
+        padding: 14px 0;
+        display: flex;
+        justify-content: center;
+        gap: 28px;
+        flex-wrap: wrap;
+      }
+
+      @media (max-width: 1024px) {
+        .header-inner,
+        .intro-grid,
+        .systems-grid,
+        .cta-grid,
+        .footer-inner,
+        .spec-grid,
+        .value-strip {
+          grid-template-columns: 1fr;
+        }
+
+        .product-showcase { position: static; }
+        .spec-card.highlight { grid-column: auto; }
+
+        .header-inner {
+          display: grid;
+          gap: 12px;
+        }
+
+        .logo { justify-self: center; }
+        .nav { justify-content: center; }
+
+        .nav-dropdown {
+          right: auto;
+          left: 50%;
+          transform: translateX(-50%);
+        }
+      }
+
+      @media (max-width: 640px) {
+        .topbar-inner { justify-content: center; }
+        .nav { gap: 8px; }
+
+        .nav-group {
+          width: 100%;
+          display: grid;
+          justify-items: center;
+        }
+
+        .nav-dropdown {
+          position: static;
+          transform: none;
+          min-width: min(320px, 100%);
+          width: min(320px, 100%);
+          margin-top: 6px;
+        }
+
+        .eyebrow::before { display: none; }
+        .lead-title { margin-left: 0; }
+        .gas-strip { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+        .detail-item { grid-template-columns: 1fr; }
+      }
+    </style>
+  <style id="qartia-dropdown-offset">
+.nav-dropdown{transform:translateX(1cm);}
+@media (max-width:880px){.nav-dropdown{transform:translateX(calc(-50% + 1cm));}}
+@media (max-width:640px){.nav-dropdown{transform:none;}}
+@media (min-width:1025px){.ush_menu_1.type_desktop .w-nav-list.level_2{margin-left:1cm;}}
+@media (min-width:1025px){.l-subheader-cell.at_left,.header-inner .logo{transform:translateX(-0.35cm);}}
+</style>
+<link rel="stylesheet" href="../assets/css/qartia-topbar.css?v=lang-20260602">
+<link rel="stylesheet" href="../assets/css/qartia-responsive.css?v=20260601">
+    <style id="eibt-footer-layout-fix">
+    .footer .footer-inner {
+      display: grid !important;
+      grid-template-columns: minmax(180px, 0.75fr) minmax(260px, 1fr) minmax(360px, 1.15fr) !important;
+      align-items: start !important;
+      gap: 28px !important;
+    }
+
+    .footer .footer-eibt-badge,
+    .l-footer .footer-eibt-badge {
+      display: flex !important;
+      justify-content: flex-end !important;
+      align-items: flex-start !important;
+      margin-top: 0 !important;
+      width: 100% !important;
+      min-width: 360px;
+    }
+
+    .footer .footer-eibt-badge img,
+    .l-footer .footer-eibt-badge img {
+      width: min(430px, 100%) !important;
+      height: auto !important;
+      display: block !important;
+      margin-left: auto !important;
+      margin-right: 0 !important;
+    }
+
+    .l-footer .footer-eibt-badge .w-image-h {
+      width: 100% !important;
+    }
+
+    @media (max-width: 900px) {
+      .footer .footer-inner {
+        grid-template-columns: 1fr !important;
+      }
+
+      .footer .footer-eibt-badge,
+      .l-footer .footer-eibt-badge {
+        justify-content: flex-start !important;
+        min-width: 0 !important;
+      }
+
+      .footer .footer-eibt-badge img,
+      .l-footer .footer-eibt-badge img {
+        margin-left: 0 !important;
+        margin-right: auto !important;
+      }
+    }
+  </style>
+    <link rel="stylesheet" href="../assets/css/cookie-consent.css?v=mobile-20260601">
+</head>
+  <body>
+    <div class="topbar">
+      <div class="topbar-inner">
+        <a href="tel:+34686918522">+34 686 91 85 22</a>
+        <a href="mailto:info@qartia.com">info@qartia.com</a>
+        <a class="qartia-linkedin-icon" href="https://www.linkedin.com/company/qartia-smart-technologies/" target="_blank" rel="noopener" aria-label="LinkedIn Qartia"></a>
+
+      </div>
+    </div>
+
+    <header class="header">
+      <div class="header-inner">
+        <a class="logo" href="index.html">
+          <img src="../assets/remote-qartia/wp-content/uploads/2022/11/logo-qartia.png" alt="Qartia Smart Technologies">
+        </a>
+
+        <nav class="nav" aria-label="Navigation principale">
+  <a href="quienes-somos.html">Qui nous sommes</a>
+  <div class="nav-group">
+    <button class="nav-toggle" type="button" aria-expanded="false">Produits</button>
+    <div class="nav-dropdown">
+      <a href="productos.html">Produits</a>
+      <a href="vibrasense.html">VibraSense</a>
+      <a href="airsense-pro.html">AIRSENSE PRO</a>
+      <a href="megamia.html">MEGAMIA</a>
+      <a href="dipason-exterior.html">DIPASON</a>
+      <a href="Biosentia.html">Biosentie</a>
+      <a href="noisement.html">BruitMent</a>
+    </div>
+  </div>
+  <div class="nav-group">
+    <button class="nav-toggle" type="button" aria-expanded="false">Prestations</button>
+    <div class="nav-dropdown">
+      <a href="agricultura.html">Agriculture</a>
+      <div class="nav-subgroup">
+        <a class="nav-subtoggle" href="industria.html">Industrie</a>
+        <div class="nav-submenu">
+          <a href="mantenimiento-predictivo-vibraciones.html">Maintenance prédictive. Vibrations</a>
+          <a href="monitorizacion-activos-criticos.html">Surveillance des actifs critiques</a>
+        </div>
+      </div>
+      <a href="medioambiente.html">Environnement</a>
+      <a href="civil.html">Infrastructures civiles</a>
+      <a href="sources/serviciosan%CC%83adido.html">Services supplémentaires</a>
+    </div>
+  </div>
+  <div class="nav-group">
+    <button class="nav-toggle" type="button" aria-expanded="false">Réseaux privés 5G</button>
+    <div class="nav-dropdown">
+      <a href="dect-nr-plus.html">Qu'est-ce que DECT NR+</a>
+      <a href="soluciones-5g-privadas.html">5G Solutions privées</a>
+    </div>
+  </div>
+  <a href="noticias.html">Actualités</a>
+  <a href="contacto.html">Contacter</a>
+  <a href="https://qartia.com/Flutter/panel_industrias_prueba/">Accès client</a>
+</nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-inner">
+          <h1>MEGAMIA</h1>
+          <p>Détection continue du CO2, de l'Ozone, des NOx et du SO2 dans un appareil compact et géolocalisé préparé pour une intégration industrielle.</p>
+        </div>
+      </section>
+
+      <section class="intro-section">
+        <div class="section-inner">
+          <div class="intro-grid">
+            <div class="card commercial-copy">
+              <span class="eyebrow">Produit Qartia</span>
+              <h2 class="lead-title">Qualité de l'air mesurable, traçable et prête à décider.</h2>
+              <p>MEGAMIA transforme la surveillance des gaz en un service opérationnel : il mesure le CO2, l'Ozone, les NOx et le SO2 en continu, géolocalise le point de captage et envoie les données pour être visualisées et exploitées depuis une plateforme privée.</p>
+              <p>Son format compact permet de déployer des réseaux de mesure dans l'industrie, les villes, les infrastructures ou les campagnes environnementales, en connectant le capteur, le réseau et l'analyse dans un seul flux de travail.</p>
+              <div class="gas-strip" aria-label="Gaz critères mesurés par MEGAMIA">
+                <div class="gas-pill">
+                  <strong>CO2</strong>
+                  <span>Dioxyde de carbone</span>
+                </div>
+                <div class="gas-pill">
+                  <strong>Ozone</strong>
+                  <span>Ozone troposphérique</span>
+                </div>
+                <div class="gas-pill">
+                  <strong>NOx</strong>
+                  <span>Oxydes d'azote</span>
+                </div>
+                <div class="gas-pill">
+                  <strong>SO2</strong>
+                  <span>Dioxyde de soufre</span>
+                </div>
+              </div>
+              <ul class="feature-list">
+                <li>GPS intégré pour la géolocalisation des équipements.</li>
+                <li>Batteries internes avec une autonomie approximative de 2 jours.</li>
+                <li>Conçu par la zone R&amp;D Qartia pour les conditions météorologiques défavorables.</li>
+                <li>Préparé pour les services avancés de maintenance préventive.</li>
+              </ul>
+            </div>
+
+            <aside class="visual-card product-showcase">
+              <img src="../assets/images/megamia-device.png" alt="Appareil MEGAMIA">
+              <div class="showcase-caption">
+                <strong>Équipement compact, déploiement flexible</strong>
+                <p>Préparé pour des campagnes temporaires ou des réseaux permanents de surveillance des gaz polluants.</p>
+              </div>
+            </aside>
+          </div>
+          <div class="value-strip" aria-label="Valeur opérationnelle de MEGAMIA">
+            <div class="value-item">
+              <strong>Contrôle environnemental continu</strong>
+              <p>Surveillance stable des gaz critères pour détecter les changements, les tendances et les incidents dans l'air.</p>
+            </div>
+            <div class="value-item">
+              <strong>Des données prêtes à exploser</strong>
+              <p>Mesure connectée avec visualisation à distance et export depuis espace privé.</p>
+            </div>
+            <div class="value-item">
+              <strong>Évolutif par projet</strong>
+              <p>Intégrable à l'infrastructure de communication conçue par Qartia en fonction de chaque déploiement.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="specs-section">
+        <div class="section-inner">
+          <div class="section-heading">
+            <span class="eyebrow">Spécifications</span>
+            <h2 class="lead-title">Données clés de l'équipe.</h2>
+          </div>
+          <div class="spec-grid">
+            <div class="spec-card">
+              <strong>Dimensions</strong>
+              <span class="spec-value">105 x 172 mm</span>
+              <p class="spec-note">Format compact pour les déploiements distribués.</p>
+            </div>
+            <div class="spec-card">
+              <strong>Poids et tension</strong>
+              <span class="spec-value">0,7kg / 3,7V</span>
+              <p class="spec-note">Poids approximatif et puissance interne.</p>
+            </div>
+            <div class="spec-card">
+              <strong>Stockage</strong>
+              <span class="spec-value">-25 à +60 °C</span>
+              <p class="spec-note">Conditions de stockage avec 20 à 85% H.R.</p>
+            </div>
+            <div class="spec-card highlight">
+              <strong>Gaz critères</strong>
+              <span class="spec-value">CO2, Ozone, NOx et SO2</span>
+              <p class="spec-note">Principales variables de la qualité de l'air surveillées.</p>
+            </div>
+            <div class="spec-card">
+              <strong>Autonomie et localisation</strong>
+              <span class="spec-value">2 jours + GPS</span>
+              <p class="spec-note">Batteries internes avec géolocalisation intégrée.</p>
+            </div>
+            <div class="spec-card">
+              <strong>Intégration</strong>
+              <span class="spec-value">Radio</span>
+              <p class="spec-note">Envoi de données à l'infrastructure conçue par Qartia.</p>
+            </div>
+            <div class="spec-card">
+              <strong>Matériel</strong>
+              <span class="spec-value">PLA/ABS</span>
+              <p class="spec-note">Fabrication dans des matériaux adaptables aux exigences du client.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="systems-section">
+        <div class="section-inner">
+          <div class="section-heading">
+            <span class="eyebrow">Connectivité et fonctionnement</span>
+            <h2 class="lead-title">Du capteur au panneau de commande, sans perte de traçabilité.</h2>
+          </div>
+          <div class="systems-grid">
+            <div class="system-panel">
+              <span class="eyebrow">Communications</span>
+              <h2 class="lead-title">Connectivité adaptative au déploiement.</h2>
+              <div class="detail-grid">
+                <div class="detail-item">
+                  <strong>LoRa</strong>
+                  <p>Plage de fréquences de 137 à 1 020 MHz pour les déploiements à faible consommation et à longue portée.</p>
+                </div>
+                <div class="detail-item">
+                  <strong>Wi-Fi</strong>
+                  <p>802.11 b/g/n/e/i dans la bande 2,4 GHz pour l'intégration avec l'infrastructure locale.</p>
+                </div>
+                <div class="detail-item">
+                  <strong>Bluetooth</strong>
+                  <p>Bluetooth 4.2 pour l'intégration de proximité et les tâches d'assistance locale.</p>
+                </div>
+                <div class="detail-item">
+                  <strong>Sigfox</strong>
+                  <p>Connectivité Sigfox selon la disponibilité régionale et les besoins de déploiement.</p>
+                </div>
+              </div>
+              <p class="system-footnote">L'objectif est que la mesure atteigne en permanence l'environnement de visualisation et d'exploitation de Qartia.</p>
+            </div>
+
+            <div class="system-panel">
+              <span class="eyebrow">Services associés</span>
+              <h2 class="lead-title">Exploitation à distance et maintenance préventive.</h2>
+              <div class="detail-grid">
+                <div class="detail-item">
+                  <strong>Étalonnage</strong>
+                  <p>Détection des écarts d'étalonnage des capteurs pour maintenir la qualité des données.</p>
+                </div>
+                <div class="detail-item">
+                  <strong>Prévention</strong>
+                  <p>Identification préventive des pannes matérielles et des problèmes climatiques.</p>
+                </div>
+                <div class="detail-item">
+                  <strong>Réseau</strong>
+                  <p>Supervision des incidents de communication en cours d'exploitation.</p>
+                </div>
+                <div class="detail-item">
+                  <strong>IA</strong>
+                  <p>Intégration avec des analyses basées sur l'intelligence artificielle sur les serveurs Qartia.</p>
+                </div>
+              </div>
+              <p class="system-footnote">Services conçus pour que MEGAMIA non seulement mesure les gaz, mais aide également à anticiper les incidents et à mieux fonctionner.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="cta-section">
+        <div class="section-inner">
+          <div class="cta-grid">
+            <div class="cta-copy">
+              <h2>MEGAMIA, une base compacte pour déployer l'intelligence ambiante.</h2>
+              <p>Une solution conçue pour les projets où mesurer ne suffit pas : les données doivent arriver, être vues, comparées et utilisées pour prendre des décisions.</p>
+              <a class="button" href="productos.html">Retour aux produits</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        <div class="footer-logo">
+          <img src="../assets/remote-qartia/wp-content/uploads/2022/11/logo-qartia.png" alt="Qartia">
+        </div>
+        <div>
+          <h4>CONTACTER</h4>
+          <p><a href="tel:+34686918522">(+34) 686918522</a></p>
+          <p><a href="mailto:info@qartia.com">info@qartia.com</a></p>
+          <p>Calle Tolosa Latour, 4, 7ºA,</p>
+          <p>30201, Carthagène, Espagne</p>
+            <p>CAF : B67916676</p>
+        </div>
+              <div class="footer-eibt-badge" style="display:flex;align-items:center;justify-content:flex-end;min-width:360px;margin-top:8px;">
+          <img src="../assets/images/eibt-logo.png" alt="Sceau EIBT" style="width:min(430px,100%);height:auto;display:block;">
+        </div>
+</div>
+    </footer>
+
+    <div class="subfooter">
+      <div class="subfooter-inner">
+        <a href="aviso-legal.html">Mentions légales</a>
+        <a href="politica-cookies.html">Politique de cookies</a>
+        <a href="politica-privacidad.html">Politique de confidentialité</a>
+      </div>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const groups = document.querySelectorAll(".nav-group");
+
+        groups.forEach((group) => {
+          const toggle = group.querySelector(".nav-toggle");
+          if (!toggle) return;
+
+          toggle.addEventListener("click", function (event) {
+            event.preventDefault();
+            const willOpen = !group.classList.contains("open");
+
+            groups.forEach((otherGroup) => {
+              otherGroup.classList.remove("open");
+              const otherToggle = otherGroup.querySelector(".nav-toggle");
+              if (otherToggle) {
+                otherToggle.setAttribute("aria-expanded", "false");
+              }
+            });
+
+            group.classList.toggle("open", willOpen);
+            toggle.setAttribute("aria-expanded", willOpen ? "true" : "false");
+          });
+        });
+
+        document.addEventListener("click", function (event) {
+          groups.forEach((group) => {
+            if (group.contains(event.target)) return;
+            group.classList.remove("open");
+            const toggle = group.querySelector(".nav-toggle");
+            if (toggle) {
+              toggle.setAttribute("aria-expanded", "false");
+            }
+          });
+        });
+      });
+    </script>
+      <script src="../assets/js/qartia-mobile-nav.js?v=20260601" defer></script>
+      <script src="../assets/js/cookie-consent.js?v=mobile-20260601" defer></script>
+<script src="../assets/js/qartia-language-switcher.js"></script>
+</body>
+</html>

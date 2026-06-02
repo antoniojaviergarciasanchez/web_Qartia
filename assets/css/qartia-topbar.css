@@ -225,6 +225,32 @@
   filter: brightness(0.94) contrast(1.02) saturate(1.02);
 }
 
+@media (min-width: 1012px) {
+  .l-header .ush_menu_1.type_desktop .w-nav-list:not(.level_1) {
+    min-width: max-content;
+    width: max-content;
+  }
+
+  .l-header .ush_menu_1.type_desktop .w-nav-list:not(.level_1) .w-nav-anchor,
+  .l-header .ush_menu_1.type_desktop .w-nav-list:not(.level_1) .w-nav-title {
+    white-space: nowrap !important;
+  }
+}
+
+@media (min-width: 901px) {
+  .nav .nav-dropdown,
+  .nav .nav-submenu {
+    min-width: max-content !important;
+    width: max-content !important;
+  }
+
+  .nav .nav-dropdown a,
+  .nav .nav-subtoggle,
+  .nav .nav-submenu a {
+    white-space: nowrap !important;
+  }
+}
+
 /* Final shared override for the top contact band across local pages. */
 html body .topbar,
 html body .topbar .topbar-inner,

@@ -5,6 +5,7 @@ import os
 import posixpath
 import re
 import time
+import unicodedata
 import urllib.parse
 import urllib.request
 from pathlib import Path
@@ -15,6 +16,14 @@ from lxml import html
 LANGUAGES = {
     "en": "en",
     "de": "de",
+    "fr": "fr",
+    "zh": "zh-CN",
+}
+HTML_LANGS = {
+    "en": "en",
+    "de": "de",
+    "fr": "fr",
+    "zh": "zh-CN",
 }
 
 SKIP_TAGS = {"script", "style", "noscript", "svg", "code", "pre"}
@@ -90,6 +99,8 @@ def restore_terms(text: str, protected: dict):
     for token, term in protected.items():
         result = result.replace(token, term)
         result = result.replace(token.lower(), term)
+    for index, term in enumerate(PROTECTED_TERMS):
+        result = re.sub(rf"_*QARTIA_+TERM_{index}_*", term, result, flags=re.IGNORECASE)
     return result
 
 
@@ -161,7 +172,7 @@ def is_external_url(value: str) -> bool:
 
 
 def normalize_target(source_rel: str, url_path: str) -> str:
-    unquoted = urllib.parse.unquote(url_path)
+    unquoted = unicodedata.normalize("NFD", urllib.parse.unquote(url_path))
     current_dir = posixpath.dirname(source_rel)
     target = posixpath.normpath(posixpath.join(current_dir, unquoted))
     return "." if target == "." else target
@@ -325,7 +336,7 @@ def write_translation(path: Path, root: Path, lang: str, cache):
     source_rel = path.relative_to(root).as_posix()
     parser = html.HTMLParser(encoding="utf-8")
     document = html.parse(str(path), parser).getroot()
-    document.set("lang", "en" if lang == "en" else "de")
+    document.set("lang", HTML_LANGS[lang])
 
     texts = sorted(set(collect_texts(document)))
     translate_batch(texts, LANGUAGES[lang], cache)

@@ -1,0 +1,1074 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Cookie 政策 - Qartia Smart Technologies</title>
+    <link rel="icon" href="../assets/remote-qartia/wp-content/uploads/2022/10/favicon-150x150.png" sizes="32x32">
+    <link rel="icon" href="../assets/remote-qartia/wp-content/uploads/2022/10/favicon.png" sizes="192x192">
+    <link rel="apple-touch-icon" href="../assets/remote-qartia/wp-content/uploads/2022/10/favicon.png">
+    <meta name="msapplication-TileImage" content="assets/remote-qartia/wp-content/uploads/2022/10/favicon.png">
+    
+<link rel="stylesheet" id="qartia-local-fonts" href="../assets/css/local-fonts.css"><meta name="description" content="Qartia Smart Technologies cookie 政策。">
+<style>
+      :root {
+        --bg: #f5f5f5;
+        --paper: #ffffff;
+        --paper-soft: #f7fbfc;
+        --ink: #333333;
+        --ink-strong: #1a1a1a;
+        --brand: #144e9c;
+        --accent: #36deb8;
+        --shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--ink);
+        font-family: "Work Sans", sans-serif;
+        line-height: 1.55;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      img {
+        max-width: 100%;
+        display: block;
+      }
+
+      .topbar {
+        background: #f5f5f5;
+        color: #333;
+        font-size: 0.84rem;
+      }
+
+      .topbar-inner,
+      .header-inner,
+      .section-inner,
+      .footer-inner {
+        width: min(1140px, calc(100% - 32px));
+        margin: 0 auto;
+      }
+
+      .topbar-inner {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        gap: 18px;
+        padding: 10px 0;
+        flex-wrap: wrap;
+      }
+
+      .header {
+        position: sticky;
+        top: 0;
+        z-index: 20;
+        background: rgba(255, 255, 255, 0.96);
+        box-shadow: 0 2px 18px rgba(0, 0, 0, 0.08);
+        backdrop-filter: blur(10px);
+      }
+
+      .header-inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 18px;
+        padding: 14px 0;
+      }
+
+      .logo img {
+        width: 180px;
+        height: auto;
+      }
+
+      .nav {
+        display: flex;
+        justify-content: flex-end;
+        gap: 4px;
+        flex-wrap: wrap;
+        align-items: center;
+      }
+
+      .nav > a,
+      .nav-toggle {
+        padding: 10px 12px;
+        color: var(--brand);
+        background: transparent;
+        border: 0;
+        font-family: "Rubik", sans-serif;
+        font-size: 0.82rem;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 0.02em;
+        border-radius: 8px;
+        cursor: pointer;
+      }
+
+      .nav > a:hover,
+      .nav > a:focus-visible,
+      .nav > a.current,
+      .nav-toggle:hover,
+      .nav-toggle:focus-visible {
+        background: rgba(20, 78, 156, 0.08);
+      }
+
+      .nav-group {
+        position: relative;
+      }
+
+      .nav-toggle {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .nav-toggle::after {
+        content: "";
+        width: 8px;
+        height: 8px;
+        border-right: 2px solid currentColor;
+        border-bottom: 2px solid currentColor;
+        transform: rotate(45deg) translateY(-1px);
+      }
+
+      .nav-dropdown {
+        position: absolute;
+        top: calc(100% + 10px);
+        right: 0;
+        min-width: 260px;
+        display: none;
+        flex-direction: column;
+        padding: 10px;
+        border-radius: 16px;
+        background: rgba(255, 255, 255, 0.98);
+        box-shadow: var(--shadow);
+        backdrop-filter: blur(10px);
+        z-index: 30;
+      }
+
+      .nav-dropdown a {
+        padding: 10px 12px;
+        color: var(--brand);
+        font-family: "Rubik", sans-serif;
+        font-size: 0.8rem;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 0.02em;
+        border-radius: 10px;
+      }
+
+      .nav-subgroup {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .nav-subtoggle {
+        padding: 10px 12px;
+        color: var(--brand);
+        font-family: "Rubik", sans-serif;
+        font-size: 0.8rem;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 0.02em;
+        border-radius: 10px;
+      }
+
+      .nav-dropdown a:hover,
+      .nav-dropdown a:focus-visible,
+      .nav-subtoggle:hover,
+      .nav-subtoggle:focus-visible {
+        background: rgba(20, 78, 156, 0.08);
+      }
+
+      .nav-submenu {
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+        margin: 0 0 6px 18px;
+        padding-left: 12px;
+        border-left: 2px solid rgba(20, 78, 156, 0.14);
+      }
+
+      .nav-submenu a {
+        padding: 8px 10px;
+        font-size: 0.74rem;
+      }
+
+      .nav-group:hover .nav-dropdown,
+      .nav-group.open .nav-dropdown {
+        display: flex;
+      }
+
+      .hero {
+        min-height: 360px;
+        display: flex;
+        align-items: center;
+        color: #fff;
+        background:
+          linear-gradient(rgba(0, 0, 0, 0.50), rgba(0, 0, 0, 0.16)),
+          url("../assets/images/productos-principal.jpeg") center/cover no-repeat;
+      }
+
+      .hero-inner {
+        width: min(1140px, calc(100% - 32px));
+        margin: 0 auto;
+        padding: 82px 0 60px;
+      }
+
+      .hero h1 {
+        margin: 0;
+        max-width: 12ch;
+        font-family: "Rubik", sans-serif;
+        font-size: clamp(2.4rem, 4vw, 4rem);
+        font-weight: 300;
+        text-shadow: 2px 2px 9px #000;
+      }
+
+      .intro-section,
+      .featured-section,
+      .catalog-section,
+      .cta-section {
+        padding: 70px 0;
+      }
+
+      .intro-section {
+        background:
+          url("../assets/remote-qartia/wp-content/uploads/2022/11/fondo-home.jpg") top left / cover no-repeat,
+          var(--paper-soft);
+      }
+
+      .intro-grid,
+      .featured-grid,
+      .cta-grid {
+        display: grid;
+        grid-template-columns: minmax(0, 1.1fr) minmax(280px, 0.9fr);
+        gap: 36px;
+        align-items: center;
+      }
+
+      .eyebrow {
+        display: inline-block;
+        margin-bottom: 10px;
+        color: var(--accent);
+        font-size: 1rem;
+        font-weight: 600;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+      }
+
+      .eyebrow::before {
+        content: "";
+        display: inline-block;
+        width: 49px;
+        height: 50px;
+        margin-right: 10px;
+        vertical-align: middle;
+        background: url("../assets/remote-qartia/wp-content/uploads/2022/11/before-titulares.png") no-repeat center/contain;
+      }
+
+      .lead-title {
+        margin: 0 0 24px 58px;
+        color: var(--ink-strong);
+        font-family: "Rubik", sans-serif;
+        font-size: clamp(2rem, 3vw, 3rem);
+        font-weight: 300;
+        line-height: 1.12;
+      }
+
+      .intro-copy p,
+      .featured-copy p {
+        margin: 0 0 16px;
+      }
+
+      .intro-visual,
+      .featured-visual,
+      .cta-copy {
+        background: var(--paper);
+        border-radius: 22px;
+        padding: 24px;
+        box-shadow: var(--shadow);
+      }
+
+      .intro-visual img,
+      .featured-visual img {
+        width: 100%;
+        border-radius: 18px;
+      }
+
+      .catalog-section {
+        background: var(--paper);
+      }
+
+      .products-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 24px;
+      }
+
+      .product-card {
+        display: flex;
+        flex-direction: column;
+        min-height: 100%;
+        background: var(--paper-soft);
+        border-radius: 22px;
+        overflow: hidden;
+        box-shadow: var(--shadow);
+      }
+
+      .product-card figure {
+        margin: 0;
+        aspect-ratio: 16 / 11;
+        background: #edf4f7;
+      }
+
+      .product-card img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .product-card .contain-image img {
+        object-fit: contain;
+        padding: 18px;
+      }
+
+      .product-card-body {
+        display: flex;
+        flex: 1;
+        flex-direction: column;
+        gap: 14px;
+        padding: 24px;
+      }
+
+      .product-tag {
+        display: inline-flex;
+        align-self: flex-start;
+        padding: 6px 10px;
+        border-radius: 999px;
+        background: rgba(20, 78, 156, 0.09);
+        color: var(--brand);
+        font-size: 0.8rem;
+        font-weight: 700;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+      }
+
+      .product-card h3,
+      .featured-copy h2 {
+        margin: 0;
+        color: var(--ink-strong);
+        font-family: "Rubik", sans-serif;
+        font-size: 1.45rem;
+        font-weight: 500;
+        line-height: 1.18;
+      }
+
+      .product-card p {
+        margin: 0;
+      }
+
+      .product-link,
+      .cta-button,
+      .featured-button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        padding: 14px 20px;
+        border-radius: 999px;
+        font-family: "Rubik", sans-serif;
+        font-size: 0.9rem;
+        font-weight: 700;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+      }
+
+      .product-link,
+      .featured-button {
+        margin-top: auto;
+        color: var(--brand);
+        background: rgba(20, 78, 156, 0.08);
+      }
+
+      .cta-section {
+        background: #e8faf9;
+      }
+
+      .cta-grid {
+        grid-template-columns: minmax(0, 1fr) 320px;
+        gap: 24px;
+        align-items: stretch;
+      }
+
+      .cta-copy h2 {
+        margin: 0 0 14px;
+        color: var(--ink-strong);
+        font-family: "Rubik", sans-serif;
+        font-size: clamp(1.9rem, 2.5vw, 2.6rem);
+        font-weight: 300;
+      }
+
+      .cta-copy p {
+        margin: 0 0 18px;
+      }
+
+      .cta-button {
+        color: #fff;
+        background: var(--brand);
+      }
+
+      .cta-image {
+        border-radius: 22px;
+        background:
+          linear-gradient(rgba(20, 78, 156, 0.16), rgba(20, 78, 156, 0.16)),
+          url("../assets/remote-qartia/wp-content/uploads/2022/12/contacto-servicios.jpg") center/cover no-repeat;
+        box-shadow: var(--shadow);
+      }
+
+      .topic-card {
+        position: relative;
+        min-height: 220px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 22px;
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: var(--shadow);
+        background-size: cover;
+        background-position: center;
+      }
+
+      .topic-card::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(rgba(0, 0, 0, 0.10), rgba(0, 0, 0, 0.30));
+      }
+
+      .topic-card.current::after {
+        background: linear-gradient(rgba(0, 0, 0, 0.30), rgba(0, 0, 0, 0.44));
+      }
+
+      .topic-card.current::before {
+        content: "";
+        position: absolute;
+        left: 50%;
+        bottom: 0;
+        transform: translateX(-50%);
+        width: 0;
+        height: 0;
+        border-left: 18px solid transparent;
+        border-right: 18px solid transparent;
+        border-bottom: 18px solid #e8faf9;
+        z-index: 2;
+      }
+
+      .topic-card h3 {
+        position: relative;
+        z-index: 1;
+        margin: 0;
+        color: #fff;
+        text-align: center;
+        text-transform: uppercase;
+        font-family: "Rubik", sans-serif;
+        font-size: 1.32rem;
+        font-weight: 400;
+        text-shadow: 2px 2px 9px #000;
+      }
+
+      .topic-card.card-1 { background-image: url("../assets/remote-qartia/wp-content/uploads/2022/11/servicio3.jpg"); }
+      .topic-card.card-2 { background:
+        linear-gradient(rgba(20, 78, 156, 0.2), rgba(20, 78, 156, 0.42)),
+        url("../assets/airsense-pro-docx/image8.png") center/78% no-repeat,
+        #153e70; }
+      .topic-card.card-3 { background-image: url("../assets/remote-qartia/wp-content/uploads/2022/11/servicio-1.jpg"); }
+      .topic-card.card-4 { background-image: url("../assets/remote-qartia/wp-content/uploads/2022/11/servicio-2.jpg"); }
+      .topic-card.card-5 { background-image: url("../assets/remote-qartia/wp-content/uploads/2022/11/servcio-5.jpg"); }
+      .topic-card.card-6 { background-image: url("../assets/remote-qartia/wp-content/uploads/2022/11/servicio-4.jpg"); }
+      .topic-card.card-7 { background-image: url("../assets/remote-qartia/wp-content/uploads/2022/11/servicio-6.jpg"); }
+      .topic-card.card-8 { background-image: url("../assets/remote-qartia/wp-content/uploads/2022/12/slide-cuatrov2.jpg"); }
+
+      .footer {
+        background:
+          url("../assets/remote-qartia/wp-content/uploads/2022/11/fondo-footer.jpg") left top / cover no-repeat,
+          #222;
+        color: #ccc;
+      }
+
+      .footer-inner {
+        display: grid;
+        grid-template-columns: 220px minmax(0, 1fr);
+        gap: 36px;
+        align-items: start;
+        padding: 56px 0 28px;
+      }
+
+      .footer-logo img {
+        width: 180px;
+      }
+
+      .footer h4 {
+        margin: 0 0 16px;
+        color: #ccc;
+        font-family: "Rubik", sans-serif;
+        font-size: 1.1rem;
+        font-weight: 700;
+        text-transform: uppercase;
+      }
+
+      .footer p {
+        margin: 0 0 10px;
+      }
+
+      .subfooter {
+        background: #333;
+        color: #f9f9f9;
+        font-size: 0.86rem;
+        text-transform: uppercase;
+      }
+
+      .subfooter-inner {
+        width: min(1140px, calc(100% - 32px));
+        margin: 0 auto;
+        padding: 14px 0;
+        display: flex;
+        justify-content: center;
+        gap: 28px;
+        flex-wrap: wrap;
+      }
+
+      @media (max-width: 1024px) {
+        .header-inner,
+        .intro-grid,
+        .featured-grid,
+        .cta-grid,
+        .footer-inner {
+          grid-template-columns: 1fr;
+        }
+
+        .header-inner {
+          display: grid;
+          gap: 12px;
+        }
+
+        .logo {
+          justify-self: center;
+        }
+
+        .nav {
+          justify-content: center;
+        }
+
+        .nav-dropdown {
+          right: auto;
+          left: 50%;
+          transform: translateX(-50%);
+        }
+
+        .products-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+      }
+
+      @media (max-width: 640px) {
+        .topbar-inner {
+          justify-content: center;
+        }
+
+        .nav {
+          gap: 8px;
+        }
+
+        .nav-group {
+          width: 100%;
+          display: grid;
+          justify-items: center;
+        }
+
+        .nav-dropdown {
+          position: static;
+          transform: none;
+          min-width: min(320px, 100%);
+          width: min(320px, 100%);
+          margin-top: 6px;
+        }
+
+        .eyebrow::before {
+          display: none;
+        }
+
+        .lead-title {
+          margin-left: 0;
+        }
+
+        .products-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      .legal-hero {
+        background:
+          linear-gradient(120deg, rgba(12, 54, 88, 0.9), rgba(18, 118, 134, 0.78)),
+          url("../assets/images/productos-principal.jpeg") center/cover;
+        color: #fff;
+      }
+
+      .legal-hero .hero-inner {
+        min-height: 320px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 18px;
+      }
+
+      .legal-hero h1 {
+        color: #fff;
+        max-width: 860px;
+      }
+
+      .legal-hero p {
+        max-width: 780px;
+        font-size: 20px;
+        line-height: 1.6;
+        margin: 0;
+        color: rgba(255, 255, 255, 0.88);
+      }
+
+      .legal-section {
+        padding: 72px 0;
+        background: #f7fbfb;
+      }
+
+      .legal-layout {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) 340px;
+        gap: 34px;
+        align-items: start;
+      }
+
+      .legal-card,
+      .legal-aside {
+        background: #fff;
+        border-radius: 28px;
+        box-shadow: 0 18px 45px rgba(13, 43, 68, 0.1);
+        border: 1px solid rgba(40, 190, 176, 0.16);
+      }
+
+      .legal-card {
+        padding: 42px;
+      }
+
+      .legal-card h2 {
+        color: #174071;
+        font-size: 28px;
+        margin: 38px 0 14px;
+      }
+
+      .legal-card h2:first-child {
+        margin-top: 0;
+      }
+
+      .legal-card p,
+      .legal-card li {
+        color: #465766;
+        font-size: 16px;
+        line-height: 1.75;
+      }
+
+      .legal-card ul {
+        margin: 12px 0 0;
+        padding-left: 22px;
+      }
+
+      .legal-card strong {
+        color: #173b63;
+      }
+
+      .legal-note {
+        border-left: 4px solid #72d8c8;
+        background: rgba(114, 216, 200, 0.12);
+        padding: 18px 20px;
+        border-radius: 0 16px 16px 0;
+        margin: 24px 0;
+      }
+
+      .cookie-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 18px;
+        overflow: hidden;
+        border-radius: 18px;
+        box-shadow: 0 0 0 1px rgba(23, 64, 113, 0.1);
+      }
+
+      .cookie-table th,
+      .cookie-table td {
+        text-align: left;
+        vertical-align: top;
+        padding: 16px;
+        border-bottom: 1px solid rgba(23, 64, 113, 0.1);
+        color: #465766;
+        font-size: 15px;
+        line-height: 1.55;
+      }
+
+      .cookie-table th {
+        background: #174071;
+        color: #fff;
+        font-weight: 700;
+      }
+
+      .cookie-table tr:last-child td {
+        border-bottom: 0;
+      }
+
+      .legal-aside {
+        padding: 28px;
+        position: sticky;
+        top: 112px;
+      }
+
+      .legal-aside h3 {
+        color: #174071;
+        font-size: 20px;
+        margin: 0 0 16px;
+      }
+
+      .legal-aside p,
+      .legal-aside a {
+        color: #516473;
+        font-size: 15px;
+        line-height: 1.65;
+      }
+
+      .legal-aside a {
+        color: #174071;
+        font-weight: 700;
+      }
+
+      .legal-meta {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        color: #174071;
+        background: rgba(114, 216, 200, 0.16);
+        border-radius: 999px;
+        padding: 9px 14px;
+        font-weight: 700;
+        margin-bottom: 24px;
+      }
+
+      @media (max-width: 900px) {
+        .legal-layout {
+          grid-template-columns: 1fr;
+        }
+
+        .legal-aside {
+          position: static;
+        }
+
+        .legal-card {
+          padding: 28px;
+        }
+
+        .cookie-table {
+          display: block;
+          overflow-x: auto;
+        }
+      }
+
+    </style>
+  <style id="qartia-dropdown-offset">
+.nav-dropdown{transform:translateX(1cm);}
+@media (max-width:880px){.nav-dropdown{transform:translateX(calc(-50% + 1cm));}}
+@media (max-width:640px){.nav-dropdown{transform:none;}}
+@media (min-width:1025px){.ush_menu_1.type_desktop .w-nav-list.level_2{margin-left:1cm;}}
+@media (min-width:1025px){.l-subheader-cell.at_left,.header-inner .logo{transform:translateX(-0.35cm);}}
+</style>
+<link rel="stylesheet" href="../assets/css/qartia-topbar.css?v=lang-20260602">
+<link rel="stylesheet" href="../assets/css/qartia-responsive.css?v=20260601">
+    <style id="eibt-footer-layout-fix">
+    .footer .footer-inner {
+      display: grid !important;
+      grid-template-columns: minmax(180px, 0.75fr) minmax(260px, 1fr) minmax(360px, 1.15fr) !important;
+      align-items: start !important;
+      gap: 28px !important;
+    }
+
+    .footer .footer-eibt-badge,
+    .l-footer .footer-eibt-badge {
+      display: flex !important;
+      justify-content: flex-end !important;
+      align-items: flex-start !important;
+      margin-top: 0 !important;
+      width: 100% !important;
+      min-width: 360px;
+    }
+
+    .footer .footer-eibt-badge img,
+    .l-footer .footer-eibt-badge img {
+      width: min(430px, 100%) !important;
+      height: auto !important;
+      display: block !important;
+      margin-left: auto !important;
+      margin-right: 0 !important;
+    }
+
+    .l-footer .footer-eibt-badge .w-image-h {
+      width: 100% !important;
+    }
+
+    @media (max-width: 900px) {
+      .footer .footer-inner {
+        grid-template-columns: 1fr !important;
+      }
+
+      .footer .footer-eibt-badge,
+      .l-footer .footer-eibt-badge {
+        justify-content: flex-start !important;
+        min-width: 0 !important;
+      }
+
+      .footer .footer-eibt-badge img,
+      .l-footer .footer-eibt-badge img {
+        margin-left: 0 !important;
+        margin-right: auto !important;
+      }
+    }
+  </style>
+    <link rel="stylesheet" href="../assets/css/cookie-consent.css?v=mobile-20260601">
+</head>
+  <body>
+    <div class="topbar">
+      <div class="topbar-inner">
+        <a href="tel:+34686918522">+34 686 91 85 22</a>
+        <a href="mailto:info@qartia.com">info@qartia.com</a>
+        <a class="qartia-linkedin-icon" href="https://www.linkedin.com/company/qartia-smart-technologies/" target="_blank" rel="noopener" aria-label="领英 Qartia"></a>
+
+      </div>
+    </div>
+
+    <header class="header">
+      <div class="header-inner">
+        <a class="logo" href="index.html">
+          <img src="../assets/remote-qartia/wp-content/uploads/2022/11/logo-qartia.png" alt="Qartia Smart Technologies">
+        </a>
+
+        <nav class="nav" aria-label="主导航">
+  <a href="quienes-somos.html">我们是谁</a>
+  <div class="nav-group">
+    <button class="nav-toggle" type="button" aria-expanded="false">产品</button>
+    <div class="nav-dropdown">
+      <a href="productos.html">产品</a>
+      <a href="vibrasense.html">VibraSense</a>
+      <a href="airsense-pro.html">AIRSENSE PRO</a>
+      <a href="megamia.html">MEGAMIA</a>
+      <a href="dipason-exterior.html">DIPASON</a>
+      <a href="Biosentia.html">Biosentia</a>
+      <a href="noisement.html">噪音</a>
+    </div>
+  </div>
+  <div class="nav-group">
+    <button class="nav-toggle" type="button" aria-expanded="false">服务</button>
+    <div class="nav-dropdown">
+      <a href="agricultura.html">农业</a>
+      <div class="nav-subgroup">
+        <a class="nav-subtoggle" href="industria.html">工业</a>
+        <div class="nav-submenu">
+          <a href="mantenimiento-predictivo-vibraciones.html">预测性维护。振动</a>
+          <a href="monitorizacion-activos-criticos.html">关键资产监控</a>
+        </div>
+      </div>
+      <a href="medioambiente.html">环境</a>
+      <a href="civil.html">民用基础设施</a>
+      <a href="sources/serviciosan%CC%83adido.html">附加服务</a>
+    </div>
+  </div>
+  <div class="nav-group">
+    <button class="nav-toggle" type="button" aria-expanded="false">专用网络 5G</button>
+    <div class="nav-dropdown">
+      <a href="dect-nr-plus.html">什么是 DECT NR+</a>
+      <a href="soluciones-5g-privadas.html">5G 私人解决方案</a>
+    </div>
+  </div>
+  <a href="noticias.html">新闻</a>
+  <a href="contacto.html">联系方式</a>
+  <a href="https://qartia.com/Flutter/panel_industrias_prueba/">客户端访问</a>
+</nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero legal-hero">
+        <div class="hero-inner">
+          <span class="eyebrow">法律信息</span>
+          <h1>Cookie 政策</h1>
+          <p>本政策解释了什么是 cookie、Qartia 网站可以使用什么类型的技术以及如何通过浏览器管理它们。</p>
+        </div>
+      </section>
+
+      <section class="legal-section">
+        <div class="section-inner">
+          <div class="legal-layout">
+            <article class="legal-card">
+              <div class="legal-meta">最后更新：2026 年 5 月</div>
+
+              <h2>1. 负责</h2>
+              <p>本网站的负责人是 <strong>QARTIA SMART TECHNOLOGIES, S.L.</strong>，到岸价格 <strong>B67916676</strong>，地址在 <strong>Calle Tolosa Latour, 4, 7°A, 30201, 卡塔赫纳, 西班牙</strong>，电子邮件 <a href="mailto:info@qartia.com">info@qartia.com</a> 和电话 <a href="tel:+34686918522">(+34) 686918522</a>.</p>
+
+              <h2>2.什么是cookie</h2>
+              <p>Cookie 是在用户访问网页时下载到用户设备的小文件。除其他外，它们还可以记住偏好、维护浏览安全、衡量网站使用情况或促进外部内容的集成。</p>
+
+              <h2>3. 本网站可以使用哪些cookies</h2>
+              <p>Qartia 网站可能使用自己的 cookie，并在适当情况下使用与集成服务相关的第三方 cookie。 Cookie 分组如下：</p>
+
+              <table class="cookie-table" aria-label="使用的 cookie 类型">
+                <thead>
+                  <tr>
+                    <th>类型</th>
+                    <th>目的</th>
+                    <th>使用基础</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>技术上或必要的</strong></td>
+                    <td>它们允许导航、安全、正确的页面加载和基本元素的操作。</td>
+                    <td>他们不需要同意，因为他们是提供所请求的服务所必需的。</td>
+                  </tr>
+                  <tr>
+                    <td><strong>首选项或自定义</strong></td>
+                    <td>他们可以记住用户选择的选项，例如语言、显示或界面设置。</td>
+                    <td>非绝对必要时用户同意。</td>
+                  </tr>
+                  <tr>
+                    <td><strong>分析或测量</strong></td>
+                    <td>它们有助于了解网站的使用方式、查阅哪些内容以及如何改善体验。</td>
+                    <td>用户同意，法律豁免的情况除外。</td>
+                  </tr>
+                  <tr>
+                    <td><strong>第三方cookie</strong></td>
+                    <td>它们可以通过集成外部内容来生成，例如视频、地图、社交网络或测量工具。</td>
+                    <td>用户同意（如适用）。</td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <div class="legal-note">
+                <p><strong>注意：</strong> Qartia 在法规要求时避免在未经事先同意的情况下使用不必要的 cookie。如果将来添加其他工具，此政策将会更新。</p>
+              </div>
+
+              <h2>4. 自有和第三方 cookie</h2>
+              <p>自己的 cookie 由 Qartia 直接管理。第三方 cookie 由外部提供商管理，他们可能会干预嵌入内容、视频播放、社交网络链接、地图或分析服务。</p>
+              <p>当您访问第三方内容时，这些提供商可能会根据自己的政策处理数据。 Qartia 建议在接受使用之前查看这些提供商的法律信息。</p>
+
+              <h2>5. 如何管理或拒绝cookie</h2>
+              <p>用户可以从其浏览器设置中接受、阻止或删除 cookie。大多数浏览器允许您检查安装了哪些 cookie、单独删除它们、针对特定网站阻止它们或一般阻止它们。</p>
+              <ul>
+                <li>在 Chrome 中，从“设置”&gt;“隐私和安全”&gt;“第三方 cookie”。</li>
+                <li>在 Edge 中，从“设置”&gt;“Cookie 和站点权限”。</li>
+                <li>在 Firefox 中，从“设置”&gt;“隐私和安全”&gt;“Cookie 和站点数据”。</li>
+                <li>在 Safari 中，从“设置”或“首选项”&gt;“隐私”。</li>
+              </ul>
+              <p>阻止某些cookie可能会影响网站上某些内容或服务的正常运行。</p>
+
+              <h2>6. 国际转账</h2>
+              <p>如果使用位于欧洲经济区之外的第三方服务，则可能会发生国际数据传输。在这种情况下，上述转让必须在适用法规提供的担保下进行。</p>
+
+              <h2>7. 本政策的更新</h2>
+              <p>Qartia 可能会更新此 cookie 政策，以反映网站的技术、法律或运营变更。当前版本将是在此页面上发布的版本。</p>
+
+              <h2>8. 联系方式</h2>
+              <p>对于与此 cookie 政策相关的任何问题，您可以通过以下方式联系 Qartia <a href="mailto:info@qartia.com">info@qartia.com</a>.</p>
+            </article>
+
+            <aside class="legal-aside" aria-label="cookie 政策摘要">
+              <h3>总结</h3>
+              <p>当有集成内容时，本网站可能会使用技术、偏好、分析和第三方 cookie。</p>
+              <p>您可以随时在浏览器中设置或删除 cookie。</p>
+              <p><strong>负责人：</strong><br>QARTIA SMART TECHNOLOGIES, S.L.</p>
+              <p><strong>联系方式：</strong><br><a href="mailto:info@qartia.com">info@qartia.com</a></p>
+            </aside>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        <div class="footer-logo">
+          <img src="../assets/remote-qartia/wp-content/uploads/2022/11/logo-qartia.png" alt="Qartia">
+        </div>
+        <div>
+          <h4>联系方式</h4>
+          <p><a href="tel:+34686918522">(+34) 686918522</a></p>
+          <p><a href="mailto:info@qartia.com">info@qartia.com</a></p>
+          <p>Calle Tolosa Latour, 4, 7°A,</p>
+          <p>30201, 卡塔赫纳, 西班牙</p>
+            <p>到岸价: B67916676</p>
+        </div>
+              <div class="footer-eibt-badge" style="display:flex;align-items:center;justify-content:flex-end;min-width:360px;margin-top:8px;">
+          <img src="../assets/images/eibt-logo.png" alt="EIBT 印章" style="width:min(430px,100%);height:auto;display:block;">
+        </div>
+</div>
+    </footer>
+
+    <div class="subfooter">
+      <div class="subfooter-inner">
+        <a href="aviso-legal.html">法律声明</a>
+        <a href="politica-cookies.html">Cookie 政策</a>
+        <a href="politica-privacidad.html">隐私政策</a>
+      </div>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const groups = document.querySelectorAll(".nav-group");
+
+        groups.forEach((group) => {
+          const toggle = group.querySelector(".nav-toggle");
+          if (!toggle) return;
+
+          toggle.addEventListener("click", function (event) {
+            event.preventDefault();
+            const willOpen = !group.classList.contains("open");
+
+            groups.forEach((otherGroup) => {
+              otherGroup.classList.remove("open");
+              const otherToggle = otherGroup.querySelector(".nav-toggle");
+              if (otherToggle) {
+                otherToggle.setAttribute("aria-expanded", "false");
+              }
+            });
+
+            group.classList.toggle("open", willOpen);
+            toggle.setAttribute("aria-expanded", willOpen ? "true" : "false");
+          });
+        });
+
+        document.addEventListener("click", function (event) {
+          groups.forEach((group) => {
+            if (group.contains(event.target)) return;
+            group.classList.remove("open");
+            const toggle = group.querySelector(".nav-toggle");
+            if (toggle) {
+              toggle.setAttribute("aria-expanded", "false");
+            }
+          });
+        });
+      });
+    </script>
+      <script src="../assets/js/qartia-mobile-nav.js?v=20260601" defer></script>
+      <script src="../assets/js/cookie-consent.js?v=mobile-20260601" defer></script>
+<script src="../assets/js/qartia-language-switcher.js"></script>
+</body>
+</html>

@@ -1,0 +1,1485 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <title>农业 - Qartia Smart Technologies</title>
+    <link rel="icon" href="../assets/remote-qartia/wp-content/uploads/2022/10/favicon-150x150.png" sizes="32x32">
+    <link rel="icon" href="../assets/remote-qartia/wp-content/uploads/2022/10/favicon.png" sizes="192x192">
+    <link rel="apple-touch-icon" href="../assets/remote-qartia/wp-content/uploads/2022/10/favicon.png">
+    <meta name="msapplication-TileImage" content="assets/remote-qartia/wp-content/uploads/2022/10/favicon.png">
+    
+<link rel="stylesheet" id="qartia-local-fonts" href="../assets/css/local-fonts.css"><meta name="description" content="Qartia Smart Technologies 的智能农业。 IoT，人工智能、农业光伏、数字孪生以及农场和温室的无线连接。">
+<style>
+      :root {
+        --bg: #f5f5f5;
+        --paper: #ffffff;
+        --paper-soft: #f7fbfc;
+        --ink: #333333;
+        --ink-strong: #1a1a1a;
+        --brand: #144e9c;
+        --accent: #36deb8;
+        --shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--ink);
+        font-family: "Work Sans", sans-serif;
+        line-height: 1.55;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      img {
+        max-width: 100%;
+        display: block;
+      }
+
+      .page {
+        min-height: 100vh;
+      }
+
+      .topbar {
+        background: #f5f5f5;
+        color: #333;
+        font-size: 0.84rem;
+      }
+
+      .topbar-inner,
+      .header-inner,
+      .section-inner,
+      .footer-inner {
+        width: min(1140px, calc(100% - 32px));
+        margin: 0 auto;
+      }
+
+      .topbar-inner {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        gap: 18px;
+        padding: 10px 0;
+        flex-wrap: wrap;
+      }
+
+      .header {
+        position: sticky;
+        top: 0;
+        z-index: 20;
+        background: rgba(255, 255, 255, 0.96);
+        box-shadow: 0 2px 18px rgba(0, 0, 0, 0.08);
+        backdrop-filter: blur(10px);
+      }
+
+      .header-inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 18px;
+        padding: 14px 0;
+      }
+
+      .logo img {
+        width: 180px;
+        height: auto;
+      }
+
+.nav {
+  display: flex;
+  justify-content: flex-end;
+  gap: 4px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.nav > a,
+.nav-toggle {
+  padding: 10px 12px;
+  color: var(--brand);
+  background: transparent;
+  border: 0;
+  font-family: "Rubik", sans-serif;
+  font-size: 0.82rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.nav > a:hover,
+.nav > a:focus-visible,
+.nav-toggle:hover,
+.nav-toggle:focus-visible {
+  background: rgba(20, 78, 156, 0.08);
+}
+
+.nav-group {
+  position: relative;
+}
+
+.nav-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.nav-toggle::after {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-right: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  transform: rotate(45deg) translateY(-1px);
+}
+
+.nav-dropdown {
+  position: absolute;
+  top: calc(100% + 10px);
+  right: 0;
+  min-width: 260px;
+  display: none;
+  flex-direction: column;
+  padding: 10px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.98);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(10px);
+  z-index: 30;
+}
+
+.nav-dropdown a {
+  padding: 10px 12px;
+  color: var(--brand);
+  font-family: "Rubik", sans-serif;
+  font-size: 0.8rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  border-radius: 10px;
+}
+
+.nav-subgroup {
+  display: flex;
+  flex-direction: column;
+}
+
+.nav-subtoggle {
+  padding: 10px 12px;
+  color: var(--brand);
+  font-family: "Rubik", sans-serif;
+  font-size: 0.8rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  border-radius: 10px;
+}
+
+.nav-dropdown a:hover,
+.nav-dropdown a:focus-visible,
+.nav-subtoggle:hover,
+.nav-subtoggle:focus-visible {
+  background: rgba(20, 78, 156, 0.08);
+}
+
+.nav-submenu {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin: 0 0 6px 18px;
+  padding-left: 12px;
+  border-left: 2px solid rgba(20, 78, 156, 0.14);
+}
+
+.nav-submenu a {
+  padding: 8px 10px;
+  font-size: 0.74rem;
+}
+
+.nav-group:hover .nav-dropdown,
+.nav-group.open .nav-dropdown {
+  display: flex;
+}
+
+      .hero {
+        position: relative;
+        min-height: 360px;
+        display: flex;
+        align-items: center;
+        overflow: hidden;
+        color: #fff;
+        background:
+          linear-gradient(rgba(0, 0, 0, 0.50), rgba(0, 0, 0, 0.16)),
+          url("../assets/linkedin-news/greenhouse-1.jpg") center/cover no-repeat;
+      }
+
+      .hero-inner {
+        width: min(1140px, calc(100% - 32px));
+        margin: 0 auto;
+        padding: 82px 0 60px;
+      }
+
+      .hero h1 {
+        margin: 0;
+        max-width: 12ch;
+        font-family: "Rubik", sans-serif;
+        font-size: clamp(2.4rem, 4vw, 4rem);
+        font-weight: 300;
+        text-shadow: 2px 2px 9px #000;
+      }
+
+      .content-section,
+      .brochure-section,
+      .cta-section {
+        padding: 70px 0;
+      }
+
+      .content-section {
+        background:
+          url("../assets/remote-qartia/wp-content/uploads/2022/11/fondo-home.jpg") top left / cover no-repeat,
+          var(--paper-soft);
+      }
+
+      .brochure-section {
+        background: var(--paper);
+      }
+
+      .brochure-section.alt {
+        background: #e8faf9;
+      }
+
+      .content-grid {
+        display: grid;
+        grid-template-columns: minmax(0, 1.15fr) minmax(280px, 0.85fr);
+        gap: 36px;
+        align-items: center;
+      }
+
+      .brochure-grid,
+      .brochure-split,
+      .phase-grid,
+      .kpi-grid {
+        display: grid;
+        gap: 24px;
+      }
+
+      .brochure-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .brochure-grid.two-cols {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .brochure-grid.four-cols,
+      .kpi-grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+      }
+
+      .brochure-split {
+        grid-template-columns: minmax(0, 1.08fr) minmax(320px, 0.92fr);
+        align-items: center;
+      }
+
+      .content-grid > *,
+      .brochure-split > *,
+      .cta-grid > * {
+        min-width: 0;
+      }
+
+      .phase-grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+      }
+
+      .eyebrow {
+        display: inline-block;
+        margin-bottom: 10px;
+        color: var(--accent);
+        font-size: 1rem;
+        font-weight: 600;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+      }
+
+      .eyebrow::before {
+        content: "";
+        display: inline-block;
+        width: 49px;
+        height: 50px;
+        margin-right: 10px;
+        vertical-align: middle;
+        background: url("../assets/remote-qartia/wp-content/uploads/2022/11/before-titulares.png") no-repeat center/contain;
+      }
+
+      .lead-title {
+        margin: 0 0 24px 58px;
+        color: var(--ink-strong);
+        font-family: "Rubik", sans-serif;
+        font-size: clamp(2rem, 3vw, 3rem);
+        font-weight: 300;
+        line-height: 1.12;
+      }
+
+      .copy p {
+        margin: 0 0 16px;
+      }
+
+      .content-copy-card,
+      .visual-card,
+      .brochure-card,
+      .phase-card,
+      .kpi-card,
+      .photo-card {
+        background: var(--paper);
+        border-radius: 22px;
+        box-shadow: var(--shadow);
+      }
+
+      .content-copy-card,
+      .visual-card {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .content-copy-card {
+        justify-content: center;
+        padding: 30px 32px;
+      }
+
+      .content-copy-card .lead-title {
+        margin-bottom: 20px;
+      }
+
+      .visual-card {
+        align-self: center;
+        justify-content: center;
+        padding: 18px;
+      }
+
+      .visual-card img {
+        width: 100%;
+        aspect-ratio: 4 / 5;
+        object-fit: cover;
+        border-radius: 18px;
+      }
+
+      .visual-card p {
+        margin: 18px 4px 0;
+        color: #5a6670;
+        font-size: 0.95rem;
+      }
+
+      .solution-visual-grid {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 18px;
+        margin-top: 34px;
+      }
+
+      .solution-visual-card {
+        position: relative;
+        min-height: 380px;
+        display: flex;
+        overflow: hidden;
+        border-radius: 8px;
+        background: #07121d;
+        color: #fff;
+        box-shadow: var(--shadow);
+        isolation: isolate;
+      }
+
+      .solution-visual-card img {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transform: scale(1.01);
+        transition: transform .24s ease;
+        z-index: -2;
+      }
+
+      .solution-visual-card::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(180deg, rgba(7, 18, 29, .12), rgba(7, 18, 29, .86));
+        z-index: -1;
+      }
+
+      .solution-visual-card:hover img {
+        transform: scale(1.06);
+      }
+
+      .solution-visual-copy {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        width: 100%;
+        min-height: 100%;
+        padding: 22px;
+      }
+
+      .solution-visual-tag {
+        align-self: flex-start;
+        margin-bottom: auto;
+        padding: 7px 10px;
+        border-radius: 8px;
+        background: rgba(54, 222, 184, .9);
+        color: #07121d;
+        font-size: .76rem;
+        font-weight: 800;
+        letter-spacing: .06em;
+        line-height: 1;
+        text-transform: uppercase;
+      }
+
+      .solution-visual-card h3 {
+        margin: 34px 0 8px;
+        color: #fff;
+        font-family: "Rubik", sans-serif;
+        font-size: clamp(1.22rem, 1.7vw, 1.62rem);
+        font-weight: 700;
+        line-height: 1.12;
+        text-shadow: 0 2px 14px rgba(0, 0, 0, .42);
+      }
+
+      .solution-visual-card p {
+        margin: 0;
+        color: rgba(255, 255, 255, .88);
+        font-size: .96rem;
+        line-height: 1.5;
+      }
+
+      .architecture-flow-panel {
+        margin: 34px 0 28px;
+        padding: clamp(20px, 2.6vw, 30px);
+        border: 1px solid rgba(54, 222, 184, .28);
+        border-radius: 8px;
+        background:
+          linear-gradient(135deg, rgba(7, 52, 61, .98), rgba(20, 78, 156, .94));
+        box-shadow: var(--shadow);
+        color: #fff;
+      }
+
+      .architecture-flow-header {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) auto;
+        gap: 22px;
+        align-items: end;
+        margin-bottom: 22px;
+      }
+
+      .architecture-flow-kicker {
+        display: inline-flex;
+        width: fit-content;
+        margin-bottom: 10px;
+        padding: 7px 10px;
+        border: 1px solid rgba(54, 222, 184, .34);
+        border-radius: 999px;
+        background: rgba(54, 222, 184, .12);
+        color: #36deb8;
+        font-family: "Rubik", sans-serif;
+        font-size: .72rem;
+        font-weight: 800;
+        letter-spacing: .08em;
+        line-height: 1;
+        text-transform: uppercase;
+      }
+
+      .architecture-flow-header h3 {
+        margin: 0;
+        max-width: 760px;
+        color: #fff;
+        font-family: "Rubik", sans-serif;
+        font-size: clamp(1.38rem, 2vw, 2.08rem);
+        font-weight: 500;
+        line-height: 1.12;
+      }
+
+      .architecture-flow-header p {
+        margin: 10px 0 0;
+        max-width: 700px;
+        color: rgba(255, 255, 255, .78);
+        font-size: .98rem;
+      }
+
+      .architecture-value-badge {
+        display: inline-flex;
+        max-width: 220px;
+        align-items: center;
+        justify-content: center;
+        padding: 12px 14px;
+        border-radius: 8px;
+        background: #36deb8;
+        color: #07343d;
+        font-family: "Rubik", sans-serif;
+        font-size: .82rem;
+        font-weight: 800;
+        line-height: 1.25;
+        text-align: center;
+        text-transform: uppercase;
+      }
+
+      .architecture-flow {
+        display: grid;
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+        gap: 12px;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .architecture-flow li {
+        position: relative;
+        min-height: 116px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 12px;
+        padding: 14px 11px;
+        border: 1px solid rgba(54, 222, 184, .22);
+        border-radius: 8px;
+        background: rgba(255, 255, 255, .96);
+        box-shadow: 0 14px 24px rgba(0, 0, 0, .14);
+      }
+
+      .architecture-flow li:not(:last-child)::after {
+        content: "→";
+        position: absolute;
+        top: 50%;
+        right: -15px;
+        z-index: 2;
+        transform: translateY(-50%);
+        color: #36deb8;
+        font-weight: 800;
+        line-height: 1;
+      }
+
+      .architecture-step-number {
+        display: inline-flex;
+        width: 30px;
+        height: 30px;
+        align-items: center;
+        justify-content: center;
+        border-radius: 999px;
+        background: #36deb8;
+        color: #07343d;
+        font-size: .72rem;
+        font-weight: 800;
+      }
+
+      .architecture-flow strong {
+        display: block;
+        color: #07343d;
+        font-family: "Rubik", sans-serif;
+        font-size: .94rem;
+        line-height: 1.18;
+      }
+
+      .architecture-flow small {
+        display: block;
+        color: #5a6670;
+        font-size: .78rem;
+        line-height: 1.35;
+      }
+
+      .brochure-card,
+      .phase-card,
+      .kpi-card {
+        padding: 24px;
+      }
+
+      .brochure-card h3,
+      .phase-card h3,
+      .kpi-card h3 {
+        margin: 0 0 12px;
+        color: var(--ink-strong);
+        font-family: "Rubik", sans-serif;
+        font-size: 1.34rem;
+        font-weight: 500;
+        line-height: 1.15;
+      }
+
+      .brochure-card p,
+      .phase-card p,
+      .kpi-card p {
+        margin: 0;
+      }
+
+      .brochure-card strong,
+      .kpi-card strong {
+        display: block;
+        margin-bottom: 10px;
+        color: var(--brand);
+        font-family: "Rubik", sans-serif;
+        font-size: 0.88rem;
+        font-weight: 700;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+      }
+
+      .brochure-link {
+        display: block;
+        color: inherit;
+        transition: transform 0.2s ease;
+      }
+
+      .brochure-link:hover,
+      .brochure-link:focus-visible {
+        transform: translateY(-4px);
+      }
+
+      .feature-list {
+        display: grid;
+        gap: 10px;
+        margin: 18px 0 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .feature-list li {
+        position: relative;
+        padding-left: 18px;
+      }
+
+      .feature-list li::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0.68em;
+        width: 8px;
+        height: 8px;
+        border-radius: 999px;
+        background: var(--accent);
+      }
+
+      .photo-card {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        overflow: hidden;
+      }
+
+      .photo-card img {
+        width: 100%;
+        aspect-ratio: 16 / 10;
+        object-fit: cover;
+      }
+
+      .photo-card figcaption {
+        padding: 16px 18px 18px;
+        color: #5a6670;
+        font-size: 0.94rem;
+      }
+
+      .cta-section {
+        background: #e8faf9;
+      }
+
+      .cta-grid {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) 320px;
+        gap: 24px;
+        align-items: stretch;
+      }
+
+      .cta-copy {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        background: var(--paper);
+        border-radius: 22px;
+        padding: 34px;
+        box-shadow: var(--shadow);
+      }
+
+      .cta-copy h2 {
+        margin: 0 0 14px;
+        color: var(--ink-strong);
+        font-family: "Rubik", sans-serif;
+        font-size: clamp(1.9rem, 2.5vw, 2.6rem);
+        font-weight: 300;
+      }
+
+      .cta-copy p {
+        margin: 0;
+      }
+
+      .cta-actions {
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+        margin-top: 24px;
+      }
+
+      .cta-button,
+      .ghost-button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 48px;
+        padding: 0 22px;
+        border-radius: 999px;
+        font-family: "Rubik", sans-serif;
+        font-size: 0.94rem;
+        font-weight: 500;
+        transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+      }
+
+      .cta-button {
+        color: #fff;
+        background: var(--brand);
+        box-shadow: 0 12px 28px rgba(20, 78, 156, 0.18);
+      }
+
+      .ghost-button {
+        color: var(--brand);
+        background: rgba(20, 78, 156, 0.08);
+      }
+
+      .cta-button:hover,
+      .cta-button:focus-visible,
+      .ghost-button:hover,
+      .ghost-button:focus-visible {
+        transform: translateY(-2px);
+      }
+
+      .cta-image {
+        min-height: 100%;
+        border-radius: 22px;
+        background:
+          linear-gradient(rgba(20, 78, 156, 0.16), rgba(20, 78, 156, 0.16)),
+          url("../assets/linkedin-news/greenhouse-2.jpg") center/cover no-repeat;
+        box-shadow: var(--shadow);
+      }
+
+      .footer {
+        background:
+          url("../assets/remote-qartia/wp-content/uploads/2022/11/fondo-footer.jpg") left top / cover no-repeat,
+          #222;
+        color: #ccc;
+      }
+
+      .footer-inner {
+        display: grid;
+        grid-template-columns: 220px minmax(0, 1fr);
+        gap: 36px;
+        align-items: start;
+        padding: 56px 0 28px;
+      }
+
+      .footer-logo img {
+        width: 180px;
+      }
+
+      .footer h4 {
+        margin: 0 0 16px;
+        color: #ccc;
+        font-family: "Rubik", sans-serif;
+        font-size: 1.1rem;
+        font-weight: 700;
+        text-transform: uppercase;
+      }
+
+      .footer p {
+        margin: 0 0 10px;
+      }
+
+      .subfooter {
+        background: #333;
+        color: #f9f9f9;
+        font-size: 0.86rem;
+        text-transform: uppercase;
+      }
+
+      .subfooter-inner {
+        width: min(1140px, calc(100% - 32px));
+        margin: 0 auto;
+        padding: 14px 0;
+        display: flex;
+        justify-content: center;
+        gap: 28px;
+        flex-wrap: wrap;
+      }
+
+      @media (max-width: 1024px) {
+        .header-inner,
+        .content-grid,
+        .brochure-split,
+        .cta-grid,
+        .footer-inner {
+          grid-template-columns: 1fr;
+        }
+
+        .header-inner {
+          display: grid;
+          gap: 12px;
+        }
+
+        .logo {
+          justify-self: center;
+        }
+
+.nav {
+  justify-content: center;
+}
+
+.nav-dropdown {
+  right: auto;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+        .brochure-grid,
+        .brochure-grid.two-cols,
+        .brochure-grid.four-cols,
+        .solution-visual-grid,
+        .architecture-flow,
+        .phase-grid,
+        .kpi-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .architecture-flow {
+          gap: 16px;
+        }
+
+        .architecture-flow-header {
+          grid-template-columns: 1fr;
+          align-items: start;
+        }
+
+        .architecture-value-badge {
+          justify-self: start;
+        }
+
+        .architecture-flow li:not(:last-child)::after {
+          display: none;
+        }
+      }
+.video-section { padding: 70px 0; background: var(--paper); }
+.video-wrapper { margin-top: 32px; border-radius: 22px; overflow: hidden; box-shadow: var(--shadow); position: relative; width: 100%; aspect-ratio: 16 / 9; background: #081726; }
+.video-wrapper iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+.video-trigger { position: relative; display: block; width: 100%; height: 100%; cursor: pointer; color: inherit; }
+.video-trigger img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.video-play { position: absolute; top: 50%; left: 50%; width: 96px; height: 96px; border-radius: 50%; transform: translate(-50%, -50%); background: rgba(7, 18, 29, 0.68); box-shadow: 0 12px 32px rgba(7, 18, 29, 0.32); }
+.video-play::before { content: ""; position: absolute; top: 50%; left: 50%; margin-left: 6px; transform: translate(-50%, -50%); border-style: solid; border-width: 18px 0 18px 30px; border-color: transparent transparent transparent #fff; }
+      @media (max-width: 640px) {
+.topbar-inner {
+  justify-content: center;
+}
+
+.nav {
+  gap: 8px;
+}
+
+.nav-group {
+  width: 100%;
+  display: grid;
+  justify-items: center;
+}
+
+.nav-dropdown {
+  position: static;
+  transform: none;
+  min-width: min(320px, 100%);
+  width: min(320px, 100%);
+  margin-top: 6px;
+}
+
+        .hero-inner {
+          padding-top: 72px;
+        }
+
+        .eyebrow::before {
+          display: none;
+        }
+
+        .lead-title {
+          margin-left: 0;
+        }
+
+        .brochure-grid,
+        .brochure-grid.two-cols,
+        .brochure-grid.four-cols,
+        .solution-visual-grid,
+        .architecture-flow,
+        .phase-grid,
+        .kpi-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .architecture-flow-panel {
+          padding: 18px;
+        }
+
+        .solution-visual-card {
+          min-height: 300px;
+        }
+
+        .footer-inner {
+          padding-top: 40px;
+        }
+      }
+    </style>
+  <style id="qartia-dropdown-offset">
+.nav-dropdown{transform:translateX(1cm);}
+@media (max-width:880px){.nav-dropdown{transform:translateX(calc(-50% + 1cm));}}
+@media (max-width:640px){.nav-dropdown{transform:none;}}
+@media (min-width:1025px){.ush_menu_1.type_desktop .w-nav-list.level_2{margin-left:1cm;}}
+@media (min-width:1025px){.l-subheader-cell.at_left,.header-inner .logo{transform:translateX(-0.35cm);}}
+</style>
+<link rel="stylesheet" href="../assets/css/qartia-topbar.css?v=lang-20260602">
+<link rel="stylesheet" href="../assets/css/qartia-responsive.css?v=20260601">
+    <style id="eibt-footer-layout-fix">
+    .footer .footer-inner {
+      display: grid !important;
+      grid-template-columns: minmax(180px, 0.75fr) minmax(260px, 1fr) minmax(360px, 1.15fr) !important;
+      align-items: start !important;
+      gap: 28px !important;
+    }
+
+    .footer .footer-eibt-badge,
+    .l-footer .footer-eibt-badge {
+      display: flex !important;
+      justify-content: flex-end !important;
+      align-items: flex-start !important;
+      margin-top: 0 !important;
+      width: 100% !important;
+      min-width: 360px;
+    }
+
+    .footer .footer-eibt-badge img,
+    .l-footer .footer-eibt-badge img {
+      width: min(430px, 100%) !important;
+      height: auto !important;
+      display: block !important;
+      margin-left: auto !important;
+      margin-right: 0 !important;
+    }
+
+    .l-footer .footer-eibt-badge .w-image-h {
+      width: 100% !important;
+    }
+
+    @media (max-width: 900px) {
+      .footer .footer-inner {
+        grid-template-columns: 1fr !important;
+      }
+
+      .footer .footer-eibt-badge,
+      .l-footer .footer-eibt-badge {
+        justify-content: flex-start !important;
+        min-width: 0 !important;
+      }
+
+      .footer .footer-eibt-badge img,
+      .l-footer .footer-eibt-badge img {
+        margin-left: 0 !important;
+        margin-right: auto !important;
+      }
+    }
+  </style>
+    <link rel="stylesheet" href="../assets/css/cookie-consent.css?v=mobile-20260601">
+</head>
+  <body>
+    <div class="page">
+      <div class="topbar">
+        <div class="topbar-inner">
+          <a href="tel:+34686918522">+34 686 91 85 22</a>
+          <a href="mailto:info@qartia.com">info@qartia.com</a>
+        <a class="qartia-linkedin-icon" href="https://www.linkedin.com/company/qartia-smart-technologies/" target="_blank" rel="noopener" aria-label="领英 Qartia"></a>
+
+        </div>
+      </div>
+
+      <header class="header">
+        <div class="header-inner">
+          <a class="logo" href="index.html">
+            <img src="../assets/remote-qartia/wp-content/uploads/2022/11/logo-qartia.png" alt="Qartia Smart Technologies">
+          </a>
+
+<nav class="nav" aria-label="主导航">
+  <a href="quienes-somos.html">我们是谁</a>
+  <div class="nav-group">
+    <button class="nav-toggle" type="button" aria-expanded="false">产品</button>
+    <div class="nav-dropdown">
+      <a href="productos.html">产品</a>
+      <a href="vibrasense.html">VibraSense</a>
+      <a href="airsense-pro.html">AIRSENSE PRO</a>
+      <a href="megamia.html">MEGAMIA</a>
+      <a href="dipason-exterior.html">DIPASON</a>
+      <a href="Biosentia.html">Biosentia</a>
+      <a href="noisement.html">噪音</a>
+    </div>
+  </div>
+  <div class="nav-group">
+    <button class="nav-toggle" type="button" aria-expanded="false">服务</button>
+    <div class="nav-dropdown">
+      <a href="agricultura.html">农业</a>
+      <div class="nav-subgroup">
+        <a class="nav-subtoggle" href="industria.html">工业</a>
+        <div class="nav-submenu">
+          <a href="mantenimiento-predictivo-vibraciones.html">预测性维护。振动</a>
+          <a href="monitorizacion-activos-criticos.html">关键资产监控</a>
+        </div>
+      </div>
+      <a href="medioambiente.html">环境</a>
+      <a href="civil.html">民用基础设施</a>
+      <a href="sources/serviciosan%CC%83adido.html">附加服务</a>
+    </div>
+  </div>
+  <div class="nav-group">
+    <button class="nav-toggle" type="button" aria-expanded="false">专用网络 5G</button>
+    <div class="nav-dropdown">
+      <a href="dect-nr-plus.html">什么是 DECT NR+</a>
+      <a href="soluciones-5g-privadas.html">5G 私人解决方案</a>
+    </div>
+  </div>
+  <a href="noticias.html">新闻</a>
+  <a href="contacto.html">联系方式</a>
+  <a href="https://qartia.com/Flutter/panel_industrias_prueba/">客户端访问</a>
+</nav>
+        </div>
+      </header>
+
+      <main>
+        <section class="hero">
+          <div class="hero-inner">
+            <h1>农业</h1>
+          </div>
+        </section>
+
+        <section class="content-section">
+          <div class="section-inner">
+            <div class="content-grid">
+              <div class="content-copy-card">
+                <span class="eyebrow">智慧农业</span>
+                <h2 class="lead-title">从农业开发到互联、预测和节能系统。</h2>
+                <div class="copy">
+                  <p>Qartia 通过适合农业运营、温室和农村环境的传感化 IoT、人工智能、数字孪生、农业光伏和无线连接来促进农村的数字化转型。</p>
+                  <p>我们的技术可以实时监测作物、微气候、土壤、水、能源和基础设施，生成统一的操作层，以更精确、更少的不确定性做出决策。</p>
+                  <p>通过 Qartia，农场可以预测灌溉、施肥、作物胁迫和能源消耗，纳入旨在可衡量经济回报的运营建议和试点。</p>
+                  <p>作为差异化价值，Qartia 将农业运营与无线网络、边缘部署、高级分析和自我消费模型相结合，使其能够向更高效、更有弹性和更有活力的自主农场发展。</p>
+                </div>
+              </div>
+
+              <aside class="visual-card">
+                <img src="../assets/agricultura/9D.jpeg" alt="温室内部采用 Qartia 解决方案为智能农业监测做好准备">
+                <p>为智慧农业传感化、互联化和数据化运营准备的栽培环境。</p>
+              </aside>
+            </div>
+          </div>
+        </section>
+
+        <section class="brochure-section alt">
+          <div class="section-inner">
+            <span class="eyebrow">运营影响</span>
+            <h2 class="lead-title">可衡量的运营影响。</h2>
+            <div class="kpi-grid">
+              <article class="kpi-card">
+                <strong>↓ 30%</strong>
+                <h3>用水量</h3>
+                <p>基于农艺数据和实际田间条件的灌溉优化。</p>
+              </article>
+              <article class="kpi-card">
+                <strong>↑ 20%</strong>
+                <h3>潜在产量</h3>
+                <p>更好地调整农场的种植、小气候和运营决策。</p>
+              </article>
+              <article class="kpi-card">
+                <strong>↓ 运营成本</strong>
+                <h3>资源优化</h3>
+                <p>减少水、肥料、能源和低效运行时间。</p>
+              </article>
+              <article class="kpi-card">
+                <strong>投资回报率（以月为单位）</strong>
+                <h3>可测量的试点</h3>
+                <p>具有可验证的技术和经济影响的执行试点设计。</p>
+              </article>
+            </div>
+            <p style="margin: 22px 0 0; color: #5a6670; font-size: 0.95rem;">
+              这些值是指示性估计值，必须根据作物、位置和基础设施在试点中进行验证。
+            </p>
+          </div>
+        </section>
+
+        <section class="brochure-section">
+          <div class="section-inner">
+            <span class="eyebrow">问题</span>
+            <h2 class="lead-title">该领域的实时可见性很少。</h2>
+            <div class="brochure-grid">
+              <article class="brochure-card">
+                <h3>反应性决定</h3>
+                <p>该漏洞利用响应较晚，因为数据到达时是碎片化的，或者到达时没有必要的连续性。</p>
+              </article>
+              <article class="brochure-card">
+                <h3>水和肥料的低效利用</h3>
+                <p>操作调整是按照固定规则进行的，没有持续读取作物的真实状态。</p>
+              </article>
+              <article class="brochure-card">
+                <h3>连接有限</h3>
+                <p>农村或温室覆盖范围影响数据的可靠性并延迟决策。</p>
+              </article>
+              <article class="brochure-card">
+                <h3>作物胁迫难以预测</h3>
+                <p>当生产影响已经可见时，就会发现偏差。</p>
+              </article>
+              <article class="brochure-card">
+                <h3>非集成系统</h3>
+                <p>灌溉、能源、气候和生产各自为政，无法最大限度地提高整体绩效。</p>
+              </article>
+              <article class="brochure-card">
+                <h3>规模不确定</h3>
+                <p>如果没有结构化的试点和明确的关键绩效指标，就很难证明大规模实施的合理性。</p>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="brochure-section alt">
+          <div class="section-inner">
+            <span class="eyebrow">解决方案 Qartia</span>
+            <h2 class="lead-title">从农业数据到操作行动。</h2>
+            <div class="solution-visual-grid">
+              <article class="solution-visual-card">
+                <img src="../assets/images/sensorizacion-agro-node.jpeg" alt="农业传感节点部署在田间">
+                <div class="solution-visual-copy">
+                  <span class="solution-visual-tag">01 捕获</span>
+                  <h3>智能拍摄</h3>
+                  <p>IoT 用于土壤、环境、辐射、二氧化碳、湿度和温度等的传感器。</p>
+                </div>
+              </article>
+              <article class="solution-visual-card">
+                <img src="../assets/images/sensorizacion-greenhouse-interior.jpeg" alt="用于农业操作的带传感的联网温室 IoT">
+                <div class="solution-visual-copy">
+                  <span class="solution-visual-tag">02 连接性</span>
+                  <h3>无线连接</h3>
+                  <p>适用于农村环境的强大网络：无运营商的私有网络 (LoRa/DECT NR+) 或有运营商的网络 (NB-IoT)。</p>
+                </div>
+              </article>
+              <article class="solution-visual-card">
+                <img src="../assets/images/ia-aplicada-cta-dashboard.jpeg" alt="人工智能面板应用于农业预测数据">
+                <div class="solution-visual-copy">
+                  <span class="solution-visual-tag">03 人工智能</span>
+                  <h3>预测智能</h3>
+                  <p>人工智能模型可预测灌溉、施肥、水资源压力和关键条件。</p>
+                </div>
+              </article>
+              <article class="solution-visual-card">
+                <img src="../assets/images/ingenieria-agrivoltaic-sunset.jpeg" alt="用于农业和能源优化的农业光伏装置">
+                <div class="solution-visual-copy">
+                  <span class="solution-visual-tag">04 优化</span>
+                  <h3>行动与优化</h3>
+                  <p>作物的操作建议、自动化和持续改进。</p>
+                </div>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="brochure-section">
+          <div class="section-inner">
+            <span class="eyebrow">关键能力</span>
+            <h2 class="lead-title">农业综合运营平台。</h2>
+            <div class="brochure-grid">
+              <article class="brochure-card">
+                <h3>24/7 监控</h3>
+                <p>持续监测作物、小气候和基础设施。</p>
+              </article>
+              <article class="brochure-card">
+                <h3>预测人工智能</h3>
+                <p>预测水、营养和能量需求。</p>
+              </article>
+              <article class="brochure-card">
+                <h3>数字孪生</h3>
+                <p>模拟场景以优化决策，而无需承担操作风险。</p>
+              </article>
+              <article class="brochure-card">
+                <h3>农业光伏</h3>
+                <p>太阳能发电、遮阳、可用光和农业产量之间的平衡。</p>
+              </article>
+              <article class="brochure-card">
+                <h3>无线网络 Qartia</h3>
+                <p>农场、温室和偏远地区可靠的私人连接。</p>
+              </article>
+              <article class="brochure-card">
+                <h3>资源优化</h3>
+                <p>减少水、肥料、能源和运营成本。</p>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="brochure-section alt">
+          <div class="section-inner">
+            <span class="eyebrow">技术架构</span>
+            <h2 class="lead-title">边缘+无线网络+人工智能。</h2>
+            <div class="architecture-flow-panel" aria-label="农业解决方案架构流程">
+              <div class="architecture-flow-header">
+                <div>
+                  <span class="architecture-flow-kicker">农业建筑 Qartia</span>
+                  <h3>从培养连接到自动决策。</h3>
+                  <p>从现场捕获变量、对其进行处理并将其转换为农场的视觉决策或行动的完整流程。</p>
+                </div>
+                <span class="architecture-value-badge">农业数据 → 行动</span>
+              </div>
+              <ol class="architecture-flow">
+                <li>
+                  <span class="architecture-step-number">01</span>
+                  <strong>传感器 IoT</strong>
+                  <small>土壤、气候、辐射和耕作</small>
+                </li>
+                <li>
+                  <span class="architecture-step-number">02</span>
+                  <strong>无线网络</strong>
+                  <small>可靠的现场覆盖</small>
+                </li>
+                <li>
+                  <span class="architecture-step-number">03</span>
+                  <strong>边缘/云</strong>
+                  <small>本地和历史处理</small>
+                </li>
+                <li>
+                  <span class="architecture-step-number">04</span>
+                  <strong>人工智能+数字孪生</strong>
+                  <small>预测和作战模拟</small>
+                </li>
+                <li>
+                  <span class="architecture-step-number">05</span>
+                  <strong>仪表板/执行器</strong>
+                  <small>视觉决策和自动化</small>
+                </li>
+              </ol>
+            </div>
+            <div class="brochure-split">
+              <div class="brochure-card">
+                <h3>准备对作物进行操作的架构。</h3>
+                <p>该平台可以部署在云、本地或混合架构中，与现有传感器集成或与其自己的部署 Qartia 集成。</p>
+                <ul class="feature-list">
+                  <li>持续捕获土壤、环境、辐射和能源变量。</li>
+                  <li>农场、温室和偏远地区可靠的私人连接。</li>
+                  <li>边缘处理可实现操作连续性和低延迟。</li>
+                  <li>灌溉、能源和生产的控制面板和自动化。</li>
+                </ul>
+              </div>
+
+              <figure class="photo-card">
+                <img src="../assets/linkedin-news/greenhouse-1.jpg" alt="温室中 Qartia 的互联农业建筑">
+                <figcaption>基础设施准备集成传感器、无线通信、边缘计算和分析应用于种植。</figcaption>
+              </figure>
+            </div>
+          </div>
+        </section>
+
+        <section class="brochure-section">
+          <div class="section-inner">
+            <span class="eyebrow">农业光伏</span>
+            <h2 class="lead-title">农业和能源合作。</h2>
+            <div class="brochure-split">
+              <div class="brochure-card">
+                <p>Qartia 允许您设计和操作平衡农业生产和太阳能发电的农业光伏系统。通过模拟、人工智能和传感化，开发可以朝着自我消耗和能源独立的模式发展。</p>
+                <ul class="feature-list">
+                  <li>光伏配置模拟。</li>
+                  <li>光能作物平衡。</li>
+                  <li>小气候优化。</li>
+                  <li>能源自主开发。</li>
+                </ul>
+              </div>
+
+              <figure class="photo-card">
+                <img src="../assets/agricultura/9C.jpeg" alt="农场农业光伏一体化温室和太阳能电池板">
+                <figcaption>农业光伏配置，以平衡太阳能发电、农业生产和农场的能源自主权。</figcaption>
+              </figure>
+            </div>
+          </div>
+        </section>
+
+        <section class="brochure-section alt">
+          <div class="section-inner">
+            <span class="eyebrow">执行飞行员</span>
+            <h2 class="lead-title">分 4 个阶段执行试点。</h2>
+            <div class="phase-grid">
+              <article class="phase-card">
+                <strong>1</strong>
+                <h3>初步诊断</h3>
+                <p>作物选择、开发、基础设施和 KPI。</p>
+              </article>
+              <article class="phase-card">
+                <strong>2</strong>
+                <h3>感知和网络部署</h3>
+                <p>安装传感器、验证覆盖范围和数据质量。</p>
+              </article>
+              <article class="phase-card">
+                <strong>3</strong>
+                <h3>人工智能+运营诊断</h3>
+                <p>预测模型、可操作的警报和技术建议。</p>
+              </article>
+              <article class="phase-card">
+                <strong>4</strong>
+                <h3>规模和投资回报率</h3>
+                <p>影响报告、经济建议和实施计划。</p>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="brochure-section">
+          <div class="section-inner">
+            <span class="eyebrow">微分 Qartia</span>
+            <h2 class="lead-title">为什么 Qartia。</h2>
+            <div class="brochure-split">
+              <div class="brochure-card">
+                <h3>Qartia 不仅仅是感官上的。</h3>
+                <p>Qartia 将无线连接（无运营商专用 - LoRa/DECT NR+ 或传统运营商 - NB-IoT）、应用人工智能、数字孪生、农业光伏、运营优化和 ROI 焦点集成在单一平台中。</p>
+                <ul class="feature-list">
+                  <li>无线连接和受控部署。</li>
+                  <li>人工智能应用于灌溉、能源和种植。</li>
+                  <li>数字孪生和操作模拟。</li>
+                  <li>具有可衡量经济影响的试点方法。</li>
+                </ul>
+              </div>
+
+              <a class="brochure-card brochure-link" href="brochure-agricultura.html">
+                <strong>商业手册</strong>
+                <h3>参见农业手册</h3>
+                <p>执行摘要、能力、架构、农业光伏和试点提案，格式为演示和印刷准备。</p>
+              </a>
+            </div>
+          </div>
+        </section>
+<section class="video-section">
+  <div class="section-inner">
+    <span class="eyebrow">视频</span>
+    <h2 class="lead-title">Qartia 正在运行。</h2>
+    <div class="video-wrapper" id="agriculture-video-embed" data-youtube-src="https://www.youtube.com/embed/mBLwA3rF2xk?rel=0" data-poster="https://i.ytimg.com/vi/mBLwA3rF2xk/hqdefault.jpg" aria-label="农业视频，作者：Qartia">
+      <button class="video-trigger" type="button" aria-label="播放 Qartia 的农业视频">
+        <img src="https://i.ytimg.com/vi/mBLwA3rF2xk/hqdefault.jpg" alt="Qartia 农业视频的缩略图">
+        <span class="video-play" aria-hidden="true"></span>
+      </button>
+    </div>
+  </div>
+</section>
+        <section class="cta-section">
+          <div class="section-inner">
+            <div class="cta-grid">
+              <div class="cta-copy">
+                <h2>将您的农场变成一个智能系统。</h2>
+                <p>请求 Qartia 试点并验证对您的作物、基础设施和能源模型的技术和经济影响。</p>
+                <div class="cta-actions">
+                  <a class="cta-button" href="mailto:antoniojavier.garcia@qartia.com?subject=Solicitar%20piloto%20Qartia%20Agricultura">请求试点</a>
+                  <a class="ghost-button" href="brochure-agricultura.html">打开手册</a>
+                </div>
+              </div>
+              <div class="cta-image" aria-hidden="true"></div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <div class="footer-inner">
+          <div class="footer-logo">
+            <img src="../assets/remote-qartia/wp-content/uploads/2022/11/logo-qartia.png" alt="Qartia">
+          </div>
+          <div>
+            <h4>联系方式</h4>
+            <p><a href="tel:+34686918522">(+34) 686918522</a></p>
+            <p><a href="mailto:info@qartia.com">info@qartia.com</a></p>
+            <p>Calle Tolosa Latour, 4, 7°A,</p>
+            <p>30201, 卡塔赫纳, 西班牙</p>
+            <p>到岸价: B67916676</p>
+          </div>
+                <div class="footer-eibt-badge" style="display:flex;align-items:center;justify-content:flex-end;min-width:360px;margin-top:8px;">
+          <img src="../assets/images/eibt-logo.png" alt="EIBT 印章" style="width:min(430px,100%);height:auto;display:block;">
+        </div>
+</div>
+      </footer>
+
+      <div class="subfooter">
+        <div class="subfooter-inner">
+          <a href="aviso-legal.html">法律声明</a>
+          <a href="politica-cookies.html">Cookie 政策</a>
+          <a href="politica-privacidad.html">隐私政策</a>
+        </div>
+      </div>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const groups = document.querySelectorAll(".nav-group");
+    const agricultureVideoEmbed = document.getElementById("agriculture-video-embed");
+
+    if (agricultureVideoEmbed) {
+      const youtubeSrc = agricultureVideoEmbed.dataset.youtubeSrc;
+      const youtubeWatch = "https://youtu.be/mBLwA3rF2xk";
+      const trigger = agricultureVideoEmbed.querySelector(".video-trigger");
+
+      if (trigger) {
+        trigger.addEventListener("click", function () {
+          if (window.location.protocol === "file:") {
+            window.location.href = youtubeWatch;
+            return;
+          }
+
+          agricultureVideoEmbed.innerHTML =
+            '<iframe src="' +
+            youtubeSrc +
+            '&autoplay=1" title="Qartia Smart Technologies - Agricultura inteligente" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>';
+        }, { once: true });
+      }
+    }
+
+    groups.forEach((group) => {
+      const toggle = group.querySelector(".nav-toggle");
+      if (!toggle) return;
+
+      toggle.addEventListener("click", function (event) {
+        event.preventDefault();
+        const willOpen = !group.classList.contains("open");
+
+        groups.forEach((otherGroup) => {
+          otherGroup.classList.remove("open");
+          const otherToggle = otherGroup.querySelector(".nav-toggle");
+          if (otherToggle) {
+            otherToggle.setAttribute("aria-expanded", "false");
+          }
+        });
+
+        group.classList.toggle("open", willOpen);
+        toggle.setAttribute("aria-expanded", willOpen ? "true" : "false");
+      });
+    });
+
+    document.addEventListener("click", function (event) {
+      groups.forEach((group) => {
+        if (group.contains(event.target)) return;
+        group.classList.remove("open");
+        const toggle = group.querySelector(".nav-toggle");
+        if (toggle) {
+          toggle.setAttribute("aria-expanded", "false");
+        }
+      });
+    });
+  });
+</script>
+    </div>
+      <script src="../assets/js/qartia-mobile-nav.js?v=20260601" defer></script>
+      <script src="../assets/js/cookie-consent.js?v=mobile-20260601" defer></script>
+<script src="../assets/js/qartia-language-switcher.js"></script>
+</body>
+</html>

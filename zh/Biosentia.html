@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Biosentia - Qartia Smart Technologies</title>
+    <link rel="icon" href="../assets/remote-qartia/wp-content/uploads/2022/10/favicon-150x150.png" sizes="32x32">
+    <link rel="icon" href="../assets/remote-qartia/wp-content/uploads/2022/10/favicon.png" sizes="192x192">
+    <link rel="apple-touch-icon" href="../assets/remote-qartia/wp-content/uploads/2022/10/favicon.png">
+    <meta name="msapplication-TileImage" content="assets/remote-qartia/wp-content/uploads/2022/10/favicon.png">
+    
+<link rel="stylesheet" id="qartia-local-fonts" href="../assets/css/local-fonts.css"><meta name="description" content="Biosentia 文件，用于健康、运动、食品和便携式诊断的智能电化学传感平台。">
+<style>
+      :root {
+        --bg: #f5f5f5;
+        --paper: #ffffff;
+        --paper-soft: #f7fbfc;
+        --ink: #333333;
+        --ink-strong: #1a1a1a;
+        --brand: #144e9c;
+        --accent: #36deb8;
+        --shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+      }
+
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--ink);
+        font-family: "Work Sans", sans-serif;
+        line-height: 1.55;
+      }
+      a { color: inherit; text-decoration: none; }
+      img { max-width: 100%; display: block; }
+
+      .topbar,
+      .header,
+      .footer,
+      .subfooter { width: 100%; }
+
+      .topbar {
+        background: #f5f5f5;
+        color: #333;
+        font-size: 0.84rem;
+      }
+
+      .topbar-inner,
+      .header-inner,
+      .section-inner,
+      .footer-inner {
+        width: min(1140px, calc(100% - 32px));
+        margin: 0 auto;
+      }
+
+      .topbar-inner {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        gap: 18px;
+        padding: 10px 0;
+        flex-wrap: wrap;
+      }
+
+      .header {
+        position: sticky;
+        top: 0;
+        z-index: 20;
+        background: rgba(255, 255, 255, 0.96);
+        box-shadow: 0 2px 18px rgba(0, 0, 0, 0.08);
+        backdrop-filter: blur(10px);
+      }
+
+      .header-inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 18px;
+        padding: 14px 0;
+      }
+
+      .logo img { width: 180px; height: auto; }
+
+      .nav {
+        display: flex;
+        justify-content: flex-end;
+        gap: 4px;
+        flex-wrap: wrap;
+        align-items: center;
+      }
+
+      .nav > a,
+      .nav-toggle {
+        padding: 10px 12px;
+        color: var(--brand);
+        background: transparent;
+        border: 0;
+        font-family: "Rubik", sans-serif;
+        font-size: 0.82rem;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 0.02em;
+        border-radius: 8px;
+        cursor: pointer;
+      }
+
+      .nav > a:hover,
+      .nav > a:focus-visible,
+      .nav-toggle:hover,
+      .nav-toggle:focus-visible {
+        background: rgba(20, 78, 156, 0.08);
+      }
+
+      .nav-group { position: relative; }
+      .nav-toggle {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .nav-toggle::after {
+        content: "";
+        width: 8px;
+        height: 8px;
+        border-right: 2px solid currentColor;
+        border-bottom: 2px solid currentColor;
+        transform: rotate(45deg) translateY(-1px);
+      }
+
+      .nav-dropdown {
+        position: absolute;
+        top: calc(100% + 10px);
+        right: 0;
+        min-width: 260px;
+        display: none;
+        flex-direction: column;
+        padding: 10px;
+        border-radius: 16px;
+        background: rgba(255, 255, 255, 0.98);
+        box-shadow: var(--shadow);
+        backdrop-filter: blur(10px);
+        z-index: 30;
+      }
+
+      .nav-dropdown a {
+        padding: 10px 12px;
+        color: var(--brand);
+        font-family: "Rubik", sans-serif;
+        font-size: 0.8rem;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 0.02em;
+        border-radius: 10px;
+      }
+
+      .nav-dropdown a:hover,
+      .nav-dropdown a:focus-visible,
+      .nav-subtoggle:hover,
+      .nav-subtoggle:focus-visible {
+        background: rgba(20, 78, 156, 0.08);
+      }
+
+      .nav-subgroup {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .nav-subtoggle {
+        padding: 10px 12px;
+        color: var(--brand);
+        font-family: "Rubik", sans-serif;
+        font-size: 0.8rem;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 0.02em;
+        border-radius: 10px;
+      }
+
+      .nav-submenu {
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+        margin: 0 0 6px 18px;
+        padding-left: 12px;
+        border-left: 2px solid rgba(20, 78, 156, 0.14);
+      }
+
+      .nav-submenu a {
+        padding: 8px 10px;
+        font-size: 0.74rem;
+      }
+
+      .nav-group:hover .nav-dropdown,
+      .nav-group.open .nav-dropdown { display: flex; }
+
+      .hero {
+        min-height: 380px;
+        display: flex;
+        align-items: center;
+        color: #fff;
+        background:
+          linear-gradient(rgba(0, 0, 0, 0.50), rgba(0, 0, 0, 0.16)),
+          url("../assets/images/biosentia-main-hero.jpg") center top/cover no-repeat;
+      }
+
+      .hero-inner {
+        width: min(1140px, calc(100% - 32px));
+        margin: 0 auto;
+        padding: 82px 0 60px;
+      }
+
+      .hero h1 {
+        margin: 0 0 12px;
+        font-family: "Rubik", sans-serif;
+        font-size: clamp(2.4rem, 4vw, 4rem);
+        font-weight: 300;
+        text-shadow: 2px 2px 9px #000;
+      }
+
+      .hero p {
+        max-width: 720px;
+        margin: 0;
+        font-size: 1.1rem;
+        text-shadow: 2px 2px 9px #000;
+      }
+
+      .intro-section,
+      .specs-section,
+      .systems-section,
+      .cta-section {
+        padding: 70px 0;
+      }
+
+      .intro-section {
+        background:
+          url("../assets/remote-qartia/wp-content/uploads/2022/11/fondo-home.jpg") top left / cover no-repeat,
+          var(--paper-soft);
+      }
+
+      .intro-grid,
+      .systems-grid,
+      .cta-grid {
+        display: grid;
+        grid-template-columns: minmax(0, 1.08fr) minmax(300px, 0.92fr);
+        gap: 36px;
+        align-items: stretch;
+      }
+
+      .eyebrow {
+        display: inline-block;
+        margin-bottom: 10px;
+        color: var(--accent);
+        font-size: 1rem;
+        font-weight: 600;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+      }
+
+      .eyebrow::before {
+        content: "";
+        display: inline-block;
+        width: 49px;
+        height: 50px;
+        margin-right: 10px;
+        vertical-align: middle;
+        background: url("../assets/remote-qartia/wp-content/uploads/2022/11/before-titulares.png") no-repeat center/contain;
+      }
+
+      .lead-title {
+        margin: 0 0 24px 58px;
+        color: var(--ink-strong);
+        font-family: "Rubik", sans-serif;
+        font-size: clamp(2rem, 3vw, 3rem);
+        font-weight: 300;
+        line-height: 1.12;
+      }
+
+      .card,
+      .visual-card,
+      .cta-copy {
+        background: var(--paper);
+        border-radius: 24px;
+        padding: 28px;
+        box-shadow: var(--shadow);
+      }
+
+      .intro-grid .card,
+      .intro-grid .visual-card {
+        height: 100%;
+      }
+
+      .visual-card {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      .visual-card img {
+        width: 100%;
+        border-radius: 18px;
+        background: #f4f9fb;
+        padding: 18px;
+      }
+
+      .visual-card p,
+      .card p {
+        margin: 14px 0 0;
+      }
+
+      .specs-section { background: var(--paper); }
+
+      .spec-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 18px;
+        align-items: start;
+      }
+
+      .spec-card {
+        padding: 20px;
+        border-radius: 20px;
+        background: var(--paper-soft);
+        box-shadow: var(--shadow);
+        align-self: start;
+      }
+
+      .spec-card img {
+        width: 100%;
+        margin-bottom: 16px;
+        border-radius: 16px;
+        background: #fff;
+        padding: 10px;
+      }
+
+      .spec-card strong {
+        display: block;
+        margin-bottom: 8px;
+        color: var(--brand);
+        font-family: "Rubik", sans-serif;
+        font-size: 0.9rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+      }
+
+
+      .feature-list {
+        display: grid;
+        gap: 10px;
+        margin: 18px 0 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .feature-list li {
+        position: relative;
+        padding-left: 18px;
+      }
+
+      .feature-list li::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0.68em;
+        width: 8px;
+        height: 8px;
+        border-radius: 999px;
+        background: var(--accent);
+      }
+
+      .systems-section { background: #e8faf9; }
+
+      .cta-section { background: var(--paper); }
+
+      .cta-grid {
+        grid-template-columns: minmax(0, 1fr) 320px;
+        gap: 24px;
+      }
+
+      .cta-grid-single {
+        grid-template-columns: 1fr;
+      }
+
+      .cta-copy h2 {
+        margin: 0 0 14px;
+        color: var(--ink-strong);
+        font-family: "Rubik", sans-serif;
+        font-size: clamp(1.9rem, 2.5vw, 2.6rem);
+        font-weight: 300;
+      }
+
+      .cta-copy p { margin: 0 0 18px; }
+
+      .button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 14px 20px;
+        border-radius: 999px;
+        background: var(--brand);
+        color: #fff;
+        font-family: "Rubik", sans-serif;
+        font-size: 0.92rem;
+        font-weight: 700;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+      }
+
+      .footer {
+        background:
+          url("../assets/remote-qartia/wp-content/uploads/2022/11/fondo-footer.jpg") left top / cover no-repeat,
+          #222;
+        color: #ccc;
+      }
+
+      .footer-inner {
+        display: grid;
+        grid-template-columns: 220px minmax(0, 1fr);
+        gap: 36px;
+        align-items: start;
+        padding: 56px 0 28px;
+      }
+
+      .footer-logo img { width: 180px; }
+
+      .footer h4 {
+        margin: 0 0 16px;
+        color: #ccc;
+        font-family: "Rubik", sans-serif;
+        font-size: 1.1rem;
+        font-weight: 700;
+        text-transform: uppercase;
+      }
+
+      .footer p { margin: 0 0 10px; }
+
+      .subfooter {
+        background: #333;
+        color: #f9f9f9;
+        font-size: 0.86rem;
+        text-transform: uppercase;
+      }
+
+      .subfooter-inner {
+        width: min(1140px, calc(100% - 32px));
+        margin: 0 auto;
+        padding: 14px 0;
+        display: flex;
+        justify-content: center;
+        gap: 28px;
+        flex-wrap: wrap;
+      }
+
+      @media (max-width: 1024px) {
+        .header-inner,
+        .intro-grid,
+        .systems-grid,
+        .cta-grid,
+        .footer-inner,
+        .spec-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .header-inner {
+          display: grid;
+          gap: 12px;
+        }
+
+        .logo { justify-self: center; }
+        .nav { justify-content: center; }
+
+        .nav-dropdown {
+          right: auto;
+          left: 50%;
+          transform: translateX(-50%);
+        }
+      }
+
+      @media (max-width: 640px) {
+        .topbar-inner { justify-content: center; }
+        .nav { gap: 8px; }
+
+        .nav-group {
+          width: 100%;
+          display: grid;
+          justify-items: center;
+        }
+
+        .nav-dropdown {
+          position: static;
+          transform: none;
+          min-width: min(320px, 100%);
+          width: min(320px, 100%);
+          margin-top: 6px;
+        }
+
+        .eyebrow::before { display: none; }
+        .lead-title { margin-left: 0; }
+      }
+    </style>
+  <style id="qartia-dropdown-offset">
+.nav-dropdown{transform:translateX(1cm);}
+@media (max-width:880px){.nav-dropdown{transform:translateX(calc(-50% + 1cm));}}
+@media (max-width:640px){.nav-dropdown{transform:none;}}
+@media (min-width:1025px){.ush_menu_1.type_desktop .w-nav-list.level_2{margin-left:1cm;}}
+@media (min-width:1025px){.l-subheader-cell.at_left,.header-inner .logo{transform:translateX(-0.35cm);}}
+</style>
+<link rel="stylesheet" href="../assets/css/qartia-topbar.css?v=lang-20260602">
+<link rel="stylesheet" href="../assets/css/qartia-responsive.css?v=20260601">
+    <style id="eibt-footer-layout-fix">
+    .footer .footer-inner {
+      display: grid !important;
+      grid-template-columns: minmax(180px, 0.75fr) minmax(260px, 1fr) minmax(360px, 1.15fr) !important;
+      align-items: start !important;
+      gap: 28px !important;
+    }
+
+    .footer .footer-eibt-badge,
+    .l-footer .footer-eibt-badge {
+      display: flex !important;
+      justify-content: flex-end !important;
+      align-items: flex-start !important;
+      margin-top: 0 !important;
+      width: 100% !important;
+      min-width: 360px;
+    }
+
+    .footer .footer-eibt-badge img,
+    .l-footer .footer-eibt-badge img {
+      width: min(430px, 100%) !important;
+      height: auto !important;
+      display: block !important;
+      margin-left: auto !important;
+      margin-right: 0 !important;
+    }
+
+    .l-footer .footer-eibt-badge .w-image-h {
+      width: 100% !important;
+    }
+
+    @media (max-width: 900px) {
+      .footer .footer-inner {
+        grid-template-columns: 1fr !important;
+      }
+
+      .footer .footer-eibt-badge,
+      .l-footer .footer-eibt-badge {
+        justify-content: flex-start !important;
+        min-width: 0 !important;
+      }
+
+      .footer .footer-eibt-badge img,
+      .l-footer .footer-eibt-badge img {
+        margin-left: 0 !important;
+        margin-right: auto !important;
+      }
+    }
+  </style>
+    <link rel="stylesheet" href="../assets/css/cookie-consent.css?v=mobile-20260601">
+</head>
+  <body>
+    <div class="topbar">
+      <div class="topbar-inner">
+        <a href="tel:+34686918522">+34 686 91 85 22</a>
+        <a href="mailto:info@qartia.com">info@qartia.com</a>
+        <a class="qartia-linkedin-icon" href="https://www.linkedin.com/company/qartia-smart-technologies/" target="_blank" rel="noopener" aria-label="领英 Qartia"></a>
+
+      </div>
+    </div>
+
+    <header class="header">
+      <div class="header-inner">
+        <a class="logo" href="index.html">
+          <img src="../assets/remote-qartia/wp-content/uploads/2022/11/logo-qartia.png" alt="Qartia Smart Technologies">
+        </a>
+
+        <nav class="nav" aria-label="主导航">
+  <a href="quienes-somos.html">我们是谁</a>
+  <div class="nav-group">
+    <button class="nav-toggle" type="button" aria-expanded="false">产品</button>
+    <div class="nav-dropdown">
+      <a href="productos.html">产品</a>
+      <a href="vibrasense.html">VibraSense</a>
+      <a href="airsense-pro.html">AIRSENSE PRO</a>
+      <a href="megamia.html">MEGAMIA</a>
+      <a href="dipason-exterior.html">DIPASON</a>
+      <a href="Biosentia.html">Biosentia</a>
+      <a href="noisement.html">噪音</a>
+    </div>
+  </div>
+  <div class="nav-group">
+    <button class="nav-toggle" type="button" aria-expanded="false">服务</button>
+    <div class="nav-dropdown">
+      <a href="agricultura.html">农业</a>
+      <div class="nav-subgroup">
+        <a class="nav-subtoggle" href="industria.html">工业</a>
+        <div class="nav-submenu">
+          <a href="mantenimiento-predictivo-vibraciones.html">预测性维护。振动</a>
+          <a href="monitorizacion-activos-criticos.html">关键资产监控</a>
+        </div>
+      </div>
+      <a href="medioambiente.html">环境</a>
+      <a href="civil.html">民用基础设施</a>
+      <a href="sources/serviciosan%CC%83adido.html">附加服务</a>
+    </div>
+  </div>
+  <div class="nav-group">
+    <button class="nav-toggle" type="button" aria-expanded="false">专用网络 5G</button>
+    <div class="nav-dropdown">
+      <a href="dect-nr-plus.html">什么是 DECT NR+</a>
+      <a href="soluciones-5g-privadas.html">5G 私人解决方案</a>
+    </div>
+  </div>
+  <a href="noticias.html">新闻</a>
+  <a href="contacto.html">联系方式</a>
+  <a href="https://qartia.com/Flutter/panel_industrias_prueba/">客户端访问</a>
+</nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-inner">
+          <h1>Biosentia</h1>
+          <p>用于健康、运动、营养和便携式诊断的智能电化学传感平台。</p>
+        </div>
+      </section>
+
+      <section class="intro-section">
+        <div class="section-inner">
+          <div class="intro-grid">
+            <div class="card">
+              <span class="eyebrow">产品 Qartia</span>
+              <h2 class="lead-title">智能传感，实时测量不同生化物质的浓度。</h2>
+              <p>Biosentia 是一个先进的电子和通信平台，旨在开发应用于健康、体育、食品工业、生物技术和便携式分子诊断的电化学分析解决方案。</p>
+              <p>该产品将硬件设计、固件实现、极低强度电化学信号（高达纳安）的采集、数据处理和无线连接集成到一个生态系统中，使复杂的化学和生化测定能够转变为适合不同使用环境的紧凑、可靠的系统。</p>
+              <ul class="feature-list">
+                <li>适用于台式机、笔记本电脑和可穿戴设备的模块化和可扩展架构。</li>
+                <li>与丝网印刷电极、一次性传感器和表皮或皮内针兼容。</li>
+                <li>电化学测量电子器件、固件、BLE 连接和集成IoT。</li>
+                <li>为原型、试点和特定应用的工业化前开发做好准备。</li>
+                <li>唾液、血清、尿液或皮下等中的测量，其中所研究的分析物的浓度可以忽略不计。</li>
+              </ul>
+            </div>
+
+            <aside class="visual-card">
+              <img src="../assets/images/biosentia-main-hero.jpg" alt="Biosentia 作为主要的便携式电化学分析设备">
+              <p>Biosentia 将电化学和分子测量平台转换为紧凑、连接和就绪的设备，用于临床、运动、食品或现场场景。</p>
+            </aside>
+          </div>
+        </div>
+      </section>
+
+      <section class="specs-section">
+        <div class="section-inner">
+          <span class="eyebrow">应用线</span>
+          <h2 class="lead-title">一个平台，四种开发线。</h2>
+          <div class="spec-grid">
+            <div class="spec-card">
+              <img src="../assets/images/biosentia-main.png" alt="Biosentia Health 用于检测临床生物标志物">
+              <strong>Biosentia 健康</strong>
+              解决方案旨在通过唾液样本检测具有临床和生理意义的生物标志物，例如胆固醇、酮体和与生育相关的激素（雌二醇、黄体酮、黄体生成素和催乳素）。在后一种情况下，使用该设备，医生通过患者的唾液样本，无需前往不孕不育诊所，就可以知道胚胎移植的最佳时间。该系列便携式设备可在临床、医疗保健、家庭或现场环境中进行可靠的分析。
+            </div>
+            <div class="spec-card">
+              <img src="../assets/images/biosentia-food-device.png" alt="用于食品质量控制的 Biosentia Food 设备">
+              <strong>Biosentia 食品</strong>
+              食品工业质量控制系统，旨在测量食品和饮料中的抗坏血酸和其他相关化合物。通过紧凑、快速的解决方案将电化学分析转移到过程控制。
+            </div>
+            <div class="spec-card">
+              <img src="../assets/images/biosentia-wearable.png" alt="微型可穿戴格式的 Biosentia Sport and Wear">
+              <strong>Biosentia 运动服饰</strong>
+              使用便携式设备和小型可穿戴设备进行实时生理监测。它可以通过远程可视化和分析来测量与表现、疲劳、新陈代谢、恢复和用户生理状态相关的变量。
+            </div>
+            <div class="spec-card">
+              <img src="../assets/images/biosentia-gene.png" alt="用于便携式分子诊断的 Biosentia Gene">
+              <strong>Biosentia 基因</strong>
+              基于LAMP技术的便携式分子诊断平台，旨在快速检测生物样本中的遗传物质。它的精度可与 PCR 相媲美，具有更紧凑、更互联且成本更低的解决方案，专为护理点、​​筛查或移动实验室而准备。
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="systems-section">
+        <div class="section-inner">
+          <div class="systems-grid">
+            <div class="card">
+              <span class="eyebrow">技术特点</span>
+              <h2 class="lead-title">单一技术基础中的电化学、固件和连接。</h2>
+              <ul class="feature-list">
+                <li>定制电化学电子器件。</li>
+                <li>恒电位仪、电位计和信号采集系统的设计。</li>
+                <li>支持循环伏安法、计时电流法和电位法。</li>
+                <li>嵌入式固件可根据应用进行配置。</li>
+                <li>蓝牙低功耗通信 — BLE。</li>
+                <li>与 IoT 平台集成以进行远程监控。</li>
+                <li>数据处理、可视化和存储。</li>
+              </ul>
+            </div>
+
+            <div class="card">
+              <span class="eyebrow">差分值</span>
+              <h2 class="lead-title">适用于不同分析物、基质和场景的灵活平台。</h2>
+              <p>Biosentia 的独特价值在于其能够将电子、电化学、生物技术和连接性整合到一个技术平台中。 Biosentia 不限于封闭试验，而是允许针对不同分析物和使用环境开发特定设备。</p>
+              <p>这使其成为研究、技术验证、产业转移和新产品开发的有用基础，从便携式点分析系统发展到具有远程连接的连续监测可穿戴设备或分子诊断解决方案。</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="specs-section">
+        <div class="section-inner">
+          <span class="eyebrow">应用领域</span>
+          <h2 class="lead-title">Biosentia 可以增加价值。</h2>
+          <div class="spec-grid">
+            <div class="spec-card">
+              <strong>数字健康</strong>
+              分散环境中的便携式诊断、个性化医疗以及临床或生理监测。
+            </div>
+            <div class="spec-card">
+              <strong>体育与福祉</strong>
+              持续的生理监测、表现分析、恢复和个性化健康。
+            </div>
+            <div class="spec-card">
+              <strong>食品工业和生物技术</strong>
+              质量控制、快速化学分析和应用生物医学研究。
+            </div>
+            <div class="spec-card">
+              <strong>科学和工业环境</strong>
+              大学、技术中心、分析实验室和医疗器械公司。
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="cta-section">
+        <div class="section-inner">
+          <div class="cta-grid cta-grid-single">
+            <div class="cta-copy">
+              <h2>Biosentia 让电化学和分子分析更接近使用点。</h2>
+              <p>其模块化设计有助于创建定制解决方案，从研究原型到用于健康、运动、食品或生物技术领域的连续监测、快速诊断或质量控制的连接设备。</p>
+              <p><strong>Biosentia。</strong> 智能传感，实时测量寿命。</p>
+              <a class="button" href="productos.html">返回产品</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        <div class="footer-logo">
+          <img src="../assets/remote-qartia/wp-content/uploads/2022/11/logo-qartia.png" alt="Qartia">
+        </div>
+        <div>
+          <h4>联系方式</h4>
+          <p><a href="tel:+34686918522">(+34) 686918522</a></p>
+          <p><a href="mailto:info@qartia.com">info@qartia.com</a></p>
+          <p>Calle Tolosa Latour, 4, 7°A,</p>
+          <p>30201, 卡塔赫纳, 西班牙</p>
+            <p>到岸价: B67916676</p>
+        </div>
+              <div class="footer-eibt-badge" style="display:flex;align-items:center;justify-content:flex-end;min-width:360px;margin-top:8px;">
+          <img src="../assets/images/eibt-logo.png" alt="EIBT 印章" style="width:min(430px,100%);height:auto;display:block;">
+        </div>
+</div>
+    </footer>
+
+    <div class="subfooter">
+      <div class="subfooter-inner">
+        <a href="aviso-legal.html">法律声明</a>
+        <a href="politica-cookies.html">Cookie 政策</a>
+        <a href="politica-privacidad.html">隐私政策</a>
+      </div>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const groups = document.querySelectorAll(".nav-group");
+
+        groups.forEach((group) => {
+          const toggle = group.querySelector(".nav-toggle");
+          if (!toggle) return;
+
+          toggle.addEventListener("click", function (event) {
+            event.preventDefault();
+            const willOpen = !group.classList.contains("open");
+
+            groups.forEach((otherGroup) => {
+              otherGroup.classList.remove("open");
+              const otherToggle = otherGroup.querySelector(".nav-toggle");
+              if (otherToggle) {
+                otherToggle.setAttribute("aria-expanded", "false");
+              }
+            });
+
+            group.classList.toggle("open", willOpen);
+            toggle.setAttribute("aria-expanded", willOpen ? "true" : "false");
+          });
+        });
+
+        document.addEventListener("click", function (event) {
+          groups.forEach((group) => {
+            if (group.contains(event.target)) return;
+            group.classList.remove("open");
+            const toggle = group.querySelector(".nav-toggle");
+            if (toggle) {
+              toggle.setAttribute("aria-expanded", "false");
+            }
+          });
+        });
+      });
+    </script>
+      <script src="../assets/js/qartia-mobile-nav.js?v=20260601" defer></script>
+      <script src="../assets/js/cookie-consent.js?v=mobile-20260601" defer></script>
+<script src="../assets/js/qartia-language-switcher.js"></script>
+</body>
+</html>

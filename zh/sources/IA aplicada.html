@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <title>应用人工智能 - Qartia Smart Technologies</title>
+    <link rel="icon" href="../../assets/remote-qartia/wp-content/uploads/2022/10/favicon-150x150.png" sizes="32x32">
+    <link rel="icon" href="../../assets/remote-qartia/wp-content/uploads/2022/10/favicon.png" sizes="192x192">
+    <link rel="apple-touch-icon" href="../../assets/remote-qartia/wp-content/uploads/2022/10/favicon.png">
+    <meta name="msapplication-TileImage" content="../assets/remote-qartia/wp-content/uploads/2022/10/favicon.png">
+    
+<link rel="stylesheet" id="qartia-local-fonts" href="../../assets/css/local-fonts.css"><meta name="description" content="应用人工智能、RAG 助手、数字孪生、传感网络警报和操作分析、预测性维护和互联平台。">
+<link rel="stylesheet" href="../../assets/css/qartia-service.css">
+<link rel="stylesheet" href="../../assets/css/quick-access-index.css">
+<link rel="stylesheet" href="../../assets/css/qartia-topbar.css?v=lang-20260602">
+<link rel="stylesheet" href="../../assets/css/qartia-responsive.css?v=20260601">
+    <style id="eibt-footer-layout-fix">
+    .footer .footer-inner {
+      display: grid !important;
+      grid-template-columns: minmax(180px, 0.75fr) minmax(260px, 1fr) minmax(360px, 1.15fr) !important;
+      align-items: start !important;
+      gap: 28px !important;
+    }
+
+    .footer .footer-eibt-badge,
+    .l-footer .footer-eibt-badge {
+      display: flex !important;
+      justify-content: flex-end !important;
+      align-items: flex-start !important;
+      margin-top: 0 !important;
+      width: 100% !important;
+      min-width: 360px;
+    }
+
+    .footer .footer-eibt-badge img,
+    .l-footer .footer-eibt-badge img {
+      width: min(430px, 100%) !important;
+      height: auto !important;
+      display: block !important;
+      margin-left: auto !important;
+      margin-right: 0 !important;
+    }
+
+    .l-footer .footer-eibt-badge .w-image-h {
+      width: 100% !important;
+    }
+
+    @media (max-width: 900px) {
+      .footer .footer-inner {
+        grid-template-columns: 1fr !important;
+      }
+
+      .footer .footer-eibt-badge,
+      .l-footer .footer-eibt-badge {
+        justify-content: flex-start !important;
+        min-width: 0 !important;
+      }
+
+      .footer .footer-eibt-badge img,
+      .l-footer .footer-eibt-badge img {
+        margin-left: 0 !important;
+        margin-right: auto !important;
+      }
+    }
+  </style>
+    <style id="ia-terreno-align">
+      .ia-terreno-section .stack-split {
+        align-items: stretch;
+      }
+
+      .ia-terreno-section .stack-grid,
+      .ia-terreno-section .photo-stack {
+        display: grid;
+        height: 85%;
+      }
+
+      .ia-terreno-section .stack-grid {
+        grid-template-rows: repeat(2, minmax(0, 1fr));
+      }
+
+      .ia-terreno-section .photo-stack {
+        grid-template-rows: repeat(3, minmax(1, 1fr));
+      }
+
+      .ia-terreno-section .info-card,
+      .ia-terreno-section .photo-card {
+        height: 100%;
+      }
+
+      .ia-terreno-section .photo-card {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .ia-terreno-section .photo-card img {
+        flex: 1 1 auto;
+        min-height: 0;
+        object-fit: cover;
+      }
+
+      .ia-terreno-section .photo-card figcaption {
+        flex: 0 0 auto;
+      }
+
+      @media (max-width: 1024px) {
+        .ia-terreno-section .stack-grid,
+        .ia-terreno-section .photo-stack {
+          grid-template-rows: none;
+          height: auto;
+        }
+      }
+    </style>
+    <link rel="stylesheet" href="../../assets/css/cookie-consent.css?v=mobile-20260601">
+</head>
+  <body>
+    <div class="page">
+      <div class="topbar">
+        <div class="topbar-inner">
+          <a href="tel:+34686918522">+34 686 91 85 22</a>
+          <a href="mailto:info@qartia.com">info@qartia.com</a>
+          <a class="qartia-linkedin-icon" href="https://www.linkedin.com/company/qartia-smart-technologies/" target="_blank" rel="noopener" aria-label="领英 Qartia"></a>
+        </div>
+      </div>
+
+      <header class="header">
+        <div class="header-inner">
+          <a class="logo" href="../index.html">
+            <img src="../../assets/remote-qartia/wp-content/uploads/2022/11/logo-qartia.png" alt="Qartia Smart Technologies">
+          </a>
+
+          <nav class="nav" aria-label="主导航">
+            <a href="../quienes-somos.html">我们是谁</a>
+            <div class="nav-group">
+              <button class="nav-toggle" type="button" aria-expanded="false">产品</button>
+              <div class="nav-dropdown">
+                <a href="../productos.html">产品</a>
+                <a href="../vibrasense.html">VibraSense</a>
+                <a href="../airsense-pro.html">AIRSENSE PRO</a>
+                <a href="../megamia.html">MEGAMIA</a>
+                <a href="../dipason-exterior.html">DIPASON</a>
+                <a href="../Biosentia.html">Biosentia</a>
+                <a href="../noisement.html">噪音</a>
+              </div>
+            </div>
+            <div class="nav-group">
+              <button class="nav-toggle" type="button" aria-expanded="false">服务</button>
+              <div class="nav-dropdown">
+                <a href="../agricultura.html">农业</a>
+                <div class="nav-subgroup">
+                  <a class="nav-subtoggle" href="../industria.html">工业</a>
+                  <div class="nav-submenu">
+                    <a href="../mantenimiento-predictivo-vibraciones.html">预测性维护。振动</a>
+                    <a href="../monitorizacion-activos-criticos.html">关键资产监控</a>
+                  </div>
+                </div>
+                <a href="../medioambiente.html">环境</a>
+                <a href="../civil.html">民用基础设施</a>
+                <a href="serviciosan%CC%83adido.html">附加服务</a>
+              </div>
+            </div>
+            <div class="nav-group">
+              <button class="nav-toggle" type="button" aria-expanded="false">专用网络 5G</button>
+              <div class="nav-dropdown">
+                <a href="../dect-nr-plus.html">什么是 DECT NR+</a>
+                <a href="../soluciones-5g-privadas.html">5G 私人解决方案</a>
+              </div>
+            </div>
+            <a href="../noticias.html">新闻</a>
+            <a href="../contacto.html">联系方式</a>
+            <a href="https://qartia.com/Flutter/panel_industrias_prueba/">客户端访问</a>
+          </nav>
+        </div>
+      </header>
+
+      <main>
+        <section class="hero" style="background-image: linear-gradient(rgba(0, 0, 0, 0.50), rgba(0, 0, 0, 0.18)), url('../../assets/images/ia-header-crowdpeople.jpeg');">
+          <div class="hero-inner">
+            <h1>应用人工智能</h1>
+          </div>
+        </section>
+
+        <section class="section surface">
+          <div class="section-inner">
+            <div class="split-layout">
+              <div class="copy-card">
+                <span class="eyebrow">数据、背景和决策</span>
+                <h2 class="lead-title">Qartia 的 AI 与操作集成在一起，它并不脱离系统。</h2>
+                <div class="copy">
+                  <p>Qartia 将人工智能应用于现场捕获的数据，以检测模式、预测事件、启动警报并促进工业、环境、城市或农业环境中的决策。</p>
+                  <p>我们的方法结合了数据平台、传感器、连接、边缘、仪表板和高级服务，例如预测维护、RAG 助手、数字孪生和操作可视化。</p>
+                  <p>结果是一个对实际操作有用的人工智能：连接到设备，与项目逻辑保持一致，并准备与客户现有的基础设施集成。</p>
+                </div>
+              </div>
+
+              <aside class="visual-card landscape">
+                <img src="../../assets/images/ia-heatmap-rag.png" alt="人工智能助手预测热图应用于波哥大 PM2.5 城市预测">
+                <p>基于真实数据的预测模型和对话助理，可将地图、系列和作战环境转化为可行的决策。</p>
+              </aside>
+            </div>
+          </div>
+        </section>
+
+        <section class="section">
+          <div class="section-inner">
+            <span class="eyebrow">增加价值的地方</span>
+            <h2 class="lead-title">人工智能部署在已经运行的资产、网络和平台上。</h2>
+            <div class="feature-grid cols-4">
+              <article class="info-card"><h3>预测性维护</h3><p>遥测和传感器分析，以在停机前识别故障、性能下降或异常情况。</p></article>
+              <article class="info-card"><h3>智能警报</h3><p>检测异常行为并生成上下文警告。</p></article>
+              <article class="info-card"><h3>数字孪生</h3><p>系统、资产或空间的操作表示，用于可视化和测试场景。</p></article>
+              <article class="info-card"><h3>与会者 RAG</h3><p>数据、文档、事件和系统运行的自然咨询。</p></article>
+            </div>
+          </div>
+        </section>
+
+        <section class="section alt ia-terreno-section">
+          <div class="section-inner">
+            <span class="eyebrow">AI 连接到用例以进行预测</span>
+            <h2 class="lead-title">我们的人工智能基于高质量的数据，即良好捕获、良好传输和结构良好的数据。</h2>
+            <div class="stack-split">
+              <div class="stack-grid">
+                <article class="info-card">
+                  <strong>型号和操作</strong>
+                  <h3>有关已部署系统的预测、分类和上下文阅读。</h3>
+                  <p>人工智能与可视化、警报和数据开发层集成，使模型对维护、环境、技术援助或服务控制产生影响。</p>
+                  <ul class="feature-list">
+                    <li>预测模型和业务规则。</li>
+                    <li>状态分类和事件检测。</li>
+                    <li>在边缘、云或混合架构上部署。</li>
+                  </ul>
+                </article>
+                <article class="info-card">
+                  <strong>RAG 和操作知识</strong>
+                  <h3>要求系统用自然语言快速提取价值。</h3>
+                  <p>RAG 向导允许您查阅读数、历史记录、技术文档、模式和系统行为，而无需手动浏览表格或图表。</p>
+                  <ul class="feature-list">
+                    <li>系列、事件或趋势的摘要。</li>
+                    <li>关于传感器、阈值或资产行为的咨询。</li>
+                    <li>对技术人员、操作和远程监控的支持。</li>
+                  </ul>
+                </article>
+              </div>
+
+              <div class="photo-stack">
+                <figure class="photo-card">
+                  <img src="../../assets/images/ia-motor-predictions.png" alt="预测维护模块中电机的振动、速度和故障概率的预测">
+                  <figcaption>预测电机和旋转机械的资产行为和概率故障读数。</figcaption>
+                </figure>
+                <figure class="photo-card">
+                  <img src="../../assets/medioambiente/prediccion-cartagena-ia.png" alt="卡塔赫纳通过人工智能进行环境预测">
+                  <figcaption>环境质量与国土运行污染物预测与决策支持。</figcaption>
+                </figure>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="section">
+          <div class="section-inner">
+            <span class="eyebrow">我们部署的服务</span>
+            <h2 class="lead-title">人工智能和先进服务与项目的实际情况相关。</h2>
+            <div class="feature-grid cols-4">
+              <article class="info-card"><h3>智能维护</h3><p>来自设备本身的遥测预测和监控服务。</p></article>
+              <article class="info-card"><h3>警报和事件</h3><p>针对值超出范围或异常模式的电子邮件或消息通知。</p></article>
+              <article class="info-card"><h3>数字孪生</h3><p>适用于运营、培训、建筑遗产和民用基础设施。</p></article>
+              <article class="info-card"><h3>RAG 和聊天机器人</h3><p>对捕获的数据、文档和系统操作上下文进行自然查询。</p></article>
+              <article class="info-card"><h3>智慧城市</h3><p>AIoT 可持续发展、生活质量和城市环境操作解读平台。</p></article>
+              <article class="info-card"><h3>安全和云</h3><p>VPN、安全云、可追溯性和用于互联部署的远程服务。</p></article>
+              <article class="info-card"><h3>自主性和复原力</h3><p>服务与太阳能解决方案、防破坏和复杂部署兼容。</p></article>
+              <article class="info-card"><h3>分阶段缩放</h3><p>能够从试点开始并发展为同一架构内的稳定服务。</p></article>
+            </div>
+          </div>
+        </section>
+
+        <section class="section alt">
+          <div class="section-inner">
+            <span class="eyebrow">我们如何整合人工智能</span>
+            <h2 class="lead-title">从原始数据到真正有用的操作帮助。</h2>
+            <div class="phase-grid">
+              <article class="phase-card">
+                <strong>01</strong>
+                <h3>准备数据</h3>
+                <p>系统的稳定捕获、结构、标签和使用上下文。</p>
+              </article>
+              <article class="phase-card">
+                <strong>02</strong>
+                <h3>为服务建模</h3>
+                <p>根据需要定义规则、预测、RAG 查询或高级可视化。</p>
+              </article>
+              <article class="phase-card">
+                <strong>03</strong>
+                <h3>融入运营</h3>
+                <p>项目日常生活中的仪表板、警报、API、工作流程和真实用户。</p>
+              </article>
+              <article class="phase-card">
+                <strong>04</strong>
+                <h3>衡量和改进</h3>
+                <p>模型或助手的服务调整、影响评估和逐步演变。</p>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="l-section wpb_row servicios-home height_auto width_full"><div class="l-section-h i-cf"><div class="g-cols vc_row via_flex valign_middle type_default stacking_default">
+          <div class="vc_col-sm-4 wpb_column vc_column_container has_bg_color has-link">
+            <div class="vc_column-inner us_custom_7ca10f15 us_animate_this"><div class="wpb_wrapper"><div class="w-hwrapper align_center valign_middle wrap" style="--hwrapper-gap:1.20rem"><div class="wpb_text_column us_custom_8b3d6790 has_text_color"><div class="wpb_wrapper">
+              <h3 style="text-align: center;">传感<br>工业、环境<br>和农业</h3>
+            </div></div></div></div></div>
+            <a title="工业、环境和农业传感化" href="sensorizacion.html" class="vc_column-link smooth-scroll"></a>
+          </div>
+          <div class="vc_col-sm-4 wpb_column vc_column_container has_text_color has_bg_color has-link">
+            <div class="vc_column-inner us_custom_8c4c7f6b us_animate_this"><div class="wpb_wrapper"><div class="w-hwrapper align_center valign_middle wrap" style="--hwrapper-gap:1.20rem"><div class="wpb_text_column"><div class="wpb_wrapper">
+              <h3 style="text-align: center;">IoT 高级</h3>
+            </div></div></div></div></div>
+            <a title="物联网" href="iot.html" class="vc_column-link smooth-scroll"></a>
+          </div>
+          <div class="vc_col-sm-4 wpb_column vc_column_container has_text_color has_bg_color has-link">
+            <div class="vc_column-inner us_custom_824f00fd us_animate_this"><div class="wpb_wrapper"><div class="w-hwrapper align_center valign_middle wrap" style="--hwrapper-gap:1.20rem"><div class="wpb_text_column"><div class="wpb_wrapper">
+              <h3 style="text-align: center;">从咨询到交钥匙工程</h3>
+            </div></div></div></div></div>
+            <a title="从咨询到交钥匙工程" href="consultoria.html" class="vc_column-link smooth-scroll"></a>
+          </div>
+        </div></div></section>
+        <section class="l-section wpb_row servicios-home height_auto width_full"><div class="l-section-h i-cf"><div class="g-cols vc_row via_flex valign_middle type_default stacking_default">
+          <div class="vc_col-sm-4 wpb_column vc_column_container has_bg_color has-link">
+            <div class="vc_column-inner us_custom_dea79c57 us_animate_this"><div class="wpb_wrapper"><div class="w-hwrapper align_center valign_middle wrap" style="--hwrapper-gap:1.20rem"><div class="wpb_text_column us_custom_8b3d6790 has_text_color"><div class="wpb_wrapper">
+              <h3 style="text-align: center;">工程</h3>
+            </div></div></div></div></div>
+            <a title="工程" href="../Ingenieria.html" class="vc_column-link smooth-scroll"></a>
+          </div>
+          <div class="vc_col-sm-4 wpb_column vc_column_container has_text_color has_bg_color has-link">
+            <div class="vc_column-inner us_custom_05c78499 us_animate_this"><div class="wpb_wrapper"><div class="w-hwrapper align_center valign_middle wrap" style="--hwrapper-gap:1.20rem"><div class="wpb_text_column"><div class="wpb_wrapper">
+              <h3 style="text-align: center;">人工智能</h3>
+            </div></div></div></div></div>
+            <a title="应用人工智能" href="IA%20aplicada.html" class="vc_column-link smooth-scroll"></a>
+          </div>
+          <div class="vc_col-sm-4 wpb_column vc_column_container has_text_color has_bg_color has-link">
+            <div class="vc_column-inner us_custom_fcc027ee us_animate_this"><div class="wpb_wrapper"><div class="w-hwrapper align_center valign_middle wrap" style="--hwrapper-gap:1.20rem"><div class="wpb_text_column"><div class="wpb_wrapper">
+              <h3 style="text-align: center;">研发与创新</h3>
+            </div></div></div></div></div>
+            <a title="研发与创新" href="idi.html" class="vc_column-link smooth-scroll"></a>
+          </div>
+        </div></div></section>
+
+        <section class="section">
+          <div class="section-inner">
+            <div class="cta-grid">
+              <div class="cta-copy">
+                <h2>你想将人工智能应用到真实的系统上，而不仅仅是一个孤立的演示吗？</h2>
+                <p>Qartia 可以帮助您连接数据、平台和分析，以便人工智能从第一个试点开始就有明确的操作用途。</p>
+              </div>
+              <figure class="cta-image contain-image">
+            <img src="../../assets/images/ia-aplicada-cta-bogota.png" alt="波哥大空气质量预测图应用于人工智能操作" loading="lazy">
+              </figure>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <div class="footer-inner">
+          <div class="footer-logo">
+            <img src="../../assets/remote-qartia/wp-content/uploads/2022/11/logo-qartia.png" alt="Qartia">
+          </div>
+          <div>
+            <h4>联系方式</h4>
+            <p><a href="tel:+34686918522">(+34) 686918522</a></p>
+            <p><a href="mailto:info@qartia.com">info@qartia.com</a></p>
+            <p>Calle Tolosa Latour, 4, 7°A,</p>
+            <p>30201, 卡塔赫纳, 西班牙</p>
+            <p>到岸价: B67916676</p>
+          </div>
+                <div class="footer-eibt-badge" style="display:flex;align-items:center;justify-content:flex-end;min-width:360px;margin-top:8px;">
+          <img src="../../assets/images/eibt-logo.png" alt="EIBT 印章" style="width:min(430px,100%);height:auto;display:block;">
+        </div>
+</div>
+      </footer>
+
+      <div class="subfooter">
+        <div class="subfooter-inner">
+          <a href="../aviso-legal.html">法律声明</a>
+          <a href="../politica-cookies.html">Cookie 政策</a>
+          <a href="../politica-privacidad.html">隐私政策</a>
+        </div>
+      </div>
+    </div>
+    <script src="../../assets/js/qartia-nav.js"></script>
+      <script src="../../assets/js/qartia-mobile-nav.js?v=20260601" defer></script>
+      <script src="../../assets/js/cookie-consent.js?v=mobile-20260601" defer></script>
+<script src="../../assets/js/qartia-language-switcher.js"></script>
+</body>
+</html>

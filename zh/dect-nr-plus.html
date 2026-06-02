@@ -1,0 +1,949 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <title>什么是 DECT NR+ - Qartia Smart Technologies</title>
+    <link rel="icon" href="../assets/remote-qartia/wp-content/uploads/2022/10/favicon-150x150.png" sizes="32x32">
+    <link rel="icon" href="../assets/remote-qartia/wp-content/uploads/2022/10/favicon.png" sizes="192x192">
+    <link rel="apple-touch-icon" href="../assets/remote-qartia/wp-content/uploads/2022/10/favicon.png">
+    <meta name="msapplication-TileImage" content="assets/remote-qartia/wp-content/uploads/2022/10/favicon.png">
+    
+<link rel="stylesheet" id="qartia-local-fonts" href="../assets/css/local-fonts.css"><meta name="description" content="Qartia Smart Technologies 中的 DECT NR+ 是什么。适用于 IoT 和关键部署的专用无线电技术、分布式架构和工业连接。">
+<style>
+      :root {
+        --bg: #f5f5f5;
+        --paper: #ffffff;
+        --paper-soft: #f7fbfc;
+        --ink: #333333;
+        --ink-strong: #1a1a1a;
+        --brand: #144e9c;
+        --accent: #36deb8;
+        --shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+      }
+
+      * { box-sizing: border-box; }
+      html { scroll-behavior: smooth; }
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--ink);
+        font-family: "Work Sans", sans-serif;
+        line-height: 1.55;
+      }
+      a { color: inherit; text-decoration: none; }
+      img { max-width: 100%; display: block; }
+      .page { min-height: 100vh; }
+
+      .topbar {
+        background: #f5f5f5;
+        color: #333;
+        font-size: 0.84rem;
+      }
+
+      .topbar-inner,
+      .header-inner,
+      .section-inner,
+      .footer-inner {
+        width: min(1140px, calc(100% - 32px));
+        margin: 0 auto;
+      }
+
+      .topbar-inner {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        gap: 18px;
+        padding: 10px 0;
+        flex-wrap: wrap;
+      }
+
+      .header {
+        position: sticky;
+        top: 0;
+        z-index: 20;
+        background: rgba(255, 255, 255, 0.96);
+        box-shadow: 0 2px 18px rgba(0, 0, 0, 0.08);
+        backdrop-filter: blur(10px);
+      }
+
+      .header-inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 18px;
+        padding: 14px 0;
+      }
+
+      .logo img { width: 180px; height: auto; }
+
+      .nav {
+        display: flex;
+        justify-content: flex-end;
+        gap: 4px;
+        flex-wrap: wrap;
+        align-items: center;
+      }
+
+      .nav > a,
+      .nav-toggle {
+        padding: 10px 12px;
+        color: var(--brand);
+        background: transparent;
+        border: 0;
+        font-family: "Rubik", sans-serif;
+        font-size: 0.82rem;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 0.02em;
+        border-radius: 8px;
+        cursor: pointer;
+      }
+
+      .nav > a:hover,
+      .nav > a:focus-visible,
+      .nav-toggle:hover,
+      .nav-toggle:focus-visible {
+        background: rgba(20, 78, 156, 0.08);
+      }
+
+      .nav-group { position: relative; }
+      .nav-toggle { display: inline-flex; align-items: center; gap: 8px; }
+      .nav-toggle::after {
+        content: "";
+        width: 8px;
+        height: 8px;
+        border-right: 2px solid currentColor;
+        border-bottom: 2px solid currentColor;
+        transform: rotate(45deg) translateY(-1px);
+      }
+
+      .nav-dropdown {
+        position: absolute;
+        top: calc(100% + 10px);
+        right: 0;
+        min-width: 260px;
+        display: none;
+        flex-direction: column;
+        padding: 10px;
+        border-radius: 16px;
+        background: rgba(255, 255, 255, 0.98);
+        box-shadow: var(--shadow);
+        backdrop-filter: blur(10px);
+        z-index: 30;
+      }
+
+      .nav-dropdown a,
+      .nav-subtoggle {
+        padding: 10px 12px;
+        color: var(--brand);
+        font-family: "Rubik", sans-serif;
+        font-size: 0.8rem;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 0.02em;
+        border-radius: 10px;
+      }
+
+      .nav-subgroup { display: flex; flex-direction: column; }
+      .nav-dropdown a:hover,
+      .nav-dropdown a:focus-visible,
+      .nav-subtoggle:hover,
+      .nav-subtoggle:focus-visible {
+        background: rgba(20, 78, 156, 0.08);
+      }
+
+      .nav-submenu {
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+        margin: 0 0 6px 18px;
+        padding-left: 12px;
+        border-left: 2px solid rgba(20, 78, 156, 0.14);
+      }
+
+      .nav-submenu a { padding: 8px 10px; font-size: 0.74rem; }
+      .nav-group:hover .nav-dropdown,
+      .nav-group.open .nav-dropdown { display: flex; }
+
+      .hero {
+        position: relative;
+        min-height: 360px;
+        display: flex;
+        align-items: center;
+        overflow: hidden;
+        color: #fff;
+        background:
+          linear-gradient(rgba(0, 0, 0, 0.50), rgba(0, 0, 0, 0.16)),
+          url("../assets/remote-qartia/wp-content/uploads/2022/12/idi-bg-1.jpg") center/cover no-repeat;
+      }
+
+      .hero-inner {
+        width: min(1140px, calc(100% - 32px));
+        margin: 0 auto;
+        padding: 82px 0 60px;
+      }
+
+      .hero h1 {
+        margin: 0;
+        max-width: 11ch;
+        font-family: "Rubik", sans-serif;
+        font-size: clamp(2.4rem, 4vw, 4rem);
+        font-weight: 300;
+        text-shadow: 2px 2px 9px #000;
+      }
+
+      .content-section,
+      .brochure-section,
+      .cta-section {
+        padding: 70px 0;
+      }
+
+      .content-section {
+        background:
+          url("../assets/remote-qartia/wp-content/uploads/2022/11/fondo-home.jpg") top left / cover no-repeat,
+          var(--paper-soft);
+      }
+
+      .brochure-section { background: var(--paper); }
+      .brochure-section.alt { background: #e8faf9; }
+
+      .content-grid {
+        display: grid;
+        grid-template-columns: minmax(0, 1.15fr) minmax(280px, 0.85fr);
+        gap: 36px;
+        align-items: center;
+      }
+
+      .brochure-grid,
+      .brochure-split,
+      .phase-grid,
+      .kpi-grid {
+        display: grid;
+        gap: 24px;
+      }
+
+      .brochure-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+      .brochure-grid.two-cols { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .brochure-grid.four-cols,
+      .kpi-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+      .brochure-split {
+        grid-template-columns: minmax(0, 1.08fr) minmax(320px, 0.92fr);
+        align-items: center;
+      }
+      .phase-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+
+      .eyebrow {
+        display: inline-block;
+        margin-bottom: 10px;
+        color: var(--accent);
+        font-size: 1rem;
+        font-weight: 600;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+      }
+
+      .eyebrow::before {
+        content: "";
+        display: inline-block;
+        width: 49px;
+        height: 50px;
+        margin-right: 10px;
+        vertical-align: middle;
+        background: url("../assets/remote-qartia/wp-content/uploads/2022/11/before-titulares.png") no-repeat center/contain;
+      }
+
+      .lead-title {
+        margin: 0 0 24px 58px;
+        color: var(--ink-strong);
+        font-family: "Rubik", sans-serif;
+        font-size: clamp(2rem, 3vw, 3rem);
+        font-weight: 300;
+        line-height: 1.12;
+      }
+
+      .copy p { margin: 0 0 16px; }
+
+      .content-copy-card,
+      .visual-card,
+      .brochure-card,
+      .phase-card,
+      .kpi-card,
+      .photo-card {
+        background: var(--paper);
+        border-radius: 22px;
+        box-shadow: var(--shadow);
+      }
+
+      .content-copy-card,
+      .visual-card {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .content-copy-card {
+        justify-content: center;
+        padding: 30px 32px;
+      }
+
+      .content-copy-card .lead-title { margin-bottom: 20px; }
+
+      .visual-card {
+        align-self: center;
+        justify-content: center;
+        padding: 18px;
+      }
+
+      .visual-card img {
+        width: 100%;
+        aspect-ratio: 16 / 10;
+        object-fit: cover;
+        border-radius: 18px;
+      }
+
+      .visual-card p {
+        margin: 18px 4px 0;
+        color: #5a6670;
+        font-size: 0.95rem;
+      }
+
+      .brochure-card,
+      .phase-card,
+      .kpi-card { padding: 24px; }
+
+      .brochure-card h3,
+      .phase-card h3,
+      .kpi-card h3 {
+        margin: 0 0 12px;
+        color: var(--ink-strong);
+        font-family: "Rubik", sans-serif;
+        font-size: 1.34rem;
+        font-weight: 500;
+        line-height: 1.15;
+      }
+
+      .brochure-card h4 {
+        margin: 22px 0 12px;
+        color: var(--ink-strong);
+        font-family: "Rubik", sans-serif;
+        font-size: 1.12rem;
+        font-weight: 500;
+      }
+
+      .brochure-card p,
+      .phase-card p,
+      .kpi-card p { margin: 0; }
+
+      .brochure-card strong,
+      .kpi-card strong,
+      .phase-card strong {
+        display: block;
+        margin-bottom: 10px;
+        color: var(--brand);
+        font-family: "Rubik", sans-serif;
+        font-size: 0.88rem;
+        font-weight: 700;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+      }
+
+      .feature-list {
+        display: grid;
+        gap: 10px;
+        margin: 18px 0 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .feature-list li {
+        position: relative;
+        padding-left: 18px;
+      }
+
+      .feature-list li::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0.68em;
+        width: 8px;
+        height: 8px;
+        border-radius: 999px;
+        background: var(--accent);
+      }
+
+      .photo-card {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        overflow: hidden;
+      }
+
+      .photo-card img {
+        width: 100%;
+        aspect-ratio: 16 / 10;
+        object-fit: cover;
+      }
+
+      .photo-card figcaption {
+        padding: 16px 18px 18px;
+        color: #5a6670;
+        font-size: 0.94rem;
+      }
+
+      .cta-section { background: #e8faf9; }
+
+      .cta-grid {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) 320px;
+        gap: 24px;
+        align-items: stretch;
+      }
+
+      .cta-copy {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        background: var(--paper);
+        border-radius: 22px;
+        padding: 34px;
+        box-shadow: var(--shadow);
+      }
+
+      .cta-copy h2 {
+        margin: 0 0 14px;
+        color: var(--ink-strong);
+        font-family: "Rubik", sans-serif;
+        font-size: clamp(1.9rem, 2.5vw, 2.6rem);
+        font-weight: 300;
+      }
+
+      .cta-copy p { margin: 0; }
+
+      .cta-actions {
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+        margin-top: 24px;
+      }
+
+      .cta-button,
+      .ghost-button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 48px;
+        padding: 0 22px;
+        border-radius: 999px;
+        font-family: "Rubik", sans-serif;
+        font-size: 0.94rem;
+        font-weight: 500;
+        transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+      }
+
+      .cta-button {
+        color: #fff;
+        background: var(--brand);
+        box-shadow: 0 12px 28px rgba(20, 78, 156, 0.18);
+      }
+
+      .ghost-button {
+        color: var(--brand);
+        background: rgba(20, 78, 156, 0.08);
+      }
+
+      .cta-button:hover,
+      .cta-button:focus-visible,
+      .ghost-button:hover,
+      .ghost-button:focus-visible { transform: translateY(-2px); }
+
+      .cta-image {
+        min-height: 100%;
+        border-radius: 22px;
+        background:
+          linear-gradient(rgba(20, 78, 156, 0.06), rgba(20, 78, 156, 0.06)),
+          url("../assets/images/dect-nr-stack-ai.png") center/contain no-repeat,
+          #07110d;
+        box-shadow: var(--shadow);
+      }
+
+      .footer {
+        background:
+          url("../assets/remote-qartia/wp-content/uploads/2022/11/fondo-footer.jpg") left top / cover no-repeat,
+          #222;
+        color: #ccc;
+      }
+
+      .footer-inner {
+        display: grid;
+        grid-template-columns: 220px minmax(0, 1fr);
+        gap: 36px;
+        align-items: start;
+        padding: 56px 0 28px;
+      }
+
+      .footer-logo img { width: 180px; }
+
+      .footer h4 {
+        margin: 0 0 16px;
+        color: #ccc;
+        font-family: "Rubik", sans-serif;
+        font-size: 1.1rem;
+        font-weight: 700;
+        text-transform: uppercase;
+      }
+
+      .footer p { margin: 0 0 10px; }
+
+      .subfooter {
+        background: #333;
+        color: #f9f9f9;
+        font-size: 0.86rem;
+        text-transform: uppercase;
+      }
+
+      .subfooter-inner {
+        width: min(1140px, calc(100% - 32px));
+        margin: 0 auto;
+        padding: 14px 0;
+        display: flex;
+        justify-content: center;
+        gap: 28px;
+        flex-wrap: wrap;
+      }
+
+      @media (max-width: 1024px) {
+        .header-inner,
+        .content-grid,
+        .brochure-split,
+        .cta-grid,
+        .footer-inner {
+          grid-template-columns: 1fr;
+        }
+
+        .header-inner { display: grid; gap: 12px; }
+        .logo { justify-self: center; }
+        .nav { justify-content: center; }
+        .nav-dropdown {
+          right: auto;
+          left: 50%;
+          transform: translateX(-50%);
+        }
+
+        .brochure-grid,
+        .brochure-grid.two-cols,
+        .brochure-grid.four-cols,
+        .phase-grid,
+        .kpi-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+      }
+
+      @media (max-width: 640px) {
+        .topbar-inner { justify-content: center; }
+        .nav { gap: 8px; }
+        .nav-group { width: 100%; display: grid; justify-items: center; }
+        .nav-dropdown {
+          position: static;
+          transform: none;
+          min-width: min(320px, 100%);
+          width: min(320px, 100%);
+          margin-top: 6px;
+        }
+        .hero-inner { padding-top: 72px; }
+        .eyebrow::before { display: none; }
+        .lead-title { margin-left: 0; }
+        .brochure-grid,
+        .brochure-grid.two-cols,
+        .brochure-grid.four-cols,
+        .phase-grid,
+        .kpi-grid { grid-template-columns: 1fr; }
+        .footer-inner { padding-top: 40px; }
+      }
+    </style>
+  <style id="qartia-dropdown-offset">
+.nav-dropdown{transform:translateX(1cm);}
+@media (max-width:880px){.nav-dropdown{transform:translateX(calc(-50% + 1cm));}}
+@media (max-width:640px){.nav-dropdown{transform:none;}}
+@media (min-width:1025px){.ush_menu_1.type_desktop .w-nav-list.level_2{margin-left:1cm;}}
+@media (min-width:1025px){.l-subheader-cell.at_left,.header-inner .logo{transform:translateX(-0.35cm);}}
+</style>
+<link rel="stylesheet" href="../assets/css/qartia-topbar.css?v=lang-20260602">
+<link rel="stylesheet" href="../assets/css/qartia-responsive.css?v=20260601">
+    <style id="eibt-footer-layout-fix">
+    .footer .footer-inner {
+      display: grid !important;
+      grid-template-columns: minmax(180px, 0.75fr) minmax(260px, 1fr) minmax(360px, 1.15fr) !important;
+      align-items: start !important;
+      gap: 28px !important;
+    }
+
+    .footer .footer-eibt-badge,
+    .l-footer .footer-eibt-badge {
+      display: flex !important;
+      justify-content: flex-end !important;
+      align-items: flex-start !important;
+      margin-top: 0 !important;
+      width: 100% !important;
+      min-width: 360px;
+    }
+
+    .footer .footer-eibt-badge img,
+    .l-footer .footer-eibt-badge img {
+      width: min(430px, 100%) !important;
+      height: auto !important;
+      display: block !important;
+      margin-left: auto !important;
+      margin-right: 0 !important;
+    }
+
+    .l-footer .footer-eibt-badge .w-image-h {
+      width: 100% !important;
+    }
+
+    @media (max-width: 900px) {
+      .footer .footer-inner {
+        grid-template-columns: 1fr !important;
+      }
+
+      .footer .footer-eibt-badge,
+      .l-footer .footer-eibt-badge {
+        justify-content: flex-start !important;
+        min-width: 0 !important;
+      }
+
+      .footer .footer-eibt-badge img,
+      .l-footer .footer-eibt-badge img {
+        margin-left: 0 !important;
+        margin-right: auto !important;
+      }
+    }
+  </style>
+    <link rel="stylesheet" href="../assets/css/cookie-consent.css?v=mobile-20260601">
+</head>
+  <body>
+    <div class="page">
+      <div class="topbar">
+        <div class="topbar-inner">
+          <a href="tel:+34686918522">+34 686 91 85 22</a>
+          <a href="mailto:info@qartia.com">info@qartia.com</a>
+        <a class="qartia-linkedin-icon" href="https://www.linkedin.com/company/qartia-smart-technologies/" target="_blank" rel="noopener" aria-label="领英 Qartia"></a>
+
+        </div>
+      </div>
+
+      <header class="header">
+        <div class="header-inner">
+          <a class="logo" href="index.html">
+            <img src="../assets/remote-qartia/wp-content/uploads/2022/11/logo-qartia.png" alt="Qartia Smart Technologies">
+          </a>
+
+<nav class="nav" aria-label="主导航">
+  <a href="quienes-somos.html">我们是谁</a>
+  <div class="nav-group">
+    <button class="nav-toggle" type="button" aria-expanded="false">产品</button>
+    <div class="nav-dropdown">
+      <a href="productos.html">产品</a>
+      <a href="vibrasense.html">VibraSense</a>
+      <a href="airsense-pro.html">AIRSENSE PRO</a>
+      <a href="megamia.html">MEGAMIA</a>
+      <a href="dipason-exterior.html">DIPASON</a>
+      <a href="Biosentia.html">Biosentia</a>
+      <a href="noisement.html">噪音</a>
+    </div>
+  </div>
+  <div class="nav-group">
+    <button class="nav-toggle" type="button" aria-expanded="false">服务</button>
+    <div class="nav-dropdown">
+      <a href="agricultura.html">农业</a>
+      <div class="nav-subgroup">
+        <a class="nav-subtoggle" href="industria.html">工业</a>
+        <div class="nav-submenu">
+          <a href="mantenimiento-predictivo-vibraciones.html">预测性维护。振动</a>
+          <a href="monitorizacion-activos-criticos.html">关键资产监控</a>
+        </div>
+      </div>
+      <a href="medioambiente.html">环境</a>
+      <a href="civil.html">民用基础设施</a>
+      <a href="sources/serviciosan%CC%83adido.html">附加服务</a>
+    </div>
+  </div>
+  <div class="nav-group">
+    <button class="nav-toggle" type="button" aria-expanded="false">专用网络 5G</button>
+    <div class="nav-dropdown">
+      <a href="dect-nr-plus.html">什么是 DECT NR+</a>
+      <a href="soluciones-5g-privadas.html">5G 私人解决方案</a>
+    </div>
+  </div>
+  <a href="noticias.html">新闻</a>
+  <a href="contacto.html">联系方式</a>
+  <a href="https://qartia.com/Flutter/panel_industrias_prueba/">客户端访问</a>
+</nav>
+        </div>
+      </header>
+
+      <main>
+        <section class="hero">
+          <div class="hero-inner">
+            <h1>什么是 DECT NR+</h1>
+          </div>
+        </section>
+
+        <section class="content-section">
+          <div class="section-inner">
+            <div class="content-grid">
+              <div class="content-copy-card">
+                <span class="eyebrow">工业专网</span>
+                <h2 class="lead-title">一种专为 IoT、语音、视频和低延迟服务准备的私有分布式无线电技术。</h2>
+                <div class="copy">
+                  <p>DECT NR+ 是一种非蜂窝 5G 技术，当项目需要自己的专用网络、稳定并准备好运行而不依赖于传统的蜂窝架构时，该技术特别有趣。</p>
+                  <p>其分布式方法可以轻松部署传感器、遥测、执行器和现场服务，其架构可以分阶段增长、适应操作环境并维护更轻量级的部署逻辑。</p>
+                  <p>但其值不限于IoT。 DECT NR+ 还可以传输语音、流视频和 IP 服务，其中非常低的延迟与高信息传输相结合，这在视频、语音和远程操作应用程序中特别有用。</p>
+                  <p>对于 Qartia 来说，DECT NR+ 特别适合工业、环境、农业和民用基础设施、音频/视频应用以及 IP 服务，其中无线电鲁棒性、部署自主性、数据连续性和支持实时服务的能力决定了决策的质量。</p>
+                  <p>本页总结了其主要功能、协议栈以及它在 5G 专用网络策略中提供最大价值的场景类型。</p>
+                </div>
+              </div>
+
+              <aside class="visual-card">
+                <img src="../assets/images/dect-nr-ecosystem.png" alt="生态系统 DECT NR+">
+                <p>DECT NR+ 在不断发展的生态系统中将标准化、认证、学术界、欧洲项目和工业实施结合起来。</p>
+              </aside>
+            </div>
+          </div>
+        </section>
+
+        <section class="brochure-section alt">
+          <div class="section-inner">
+            <span class="eyebrow">技术影响</span>
+            <h2 class="lead-title">DECT NR+ 的要点概览。</h2>
+            <div class="kpi-grid">
+              <article class="kpi-card">
+                <strong>无芯</strong>
+                <h3>快速部署</h3>
+                <p>不需要 <em>核心网络</em> 或SIM卡，简化调试。</p>
+              </article>
+              <article class="kpi-card">
+                <strong>原生网格</strong>
+                <h3>更多报道</h3>
+                <p>支持网状和多跳网络以扩展服务的覆盖范围和稳健性。</p>
+              </article>
+              <article class="kpi-card">
+                <strong>URLLC + mMTC</strong>
+                <h3>低延迟和更大容量</h3>
+                <p>将可靠的通信与节点密度相结合，并支持语音、音频和其他要求较高的 IP 服务。</p>
+              </article>
+              <article class="kpi-card">
+                <strong>&lt; 6 GHz</strong>
+                <h3>频谱的灵活利用</h3>
+                <p>它可以在 DECT、许可或共享频段中运行，具体取决于国家/地区和情况。</p>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="brochure-section">
+          <div class="section-inner">
+            <span class="eyebrow">问题</span>
+            <h2 class="lead-title">为什么经典的蜂窝网络并不总是适合。</h2>
+            <div class="brochure-grid">
+              <article class="brochure-card">
+                <h3>过度依赖操作员</h3>
+                <p>许多项目在网络的部署、演进和管理方面需要更多的自主权。</p>
+              </article>
+              <article class="brochure-card">
+                <h3>调试复杂性</h3>
+                <p>对核心、SIM 和较重架构的需求可能会减慢小型或分布式部署的速度。</p>
+              </article>
+              <article class="brochure-card">
+                <h3>现场覆盖困难</h3>
+                <p>工业、农村或远程基础设施环境需要更灵活和适应性更强的拓扑。</p>
+              </article>
+              <article class="brochure-card">
+                <h3>分阶段缩放</h3>
+                <p>并非所有项目都以大型网络开始；很多时候以模块化的方式进行增长是很方便的。</p>
+              </article>
+              <article class="brochure-card">
+                <h3>延迟和可靠性</h3>
+                <p>在某些情况下，网络不仅必须覆盖，而且必须保持连续性和受控的响应时间。</p>
+              </article>
+              <article class="brochure-card">
+                <h3>服务共存</h3>
+                <p>在许多项目中，同一网络必须支持遥测、报警、语音、流音频、视频和其他具有不同要求的IP服务。</p>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="brochure-section alt">
+          <div class="section-inner">
+            <span class="eyebrow">工作原理</span>
+            <h2 class="lead-title">从节点到运营服务。</h2>
+            <div class="phase-grid">
+              <article class="phase-card">
+                <strong>01</strong>
+                <h3>无线电接入</h3>
+                <p>OFDM、低延迟和稳健的传输机制，可连续运行。</p>
+              </article>
+              <article class="phase-card">
+                <strong>02</strong>
+                <h3>分布式协调</h3>
+                <p>网络管理资源和关联，没有严格的中央逻辑。</p>
+              </article>
+              <article class="phase-card">
+                <strong>03</strong>
+                <h3>网状网络和多跳</h3>
+                <p>节点可以通过网状拓扑扩展覆盖范围并提高弹性。</p>
+              </article>
+              <article class="phase-card">
+                <strong>04</strong>
+                <h3>知识产权服务</h3>
+                <p>该网络与平台、网关和工业应用程序连接，通过 IPv6 提供遥测、语音、流音频、视频和其他服务。</p>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="brochure-section">
+          <div class="section-inner">
+            <span class="eyebrow">关键能力</span>
+            <h2 class="lead-title">DECT NR+ 在实际部署中有何贡献。</h2>
+            <div class="brochure-grid">
+              <article class="brochure-card">
+                <h3>私有网络易于部署</h3>
+                <p>不需要核心网络或SIM卡，降低了复杂性和外部依赖性。</p>
+              </article>
+              <article class="brochure-card">
+                <h3>灵活的 PHY/MAC</h3>
+                <p>其无线电引擎针对低延迟情况和具有更多流量和许多连接节点的场景。</p>
+              </article>
+              <article class="brochure-card">
+                <h3>强大的物理层</h3>
+                <p>OFDM、高级纠错和 HARQ 重传增强了链路可靠性。</p>
+              </article>
+              <article class="brochure-card">
+                <h3>有序无线电接入</h3>
+                <p>将 TDD 中的计划访问和随机访问结合起来，并通过 Listen Before Talk 更好地与其他系统共存。</p>
+              </article>
+              <article class="brochure-card">
+                <h3>减少手动规划</h3>
+                <p>它可以与传统的 5G 网络和卫星通信集成，以扩展覆盖范围、互联网接入和服务连续性。</p>
+              </article>
+              <article class="brochure-card">
+                <h3>不仅仅是感官</h3>
+                <p>同一网络可用于遥测、报警、语音、流音频、视频和其他具有苛刻需求的 IP 服务，远远超出了传统的 IoT 网络。</p>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="brochure-section">
+          <div class="section-inner">
+            <span class="eyebrow">频谱、拓扑和技术架构</span>
+            <h2 class="lead-title">准备好在非常不同的场景中运行并与其他网络连接。</h2>
+            <div class="brochure-split">
+              <div class="brochure-card">
+                <p>DECT NR+ 可以在 1.9 GHz DECT 频段以及许可或共享频段（例如 3.7–3.8 GHz 和 3.8–4.2 GHz）下工作，具体取决于法规和国家/地区。</p>
+                <ul class="feature-list">
+                  <li>点对点、星型和多跳网状拓扑。</li>
+                  <li>根据项目需要固定或游牧部署。</li>
+                  <li>覆盖范围更广，弹性更强，对外部基础设施的依赖更少。</li>
+                  <li>当网络必须根据实际操作进行设计时非常有用。</li>
+                  <li>它可以与传统的 5G 网络和卫星通信集成，以扩展连接和服务输出。</li>
+                </ul>
+                <p>这允许构建远远超出传统 IoT 网络的私有解决方案：相同的基础设施可以支持数据、语音、流音频、视频和关键 IP 服务。</p>
+              </div>
+
+              <figure class="photo-card">
+                <img src="../assets/images/dect-nr-stack-ai.png" alt="DECT NR+ IP 服务架构、流媒体以及与 5G 和卫星的集成">
+                <figcaption>DECT NR+ 协议栈允许您在同一架构中结合工业连接、流媒体服务以及与传统 5G 和卫星网络的集成。</figcaption>
+              </figure>
+            </div>
+          </div>
+        </section>
+
+        <section class="cta-section">
+          <div class="section-inner">
+            <div class="cta-grid">
+              <div class="cta-copy">
+                <h2>您想从技术转向可部署的解决方案吗？</h2>
+                <p>Qartia 可以将这种方法应用于具体的架构，包括覆盖范围研究、网络定义、与设备集成以及现场调试。</p>
+                <div class="cta-actions">
+                  <a class="cta-button" href="soluciones-5g-privadas.html">查看私有 5G 解决方案</a>
+                  <a class="ghost-button" href="mailto:info@qartia.com">请求信息</a>
+                </div>
+              </div>
+              <div class="cta-image" aria-hidden="true"></div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <div class="footer-inner">
+          <div class="footer-logo">
+            <img src="../assets/remote-qartia/wp-content/uploads/2022/11/logo-qartia.png" alt="Qartia">
+          </div>
+          <div>
+            <h4>联系方式</h4>
+            <p><a href="tel:+34686918522">(+34) 686918522</a></p>
+            <p><a href="mailto:info@qartia.com">info@qartia.com</a></p>
+            <p>Calle Tolosa Latour, 4, 7°A,</p>
+            <p>30201, 卡塔赫纳, 西班牙</p>
+            <p>到岸价: B67916676</p>
+          </div>
+                <div class="footer-eibt-badge" style="display:flex;align-items:center;justify-content:flex-end;min-width:360px;margin-top:8px;">
+          <img src="../assets/images/eibt-logo.png" alt="EIBT 印章" style="width:min(430px,100%);height:auto;display:block;">
+        </div>
+</div>
+      </footer>
+
+      <div class="subfooter">
+        <div class="subfooter-inner">
+          <a href="aviso-legal.html">法律声明</a>
+          <a href="politica-cookies.html">Cookie 政策</a>
+          <a href="politica-privacidad.html">隐私政策</a>
+        </div>
+      </div>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const groups = document.querySelectorAll(".nav-group");
+
+    groups.forEach((group) => {
+      const toggle = group.querySelector(".nav-toggle");
+      if (!toggle) return;
+
+      toggle.addEventListener("click", function (event) {
+        event.preventDefault();
+        const willOpen = !group.classList.contains("open");
+
+        groups.forEach((otherGroup) => {
+          otherGroup.classList.remove("open");
+          const otherToggle = otherGroup.querySelector(".nav-toggle");
+          if (otherToggle) {
+            otherToggle.setAttribute("aria-expanded", "false");
+          }
+        });
+
+        group.classList.toggle("open", willOpen);
+        toggle.setAttribute("aria-expanded", willOpen ? "true" : "false");
+      });
+    });
+
+    document.addEventListener("click", function (event) {
+      groups.forEach((group) => {
+        if (group.contains(event.target)) return;
+        group.classList.remove("open");
+        const toggle = group.querySelector(".nav-toggle");
+        if (toggle) {
+          toggle.setAttribute("aria-expanded", "false");
+        }
+      });
+    });
+  });
+</script>
+      <script src="../assets/js/qartia-mobile-nav.js?v=20260601" defer></script>
+      <script src="../assets/js/cookie-consent.js?v=mobile-20260601" defer></script>
+<script src="../assets/js/qartia-language-switcher.js"></script>
+</div></body>
+</html>
