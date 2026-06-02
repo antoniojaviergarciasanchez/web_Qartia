@@ -251,6 +251,30 @@
   }
 }
 
+html[lang="de"] .header .nav > a,
+html[lang="de"] .header .nav-toggle,
+html[lang="de"] .header .nav-dropdown a,
+html[lang="de"] .header .nav-subtoggle,
+html[lang="de"] .header .nav-submenu a {
+  white-space: nowrap !important;
+}
+
+html[lang="de"] .header .nav-dropdown,
+html[lang="de"] .header .nav-submenu {
+  width: max-content !important;
+  min-width: max-content !important;
+  max-width: calc(100vw - 32px);
+}
+
+@media (max-width: 767px) {
+  html[lang="de"] .header .nav-dropdown,
+  html[lang="de"] .header .nav-submenu {
+    overflow-x: auto;
+    width: 100% !important;
+    min-width: 0 !important;
+  }
+}
+
 /* Final shared override for the top contact band across local pages. */
 html body .topbar,
 html body .topbar .topbar-inner,
