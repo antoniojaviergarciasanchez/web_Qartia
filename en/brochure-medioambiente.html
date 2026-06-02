@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Environment Brochure - Qartia Smart Technologies</title>
+    <link rel="icon" href="../assets/remote-qartia/wp-content/uploads/2022/10/favicon-150x150.png" sizes="32x32">
+    <link rel="icon" href="../assets/remote-qartia/wp-content/uploads/2022/10/favicon.png" sizes="192x192">
+    <link rel="apple-touch-icon" href="../assets/remote-qartia/wp-content/uploads/2022/10/favicon.png">
+    <meta name="msapplication-TileImage" content="../assets/remote-qartia/wp-content/uploads/2022/10/favicon.png">
+    
+<link rel="stylesheet" id="qartia-local-fonts" href="../assets/css/local-fonts.css"><meta name="description" content="Qartia commercial brochure for environmental monitoring, air quality, noise, predictive AI, RAG and private connectivity.">
+<style>
+      :root {
+        --forest: #07110d;
+        --panel: #0d1713;
+        --panel-soft: #12201b;
+        --mint: #4df2a2;
+        --electric: #22b8ff;
+        --ink: #e8f7ef;
+        --muted: #a6c2b6;
+        --paper: #ffffff;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        background: linear-gradient(180deg, #f3f8f6 0%, #e7f2ed 100%);
+        color: #142018;
+        font-family: "Manrope", sans-serif;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      .sheet {
+        width: min(1180px, calc(100% - 32px));
+        margin: 28px auto;
+        overflow: hidden;
+        border-radius: 32px;
+        background: var(--paper);
+        box-shadow: 0 24px 80px rgba(20, 32, 24, 0.14);
+      }
+
+      .hero {
+        position: relative;
+        padding: 48px 48px 42px;
+        color: var(--ink);
+        background:
+          linear-gradient(120deg, rgba(7, 17, 13, 0.96), rgba(13, 23, 19, 0.84)),
+          url("../assets/medioambiente/atlantic-copper.jpeg") center/cover no-repeat;
+      }
+
+      .hero::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background:
+          radial-gradient(circle at top right, rgba(34, 184, 255, 0.18), transparent 28%),
+          radial-gradient(circle at bottom left, rgba(77, 242, 162, 0.18), transparent 24%);
+      }
+
+      .hero-inner {
+        position: relative;
+        z-index: 1;
+      }
+
+      .logo {
+        width: 186px;
+      }
+
+      .kicker {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        margin-top: 26px;
+        padding: 8px 14px;
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.04);
+        font-size: 0.72rem;
+        font-weight: 700;
+        letter-spacing: 0.28em;
+        text-transform: uppercase;
+      }
+
+      .hero h1 {
+        margin: 18px 0 0;
+        max-width: 12ch;
+        font-family: "Sora", sans-serif;
+        font-size: clamp(2.4rem, 4vw, 4.5rem);
+        line-height: 1.02;
+      }
+
+      .hero p {
+        max-width: 760px;
+        margin: 20px 0 0;
+        color: rgba(232, 247, 239, 0.82);
+        font-size: 1.08rem;
+        line-height: 1.75;
+      }
+
+      .badge-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 26px;
+      }
+
+      .badge {
+        padding: 10px 14px;
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.06);
+        color: var(--ink);
+        font-size: 0.88rem;
+        font-weight: 600;
+      }
+
+      .section {
+        padding: 34px 40px;
+      }
+
+      .section.dark {
+        color: var(--ink);
+        background: var(--forest);
+      }
+
+      .section.soft {
+        background: #eef7f2;
+      }
+
+      .section-title {
+        margin: 0 0 18px;
+        font-family: "Sora", sans-serif;
+        font-size: 2rem;
+        line-height: 1.15;
+      }
+
+      .section-copy {
+        margin: 0;
+        color: #4f6358;
+        line-height: 1.7;
+      }
+
+      .dark .section-copy {
+        color: rgba(232, 247, 239, 0.76);
+      }
+
+      .grid-4,
+      .grid-3,
+      .grid-2 {
+        display: grid;
+        gap: 18px;
+      }
+
+      .grid-4 {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+      }
+
+      .grid-3 {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .grid-2 {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .card {
+        padding: 22px;
+        border-radius: 24px;
+        background: #ffffff;
+        box-shadow: 0 12px 32px rgba(15, 31, 24, 0.08);
+      }
+
+      .dark .card {
+        background: var(--panel);
+        box-shadow: none;
+      }
+
+      .eyebrow {
+        display: block;
+        margin-bottom: 10px;
+        color: #2d68b3;
+        font-size: 0.8rem;
+        font-weight: 700;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+      }
+
+      .dark .eyebrow {
+        color: var(--mint);
+      }
+
+      .card h3 {
+        margin: 0 0 12px;
+        font-family: "Sora", sans-serif;
+        font-size: 1.18rem;
+        line-height: 1.2;
+      }
+
+      .card p,
+      .card li {
+        margin: 0;
+        color: #4f6358;
+        line-height: 1.65;
+      }
+
+      .dark .card p,
+      .dark .card li {
+        color: rgba(232, 247, 239, 0.78);
+      }
+
+      .card ul {
+        display: grid;
+        gap: 10px;
+        margin: 14px 0 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .card li {
+        position: relative;
+        padding-left: 18px;
+      }
+
+      .card li::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0.72em;
+        width: 8px;
+        height: 8px;
+        border-radius: 999px;
+        background: var(--mint);
+      }
+
+      .metric {
+        font-family: "Sora", sans-serif;
+        font-size: 2.2rem;
+        line-height: 1;
+      }
+
+      .process {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 16px;
+      }
+
+      .process .card {
+        position: relative;
+      }
+
+      .step {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 42px;
+        height: 42px;
+        margin-bottom: 14px;
+        border-radius: 14px;
+        background: rgba(20, 78, 156, 0.1);
+        color: #144e9c;
+        font-family: "Sora", sans-serif;
+        font-weight: 700;
+      }
+
+      .visual {
+        width: 100%;
+        border-radius: 24px;
+      }
+
+      .visual-stack {
+        display: grid;
+        gap: 18px;
+      }
+
+      .ai-rag-layout {
+        display: grid;
+        gap: 18px;
+      }
+
+      .ai-rag-card {
+        padding: 26px;
+      }
+
+      .ai-rag-card .visual-stack {
+        margin-top: 20px;
+      }
+
+      .ai-rag-layout .visual-stack {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-rows: none;
+      }
+
+      .visual-card {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 18px;
+        border-radius: 24px;
+        background: #ffffff;
+        box-shadow: 0 12px 32px rgba(15, 31, 24, 0.08);
+      }
+
+      .visual-card .visual {
+        flex: 1;
+        min-height: 0;
+        object-fit: cover;
+      }
+
+      .card .visual {
+        margin-top: 16px;
+      }
+
+      .visual-caption {
+        margin: 10px 0 0;
+        color: #4f6358;
+        font-size: 0.92rem;
+        line-height: 1.55;
+      }
+
+      .dark .visual-caption {
+        color: rgba(232, 247, 239, 0.74);
+      }
+
+      .footer-band {
+        display: grid;
+        grid-template-columns: 1.2fr 0.8fr;
+        gap: 18px;
+        padding: 34px 40px 42px;
+        color: var(--ink);
+        background: linear-gradient(135deg, var(--forest), #10251f);
+      }
+
+      .footer-band h2 {
+        margin: 0 0 12px;
+        font-family: "Sora", sans-serif;
+        font-size: 2.15rem;
+      }
+
+      .footer-band p {
+        margin: 0;
+        color: rgba(232, 247, 239, 0.76);
+        line-height: 1.7;
+      }
+
+      .contact-card {
+        padding: 24px;
+        border-radius: 24px;
+        background: rgba(255, 255, 255, 0.06);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+      }
+
+      .contact-card strong {
+        display: block;
+        margin-bottom: 12px;
+        color: var(--mint);
+        font-size: 0.8rem;
+        font-weight: 700;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+      }
+
+      .contact-card p {
+        margin: 0 0 10px;
+      }
+
+      .print-note {
+        padding: 0 40px 24px;
+        color: #5f7367;
+        font-size: 0.9rem;
+      }
+
+      @media (max-width: 980px) {
+        .grid-4,
+        .grid-3,
+        .grid-2,
+        .process,
+        .footer-band {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+
+      @media (max-width: 720px) {
+        .hero,
+        .section,
+        .footer-band,
+        .print-note {
+          padding-left: 24px;
+          padding-right: 24px;
+        }
+
+        .grid-4,
+        .grid-3,
+        .grid-2,
+        .process,
+        .footer-band {
+          grid-template-columns: 1fr;
+        }
+
+        .ai-rag-layout .visual-stack {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      @media print {
+        body {
+          background: #ffffff;
+        }
+
+        .sheet {
+          width: 100%;
+          margin: 0;
+          border-radius: 0;
+          box-shadow: none;
+        }
+      }
+    </style>
+  <link rel="stylesheet" href="../assets/css/qartia-topbar.css">
+<link rel="stylesheet" href="../assets/css/qartia-responsive.css?v=20260601">
+  <style id="eibt-footer-layout-fix">
+    .footer .footer-inner {
+      display: grid !important;
+      grid-template-columns: minmax(180px, 0.75fr) minmax(260px, 1fr) minmax(360px, 1.15fr) !important;
+      align-items: start !important;
+      gap: 28px !important;
+    }
+
+    .footer .footer-eibt-badge,
+    .l-footer .footer-eibt-badge {
+      display: flex !important;
+      justify-content: flex-end !important;
+      align-items: flex-start !important;
+      margin-top: 0 !important;
+      width: 100% !important;
+      min-width: 360px;
+    }
+
+    .footer .footer-eibt-badge img,
+    .l-footer .footer-eibt-badge img {
+      width: min(430px, 100%) !important;
+      height: auto !important;
+      display: block !important;
+      margin-left: auto !important;
+      margin-right: 0 !important;
+    }
+
+    .l-footer .footer-eibt-badge .w-image-h {
+      width: 100% !important;
+    }
+
+    @media (max-width: 900px) {
+      .footer .footer-inner {
+        grid-template-columns: 1fr !important;
+      }
+
+      .footer .footer-eibt-badge,
+      .l-footer .footer-eibt-badge {
+        justify-content: flex-start !important;
+        min-width: 0 !important;
+      }
+
+      .footer .footer-eibt-badge img,
+      .l-footer .footer-eibt-badge img {
+        margin-left: 0 !important;
+        margin-right: auto !important;
+      }
+    }
+  </style>
+    <link rel="stylesheet" href="../assets/css/cookie-consent.css?v=mobile-20260601">
+</head>
+  <body>
+    <div class="sheet">
+      <section class="hero">
+        <div class="hero-inner">
+          <img class="logo" src="../assets/remote-qartia/wp-content/uploads/2022/11/logo-qartia.png" alt="Qartia Smart Technologies">
+          <span class="kicker">Environment Brochure</span>
+          <h1>From the environmental measure to the operational decision.</h1>
+          <p>
+            Qartia turns environmental monitoring into a daily work tool through IoT sensors, private network, analytics, predictive AI and intelligent queries on the data.
+          </p>
+          <div class="badge-row">
+            <span class="badge">IoT</span>
+            <span class="badge">AI</span>
+            <span class="badge">RAG</span>
+            <span class="badge">Air quality</span>
+            <span class="badge">Noise</span>
+            <span class="badge">Private Network</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="section soft">
+        <h2 class="section-title">Measurable operational impact</h2>
+        <div class="grid-4">
+          <article class="card">
+            <span class="eyebrow">KPIs</span>
+            <div class="metric">24/7</div>
+            <h3>Continuous monitoring</h3>
+            <p>Continuous capture of environmental variables with operational availability of the data.</p>
+          </article>
+          <article class="card">
+            <span class="eyebrow">KPIs</span>
+            <div class="metric">AI</div>
+            <h3>Pollutant prediction</h3>
+            <p>Models that anticipate future values and allow alerts to be issued in advance.</p>
+          </article>
+          <article class="card">
+            <span class="eyebrow">KPIs</span>
+            <div class="metric">RAG</div>
+            <h3>Smart query</h3>
+            <p>Quick access to patterns, statistics and responses about the captured history.</p>
+          </article>
+          <article class="card">
+            <span class="eyebrow">KPIs</span>
+            <div class="metric">ROI</div>
+            <h3>Measurable pilot</h3>
+            <p>Technical and economic validation for city, industry or territory.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="grid-2">
+          <article class="card">
+            <span class="eyebrow">Problem</span>
+            <h3>Poor environmental visibility in real time</h3>
+            <ul>
+              <li>Reactive decisions in response to pollution episodes.</li>
+              <li>Difficulty correlating sensors and data from different sources.</li>
+              <li>Uneven connectivity depending on the location.</li>
+              <li>Little ability to anticipate future contaminants.</li>
+              <li>Slow consultations on environmental history.</li>
+            </ul>
+          </article>
+          <article class="card">
+            <span class="eyebrow">Solution Qartia</span>
+            <h3>From environmental data to operational action</h3>
+            <ul>
+              <li>Monitoring of WHO criterion gases, particles, noise, temperature, humidity and other variables.</li>
+              <li>Private network in the field (LoRa/DECT NR+) and Internet access via 5G, WiFi or Ethernet.</li>
+              <li>Predictive AI to anticipate contaminants and issue alerts.</li>
+              <li>Module RAG to consult patterns, statistics, predictions and relevant information.</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section class="section dark">
+        <h2 class="section-title">Key capabilities</h2>
+        <div class="grid-3">
+          <article class="card">
+            <h3>Air quality 24/7</h3>
+            <p>Continuous monitoring of concentrations, trends and episodes.</p>
+          </article>
+          <article class="card">
+            <h3>Predictive AI</h3>
+            <p>Prediction of future values of pollutants from own sensors and external stations.</p>
+          </article>
+          <article class="card">
+            <h3>Module RAG</h3>
+            <p>Natural language query on the captured history to quickly extract useful information.</p>
+          </article>
+          <article class="card">
+            <h3>Ambient noise</h3>
+            <p>Capture and traceability of acoustic behavior for city, industry and compliance.</p>
+          </article>
+          <article class="card">
+            <h3>Private network Qartia</h3>
+            <p>Reliable connectivity for nodes deployed in cities, industries and complex territories.</p>
+          </article>
+          <article class="card">
+            <h3>Dashboards and alerts</h3>
+            <p>Clear visualization for technical monitoring, operation and decision making.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section soft">
+        <div class="ai-rag-layout">
+          <article class="card ai-rag-card">
+            <h2 class="section-title">Edge + private network + AI + RAG</h2>
+            <p class="section-copy">
+              Environmental sensors → Private network (LoRa/DECT NR+) → Edge → Dashboard / AI / RAG / Alerts
+            </p>
+            <p class="section-copy" style="margin-top: 16px;">
+              The Internet connection can be resolved by 5G, WiFi or Ethernet, depending on the location. The platform can coexist with already installed sensors or be deployed as a complete Qartia solution.
+            </p>
+            <div class="visual-stack">
+              <div class="visual-card">
+                <img class="visual" src="../assets/medioambiente/nodo-comunicaciones-interior.jpeg" alt="Communications and field electronics node for environmental monitoring">
+                <p class="visual-caption">Field communications and electronics node for stable capture, aggregation and sending of environmental data.</p>
+              </div>
+              <div class="visual-card">
+                <img class="visual" src="../assets/medioambiente/prediccion-cartagena-ia.png" alt="AI prediction map of pollutants in the city of Cartagena">
+                <p class="visual-caption">Example of AI prediction about Cartagena based on integrated environmental data and pollutant anticipation models.</p>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="grid-2">
+          <article class="card">
+            <span class="eyebrow">Real case</span>
+            <h3>From field to dashboard</h3>
+            <p>
+              Projects such as Cabezo Beaza, Atlantic Copper and Cartagena City Hall show the same approach: deploy in the field, capture the data with stability and transmit it to a clear visualization for operation and monitoring.
+            </p>
+            <ul>
+              <li>Continuous and traceable capture.</li>
+              <li>Private communications in the field.</li>
+              <li>Operational visualization of the data.</li>
+              <li>Scaling by zones and nodes.</li>
+            </ul>
+          </article>
+          <article class="card">
+            <span class="eyebrow">Differential</span>
+            <h3>A comprehensive platform to monitor, anticipate and consult</h3>
+            <ul>
+              <li>Private connectivity.</li>
+              <li>Applied AI.</li>
+              <li>RAG queries about the history.</li>
+              <li>Dashboards and alerts.</li>
+              <li>Modular scaling.</li>
+              <li>ROI focus.</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section class="section dark">
+        <h2 class="section-title">Executive pilot in 4 phases</h2>
+        <div class="process">
+          <article class="card">
+            <span class="step">1</span>
+            <h3>Initial diagnosis</h3>
+            <p>Location selection, variables, coverage and operational objectives.</p>
+          </article>
+          <article class="card">
+            <span class="step">2</span>
+            <h3>Deployment and validation</h3>
+            <p>Node installation, connectivity check and data quality control.</p>
+          </article>
+          <article class="card">
+            <span class="step">3</span>
+            <h3>AI + dashboards + RAG</h3>
+            <p>Prediction, visualization, alerts and advanced queries on the captured history.</p>
+          </article>
+          <article class="card">
+            <span class="step">4</span>
+            <h3>Scaling and ROI</h3>
+            <p>Impact report, expansion proposal and implementation plan.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="footer-band">
+        <div>
+          <h2>Turn environmental monitoring into an operational capability</h2>
+          <p>
+            Request a Qartia pilot and validate the capture, connectivity, prediction and exploitation of environmental data in your industrial, urban or territorial environment.
+          </p>
+        </div>
+        <div class="contact-card">
+          <strong>CONTACT</strong>
+          <p><a href="tel:+34686918522">(+34) 686918522</a></p>
+          <p><a href="mailto:info@qartia.com">info@qartia.com</a></p>
+          <p>Calle Tolosa Latour, 4, 7ºA,</p>
+          <p>30201, Cartagena, Spain</p>
+          <p>CIF: B67916676</p>
+          <div class="footer-eibt-badge" style="display:flex;align-items:center;justify-content:flex-end;margin-top:18px;">
+            <img src="../assets/images/eibt-logo.png" alt="EIBT Seal" style="width:min(430px,100%);height:auto;display:block;">
+          </div>
+        </div>
+      </section>
+
+      <p class="print-note">
+        Brochure prepared in HTML for digital presentation or printing to PDF.
+      </p>
+    </div>
+      <script src="../assets/js/cookie-consent.js?v=mobile-20260601" defer></script>
+<script src="../assets/js/qartia-language-switcher.js"></script>
+</body>
+</html>

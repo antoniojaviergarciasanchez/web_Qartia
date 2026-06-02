@@ -1,0 +1,1322 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <title>Vorausschauende Wartung. Vibrationen - Qartia Smart Technologies</title>
+    <link rel="icon" href="../assets/remote-qartia/wp-content/uploads/2022/10/favicon-150x150.png" sizes="32x32">
+    <link rel="icon" href="../assets/remote-qartia/wp-content/uploads/2022/10/favicon.png" sizes="192x192">
+    <link rel="apple-touch-icon" href="../assets/remote-qartia/wp-content/uploads/2022/10/favicon.png">
+    <meta name="msapplication-TileImage" content="../assets/remote-qartia/wp-content/uploads/2022/10/favicon.png">
+    
+<link rel="stylesheet" id="qartia-local-fonts" href="../assets/css/local-fonts.css"><meta name="description" content="Vorausschauende Wartung aufgrund von Vibrationen in Qartia Smart Technologies. Kontinuierliche Diagnose, industrielle Sensorisierung, Analytik und künstliche Intelligenz in der Anlage.">
+<style>
+      :root {
+        --bg: #f5f5f5;
+        --paper: #ffffff;
+        --paper-soft: #f7fbfc;
+        --ink: #333333;
+        --ink-strong: #1a1a1a;
+        --brand: #144e9c;
+        --accent: #36deb8;
+        --shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--ink);
+        font-family: "Work Sans", sans-serif;
+        line-height: 1.55;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      img {
+        max-width: 100%;
+        display: block;
+      }
+
+      .page {
+        min-height: 100vh;
+      }
+
+      .topbar {
+        background: #f5f5f5;
+        color: #333;
+        font-size: 0.84rem;
+      }
+
+      .topbar-inner,
+      .header-inner,
+      .section-inner,
+      .footer-inner {
+        width: min(1140px, calc(100% - 32px));
+        margin: 0 auto;
+      }
+
+      .topbar-inner {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        gap: 18px;
+        padding: 10px 0;
+        flex-wrap: wrap;
+      }
+
+      .header {
+        position: sticky;
+        top: 0;
+        z-index: 20;
+        background: rgba(255, 255, 255, 0.96);
+        box-shadow: 0 2px 18px rgba(0, 0, 0, 0.08);
+        backdrop-filter: blur(10px);
+      }
+
+      .header-inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 18px;
+        padding: 14px 0;
+      }
+
+      .logo img {
+        width: 180px;
+        height: auto;
+      }
+
+.nav {
+  display: flex;
+  justify-content: flex-end;
+  gap: 4px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.nav > a,
+.nav-toggle {
+  padding: 10px 12px;
+  color: var(--brand);
+  background: transparent;
+  border: 0;
+  font-family: "Rubik", sans-serif;
+  font-size: 0.82rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.nav > a:hover,
+.nav > a:focus-visible,
+.nav-toggle:hover,
+.nav-toggle:focus-visible {
+  background: rgba(20, 78, 156, 0.08);
+}
+
+.nav-group {
+  position: relative;
+}
+
+.nav-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.nav-toggle::after {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-right: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  transform: rotate(45deg) translateY(-1px);
+}
+
+.nav-dropdown {
+  position: absolute;
+  top: calc(100% + 10px);
+  right: 0;
+  min-width: 260px;
+  display: none;
+  flex-direction: column;
+  padding: 10px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.98);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(10px);
+  z-index: 30;
+}
+
+.nav-dropdown a {
+  padding: 10px 12px;
+  color: var(--brand);
+  font-family: "Rubik", sans-serif;
+  font-size: 0.8rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  border-radius: 10px;
+}
+
+.nav-subgroup {
+  display: flex;
+  flex-direction: column;
+}
+
+.nav-subtoggle {
+  padding: 10px 12px;
+  color: var(--brand);
+  font-family: "Rubik", sans-serif;
+  font-size: 0.8rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  border-radius: 10px;
+}
+
+.nav-dropdown a:hover,
+.nav-dropdown a:focus-visible,
+.nav-subtoggle:hover,
+.nav-subtoggle:focus-visible {
+  background: rgba(20, 78, 156, 0.08);
+}
+
+.nav-submenu {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin: 0 0 6px 18px;
+  padding-left: 12px;
+  border-left: 2px solid rgba(20, 78, 156, 0.14);
+}
+
+.nav-submenu a {
+  padding: 8px 10px;
+  font-size: 0.74rem;
+}
+
+.nav-group:hover .nav-dropdown,
+.nav-group.open .nav-dropdown {
+  display: flex;
+}
+
+      .hero {
+        position: relative;
+        min-height: 360px;
+        display: flex;
+        align-items: center;
+        overflow: hidden;
+        color: #fff;
+        background:
+          linear-gradient(rgba(0, 0, 0, 0.50), rgba(0, 0, 0, 0.16)),
+          url("../assets/images/colocacion-vibraciones.png") center/cover no-repeat;
+      }
+
+      .hero-inner {
+        width: min(1140px, calc(100% - 32px));
+        margin: 0 auto;
+        padding: 82px 0 60px;
+      }
+
+      .hero h1 {
+        margin: 0;
+        max-width: 16ch;
+        font-family: "Rubik", sans-serif;
+        font-size: clamp(2.4rem, 4vw, 4rem);
+        font-weight: 300;
+        text-shadow: 2px 2px 9px #000;
+      }
+
+      .content-section,
+      .integration-section,
+      .cta-section {
+        padding: 70px 0;
+      }
+
+      .content-section {
+        background:
+          url("../assets/remote-qartia/wp-content/uploads/2022/11/fondo-home.jpg") top left / cover no-repeat,
+          var(--paper-soft);
+      }
+
+      .integration-section {
+        background: linear-gradient(180deg, #f7fbfc 0%, #eef7f8 100%);
+      }
+
+      .integration-section .content-grid {
+        grid-template-columns: minmax(360px, 1.08fr) minmax(0, 0.92fr);
+        align-items: stretch;
+      }
+
+      .integration-section .visual-card {
+        align-self: stretch;
+        padding: 24px;
+      }
+
+      .integration-section .visual-card img {
+        aspect-ratio: 16 / 10;
+        object-fit: contain;
+        background: #fff;
+      }
+
+      .integration-section .content-copy-card {
+        height: 100%;
+      }
+
+      .content-grid {
+        display: grid;
+        grid-template-columns: minmax(0, 1.15fr) minmax(280px, 0.85fr);
+        gap: 36px;
+        align-items: center;
+      }
+
+      .eyebrow {
+        display: inline-block;
+        margin-bottom: 10px;
+        color: var(--accent);
+        font-size: 1rem;
+        font-weight: 600;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+      }
+
+      .eyebrow::before {
+        content: "";
+        display: inline-block;
+        width: 49px;
+        height: 50px;
+        margin-right: 10px;
+        vertical-align: middle;
+        background: url("../assets/remote-qartia/wp-content/uploads/2022/11/before-titulares.png") no-repeat center/contain;
+      }
+
+      .lead-title {
+        margin: 0 0 24px 58px;
+        color: var(--ink-strong);
+        font-family: "Rubik", sans-serif;
+        font-size: clamp(2rem, 3vw, 3rem);
+        font-weight: 300;
+        line-height: 1.12;
+      }
+
+      .copy p {
+        margin: 0 0 16px;
+      }
+
+      .content-copy-card,
+      .visual-card {
+        display: flex;
+        flex-direction: column;
+        background: var(--paper);
+        border-radius: 22px;
+        box-shadow: var(--shadow);
+      }
+
+      .content-copy-card {
+        justify-content: center;
+        padding: 30px 32px;
+      }
+
+      .content-copy-card .eyebrow {
+        margin-top: 0;
+      }
+
+      .content-copy-card .lead-title {
+        margin-bottom: 20px;
+      }
+
+      .visual-card {
+        align-self: center;
+        justify-content: center;
+        padding: 18px;
+        box-shadow: var(--shadow);
+      }
+
+      .visual-card img {
+        width: 100%;
+        aspect-ratio: 4 / 5;
+        object-fit: cover;
+        border-radius: 18px;
+      }
+
+      .visual-card p {
+        margin: 18px 4px 0;
+        color: #5a6670;
+        font-size: 0.95rem;
+      }
+
+      .impact-visual-grid {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 18px;
+        margin-top: 34px;
+      }
+
+      .impact-visual-card {
+        position: relative;
+        min-height: 380px;
+        display: flex;
+        overflow: hidden;
+        border-radius: 8px;
+        background: #07121d;
+        color: #fff;
+        box-shadow: var(--shadow);
+        isolation: isolate;
+      }
+
+      .impact-visual-card img {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transform: scale(1.01);
+        transition: transform .24s ease;
+        z-index: -2;
+      }
+
+      .impact-visual-card::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(180deg, rgba(7, 18, 29, .12), rgba(7, 18, 29, .86));
+        z-index: -1;
+      }
+
+      .impact-visual-card:hover img {
+        transform: scale(1.06);
+      }
+
+      .impact-visual-copy {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        width: 100%;
+        min-height: 100%;
+        padding: 22px;
+      }
+
+      .impact-visual-tag {
+        align-self: flex-start;
+        margin-bottom: auto;
+        padding: 7px 10px;
+        border-radius: 8px;
+        background: rgba(54, 222, 184, .9);
+        color: #07121d;
+        font-size: .76rem;
+        font-weight: 800;
+        letter-spacing: .06em;
+        line-height: 1;
+        text-transform: uppercase;
+      }
+
+      .impact-visual-card h3 {
+        margin: 34px 0 8px;
+        color: #fff;
+        font-family: "Rubik", sans-serif;
+        font-size: clamp(1.22rem, 1.7vw, 1.62rem);
+        font-weight: 700;
+        line-height: 1.12;
+        text-shadow: 0 2px 14px rgba(0, 0, 0, .42);
+      }
+
+      .impact-visual-card p {
+        margin: 0;
+        color: rgba(255, 255, 255, .88);
+        font-size: .96rem;
+        line-height: 1.5;
+      }
+
+      .video-section {
+        padding: 70px 0;
+        background: linear-gradient(180deg, #f7fbfc 0%, #e8faf9 100%);
+      }
+
+      .video-shell {
+        width: min(1140px, calc(100% - 32px));
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 28px;
+      }
+
+      .video-copy {
+        max-width: 760px;
+        text-align: center;
+      }
+
+      .video-kicker {
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+        margin: 0 0 12px;
+        color: #6d7b88;
+        font-size: 0.92rem;
+        font-weight: 700;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+      }
+
+      .video-kicker::before,
+      .video-kicker::after {
+        content: "";
+        width: 42px;
+        height: 2px;
+        background: var(--accent);
+      }
+
+      .video-copy .lead-title {
+        margin-left: 0;
+        margin-right: 0;
+      }
+
+      .video-frame {
+        width: min(960px, 100%);
+        aspect-ratio: 16 / 9;
+        border-radius: 24px;
+        overflow: hidden;
+        box-shadow: 0 18px 42px rgba(17, 35, 53, 0.14);
+        background: #081726;
+      }
+
+      .video-media {
+        display: block;
+        width: 100%;
+        height: 100%;
+        border: 0;
+      }
+
+      .video-link,
+      .video-trigger {
+        position: relative;
+        display: block;
+        width: 100%;
+        height: 100%;
+        color: inherit;
+      }
+
+      .video-trigger {
+        padding: 0;
+        border: 0;
+        background: none;
+        cursor: pointer;
+      }
+
+      .video-link img,
+      .video-trigger img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .video-play {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 96px;
+        height: 96px;
+        border-radius: 50%;
+        transform: translate(-50%, -50%);
+        background: rgba(7, 18, 29, 0.68);
+        box-shadow: 0 12px 32px rgba(7, 18, 29, 0.32);
+      }
+
+      .video-play::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-left: 6px;
+        transform: translate(-50%, -50%);
+        border-style: solid;
+        border-width: 18px 0 18px 30px;
+        border-color: transparent transparent transparent #fff;
+      }
+
+      .brochure-section {
+        padding: 70px 0;
+        background: var(--paper);
+      }
+
+      .brochure-section.alt {
+        background: #e8faf9;
+      }
+
+      .brochure-grid,
+      .brochure-split {
+        display: grid;
+        gap: 24px;
+      }
+
+      .brochure-grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+      }
+
+      .brochure-split {
+        grid-template-columns: minmax(0, 1.08fr) minmax(320px, 0.92fr);
+        align-items: center;
+      }
+
+      .brochure-card,
+      .phase-card,
+      .kpi-card,
+      .photo-card {
+        height: 100%;
+        background: var(--paper);
+        border-radius: 22px;
+        box-shadow: var(--shadow);
+      }
+
+      .brochure-card,
+      .phase-card,
+      .kpi-card {
+        padding: 24px;
+      }
+
+      .brochure-card h3,
+      .phase-card h3,
+      .kpi-card h3 {
+        margin: 0 0 12px;
+        color: var(--ink-strong);
+        font-family: "Rubik", sans-serif;
+        font-size: 1.34rem;
+        font-weight: 500;
+        line-height: 1.15;
+      }
+
+      .brochure-card p,
+      .phase-card p,
+      .kpi-card p {
+        margin: 0;
+      }
+
+      .brochure-card .lead-title {
+        margin: 0 0 18px;
+        font-size: clamp(1.7rem, 2.4vw, 2.5rem);
+      }
+
+      .brochure-card strong,
+      .kpi-card strong {
+        display: block;
+        margin-bottom: 10px;
+        color: var(--brand);
+        font-family: "Rubik", sans-serif;
+        font-size: 0.88rem;
+        font-weight: 700;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+      }
+
+      .photo-stack,
+      .phase-grid,
+      .kpi-grid {
+        display: grid;
+        gap: 18px;
+      }
+
+      .brochure-split > .brochure-card,
+      .brochure-split > .photo-card,
+      .brochure-split > .photo-stack {
+        height: auto;
+        align-self: center;
+      }
+
+      .feature-list {
+        display: grid;
+        gap: 10px;
+        margin: 18px 0 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .feature-list li {
+        position: relative;
+        padding-left: 18px;
+      }
+
+      .feature-list li::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0.68em;
+        width: 8px;
+        height: 8px;
+        border-radius: 999px;
+        background: var(--accent);
+      }
+
+      .download-button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 20px;
+        padding: 13px 18px;
+        border-radius: 999px;
+        background: var(--brand);
+        color: #fff;
+        font-family: "Rubik", sans-serif;
+        font-size: 0.92rem;
+        font-weight: 500;
+        letter-spacing: 0.02em;
+        text-transform: uppercase;
+      }
+
+      .download-button:hover,
+      .download-button:focus-visible {
+        background: #0f3f7f;
+      }
+
+      .phase-grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        margin-top: 28px;
+      }
+
+      .kpi-grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        margin-top: 22px;
+      }
+
+      .photo-card {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        overflow: hidden;
+      }
+
+      .photo-card img {
+        width: 100%;
+        aspect-ratio: 16 / 10;
+        object-fit: cover;
+      }
+
+      .photo-card figcaption {
+        padding: 16px 18px 18px;
+        color: #5a6670;
+        font-size: 0.94rem;
+      }
+
+      .cta-section {
+        background: #e8faf9;
+      }
+
+      .cta-grid {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) 320px;
+        gap: 24px;
+        align-items: stretch;
+      }
+
+      .cta-copy {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        background: var(--paper);
+        border-radius: 22px;
+        padding: 34px;
+        box-shadow: var(--shadow);
+      }
+
+      .cta-copy h2 {
+        margin: 0 0 14px;
+        color: var(--ink-strong);
+        font-family: "Rubik", sans-serif;
+        font-size: clamp(1.9rem, 2.5vw, 2.6rem);
+        font-weight: 300;
+      }
+
+      .cta-copy p {
+        margin: 0;
+      }
+
+      .cta-image {
+        min-height: 100%;
+        border-radius: 22px;
+        background:
+          linear-gradient(rgba(20, 78, 156, 0.16), rgba(20, 78, 156, 0.16)),
+          url("../assets/linkedin-news/ilboc.jpg") center/cover no-repeat;
+        box-shadow: var(--shadow);
+      }
+
+      .footer {
+        background:
+          url("../assets/remote-qartia/wp-content/uploads/2022/11/fondo-footer.jpg") left top / cover no-repeat,
+          #222;
+        color: #ccc;
+      }
+
+      .footer-inner {
+        display: grid;
+        grid-template-columns: 220px minmax(0, 1fr);
+        gap: 36px;
+        align-items: start;
+        padding: 56px 0 28px;
+      }
+
+      .footer-logo img {
+        width: 180px;
+      }
+
+      .footer h4 {
+        margin: 0 0 16px;
+        color: #ccc;
+        font-family: "Rubik", sans-serif;
+        font-size: 1.1rem;
+        font-weight: 700;
+        text-transform: uppercase;
+      }
+
+      .footer p {
+        margin: 0 0 10px;
+      }
+
+      .subfooter {
+        background: #333;
+        color: #f9f9f9;
+        font-size: 0.86rem;
+        text-transform: uppercase;
+      }
+
+      .subfooter-inner {
+        width: min(1140px, calc(100% - 32px));
+        margin: 0 auto;
+        padding: 14px 0;
+        display: flex;
+        justify-content: center;
+        gap: 28px;
+        flex-wrap: wrap;
+      }
+
+      @media (max-width: 1024px) {
+        .header-inner,
+        .content-grid,
+        .integration-section .content-grid,
+        .video-shell,
+        .brochure-split,
+        .cta-grid,
+        .footer-inner {
+          grid-template-columns: 1fr;
+        }
+
+        .header-inner {
+          display: grid;
+          gap: 12px;
+        }
+
+        .logo {
+          justify-self: center;
+        }
+
+.nav {
+  justify-content: center;
+}
+
+.nav-dropdown {
+  right: auto;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+        .brochure-grid,
+        .impact-visual-grid,
+        .phase-grid,
+        .kpi-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+      }
+
+      @media (max-width: 640px) {
+.topbar-inner {
+  justify-content: center;
+}
+
+.nav {
+  gap: 8px;
+}
+
+.nav-group {
+  width: 100%;
+  display: grid;
+  justify-items: center;
+}
+
+.nav-dropdown {
+  position: static;
+  transform: none;
+  min-width: min(320px, 100%);
+  width: min(320px, 100%);
+  margin-top: 6px;
+}
+
+        .hero-inner {
+          padding-top: 72px;
+        }
+
+        .video-section {
+          padding: 56px 0;
+        }
+
+        .eyebrow::before {
+          display: none;
+        }
+
+        .lead-title {
+          margin-left: 0;
+        }
+
+        .brochure-grid,
+        .impact-visual-grid,
+        .phase-grid,
+        .kpi-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .impact-visual-card {
+          min-height: 300px;
+        }
+
+        .video-shell {
+          width: min(100%, calc(100% - 24px));
+        }
+
+        .footer-inner {
+          padding-top: 40px;
+        }
+      }
+    </style>
+  <style id="qartia-dropdown-offset">
+.nav-dropdown{transform:translateX(1cm);}
+@media (max-width:880px){.nav-dropdown{transform:translateX(calc(-50% + 1cm));}}
+@media (max-width:640px){.nav-dropdown{transform:none;}}
+@media (min-width:1025px){.ush_menu_1.type_desktop .w-nav-list.level_2{margin-left:1cm;}}
+@media (min-width:1025px){.l-subheader-cell.at_left,.header-inner .logo{transform:translateX(-0.35cm);}}
+</style>
+<link rel="stylesheet" href="../assets/css/qartia-topbar.css">
+<link rel="stylesheet" href="../assets/css/qartia-responsive.css?v=20260601">
+    <style id="eibt-footer-layout-fix">
+    .footer .footer-inner {
+      display: grid !important;
+      grid-template-columns: minmax(180px, 0.75fr) minmax(260px, 1fr) minmax(360px, 1.15fr) !important;
+      align-items: start !important;
+      gap: 28px !important;
+    }
+
+    .footer .footer-eibt-badge,
+    .l-footer .footer-eibt-badge {
+      display: flex !important;
+      justify-content: flex-end !important;
+      align-items: flex-start !important;
+      margin-top: 0 !important;
+      width: 100% !important;
+      min-width: 360px;
+    }
+
+    .footer .footer-eibt-badge img,
+    .l-footer .footer-eibt-badge img {
+      width: min(430px, 100%) !important;
+      height: auto !important;
+      display: block !important;
+      margin-left: auto !important;
+      margin-right: 0 !important;
+    }
+
+    .l-footer .footer-eibt-badge .w-image-h {
+      width: 100% !important;
+    }
+
+    @media (max-width: 900px) {
+      .footer .footer-inner {
+        grid-template-columns: 1fr !important;
+      }
+
+      .footer .footer-eibt-badge,
+      .l-footer .footer-eibt-badge {
+        justify-content: flex-start !important;
+        min-width: 0 !important;
+      }
+
+      .footer .footer-eibt-badge img,
+      .l-footer .footer-eibt-badge img {
+        margin-left: 0 !important;
+        margin-right: auto !important;
+      }
+    }
+  </style>
+    <link rel="stylesheet" href="../assets/css/cookie-consent.css?v=mobile-20260601">
+</head>
+  <body>
+    <div class="page">
+      <div class="topbar">
+        <div class="topbar-inner">
+          <a href="tel:+34686918522">+34 686 91 85 22</a>
+          <a href="mailto:info@qartia.com">info@qartia.com</a>
+        <a class="qartia-linkedin-icon" href="https://www.linkedin.com/company/qartia-smart-technologies/" target="_blank" rel="noopener" aria-label="LinkedIn Qartia"></a>
+
+        </div>
+      </div>
+
+      <header class="header">
+        <div class="header-inner">
+          <a class="logo" href="index.html">
+            <img src="../assets/remote-qartia/wp-content/uploads/2022/11/logo-qartia.png" alt="Qartia Smart Technologies">
+          </a>
+
+<nav class="nav" aria-label="Hauptnavigation">
+  <a href="quienes-somos.html">Wer wir sind</a>
+  <div class="nav-group">
+    <button class="nav-toggle" type="button" aria-expanded="false">Produkte</button>
+    <div class="nav-dropdown">
+      <a href="productos.html">Produkte</a>
+      <a href="vibrasense.html">VibraSense</a>
+      <a href="airsense-pro.html">AIRSENSE PRO</a>
+      <a href="megamia.html">MEGAMIA</a>
+      <a href="dipason-exterior.html">DIPASON</a>
+      <a href="Biosentia.html">Biosentia</a>
+      <a href="noisement.html">NoiseMent</a>
+    </div>
+  </div>
+  <div class="nav-group">
+    <button class="nav-toggle" type="button" aria-expanded="false">Dienstleistungen</button>
+    <div class="nav-dropdown">
+      <a href="agricultura.html">Landwirtschaft</a>
+      <div class="nav-subgroup">
+        <a class="nav-subtoggle" href="industria.html">Industrie</a>
+        <div class="nav-submenu">
+          <a href="mantenimiento-predictivo-vibraciones.html">Vorausschauende Wartung. Vibrationen</a>
+          <a href="monitorizacion-activos-criticos.html">Überwachung kritischer Vermögenswerte</a>
+        </div>
+      </div>
+      <a href="medioambiente.html">Umwelt</a>
+      <a href="civil.html">Zivile Infrastrukturen</a>
+      <a href="sources/serviciosan%CC%83adido.html">Zusätzliche Dienste</a>
+    </div>
+  </div>
+  <div class="nav-group">
+    <button class="nav-toggle" type="button" aria-expanded="false">Private Netzwerke 5G</button>
+    <div class="nav-dropdown">
+      <a href="dect-nr-plus.html">Was ist DECT NR+</a>
+      <a href="soluciones-5g-privadas.html">5G Private Lösungen</a>
+    </div>
+  </div>
+  <a href="noticias.html">Neuigkeiten</a>
+  <a href="contacto.html">Kontakt</a>
+  <a href="https://qartia.com/Flutter/panel_industrias_prueba/">Clientzugriff</a>
+</nav>
+        </div>
+      </header>
+
+      <main>
+        <section class="hero">
+          <div class="hero-inner">
+            <h1>Vorausschauende Wartung. Vibrationen</h1>
+          </div>
+        </section>
+
+        <section class="content-section">
+          <div class="section-inner">
+            <div class="content-grid">
+              <div class="content-copy-card">
+                <span class="eyebrow">Industrielle Vibrationen</span>
+                <h2 class="lead-title">Kontinuierliche Diagnose für vorausschauende Wartung.</h2>
+                <div class="copy">
+                  <p>Qartia Smart Technologies SL entwickelt prädiktive Wartungslösungen in Echtzeit, basierend auf fortschrittlicher Vibrationsanalyse, um Ausfälle in rotierenden Maschinen und Industrieanlagen zu antizipieren.</p>
+                  <p>Unsere Technologie erfasst hochauflösende Signale direkt in der Anlage, analysiert kontinuierlich den Zustand und wandelt Vibrationsdaten in umsetzbare Warnungen für Betrieb, Wartung und Technik um.</p>
+                  <p>Das System erkennt frühzeitig Fehlausrichtungen, Unwuchten, Lagerverschleiß, mangelnde Schmierung und andere Verschleißmuster, bevor sie zu ungeplanten Stillständen führen.</p>
+                  <p>Qartia integriert Sensoren, proprietäre Elektronik, private Netzwerke DECT NR+ und Modelle der künstlichen Intelligenz, um eine End-to-End-Lösung bereitzustellen, selbst in komplexen Industrieumgebungen oder ohne vorherige Kommunikationsinfrastruktur.</p>
+                  <p>Das Ergebnis ist ein autonomeres Wartungsmodell mit geringerem Betriebsrisiko, besserer OEE und besserer Rückverfolgbarkeit des Status jeder Anlage.</p>
+                </div>
+              </div>
+
+              <aside class="visual-card">
+                <img src="../assets/images/colocacion-vibraciones.png" alt="Installation und Konfiguration des Vibrationssystems in Industrieanlagen">
+                <p>Echter Einsatz in der Anlage für vorausschauende Wartung aufgrund von Vibrationen, industrielle Konnektivität und kontinuierliche Diagnose von Anlagen.</p>
+              </aside>
+            </div>
+          </div>
+        </section>
+
+        <section class="brochure-section">
+          <div class="section-inner">
+            <span class="eyebrow">Operative Auswirkungen</span>
+            <h2 class="lead-title">Von Rohdaten bis hin zu Wartungsmaßnahmen.</h2>
+            <div class="impact-visual-grid">
+              <article class="impact-visual-card">
+                <img src="../assets/images/sensorizacion-vibration-box.jpeg" alt="In Industrieanlagen installierter Vibrationssensor für vorausschauende Wartung">
+                <div class="impact-visual-copy">
+                  <span class="impact-visual-tag">12kHz</span>
+                  <h3>Hochauflösende Sensoren</h3>
+                  <p>Schwingungserfassung im Zeit- und Frequenzbereich zur Erkennung realer Änderungen im Maschinenzustand.</p>
+                </div>
+              </article>
+              <article class="impact-visual-card">
+                <img src="../assets/industria-vibraciones-dashboard.png" alt="Dashboard für die kontinuierliche industrielle Vibrationsdiagnose">
+                <div class="impact-visual-copy">
+                  <span class="impact-visual-tag">24/7</span>
+                  <h3>Kontinuierliche Diagnose</h3>
+                  <p>Schweregrad und Art des rotierenden Defekts, der vor dem Ausfall kontinuierlich zur Verfügung steht.</p>
+                </div>
+              </article>
+              <article class="impact-visual-card">
+                <img src="../assets/images/vibraciones-yokohawa.png" alt="Industrielle Schnittstelle zum Auslesen von Vibrationen und standardisiertem Schweregrad">
+                <div class="impact-visual-copy">
+                  <span class="impact-visual-tag">ISO 10816 / 20816</span>
+                  <h3>Standardisierter Schweregrad</h3>
+                  <p>Risikoklassifizierung nach anerkannten Industriekriterien für Betrieb, Wartung und Technik.</p>
+                </div>
+              </article>
+              <article class="impact-visual-card">
+                <img src="../assets/images/ingenieria-vibration-installation.jpg" alt="Installation von Vibrationssensoren in einer Industrieanlage zur Verbesserung der OEE">
+                <div class="impact-visual-copy">
+                  <span class="impact-visual-tag">Sichtbarer ROI</span>
+                  <h3>Weniger Stopps und mehr OEE</h3>
+                  <p>Priorisierung von Eingriffen nach tatsächlicher Kritikalität der Anlage und nach vermiedenen Ausfallkosten.</p>
+                </div>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="brochure-section alt">
+          <div class="section-inner">
+            <div class="brochure-split">
+              <div class="brochure-card">
+                <span class="eyebrow">Vorschlag Qartia</span>
+                <h2 class="lead-title">Expertendiagnose und Vorhersage mit KI.</h2>
+                <p>Die Vibrationslinie Qartia arbeitet mit intelligenter Zustandserfassung, Schweregraddiagnose und Vorhersagemodellen, die darauf ausgelegt sind, eine Verschlechterung vorherzusehen.</p>
+                <ul class="feature-list">
+                  <li>Erkennung von Fluchtungsfehlern, Unwucht, Lagerverschleiß, mangelnder Schmierung oder Kavitation.</li>
+                  <li>Agnostische Lösung für Sensorisierungsplattform und Hersteller: eigene Hardware oder Integration mit Kundensensoren.</li>
+                  <li>Vorbeugende Wartungsplanung vor ungewollter Abschaltung.</li>
+                  <li>Gemeinsame Interpretation von Risiken für Betrieb, Wartung und Technik.</li>
+                </ul>
+              </div>
+
+              <div class="photo-stack">
+                <figure class="photo-card">
+                  <img src="../assets/industria-vibraciones-board.png" alt="Elektronik des Vibrationssystems">
+                  <figcaption>Schwingsystemelektronik zur Erfassung, Verarbeitung und kontinuierlichen Digitalisierung im Betrieb.</figcaption>
+                </figure>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="brochure-section">
+          <div class="section-inner">
+            <div class="brochure-split">
+              <div class="brochure-card">
+                <span class="eyebrow">Technische Architektur</span>
+                <h2 class="lead-title">Edge + privates Netzwerk + Analyse.</h2>
+                <p>Die technische Architektur von Qartia wird durch proprietäre Hardware, DECT NR+-Kommunikation und eine Experten-Diagnose-Engine mit flexibler Bereitstellung unterstützt.</p>
+                <ul class="feature-list">
+                  <li>Beschleunigungsmesser bis 12 kHz, Erfassungsplattform und FFT für kontinuierliche Messung.</li>
+                  <li>Kommunikation DECT NR+ 5G, ohne Betreiber, nicht zellular, dezentral und im freien Spektrum.</li>
+                  <li>Vermaschte Topologien für die Fabrikabdeckung, wo andere Technologien schlechter abschneiden.</li>
+                  <li>LLM-Diagnoseassistent auf dem Client oder vor Ort/in der Cloud, mit Kriterien, die denen eines Experten der Kategorie II entsprechen.</li>
+                </ul>
+              </div>
+
+              <figure class="photo-card">
+                <img src="../assets/industria-vibraciones-modulos.png" alt="Vibrationsmodule für die Industrie">
+                <figcaption>Vibrationsmodule vorbereitet für DECT-Übertragung, Einsatz auf Industrieanlagen und zuverlässige Konnektivität im Werk.</figcaption>
+              </figure>
+            </div>
+
+            <span class="eyebrow">Schnelle Aktivierung</span>
+            <h2 class="lead-title">Executive Pilot in 4 Phasen.</h2>
+            <div class="phase-grid">
+              <article class="phase-card">
+                <h3>Phase 1</h3>
+                <p>Auswahl der Anlagen nach Betriebskritikalität, Fehlerhistorie und Wartungsfenster.</p>
+              </article>
+              <article class="phase-card">
+                <h3>Phase 2</h3>
+                <p>Einsatz von Sensoren und Netzwerken im Feld mit Validierung der Abdeckung und Datenqualität.</p>
+              </article>
+              <article class="phase-card">
+                <h3>Phase 3</h3>
+                <p>Diagnose, Vorhersage und Auswirkungsberichte mit umsetzbaren Warnungen und priorisierten Empfehlungen.</p>
+              </article>
+              <article class="phase-card">
+                <h3>Phase 4</h3>
+                <p>Kommerzieller Abschluss mit endgültigem Wirtschaftsangebot, Umsetzungsplan und Servicevertrag.</p>
+              </article>
+            </div>
+
+            <div class="kpi-grid">
+              <article class="kpi-card">
+                <strong>MTBF</strong>
+                <p>Weniger häufige Ausfälle und mehr Stabilität in kritischen rotierenden Maschinen.</p>
+              </article>
+              <article class="kpi-card">
+                <strong>OEE</strong>
+                <p>Höhere Anlagenverfügbarkeit und längere nutzbare Produktionszeit.</p>
+              </article>
+              <article class="kpi-card">
+                <strong>Risiko pro Vermögenswert</strong>
+                <p>Schweregrad und Häufigkeit, um zu priorisieren, wo ein Stopp das meiste Geld kostet.</p>
+              </article>
+              <article class="kpi-card">
+                <strong>Rückverfolgbarkeit</strong>
+                <p>Technischer Bericht für Wartung, Betrieb und Management mit technischer und wirtschaftlicher Grundlage.</p>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="integration-section">
+          <div class="section-inner">
+            <div class="content-grid">
+              <aside class="visual-card">
+                <img src="../assets/images/vibraciones-yokohawa.png" alt="Vibrationssensor-Integrationspanel mit visueller Schnittstelle und industrieller Kommunikation">
+                <p>Integration vorhandener Sensoren mit eigener Visualisierung, industrieller Kommunikation und einheitlicher Auslesung von Anlagenschwingungen.</p>
+              </aside>
+
+              <div class="content-copy-card">
+                <span class="eyebrow">AUCH... SENSORINTEGRATION</span>
+                <h2 class="lead-title">Integration von Sensorisierungstechnologien.</h2>
+                <div class="copy">
+                  <p>Qartia umfasst in seinem Leistungskatalog die Integration vorhandener Fabrik-Vibrationssensoren. In unsere Lösung sind Lösungen integriert, wie sie von Unternehmen wie SICK, YOKOHAWA oder FLUKE angeboten werden.</p>
+                  <p>Zu diesem Zweck haben wir eine visuelle und Kommunikationsschnittstelle entwickelt, die mit Technologien wie LoRa, Ethernet oder Modbus kompatibel und an die Besonderheiten jedes Herstellers und jeder industriellen Umgebung angepasst ist.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="cta-section">
+          <div class="section-inner">
+            <div class="cta-grid">
+              <div class="cta-copy">
+                <h2>Fordern Sie einen Premium-Piloten vor Ort an.</h2>
+                <p>Der Vibrationsvorschlag Qartia schlägt eine schnelle Aktivierung, einen messbaren technischen Wert und eine wirtschaftliche Bewertung innerhalb von Wochen vor. Diese Linie ist bereit, mit Hüllen, Videos oder echten Piloten weiter ausgebaut zu werden.</p>
+                <a class="download-button" href="../assets/downloads/triptico_qartia_vibraciones.pdf" download>Laden Sie die Vibrationsbroschüre herunter</a>
+              </div>
+              <div class="cta-image" aria-hidden="true"></div>
+            </div>
+          </div>
+        </section>
+
+        <section class="video-section">
+          <div class="video-shell">
+            <div class="video-copy">
+              <p class="video-kicker">Vibrationen in Aktion</p>
+              <h2 class="lead-title">Schwingungsdiagnose und realer Einsatz in der Anlage.</h2>
+            </div>
+            <div class="video-frame" id="vibrations-video-embed" data-youtube-src="https://www.youtube.com/embed/tKtnFuy05EQ?rel=0&amp;modestbranding=1" data-youtube-watch="https://youtu.be/tKtnFuy05EQ">
+              <button class="video-trigger" type="button" aria-label="Spielen Sie das Video zur vorausschauenden Wartung von Qartia ab.">
+                <img src="https://i.ytimg.com/vi/tKtnFuy05EQ/hqdefault.jpg" alt="Miniaturansicht des Videos zur vorausschauenden Wartung von Qartia">
+                <span class="video-play" aria-hidden="true"></span>
+              </button>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <div class="footer-inner">
+          <div class="footer-logo">
+            <img src="../assets/remote-qartia/wp-content/uploads/2022/11/logo-qartia.png" alt="Qartia">
+          </div>
+          <div>
+            <h4>KONTAKT</h4>
+            <p><a href="tel:+34686918522">(+34) 686918522</a></p>
+            <p><a href="mailto:info@qartia.com">info@qartia.com</a></p>
+            <p>Calle Tolosa Latour, 4, 7ºA,</p>
+            <p>30201, Cartagena, Spanien</p>
+            <p>CIF: B67916676</p>
+          </div>
+                <div class="footer-eibt-badge" style="display:flex;align-items:center;justify-content:flex-end;min-width:360px;margin-top:8px;">
+          <img src="../assets/images/eibt-logo.png" alt="EIBT-Siegel" style="width:min(430px,100%);height:auto;display:block;">
+        </div>
+</div>
+      </footer>
+
+      <div class="subfooter">
+        <div class="subfooter-inner">
+          <a href="aviso-legal.html">Rechtlicher Hinweis</a>
+          <a href="politica-cookies.html">Cookie-Richtlinie</a>
+          <a href="politica-privacidad.html">Datenschutzrichtlinie</a>
+        </div>
+      </div>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const groups = document.querySelectorAll(".nav-group");
+    const vibrationsVideoEmbed = document.getElementById("vibrations-video-embed");
+
+    if (vibrationsVideoEmbed) {
+      const youtubeSrc = vibrationsVideoEmbed.dataset.youtubeSrc;
+      const youtubeWatch = vibrationsVideoEmbed.dataset.youtubeWatch;
+      const trigger = vibrationsVideoEmbed.querySelector(".video-trigger");
+
+      if (trigger) {
+        trigger.addEventListener("click", function () {
+          if (window.location.protocol === "file:") {
+            window.location.href = youtubeWatch;
+            return;
+          }
+
+          vibrationsVideoEmbed.innerHTML =
+            '<iframe class="video-media" src="' +
+            youtubeSrc +
+            '&autoplay=1" title="Video de mantenimiento predictivo de Qartia" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>';
+        }, { once: true });
+      }
+    }
+
+    groups.forEach((group) => {
+      const toggle = group.querySelector(".nav-toggle");
+      if (!toggle) return;
+
+      toggle.addEventListener("click", function (event) {
+        event.preventDefault();
+        const willOpen = !group.classList.contains("open");
+
+        groups.forEach((otherGroup) => {
+          otherGroup.classList.remove("open");
+          const otherToggle = otherGroup.querySelector(".nav-toggle");
+          if (otherToggle) {
+            otherToggle.setAttribute("aria-expanded", "false");
+          }
+        });
+
+        group.classList.toggle("open", willOpen);
+        toggle.setAttribute("aria-expanded", willOpen ? "true" : "false");
+      });
+    });
+
+    document.addEventListener("click", function (event) {
+      groups.forEach((group) => {
+        if (group.contains(event.target)) return;
+        group.classList.remove("open");
+        const toggle = group.querySelector(".nav-toggle");
+        if (toggle) {
+          toggle.setAttribute("aria-expanded", "false");
+        }
+      });
+    });
+  });
+</script>
+    </div>
+      <script src="../assets/js/qartia-mobile-nav.js?v=20260601" defer></script>
+      <script src="../assets/js/cookie-consent.js?v=mobile-20260601" defer></script>
+<script src="../assets/js/qartia-language-switcher.js"></script>
+</body>
+</html>

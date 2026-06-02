@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Landwirtschaftsbroschüre - Qartia Smart Technologies</title>
+    <link rel="icon" href="../assets/remote-qartia/wp-content/uploads/2022/10/favicon-150x150.png" sizes="32x32">
+    <link rel="icon" href="../assets/remote-qartia/wp-content/uploads/2022/10/favicon.png" sizes="192x192">
+    <link rel="apple-touch-icon" href="../assets/remote-qartia/wp-content/uploads/2022/10/favicon.png">
+    <meta name="msapplication-TileImage" content="../assets/remote-qartia/wp-content/uploads/2022/10/favicon.png">
+    
+<link rel="stylesheet" id="qartia-local-fonts" href="../assets/css/local-fonts.css"><meta name="description" content="Qartia kommerzielle Broschüre für intelligente Landwirtschaft, Agri-PV, IoT, KI, digitaler Zwilling und private Konnektivität.">
+<style>
+      :root {
+        --forest: #07110d;
+        --panel: #0d1713;
+        --panel-soft: #12201b;
+        --mint: #4df2a2;
+        --electric: #22b8ff;
+        --ink: #e8f7ef;
+        --muted: #a6c2b6;
+        --paper: #ffffff;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        background: linear-gradient(180deg, #f3f8f6 0%, #e7f2ed 100%);
+        color: #142018;
+        font-family: "Manrope", sans-serif;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      .sheet {
+        width: min(1180px, calc(100% - 32px));
+        margin: 28px auto;
+        overflow: hidden;
+        border-radius: 32px;
+        background: var(--paper);
+        box-shadow: 0 24px 80px rgba(20, 32, 24, 0.14);
+      }
+
+      .hero {
+        position: relative;
+        padding: 48px 48px 42px;
+        color: var(--ink);
+        background:
+          linear-gradient(120deg, rgba(7, 17, 13, 0.96), rgba(13, 23, 19, 0.84)),
+          url("../assets/linkedin-news/greenhouse-1.jpg") center/cover no-repeat;
+      }
+
+      .hero::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background:
+          radial-gradient(circle at top right, rgba(34, 184, 255, 0.18), transparent 28%),
+          radial-gradient(circle at bottom left, rgba(77, 242, 162, 0.18), transparent 24%);
+      }
+
+      .hero-inner {
+        position: relative;
+        z-index: 1;
+      }
+
+      .logo {
+        width: 186px;
+      }
+
+      .kicker {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        margin-top: 26px;
+        padding: 8px 14px;
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.04);
+        font-size: 0.72rem;
+        font-weight: 700;
+        letter-spacing: 0.28em;
+        text-transform: uppercase;
+      }
+
+      .hero h1 {
+        margin: 18px 0 0;
+        max-width: 12ch;
+        font-family: "Sora", sans-serif;
+        font-size: clamp(2.4rem, 4vw, 4.5rem);
+        line-height: 1.02;
+      }
+
+      .hero p {
+        max-width: 760px;
+        margin: 20px 0 0;
+        color: rgba(232, 247, 239, 0.82);
+        font-size: 1.08rem;
+        line-height: 1.75;
+      }
+
+      .badge-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 26px;
+      }
+
+      .badge {
+        padding: 10px 14px;
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.06);
+        color: var(--ink);
+        font-size: 0.88rem;
+        font-weight: 600;
+      }
+
+      .section {
+        padding: 34px 40px;
+      }
+
+      .section.dark {
+        color: var(--ink);
+        background: var(--forest);
+      }
+
+      .section.soft {
+        background: #eef7f2;
+      }
+
+      .section-title {
+        margin: 0 0 18px;
+        font-family: "Sora", sans-serif;
+        font-size: 2rem;
+        line-height: 1.15;
+      }
+
+      .section-copy {
+        margin: 0;
+        color: #4f6358;
+        line-height: 1.7;
+      }
+
+      .dark .section-copy {
+        color: rgba(232, 247, 239, 0.76);
+      }
+
+      .grid-4,
+      .grid-3,
+      .grid-2 {
+        display: grid;
+        gap: 18px;
+      }
+
+      .grid-4 {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+      }
+
+      .grid-3 {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .grid-2 {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .card {
+        padding: 22px;
+        border-radius: 24px;
+        background: #ffffff;
+        box-shadow: 0 12px 32px rgba(15, 31, 24, 0.08);
+      }
+
+      .dark .card {
+        background: var(--panel);
+        box-shadow: none;
+      }
+
+      .eyebrow {
+        display: block;
+        margin-bottom: 10px;
+        color: #2d68b3;
+        font-size: 0.8rem;
+        font-weight: 700;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+      }
+
+      .dark .eyebrow {
+        color: var(--mint);
+      }
+
+      .card h3 {
+        margin: 0 0 12px;
+        font-family: "Sora", sans-serif;
+        font-size: 1.18rem;
+        line-height: 1.2;
+      }
+
+      .card p,
+      .card li {
+        margin: 0;
+        color: #4f6358;
+        line-height: 1.65;
+      }
+
+      .dark .card p,
+      .dark .card li {
+        color: rgba(232, 247, 239, 0.78);
+      }
+
+      .card ul {
+        display: grid;
+        gap: 10px;
+        margin: 14px 0 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .card li {
+        position: relative;
+        padding-left: 18px;
+      }
+
+      .card li::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0.72em;
+        width: 8px;
+        height: 8px;
+        border-radius: 999px;
+        background: var(--mint);
+      }
+
+      .metric {
+        font-family: "Sora", sans-serif;
+        font-size: 2.2rem;
+        line-height: 1;
+      }
+
+      .process {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 16px;
+      }
+
+      .process .card {
+        position: relative;
+      }
+
+      .step {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 42px;
+        height: 42px;
+        margin-bottom: 14px;
+        border-radius: 14px;
+        background: rgba(20, 78, 156, 0.1);
+        color: #144e9c;
+        font-family: "Sora", sans-serif;
+        font-weight: 700;
+      }
+
+      .visual {
+        width: 100%;
+        border-radius: 24px;
+      }
+
+      .footer-band {
+        display: grid;
+        grid-template-columns: 1.2fr 0.8fr;
+        gap: 18px;
+        padding: 34px 40px 42px;
+        color: var(--ink);
+        background: linear-gradient(135deg, var(--forest), #10251f);
+      }
+
+      .footer-band h2 {
+        margin: 0 0 12px;
+        font-family: "Sora", sans-serif;
+        font-size: 2.15rem;
+      }
+
+      .footer-band p {
+        margin: 0;
+        color: rgba(232, 247, 239, 0.76);
+        line-height: 1.7;
+      }
+
+      .contact-card {
+        padding: 24px;
+        border-radius: 24px;
+        background: rgba(255, 255, 255, 0.06);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+      }
+
+      .contact-card strong {
+        display: block;
+        margin-bottom: 12px;
+        color: var(--mint);
+        font-size: 0.8rem;
+        font-weight: 700;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+      }
+
+      .contact-card p {
+        margin: 0 0 10px;
+      }
+
+      .print-note {
+        padding: 0 40px 24px;
+        color: #5f7367;
+        font-size: 0.9rem;
+      }
+
+      @media (max-width: 980px) {
+        .grid-4,
+        .grid-3,
+        .grid-2,
+        .process,
+        .footer-band {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+
+      @media (max-width: 720px) {
+        .hero,
+        .section,
+        .footer-band,
+        .print-note {
+          padding-left: 24px;
+          padding-right: 24px;
+        }
+
+        .grid-4,
+        .grid-3,
+        .grid-2,
+        .process,
+        .footer-band {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      @media print {
+        body {
+          background: #ffffff;
+        }
+
+        .sheet {
+          width: 100%;
+          margin: 0;
+          border-radius: 0;
+          box-shadow: none;
+        }
+      }
+    </style>
+  <link rel="stylesheet" href="../assets/css/qartia-topbar.css">
+<link rel="stylesheet" href="../assets/css/qartia-responsive.css?v=20260601">
+  <style id="eibt-footer-layout-fix">
+    .footer .footer-inner {
+      display: grid !important;
+      grid-template-columns: minmax(180px, 0.75fr) minmax(260px, 1fr) minmax(360px, 1.15fr) !important;
+      align-items: start !important;
+      gap: 28px !important;
+    }
+
+    .footer .footer-eibt-badge,
+    .l-footer .footer-eibt-badge {
+      display: flex !important;
+      justify-content: flex-end !important;
+      align-items: flex-start !important;
+      margin-top: 0 !important;
+      width: 100% !important;
+      min-width: 360px;
+    }
+
+    .footer .footer-eibt-badge img,
+    .l-footer .footer-eibt-badge img {
+      width: min(430px, 100%) !important;
+      height: auto !important;
+      display: block !important;
+      margin-left: auto !important;
+      margin-right: 0 !important;
+    }
+
+    .l-footer .footer-eibt-badge .w-image-h {
+      width: 100% !important;
+    }
+
+    @media (max-width: 900px) {
+      .footer .footer-inner {
+        grid-template-columns: 1fr !important;
+      }
+
+      .footer .footer-eibt-badge,
+      .l-footer .footer-eibt-badge {
+        justify-content: flex-start !important;
+        min-width: 0 !important;
+      }
+
+      .footer .footer-eibt-badge img,
+      .l-footer .footer-eibt-badge img {
+        margin-left: 0 !important;
+        margin-right: auto !important;
+      }
+    }
+  </style>
+    <link rel="stylesheet" href="../assets/css/cookie-consent.css?v=mobile-20260601">
+</head>
+  <body>
+    <div class="sheet">
+      <section class="hero">
+        <div class="hero-inner">
+          <img class="logo" src="../assets/remote-qartia/wp-content/uploads/2022/11/logo-qartia.png" alt="Qartia Smart Technologies">
+          <span class="kicker">Landwirtschaftsbroschüre</span>
+          <h1>Von der landwirtschaftlichen Ausbeutung zum intelligenten System.</h1>
+          <p>
+            Qartia verwandelt den Anbau in ein vernetztes, vorausschauendes und energieeffizientes System durch IoT, künstliche Intelligenz, digitale Zwillinge, Agri-PV und private Netzwerke.
+          </p>
+          <div class="badge-row">
+            <span class="badge">IoT</span>
+            <span class="badge">KI</span>
+            <span class="badge">Digitaler Zwilling</span>
+            <span class="badge">Agrar-PV</span>
+            <span class="badge">Privates Netzwerk</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="section soft">
+        <h2 class="section-title">Messbare betriebliche Auswirkungen</h2>
+        <div class="grid-4">
+          <article class="card">
+            <span class="eyebrow">KPIs</span>
+            <div class="metric">↓ 30%</div>
+            <h3>Wasserverbrauch</h3>
+            <p>Bewässerungsoptimierung basierend auf realen Boden-, Klima- und Erntebedingungen.</p>
+          </article>
+          <article class="card">
+            <span class="eyebrow">KPIs</span>
+            <div class="metric">↑ 20%</div>
+            <h3>Mögliche Produktion</h3>
+            <p>Bessere agronomische Anpassung und größere Fähigkeit zur operativen Antizipation.</p>
+          </article>
+          <article class="card">
+            <span class="eyebrow">KPIs</span>
+            <div class="metric">↓ Kosten</div>
+            <h3>Ressourcenoptimierung</h3>
+            <p>Reduzierung der Wasser-, Düngemittel-, Energie- und Betriebskosten.</p>
+          </article>
+          <article class="card">
+            <span class="eyebrow">KPIs</span>
+            <div class="metric">ROI</div>
+            <h3>Messbarer Pilot</h3>
+            <p>Technische und wirtschaftliche Validierung in Monaten, nicht in langen Zyklen der Unsicherheit.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="grid-2">
+          <article class="card">
+            <span class="eyebrow">Problem</span>
+            <h3>Geringe operative Transparenz in Echtzeit</h3>
+            <ul>
+              <li>Reaktive Entscheidungen.</li>
+              <li>Ineffizienter Einsatz von Wasser und Düngemitteln.</li>
+              <li>Begrenzte Konnektivitätsabhängigkeit.</li>
+              <li>Schwierigkeiten, Pflanzenstress vorherzusehen.</li>
+              <li>Mangelnde Integration zwischen Energie, Bewässerung und Produktion.</li>
+            </ul>
+          </article>
+          <article class="card">
+            <span class="eyebrow">Lösung Qartia</span>
+            <h3>Von landwirtschaftlichen Daten zum operativen Handeln</h3>
+            <ul>
+              <li>IoT Sensoren für Boden, Umwelt, Strahlung, CO₂, Luftfeuchtigkeit und Temperatur, unter anderem.</li>
+              <li>Robuste drahtlose Netzwerke für ländliche Umgebungen: 1) privat ohne Betreiberabhängigkeit (wie DECT NR+ oder LoRa) oder 2) mit einem Betreiber (NB-IoT).</li>
+              <li>Prädiktive KI für Bewässerung, Düngung und Energie.</li>
+              <li>Empfehlungen, Automatisierung und kontinuierliche Verbesserung.</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section class="section dark">
+        <h2 class="section-title">Schlüsselfunktionen</h2>
+        <div class="grid-3">
+          <article class="card">
+            <h3>Überwachung rund um die Uhr</h3>
+            <p>Kontinuierliche Überwachung der Ernte, des Mikroklimas und der Infrastruktur.</p>
+          </article>
+          <article class="card">
+            <h3>Prädiktive KI</h3>
+            <p>Vorhersage des Wasser-, Nährstoff- und Energiebedarfs.</p>
+          </article>
+          <article class="card">
+            <h3>Digitaler Zwilling</h3>
+            <p>Simulation von Szenarien zur Optimierung von Entscheidungen ohne Betriebsrisiko.</p>
+          </article>
+          <article class="card">
+            <h3>Agrar-PV</h3>
+            <p>Gleichgewicht zwischen Solarenergie, Schatten, Licht und landwirtschaftlicher Leistung.</p>
+          </article>
+          <article class="card">
+            <h3>Privates Netzwerk Qartia</h3>
+            <p>Zuverlässige Konnektivität auf Bauernhöfen, Gewächshäusern und abgelegenen Gebieten.</p>
+          </article>
+          <article class="card">
+            <h3>Ressourcenoptimierung</h3>
+            <p>Geringerer Verbrauch von Wasser, Düngemitteln, Energie und Betriebskosten.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section soft">
+        <div class="grid-2">
+          <div>
+            <h2 class="section-title">Edge + privates Netzwerk + KI</h2>
+            <p class="section-copy">
+              Sensoren IoT → Privates Netzwerk → Edge / Cloud → KI + Digitaler Zwilling → Dashboard / Aktoren
+            </p>
+            <p class="section-copy" style="margin-top: 16px;">
+              Die Plattform kann in einer Cloud-, On-Premise- oder Hybridarchitektur bereitgestellt werden und sich in vorhandene Sensoren oder mit einer eigenen Bereitstellung integrieren Qartia.
+            </p>
+          </div>
+          <img class="visual" src="../assets/linkedin-news/greenhouse-2.jpg" alt="Landwirtschaftliche Infrastruktur für erweiterte Überwachung vorbereitet">
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="grid-2">
+          <article class="card">
+            <span class="eyebrow">Agrar-PV</span>
+            <h3>Landwirtschaft und Energie arbeiten zusammen</h3>
+            <p>
+              Qartia ermöglicht es Ihnen, Agrar-PV-Systeme zu entwerfen und zu betreiben, die landwirtschaftliche Produktion und Solarenergie in Einklang bringen.
+            </p>
+            <ul>
+              <li>Simulation von Photovoltaik-Konfigurationen.</li>
+              <li>Licht-Energie-Pflanzenbilanz.</li>
+              <li>Mikroklimaoptimierung.</li>
+              <li>Energieautonome Nutzung.</li>
+            </ul>
+          </article>
+          <article class="card">
+            <span class="eyebrow">Differential</span>
+            <h3>Eine umfassende ROI-orientierte Plattform</h3>
+            <ul>
+              <li>Private Konnektivität.</li>
+              <li>Angewandte KI.</li>
+              <li>Digitaler Zwilling.</li>
+              <li>Agri-PV.</li>
+              <li>Betriebsoptimierung.</li>
+              <li>ROI-Fokus.</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section class="section dark">
+        <h2 class="section-title">Executive Pilot in 4 Phasen</h2>
+        <div class="process">
+          <article class="card">
+            <span class="step">1</span>
+            <h3>Erstdiagnose</h3>
+            <p>Pflanzenauswahl, Nutzung, Infrastruktur und KPIs.</p>
+          </article>
+          <article class="card">
+            <span class="step">2</span>
+            <h3>Sensorische und Netzwerkbereitstellung</h3>
+            <p>Installation von Sensoren, Validierung der Abdeckung und Datenqualität.</p>
+          </article>
+          <article class="card">
+            <span class="step">3</span>
+            <h3>KI + Betriebsdiagnose</h3>
+            <p>Vorhersagemodelle, umsetzbare Warnungen und technische Empfehlungen.</p>
+          </article>
+          <article class="card">
+            <span class="step">4</span>
+            <h3>Skalierung und ROI</h3>
+            <p>Wirkungsbericht, Wirtschaftsvorschlag und Umsetzungsplan.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="footer-band">
+        <div>
+          <h2>Verwandeln Sie Ihren Bauernhof in ein intelligentes System</h2>
+          <p>
+            Fordern Sie ein Qartia-Pilotprojekt an und validieren Sie die technischen und wirtschaftlichen Auswirkungen auf Ihren Betrieb, indem Sie Anbau, Infrastruktur und Energie in derselben Betriebsebene integrieren.
+          </p>
+        </div>
+        <div class="contact-card">
+          <strong>KONTAKT</strong>
+          <p><a href="tel:+34686918522">(+34) 686918522</a></p>
+          <p><a href="mailto:info@qartia.com">info@qartia.com</a></p>
+          <p>Calle Tolosa Latour, 4, 7ºA,</p>
+          <p>30201, Cartagena, Spanien</p>
+          <p>CIF: B67916676</p>
+          <div class="footer-eibt-badge" style="display:flex;align-items:center;justify-content:flex-end;margin-top:18px;">
+            <img src="../assets/images/eibt-logo.png" alt="EIBT-Siegel" style="width:min(430px,100%);height:auto;display:block;">
+          </div>
+        </div>
+      </section>
+
+      <p class="print-note">
+        In HTML erstellte Broschüre zur digitalen Präsentation oder zum Drucken als PDF.
+      </p>
+    </div>
+      <script src="../assets/js/cookie-consent.js?v=mobile-20260601" defer></script>
+<script src="../assets/js/qartia-language-switcher.js"></script>
+</body>
+</html>

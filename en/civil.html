@@ -1,0 +1,1465 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <title>Civil Infrastructures - Qartia Smart Technologies</title>
+    <link rel="icon" href="../assets/remote-qartia/wp-content/uploads/2022/10/favicon-150x150.png" sizes="32x32">
+    <link rel="icon" href="../assets/remote-qartia/wp-content/uploads/2022/10/favicon.png" sizes="192x192">
+    <link rel="apple-touch-icon" href="../assets/remote-qartia/wp-content/uploads/2022/10/favicon.png">
+    <meta name="msapplication-TileImage" content="../assets/remote-qartia/wp-content/uploads/2022/10/favicon.png">
+    
+<link rel="stylesheet" id="qartia-local-fonts" href="../assets/css/local-fonts.css"><meta name="description" content="Intelligent monitoring of civil infrastructures with sensorization, data acquisition, LoRa, 5G, digital twin, AI, alerts and predictive maintenance.">
+<style>
+      :root {
+        --bg: #f5f5f5;
+        --paper: #ffffff;
+        --paper-soft: #f7fbfc;
+        --ink: #333333;
+        --ink-strong: #1a1a1a;
+        --brand: #144e9c;
+        --accent: #36deb8;
+        --shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--ink);
+        font-family: "Work Sans", sans-serif;
+        line-height: 1.55;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      img {
+        max-width: 100%;
+        display: block;
+      }
+
+      .page {
+        min-height: 100vh;
+      }
+
+      .topbar {
+        background: #f5f5f5;
+        color: #333;
+        font-size: 0.84rem;
+      }
+
+      .topbar-inner,
+      .header-inner,
+      .section-inner,
+      .footer-inner {
+        width: min(1140px, calc(100% - 32px));
+        margin: 0 auto;
+      }
+
+      .topbar-inner {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        gap: 18px;
+        padding: 10px 0;
+        flex-wrap: wrap;
+      }
+
+      .header {
+        position: sticky;
+        top: 0;
+        z-index: 20;
+        background: rgba(255, 255, 255, 0.96);
+        box-shadow: 0 2px 18px rgba(0, 0, 0, 0.08);
+        backdrop-filter: blur(10px);
+      }
+
+      .header-inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 18px;
+        padding: 14px 0;
+      }
+
+      .logo img {
+        width: 180px;
+        height: auto;
+      }
+
+      .nav {
+        display: flex;
+        justify-content: flex-end;
+        gap: 4px;
+        flex-wrap: wrap;
+        align-items: center;
+      }
+
+      .nav > a,
+      .nav-toggle {
+        padding: 10px 12px;
+        color: var(--brand);
+        background: transparent;
+        border: 0;
+        font-family: "Rubik", sans-serif;
+        font-size: 0.82rem;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 0.02em;
+        border-radius: 8px;
+        cursor: pointer;
+      }
+
+      .nav > a:hover,
+      .nav > a:focus-visible,
+      .nav-toggle:hover,
+      .nav-toggle:focus-visible {
+        background: rgba(20, 78, 156, 0.08);
+      }
+
+      .nav-group {
+        position: relative;
+      }
+
+      .nav-toggle {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .nav-toggle::after {
+        content: "";
+        width: 8px;
+        height: 8px;
+        border-right: 2px solid currentColor;
+        border-bottom: 2px solid currentColor;
+        transform: rotate(45deg) translateY(-1px);
+      }
+
+      .nav-dropdown {
+        position: absolute;
+        top: calc(100% + 10px);
+        right: 0;
+        min-width: 260px;
+        display: none;
+        flex-direction: column;
+        padding: 10px;
+        border-radius: 16px;
+        background: rgba(255, 255, 255, 0.98);
+        box-shadow: var(--shadow);
+        backdrop-filter: blur(10px);
+        z-index: 30;
+      }
+
+      .nav-dropdown a {
+        padding: 10px 12px;
+        color: var(--brand);
+        font-family: "Rubik", sans-serif;
+        font-size: 0.8rem;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 0.02em;
+        border-radius: 10px;
+      }
+
+      .nav-subgroup {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .nav-subtoggle {
+        padding: 10px 12px;
+        color: var(--brand);
+        font-family: "Rubik", sans-serif;
+        font-size: 0.8rem;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 0.02em;
+        border-radius: 10px;
+      }
+
+      .nav-dropdown a:hover,
+      .nav-dropdown a:focus-visible,
+      .nav-subtoggle:hover,
+      .nav-subtoggle:focus-visible {
+        background: rgba(20, 78, 156, 0.08);
+      }
+
+      .nav-submenu {
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+        margin: 0 0 6px 18px;
+        padding-left: 12px;
+        border-left: 2px solid rgba(20, 78, 156, 0.14);
+      }
+
+      .nav-submenu a {
+        padding: 8px 10px;
+        font-size: 0.74rem;
+      }
+
+      .nav-group:hover .nav-dropdown,
+      .nav-group.open .nav-dropdown {
+        display: flex;
+      }
+
+      .hero {
+        position: relative;
+        min-height: 360px;
+        display: flex;
+        align-items: center;
+        overflow: hidden;
+        color: #fff;
+        background:
+          linear-gradient(rgba(0, 0, 0, 0.50), rgba(0, 0, 0, 0.16)),
+          url("../assets/images/tunnel-entrance.jpg") center/cover no-repeat;
+      }
+
+      .hero-inner {
+        width: min(1140px, calc(100% - 32px));
+        margin: 0 auto;
+        padding: 82px 0 60px;
+      }
+
+      .hero h1 {
+        margin: 0;
+        max-width: 12ch;
+        font-family: "Rubik", sans-serif;
+        font-size: clamp(2.4rem, 4vw, 4rem);
+        font-weight: 300;
+        text-shadow: 2px 2px 9px #000;
+      }
+
+      .content-section,
+      .cta-section {
+        padding: 70px 0;
+      }
+
+      .content-section {
+        background:
+          url("../assets/remote-qartia/wp-content/uploads/2022/11/fondo-home.jpg") top left / cover no-repeat,
+          var(--paper-soft);
+      }
+
+      .content-grid {
+        display: grid;
+        grid-template-columns: minmax(0, 1.15fr) minmax(280px, 0.85fr);
+        gap: 36px;
+        align-items: center;
+      }
+
+      .eyebrow {
+        display: inline-block;
+        margin-bottom: 10px;
+        color: var(--accent);
+        font-size: 1rem;
+        font-weight: 600;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+      }
+
+      .eyebrow::before {
+        content: "";
+        display: inline-block;
+        width: 49px;
+        height: 50px;
+        margin-right: 10px;
+        vertical-align: middle;
+        background: url("../assets/remote-qartia/wp-content/uploads/2022/11/before-titulares.png") no-repeat center/contain;
+      }
+
+      .lead-title {
+        margin: 0 0 24px 58px;
+        color: var(--ink-strong);
+        font-family: "Rubik", sans-serif;
+        font-size: clamp(2rem, 3vw, 3rem);
+        font-weight: 300;
+        line-height: 1.12;
+      }
+
+      .copy p {
+        margin: 0 0 16px;
+      }
+
+      .content-copy-card,
+      .visual-card {
+        display: flex;
+        flex-direction: column;
+        background: var(--paper);
+        border-radius: 22px;
+        box-shadow: var(--shadow);
+      }
+
+      .content-copy-card {
+        justify-content: center;
+        padding: 30px 32px;
+      }
+
+      .content-copy-card .eyebrow {
+        margin-top: 0;
+      }
+
+      .content-copy-card .lead-title {
+        margin-bottom: 20px;
+      }
+
+      .visual-card {
+        align-self: center;
+        justify-content: center;
+        padding: 18px;
+      }
+
+      .visual-card img {
+        width: 100%;
+        aspect-ratio: 4 / 5;
+        object-fit: cover;
+        border-radius: 18px;
+      }
+
+      .visual-card p {
+        margin: 18px 4px 0;
+        color: #5a6670;
+        font-size: 0.95rem;
+      }
+
+      .brochure-section {
+        padding: 70px 0;
+        background: var(--paper);
+      }
+
+      .brochure-section.alt {
+        background: #e8faf9;
+      }
+
+      .brochure-grid,
+      .benefits-grid,
+      .brochure-split,
+      .civil-stack,
+      .photo-stack,
+      .phase-grid {
+        display: grid;
+        gap: 24px;
+      }
+
+      .brochure-grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+      }
+
+      .benefits-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .civil-benefits-visual-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 18px;
+        margin-top: 34px;
+      }
+
+      .civil-applications-visual-grid {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 18px;
+        margin-top: 34px;
+      }
+
+      .civil-applications-visual-grid .civil-benefit-card {
+        min-height: 320px;
+      }
+
+      .civil-benefit-card {
+        position: relative;
+        min-height: 360px;
+        display: flex;
+        overflow: hidden;
+        border-radius: 8px;
+        background: #07121d;
+        color: #fff;
+        box-shadow: var(--shadow);
+        isolation: isolate;
+      }
+
+      .civil-benefit-card img {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transform: scale(1.01);
+        transition: transform .24s ease;
+        z-index: -2;
+      }
+
+      .civil-benefit-card::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(180deg, rgba(7, 18, 29, .12), rgba(7, 18, 29, .86));
+        z-index: -1;
+      }
+
+      .civil-benefit-card:hover img {
+        transform: scale(1.06);
+      }
+
+      .civil-benefit-copy {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        width: 100%;
+        min-height: 100%;
+        padding: 22px;
+      }
+
+      .civil-benefit-tag {
+        align-self: flex-start;
+        margin-bottom: auto;
+        padding: 7px 10px;
+        border-radius: 8px;
+        background: rgba(54, 222, 184, .9);
+        color: #07121d;
+        font-size: .76rem;
+        font-weight: 800;
+        letter-spacing: .06em;
+        line-height: 1;
+        text-transform: uppercase;
+      }
+
+      .civil-benefit-card h3 {
+        margin: 34px 0 8px;
+        color: #fff;
+        font-family: "Rubik", sans-serif;
+        font-size: clamp(1.22rem, 1.7vw, 1.62rem);
+        font-weight: 700;
+        line-height: 1.12;
+        text-shadow: 0 2px 14px rgba(0, 0, 0, .42);
+      }
+
+      .civil-benefit-card p {
+        margin: 0;
+        color: rgba(255, 255, 255, .88);
+        font-size: .96rem;
+        line-height: 1.5;
+      }
+
+      .architecture-flow-panel {
+        margin: 34px 0 28px;
+        padding: clamp(20px, 2.6vw, 30px);
+        border: 1px solid rgba(54, 222, 184, .28);
+        border-radius: 8px;
+        background:
+          linear-gradient(135deg, rgba(7, 52, 61, .98), rgba(20, 78, 156, .94));
+        box-shadow: var(--shadow);
+        color: #fff;
+      }
+
+      .architecture-flow-header {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) auto;
+        gap: 22px;
+        align-items: end;
+        margin-bottom: 22px;
+      }
+
+      .architecture-flow-kicker {
+        display: inline-flex;
+        width: fit-content;
+        margin-bottom: 10px;
+        padding: 7px 10px;
+        border: 1px solid rgba(54, 222, 184, .34);
+        border-radius: 999px;
+        background: rgba(54, 222, 184, .12);
+        color: #36deb8;
+        font-family: "Rubik", sans-serif;
+        font-size: .72rem;
+        font-weight: 800;
+        letter-spacing: .08em;
+        line-height: 1;
+        text-transform: uppercase;
+      }
+
+      .architecture-flow-header h3 {
+        margin: 0;
+        max-width: 760px;
+        color: #fff;
+        font-family: "Rubik", sans-serif;
+        font-size: clamp(1.38rem, 2vw, 2.08rem);
+        font-weight: 500;
+        line-height: 1.12;
+      }
+
+      .architecture-flow-header p {
+        margin: 10px 0 0;
+        max-width: 700px;
+        color: rgba(255, 255, 255, .78);
+        font-size: .98rem;
+      }
+
+      .architecture-value-badge {
+        display: inline-flex;
+        max-width: 220px;
+        align-items: center;
+        justify-content: center;
+        padding: 12px 14px;
+        border-radius: 8px;
+        background: #36deb8;
+        color: #07343d;
+        font-family: "Rubik", sans-serif;
+        font-size: .82rem;
+        font-weight: 800;
+        line-height: 1.25;
+        text-align: center;
+        text-transform: uppercase;
+      }
+
+      .architecture-flow {
+        display: grid;
+        grid-template-columns: repeat(7, minmax(0, 1fr));
+        gap: 12px;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .architecture-flow li {
+        position: relative;
+        min-height: 116px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 12px;
+        padding: 14px 11px;
+        border: 1px solid rgba(54, 222, 184, .22);
+        border-radius: 8px;
+        background: rgba(255, 255, 255, .96);
+        box-shadow: 0 14px 24px rgba(0, 0, 0, .14);
+      }
+
+      .architecture-flow li:not(:last-child)::after {
+        content: "→";
+        position: absolute;
+        top: 50%;
+        right: -15px;
+        z-index: 2;
+        transform: translateY(-50%);
+        color: #36deb8;
+        font-weight: 800;
+        line-height: 1;
+      }
+
+      .architecture-step-number {
+        display: inline-flex;
+        width: 30px;
+        height: 30px;
+        align-items: center;
+        justify-content: center;
+        border-radius: 999px;
+        background: #36deb8;
+        color: #07343d;
+        font-size: .72rem;
+        font-weight: 800;
+      }
+
+      .architecture-flow strong {
+        display: block;
+        color: #07343d;
+        font-family: "Rubik", sans-serif;
+        font-size: .94rem;
+        line-height: 1.18;
+      }
+
+      .architecture-flow small {
+        display: block;
+        color: #5a6670;
+        font-size: .78rem;
+        line-height: 1.35;
+      }
+
+      .brochure-split {
+        grid-template-columns: minmax(0, 1.08fr) minmax(320px, 0.92fr);
+        align-items: start;
+      }
+
+      .civil-stack {
+        grid-template-columns: 1fr;
+        align-self: start;
+      }
+
+      .civil-stack.offset-down {
+        margin-top: 20px;
+      }
+
+      .photo-stack {
+        grid-template-columns: 1fr;
+      }
+
+      .photo-stack.compact {
+        gap: 18px;
+      }
+
+      .phase-grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        margin-top: 28px;
+      }
+
+      .brochure-card,
+      .phase-card,
+      .photo-card {
+        height: 100%;
+        background: var(--paper);
+        border-radius: 22px;
+        box-shadow: var(--shadow);
+      }
+
+      .brochure-card,
+      .phase-card {
+        padding: 24px;
+      }
+
+      .brochure-card h3,
+      .phase-card h3 {
+        margin: 0 0 12px;
+        color: var(--ink-strong);
+        font-family: "Rubik", sans-serif;
+        font-size: 1.34rem;
+        font-weight: 500;
+        line-height: 1.15;
+      }
+
+      .brochure-card p,
+      .phase-card p {
+        margin: 0;
+      }
+
+      .brochure-card strong,
+      .phase-card strong {
+        display: block;
+        margin-bottom: 10px;
+        color: var(--brand);
+        font-family: "Rubik", sans-serif;
+        font-size: 0.88rem;
+        font-weight: 700;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+      }
+
+      .feature-list {
+        display: grid;
+        gap: 10px;
+        margin: 18px 0 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .feature-list li {
+        position: relative;
+        padding-left: 18px;
+      }
+
+      .feature-list li::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0.68em;
+        width: 8px;
+        height: 8px;
+        border-radius: 999px;
+        background: var(--accent);
+      }
+
+      .photo-card {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        overflow: hidden;
+      }
+
+      .photo-card img {
+        width: 100%;
+        aspect-ratio: 16 / 10;
+        object-fit: cover;
+      }
+
+      .photo-card figcaption {
+        padding: 16px 18px 18px;
+        color: #5a6670;
+        font-size: 0.94rem;
+      }
+
+      .cta-section {
+        background: #e8faf9;
+      }
+
+      .cta-grid {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) 320px;
+        gap: 24px;
+        align-items: stretch;
+      }
+
+      .cta-copy {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        background: var(--paper);
+        border-radius: 22px;
+        padding: 34px;
+        box-shadow: var(--shadow);
+      }
+
+      .cta-copy h2 {
+        margin: 0 0 14px;
+        color: var(--ink-strong);
+        font-family: "Rubik", sans-serif;
+        font-size: clamp(1.9rem, 2.5vw, 2.6rem);
+        font-weight: 300;
+      }
+
+      .cta-copy p {
+        margin: 0;
+      }
+
+      .cta-image {
+        min-height: 100%;
+        border-radius: 22px;
+        background:
+          linear-gradient(rgba(20, 78, 156, 0.16), rgba(20, 78, 156, 0.16)),
+          url("../assets/images/tunnel-field-team.jpg") center/cover no-repeat;
+        box-shadow: var(--shadow);
+      }
+
+      .footer {
+        background:
+          url("../assets/remote-qartia/wp-content/uploads/2022/11/fondo-footer.jpg") left top / cover no-repeat,
+          #222;
+        color: #ccc;
+      }
+
+      .footer-inner {
+        display: grid;
+        grid-template-columns: 220px minmax(0, 1fr);
+        gap: 36px;
+        align-items: start;
+        padding: 56px 0 28px;
+      }
+
+      .footer-logo img {
+        width: 180px;
+      }
+
+      .footer h4 {
+        margin: 0 0 16px;
+        color: #ccc;
+        font-family: "Rubik", sans-serif;
+        font-size: 1.1rem;
+        font-weight: 700;
+        text-transform: uppercase;
+      }
+
+      .footer p {
+        margin: 0 0 10px;
+      }
+
+      .subfooter {
+        background: #333;
+        color: #f9f9f9;
+        font-size: 0.86rem;
+        text-transform: uppercase;
+      }
+
+      .subfooter-inner {
+        width: min(1140px, calc(100% - 32px));
+        margin: 0 auto;
+        padding: 14px 0;
+        display: flex;
+        justify-content: center;
+        gap: 28px;
+        flex-wrap: wrap;
+      }
+
+      @media (max-width: 1024px) {
+        .header-inner,
+        .content-grid,
+        .brochure-split,
+        .cta-grid,
+        .footer-inner {
+          grid-template-columns: 1fr;
+        }
+
+        .header-inner {
+          display: grid;
+          gap: 12px;
+        }
+
+        .logo {
+          justify-self: center;
+        }
+
+        .nav {
+          justify-content: center;
+        }
+
+        .nav-dropdown {
+          right: auto;
+          left: 50%;
+          transform: translateX(-50%);
+        }
+
+        .brochure-grid,
+        .benefits-grid,
+        .civil-benefits-visual-grid,
+        .civil-applications-visual-grid,
+        .architecture-flow,
+        .phase-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .architecture-flow {
+          gap: 16px;
+        }
+
+        .architecture-flow-header {
+          grid-template-columns: 1fr;
+          align-items: start;
+        }
+
+        .architecture-value-badge {
+          justify-self: start;
+        }
+
+        .architecture-flow li:not(:last-child)::after {
+          display: none;
+        }
+      }
+
+      @media (max-width: 640px) {
+        .topbar-inner {
+          justify-content: center;
+        }
+
+        .nav {
+          gap: 8px;
+        }
+
+        .nav-group {
+          width: 100%;
+          display: grid;
+          justify-items: center;
+        }
+
+        .nav-dropdown {
+          position: static;
+          transform: none;
+          min-width: min(320px, 100%);
+          width: min(320px, 100%);
+          margin-top: 6px;
+        }
+
+        .hero-inner {
+          padding-top: 72px;
+        }
+
+        .eyebrow::before {
+          display: none;
+        }
+
+        .lead-title {
+          margin-left: 0;
+        }
+
+        .brochure-grid,
+        .benefits-grid,
+        .civil-benefits-visual-grid,
+        .civil-applications-visual-grid,
+        .architecture-flow,
+        .phase-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .architecture-flow-panel {
+          padding: 18px;
+        }
+
+        .civil-benefit-card {
+          min-height: 300px;
+        }
+
+        .footer-inner {
+          padding-top: 40px;
+        }
+      }
+    </style>
+  <style id="qartia-dropdown-offset">
+.nav-dropdown{transform:translateX(1cm);}
+@media (max-width:880px){.nav-dropdown{transform:translateX(calc(-50% + 1cm));}}
+@media (max-width:640px){.nav-dropdown{transform:none;}}
+@media (min-width:1025px){.ush_menu_1.type_desktop .w-nav-list.level_2{margin-left:1cm;}}
+@media (min-width:1025px){.l-subheader-cell.at_left,.header-inner .logo{transform:translateX(-0.35cm);}}
+</style>
+<link rel="stylesheet" href="../assets/css/qartia-topbar.css">
+<link rel="stylesheet" href="../assets/css/qartia-responsive.css?v=20260601">
+    <style id="eibt-footer-layout-fix">
+    .footer .footer-inner {
+      display: grid !important;
+      grid-template-columns: minmax(180px, 0.75fr) minmax(260px, 1fr) minmax(360px, 1.15fr) !important;
+      align-items: start !important;
+      gap: 28px !important;
+    }
+
+    .footer .footer-eibt-badge,
+    .l-footer .footer-eibt-badge {
+      display: flex !important;
+      justify-content: flex-end !important;
+      align-items: flex-start !important;
+      margin-top: 0 !important;
+      width: 100% !important;
+      min-width: 360px;
+    }
+
+    .footer .footer-eibt-badge img,
+    .l-footer .footer-eibt-badge img {
+      width: min(430px, 100%) !important;
+      height: auto !important;
+      display: block !important;
+      margin-left: auto !important;
+      margin-right: 0 !important;
+    }
+
+    .l-footer .footer-eibt-badge .w-image-h {
+      width: 100% !important;
+    }
+
+    @media (max-width: 900px) {
+      .footer .footer-inner {
+        grid-template-columns: 1fr !important;
+      }
+
+      .footer .footer-eibt-badge,
+      .l-footer .footer-eibt-badge {
+        justify-content: flex-start !important;
+        min-width: 0 !important;
+      }
+
+      .footer .footer-eibt-badge img,
+      .l-footer .footer-eibt-badge img {
+        margin-left: 0 !important;
+        margin-right: auto !important;
+      }
+    }
+  </style>
+    <link rel="stylesheet" href="../assets/css/cookie-consent.css?v=mobile-20260601">
+</head>
+  <body>
+    <div class="page">
+      <div class="topbar">
+        <div class="topbar-inner">
+          <a href="tel:+34686918522">+34 686 91 85 22</a>
+          <a href="mailto:info@qartia.com">info@qartia.com</a>
+        <a class="qartia-linkedin-icon" href="https://www.linkedin.com/company/qartia-smart-technologies/" target="_blank" rel="noopener" aria-label="LinkedIn Qartia"></a>
+
+        </div>
+      </div>
+
+      <header class="header">
+        <div class="header-inner">
+          <a class="logo" href="index.html">
+            <img src="../assets/remote-qartia/wp-content/uploads/2022/11/logo-qartia.png" alt="Qartia Smart Technologies">
+          </a>
+
+          <nav class="nav" aria-label="Main navigation">
+  <a href="quienes-somos.html">Who We Are</a>
+  <div class="nav-group">
+    <button class="nav-toggle" type="button" aria-expanded="false">Products</button>
+    <div class="nav-dropdown">
+      <a href="productos.html">Products</a>
+      <a href="vibrasense.html">VibraSense</a>
+      <a href="airsense-pro.html">AIRSENSE PRO</a>
+      <a href="megamia.html">MEGAMIA</a>
+      <a href="dipason-exterior.html">DIPASON</a>
+      <a href="Biosentia.html">Biosentia</a>
+      <a href="noisement.html">NoiseMent</a>
+    </div>
+  </div>
+  <div class="nav-group">
+    <button class="nav-toggle" type="button" aria-expanded="false">Services</button>
+    <div class="nav-dropdown">
+      <a href="agricultura.html">Agriculture</a>
+      <div class="nav-subgroup">
+        <a class="nav-subtoggle" href="industria.html">Industry</a>
+        <div class="nav-submenu">
+          <a href="mantenimiento-predictivo-vibraciones.html">Predictive Maintenance. Vibrations</a>
+          <a href="monitorizacion-activos-criticos.html">Critical Asset Monitoring</a>
+        </div>
+      </div>
+      <a href="medioambiente.html">Environment</a>
+      <a href="civil.html">Civil Infrastructures</a>
+      <a href="sources/serviciosan%CC%83adido.html">Additional Services</a>
+    </div>
+  </div>
+  <div class="nav-group">
+    <button class="nav-toggle" type="button" aria-expanded="false">Private Networks 5G</button>
+    <div class="nav-dropdown">
+      <a href="dect-nr-plus.html">What is DECT NR+</a>
+      <a href="soluciones-5g-privadas.html">5G Private Solutions</a>
+    </div>
+  </div>
+  <a href="noticias.html">News</a>
+  <a href="contacto.html">Contact</a>
+  <a href="https://qartia.com/Flutter/panel_industrias_prueba/">Client Access</a>
+</nav>
+        </div>
+      </header>
+
+      <main>
+        <section class="hero">
+          <div class="hero-inner">
+            <h1>Civil Infrastructures</h1>
+          </div>
+        </section>
+
+        <section class="content-section">
+          <div class="section-inner">
+            <div class="content-grid">
+              <div class="content-copy-card">
+                <span class="eyebrow">Connected infrastructure</span>
+                <h2 class="lead-title">Intelligent monitoring for tunnels, bridges, viaducts, dams and critical infrastructures.</h2>
+                <div class="copy">
+                  <p>Qartia designs, develops and integrates IoT systems, wireless communications, advanced analytics and Artificial Intelligence models to know the status of critical civil infrastructures in real time.</p>
+                  <p>The solution allows you to capture structural, environmental and operational variables, send them safely to the platform and convert them into dashboards, risk thresholds and actionable alerts for operators and technical managers.</p>
+                  <p>This line is especially relevant for tunnels, bridges, viaducts, roads, dams, hospitals, unique buildings and hydraulic infrastructures where service continuity and safety depend on continuous supervision.</p>
+                  <p>With Qartia, the infrastructure stops being managed only by specific inspection and begins to function as a monitored, traceable asset prepared for predictive maintenance.</p>
+                </div>
+              </div>
+
+              <aside class="visual-card">
+                <img src="../assets/images/mic.jpg" alt="Structural monitoring of the MIC project in civil infrastructure">
+                <p>MIC project aimed at seismic surveillance, structural sensorization and continuous monitoring of road infrastructure.</p>
+              </aside>
+            </div>
+          </div>
+        </section>
+
+        <section class="brochure-section">
+          <div class="section-inner">
+            <span class="eyebrow">Real use case</span>
+            <h2 class="lead-title">Field deployment on critical road infrastructure.</h2>
+            <div class="brochure-split">
+              <div class="civil-stack offset-down">
+                <div class="brochure-card">
+                  <h3>What Qartia does in this type of deployments</h3>
+                  <p>Qartia integrates sensors, data acquisition, communications, power, visualization and intelligence to turn the physical asset into a monitored operating system.</p>
+                  <ul class="feature-list">
+                    <li>Tailored technical design according to the asset, criticality and needs of the operator.</li>
+                    <li>Digitization of physical and environmental signals with its own acquisition and transmission electronics.</li>
+                    <li>Wireless network integration, backhaul, Cloud server Qartia and centralized web visualization.</li>
+                    <li>Scalable architecture for tunnels, bridges, viaducts, dams and hydraulic infrastructures.</li>
+                  </ul>
+                </div>
+                <div class="brochure-card">
+                  <h3>Operating result</h3>
+                  <p>The client obtains a continuously monitored infrastructure, with the ability to contextualize events and scale the deployment without redoing the architecture.</p>
+                  <ul class="feature-list">
+                    <li>Visibility of the asset status in real time.</li>
+                    <li>Traceability of incidents and field events.</li>
+                    <li>Technical basis for predictive maintenance and future expansion.</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="photo-stack compact">
+                <figure class="photo-card">
+                  <img src="../assets/images/tunel.png" alt="Tunnel entrance with Qartia monitoring cabinet installed">
+                  <figcaption>Monitored tunnel entrance.</figcaption>
+                </figure>
+                <figure class="photo-card">
+                  <img src="../assets/images/tunnel-field-team.jpg" alt="Qartia technical team working on civil monitoring deployment">
+                  <figcaption>Installation and validation in the field.</figcaption>
+                </figure>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="brochure-section alt">
+          <div class="section-inner">
+            <span class="eyebrow">Solution architecture</span>
+            <h2 class="lead-title">From the physical sensor to the actionable warning.</h2>
+            <div class="architecture-flow-panel" aria-label="Solution architecture flow">
+              <div class="architecture-flow-header">
+                <div>
+                  <span class="architecture-flow-kicker">Modular architecture Qartia</span>
+                  <h3>From signal to action plan, with complete traceability.</h3>
+                  <p>An end-to-end flow to convert field measurements into rapid operation, maintenance and safety decisions.</p>
+                </div>
+                <span class="architecture-value-badge">Reliable data → quick decision</span>
+              </div>
+              <ol class="architecture-flow">
+                <li>
+                  <span class="architecture-step-number">01</span>
+                  <strong>Sensors</strong>
+                  <small>Reliable capture of the asset</small>
+                </li>
+                <li>
+                  <span class="architecture-step-number">02</span>
+                  <strong>Acquisition Team</strong>
+                  <small>Clean and prepared data</small>
+                </li>
+                <li>
+                  <span class="architecture-step-number">03</span>
+                  <strong>LoRa</strong>
+                  <small>Efficient IoT coverage</small>
+                </li>
+                <li>
+                  <span class="architecture-step-number">04</span>
+                  <strong>Router LoRa/5G</strong>
+                  <small>Safe exit to platform</small>
+                </li>
+                <li>
+                  <span class="architecture-step-number">05</span>
+                  <strong>Cloud Qartia</strong>
+                  <small>History, rules and government</small>
+                </li>
+                <li>
+                  <span class="architecture-step-number">06</span>
+                  <strong>Dashboard / Digital Twin / AI</strong>
+                  <small>Operational vision and intelligence</small>
+                </li>
+                <li>
+                  <span class="architecture-step-number">07</span>
+                  <strong>Alerts</strong>
+                  <small>Early response</small>
+                </li>
+              </ol>
+            </div>
+            <div class="brochure-split">
+              <div class="civil-stack">
+                <div class="brochure-card">
+                  <h3>Connected data from field to operation.</h3>
+                  <p>The platform is supported by field acquisition, IoT network, secure backhaul, Qartia cloud and intelligent models to transform technical measurement into preventive operation.</p>
+                  <ul class="feature-list">
+                    <li>Conversion of analog and digital signals from structural and environmental sensors.</li>
+                    <li>LoRa, 5G, MQTT and secure VPN according to coverage and criticality scenario.</li>
+                    <li>Web visualization, digital twin, risk thresholds and business rules.</li>
+                    <li>Alerts and notifications for operation, maintenance and emergency services.</li>
+                  </ul>
+                </div>
+                <div class="brochure-card">
+                  <h3>Operational layers that integrate</h3>
+                  <p>The architecture is scalable: It is designed to integrate with existing infrastructure and grow by modules according to coverage, criticality and client objectives.</p>
+                  <ul class="feature-list">
+                    <li>Data acquisition and transmission from the field.</li>
+                    <li>Secure backhaul to platform and control panels.</li>
+                    <li>AI, digital twin and alerts as a decision layer.</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="photo-stack compact">
+                <figure class="photo-card">
+                  <img src="../assets/images/qartia-cabinet-open.jpg" alt="Qartia communications and acquisition cabinet">
+                  <figcaption>Communications and acquisition node.</figcaption>
+                </figure>
+                <figure class="photo-card">
+                  <img src="../assets/images/qartia-power-cabinet.jpg" alt="Electrical panel and protections of the civil monitoring system">
+                  <figcaption>Power and field electronics.</figcaption>
+                </figure>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="brochure-section">
+          <div class="section-inner">
+            <span class="eyebrow">Technical capabilities</span>
+            <h2 class="lead-title">Complete engineering to monitor, interpret and act.</h2>
+            <div class="brochure-grid">
+              <article class="brochure-card">
+                <h3>Structural and environmental sensing</h3>
+                <p>Captures vibration, displacement, inclination, temperature, humidity, gases, particles, pressure and any critical variable of the asset.</p>
+              </article>
+              <article class="brochure-card">
+                <h3>Communications IoT LoRa/5G</h3>
+                <p>Hybrid architectures with LoRa, 5G, MQTT and secure VPN to deploy in tunnels, remote environments and complex networks.</p>
+              </article>
+              <article class="brochure-card">
+                <h3>Real-time web dashboards</h3>
+                <p>Dashboards for operators and clients with operational vision, alarms, history and event traceability.</p>
+              </article>
+              <article class="brochure-card">
+                <h3>2D/3D digital twin</h3>
+                <p>Visual representation of the asset to contextualize sensors, critical areas, states and maintenance.</p>
+              </article>
+              <article class="brochure-card">
+                <h3>Predictive artificial intelligence</h3>
+                <p>Models to detect anomalies, anticipate degradation and estimate wear before failure appears.</p>
+              </article>
+              <article class="brochure-card">
+                <h3>Alerts and notifications</h3>
+                <p>Generation of automatic warnings for operators, operators, clients and emergency services.</p>
+              </article>
+              <article class="brochure-card">
+                <h3>Integration with client platforms</h3>
+                <p>Open ability to connect with existing SCADA, BMS, GIS, corporate systems or control centers.</p>
+              </article>
+              <article class="brochure-card">
+                <h3>Predictive maintenance of sensors and equipment</h3>
+                <p>Field electronics status monitoring and maintenance planning based on real condition.</p>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="brochure-section alt" id="beneficios">
+          <div class="section-inner">
+            <span class="eyebrow">Benefits</span>
+            <h2 class="lead-title">Less uncertainty, more security and better maintenance.</h2>
+            <div class="civil-benefits-visual-grid">
+              <article class="civil-benefit-card">
+                <img src="../assets/images/tunnel-entrance.jpg" alt="Civil infrastructure monitored to detect anomalies">
+                <div class="civil-benefit-copy">
+                  <span class="civil-benefit-tag">Anomalies</span>
+                  <h3>Early detection of anomalies</h3>
+                  <p>Identify deviations before they evolve into security or service incidents.</p>
+                </div>
+              </article>
+              <article class="civil-benefit-card">
+                <img src="../assets/images/qartia-cabinet-open.jpg" alt="Communications and acquisition cabinet to reduce operational risks">
+                <div class="civil-benefit-copy">
+                  <span class="civil-benefit-tag">Risk</span>
+                  <h3>Reduction of operational risks</h3>
+                  <p>It allows you to act with data and prioritize inspections or closures in a better-founded way.</p>
+                </div>
+              </article>
+              <article class="civil-benefit-card">
+                <img src="../assets/images/infraestructura-iot-torre.jpg" alt="Infrastructure IoT to reinforce resilience in critical assets">
+                <div class="civil-benefit-copy">
+                  <span class="civil-benefit-tag">Resilience</span>
+                  <h3>Greater resilience to disasters</h3>
+                  <p>Provides additional visibility in the event of climatic, seismic or accelerated degradation episodes.</p>
+                </div>
+              </article>
+              <article class="civil-benefit-card">
+                <img src="../assets/images/tunnel-field-team.jpg" alt="Technical team in the field for maintenance planning">
+                <div class="civil-benefit-copy">
+                  <span class="civil-benefit-tag">Maintenance</span>
+                  <h3>Better maintenance planning</h3>
+                  <p>Organize interventions by real condition of the asset and not only by fixed calendar.</p>
+                </div>
+              </article>
+              <article class="civil-benefit-card">
+                <img src="../assets/images/ia-aplicada-cta-dashboard.jpeg" alt="Dashboard for visualization and decision in civil infrastructures">
+                <div class="civil-benefit-copy">
+                  <span class="civil-benefit-tag">Decision</span>
+                  <h3>Clear visualization for decision</h3>
+                  <p>Offers a unified view for operators, technical managers and operators.</p>
+                </div>
+              </article>
+              <article class="civil-benefit-card">
+                <img src="../assets/images/qartia-power-cabinet.jpg" alt="Integrated field table with emergency protocols">
+                <div class="civil-benefit-copy">
+                  <span class="civil-benefit-tag">Emergencies</span>
+                  <h3>Integration with emergencies</h3>
+                  <p>Makes it easy to trigger protocols and share relevant information quickly.</p>
+                </div>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="brochure-section">
+          <div class="section-inner">
+            <span class="eyebrow">Applications</span>
+            <h2 class="lead-title">The same technological base for multiple critical assets.</h2>
+            <div class="civil-applications-visual-grid">
+              <article class="civil-benefit-card">
+                <img src="../assets/images/civil-app-tuneles.jpg" alt="Road tunnel as a connected civil monitoring application">
+                <div class="civil-benefit-copy">
+                  <span class="civil-benefit-tag">Tunnels</span>
+                  <h3>Tunnels</h3>
+                  <p>Configurable monitoring to capture critical variables, send data in real time and generate actionable alerts.</p>
+                </div>
+              </article>
+              <article class="civil-benefit-card">
+                <img src="../assets/images/civil-app-puentes-lusitania.jpg" alt="Lusitania Bridge prepared for continuous structural supervision">
+                <div class="civil-benefit-copy">
+                  <span class="civil-benefit-tag">Bridges</span>
+                  <h3>Bridges</h3>
+                  <p>Continuous monitoring of the structural behavior and evolution of the asset in service.</p>
+                </div>
+              </article>
+              <article class="civil-benefit-card">
+                <img src="../assets/images/civil-app-viaductos.jpg" alt="Highway viaduct as critical monitorable infrastructure">
+                <div class="civil-benefit-copy">
+                  <span class="civil-benefit-tag">Viaducts</span>
+                  <h3>Viaducts</h3>
+                  <p>Control of critical areas with open architecture and centralized operational visualization.</p>
+                </div>
+              </article>
+              <article class="civil-benefit-card">
+                <img src="../assets/images/civil-app-presas.jpg" alt="Dam and hydraulic infrastructure for continuous supervision">
+                <div class="civil-benefit-copy">
+                  <span class="civil-benefit-tag">Dams</span>
+                  <h3>Dams</h3>
+                  <p>Supervision of structural, environmental and exploitation variables with continuous traceability.</p>
+                </div>
+              </article>
+              <article class="civil-benefit-card">
+                <img src="../assets/images/civil-app-carreteras.jpg" alt="Monitorable road network and road links">
+                <div class="civil-benefit-copy">
+                  <span class="civil-benefit-tag">Roads</span>
+                  <h3>Roads</h3>
+                  <p>Monitoring of sensitive points, road nodes and environments where security requires early response.</p>
+                </div>
+              </article>
+              <article class="civil-benefit-card">
+                <img src="../assets/images/civil-app-edificios.jpg" alt="Singular building as a critical asset for monitoring">
+                <div class="civil-benefit-copy">
+                  <span class="civil-benefit-tag">Buildings</span>
+                  <h3>Unique buildings</h3>
+                  <p>Monitoring adapted to infrastructures with high criticality, occupation or heritage value.</p>
+                </div>
+              </article>
+              <article class="civil-benefit-card">
+                <img src="../assets/images/civil-app-hospitales.jpg" alt="Health center where continuity of service is critical">
+                <div class="civil-benefit-copy">
+                  <span class="civil-benefit-tag">Hospitals</span>
+                  <h3>Hospitals</h3>
+                  <p>Control of assets and infrastructure where service continuity is critical.</p>
+                </div>
+              </article>
+              <article class="civil-benefit-card">
+                <img src="../assets/images/civil-app-hidraulica.jpg" alt="Hydraulic infrastructure and monitorable water treatment">
+                <div class="civil-benefit-copy">
+                  <span class="civil-benefit-tag">Hydraulics</span>
+                  <h3>Hydraulic infrastructures</h3>
+                  <p>Configurable deployments for pipes, drains and civil elements linked to water.</p>
+                </div>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="brochure-section alt">
+          <div class="section-inner">
+            <span class="eyebrow">Executive pilot</span>
+            <h2 class="lead-title">From technical study to continuous operation in 4 phases.</h2>
+            <div class="phase-grid">
+              <article class="phase-card">
+                <strong>01</strong>
+                <h3>Initial diagnosis</h3>
+                <p>Asset selection, criticality, variables to measure, coverage needs and operational KPIs.</p>
+              </article>
+              <article class="phase-card">
+                <strong>02</strong>
+                <h3>Field deployment</h3>
+                <p>Installation of sensors, electronics, power and communications on the real infrastructure.</p>
+              </article>
+              <article class="phase-card">
+                <strong>03</strong>
+                <h3>Platform and alerts</h3>
+                <p>Display settings, events, thresholds, analytics and notification protocols.</p>
+              </article>
+              <article class="phase-card">
+                <strong>04</strong>
+                <h3>Scaling and maintenance</h3>
+                <p>Impact report, system expansion and operation based on the real condition of the asset.</p>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="cta-section">
+          <div class="section-inner">
+            <div class="cta-grid">
+              <div class="cta-copy">
+                <h2>Turn your infrastructure into a monitored, intelligent and secure asset.</h2>
+                <p>Qartia can prepare technical studies, pilots and field deployments to validate sensorization, connectivity, analytics and alerts on critical civil infrastructure.</p>
+              </div>
+              <div class="cta-image" aria-hidden="true"></div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <div class="footer-inner">
+          <div class="footer-logo">
+            <img src="../assets/remote-qartia/wp-content/uploads/2022/11/logo-qartia.png" alt="Qartia">
+          </div>
+          <div>
+            <h4>CONTACT</h4>
+            <p><a href="tel:+34686918522">(+34) 686918522</a></p>
+            <p><a href="mailto:info@qartia.com">info@qartia.com</a></p>
+            <p>Calle Tolosa Latour, 4, 7ºA,</p>
+            <p>30201, Cartagena, Spain</p>
+            <p>CIF: B67916676</p>
+          </div>
+                <div class="footer-eibt-badge" style="display:flex;align-items:center;justify-content:flex-end;min-width:360px;margin-top:8px;">
+          <img src="../assets/images/eibt-logo.png" alt="EIBT Seal" style="width:min(430px,100%);height:auto;display:block;">
+        </div>
+</div>
+      </footer>
+
+      <div class="subfooter">
+        <div class="subfooter-inner">
+          <a href="aviso-legal.html">Legal notice</a>
+          <a href="politica-cookies.html">Cookies policy</a>
+          <a href="politica-privacidad.html">Privacy Policy</a>
+        </div>
+      </div>
+      <script>
+        document.addEventListener("DOMContentLoaded", function () {
+          const groups = document.querySelectorAll(".nav-group");
+
+          groups.forEach((group) => {
+            const toggle = group.querySelector(".nav-toggle");
+            if (!toggle) return;
+
+            toggle.addEventListener("click", function (event) {
+              event.preventDefault();
+              const willOpen = !group.classList.contains("open");
+
+              groups.forEach((otherGroup) => {
+                otherGroup.classList.remove("open");
+                const otherToggle = otherGroup.querySelector(".nav-toggle");
+                if (otherToggle) {
+                  otherToggle.setAttribute("aria-expanded", "false");
+                }
+              });
+
+              group.classList.toggle("open", willOpen);
+              toggle.setAttribute("aria-expanded", willOpen ? "true" : "false");
+            });
+          });
+
+          document.addEventListener("click", function (event) {
+            groups.forEach((group) => {
+              if (group.contains(event.target)) return;
+              group.classList.remove("open");
+              const toggle = group.querySelector(".nav-toggle");
+              if (toggle) {
+                toggle.setAttribute("aria-expanded", "false");
+              }
+            });
+          });
+        });
+      </script>
+    </div>
+      <script src="../assets/js/qartia-mobile-nav.js?v=20260601" defer></script>
+      <script src="../assets/js/cookie-consent.js?v=mobile-20260601" defer></script>
+<script src="../assets/js/qartia-language-switcher.js"></script>
+</body>
+</html>

@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <title>Applied AI - Qartia Smart Technologies</title>
+    <link rel="icon" href="../../assets/remote-qartia/wp-content/uploads/2022/10/favicon-150x150.png" sizes="32x32">
+    <link rel="icon" href="../../assets/remote-qartia/wp-content/uploads/2022/10/favicon.png" sizes="192x192">
+    <link rel="apple-touch-icon" href="../../assets/remote-qartia/wp-content/uploads/2022/10/favicon.png">
+    <meta name="msapplication-TileImage" content="../assets/remote-qartia/wp-content/uploads/2022/10/favicon.png">
+    
+<link rel="stylesheet" id="qartia-local-fonts" href="../../assets/css/local-fonts.css"><meta name="description" content="Applied AI, RAG assistants, digital twins, alerts and operational analytics on sensorization networks, predictive maintenance and connected platforms.">
+<link rel="stylesheet" href="../../assets/css/qartia-service.css">
+<link rel="stylesheet" href="../../assets/css/quick-access-index.css">
+<link rel="stylesheet" href="../../assets/css/qartia-topbar.css">
+<link rel="stylesheet" href="../../assets/css/qartia-responsive.css?v=20260601">
+    <style id="eibt-footer-layout-fix">
+    .footer .footer-inner {
+      display: grid !important;
+      grid-template-columns: minmax(180px, 0.75fr) minmax(260px, 1fr) minmax(360px, 1.15fr) !important;
+      align-items: start !important;
+      gap: 28px !important;
+    }
+
+    .footer .footer-eibt-badge,
+    .l-footer .footer-eibt-badge {
+      display: flex !important;
+      justify-content: flex-end !important;
+      align-items: flex-start !important;
+      margin-top: 0 !important;
+      width: 100% !important;
+      min-width: 360px;
+    }
+
+    .footer .footer-eibt-badge img,
+    .l-footer .footer-eibt-badge img {
+      width: min(430px, 100%) !important;
+      height: auto !important;
+      display: block !important;
+      margin-left: auto !important;
+      margin-right: 0 !important;
+    }
+
+    .l-footer .footer-eibt-badge .w-image-h {
+      width: 100% !important;
+    }
+
+    @media (max-width: 900px) {
+      .footer .footer-inner {
+        grid-template-columns: 1fr !important;
+      }
+
+      .footer .footer-eibt-badge,
+      .l-footer .footer-eibt-badge {
+        justify-content: flex-start !important;
+        min-width: 0 !important;
+      }
+
+      .footer .footer-eibt-badge img,
+      .l-footer .footer-eibt-badge img {
+        margin-left: 0 !important;
+        margin-right: auto !important;
+      }
+    }
+  </style>
+    <style id="ia-terreno-align">
+      .ia-terreno-section .stack-split {
+        align-items: stretch;
+      }
+
+      .ia-terreno-section .stack-grid,
+      .ia-terreno-section .photo-stack {
+        display: grid;
+        height: 85%;
+      }
+
+      .ia-terreno-section .stack-grid {
+        grid-template-rows: repeat(2, minmax(0, 1fr));
+      }
+
+      .ia-terreno-section .photo-stack {
+        grid-template-rows: repeat(3, minmax(1, 1fr));
+      }
+
+      .ia-terreno-section .info-card,
+      .ia-terreno-section .photo-card {
+        height: 100%;
+      }
+
+      .ia-terreno-section .photo-card {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .ia-terreno-section .photo-card img {
+        flex: 1 1 auto;
+        min-height: 0;
+        object-fit: cover;
+      }
+
+      .ia-terreno-section .photo-card figcaption {
+        flex: 0 0 auto;
+      }
+
+      @media (max-width: 1024px) {
+        .ia-terreno-section .stack-grid,
+        .ia-terreno-section .photo-stack {
+          grid-template-rows: none;
+          height: auto;
+        }
+      }
+    </style>
+    <link rel="stylesheet" href="../../assets/css/cookie-consent.css?v=mobile-20260601">
+</head>
+  <body>
+    <div class="page">
+      <div class="topbar">
+        <div class="topbar-inner">
+          <a href="tel:+34686918522">+34 686 91 85 22</a>
+          <a href="mailto:info@qartia.com">info@qartia.com</a>
+          <a class="qartia-linkedin-icon" href="https://www.linkedin.com/company/qartia-smart-technologies/" target="_blank" rel="noopener" aria-label="LinkedIn Qartia"></a>
+        </div>
+      </div>
+
+      <header class="header">
+        <div class="header-inner">
+          <a class="logo" href="../index.html">
+            <img src="../../assets/remote-qartia/wp-content/uploads/2022/11/logo-qartia.png" alt="Qartia Smart Technologies">
+          </a>
+
+          <nav class="nav" aria-label="Main navigation">
+            <a href="../quienes-somos.html">Who We Are</a>
+            <div class="nav-group">
+              <button class="nav-toggle" type="button" aria-expanded="false">Products</button>
+              <div class="nav-dropdown">
+                <a href="../productos.html">Products</a>
+                <a href="../vibrasense.html">VibraSense</a>
+                <a href="../airsense-pro.html">AIRSENSE PRO</a>
+                <a href="../megamia.html">MEGAMIA</a>
+                <a href="../dipason-exterior.html">DIPASON</a>
+                <a href="../Biosentia.html">Biosentia</a>
+                <a href="../noisement.html">NoiseMent</a>
+              </div>
+            </div>
+            <div class="nav-group">
+              <button class="nav-toggle" type="button" aria-expanded="false">Services</button>
+              <div class="nav-dropdown">
+                <a href="../agricultura.html">Agriculture</a>
+                <div class="nav-subgroup">
+                  <a class="nav-subtoggle" href="../industria.html">Industry</a>
+                  <div class="nav-submenu">
+                    <a href="../mantenimiento-predictivo-vibraciones.html">Predictive Maintenance. Vibrations</a>
+                    <a href="../monitorizacion-activos-criticos.html">Critical Asset Monitoring</a>
+                  </div>
+                </div>
+                <a href="../medioambiente.html">Environment</a>
+                <a href="../civil.html">Civil Infrastructures</a>
+                <a href="serviciosan%CC%83adido.html">Additional Services</a>
+              </div>
+            </div>
+            <div class="nav-group">
+              <button class="nav-toggle" type="button" aria-expanded="false">Private Networks 5G</button>
+              <div class="nav-dropdown">
+                <a href="../dect-nr-plus.html">What is DECT NR+</a>
+                <a href="../soluciones-5g-privadas.html">5G Private Solutions</a>
+              </div>
+            </div>
+            <a href="../noticias.html">News</a>
+            <a href="../contacto.html">Contact</a>
+            <a href="https://qartia.com/Flutter/panel_industrias_prueba/">Client Access</a>
+          </nav>
+        </div>
+      </header>
+
+      <main>
+        <section class="hero" style="background-image: linear-gradient(rgba(0, 0, 0, 0.50), rgba(0, 0, 0, 0.18)), url('../../assets/images/ia-header-crowdpeople.jpeg');">
+          <div class="hero-inner">
+            <h1>Applied AI</h1>
+          </div>
+        </section>
+
+        <section class="section surface">
+          <div class="section-inner">
+            <div class="split-layout">
+              <div class="copy-card">
+                <span class="eyebrow">Data, context and decision</span>
+                <h2 class="lead-title">Qartia's AI is integrated with the operation, it does not live separately from the system.</h2>
+                <div class="copy">
+                  <p>Qartia applies artificial intelligence on data captured in the field to detect patterns, anticipate events, launch alerts and facilitate decisions in industrial, environmental, urban or agricultural environments.</p>
+                  <p>Our approach combines data platforms, sensors, connectivity, edge, dashboards and advanced services such as predictive maintenance, RAG assistants, digital twins and operational visualization.</p>
+                  <p>The result is an AI useful for real operation: connected to the devices, aligned with the project logic and prepared to integrate with the client's existing infrastructure.</p>
+                </div>
+              </div>
+
+              <aside class="visual-card landscape">
+                <img src="../../assets/images/ia-heatmap-rag.png" alt="Predictive heat map with AI assistant applied to urban prediction of PM2.5 in Bogotá">
+                <p>Predictive models and conversational assistants on real data to translate maps, series and operational context into actionable decisions.</p>
+              </aside>
+            </div>
+          </div>
+        </section>
+
+        <section class="section">
+          <div class="section-inner">
+            <span class="eyebrow">Where you add value</span>
+            <h2 class="lead-title">AI deployed on assets, networks and platforms that are already working.</h2>
+            <div class="feature-grid cols-4">
+              <article class="info-card"><h3>Predictive maintenance</h3><p>Telemetry and sensor analysis to identify failures, degradation or anomalies before shutdown.</p></article>
+              <article class="info-card"><h3>Smart alerts</h3><p>Detection of anomalous behavior and generation of contextualized warnings.</p></article>
+              <article class="info-card"><h3>Digital twins</h3><p>Operational representation of systems, assets or spaces to visualize and test scenarios.</p></article>
+              <article class="info-card"><h3>Attendees RAG</h3><p>Natural consultation on data, documents, events and system operation.</p></article>
+            </div>
+          </div>
+        </section>
+
+        <section class="section alt ia-terreno-section">
+          <div class="section-inner">
+            <span class="eyebrow">AI connected to the use case in order to predict</span>
+            <h2 class="lead-title">Our AI is based on quality data, that is, well captured, well transmitted and well structured.</h2>
+            <div class="stack-split">
+              <div class="stack-grid">
+                <article class="info-card">
+                  <strong>Models and operation</strong>
+                  <h3>Prediction, classification and contextual reading about the deployed system.</h3>
+                  <p>AI is integrated with the visualization, alarms and data exploitation layer so that the model has an impact on maintenance, environment, technical assistance or service control.</p>
+                  <ul class="feature-list">
+                    <li>Predictive models and business rules.</li>
+                    <li>State classification and event detection.</li>
+                    <li>Deployment on edge, cloud or hybrid architecture.</li>
+                  </ul>
+                </article>
+                <article class="info-card">
+                  <strong>RAG and operational knowledge</strong>
+                  <h3>Ask the system with natural language to extract value quickly.</h3>
+                  <p>The RAG wizards allow you to consult readings, history, technical documentation, patterns and system behavior without manually browsing tables or graphs.</p>
+                  <ul class="feature-list">
+                    <li>Summary of series, incidents or trends.</li>
+                    <li>Consultation on sensors, thresholds or asset behavior.</li>
+                    <li>Support for technicians, operation and remote supervision.</li>
+                  </ul>
+                </article>
+              </div>
+
+              <div class="photo-stack">
+                <figure class="photo-card">
+                  <img src="../../assets/images/ia-motor-predictions.png" alt="Prediction of vibrations, speed and probability of failure on a motor within a predictive maintenance module">
+                  <figcaption>Prediction of asset behavior and probabilistic failure reading on motors and rotating machines.</figcaption>
+                </figure>
+                <figure class="photo-card">
+                  <img src="../../assets/medioambiente/prediccion-cartagena-ia.png" alt="Environmental prediction through artificial intelligence in Cartagena">
+                  <figcaption>Pollutant prediction and decision support on environmental quality and territorial operation.</figcaption>
+                </figure>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="section">
+          <div class="section-inner">
+            <span class="eyebrow">Services we deploy</span>
+            <h2 class="lead-title">AI and advanced services connected to the reality of the project.</h2>
+            <div class="feature-grid cols-4">
+              <article class="info-card"><h3>Smart maintenance</h3><p>Predictive and monitoring services on telemetry from the devices themselves.</p></article>
+              <article class="info-card"><h3>Alerts and events</h3><p>Email or messaging notifications for values out of range or anomalous patterns.</p></article>
+              <article class="info-card"><h3>Digital twins</h3><p>Applicable to operation, training, architectural heritage and civil infrastructure.</p></article>
+              <article class="info-card"><h3>RAG and chat bot</h3><p>Natural query on captured data, documents and operating context of the system.</p></article>
+              <article class="info-card"><h3>Smart Cities</h3><p>AIoT platforms for sustainability, quality of life and operational reading of the urban environment.</p></article>
+              <article class="info-card"><h3>Security and cloud</h3><p>VPN, secure cloud, traceability and remote services for connected deployments.</p></article>
+              <article class="info-card"><h3>Autonomy and resilience</h3><p>Services compatible with solarized solutions, anti-vandalism and complex deployments.</p></article>
+              <article class="info-card"><h3>Phased scaling</h3><p>Ability to start as a pilot and evolve to a stable service within the same architecture.</p></article>
+            </div>
+          </div>
+        </section>
+
+        <section class="section alt">
+          <div class="section-inner">
+            <span class="eyebrow">How we incorporate AI</span>
+            <h2 class="lead-title">From raw data to really useful operational help.</h2>
+            <div class="phase-grid">
+              <article class="phase-card">
+                <strong>01</strong>
+                <h3>Prepare the data</h3>
+                <p>Stable capture, structure, labeling and context of use of the system.</p>
+              </article>
+              <article class="phase-card">
+                <strong>02</strong>
+                <h3>Model the service</h3>
+                <p>Definition of rules, prediction, RAG query or advanced visualization as needed.</p>
+              </article>
+              <article class="phase-card">
+                <strong>03</strong>
+                <h3>Integrate into operation</h3>
+                <p>Dashboards, alerts, APIs, workflows and real users within the day-to-day life of the project.</p>
+              </article>
+              <article class="phase-card">
+                <strong>04</strong>
+                <h3>Measure and improve</h3>
+                <p>Service adjustment, impact evaluation and progressive evolution of the model or assistant.</p>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="l-section wpb_row servicios-home height_auto width_full"><div class="l-section-h i-cf"><div class="g-cols vc_row via_flex valign_middle type_default stacking_default">
+          <div class="vc_col-sm-4 wpb_column vc_column_container has_bg_color has-link">
+            <div class="vc_column-inner us_custom_7ca10f15 us_animate_this"><div class="wpb_wrapper"><div class="w-hwrapper align_center valign_middle wrap" style="--hwrapper-gap:1.20rem"><div class="wpb_text_column us_custom_8b3d6790 has_text_color"><div class="wpb_wrapper">
+              <h3 style="text-align: center;">Sensorization<br>industrial, environmental<br>and agriculture</h3>
+            </div></div></div></div></div>
+            <a title="Industrial, environmental and agricultural sensorization" href="sensorizacion.html" class="vc_column-link smooth-scroll"></a>
+          </div>
+          <div class="vc_col-sm-4 wpb_column vc_column_container has_text_color has_bg_color has-link">
+            <div class="vc_column-inner us_custom_8c4c7f6b us_animate_this"><div class="wpb_wrapper"><div class="w-hwrapper align_center valign_middle wrap" style="--hwrapper-gap:1.20rem"><div class="wpb_text_column"><div class="wpb_wrapper">
+              <h3 style="text-align: center;">IoT advanced</h3>
+            </div></div></div></div></div>
+            <a title="IOT" href="iot.html" class="vc_column-link smooth-scroll"></a>
+          </div>
+          <div class="vc_col-sm-4 wpb_column vc_column_container has_text_color has_bg_color has-link">
+            <div class="vc_column-inner us_custom_824f00fd us_animate_this"><div class="wpb_wrapper"><div class="w-hwrapper align_center valign_middle wrap" style="--hwrapper-gap:1.20rem"><div class="wpb_text_column"><div class="wpb_wrapper">
+              <h3 style="text-align: center;">From Consulting to Turnkey Project</h3>
+            </div></div></div></div></div>
+            <a title="From Consulting to Turnkey Project" href="consultoria.html" class="vc_column-link smooth-scroll"></a>
+          </div>
+        </div></div></section>
+        <section class="l-section wpb_row servicios-home height_auto width_full"><div class="l-section-h i-cf"><div class="g-cols vc_row via_flex valign_middle type_default stacking_default">
+          <div class="vc_col-sm-4 wpb_column vc_column_container has_bg_color has-link">
+            <div class="vc_column-inner us_custom_dea79c57 us_animate_this"><div class="wpb_wrapper"><div class="w-hwrapper align_center valign_middle wrap" style="--hwrapper-gap:1.20rem"><div class="wpb_text_column us_custom_8b3d6790 has_text_color"><div class="wpb_wrapper">
+              <h3 style="text-align: center;">ENGINEERING</h3>
+            </div></div></div></div></div>
+            <a title="Engineering" href="../Ingenieria.html" class="vc_column-link smooth-scroll"></a>
+          </div>
+          <div class="vc_col-sm-4 wpb_column vc_column_container has_text_color has_bg_color has-link">
+            <div class="vc_column-inner us_custom_05c78499 us_animate_this"><div class="wpb_wrapper"><div class="w-hwrapper align_center valign_middle wrap" style="--hwrapper-gap:1.20rem"><div class="wpb_text_column"><div class="wpb_wrapper">
+              <h3 style="text-align: center;">AI</h3>
+            </div></div></div></div></div>
+            <a title="Applied AI" href="IA aplicada.html" class="vc_column-link smooth-scroll"></a>
+          </div>
+          <div class="vc_col-sm-4 wpb_column vc_column_container has_text_color has_bg_color has-link">
+            <div class="vc_column-inner us_custom_fcc027ee us_animate_this"><div class="wpb_wrapper"><div class="w-hwrapper align_center valign_middle wrap" style="--hwrapper-gap:1.20rem"><div class="wpb_text_column"><div class="wpb_wrapper">
+              <h3 style="text-align: center;">R&amp;D&amp;i</h3>
+            </div></div></div></div></div>
+            <a title="R&amp;D&amp;I" href="idi.html" class="vc_column-link smooth-scroll"></a>
+          </div>
+        </div></div></section>
+
+        <section class="section">
+          <div class="section-inner">
+            <div class="cta-grid">
+              <div class="cta-copy">
+                <h2>Do you want to apply AI on a real system and not just on an isolated demo?</h2>
+                <p>Qartia can help you connect data, platform and analytics so that artificial intelligence has a clear operational use from the first pilot.</p>
+              </div>
+              <figure class="cta-image contain-image">
+            <img src="../../assets/images/ia-aplicada-cta-bogota.png" alt="Predictive map of air quality in Bogotá applied to operational AI" loading="lazy">
+              </figure>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <div class="footer-inner">
+          <div class="footer-logo">
+            <img src="../../assets/remote-qartia/wp-content/uploads/2022/11/logo-qartia.png" alt="Qartia">
+          </div>
+          <div>
+            <h4>CONTACT</h4>
+            <p><a href="tel:+34686918522">(+34) 686918522</a></p>
+            <p><a href="mailto:info@qartia.com">info@qartia.com</a></p>
+            <p>Calle Tolosa Latour, 4, 7ºA,</p>
+            <p>30201, Cartagena, Spain</p>
+            <p>CIF: B67916676</p>
+          </div>
+                <div class="footer-eibt-badge" style="display:flex;align-items:center;justify-content:flex-end;min-width:360px;margin-top:8px;">
+          <img src="../../assets/images/eibt-logo.png" alt="EIBT Seal" style="width:min(430px,100%);height:auto;display:block;">
+        </div>
+</div>
+      </footer>
+
+      <div class="subfooter">
+        <div class="subfooter-inner">
+          <a href="../aviso-legal.html">Legal notice</a>
+          <a href="../politica-cookies.html">Cookies policy</a>
+          <a href="../politica-privacidad.html">Privacy Policy</a>
+        </div>
+      </div>
+    </div>
+    <script src="../../assets/js/qartia-nav.js"></script>
+      <script src="../../assets/js/qartia-mobile-nav.js?v=20260601" defer></script>
+      <script src="../../assets/js/cookie-consent.js?v=mobile-20260601" defer></script>
+<script src="../../assets/js/qartia-language-switcher.js"></script>
+</body>
+</html>

@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <title>IoT advanced - Qartia Smart Technologies</title>
+    <link rel="icon" href="../../assets/remote-qartia/wp-content/uploads/2022/10/favicon-150x150.png" sizes="32x32">
+    <link rel="icon" href="../../assets/remote-qartia/wp-content/uploads/2022/10/favicon.png" sizes="192x192">
+    <link rel="apple-touch-icon" href="../../assets/remote-qartia/wp-content/uploads/2022/10/favicon.png">
+    <meta name="msapplication-TileImage" content="../assets/remote-qartia/wp-content/uploads/2022/10/favicon.png">
+    
+<link rel="stylesheet" id="qartia-local-fonts" href="../../assets/css/local-fonts.css"><meta name="description" content="Advanced IoT architectures to connect device, gateway, private network, edge, cloud, databases, visualization and artificial intelligence within the same operational solution.">
+<link rel="stylesheet" href="../../assets/css/qartia-service.css">
+<link rel="stylesheet" href="../../assets/css/quick-access-index.css">
+<link rel="stylesheet" href="../../assets/css/qartia-topbar.css">
+<link rel="stylesheet" href="../../assets/css/qartia-responsive.css?v=20260601">
+    <style id="eibt-footer-layout-fix">
+    .footer .footer-inner {
+      display: grid !important;
+      grid-template-columns: minmax(180px, 0.75fr) minmax(260px, 1fr) minmax(360px, 1.15fr) !important;
+      align-items: start !important;
+      gap: 28px !important;
+    }
+
+    .footer .footer-eibt-badge,
+    .l-footer .footer-eibt-badge {
+      display: flex !important;
+      justify-content: flex-end !important;
+      align-items: flex-start !important;
+      margin-top: 0 !important;
+      width: 100% !important;
+      min-width: 360px;
+    }
+
+    .footer .footer-eibt-badge img,
+    .l-footer .footer-eibt-badge img {
+      width: min(430px, 100%) !important;
+      height: auto !important;
+      display: block !important;
+      margin-left: auto !important;
+      margin-right: 0 !important;
+    }
+
+    .l-footer .footer-eibt-badge .w-image-h {
+      width: 100% !important;
+    }
+
+    @media (max-width: 900px) {
+      .footer .footer-inner {
+        grid-template-columns: 1fr !important;
+      }
+
+      .footer .footer-eibt-badge,
+      .l-footer .footer-eibt-badge {
+        justify-content: flex-start !important;
+        min-width: 0 !important;
+      }
+
+      .footer .footer-eibt-badge img,
+      .l-footer .footer-eibt-badge img {
+        margin-left: 0 !important;
+        margin-right: auto !important;
+      }
+    }
+    .iot-field-section .phase-card {
+      background: #144e9c;
+      color: #fff;
+    }
+
+    .iot-field-section .phase-card h3 {
+      color: #fff;
+    }
+
+    .iot-field-section .phase-card strong {
+      color: #72d8c8;
+    }
+  </style>
+    <link rel="stylesheet" href="../../assets/css/cookie-consent.css?v=mobile-20260601">
+</head>
+  <body>
+    <div class="page">
+      <div class="topbar">
+        <div class="topbar-inner">
+          <a href="tel:+34686918522">+34 686 91 85 22</a>
+          <a href="mailto:info@qartia.com">info@qartia.com</a>
+          <a class="qartia-linkedin-icon" href="https://www.linkedin.com/company/qartia-smart-technologies/" target="_blank" rel="noopener" aria-label="LinkedIn Qartia"></a>
+        </div>
+      </div>
+
+      <header class="header">
+        <div class="header-inner">
+          <a class="logo" href="../index.html">
+            <img src="../../assets/remote-qartia/wp-content/uploads/2022/11/logo-qartia.png" alt="Qartia Smart Technologies">
+          </a>
+
+          <nav class="nav" aria-label="Main navigation">
+            <a href="../quienes-somos.html">Who We Are</a>
+            <div class="nav-group">
+              <button class="nav-toggle" type="button" aria-expanded="false">Products</button>
+              <div class="nav-dropdown">
+                <a href="../productos.html">Products</a>
+                <a href="../vibrasense.html">VibraSense</a>
+                <a href="../airsense-pro.html">AIRSENSE PRO</a>
+                <a href="../megamia.html">MEGAMIA</a>
+                <a href="../dipason-exterior.html">DIPASON</a>
+                <a href="../Biosentia.html">Biosentia</a>
+                <a href="../noisement.html">NoiseMent</a>
+              </div>
+            </div>
+            <div class="nav-group">
+              <button class="nav-toggle" type="button" aria-expanded="false">Services</button>
+              <div class="nav-dropdown">
+                <a href="../agricultura.html">Agriculture</a>
+                <div class="nav-subgroup">
+                  <a class="nav-subtoggle" href="../industria.html">Industry</a>
+                  <div class="nav-submenu">
+                    <a href="../mantenimiento-predictivo-vibraciones.html">Predictive Maintenance. Vibrations</a>
+                    <a href="../monitorizacion-activos-criticos.html">Critical Asset Monitoring</a>
+                  </div>
+                </div>
+                <a href="../medioambiente.html">Environment</a>
+                <a href="../civil.html">Civil Infrastructures</a>
+                <a href="serviciosan%CC%83adido.html">Additional Services</a>
+              </div>
+            </div>
+            <div class="nav-group">
+              <button class="nav-toggle" type="button" aria-expanded="false">Private Networks 5G</button>
+              <div class="nav-dropdown">
+                <a href="../dect-nr-plus.html">What is DECT NR+</a>
+                <a href="../soluciones-5g-privadas.html">5G Private Solutions</a>
+              </div>
+            </div>
+            <a href="../noticias.html">News</a>
+            <a href="../contacto.html">Contact</a>
+            <a href="https://qartia.com/Flutter/panel_industrias_prueba/">Client Access</a>
+          </nav>
+        </div>
+      </header>
+
+      <main>
+        <section class="hero" style="background-image: linear-gradient(rgba(0, 0, 0, 0.50), rgba(0, 0, 0, 0.18)), url('../../assets/images/iot-hero-qartia-aecab.jpeg');">
+          <div class="hero-inner">
+            <h1>IoT advanced</h1>
+          </div>
+        </section>
+
+        <section class="section surface">
+          <div class="section-inner">
+            <div class="split-layout">
+              <div class="copy-card">
+                <span class="eyebrow">Operational architecture</span>
+                <h2 class="lead-title">When connecting a sensor is not enough, we design the entire IoT system.</h2>
+                <div class="copy">
+                  <p>Qartia develops advanced IoT solutions to capture, transmit, process and exploit data in real time, combining electronics, firmware, edge computing, cloud, private communications and exploitation platforms.</p>
+                  <p>The proposal adapts to projects where devices, gateways, industrial protocols, databases, analytics, artificial intelligence and dashboards must be integrated within an operational architecture prepared to grow in phases.</p>
+                  <p>The objective is that connectivity is not an isolated layer, but part of a useful solution to operate, monitor, automate and decide.</p>
+                </div>
+              </div>
+
+              <aside class="visual-card landscape">
+                <img src="../../assets/images/consultoria-rooftop-team.jpeg" alt="Qartia team deploying IoT infrastructure in the field">
+                <p>IoT advanced means solving device, radio, backhaul and platform as a single architecture.</p>
+              </aside>
+            </div>
+          </div>
+        </section>
+
+        <section class="section">
+          <div class="section-inner">
+            <span class="eyebrow">What connects Qartia</span>
+            <h2 class="lead-title">We unite the physical end and the digital platform within the same architecture.</h2>
+            <div class="feature-grid cols-4">
+              <article class="info-card">
+                <h3>Device and firmware</h3>
+                <p>Local capture, edge logic, energy management and data packaging according to the application.</p>
+              </article>
+              <article class="info-card">
+                <h3>Gateway and protocols</h3>
+                <p>MQTT, Modbus, Ethernet, BLE, LoRa, DECT NR+ and other industrial and territorial integration layers.</p>
+              </article>
+              <article class="info-card">
+                <h3>Edge, cloud and database</h3>
+                <p>Near-field processing, storage, synchronization and management of operational history.</p>
+              </article>
+              <article class="info-card">
+                <h3>Visualization and automation</h3>
+                <p>Dashboards, alerts, AI, RAG, business rules and automation on real-time information.</p>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="section alt iot-field-section">
+          <div class="section-inner">
+            <span class="eyebrow">End-to-end architecture</span>
+            <h2 class="lead-title">The IoT solution is designed to coexist with the client's operation, not apart from it.</h2>
+            <div class="stack-split">
+              <div class="stack-grid">
+                <article class="info-card">
+                  <strong>Integration</strong>
+                  <h3>Devices, gateways and backhaul aligned with field reality.</h3>
+                  <p>Qartia combines sensors, acquisition, gateway, private network and Internet access according to coverage, latency, autonomy and criticality of the service.</p>
+                  <ul class="feature-list">
+                    <li>LoRa, DECT NR+, 5G, Ethernet or hybrid architectures.</li>
+                    <li>Interconnection with PLCs, SCADA, existing panels and platforms.</li>
+                    <li>Design oriented towards installation, maintenance and scaling.</li>
+                  </ul>
+                </article>
+                <article class="info-card">
+                  <strong>Data exploitation</strong>
+                  <h3>Data ready to monitor, predict, alert and integrate.</h3>
+                  <p>The architecture does not end at transmitting packets. Qartia also designs the exploitation layer: dashboards, historicization, AI, business rules and services RAG for advanced consultation about the system.</p>
+                  <ul class="feature-list">
+                    <li>Remote viewing and multi-channel alarms.</li>
+                    <li>Persistence, traceability and operational supervision.</li>
+                    <li>Preparation for predictive models and automation.</li>
+                  </ul>
+                </article>
+              </div>
+
+              <div class="photo-stack">
+                <figure class="photo-card">
+                  <img src="../../assets/images/consultoria-city-panorama.jpeg" alt="Territorial vision for planning advanced services IoT">
+                  <figcaption>The advanced IoT starts with a territorial vision: coverage, density, operation and growth.</figcaption>
+                </figure>
+                <figure class="photo-card">
+                  <img src="../../assets/images/consultoria-rooftop-mast.jpeg" alt="Communications mast for private IoT architecture of Qartia">
+                  <figcaption>The network is sized to transport data reliably from the field to the edge or cloud.</figcaption>
+                </figure>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="section">
+          <div class="section-inner">
+            <span class="eyebrow">Key capabilities</span>
+            <h2 class="lead-title">IoT designed to deploy, integrate and grow without redoing the base.</h2>
+            <div class="feature-grid cols-4">
+              <article class="info-card"><h3>Connected devices</h3><p>Design and integration of nodes, hardware and electronics ready for production or pilot.</p></article>
+              <article class="info-card"><h3>Gateways and edge</h3><p>Gateways and edge logic for filtering, aggregation and local control.</p></article>
+              <article class="info-card"><h3>Private network and backhaul</h3><p>Private architectures and Internet access via 5G, WiFi, Ethernet or combinations.</p></article>
+              <article class="info-card"><h3>Protocols and compatibility</h3><p>MQTT, Modbus, BLE, Ethernet and industrial or manufacturer protocols.</p></article>
+              <article class="info-card"><h3>Database and history</h3><p>Data persistence, historical governance and exploitation of events over time.</p></article>
+              <article class="info-card"><h3>Dashboards and alerts</h3><p>Real-time visualization, reporting and warnings for operation and maintenance.</p></article>
+              <article class="info-card"><h3>IA and RAG</h3><p>Prediction, classification, contextual analysis and natural query on captured data.</p></article>
+              <article class="info-card"><h3>Phased scaling</h3><p>Ability to start as a pilot and evolve to corporate architecture without total redesign.</p></article>
+            </div>
+          </div>
+        </section>
+
+        <section class="section alt">
+          <div class="section-inner">
+            <span class="eyebrow">How we take it to the field</span>
+            <h2 class="lead-title">From an operational need to a functioning IoT system.</h2>
+            <div class="phase-grid">
+              <article class="phase-card">
+                <strong>01</strong>
+                <h3>Case definition</h3>
+                <p>Variables, criticality, coverage, latency, integration and data exploitation objectives.</p>
+              </article>
+              <article class="phase-card">
+                <strong>02</strong>
+                <h3>Architecture design</h3>
+                <p>Device, gateway, network, database, visualization and associated services.</p>
+              </article>
+              <article class="phase-card">
+                <strong>03</strong>
+                <h3>Functional pilot</h3>
+                <p>Installation, field validation, stability check and operational adjustment.</p>
+              </article>
+              <article class="phase-card">
+                <strong>04</strong>
+                <h3>Solution scaling</h3>
+                <p>Replication, new locations, new devices and evolution of the system in phases.</p>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="l-section wpb_row servicios-home height_auto width_full"><div class="l-section-h i-cf"><div class="g-cols vc_row via_flex valign_middle type_default stacking_default">
+          <div class="vc_col-sm-4 wpb_column vc_column_container has_bg_color has-link">
+            <div class="vc_column-inner us_custom_7ca10f15 us_animate_this"><div class="wpb_wrapper"><div class="w-hwrapper align_center valign_middle wrap" style="--hwrapper-gap:1.20rem"><div class="wpb_text_column us_custom_8b3d6790 has_text_color"><div class="wpb_wrapper">
+              <h3 style="text-align: center;">Sensorization<br>industrial, environmental<br>and agriculture</h3>
+            </div></div></div></div></div>
+            <a title="Industrial, environmental and agricultural sensorization" href="sensorizacion.html" class="vc_column-link smooth-scroll"></a>
+          </div>
+          <div class="vc_col-sm-4 wpb_column vc_column_container has_text_color has_bg_color has-link">
+            <div class="vc_column-inner us_custom_8c4c7f6b us_animate_this"><div class="wpb_wrapper"><div class="w-hwrapper align_center valign_middle wrap" style="--hwrapper-gap:1.20rem"><div class="wpb_text_column"><div class="wpb_wrapper">
+              <h3 style="text-align: center;">IoT advanced</h3>
+            </div></div></div></div></div>
+            <a title="IOT" href="iot.html" class="vc_column-link smooth-scroll"></a>
+          </div>
+          <div class="vc_col-sm-4 wpb_column vc_column_container has_text_color has_bg_color has-link">
+            <div class="vc_column-inner us_custom_824f00fd us_animate_this"><div class="wpb_wrapper"><div class="w-hwrapper align_center valign_middle wrap" style="--hwrapper-gap:1.20rem"><div class="wpb_text_column"><div class="wpb_wrapper">
+              <h3 style="text-align: center;">From Consulting to Turnkey Project</h3>
+            </div></div></div></div></div>
+            <a title="From Consulting to Turnkey Project" href="consultoria.html" class="vc_column-link smooth-scroll"></a>
+          </div>
+        </div></div></section>
+        <section class="l-section wpb_row servicios-home height_auto width_full"><div class="l-section-h i-cf"><div class="g-cols vc_row via_flex valign_middle type_default stacking_default">
+          <div class="vc_col-sm-4 wpb_column vc_column_container has_bg_color has-link">
+            <div class="vc_column-inner us_custom_dea79c57 us_animate_this"><div class="wpb_wrapper"><div class="w-hwrapper align_center valign_middle wrap" style="--hwrapper-gap:1.20rem"><div class="wpb_text_column us_custom_8b3d6790 has_text_color"><div class="wpb_wrapper">
+              <h3 style="text-align: center;">ENGINEERING</h3>
+            </div></div></div></div></div>
+            <a title="Engineering" href="../Ingenieria.html" class="vc_column-link smooth-scroll"></a>
+          </div>
+          <div class="vc_col-sm-4 wpb_column vc_column_container has_text_color has_bg_color has-link">
+            <div class="vc_column-inner us_custom_05c78499 us_animate_this"><div class="wpb_wrapper"><div class="w-hwrapper align_center valign_middle wrap" style="--hwrapper-gap:1.20rem"><div class="wpb_text_column"><div class="wpb_wrapper">
+              <h3 style="text-align: center;">AI</h3>
+            </div></div></div></div></div>
+            <a title="Applied AI" href="IA aplicada.html" class="vc_column-link smooth-scroll"></a>
+          </div>
+          <div class="vc_col-sm-4 wpb_column vc_column_container has_text_color has_bg_color has-link">
+            <div class="vc_column-inner us_custom_fcc027ee us_animate_this"><div class="wpb_wrapper"><div class="w-hwrapper align_center valign_middle wrap" style="--hwrapper-gap:1.20rem"><div class="wpb_text_column"><div class="wpb_wrapper">
+              <h3 style="text-align: center;">R&amp;D&amp;i</h3>
+            </div></div></div></div></div>
+            <a title="R&amp;D&amp;I" href="idi.html" class="vc_column-link smooth-scroll"></a>
+          </div>
+        </div></div></section>
+
+        <section class="section">
+          <div class="section-inner">
+            <div class="cta-grid">
+              <div class="cta-copy">
+                <h2>Do you want to turn devices, gateways and data into a working IoT solution?</h2>
+                <p>Qartia can help you design the complete architecture, integrate it with your platform and prepare it to grow with industrial criteria.</p>
+              </div>
+              <figure class="cta-image">
+                <img src="../../assets/images/iot-cta-feindef.jpeg" alt="Electronic development Qartia for R&amp;D&amp;I projects" loading="lazy">
+              </figure>
+            </div>
+          </div>
+        </section>
+
+      </main>
+
+      <footer class="footer">
+        <div class="footer-inner">
+          <div class="footer-logo">
+            <img src="../../assets/remote-qartia/wp-content/uploads/2022/11/logo-qartia.png" alt="Qartia">
+          </div>
+          <div>
+            <h4>CONTACT</h4>
+            <p><a href="tel:+34686918522">(+34) 686918522</a></p>
+            <p><a href="mailto:info@qartia.com">info@qartia.com</a></p>
+            <p>Calle Tolosa Latour, 4, 7ºA,</p>
+            <p>30201, Cartagena, Spain</p>
+            <p>CIF: B67916676</p>
+          </div>
+                <div class="footer-eibt-badge" style="display:flex;align-items:center;justify-content:flex-end;min-width:360px;margin-top:8px;">
+          <img src="../../assets/images/eibt-logo.png" alt="EIBT Seal" style="width:min(430px,100%);height:auto;display:block;">
+        </div>
+</div>
+      </footer>
+
+      <div class="subfooter">
+        <div class="subfooter-inner">
+          <a href="../aviso-legal.html">Legal notice</a>
+          <a href="../politica-cookies.html">Cookies policy</a>
+          <a href="../politica-privacidad.html">Privacy Policy</a>
+        </div>
+      </div>
+    </div>
+    <script src="../../assets/js/qartia-nav.js"></script>
+      <script src="../../assets/js/qartia-mobile-nav.js?v=20260601" defer></script>
+      <script src="../../assets/js/cookie-consent.js?v=mobile-20260601" defer></script>
+<script src="../../assets/js/qartia-language-switcher.js"></script>
+</body>
+</html>

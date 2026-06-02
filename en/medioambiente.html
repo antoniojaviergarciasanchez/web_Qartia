@@ -1,0 +1,1439 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <title>Environment - Qartia Smart Technologies</title>
+    <link rel="icon" href="../assets/remote-qartia/wp-content/uploads/2022/10/favicon-150x150.png" sizes="32x32">
+    <link rel="icon" href="../assets/remote-qartia/wp-content/uploads/2022/10/favicon.png" sizes="192x192">
+    <link rel="apple-touch-icon" href="../assets/remote-qartia/wp-content/uploads/2022/10/favicon.png">
+    <meta name="msapplication-TileImage" content="../assets/remote-qartia/wp-content/uploads/2022/10/favicon.png">
+    
+<link rel="stylesheet" id="qartia-local-fonts" href="../assets/css/local-fonts.css"><meta name="description" content="Environment in Qartia Smart Technologies. Air quality, noise, IoT, analytics and real deployments in industry and cities.">
+<style>
+      :root {
+        --bg: #f5f5f5;
+        --paper: #ffffff;
+        --paper-soft: #f7fbfc;
+        --ink: #333333;
+        --ink-strong: #1a1a1a;
+        --brand: #144e9c;
+        --accent: #36deb8;
+        --shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--ink);
+        font-family: "Work Sans", sans-serif;
+        line-height: 1.55;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      img {
+        max-width: 100%;
+        display: block;
+      }
+
+      .page {
+        min-height: 100vh;
+      }
+
+      .topbar {
+        background: #f5f5f5;
+        color: #333;
+        font-size: 0.84rem;
+      }
+
+      .topbar-inner,
+      .header-inner,
+      .section-inner,
+      .footer-inner {
+        width: min(1140px, calc(100% - 32px));
+        margin: 0 auto;
+      }
+
+      .topbar-inner {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        gap: 18px;
+        padding: 10px 0;
+        flex-wrap: wrap;
+      }
+
+      .header {
+        position: sticky;
+        top: 0;
+        z-index: 20;
+        background: rgba(255, 255, 255, 0.96);
+        box-shadow: 0 2px 18px rgba(0, 0, 0, 0.08);
+        backdrop-filter: blur(10px);
+      }
+
+      .header-inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 18px;
+        padding: 14px 0;
+      }
+
+      .logo img {
+        width: 180px;
+        height: auto;
+      }
+
+.nav {
+  display: flex;
+  justify-content: flex-end;
+  gap: 4px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.nav > a,
+.nav-toggle {
+  padding: 10px 12px;
+  color: var(--brand);
+  background: transparent;
+  border: 0;
+  font-family: "Rubik", sans-serif;
+  font-size: 0.82rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.nav > a:hover,
+.nav > a:focus-visible,
+.nav-toggle:hover,
+.nav-toggle:focus-visible {
+  background: rgba(20, 78, 156, 0.08);
+}
+
+.nav-group {
+  position: relative;
+}
+
+.nav-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.nav-toggle::after {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-right: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  transform: rotate(45deg) translateY(-1px);
+}
+
+.nav-dropdown {
+  position: absolute;
+  top: calc(100% + 10px);
+  right: 0;
+  min-width: 260px;
+  display: none;
+  flex-direction: column;
+  padding: 10px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.98);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(10px);
+  z-index: 30;
+}
+
+.nav-dropdown a {
+  padding: 10px 12px;
+  color: var(--brand);
+  font-family: "Rubik", sans-serif;
+  font-size: 0.8rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  border-radius: 10px;
+}
+
+.nav-subgroup {
+  display: flex;
+  flex-direction: column;
+}
+
+.nav-subtoggle {
+  padding: 10px 12px;
+  color: var(--brand);
+  font-family: "Rubik", sans-serif;
+  font-size: 0.8rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  border-radius: 10px;
+}
+
+.nav-dropdown a:hover,
+.nav-dropdown a:focus-visible,
+.nav-subtoggle:hover,
+.nav-subtoggle:focus-visible {
+  background: rgba(20, 78, 156, 0.08);
+}
+
+.nav-submenu {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin: 0 0 6px 18px;
+  padding-left: 12px;
+  border-left: 2px solid rgba(20, 78, 156, 0.14);
+}
+
+.nav-submenu a {
+  padding: 8px 10px;
+  font-size: 0.74rem;
+}
+
+.nav-group:hover .nav-dropdown,
+.nav-group.open .nav-dropdown {
+  display: flex;
+}
+
+      .hero {
+        position: relative;
+        min-height: 360px;
+        display: flex;
+        align-items: center;
+        overflow: hidden;
+        color: #fff;
+        background:
+          linear-gradient(rgba(0, 0, 0, 0.50), rgba(0, 0, 0, 0.16)),
+          url("../assets/medioambiente/cartagena-pantalla-aqi.jpeg") center/cover no-repeat;
+      }
+
+      .hero-inner {
+        width: min(1140px, calc(100% - 32px));
+        margin: 0 auto;
+        padding: 82px 0 60px;
+      }
+
+      .hero h1 {
+        margin: 0;
+        max-width: 12ch;
+        font-family: "Rubik", sans-serif;
+        font-size: clamp(2.4rem, 4vw, 4rem);
+        font-weight: 300;
+        text-shadow: 2px 2px 9px #000;
+      }
+
+      .content-section,
+      .brochure-section,
+      .cta-section {
+        padding: 70px 0;
+      }
+
+      .content-section {
+        background:
+          url("../assets/remote-qartia/wp-content/uploads/2022/11/fondo-home.jpg") top left / cover no-repeat,
+          var(--paper-soft);
+      }
+
+      .brochure-section {
+        background: var(--paper);
+      }
+
+      .brochure-section.alt {
+        background: #e8faf9;
+      }
+
+      .content-grid {
+        display: grid;
+        grid-template-columns: minmax(0, 1.15fr) minmax(280px, 0.85fr);
+        gap: 36px;
+        align-items: center;
+      }
+
+      .brochure-grid,
+      .brochure-split,
+      .phase-grid,
+      .kpi-grid {
+        display: grid;
+        gap: 24px;
+      }
+
+      .brochure-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .brochure-grid.two-cols {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .brochure-grid.four-cols,
+      .kpi-grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+      }
+
+      .brochure-split {
+        grid-template-columns: minmax(0, 1.08fr) minmax(320px, 0.92fr);
+        align-items: center;
+      }
+
+      .phase-grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+      }
+
+      .eyebrow {
+        display: inline-block;
+        margin-bottom: 10px;
+        color: var(--accent);
+        font-size: 1rem;
+        font-weight: 600;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+      }
+
+      .eyebrow::before {
+        content: "";
+        display: inline-block;
+        width: 49px;
+        height: 50px;
+        margin-right: 10px;
+        vertical-align: middle;
+        background: url("../assets/remote-qartia/wp-content/uploads/2022/11/before-titulares.png") no-repeat center/contain;
+      }
+
+      .lead-title {
+        margin: 0 0 24px 58px;
+        color: var(--ink-strong);
+        font-family: "Rubik", sans-serif;
+        font-size: clamp(2rem, 3vw, 3rem);
+        font-weight: 300;
+        line-height: 1.12;
+      }
+
+      .copy p {
+        margin: 0 0 16px;
+      }
+
+      .content-copy-card,
+      .visual-card,
+      .brochure-card,
+      .phase-card,
+      .kpi-card,
+      .photo-card {
+        background: var(--paper);
+        border-radius: 22px;
+        box-shadow: var(--shadow);
+      }
+
+      .content-copy-card,
+      .visual-card {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .content-copy-card {
+        justify-content: center;
+        padding: 30px 32px;
+      }
+
+      .content-copy-card .lead-title {
+        margin-bottom: 20px;
+      }
+
+      .visual-card {
+        align-self: center;
+        justify-content: center;
+        padding: 18px;
+      }
+
+      .visual-card img {
+        width: 100%;
+        aspect-ratio: 4 / 5;
+        object-fit: cover;
+        border-radius: 18px;
+      }
+
+      .visual-card p {
+        margin: 18px 4px 0;
+        color: #5a6670;
+        font-size: 0.95rem;
+      }
+
+      .capability-visual-grid {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 18px;
+        margin-top: 34px;
+      }
+
+      .capability-visual-card {
+        position: relative;
+        min-height: 380px;
+        display: flex;
+        overflow: hidden;
+        border-radius: 8px;
+        background: #07121d;
+        color: #fff;
+        box-shadow: var(--shadow);
+        isolation: isolate;
+      }
+
+      .capability-visual-card img {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transform: scale(1.01);
+        transition: transform .24s ease;
+        z-index: -2;
+      }
+
+      .capability-visual-card::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(180deg, rgba(7, 18, 29, .12), rgba(7, 18, 29, .86));
+        z-index: -1;
+      }
+
+      .capability-visual-card:hover img {
+        transform: scale(1.06);
+      }
+
+      .capability-visual-copy {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        width: 100%;
+        min-height: 100%;
+        padding: 22px;
+      }
+
+      .capability-visual-tag {
+        align-self: flex-start;
+        margin-bottom: auto;
+        padding: 7px 10px;
+        border-radius: 8px;
+        background: rgba(54, 222, 184, .9);
+        color: #07121d;
+        font-size: .76rem;
+        font-weight: 800;
+        letter-spacing: .06em;
+        line-height: 1;
+        text-transform: uppercase;
+      }
+
+      .capability-visual-card h3 {
+        margin: 34px 0 8px;
+        color: #fff;
+        font-family: "Rubik", sans-serif;
+        font-size: clamp(1.22rem, 1.7vw, 1.62rem);
+        font-weight: 700;
+        line-height: 1.12;
+        text-shadow: 0 2px 14px rgba(0, 0, 0, .42);
+      }
+
+      .capability-visual-card p {
+        margin: 0;
+        color: rgba(255, 255, 255, .88);
+        font-size: .96rem;
+        line-height: 1.5;
+      }
+
+      .architecture-flow-panel {
+        margin: 34px 0 28px;
+        padding: clamp(20px, 2.6vw, 30px);
+        border: 1px solid rgba(54, 222, 184, .28);
+        border-radius: 8px;
+        background:
+          linear-gradient(135deg, rgba(7, 52, 61, .98), rgba(20, 78, 156, .94));
+        box-shadow: var(--shadow);
+        color: #fff;
+      }
+
+      .architecture-flow-header {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) auto;
+        gap: 22px;
+        align-items: end;
+        margin-bottom: 22px;
+      }
+
+      .architecture-flow-kicker {
+        display: inline-flex;
+        width: fit-content;
+        margin-bottom: 10px;
+        padding: 7px 10px;
+        border: 1px solid rgba(54, 222, 184, .34);
+        border-radius: 999px;
+        background: rgba(54, 222, 184, .12);
+        color: #36deb8;
+        font-family: "Rubik", sans-serif;
+        font-size: .72rem;
+        font-weight: 800;
+        letter-spacing: .08em;
+        line-height: 1;
+        text-transform: uppercase;
+      }
+
+      .architecture-flow-header h3 {
+        margin: 0;
+        max-width: 760px;
+        color: #fff;
+        font-family: "Rubik", sans-serif;
+        font-size: clamp(1.38rem, 2vw, 2.08rem);
+        font-weight: 500;
+        line-height: 1.12;
+      }
+
+      .architecture-flow-header p {
+        margin: 10px 0 0;
+        max-width: 700px;
+        color: rgba(255, 255, 255, .78);
+        font-size: .98rem;
+      }
+
+      .architecture-value-badge {
+        display: inline-flex;
+        max-width: 230px;
+        align-items: center;
+        justify-content: center;
+        padding: 12px 14px;
+        border-radius: 8px;
+        background: #36deb8;
+        color: #07343d;
+        font-family: "Rubik", sans-serif;
+        font-size: .82rem;
+        font-weight: 800;
+        line-height: 1.25;
+        text-align: center;
+        text-transform: uppercase;
+      }
+
+      .architecture-flow {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 14px;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .architecture-flow li {
+        position: relative;
+        min-height: 126px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 12px;
+        padding: 16px;
+        border: 1px solid rgba(54, 222, 184, .22);
+        border-radius: 8px;
+        background: rgba(255, 255, 255, .96);
+        box-shadow: 0 14px 24px rgba(0, 0, 0, .14);
+      }
+
+      .architecture-flow li:not(:last-child)::after {
+        content: "→";
+        position: absolute;
+        top: 50%;
+        right: -17px;
+        z-index: 2;
+        transform: translateY(-50%);
+        color: #36deb8;
+        font-weight: 800;
+        line-height: 1;
+      }
+
+      .architecture-step-number {
+        display: inline-flex;
+        width: 30px;
+        height: 30px;
+        align-items: center;
+        justify-content: center;
+        border-radius: 999px;
+        background: #36deb8;
+        color: #07343d;
+        font-size: .72rem;
+        font-weight: 800;
+      }
+
+      .architecture-flow strong {
+        display: block;
+        color: #07343d;
+        font-family: "Rubik", sans-serif;
+        font-size: 1rem;
+        line-height: 1.18;
+      }
+
+      .architecture-flow small {
+        display: block;
+        color: #5a6670;
+        font-size: .82rem;
+        line-height: 1.35;
+      }
+
+      .brochure-card,
+      .phase-card,
+      .kpi-card {
+        padding: 24px;
+      }
+
+      .brochure-card h3,
+      .phase-card h3,
+      .kpi-card h3 {
+        margin: 0 0 12px;
+        color: var(--ink-strong);
+        font-family: "Rubik", sans-serif;
+        font-size: 1.34rem;
+        font-weight: 500;
+        line-height: 1.15;
+      }
+
+      .brochure-card p,
+      .phase-card p,
+      .kpi-card p {
+        margin: 0;
+      }
+
+      .brochure-card strong,
+      .kpi-card strong {
+        display: block;
+        margin-bottom: 10px;
+        color: var(--brand);
+        font-family: "Rubik", sans-serif;
+        font-size: 0.88rem;
+        font-weight: 700;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+      }
+
+      .brochure-link {
+        display: block;
+        color: inherit;
+        transition: transform 0.2s ease;
+      }
+
+      .brochure-link:hover,
+      .brochure-link:focus-visible {
+        transform: translateY(-4px);
+      }
+
+      .feature-list {
+        display: grid;
+        gap: 10px;
+        margin: 18px 0 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .feature-list li {
+        position: relative;
+        padding-left: 18px;
+      }
+
+      .feature-list li::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0.68em;
+        width: 8px;
+        height: 8px;
+        border-radius: 999px;
+        background: var(--accent);
+      }
+
+      .photo-card {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        overflow: hidden;
+      }
+
+      .photo-card img {
+        width: 100%;
+        aspect-ratio: 16 / 10;
+        object-fit: cover;
+      }
+
+      .photo-card figcaption {
+        padding: 16px 18px 18px;
+        color: #5a6670;
+        font-size: 0.94rem;
+      }
+
+      .cta-section {
+        background: #e8faf9;
+      }
+
+      .cta-grid {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) 320px;
+        gap: 24px;
+        align-items: stretch;
+      }
+
+      .cta-copy {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        background: var(--paper);
+        border-radius: 22px;
+        padding: 34px;
+        box-shadow: var(--shadow);
+      }
+
+      .cta-copy h2 {
+        margin: 0 0 14px;
+        color: var(--ink-strong);
+        font-family: "Rubik", sans-serif;
+        font-size: clamp(1.9rem, 2.5vw, 2.6rem);
+        font-weight: 300;
+      }
+
+      .cta-copy p {
+        margin: 0;
+      }
+
+      .cta-actions {
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+        margin-top: 24px;
+      }
+
+      .cta-button,
+      .ghost-button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 48px;
+        padding: 0 22px;
+        border-radius: 999px;
+        font-family: "Rubik", sans-serif;
+        font-size: 0.94rem;
+        font-weight: 500;
+        transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+      }
+
+      .cta-button {
+        color: #fff;
+        background: var(--brand);
+        box-shadow: 0 12px 28px rgba(20, 78, 156, 0.18);
+      }
+
+      .ghost-button {
+        color: var(--brand);
+        background: rgba(20, 78, 156, 0.08);
+      }
+
+      .cta-button:hover,
+      .cta-button:focus-visible,
+      .ghost-button:hover,
+      .ghost-button:focus-visible {
+        transform: translateY(-2px);
+      }
+
+      .cta-image {
+        min-height: 100%;
+        border-radius: 22px;
+        background:
+          linear-gradient(rgba(20, 78, 156, 0.16), rgba(20, 78, 156, 0.16)),
+          url("../assets/medioambiente/contaminate-final.png") center/cover no-repeat;
+        box-shadow: var(--shadow);
+      }
+
+      .footer {
+        background:
+          url("../assets/remote-qartia/wp-content/uploads/2022/11/fondo-footer.jpg") left top / cover no-repeat,
+          #222;
+        color: #ccc;
+      }
+
+      .footer-inner {
+        display: grid;
+        grid-template-columns: 220px minmax(0, 1fr);
+        gap: 36px;
+        align-items: start;
+        padding: 56px 0 28px;
+      }
+
+      .footer-logo img {
+        width: 180px;
+      }
+
+      .footer h4 {
+        margin: 0 0 16px;
+        color: #ccc;
+        font-family: "Rubik", sans-serif;
+        font-size: 1.1rem;
+        font-weight: 700;
+        text-transform: uppercase;
+      }
+
+      .footer p {
+        margin: 0 0 10px;
+      }
+
+      .subfooter {
+        background: #333;
+        color: #f9f9f9;
+        font-size: 0.86rem;
+        text-transform: uppercase;
+      }
+
+      .subfooter-inner {
+        width: min(1140px, calc(100% - 32px));
+        margin: 0 auto;
+        padding: 14px 0;
+        display: flex;
+        justify-content: center;
+        gap: 28px;
+        flex-wrap: wrap;
+      }
+
+      @media (max-width: 1024px) {
+        .header-inner,
+        .content-grid,
+        .brochure-split,
+        .cta-grid,
+        .footer-inner {
+          grid-template-columns: 1fr;
+        }
+
+        .header-inner {
+          display: grid;
+          gap: 12px;
+        }
+
+        .logo {
+          justify-self: center;
+        }
+
+.nav {
+  justify-content: center;
+}
+
+.nav-dropdown {
+  right: auto;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+        .brochure-grid,
+        .brochure-grid.two-cols,
+        .brochure-grid.four-cols,
+        .architecture-flow,
+        .capability-visual-grid,
+        .phase-grid,
+        .kpi-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .architecture-flow {
+          gap: 16px;
+        }
+
+        .architecture-flow-header {
+          grid-template-columns: 1fr;
+          align-items: start;
+        }
+
+        .architecture-value-badge {
+          justify-self: start;
+        }
+
+        .architecture-flow li:not(:last-child)::after {
+          display: none;
+        }
+      }
+.video-section { padding: 70px 0; background: var(--paper); }
+.video-wrapper { margin-top: 32px; border-radius: 22px; overflow: hidden; box-shadow: var(--shadow); position: relative; width: 100%; aspect-ratio: 16 / 9; background: #081726; }
+.video-wrapper iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+.video-trigger { position: relative; display: block; width: 100%; height: 100%; cursor: pointer; color: inherit; }
+.video-trigger img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.video-play { position: absolute; top: 50%; left: 50%; width: 96px; height: 96px; border-radius: 50%; transform: translate(-50%, -50%); background: rgba(7, 18, 29, 0.68); box-shadow: 0 12px 32px rgba(7, 18, 29, 0.32); }
+.video-play::before { content: ""; position: absolute; top: 50%; left: 50%; margin-left: 6px; transform: translate(-50%, -50%); border-style: solid; border-width: 18px 0 18px 30px; border-color: transparent transparent transparent #fff; }
+      @media (max-width: 640px) {
+.topbar-inner {
+  justify-content: center;
+}
+
+.nav {
+  gap: 8px;
+}
+
+.nav-group {
+  width: 100%;
+  display: grid;
+  justify-items: center;
+}
+
+.nav-dropdown {
+  position: static;
+  transform: none;
+  min-width: min(320px, 100%);
+  width: min(320px, 100%);
+  margin-top: 6px;
+}
+
+        .hero-inner {
+          padding-top: 72px;
+        }
+
+        .eyebrow::before {
+          display: none;
+        }
+
+        .lead-title {
+          margin-left: 0;
+        }
+
+        .brochure-grid,
+        .brochure-grid.two-cols,
+        .brochure-grid.four-cols,
+        .architecture-flow,
+        .capability-visual-grid,
+        .phase-grid,
+        .kpi-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .architecture-flow-panel {
+          padding: 18px;
+        }
+
+        .capability-visual-card {
+          min-height: 300px;
+        }
+
+        .footer-inner {
+          padding-top: 40px;
+        }
+      }
+    </style>
+  <style id="qartia-dropdown-offset">
+.nav-dropdown{transform:translateX(1cm);}
+@media (max-width:880px){.nav-dropdown{transform:translateX(calc(-50% + 1cm));}}
+@media (max-width:640px){.nav-dropdown{transform:none;}}
+@media (min-width:1025px){.ush_menu_1.type_desktop .w-nav-list.level_2{margin-left:1cm;}}
+@media (min-width:1025px){.l-subheader-cell.at_left,.header-inner .logo{transform:translateX(-0.35cm);}}
+</style>
+<link rel="stylesheet" href="../assets/css/qartia-topbar.css">
+<link rel="stylesheet" href="../assets/css/qartia-responsive.css?v=20260601">
+    <style id="eibt-footer-layout-fix">
+    .footer .footer-inner {
+      display: grid !important;
+      grid-template-columns: minmax(180px, 0.75fr) minmax(260px, 1fr) minmax(360px, 1.15fr) !important;
+      align-items: start !important;
+      gap: 28px !important;
+    }
+
+    .footer .footer-eibt-badge,
+    .l-footer .footer-eibt-badge {
+      display: flex !important;
+      justify-content: flex-end !important;
+      align-items: flex-start !important;
+      margin-top: 0 !important;
+      width: 100% !important;
+      min-width: 360px;
+    }
+
+    .footer .footer-eibt-badge img,
+    .l-footer .footer-eibt-badge img {
+      width: min(430px, 100%) !important;
+      height: auto !important;
+      display: block !important;
+      margin-left: auto !important;
+      margin-right: 0 !important;
+    }
+
+    .l-footer .footer-eibt-badge .w-image-h {
+      width: 100% !important;
+    }
+
+    @media (max-width: 900px) {
+      .footer .footer-inner {
+        grid-template-columns: 1fr !important;
+      }
+
+      .footer .footer-eibt-badge,
+      .l-footer .footer-eibt-badge {
+        justify-content: flex-start !important;
+        min-width: 0 !important;
+      }
+
+      .footer .footer-eibt-badge img,
+      .l-footer .footer-eibt-badge img {
+        margin-left: 0 !important;
+        margin-right: auto !important;
+      }
+    }
+  </style>
+    <link rel="stylesheet" href="../assets/css/cookie-consent.css?v=mobile-20260601">
+</head>
+  <body>
+    <div class="page">
+      <div class="topbar">
+        <div class="topbar-inner">
+          <a href="tel:+34686918522">+34 686 91 85 22</a>
+          <a href="mailto:info@qartia.com">info@qartia.com</a>
+        <a class="qartia-linkedin-icon" href="https://www.linkedin.com/company/qartia-smart-technologies/" target="_blank" rel="noopener" aria-label="LinkedIn Qartia"></a>
+
+        </div>
+      </div>
+
+      <header class="header">
+        <div class="header-inner">
+          <a class="logo" href="index.html">
+            <img src="../assets/remote-qartia/wp-content/uploads/2022/11/logo-qartia.png" alt="Qartia Smart Technologies">
+          </a>
+
+<nav class="nav" aria-label="Main navigation">
+  <a href="quienes-somos.html">Who We Are</a>
+  <div class="nav-group">
+    <button class="nav-toggle" type="button" aria-expanded="false">Products</button>
+    <div class="nav-dropdown">
+      <a href="productos.html">Products</a>
+      <a href="vibrasense.html">VibraSense</a>
+      <a href="airsense-pro.html">AIRSENSE PRO</a>
+      <a href="megamia.html">MEGAMIA</a>
+      <a href="dipason-exterior.html">DIPASON</a>
+      <a href="Biosentia.html">Biosentia</a>
+      <a href="noisement.html">NoiseMent</a>
+    </div>
+  </div>
+  <div class="nav-group">
+    <button class="nav-toggle" type="button" aria-expanded="false">Services</button>
+    <div class="nav-dropdown">
+      <a href="agricultura.html">Agriculture</a>
+      <div class="nav-subgroup">
+        <a class="nav-subtoggle" href="industria.html">Industry</a>
+        <div class="nav-submenu">
+          <a href="mantenimiento-predictivo-vibraciones.html">Predictive Maintenance. Vibrations</a>
+          <a href="monitorizacion-activos-criticos.html">Critical Asset Monitoring</a>
+        </div>
+      </div>
+      <a href="medioambiente.html">Environment</a>
+      <a href="civil.html">Civil Infrastructures</a>
+      <a href="sources/serviciosan%CC%83adido.html">Additional Services</a>
+    </div>
+  </div>
+  <div class="nav-group">
+    <button class="nav-toggle" type="button" aria-expanded="false">Private Networks 5G</button>
+    <div class="nav-dropdown">
+      <a href="dect-nr-plus.html">What is DECT NR+</a>
+      <a href="soluciones-5g-privadas.html">5G Private Solutions</a>
+    </div>
+  </div>
+  <a href="noticias.html">News</a>
+  <a href="contacto.html">Contact</a>
+  <a href="https://qartia.com/Flutter/panel_industrias_prueba/">Client Access</a>
+</nav>
+        </div>
+      </header>
+
+      <main>
+        <section class="hero">
+          <div class="hero-inner">
+            <h1>Environment</h1>
+          </div>
+        </section>
+
+        <section class="content-section">
+          <div class="section-inner">
+            <div class="content-grid">
+              <div class="content-copy-card">
+                <span class="eyebrow">Connected environment</span>
+                <h2 class="lead-title">Continuous environmental monitoring for air and noise.</h2>
+                <div class="copy">
+                  <p>Qartia helps turn environmental monitoring into a daily work tool. We do it by combining IoT sensor technology, connectivity, dashboards and analytics so that the data arrives well and serves to decide.</p>
+            <p>We monitor, in real time, WHO criterion gases, particles, noise, temperature, humidity and other variables continuously, relating all this information to detect changes, issue warnings and better understand what is happening in each environment.</p>
+                  <p>Projects such as Cabezo Beaza (Cartagena), Atlantic Copper (Huelva) and the Cartagena City Council show this approach: deploy in the field, collect the data with stability and bring it to a clear visualization for operation and monitoring.</p>
+                  <p>In the field, communications are supported by a private network (LoRa/DECT NR+) and access to the Internet can be done through 5G, WiFi or Ethernet networks. This way the solution adapts better to each location and can grow in phases.</p>
+                  <p>Finally, we have developed AI tools to predict, based on data from our sensors together with other already installed ones, for example local, regional or state measuring stations, future values ​​of contaminants and, if appropriate, launch alerts.</p>
+                </div>
+              </div>
+
+              <aside class="visual-card">
+                <img src="../assets/medioambiente/dispositivos-cabecera.png" alt="Qartia environmental monitoring node deployed on deck with integrated sensorization and communications">
+                <p>Qartia environmental monitoring station deployed in the field, ready to capture data, transmit it and put it into operational context.</p>
+              </aside>
+            </div>
+          </div>
+        </section>
+
+        <section class="brochure-section alt">
+          <div class="section-inner">
+            <span class="eyebrow">News and references</span>
+            <h2 class="lead-title">Three public references that explain this line of work well.</h2>
+            <div class="brochure-grid">
+              <article class="brochure-card">
+                <strong>Cabezo Beaza</strong>
+                <h3>Environmental monitoring in industrial estate</h3>
+                <p>A clear example of how Qartia takes environmental monitoring to the field, with real deployment, continuous capture and operational reading of the data.</p>
+              </article>
+              <article class="brochure-card">
+                <strong>Atlantic Copper</strong>
+                <h3>Industrial reference in a highly demanding environment</h3>
+                <p>Strengthens Qartia's ability to work in demanding industrial environments, where environmental data reliability and traceability are especially important.</p>
+              </article>
+              <article class="brochure-card">
+                <strong>Cartagena City Council</strong>
+                <h3>Institutional validation and territorial deployment</h3>
+                <p>Shows the fit of Qartia in city and territory projects, where environmental monitoring must be understandable, stable and actionable for public service. It helps with decision-making in aspects such as, for example, the location of a park or school, the direction of traffic or, simply, whether the way to work passes through a contaminated environment or not.</p>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="brochure-section">
+          <div class="section-inner">
+            <span class="eyebrow">Key capabilities</span>
+            <h2 class="lead-title">From environmental sensor to decision, prediction and consultation.</h2>
+            <div class="capability-visual-grid">
+              <article class="capability-visual-card">
+                <img src="../assets/medioambiente/cartagena-pantalla-aqi.jpeg" alt="Air quality display with real-time AQI indicators">
+                <div class="capability-visual-copy">
+                  <span class="capability-visual-tag">Air 24/7</span>
+                  <h3>Air quality 24/7</h3>
+                  <p>Continuous monitoring of concentrations, trends and episodes in urban and industrial environments.</p>
+                </div>
+              </article>
+              <article class="capability-visual-card">
+                <img src="../assets/medioambiente/dispositivos-cabecera.png" alt="Environmental monitoring equipment for particles and gases">
+                <div class="capability-visual-copy">
+                  <span class="capability-visual-tag">Sensory</span>
+                  <h3>Particles and gases</h3>
+                  <p>Measurement of critical environmental variables with sensors prepared for real deployments in the field.</p>
+                </div>
+              </article>
+              <article class="capability-visual-card">
+                <img src="../assets/images/noisement-device-photo-card.jpg" alt="NoiseMent device for capturing ambient noise">
+                <div class="capability-visual-copy">
+                  <span class="capability-visual-tag">Noise</span>
+                  <h3>Ambient noise</h3>
+                  <p>Capture and traceability of acoustic behavior for operations, city and compliance.</p>
+                </div>
+              </article>
+              <article class="capability-visual-card">
+                <img src="../assets/images/consultoria-aqi-screen.jpeg" alt="Environmental dashboard with air quality data and alerts">
+                <div class="capability-visual-copy">
+                  <span class="capability-visual-tag">Dashboards</span>
+                  <h3>Dashboards and alerts</h3>
+                  <p>Operational visualization with history, alarms and quick reading for technical exploitation and management.</p>
+                </div>
+              </article>
+              <article class="capability-visual-card">
+                <img src="../assets/medioambiente/nodo-comunicaciones-interior.jpeg" alt="Field communications node for environmental private networks">
+                <div class="capability-visual-copy">
+                  <span class="capability-visual-tag">Private network</span>
+                  <h3>Own connectivity</h3>
+                  <p>Private network in the field (LoRa/DECT NR+) and Internet access via 5G, WiFi or Ethernet depending on the location.</p>
+                </div>
+              </article>
+              <article class="capability-visual-card">
+                <img src="../assets/medioambiente/cartagena-sensor-poste.jpeg" alt="Field-installed environmental sensor for pilot and scaling">
+                <div class="capability-visual-copy">
+                  <span class="capability-visual-tag">Scaling</span>
+                  <h3>Pilot and scaling</h3>
+                  <p>Phased deployments to validate technical impact, coverage, data quality and extension proposal.</p>
+                </div>
+              </article>
+              <article class="capability-visual-card">
+                <img src="../assets/medioambiente/prediccion-cartagena-ia.png" alt="AI prediction of environmental pollutants in Cartagena">
+                <div class="capability-visual-copy">
+                  <span class="capability-visual-tag">Predictive AI</span>
+                  <h3>Predictive AI</h3>
+                  <p>Models to anticipate future values ​​of contaminants from our sensors and other stations already installed, with the capacity to launch alerts.</p>
+                </div>
+              </article>
+              <article class="capability-visual-card">
+                <img src="../assets/images/ia-heatmap-rag.png" alt="Predictive heat map and RAG query on environmental data">
+                <div class="capability-visual-copy">
+                  <span class="capability-visual-tag">RAG</span>
+                  <h3>Module RAG</h3>
+                  <p>Conversational query on captured data to obtain patterns, statistics, predictions or quickly extract information.</p>
+                </div>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="brochure-section alt">
+          <div class="section-inner">
+            <span class="eyebrow">Featured case</span>
+            <h2 class="lead-title">Urban deployment with data capture and visualization in real time.</h2>
+            <div class="brochure-split">
+              <div class="brochure-card">
+                <h3>Environmental monitoring deployed and connected to the control panel</h3>
+                <p>This type of installation summarizes the approach of Qartia well: the sensor is deployed in the field, collects the data continuously and sends it to a platform where it can be viewed and used almost in real time.</p>
+                <ul class="feature-list">
+                  <li>Continuous capture of environmental variables in real location.</li>
+                  <li>Installation prepared for operation, maintenance and growth.</li>
+                  <li>Data available for screens, dashboards and alerts.</li>
+                  <li>Model replicable in industry, city and other infrastructures.</li>
+                </ul>
+              </div>
+
+              <figure class="photo-card">
+                <img src="../assets/medioambiente/cartagena-sensor-poste.jpeg" alt="Environmental sensor deployed by Qartia in an urban environment">
+                <figcaption>Environmental node installed in the field and prepared to send continuous measurements to the monitoring platform.</figcaption>
+              </figure>
+            </div>
+          </div>
+        </section>
+
+        <section class="video-section">
+          <div class="section-inner">
+            <span class="eyebrow">Real case</span>
+            <h2 class="lead-title">Actual deployment of Qartia in Cabezo Beaza, Cartagena, Spain.</h2>
+            <div class="video-wrapper" id="medioambiente-video-embed" data-youtube-src="https://www.youtube.com/embed/B6rd5sHDSZ8?rel=0" data-poster="https://i.ytimg.com/vi/B6rd5sHDSZ8/hqdefault.jpg" aria-label="Real case video of Qartia in Environment">
+              <button class="video-trigger" type="button" aria-label="Play video of real case of Qartia in Environment">
+                <img src="https://i.ytimg.com/vi/B6rd5sHDSZ8/hqdefault.jpg" alt="Thumbnail of the real case of Qartia in Environment">
+                <span class="video-play" aria-hidden="true"></span>
+              </button>
+            </div>
+          </div>
+        </section>
+
+        <section class="brochure-section">
+          <div class="section-inner">
+            <span class="eyebrow">Solution architecture</span>
+            <h2 class="lead-title">Environmental sensors + private network + edge + operational intelligence.</h2>
+            <div class="architecture-flow-panel" aria-label="Environmental Solution Architecture Flow">
+              <div class="architecture-flow-header">
+                <div>
+                  <span class="architecture-flow-kicker">Environmental architecture Qartia</span>
+                  <h3>From environmental data to operational notice, with AI and contextual consultation.</h3>
+                  <p>A compact flow to capture environmental variables, ensure communication in the field and transform data into prediction, explanation and response.</p>
+                </div>
+                <span class="architecture-value-badge">Continuous measurement → environmental action</span>
+              </div>
+              <ol class="architecture-flow">
+                <li>
+                  <span class="architecture-step-number">01</span>
+                  <strong>Environmental sensors</strong>
+                  <small>Air, noise and environmental variables</small>
+                </li>
+                <li>
+                  <span class="architecture-step-number">02</span>
+                  <strong>Private network (LoRa/DECT NR+)</strong>
+                  <small>Stable coverage in the field</small>
+                </li>
+                <li>
+                  <span class="architecture-step-number">03</span>
+                  <strong>Edge</strong>
+                  <small>Pretreatment and local continuity</small>
+                </li>
+                <li>
+                  <span class="architecture-step-number">04</span>
+                  <strong>Dashboard, AI, RAG and alerts</strong>
+                  <small>Prediction, query and response</small>
+                </li>
+              </ol>
+            </div>
+            <div class="brochure-split">
+              <div class="brochure-card">
+                <h3>An architecture prepared to operate, explain and scale.</h3>
+                <p>In the field, communications are made through a private network and the exit to the Internet can be resolved through 5G, WiFi or Ethernet networks. This allows us to adapt to the available infrastructure without changing the logic of the solution.</p>
+                <ul class="feature-list">
+                  <li>Continuous acquisition of key environmental variables.</li>
+                  <li>Private network to collect data with stability in the field.</li>
+                  <li>Internet access depending on location: 5G, WiFi or Ethernet.</li>
+                  <li>AI for pollutant prediction and alert generation.</li>
+                  <li>RAG to consult the history and extract useful answers in natural language.</li>
+                  <li>Easy scaling from a pilot to a broader network.</li>
+                </ul>
+              </div>
+
+              <figure class="photo-card">
+                <img src="../assets/medioambiente/nodo-comunicaciones-interior.jpeg" alt="Indoor communications and field electronics node of the Qartia environmental solution">
+                <figcaption>Integrated electronics and communications to collect data in the field and take it to the platform in a safe and stable way.</figcaption>
+              </figure>
+            </div>
+          </div>
+        </section>
+
+        <section class="brochure-section alt">
+          <div class="section-inner">
+            <span class="eyebrow">Areas of application</span>
+            <h2 class="lead-title">Industry, city and territory in the same data logic.</h2>
+            <div class="brochure-grid four-cols">
+              <article class="brochure-card">
+                <h3>Industrial estates</h3>
+                <p>Environmental monitoring for industrial activity, common services and decision making about episodes or deviations.</p>
+              </article>
+              <article class="brochure-card">
+                <h3>Complex industrial environments</h3>
+                <p>Deployment in facilities where robustness, traceability and coexistence with existing infrastructure are priorities.</p>
+              </article>
+              <article class="brochure-card">
+                <h3>City and administration</h3>
+                <p>Projects with territorial reading for municipal services, urban innovation and institutional validation.</p>
+              </article>
+              <article class="brochure-card">
+                <h3>Campus and infrastructure</h3>
+                <p>Distributed monitoring with dashboards, alarms and integrated environment reading.</p>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="brochure-section">
+          <div class="section-inner">
+            <span class="eyebrow">Executive pilot</span>
+            <h2 class="lead-title">Environmental pilot in 4 phases.</h2>
+            <div class="phase-grid">
+              <article class="phase-card">
+                <strong>1</strong>
+                <h3>Initial diagnosis</h3>
+                <p>Location selection, environmental variables, coverage and operational objectives.</p>
+              </article>
+              <article class="phase-card">
+                <strong>2</strong>
+                <h3>Deployment and validation</h3>
+                <p>Node installation, connectivity verification and data quality control.</p>
+              </article>
+              <article class="phase-card">
+                <strong>3</strong>
+                <h3>Dashboard and alerts</h3>
+                <p>Activation of operational visualization, thresholds and technical reading of environmental behavior.</p>
+              </article>
+              <article class="phase-card">
+                <strong>4</strong>
+                <h3>Scaling</h3>
+                <p>Results report, expansion proposal and growth architecture by zones or variables.</p>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="cta-section">
+          <div class="section-inner">
+            <div class="cta-grid">
+              <div class="cta-copy">
+                <h2>Turns environmental monitoring into an operational capability.</h2>
+                <p>Request a Qartia pilot and validate the capture, connectivity and exploitation of environmental data in your industrial, urban or territorial environment.</p>
+                <div class="cta-actions">
+                  <a class="cta-button" href="mailto:info@qartia.com?subject=Solicitar%20piloto%20Qartia%20Medioambiente">Request pilot</a>
+                  <a class="ghost-button" href="brochure-medioambiente.html">Open brochure</a>
+                  <a class="ghost-button" href="productos.html">See products</a>
+                </div>
+              </div>
+              <div class="cta-image" aria-hidden="true"></div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <div class="footer-inner">
+          <div class="footer-logo">
+            <img src="../assets/remote-qartia/wp-content/uploads/2022/11/logo-qartia.png" alt="Qartia">
+          </div>
+          <div>
+            <h4>CONTACT</h4>
+            <p><a href="tel:+34686918522">(+34) 686918522</a></p>
+            <p><a href="mailto:info@qartia.com">info@qartia.com</a></p>
+            <p>Calle Tolosa Latour, 4, 7ºA,</p>
+            <p>30201, Cartagena, Spain</p>
+            <p>CIF: B67916676</p>
+          </div>
+                <div class="footer-eibt-badge" style="display:flex;align-items:center;justify-content:flex-end;min-width:360px;margin-top:8px;">
+          <img src="../assets/images/eibt-logo.png" alt="EIBT Seal" style="width:min(430px,100%);height:auto;display:block;">
+        </div>
+</div>
+      </footer>
+
+      <div class="subfooter">
+        <div class="subfooter-inner">
+          <a href="aviso-legal.html">Legal notice</a>
+          <a href="politica-cookies.html">Cookies policy</a>
+          <a href="politica-privacidad.html">Privacy Policy</a>
+        </div>
+      </div>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const groups = document.querySelectorAll(".nav-group");
+    const medioambienteVideoEmbed = document.getElementById("medioambiente-video-embed");
+
+    if (medioambienteVideoEmbed) {
+      const youtubeSrc = medioambienteVideoEmbed.dataset.youtubeSrc;
+      const youtubeWatch = "https://youtu.be/B6rd5sHDSZ8";
+      const trigger = medioambienteVideoEmbed.querySelector(".video-trigger");
+
+      if (trigger) {
+        trigger.addEventListener("click", function () {
+          if (window.location.protocol === "file:") {
+            window.location.href = youtubeWatch;
+            return;
+          }
+
+          medioambienteVideoEmbed.innerHTML =
+            '<iframe src="' +
+            youtubeSrc +
+            '&autoplay=1" title="Qartia Smart Technologies - Caso real de Medioambiente" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>';
+        }, { once: true });
+      }
+    }
+
+    groups.forEach((group) => {
+      const toggle = group.querySelector(".nav-toggle");
+      if (!toggle) return;
+
+      toggle.addEventListener("click", function (event) {
+        event.preventDefault();
+        const willOpen = !group.classList.contains("open");
+
+        groups.forEach((otherGroup) => {
+          otherGroup.classList.remove("open");
+          const otherToggle = otherGroup.querySelector(".nav-toggle");
+          if (otherToggle) {
+            otherToggle.setAttribute("aria-expanded", "false");
+          }
+        });
+
+        group.classList.toggle("open", willOpen);
+        toggle.setAttribute("aria-expanded", willOpen ? "true" : "false");
+      });
+    });
+
+    document.addEventListener("click", function (event) {
+      groups.forEach((group) => {
+        if (group.contains(event.target)) return;
+        group.classList.remove("open");
+        const toggle = group.querySelector(".nav-toggle");
+        if (toggle) {
+          toggle.setAttribute("aria-expanded", "false");
+        }
+      });
+    });
+  });
+</script>
+    </div>
+      <script src="../assets/js/qartia-mobile-nav.js?v=20260601" defer></script>
+      <script src="../assets/js/cookie-consent.js?v=mobile-20260601" defer></script>
+<script src="../assets/js/qartia-language-switcher.js"></script>
+</body>
+</html>
