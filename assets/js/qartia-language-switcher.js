@@ -48,7 +48,7 @@
       '.qartia-language-switcher{align-items:center;display:flex;gap:6px;margin-left:14px;white-space:nowrap}',
       '.qartia-language-switcher a{border:1px solid rgba(42,80,150,.18);border-radius:6px;color:#244f98;font-size:12px;font-weight:800;line-height:1;padding:7px 8px;text-decoration:none;text-transform:uppercase}',
       '.qartia-language-switcher a.is-active{background:#244f98;color:#fff}',
-      '.topbar .topbar-inner{box-sizing:border-box;gap:12px 18px;justify-content:space-between!important;margin:0!important;max-width:none!important;padding-left:32px!important;padding-right:32px!important;width:100%!important}',
+      '.topbar .topbar-inner{box-sizing:border-box;gap:12px 18px;justify-content:space-between!important;margin:0!important;max-width:none!important;padding-left:32px!important;padding-right:64px!important;width:100%!important}',
       '.topbar .qartia-topbar-contact{align-items:center;display:flex;flex-wrap:wrap;gap:18px;justify-content:flex-end;margin-left:auto;order:2}',
       '.topbar .qartia-language-switcher{gap:4px;margin-left:0;margin-right:auto;order:1;padding-left:0}',
       '.topbar .qartia-language-switcher a{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.35);color:#fff!important;padding:6px 7px}',
