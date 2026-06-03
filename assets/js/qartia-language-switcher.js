@@ -48,13 +48,13 @@
       '.qartia-language-switcher{align-items:center;display:flex;gap:6px;margin-left:14px;white-space:nowrap}',
       '.qartia-language-switcher a{border:1px solid rgba(42,80,150,.18);border-radius:6px;color:#244f98;font-size:12px;font-weight:800;line-height:1;padding:7px 8px;text-decoration:none;text-transform:uppercase}',
       '.qartia-language-switcher a.is-active{background:#244f98;color:#fff}',
-      '.topbar .topbar-inner{justify-content:space-between!important}',
-      '.topbar .qartia-topbar-contact{align-items:center;display:flex;flex-wrap:wrap;gap:18px}',
-      '.topbar .qartia-language-switcher{gap:4px;margin-left:auto;padding-left:0}',
+      '.topbar .topbar-inner{gap:12px 18px;justify-content:space-between!important}',
+      '.topbar .qartia-topbar-contact{align-items:center;display:flex;flex-wrap:wrap;gap:18px;justify-content:flex-end;margin-left:auto;order:2}',
+      '.topbar .qartia-language-switcher{gap:4px;margin-left:0;margin-right:auto;order:1;padding-left:0}',
       '.topbar .qartia-language-switcher a{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.35);color:#fff!important;padding:6px 7px}',
       '.topbar .qartia-language-switcher a:hover,.topbar .qartia-language-switcher a:focus{background:rgba(255,255,255,.16);border-color:#72d8c8;color:#72d8c8!important}',
       '.topbar .qartia-language-switcher a.is-active{background:#fff;border-color:#fff;color:#144e9c!important}',
-      '@media (max-width: 900px){.qartia-language-switcher{margin-left:0}.topbar .topbar-inner{align-items:center!important;justify-content:space-between!important}.topbar .qartia-topbar-contact{gap:10px 14px}.topbar .qartia-language-switcher{margin-left:auto;padding-left:0}.site-header .header-inner{align-items:flex-start}}'
+      '@media (max-width: 900px){.qartia-language-switcher{margin-left:0}.topbar .topbar-inner{align-items:center!important;justify-content:space-between!important}.topbar .qartia-topbar-contact{gap:10px 14px;justify-content:flex-end;margin-left:auto}.topbar .qartia-language-switcher{margin-left:0;margin-right:auto;padding-left:0}.site-header .header-inner{align-items:flex-start}}'
     ].join('');
 
     document.head.appendChild(style);
@@ -100,7 +100,12 @@
       nav.appendChild(link);
     });
 
-    header.appendChild(nav);
+    var contact = header.querySelector('.qartia-topbar-contact');
+    if (header.classList && header.classList.contains('topbar-inner') && contact) {
+      header.insertBefore(nav, contact);
+    } else {
+      header.appendChild(nav);
+    }
   }
 
   addStyles();
