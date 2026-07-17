@@ -718,6 +718,7 @@ html { scroll-behavior: smooth; }
  <!--<div class="rsContent"><a class="rsImg" style="background-image: url(assets/remote-qartia/wp-content/uploads/2022/12/pp.png);" data-rsw="1920" data-rsh="880" href="assets/remote-qartia/wp-content/uploads/2022/12/pp.png"><span data-alt=""></span></a></div> -->
 <!-- <div class="rsContent is-active"><a class="rsImg" style="background-image: url(assets/remote-qartia/wp-content/uploads/2022/11/slider-home-1.jpg);" data-rsw="1920" data-rsh="880" href="assets/remote-qartia/wp-content/uploads/2022/11/slider-home-1.jpg"><span data-alt=""></span></a></div> -->
 <div class="rsContent is-active"><a class="rsImg" data-desktop-src="../assets/images/home-desktop/cali2-desktop.webp?v=desktop-video-hq-1" data-desktop-video-src="../assets/videos/home-desktop/cali2-desktop-hq.mp4?v=desktop-video-hq-1" data-mobile-src="../assets/images/home-mobile/cali2-mobile.webp?v=centered-mobile-2" data-mobile-order="1" data-rsw="1920" data-rsh="880" href="../assets/images/home-mobile/cali2-mobile.webp?v=centered-mobile-2"><span data-alt=""></span></a></div>
+<div class="rsContent" data-slide-duration="5000"><video class="rsVideo" autoplay muted playsinline preload="auto" data-reset-on-show="true" aria-label="Drone video in an industrial environment"><source src="../assets/remote-qartia/wp-content/uploads/2022/12/apc-cartagena-drone-nocut-4s.mp4" type="video/mp4"></video></div>
 <div class="rsContent"><a class="rsImg" data-desktop-src="../assets/images/home-desktop/trabajadores-desktop.webp?v=desktop-fast-1" data-mobile-src="../assets/images/home-mobile/trabajadores-mobile.webp" data-mobile-order="2" data-rsw="1920" data-rsh="880" href="../assets/images/home-mobile/trabajadores-mobile.webp"><span data-alt=""></span></a></div>
 <div class="rsContent"><a class="rsImg" data-desktop-src="../assets/images/home-desktop/poligono-desktop.webp?v=desktop-video-hq-1" data-desktop-video-src="../assets/videos/home-desktop/poligono-desktop-hq.mp4?v=desktop-video-hq-1" data-mobile-src="../assets/images/home-mobile/poligono-mobile.webp?v=centered-mobile-2" data-mobile-order="3" data-rsw="1920" data-rsh="880" href="../assets/images/home-mobile/poligono-mobile.webp?v=centered-mobile-2"><span data-alt=""></span></a></div>
 <div class="rsContent"><a class="rsImg" data-desktop-src="../assets/images/home-desktop/industria-desktop.webp?v=desktop-fast-1" data-mobile-src="../assets/images/home-mobile/industria-mobile.webp" data-mobile-order="4" data-rsw="1920" data-rsh="880" href="../assets/images/home-mobile/industria-mobile.webp"><span data-alt=""></span></a></div>
@@ -747,6 +748,16 @@ html { scroll-behavior: smooth; }
   }
 
   #top .rsImg .qartia-home-slide-video {
+    display: block;
+    height: 100%;
+    inset: 0;
+    object-fit: cover;
+    pointer-events: none;
+    position: absolute;
+    width: 100%;
+  }
+
+  #top .rsContent > .rsVideo {
     display: block;
     height: 100%;
     inset: 0;
@@ -827,18 +838,27 @@ html { scroll-behavior: smooth; }
   function syncDesktopSlideVideos() {
     if (isMobile) return;
 
-    document.querySelectorAll('#top .qartia-home-slide-video').forEach(function (video) {
+    document.querySelectorAll('#top .qartia-home-slide-video, #top .rsContent > .rsVideo').forEach(function (video) {
       var slide = video.closest ? video.closest('.rsContent') : null;
       var isVisible = slide && (
         slide.classList.contains('is-active') ||
         Number(window.getComputedStyle(slide).opacity || '0') > 0.2
       );
+      var wasVisible = video.dataset.qartiaWasVisible === 'true';
+
+      if (isVisible && !wasVisible && video.dataset.resetOnShow === 'true') {
+        try {
+          video.currentTime = 0;
+        } catch (e) {}
+      }
 
       if (isVisible && video.paused) {
         video.play().catch(function () {});
       } else if (!isVisible && !video.paused) {
         video.pause();
       }
+
+      video.dataset.qartiaWasVisible = isVisible ? 'true' : 'false';
     });
   }
 
@@ -1448,7 +1468,7 @@ gform.initializeOnLoaded( function() { jQuery(document).trigger('gform_post_rend
 
   function startManualFallback(sliderEl) {
     var slides = Array.prototype.slice.call(sliderEl.querySelectorAll('.rsContent')).filter(function (slide) {
-      return slide.querySelector('.rsImg');
+      return slide.querySelector('.rsImg, .rsVideo');
     });
     if (slides.length < 2) return;
 
