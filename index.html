@@ -598,51 +598,62 @@ html { scroll-behavior: smooth; }
 <link rel="stylesheet" href="assets/css/qartia-topbar.css?v=de-menu-20260602" />
 <link rel="stylesheet" href="assets/css/qartia-responsive.css?v=20260601" />
     <style id="eibt-footer-layout-fix">
-    .footer .footer-inner {
-      display: grid !important;
-      grid-template-columns: minmax(180px, 0.75fr) minmax(260px, 1fr) minmax(360px, 1.15fr) !important;
-      align-items: start !important;
-      gap: 28px !important;
+    .footer-partner-logo-cluster {
+      display: grid;
+      grid-template-columns: minmax(190px, 1.15fr) minmax(170px, 0.85fr);
+      align-items: center;
+      gap: 24px;
+      width: min(540px, 100%);
+      margin-left: auto;
+      padding: 18px 22px;
+      border-radius: 8px;
+      background: #fff !important;
+      box-shadow: 0 14px 34px rgba(0, 0, 0, 0.14);
     }
 
-    .footer .footer-eibt-badge,
-    .l-footer .footer-eibt-badge {
-      display: flex !important;
-      justify-content: flex-end !important;
-      align-items: flex-start !important;
-      margin-top: 0 !important;
-      width: 100% !important;
-      min-width: 360px;
+    .footer-fusion-prima-logos {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
     }
 
-    .footer .footer-eibt-badge img,
-    .l-footer .footer-eibt-badge img {
-      width: min(430px, 100%) !important;
-      height: auto !important;
-      display: block !important;
-      margin-left: auto !important;
+    .footer-partner-logo-cluster img {
+      display: block;
+      height: auto;
+      max-width: 100%;
+      margin-left: 0 !important;
       margin-right: 0 !important;
+      object-fit: contain;
     }
 
-    .l-footer .footer-eibt-badge .w-image-h {
-      width: 100% !important;
+    .footer-partner-logo-cluster .footer-logo-eibt {
+      width: min(265px, 100%) !important;
+    }
+
+    .footer-fusion-prima-logos .footer-logo-fusion {
+      width: min(112px, 100%) !important;
+    }
+
+    .footer-fusion-prima-logos .footer-logo-prima {
+      width: min(185px, 100%) !important;
     }
 
     @media (max-width: 900px) {
-      .footer .footer-inner {
-        grid-template-columns: 1fr !important;
+      .footer-partner-logo-cluster {
+        margin-left: 0;
       }
+    }
 
-      .footer .footer-eibt-badge,
-      .l-footer .footer-eibt-badge {
-        justify-content: flex-start !important;
-        min-width: 0 !important;
-      }
-
-      .footer .footer-eibt-badge img,
-      .l-footer .footer-eibt-badge img {
-        margin-left: 0 !important;
-        margin-right: auto !important;
+    @media (max-width: 600px) {
+      .footer-partner-logo-cluster {
+        grid-template-columns: 1fr;
+        justify-items: center;
+        gap: 16px;
+        padding: 18px;
+        margin-left: auto;
+        margin-right: auto;
       }
     }
   </style>
@@ -1185,8 +1196,8 @@ y agro</h3>
 </div>
 	<footer id="page-footer" class="l-footer" itemscope itemtype="https://schema.org/WPFooter">
 		<section class="l-section wpb_row us_custom_dc5d91fa height_large color_primary"><div class="l-section-h i-cf"><div class="g-cols vc_row via_flex valign_top type_default stacking_default">
-<div class="vc_col-sm-4 wpb_column vc_column_container"><div class="vc_column-inner"><div class="wpb_wrapper"><div class="w-image align_left"><div class="w-image-h"><img width="180" height="75" src="assets/remote-qartia/wp-content/uploads/2022/11/logo-qartia.png" class="attachment-large size-large" alt="" decoding="async" loading="lazy"></div></div></div></div></div>
-<div class="vc_col-sm-4 wpb_column vc_column_container"><div class="vc_column-inner"><div class="wpb_wrapper"><div class="w-vwrapper align_left valign_top">
+<div class="vc_col-sm-3 wpb_column vc_column_container"><div class="vc_column-inner"><div class="wpb_wrapper"><div class="w-image align_left"><div class="w-image-h"><img width="180" height="75" src="assets/remote-qartia/wp-content/uploads/2022/11/logo-qartia.png" class="attachment-large size-large" alt="" decoding="async" loading="lazy"></div></div></div></div></div>
+<div class="vc_col-sm-3 wpb_column vc_column_container"><div class="vc_column-inner"><div class="wpb_wrapper"><div class="w-vwrapper align_left valign_top">
 <h4 class="w-text us_custom_28a5baaf"><span class="w-text-h"><span class="w-text-value">CONTACTO</span></span></h4>
 <div class="w-text contacto-footer icon_atleft"><a href="tel:+34686918522" class="w-text-h"><i class="fas fa-phone"></i><span class="w-text-value">(+34) 686918522</span></a></div>
 <div class="w-text contacto-footer icon_atleft"><a href="mailto:info@qartia.com" class="w-text-h"><i class="fas fa-envelope"></i><span class="w-text-value">info@qartia.com</span></a></div>
@@ -1194,7 +1205,7 @@ y agro</h3>
 30201, Cartagena, Espa&ntilde;a<br>
 CIF: B67916676</span></span></div>
 </div></div></div></div>
-<div class="vc_col-sm-4 wpb_column vc_column_container"><div class="vc_column-inner"><div class="wpb_wrapper"><div class="w-image align_center footer-eibt-badge" style="display:flex;align-items:center;justify-content:flex-end;width:100%;min-height:150px;"><div class="w-image-h"><img src="assets/images/eibt-logo.png" alt="Sello EIBT" loading="lazy" style="width:430px;max-width:100%;height:auto;display:block;margin-left:auto;margin-right:0;"></div></div></div></div></div>
+<div class="vc_col-sm-6 wpb_column vc_column_container"><div class="vc_column-inner"><div class="wpb_wrapper"><div class="w-image align_center"><div class="w-image-h footer-partner-logo-cluster"><img class="footer-logo-eibt" src="assets/images/eibt-logo.png" alt="Sello EBT" loading="lazy"><div class="footer-fusion-prima-logos"><img class="footer-logo-fusion" src="assets/images/fusion-logo.jpg" alt="Logo Fusion" loading="lazy"><img class="footer-logo-prima" src="assets/images/prima-logo.jpg" alt="Logo PRIMA" loading="lazy"></div></div></div></div></div></div>
 </div></div></section><section class="l-section wpb_row us_custom_6f974471 has_text_color height_auto"><div class="l-section-h i-cf"><div class="g-cols vc_row via_flex valign_top type_default stacking_default"><div class="vc_col-sm-12 wpb_column vc_column_container"><div class="vc_column-inner"><div class="wpb_wrapper"><div class="w-hwrapper align_center valign_middle" style="--hwrapper-gap:1.20rem"><div class="w-menu us_custom_37bd319f layout_hor style_links us_menu_1" style="--main-gap:2.5rem;--main-ver-indent:0.8em;--main-hor-indent:0.8em;">
 <ul id="menu-menu-footer" class="menu">
 <li id="menu-item-32" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32"><a href="aviso-legal.html">Aviso legal</a></li>
